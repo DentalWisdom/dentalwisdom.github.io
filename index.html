@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Wisdom Conference 2027 | March 3–6, Bay Harbor Islands, Miami</title>
+  <meta name="description" content="The Dental Wisdom Conference: cross-specialty dental CE in a relaxed, warm Jewish community setting. March 3–6, 2027 at The Altair Hotel, Bay Harbor Islands, Miami.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dental Wisdom Conference 2027">
+  <meta property="og:description" content="High-quality cross-specialty dental CE with time to think, connect, and recharge — in a warm Jewish community environment. March 3–6, 2027, Miami, FL.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/">
+  <!-- TODO: replace with a real 1200x630 social share image once available -->
+  <meta property="og:image" content="images/social-share.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="images/tooth-icon.svg">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <img class="site-logo__icon" src="images/tooth-icon.svg" alt="" width="32" height="32">
+        Dental Wisdom
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html" aria-current="page">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+          <li><a href="giving.html">Giving</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html" aria-current="page">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+        <li><a href="giving.html">Giving</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Conference sub-navigation (index, agenda, speakers, faq only) -->
+  <div class="sub-nav">
+    <div class="container sub-nav__bar">
+      <a href="#overview" aria-current="page">Overview</a>
+      <a href="agenda.html">Agenda</a>
+      <a href="speakers.html">Speakers</a>
+      <a href="faq.html">FAQ</a>
+      <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Register</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="hero">
+      <!-- TODO: replace with looping muted hero video (mp4, <8MB) + poster image per SITE_SPEC §4 -->
+      <!--
+        <video class="hero__media" autoplay muted loop playsinline poster="images/hero-poster.jpg">
+          <source src="images/hero-video.mp4" type="video/mp4">
+        </video>
+      -->
+      <div class="placeholder placeholder--hero" aria-hidden="true">Hero video placeholder — calm aerial beach at golden hour</div>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content" data-reveal>
+        <h1>The Dental Wisdom Conference isn’t your typical dental CE event.</h1>
+        <p class="hero__lede">You’ll engage with high-quality, cross-specialty lectures and hands-on education at a relaxed pace that allows real learning and absorption. Time to think. Space to connect with colleagues. Room to rest, recharge, and rejuvenate — professionally, socially, and spiritually. In a warm Jewish environment.</p>
+        <div class="hero__facts">
+          <span>March 3–6, 2027</span>
+          <span>20 CE Cross-specialty Credits</span>
+          <span>Miami, FL</span>
+        </div>
+        <p class="hero__note">4 nights &amp; Shabbos at The Altair.<br>Early bird pricing for a limited time.</p>
+        <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Reserve Your Place Today</a>
+      </div>
+    </section>
+
+    <!-- ===================== CONFERENCE FLYER ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="flyer" data-reveal>
+          <!-- TODO: replace with conference flyer JPG, e.g. images/flyer.jpg -->
+          <div class="placeholder placeholder--flyer">Conference flyer placeholder — add images/flyer.jpg</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== OVERVIEW + PRICING ===================== -->
+    <section class="section section--sand texture" id="overview">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <p class="eyebrow">The 2027 Dental Wisdom Conference</p>
+          <h2>Created by Jewish Dentists, for Jewish Dentists</h2>
+        </div>
+
+        <div class="lede" data-reveal>
+          <p>The Dental Wisdom Conference was created to give Jewish dentists a chance to reset. To engage with meaningful, high-quality continuing education while finding calm and clarity. To reconnect with your work and yourself in the company of like-minded colleagues. An experience designed to support professional excellence, spiritual growth, and lasting community connection.</p>
+          <p>Set at The Altair Hotel in Bay Harbor Islands, the location is as intentional as the experience itself. Warm hospitality, ocean breezes, and a peaceful atmosphere support both deep focus and restoration.</p>
+        </div>
+
+        <div class="text-center" data-reveal>
+          <p class="eyebrow" style="margin-top: var(--space-lg);">Limited time only!</p>
+        </div>
+
+        <div class="pricing-grid" data-reveal>
+          <div class="pricing-card">
+            <p class="pricing-card__label">Dentist</p>
+            <p class="pricing-card__price">$1,995</p>
+          </div>
+          <div class="pricing-card">
+            <p class="pricing-card__label">Student</p>
+            <p class="pricing-card__price">$1,595</p>
+          </div>
+          <div class="pricing-card">
+            <p class="pricing-card__label">Vendor Dentist</p>
+            <p class="pricing-card__price">$2,995</p>
+          </div>
+        </div>
+
+        <p class="lede text-center" style="margin-top: var(--space-lg);">We expect the conference to sell out. As we approach the event, both attendance prices and hotel room rates will increase.</p>
+      </div>
+    </section>
+
+    <!-- ===================== COMMUNITY FEEL ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>CE That Lets You Invest in Your Career, Your Wellness, and Your Community</h2>
+        </div>
+        <div class="lede" data-reveal>
+          <p>Join us for the 2027 Dental Wisdom Conference — our third time hosting this extraordinary event — taking place March 3–6, 2027 at The Altair Hotel in Bay Harbor Islands, Miami.</p>
+          <p>We’re preparing an incredible gathering filled with inspiring shiurim, beautiful minyanim, meaningful cross-specialty lectures and hands-on CE, delicious glatt kosher meals, uplifting Shabbos programming, and genuine connections. This is a beautifully curated dental conference experience where you’ll be fully immersed in the true warmth of the Dental Wisdom community.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== A GLIMPSE (VIDEO) ===================== -->
+    <section class="section section--sand">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>A Glimpse of the Dental Wisdom Conference</h2>
+          <p>Last year’s Dental Wisdom Conference brought together Jewish dentists and their families for an unforgettable getaway of learning, community, and connection. Here’s a quick look at what made it special.</p>
+        </div>
+        <div class="video-embed" data-reveal>
+          <iframe src="https://www.youtube.com/embed/OQZFNNB9YE0" title="A Glimpse of the Dental Wisdom Conference" loading="lazy" allowfullscreen></iframe>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONFERENCE DETAILS ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>Conference Details</h2>
+        </div>
+        <!-- TODO: insert full detailed conference content from Ben's PDF (schedule highlights, venue info, what's included, etc.) -->
+        <div class="placeholder" data-reveal>
+          Detailed conference content placeholder — add full description from source PDF
+        </div>
+        <div class="link-row" data-reveal>
+          <a class="btn btn-secondary" href="agenda.html">View Full Agenda</a>
+          <a class="btn btn-secondary" href="speakers.html">View Featured Speakers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHAT YOU WILL EXPERIENCE ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>What You Will Experience</h2>
+        </div>
+        <div class="lede" data-reveal>
+          <ul>
+            <li>Engage with the Dental Wisdom community in cross-specialty lectures and hands-on classes</li>
+            <li>Experience a warm and distinctive Jewish environment that fosters meaningful connections</li>
+            <li>Enjoy elegant family-friendly kosher events thoughtfully designed for both professionals and their families</li>
+            <li>Benefit from convenient on-site minyanim and inspiring Shiurim throughout</li>
+            <li>Join an unforgettable Shabbos together with optional premium Shabbos meals</li>
+          </ul>
+          <p class="text-center"><em>This is not simply a dental conference. This is a 3-day ‘Pesach Program’ experience designed for Jewish dentists.</em></p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== PHOTO GALLERY ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>A Look Back</h2>
+          <p>Moments from past Dental Wisdom Conferences. Scroll or swipe to explore.</p>
+        </div>
+        <!-- TODO: replace placeholders with photos from Ben's Google Drive/Photos folder (images/gallery-1.jpg, etc.) with descriptive alt text -->
+        <div class="gallery" data-reveal>
+          <div class="gallery__item">
+            <div class="placeholder" style="height:280px; min-height:0;">Gallery photo placeholder</div>
+            <p class="gallery__caption">Networking &amp; connection</p>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder" style="height:280px; min-height:0;">Gallery photo placeholder</div>
+            <p class="gallery__caption">Lectures &amp; hands-on CE</p>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder" style="height:280px; min-height:0;">Gallery photo placeholder</div>
+            <p class="gallery__caption">Shabbos together</p>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder" style="height:280px; min-height:0;">Gallery photo placeholder</div>
+            <p class="gallery__caption">Meals &amp; community</p>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder" style="height:280px; min-height:0;">Gallery photo placeholder</div>
+            <p class="gallery__caption">By the beach</p>
+          </div>
+          <div class="gallery__item">
+            <div class="placeholder" style="height:280px; min-height:0;">Gallery photo placeholder</div>
+            <p class="gallery__caption">Family time</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SPONSORS ===================== -->
+    <section class="section section--sand">
+      <div class="container text-center">
+        <div class="section-heading" data-reveal>
+          <h2>Our Sponsors</h2>
+          <p>Thank you to the partners who make Dental Wisdom possible.</p>
+        </div>
+        <!-- TODO: replace with real sponsor logos (images/sponsor-*.png) -->
+        <div class="logo-grid" data-reveal>
+          <div class="placeholder">Sponsor logo</div>
+          <div class="placeholder">Sponsor logo</div>
+          <div class="placeholder">Sponsor logo</div>
+          <div class="placeholder">Sponsor logo</div>
+        </div>
+        <div class="link-row" data-reveal>
+          <a class="btn btn-secondary" href="sponsor.html">Want to Sponsor?</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="section section--ivory cta-band">
+      <div class="container" data-reveal>
+        <h2>Reserve Your Seat Before We Run Out of Space!</h2>
+        <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Reserve Your Place Today</a>
+      </div>
+    </section>
+
+    <!-- ===================== HAVE QUESTIONS ===================== -->
+    <section class="section section--sand text-center">
+      <div class="container" data-reveal>
+        <h3>Have Questions?</h3>
+        <p><a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        <p class="lede">The Dental Wisdom Conference is managed and organized by Dental Wisdom.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h2>Dental Wisdom</h2>
+          <p>High-quality cross-specialty dental CE in a relaxed, warm Jewish community environment. Learn, connect, rest, and recharge.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+        <div>
+          <h3>Explore</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Conference</a></li>
+            <li><a href="live.html">Dental Wisdom Live</a></li>
+            <li><a href="deals.html">Deals</a></li>
+            <li><a href="giving.html">Giving</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>More</h3>
+          <ul class="footer-links">
+            <li><a href="sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="lecture.html">Want to Lecture?</a></li>
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="faq.html">FAQs</a></li>
+            <li><a href="faq.html#accessibility">Accessibility</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Dental Wisdom. All rights reserved.</span>
+        <a href="faq.html#accessibility">Accessibility</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <span class="join-fab__tag">For Dentists Only</span>
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <span class="modal__tag">For Dentists Only</span>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>Connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <!-- TODO: replace with Join-the-Network Jotform once Ben creates and shares the form URL -->
+        <div class="modal__placeholder">Join form placeholder — Jotform URL to be added</div>
+        <!--
+          <iframe src="JOIN_JOTFORM_URL_HERE" title="Join the Dental Wisdom Network"></iframe>
+        -->
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

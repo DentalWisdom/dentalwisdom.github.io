@@ -34,5 +34,10 @@ Tokens as CSS variables in `:root` (starting values in spec §2 — tune in Sess
 - Local preview: `python3 -m http.server 8000` from the repo root, then http://localhost:8000.
 - Do not touch DNS, CNAME, or Squarespace until Ben explicitly starts the launch step.
 
+## Saving tokens / chat length
+- Long chats use up more of Ben's usage budget as they go (everything said so far gets re-read each turn). To keep this efficient, tell Ben when it's a good moment to start a fresh chat — right after a page is finished and committed, or after a big batch of edits is wrapped up and confirmed.
+- When suggesting this, say it plainly, e.g.: "Good stopping point — feel free to start a new chat for the next page (live.html). I'll pick up context from CLAUDE.md, SITE_SPEC.md, and git history."
+- Don't suggest it mid-task or before a commit — only at clean breakpoints.
+
 ## Definition of done (per page)
 Spec copy verbatim; looks right at 375px and 1280px; nav, footer, and Join modal work; all links wired or marked TODO; images lazy-loaded with alt text; no console errors; committed.

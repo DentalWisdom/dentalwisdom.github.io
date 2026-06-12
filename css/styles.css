@@ -222,6 +222,12 @@ ul {
 
 .text-center { text-align: center; }
 
+/* Keep in-page anchor targets (e.g. #upcoming-sessions) clear of the
+   sticky header when jumped/scrolled to. */
+[id] {
+  scroll-margin-top: var(--header-height);
+}
+
 .eyebrow {
   display: inline-block;
   font-family: var(--font-body);
@@ -624,6 +630,37 @@ body.menu-open {
   text-transform: uppercase;
   letter-spacing: 0.08em;
   font-size: 0.8rem;
+}
+
+/* Session cards (Dental Wisdom Live: Upcoming / Past Sessions) */
+.session-card__meta {
+  font-weight: 600;
+  color: var(--color-accent);
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: var(--fs-small);
+  margin-bottom: var(--space-xs);
+}
+
+.session-card__presenter {
+  font-style: italic;
+  color: var(--color-text-muted);
+}
+
+/* Numbered step badge (Dental Wisdom Live: How It Works) */
+.step-number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: 50%;
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-family: var(--font-heading);
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: var(--space-sm);
 }
 
 /* -----------------------------

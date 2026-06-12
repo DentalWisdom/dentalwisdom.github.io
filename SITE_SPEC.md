@@ -294,7 +294,7 @@ You will create and publish **three** Google Sheets as public CSV.
 
 **How to publish each sheet**: File → Share → Publish to web → choose the tab → CSV → Publish, then paste the URLs here:
 - DEALS_CSV_URL: `TBD`
-- LIVE_CSV_URL: `TBD`
+- LIVE_CSV_URL: `https://docs.google.com/spreadsheets/d/e/2PACX-1vRhtn0vhHV0cNsy8-DYzRvZRbmBD2vJr6FN8Zrk0AmpxWrtAs8fEk6SVyQt4-2vj9_YCkOffmRgMNkX/pub?gid=0&single=true&output=csv`
 - AGENDA_CSV_URL: `TBD`
 
 Published CSVs are public to anyone with the link (fine — this is public site content) and edits appear on the site within ~5 minutes. If a sheet ever fails to load, the page shows a calm “couldn’t load right now — please refresh” note instead of breaking.

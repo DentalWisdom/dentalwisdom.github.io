@@ -57,6 +57,9 @@ document.addEventListener('DOMContentLoaded', function () {
   var joinButton = document.getElementById('joinButton');
   var joinModal = document.getElementById('joinModal');
   var joinModalClose = document.getElementById('joinModalClose');
+  // Additional triggers (e.g. "Join the WhatsApp Network" buttons in
+  // page content) can open the same modal via [data-open-join-modal].
+  var joinTriggers = document.querySelectorAll('[data-open-join-modal]');
 
   if (joinButton && joinModal) {
     var lastFocusedElement = null;
@@ -105,6 +108,10 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     joinButton.addEventListener('click', openModal);
+
+    joinTriggers.forEach(function (trigger) {
+      trigger.addEventListener('click', openModal);
+    });
 
     if (joinModalClose) {
       joinModalClose.addEventListener('click', closeModal);

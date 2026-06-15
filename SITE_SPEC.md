@@ -43,7 +43,7 @@ A slim secondary bar under the main header: Overview • Agenda • Speakers •
 
 - **Hosting**: GitHub Pages (free)
 - **Framework**: Clean HTML + one shared custom stylesheet (`css/styles.css`, design tokens as CSS variables) + vanilla JavaScript. *(Changed from Tailwind CDN: the CDN build is a runtime script not recommended for production; a hand-written stylesheet is faster, avoids flash-of-unstyled-content, and is easier to maintain. Identical visual result.)*
-- **Dynamic Content**: Google Sheets published as public CSV + Papa Parse (Deals, Live CE, Agenda)
+- **Dynamic Content**: Local data files in `/js` (Deals, Live CE, Agenda) — Ben requests changes in chat, Claude edits and commits. See §6.
 - **Forms**: Jotform (direct links + floating Join modal)
 - **Images**: Hosted in GitHub repo `/images` folder (optimized). Total recommended: **25–35 images** across the entire site for premium feel without heavy loading.
 - **Logo**: Clean text + tooth icon placeholder for v1 (easy to swap)
@@ -288,53 +288,43 @@ Includes all the detailed content you provided + new drafted items:
 
 ---
 
-## 6. Google Sheets Templates (Ready to Use)
+## 6. Page Data Files (no Google Sheets)
 
-You will create and publish **three** Google Sheets as public CSV.
+Deals, Live CE, and Agenda content each live in a small local data file in `/js`, loaded by the matching page. There is no Google Sheet and no CSV fetch — when Ben wants to add, change, or remove an entry, he tells Claude in chat and Claude edits the data file directly and commits.
 
-**How to publish each sheet**: File → Share → Publish to web → choose the tab → CSV → Publish, then paste the URLs here:
-- DEALS_CSV_URL: `https://docs.google.com/spreadsheets/d/e/2PACX-1vRhtn0vhHV0cNsy8-DYzRvZRbmBD2vJr6FN8Zrk0AmpxWrtAs8fEk6SVyQt4-2vj9_YCkOffmRgMNkX/pub?gid=1635986973&single=true&output=csv`
-- LIVE_CSV_URL: `https://docs.google.com/spreadsheets/d/e/2PACX-1vRhtn0vhHV0cNsy8-DYzRvZRbmBD2vJr6FN8Zrk0AmpxWrtAs8fEk6SVyQt4-2vj9_YCkOffmRgMNkX/pub?gid=0&single=true&output=csv`
-- AGENDA_CSV_URL: `TBD`
+### Deals data — `js/deals-data.js`
+`window.DEALS_DATA` is an array of objects with these fields:
+- title
+- category
+- shortDescription (1-3 word tagline shown on the card, e.g. "Dental AI")
+- description (1-2 sentences)
+- link (URL — also makes the logo image clickable)
+- promo (optional — short text shown as a highlighted badge, e.g. "10% off")
+- imageUrl (relative path to a logo in the repo, e.g. `images/deals/companyname.png`; leave blank if no logo yet)
 
-Published CSVs are public to anyone with the link (fine — this is public site content) and edits appear on the site within ~5 minutes. If a sheet ever fails to load, the page shows a calm “couldn’t load right now — please refresh” note instead of breaking.
+**Sample entry**:
+```js
+{
+  title: "ClearCorrect",
+  category: "Key Dental Solutions",
+  shortDescription: "Clear Aligners",
+  description: "Exclusive conference pricing on aligner cases.",
+  link: "https://example.com",
+  promo: "10% off",
+  imageUrl: "images/deals/clearcorrect.png"
+}
+```
 
-### Deals Sheet
-**Columns**:
-- Title
-- Category
-- Description (short)
-- Link (URL)
-- Promo (optional — short text shown as a highlighted badge, e.g. "10% off")
-- ImageURL (optional — relative path to a logo in the repo, e.g. `images/deals/companyname.png`; leave blank if no logo yet)
+### Live CE data — `js/live-data.js` (TBD)
+Same idea, one object per session, with fields: title, date, time, description (short), registerLink (Jotform URL), status (Upcoming / Past), imageUrl (optional).
 
-**Sample Row**:
-| Title         | Category              | Description                                    | Link                  | Promo     | ImageURL                       |
-|----------------|------------------------|-------------------------------------------------|-----------------------|-----------|----------------------------------|
-| ClearCorrect  | Key Dental Solutions  | Exclusive conference pricing on aligner cases  | https://example.com  | 10% off  | images/deals/clearcorrect.png  |
+### Agenda data — `js/agenda-data.js` (TBD)
+Same idea, one object per agenda item, with fields: day, time, title, speaker, location.
 
-### Live CE Sheet
-**Columns**:
-- Title
-- Date
-- Time
-- Description (short)
-- RegisterLink (Jotform URL)
-- Status (Upcoming / Past)
-- ImageURL (optional)
-
-### Agenda Sheet
-**Columns**:
-- Day
-- Time
-- Title
-- Speaker
-- Location
-
-**Sample Row**:
-| Day       | Time              | Title                        | Speaker             | Location          |
-|-----------|-------------------|------------------------------|---------------------|-------------------|
-| Thursday  | 6:00 – 7:00 AM   | Daf Yomi Shiur              | Rabbi David Friedman| Prayer Room      |
+**Sample entry**:
+```js
+{ day: "Thursday", time: "6:00 – 7:00 AM", title: "Daf Yomi Shiur", speaker: "Rabbi David Friedman", location: "Prayer Room" }
+```
 
 ---
 
@@ -450,4 +440,4 @@ All major decisions are locked. All drafted content is included. All supporting 
 1. **Date phrasing**: hero says “March 3–6, 2027”; other 2027 materials say “March 3–7”. Pick one site-wide.
 2. **dentalwisdomconference.com**: should it redirect to the new site at launch?
 3. **Design lock**: fonts + vibe match the light “calm luxury” mockup direction. Confirm, or ask to see the dark-luxe alternative before Session 1.
-4. **Ben’s pre-build to-dos**: build the Join-the-Network Jotform; create + publish the 3 Google Sheets and paste the CSV URLs into §6; gather the flyer JPG and 25–35 photos into `/images-source`; paste the full Sponsor Q&A, Lecture Q&A, FAQ, and Terms text into `/content` (this spec references that copy but does not contain it).
+4. **Ben’s pre-build to-dos**: build the Join-the-Network Jotform; gather the flyer JPG and 25–35 photos into `/images-source`; paste the full Sponsor Q&A, Lecture Q&A, FAQ, and Terms text into `/content` (this spec references that copy but does not contain it).

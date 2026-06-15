@@ -1,58 +1,48 @@
 /* =========================================================
    Dental Wisdom Deals — searchable, filterable partner offers
-   Fetches the Deals Google Sheet (see SITE_SPEC.md §6) via
-   loadSheet() (js/sheets.js) and renders cards into the deals
-   grid. Builds category filter buttons and a live search box
-   from the loaded data. Falls back to a calm "couldn't load"
-   message on any failure, per CLAUDE.md.
+   Reads from window.DEALS_DATA (js/deals-data.js — see
+   SITE_SPEC.md §6) and renders cards into the deals grid.
+   Builds category filter buttons and a live search box from
+   the data. Deals data is maintained directly in
+   js/deals-data.js (no Google Sheet).
 
-   Expected columns (SITE_SPEC §6): Title, Category, Description,
-   Link, Promo, ImageURL.
+   Fields per deal: title, category, shortDescription,
+   description, link, promo, imageUrl.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
-  var DEALS_CSV_URL = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vRhtn0vhHV0cNsy8-DYzRvZRbmBD2vJr6FN8Zrk0AmpxWrtAs8fEk6SVyQt4-2vj9_YCkOffmRgMNkX/pub?gid=1635986973&single=true&output=csv';
-
   var gridEl = document.getElementById('dealsGrid');
   var categoriesEl = document.getElementById('dealsCategories');
   var searchEl = document.getElementById('dealsSearch');
   var noResultsEl = document.getElementById('dealsNoResults');
 
-  if (!gridEl || typeof loadSheet !== 'function') return;
+  if (!gridEl) return;
 
-  var allDeals = [];
   var activeCategory = 'All';
 
-  loadSheet({
-    url: DEALS_CSV_URL,
-    container: gridEl,
-    fallbackMessage: "We couldn't load deals right now — please refresh the page.",
-    onSuccess: function (rows) {
-      allDeals = rows
-        .map(function (row) {
-          return {
-            title: (row.Title || '').trim(),
-            category: (row.Category || '').trim(),
-            description: (row.Description || '').trim(),
-            link: (row.Link || '').trim(),
-            promo: (row.Promo || '').trim(),
-            imageUrl: (row.ImageURL || '').trim()
-          };
-        })
-        .filter(function (deal) {
-          return deal.title;
-        });
+  var allDeals = (window.DEALS_DATA || [])
+    .map(function (row) {
+      return {
+        title: (row.title || '').trim(),
+        category: (row.category || '').trim(),
+        shortDescription: (row.shortDescription || '').trim(),
+        description: (row.description || '').trim(),
+        link: (row.link || '').trim(),
+        promo: (row.promo || '').trim(),
+        imageUrl: (row.imageUrl || '').trim()
+      };
+    })
+    .filter(function (deal) {
+      return deal.title;
+    });
 
-      if (!allDeals.length) {
-        renderFallback(gridEl, 'New deals are being added — check back soon!');
-        if (categoriesEl) categoriesEl.innerHTML = '';
-        return;
-      }
-
-      buildCategoryButtons(allDeals);
-      renderDeals(allDeals);
-    }
-  });
+  if (!allDeals.length) {
+    gridEl.innerHTML = '<p class="placeholder" role="status">New deals are being added — check back soon!</p>';
+    if (categoriesEl) categoriesEl.innerHTML = '';
+  } else {
+    buildCategoryButtons(allDeals);
+    renderDeals(allDeals);
+  }
 
   if (searchEl) {
     searchEl.addEventListener('input', function () {
@@ -122,14 +112,22 @@ document.addEventListener('DOMContentLoaded', function () {
     gridEl.innerHTML = deals.map(function (deal) {
       var html = '<div class="card deal-card">';
 
-      html += '<div class="deal-card__image-wrap">';
+      var imageInner = '';
       if (deal.imageUrl) {
-        html += '<img src="' + escapeAttr(deal.imageUrl) + '" alt="' +
+        imageInner = '<img src="' + escapeAttr(deal.imageUrl) + '" alt="' +
           escapeAttr(deal.title + ' logo') + '" loading="lazy" ' +
           'onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">' +
           '<div class="placeholder" style="display:none;">Image coming soon</div>';
       } else {
-        html += '<div class="placeholder">Image coming soon</div>';
+        imageInner = '<div class="placeholder">Image coming soon</div>';
+      }
+
+      html += '<div class="deal-card__image-wrap">';
+      if (deal.link) {
+        html += '<a href="' + escapeAttr(deal.link) + '" target="_blank" rel="noopener" aria-label="' +
+          escapeAttr('Visit ' + deal.title + ' website') + '">' + imageInner + '</a>';
+      } else {
+        html += imageInner;
       }
       html += '</div>';
 
@@ -145,6 +143,10 @@ document.addEventListener('DOMContentLoaded', function () {
       }
 
       html += '<h3>' + escapeHtml(deal.title) + '</h3>';
+
+      if (deal.shortDescription) {
+        html += '<p class="deal-card__tagline">' + escapeHtml(deal.shortDescription) + '</p>';
+      }
 
       if (deal.description) {
         html += '<p>' + escapeHtml(deal.description) + '</p>';

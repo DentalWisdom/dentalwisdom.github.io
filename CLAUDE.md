@@ -9,8 +9,8 @@ Ben is the sole editor and not a developer. Explain any manual step he must take
 **Decisions/questions**: Always ask Ben as multiple-choice questions (using the question tool), never open-ended or technical phrasing. Use plain everyday language, no jargon or code terms. Describe trade-offs in terms of what Ben will see/experience, not how it's built.
 
 ## Stack (locked — do not introduce frameworks, build steps, or npm)
-- GitHub Pages hosting. Plain HTML files, one shared stylesheet `css/styles.css`, vanilla JS in `js/main.js` (nav, modal, scroll reveals) and `js/sheets.js` (CSV fetching).
-- Dynamic content (Deals, Live sessions, Agenda) is fetched client-side from published Google Sheet CSVs using Papa Parse from cdnjs. URLs live in §6 of SITE_SPEC.md. If a fetch fails, render a calm "couldn't load right now — please refresh" note; never a broken page.
+- GitHub Pages hosting. Plain HTML files, one shared stylesheet `css/styles.css`, vanilla JS in `js/main.js` (nav, modal, scroll reveals).
+- Dynamic content (Deals, Live sessions, Agenda) lives in local data files (`js/deals-data.js`, `js/live-data.js`, `js/agenda-data.js`) that each page's script reads directly — no Google Sheets, no CSV fetching. Ben tells Claude about changes (new/updated/removed entries) in chat, and Claude edits the relevant data file and commits. See SITE_SPEC.md §6 for each file's field format.
 - Forms: Jotform. Direct links for registration; the floating "Join the Network" button opens our own styled modal containing the Jotform iframe. Modal: focus-trapped, Esc closes, scroll-locked behind.
 - Fonts: Playfair Display (headings) + Inter (body) via Google Fonts with preconnect and `display=swap`.
 - Media: optimized images in `/images` (resize to max 1600px wide, WebP ~80 quality, `loading="lazy"` below the fold). Long videos = YouTube embeds. Hero = muted looping mp4 under ~8MB in `/images` with `autoplay muted loop playsinline` and a poster image; source clip per spec §4.
@@ -25,7 +25,7 @@ Tokens as CSS variables in `:root` (starting values in spec §2 — tune in Sess
 - Speakers page: 16 static hand-edited cards (name, specialty, short bio, sample course + time) opening a modal. Keep each card's markup self-contained so adding/removing a speaker is a copy-paste of one block.
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link.
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.
-- External services allowed: Google Sheets CSV, Jotform, YouTube, Google Fonts. Nothing else.
+- External services allowed: Jotform, YouTube, Google Fonts. Nothing else.
 
 ## Workflow rules
 - One page per session, in the spec's build order. Start each session by proposing a short plan; wait for approval before writing code.

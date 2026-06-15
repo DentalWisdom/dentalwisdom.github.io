@@ -20,6 +20,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var activeCategory = 'All';
 
+  // Display order for category sections and filter buttons
+  // (per Ben's requested ordering, not alphabetical).
+  var CATEGORY_ORDER = [
+    'Key Dental Solutions',
+    'Practice Services & Support',
+    'Staffing & Recruiting',
+    'Financial Management & Insurance',
+    'Israel & Kosher',
+    'Personal & Miscellaneous'
+  ];
+
+  function categoryRank(category) {
+    var index = CATEGORY_ORDER.indexOf(category);
+    return index === -1 ? CATEGORY_ORDER.length : index;
+  }
+
   var allDeals = (window.DEALS_DATA || [])
     .map(function (row) {
       return {
@@ -60,7 +76,7 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
     categories.sort(function (a, b) {
-      return a.localeCompare(b);
+      return categoryRank(a) - categoryRank(b);
     });
     categories.unshift('All');
 
@@ -125,7 +141,7 @@ document.addEventListener('DOMContentLoaded', function () {
     groupOrder.sort(function (a, b) {
       if (!a) return 1;
       if (!b) return -1;
-      return a.localeCompare(b);
+      return categoryRank(a) - categoryRank(b);
     });
 
     gridEl.innerHTML = groupOrder.map(function (category) {

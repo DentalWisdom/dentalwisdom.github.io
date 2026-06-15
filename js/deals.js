@@ -118,7 +118,10 @@ document.addEventListener('DOMContentLoaded', function () {
     if (!deals.length) {
       gridEl.innerHTML = '';
       gridEl.hidden = true;
-      if (noResultsEl) noResultsEl.hidden = false;
+      // Only show the "no results" message when it was an actual
+      // text search that came up empty — not just a category filter.
+      var hasQuery = searchEl && searchEl.value.trim().length > 0;
+      if (noResultsEl) noResultsEl.hidden = !hasQuery;
       return;
     }
 

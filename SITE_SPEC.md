@@ -374,34 +374,84 @@ Please return to the homepage or contact us if you need assistance.
 
 ---
 
-## 9. Privacy Policy (Draft – Short & Professional)
+## 9. Privacy Policy (Final — built in privacy.html)
 
 **Privacy Policy**
 
-Dental Wisdom LLC respects your privacy. This Privacy Policy explains how we collect, use, and protect your personal information when you register for or attend the Dental Wisdom Conference or interact with our website and community.
+Effective Date: January 1, 2025
+Last Updated: January 1, 2025
 
-**Information We Collect**  
-We collect personal information you provide during registration (name, email, phone, professional information, dietary requirements, etc.) and when you apply to join the Dental Wisdom WhatsApp network.
+Dental Wisdom LLC, a Colorado LLC ("Dental Wisdom," "we," "us," or "our"), respects your privacy. This Privacy Policy explains how we collect, use, share, and protect personal information when you visit dentalwisdom.org (the "Site"), register for or attend the Dental Wisdom Conference, join Dental Wisdom Live or our WhatsApp community, or otherwise interact with us.
 
-**How We Use Your Information**  
-We use your information to process registrations, communicate updates and confirmations, facilitate hotel bookings, manage the community, and improve our events.
+By using the Site or registering for our programs, you agree to the practices described in this Privacy Policy. If you do not agree, please do not use the Site or provide us with personal information.
 
-We do not sell your personal information.
+**Information We Collect**
+We may collect:
+- Contact details — name, email address, phone number, and mailing address.
+- Registration information — professional/practice information, dietary requirements, accommodation preferences, and other details you provide when registering for the Conference, Dental Wisdom Live sessions, or to join our WhatsApp community.
+- Communications — records of emails, WhatsApp messages, and other correspondence between you and Dental Wisdom.
+- Website usage information — basic technical information such as browser type, device type, and pages visited, collected automatically through our website host and the third-party services described below.
 
-**Sharing of Information**  
-We may share limited attendee information with conference sponsors or partners **only** if you explicitly opt in during registration. You may withdraw consent at any time.
+We do not directly collect payment card numbers or other sensitive financial information on the Site. Where payment is required (for example, conference registration fees or hotel deposits), it is processed through our registration partner (Jotform) or directly with the hotel, subject to their own privacy and security practices.
 
-**Data Security**  
-We take reasonable measures to protect your information. No method of transmission over the internet is 100% secure.
+**How We Collect Information**
+We collect information:
+- Directly from you, when you fill out a registration or contact form, send us an email, or join our WhatsApp community;
+- Automatically, through basic website hosting logs and the third-party tools described below; and
+- From our partners, such as The Altair Hotel, when needed to coordinate room bookings you've requested.
 
-**Your Rights**  
-You may request access to, correction of, or deletion of your personal information by emailing info@dentalwisdom.org.
+**How We Use Your Information**
+We use the information we collect to:
+- Process your registration for the Conference, Dental Wisdom Live sessions, or our WhatsApp community;
+- Send confirmations, receipts, reminders, and updates about events and programs;
+- Coordinate hotel accommodations you've requested;
+- Communicate with you about Dental Wisdom programs, sessions, and community news;
+- Operate, maintain, and improve the Site and our events; and
+- Comply with applicable laws and enforce our Terms & Conditions.
 
-**Changes to This Policy**  
-We may update this Privacy Policy from time to time. Material changes will be communicated to registered attendees.
+**We Do Not Sell Your Information**
+Dental Wisdom does not sell your personal information, and we do not share it with third parties for their own marketing purposes without your consent.
 
-**Contact**  
-For questions about this Privacy Policy, please email info@dentalwisdom.org.
+**How We Share Your Information**
+We may share your information with:
+- Service providers who help us run the Site and our programs, such as Jotform (registration and contact forms) and Google (fonts and, for video content, YouTube). These providers only use your information as needed to provide their services to us, under their own privacy policies.
+- The Altair Hotel, to arrange accommodations you've specifically requested as part of your registration.
+- Conference sponsors or partners, but only if you explicitly opt in (for example, by checking a box during registration). You may withdraw this consent at any time by emailing us.
+- Legal or regulatory authorities, if required by law, subpoena, or other legal process.
+- A successor organization, if Dental Wisdom is ever involved in a merger, sale, or transfer of its operations.
+
+**Cookies and Similar Technologies**
+The Site itself does not use advertising or analytics cookies to track you. Some pages include content from third-party services — such as Jotform registration forms and embedded YouTube videos — which may set their own cookies in accordance with their privacy policies. We encourage you to review the privacy policies of Jotform and YouTube/Google if you'd like to learn more about how they handle information.
+
+**Joining Our WhatsApp Community**
+If you choose to join the Dental Wisdom WhatsApp community, your phone number and any messages you send will be visible to other members of the group and are subject to WhatsApp's own privacy policy (operated by Meta). You can leave the group at any time.
+
+**Data Retention**
+We retain personal information for as long as needed to provide our services, maintain accurate records of our events and community, and comply with legal obligations — after which we delete or anonymize it.
+
+**Data Security**
+We take reasonable measures to protect your personal information from unauthorized access, disclosure, or misuse. However, no method of transmission over the internet is completely secure, and we cannot guarantee absolute security.
+
+**Children's Privacy**
+The Site is not directed to children under 16, and we do not knowingly collect personal information from children under 16. If you believe a child has provided us with personal information, please contact us so we can delete it.
+
+**Your Privacy Choices**
+Wherever you live, you may contact us to:
+- Ask what personal information we have about you;
+- Ask us to correct inaccurate information;
+- Ask us to delete your personal information; or
+- Withdraw any consent you've given (for example, to share your information with a sponsor).
+
+To make any of these requests, email us at info@dentalwisdom.org. We'll respond within a reasonable time, generally within 45 days.
+
+**Links to Other Websites**
+The Site may link to third-party websites (such as sponsor or partner sites). We are not responsible for the privacy practices of those sites and encourage you to review their policies.
+
+**Changes to This Policy**
+We may update this Privacy Policy from time to time. We'll post the revised policy on this page with an updated effective date, and we'll let registered attendees know about any material changes.
+
+**Contact Us**
+If you have questions about this Privacy Policy or how we handle your information, email us at info@dentalwisdom.org.
 
 ---
 

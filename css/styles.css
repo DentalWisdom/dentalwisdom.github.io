@@ -736,10 +736,6 @@ body.menu-open {
   bottom: var(--space-md);
   right: var(--space-md);
   z-index: var(--z-floating-button);
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-  gap: 0.25rem;
 }
 
 .join-fab__button {
@@ -758,18 +754,6 @@ body.menu-open {
 .join-fab__button:hover {
   transform: translateY(-2px);
   background-color: #b9512f;
-}
-
-.join-fab__tag {
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  color: var(--color-text-muted);
-  background-color: var(--color-white);
-  padding: 0.15rem 0.6rem;
-  border-radius: 999px;
-  box-shadow: var(--shadow-card);
 }
 
 /* -----------------------------
@@ -843,19 +827,6 @@ body.menu-open {
 
 .modal__title {
   margin-bottom: var(--space-xs);
-}
-
-.modal__tag {
-  display: inline-block;
-  background-color: var(--color-seaglass);
-  color: var(--color-white);
-  font-size: 0.75rem;
-  font-weight: 700;
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
-  padding: 0.25rem 0.75rem;
-  border-radius: 999px;
-  margin-bottom: var(--space-sm);
 }
 
 .modal__iframe-wrap {
@@ -1205,13 +1176,6 @@ body.menu-open {
 }
 
 /* Agenda tabs (Agenda page) */
-.agenda-note {
-  text-align: center;
-  color: var(--color-text-muted);
-  font-style: italic;
-  margin-bottom: var(--space-lg);
-}
-
 .agenda-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -1400,4 +1364,78 @@ body.menu-open {
 .deal-card .btn {
   margin-top: auto;
   align-self: flex-start;
+}
+
+/* -----------------------------
+   16. Sponsor logo strip (agenda.html)
+   ----------------------------- */
+.sponsor-strip-section {
+  padding-bottom: var(--space-2xl);
+}
+
+.sponsor-strip {
+  overflow: hidden;
+  width: 100%;
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+
+.sponsor-strip__track {
+  display: flex;
+  align-items: center;
+  gap: var(--space-xl);
+  width: max-content;
+  padding: var(--space-sm) 0;
+  animation: sponsor-scroll 36s linear infinite;
+}
+
+.sponsor-strip:hover .sponsor-strip__track,
+.sponsor-strip:focus-within .sponsor-strip__track {
+  animation-play-state: paused;
+}
+
+@keyframes sponsor-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.sponsor-logo {
+  flex: 0 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 180px;
+  height: 100px;
+  padding: var(--space-sm) var(--space-md);
+  background-color: var(--color-white);
+  border: 2px dashed var(--color-border);
+  border-radius: var(--radius-md);
+  text-align: center;
+  color: var(--color-text-muted);
+  font-family: var(--font-heading);
+  font-weight: 600;
+  text-decoration: none;
+  transition: transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+a.sponsor-logo:hover,
+a.sponsor-logo:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-card);
+}
+
+.sponsor-logo img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sponsor-strip__track {
+    animation-play-state: paused;
+  }
+
+  .sponsor-strip {
+    overflow-x: auto;
+  }
 }

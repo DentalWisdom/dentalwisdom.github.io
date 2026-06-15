@@ -85,24 +85,38 @@
           <p>The full Dental Wisdom Conference 2027 schedule</p>
         </div>
         <div class="lede text-center" data-reveal>
-          <p>Browse a sample day-by-day schedule below to get a feel for the conference flow. The confirmed 2027 lineup of speakers and sessions will be posted here as it&rsquo;s finalized.</p>
+          <p>Here&rsquo;s the day-by-day schedule for the 2027 conference. Lecture topics and speakers will be added here as they&rsquo;re confirmed.</p>
         </div>
       </div>
     </section>
 
     <section class="section section--ivory" id="agenda-schedule">
       <div class="container">
-        <!-- TODO: this is a SAMPLE schedule (same for all three days), powered by
-             js/agenda-data.js per SITE_SPEC §6. Replace with the confirmed 2027
-             day-by-day lineup once available. -->
-        <p class="agenda-note" role="status" data-reveal>Sample schedule shown for each day — the confirmed 2027 lineup will be added here.</p>
-
+        <!-- Schedule data lives in js/agenda-data.js per SITE_SPEC §6.
+             Lecture sessions without a confirmed speaker show "Speaker TBD". -->
         <div class="agenda-tabs" id="agendaTabs" role="tablist" aria-label="Conference day" data-reveal>
           <!-- Tab buttons populated by js/agenda.js -->
         </div>
 
         <div id="agendaPanels" data-reveal>
           <!-- Tab panels populated by js/agenda.js -->
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--sand texture sponsor-strip-section" aria-labelledby="sponsors-heading">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2 id="sponsors-heading">Our Sponsors</h2>
+          <p>Proud to be supported by these partners</p>
+        </div>
+      </div>
+      <!-- TODO: placeholder logo boxes — replace js/sponsors-data.js entries
+           with confirmed sponsor names and add logo files to
+           images/sponsors/ once Ben provides them. -->
+      <div class="sponsor-strip" data-reveal>
+        <div class="sponsor-strip__track" id="sponsorTrack">
+          <!-- Populated by js/sponsors.js -->
         </div>
       </div>
     </section>
@@ -156,7 +170,6 @@
 
   <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
   <div class="join-fab">
-    <span class="join-fab__tag">For Dentists Only</span>
     <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
   </div>
 
@@ -164,9 +177,8 @@
     <div class="modal__backdrop" data-modal-close></div>
     <div class="modal__dialog">
       <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
-      <span class="modal__tag">For Dentists Only</span>
       <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
-      <p>Connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
       <div class="modal__iframe-wrap">
         <!-- TODO: replace with Join-the-Network Jotform once Ben creates and shares the form URL -->
         <div class="modal__placeholder">Join form placeholder — Jotform URL to be added</div>
@@ -180,5 +192,7 @@
   <script src="js/main.js"></script>
   <script src="js/agenda-data.js"></script>
   <script src="js/agenda.js"></script>
+  <script src="js/sponsors-data.js"></script>
+  <script src="js/sponsors.js"></script>
 </body>
 </html>

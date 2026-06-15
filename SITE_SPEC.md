@@ -30,17 +30,18 @@
 | Sponsors              | `sponsors.html`   | View all confirmed sponsors (~10-20 logos/list)      | Static            | 9th (TBD)   |
 | Sponsor FAQ           | `sponsor-faq.html`| FAQ + inquiry for businesses who want to sponsor     | Static            | 10th (TBD)  |
 | Join WhatsApp Group   | `whatsapp.html`   | Simple page with info/link to join the WhatsApp group | Static           | 11th (TBD)  |
-| FAQ                   | `faq.html`        | Conference FAQ (includes Accessibility)              | Static            | 12th        |
+| FAQ                   | `conference-faq.html` | Conference FAQ (includes Accessibility)          | Static            | 12th        |
 
 **Top Navigation** (on every page):  
 **Conference** | **Live** | **Deals** | **Giving**
 
-**Footer Links** (on every page):  
-Want to Sponsor? • Want to Lecture? • Terms & Conditions • Privacy Policy • FAQs • Accessibility
+**Footer** (on every page, 4 columns):
+- **Dental Wisdom** — brand blurb + email
+- **The Conference** — Overview, Agenda, Speakers, FAQs, Want to Sponsor?, Want to Lecture?
+- **Programs** — Dental Wisdom Live, Deals, Giving, Join WhatsApp Group
+- **Site** — Terms & Conditions, Privacy Policy, Accessibility
 
-<!-- TODO: Footer links need rework now that Sponsors/Speakers each split into a "view" page and an "FAQ" page, and a WhatsApp page was added. Decide final wording + which pages the footer links to before we build the footer. -->
-
-**Conference Sub-Navigation** (conference pages only — `index.html`, `agenda.html`, `speakers.html`, `faq.html`):
+**Conference Sub-Navigation** (conference pages only — `index.html`, `agenda.html`, `speakers.html`, `conference-faq.html`):
 A slim secondary bar under the main header: Overview • Agenda • Speakers • FAQ • **Register** (accent button). It appears only within the conference section, so Live, Deals, and Giving stay uncluttered.
 
 ---
@@ -290,7 +291,7 @@ Dental Wisdom Live is one of the many ways we support our community year-round �
 
 **Update Method**: Upcoming and Past sessions are powered by Google Sheet (see Google Sheets section below) so you can easily add, remove, or update sessions without touching code.
 
-**FAQ (`faq.html`)**  
+**FAQ (`conference-faq.html`)**  
 Includes all the detailed content you provided + new drafted items:
 - What happens after I register? (confirmed text)
 - What should I expect as a first-time attendee? (drafted)

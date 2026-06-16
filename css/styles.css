@@ -243,6 +243,11 @@ ul {
   scroll-margin-top: var(--header-height);
 }
 
+/* On pages with the sticky conference sub-nav, anchors need extra offset */
+body.has-subnav [id] {
+  scroll-margin-top: calc(var(--header-height) + var(--subnav-height));
+}
+
 .eyebrow {
   display: inline-block;
   font-family: var(--font-body);
@@ -489,6 +494,9 @@ body.menu-open {
 .sub-nav {
   background-color: var(--color-sand);
   border-bottom: 1px solid var(--color-border);
+  position: sticky;
+  top: var(--header-height);
+  z-index: 90;
 }
 
 .sub-nav__bar {

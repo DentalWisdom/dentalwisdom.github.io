@@ -2,12 +2,19 @@
    Dental Wisdom Deals — searchable, filterable partner offers
    Reads from window.DEALS_DATA (js/deals-data.js — see
    SITE_SPEC.md §6) and renders cards into the deals grid.
-   Builds category filter buttons and a live search box from
-   the data. Deals data is maintained directly in
-   js/deals-data.js (no Google Sheet).
+
+   Card behaviour mirrors the Sponsors page:
+   - Each card shows logo, title, tagline, and a short preview
+     of the description (truncated to ~100 chars with "…").
+   - "View details →" CTA at the bottom of each card.
+   - Clicking a card (anywhere) opens a detail modal with the
+     full description, promo code, and "View Deal →" button.
+
+   Search matches against: title, description, category, promo,
+   AND the hidden `keywords` field for richer results.
 
    Fields per deal: title, category, shortDescription,
-   description, link, promo, imageUrl.
+   description, link, promo, imageUrl, keywords.
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -19,9 +26,9 @@ document.addEventListener('DOMContentLoaded', function () {
   if (!gridEl) return;
 
   var activeCategory = 'All';
+  var PREVIEW_LENGTH = 100; // chars shown on card before "…"
 
   // Display order for category sections and filter buttons
-  // (per Ben's requested ordering, not alphabetical).
   var CATEGORY_ORDER = [
     'Key Dental Solutions',
     'Practice Services & Support',
@@ -45,27 +52,27 @@ document.addEventListener('DOMContentLoaded', function () {
         description: (row.description || '').trim(),
         link: (row.link || '').trim(),
         promo: (row.promo || '').trim(),
-        imageUrl: (row.imageUrl || '').trim()
+        imageUrl: (row.imageUrl || '').trim(),
+        keywords: (row.keywords || '').trim()
       };
     })
-    .filter(function (deal) {
-      return deal.title;
-    });
+    .filter(function (deal) { return deal.title; });
 
   if (!allDeals.length) {
     gridEl.innerHTML = '<p class="placeholder" role="status">New deals are being added — check back soon!</p>';
     if (categoriesEl) categoriesEl.innerHTML = '';
-  } else {
-    buildCategoryButtons(allDeals);
-    renderDeals(allDeals);
+    return;
   }
+
+  buildCategoryButtons(allDeals);
+  renderDeals(allDeals);
+  injectModal();
 
   if (searchEl) {
-    searchEl.addEventListener('input', function () {
-      applyFilters();
-    });
+    searchEl.addEventListener('input', function () { applyFilters(); });
   }
 
+  /* ── Category filter buttons ── */
   function buildCategoryButtons(deals) {
     if (!categoriesEl) return;
 
@@ -75,9 +82,7 @@ document.addEventListener('DOMContentLoaded', function () {
         categories.push(deal.category);
       }
     });
-    categories.sort(function (a, b) {
-      return categoryRank(a) - categoryRank(b);
-    });
+    categories.sort(function (a, b) { return categoryRank(a) - categoryRank(b); });
     categories.unshift('All');
 
     categoriesEl.innerHTML = categories.map(function (category) {
@@ -99,6 +104,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  /* ── Filter + search ── */
   function applyFilters() {
     var query = searchEl ? searchEl.value.trim().toLowerCase() : '';
 
@@ -107,19 +113,21 @@ document.addEventListener('DOMContentLoaded', function () {
       var matchesQuery = !query ||
         deal.title.toLowerCase().indexOf(query) !== -1 ||
         deal.description.toLowerCase().indexOf(query) !== -1 ||
-        deal.category.toLowerCase().indexOf(query) !== -1;
+        deal.shortDescription.toLowerCase().indexOf(query) !== -1 ||
+        deal.category.toLowerCase().indexOf(query) !== -1 ||
+        deal.promo.toLowerCase().indexOf(query) !== -1 ||
+        deal.keywords.toLowerCase().indexOf(query) !== -1;
       return matchesCategory && matchesQuery;
     });
 
     renderDeals(filtered);
   }
 
+  /* ── Render grouped grid ── */
   function renderDeals(deals) {
     if (!deals.length) {
       gridEl.innerHTML = '';
       gridEl.hidden = true;
-      // Only show the "no results" message when it was an actual
-      // text search that came up empty — not just a category filter.
       var hasQuery = searchEl && searchEl.value.trim().length > 0;
       if (noResultsEl) noResultsEl.hidden = !hasQuery;
       return;
@@ -128,16 +136,11 @@ document.addEventListener('DOMContentLoaded', function () {
     if (noResultsEl) noResultsEl.hidden = true;
     gridEl.hidden = false;
 
-    // Group the deals by category so each category gets its own
-    // heading followed by a grid of its cards.
     var groupOrder = [];
     var groups = {};
     deals.forEach(function (deal) {
       var key = deal.category || '';
-      if (!groups[key]) {
-        groups[key] = [];
-        groupOrder.push(key);
-      }
+      if (!groups[key]) { groups[key] = []; groupOrder.push(key); }
       groups[key].push(deal);
     });
 
@@ -148,59 +151,163 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
     gridEl.innerHTML = groupOrder.map(function (category) {
-      var cardsHtml = groups[category].map(renderDealCard).join('');
-      var headingHtml = category ?
-        '<h2 class="deals-group__heading">' + escapeHtml(category) + '</h2>' : '';
+      var cardsHtml = groups[category].map(function (deal) {
+        return renderDealCard(deal, allDeals.indexOf(deal));
+      }).join('');
+      var headingHtml = category
+        ? '<h2 class="deals-group__heading">' + escapeHtml(category) + '</h2>'
+        : '';
       return '<div class="deals-group">' + headingHtml +
         '<div class="card-grid card-grid--3">' + cardsHtml + '</div></div>';
     }).join('');
+
+    // Wire up card clicks
+    gridEl.querySelectorAll('.deal-card').forEach(function (card) {
+      card.addEventListener('click', function () {
+        var idx = parseInt(card.getAttribute('data-deal-index'), 10);
+        if (allDeals[idx]) openModal(allDeals[idx]);
+      });
+    });
   }
 
-  function renderDealCard(deal) {
-    var html = '<div class="card deal-card">';
+  /* ── Compact card (preview only) ── */
+  function renderDealCard(deal, index) {
+    var preview = deal.description.length > PREVIEW_LENGTH
+      ? deal.description.slice(0, PREVIEW_LENGTH).replace(/\s\S*$/, '') + '…'
+      : deal.description;
 
-    var imageInner = '';
-    if (deal.imageUrl) {
-      imageInner = '<img src="' + escapeAttr(deal.imageUrl) + '" alt="' +
+    var imageInner = deal.imageUrl
+      ? '<img src="' + escapeAttr(deal.imageUrl) + '" alt="' +
         escapeAttr(deal.title + ' logo') + '" loading="lazy" ' +
-        'onerror="this.style.display=\'none\'; this.nextElementSibling.style.display=\'flex\';">' +
-        '<div class="placeholder" style="display:none;">Image coming soon</div>';
-    } else {
-      imageInner = '<div class="placeholder">Image coming soon</div>';
-    }
+        'onerror="this.style.display=\'none\';this.nextElementSibling.style.display=\'flex\';">' +
+        '<div class="placeholder" style="display:none;">Image coming soon</div>'
+      : '<div class="placeholder">Image coming soon</div>';
 
-    html += '<div class="deal-card__image-wrap">';
-    if (deal.link) {
-      html += '<a href="' + escapeAttr(deal.link) + '" target="_blank" rel="noopener" aria-label="' +
-        escapeAttr('Visit ' + deal.title + ' website') + '">' + imageInner + '</a>';
-    } else {
-      html += imageInner;
-    }
-    html += '</div>';
-
-    html += '<h3>' + escapeHtml(deal.title) + '</h3>';
-
-    if (deal.shortDescription) {
-      html += '<p class="deal-card__tagline">' + escapeHtml(deal.shortDescription) + '</p>';
-    }
-
-    if (deal.description) {
-      html += '<p>' + escapeHtml(deal.description) + '</p>';
-    }
-
-    if (deal.promo) {
-      html += '<p class="deal-card__promo">' + escapeHtml(deal.promo) + '</p>';
-    }
-
-    if (deal.link) {
-      html += '<a class="btn btn-secondary" href="' + escapeAttr(deal.link) +
-        '" target="_blank" rel="noopener">View Deal</a>';
-    }
-
-    html += '</div>';
-    return html;
+    return '<button type="button" class="card deal-card" ' +
+      'data-deal-index="' + index + '" aria-haspopup="dialog">' +
+      '<div class="deal-card__image-wrap">' + imageInner + '</div>' +
+      '<h3>' + escapeHtml(deal.title) + '</h3>' +
+      (deal.shortDescription
+        ? '<p class="deal-card__tagline">' + escapeHtml(deal.shortDescription) + '</p>'
+        : '') +
+      (preview
+        ? '<p class="deal-card__preview">' + escapeHtml(preview) + '</p>'
+        : '') +
+      '<span class="deal-card__cta">View details &rarr;</span>' +
+      '</button>';
   }
 
+  /* ── Detail modal (injected once) ── */
+  function injectModal() {
+    if (document.getElementById('dealModal')) return;
+
+    var modal = document.createElement('div');
+    modal.className = 'modal deal-modal';
+    modal.id = 'dealModal';
+    modal.setAttribute('role', 'dialog');
+    modal.setAttribute('aria-modal', 'true');
+    modal.setAttribute('aria-labelledby', 'dealModalTitle');
+    modal.innerHTML =
+      '<div class="modal__backdrop" data-deal-close></div>' +
+      '<div class="modal__dialog">' +
+        '<button class="modal__close" id="dealModalClose" aria-label="Close" data-deal-close>&times;</button>' +
+        '<div class="deal-modal__logo"><img id="dealModalLogo" src="" alt=""></div>' +
+        '<h2 class="modal__title" id="dealModalTitle"></h2>' +
+        '<p class="deal-modal__tagline" id="dealModalTagline"></p>' +
+        '<p id="dealModalDescription"></p>' +
+        '<p class="deal-card__promo" id="dealModalPromo"></p>' +
+        '<div class="link-row" id="dealModalLinkRow">' +
+          '<a class="btn btn-primary" id="dealModalLink" href="#" target="_blank" rel="noopener">View Deal &rarr;</a>' +
+        '</div>' +
+      '</div>';
+    document.body.appendChild(modal);
+
+    modal.querySelectorAll('[data-deal-close]').forEach(function (el) {
+      el.addEventListener('click', closeModal);
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
+    });
+  }
+
+  var lastFocused = null;
+
+  function openModal(deal) {
+    var modal = document.getElementById('dealModal');
+    if (!modal) return;
+    lastFocused = document.activeElement;
+
+    var logoWrap = modal.querySelector('.deal-modal__logo');
+    var logoEl = modal.querySelector('#dealModalLogo');
+    var titleEl = modal.querySelector('#dealModalTitle');
+    var taglineEl = modal.querySelector('#dealModalTagline');
+    var descEl = modal.querySelector('#dealModalDescription');
+    var promoEl = modal.querySelector('#dealModalPromo');
+    var linkRow = modal.querySelector('#dealModalLinkRow');
+    var linkEl = modal.querySelector('#dealModalLink');
+
+    if (deal.imageUrl) {
+      logoEl.src = deal.imageUrl;
+      logoEl.alt = deal.title + ' logo';
+      logoWrap.style.display = '';
+    } else {
+      logoWrap.style.display = 'none';
+    }
+
+    titleEl.textContent = deal.title;
+
+    taglineEl.textContent = deal.shortDescription || '';
+    taglineEl.style.display = deal.shortDescription ? '' : 'none';
+
+    descEl.textContent = deal.description || '';
+    descEl.style.display = deal.description ? '' : 'none';
+
+    promoEl.textContent = deal.promo || '';
+    promoEl.style.display = deal.promo ? '' : 'none';
+
+    if (deal.link) {
+      linkEl.href = deal.link;
+      linkRow.style.display = '';
+    } else {
+      linkRow.style.display = 'none';
+    }
+
+    modal.classList.add('is-open');
+    document.body.classList.add('menu-open');
+
+    var closeBtn = modal.querySelector('#dealModalClose');
+    if (closeBtn) closeBtn.focus();
+
+    // Focus trap
+    modal.addEventListener('keydown', trapFocus);
+  }
+
+  function closeModal() {
+    var modal = document.getElementById('dealModal');
+    if (!modal) return;
+    modal.classList.remove('is-open');
+    document.body.classList.remove('menu-open');
+    modal.removeEventListener('keydown', trapFocus);
+    if (lastFocused) lastFocused.focus();
+  }
+
+  function trapFocus(e) {
+    if (e.key !== 'Tab') return;
+    var modal = document.getElementById('dealModal');
+    var focusable = Array.prototype.slice.call(modal.querySelectorAll(
+      'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])'
+    )).filter(function (el) { return el.offsetParent !== null; });
+    if (!focusable.length) return;
+    var first = focusable[0];
+    var last = focusable[focusable.length - 1];
+    if (e.shiftKey && document.activeElement === first) {
+      e.preventDefault(); last.focus();
+    } else if (!e.shiftKey && document.activeElement === last) {
+      e.preventDefault(); first.focus();
+    }
+  }
+
+  /* ── Helpers ── */
   function escapeHtml(str) {
     return String(str)
       .replace(/&/g, '&amp;')
@@ -209,8 +316,5 @@ document.addEventListener('DOMContentLoaded', function () {
       .replace(/"/g, '&quot;')
       .replace(/'/g, '&#039;');
   }
-
-  function escapeAttr(str) {
-    return escapeHtml(str);
-  }
+  function escapeAttr(str) { return escapeHtml(str); }
 });

@@ -18,9 +18,10 @@
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
-  var tiersEl = document.getElementById('sponsorTiers');
-  var gridEl = document.getElementById('sponsorGrid');
-  if (!tiersEl && !gridEl) return;
+  var tiersEl  = document.getElementById('sponsorTiers');
+  var gridEl   = document.getElementById('sponsorGrid');
+  var stripEl  = document.getElementById('logoScrollStrip');
+  if (!tiersEl && !gridEl && !stripEl) return;
 
   var TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze'];
   var TIER_LABELS = {
@@ -103,6 +104,26 @@ document.addEventListener('DOMContentLoaded', function () {
 
     tiersEl.innerHTML = html;
   }
+
+  /* ----- Non-clickable scrolling logo strip (agenda + homepage) ----- */
+  if (stripEl) {
+    stripEl.innerHTML = sponsors.map(function (s) {
+      if (s.logoUrl) {
+        return '<div class="logo-scroll-item">' +
+          '<img src="' + escapeAttr(s.logoUrl) + '" alt="' + escapeAttr(s.name) + '" loading="lazy">' +
+          '</div>';
+      }
+      return '<div class="logo-scroll-item logo-scroll-item--text">' + escapeHtml(s.name) + '</div>';
+    }).join('');
+    // Duplicate items for seamless loop (JS in main.js drives the animation)
+    Array.from(stripEl.children).forEach(function (item) {
+      var clone = item.cloneNode(true);
+      clone.setAttribute('aria-hidden', 'true');
+      stripEl.appendChild(clone);
+    });
+  }
+
+  if (!tiersEl && !gridEl) return; // strip-only pages don't need the modal
 
   /* ----- Inject the shared pop-up (once) ----- */
   var modal = document.getElementById('sponsorModal');

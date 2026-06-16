@@ -225,6 +225,37 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -----------------------------
+     Logo scroll strip auto-scroll (agenda + homepage)
+     ----------------------------- */
+  var logoScrollWrap = document.querySelector('.logo-scroll-wrap');
+  if (logoScrollWrap) {
+    var stripPaused = false;
+    var stripSpeed = 0.5; // px per frame — gentle pace
+
+    logoScrollWrap.addEventListener('mouseenter', function () { stripPaused = true; });
+    logoScrollWrap.addEventListener('mouseleave', function () { stripPaused = false; });
+    logoScrollWrap.addEventListener('touchstart', function () { stripPaused = true; }, { passive: true });
+    logoScrollWrap.addEventListener('touchend', function () {
+      setTimeout(function () { stripPaused = false; }, 2000);
+    }, { passive: true });
+
+    var prefersReducedStrip = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReducedStrip) {
+      (function tickStrip() {
+        if (!stripPaused) {
+          logoScrollWrap.scrollLeft += stripSpeed;
+          // Seamless loop: jump back when we've passed the halfway point
+          var track = logoScrollWrap.querySelector('.logo-scroll-track');
+          if (track && logoScrollWrap.scrollLeft >= track.scrollWidth / 2) {
+            logoScrollWrap.scrollLeft = 0;
+          }
+        }
+        requestAnimationFrame(tickStrip);
+      })();
+    }
+  }
+
+  /* -----------------------------
      Join button: fade when footer scrolls into view
      ----------------------------- */
   var fab = document.querySelector('.join-fab');

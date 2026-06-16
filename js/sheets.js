@@ -6,7 +6,7 @@
    breaking the page.
 
    Used by: live.html (Live CE sessions), deals.html (Deals),
-   conference-agenda.html (Agenda). Each page calls loadSheet() with its
+   agenda.html (Agenda). Each page calls loadSheet() with its
    own CSV URL, container, and render function.
 
    Requires Papa Parse (loaded via cdnjs on pages that use this).

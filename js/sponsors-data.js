@@ -1,7 +1,7 @@
 /* =========================================================
    Dental Wisdom Conference — Sponsor logos
    Powers the scrolling sponsor strip at the bottom of
-   conference-agenda.html. No Google Sheet — Ben tells Claude about
+   agenda.html. No Google Sheet — Ben tells Claude about
    sponsor changes (add/remove/update) and Claude edits
    this file directly.
 

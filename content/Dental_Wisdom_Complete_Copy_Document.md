@@ -250,7 +250,7 @@ We are committed to making the Dental Wisdom Conference and website accessible t
 
 ---
 
-## 3. Want to Sponsor Page (`conference-new-sponsor.html`)
+## 3. Want to Sponsor Page (`sponsor.html`)
 
 **Headline:** Sponsorship Opportunities
 
@@ -323,7 +323,7 @@ Please email info@dentalwisdom.org.
 
 ---
 
-## 4. Want to Lecture Page (`conference-new-speaker.html`)
+## 4. Want to Lecture Page (`lecture.html`)
 
 **Headline:** Lecturing Opportunities
 

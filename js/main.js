@@ -149,4 +149,30 @@ document.addEventListener('DOMContentLoaded', function () {
     }
   }
 
+  /* -----------------------------
+     Footer logo: smooth scroll to top
+     ----------------------------- */
+  var footerLogo = document.querySelector('.footer-logo');
+  if (footerLogo) {
+    footerLogo.addEventListener('click', function(e) {
+      e.preventDefault();
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* -----------------------------
+     Join button: fade when footer scrolls into view
+     ----------------------------- */
+  var fab = document.querySelector('.join-fab');
+  var siteFooter = document.querySelector('.site-footer');
+  if (fab && siteFooter && 'IntersectionObserver' in window) {
+    var footerObserver = new IntersectionObserver(function(entries) {
+      entries.forEach(function(entry) {
+        fab.classList.toggle('join-fab--hidden', entry.isIntersecting);
+      });
+    }, { threshold: 0 });
+    footerObserver.observe(siteFooter);
+  }
+
 });

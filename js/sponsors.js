@@ -2,7 +2,7 @@
    Dental Wisdom Conference — Sponsor logo strip
    Reads from window.SPONSORS_DATA (js/sponsors-data.js) and
    builds an auto-scrolling strip of sponsor logos for
-   conference-agenda.html. The list is duplicated so the CSS marquee
+   agenda.html. The list is duplicated so the CSS marquee
    animation can loop seamlessly; the duplicate copy is
    hidden from assistive tech.
 

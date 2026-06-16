@@ -10,7 +10,7 @@
   <meta property="og:title" content="Want to Sponsor? | Dental Wisdom">
   <meta property="og:description" content="Information for businesses interested in sponsoring the Dental Wisdom Conference — coming soon.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dentalwisdom.org/conference-new-sponsor.html">
+  <meta property="og:url" content="https://dentalwisdom.org/sponsor.html">
   <!-- TODO: replace with a real 1200x630 social share image once available -->
   <meta property="og:image" content="images/social-share.jpg">
 
@@ -30,9 +30,8 @@
   <!-- ===================== HEADER (shared on every page) ===================== -->
   <header class="site-header">
     <div class="container site-header__bar">
-      <a class="site-logo" href="index.html">
-        <span class="site-logo__section">Conference</span>
-        <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
+      <a class="site-logo site-logo--plain" href="index.html">
+        <img class="site-logo__mark" src="images/dental-wisdom-logo.svg" alt="Dental Wisdom" width="100" height="31">
       </a>
 
       <nav class="site-nav" aria-label="Primary">
@@ -66,7 +65,7 @@
   </div>
 
   <!-- No conference sub-navigation on this page (sub-nav appears only on
-       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+       index.html, agenda.html, speakers.html, conference-faq.html per CLAUDE.md) -->
 
   <main id="main">
 
@@ -78,10 +77,9 @@
         </div>
         <div class="lede text-center" data-reveal>
           <!-- TODO: page content not yet provided. SITE_SPEC §5 describes a separate
-               conference-sponsors.html (view-only list of confirmed sponsors, now built
-               as a placeholder) and a sponsor-faq.html (FAQ + inquiry form for prospective
-               sponsors) — confirm with Ben whether this page should merge that content or
-               link out to those pages once built. -->
+               sponsors.html (view-only list of confirmed sponsors) and a sponsor-faq.html
+               (FAQ + inquiry form for prospective sponsors) — confirm with Ben whether this
+               page should merge that content or link out to those pages once built. -->
           <p class="placeholder" role="status">Sponsorship information coming soon. In the meantime, email us at <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a>.</p>
         </div>
       </div>
@@ -90,69 +88,59 @@
   </main>
 
   <!-- ===================== FOOTER (shared on every page) ===================== -->
-  <!-- ===================== FOOTER (shared on every page) ===================== -->
   <footer class="site-footer">
     <div class="container">
       <div class="footer-grid">
-
-        <!-- Column 1: Brand -->
-        <div class="footer-brand">
-          <a class="footer-logo" href="#" aria-label="Back to top of page">
-            <img src="images/footer-logo-white-trimmed.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
-          </a>
+        <div>
+          <h2>Dental Wisdom</h2>
           <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
           <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
         </div>
-
-        <!-- Column 2: three stacked groups -->
-        <div class="footer-stack">
-          <div>
-            <h3>Dental Wisdom WhatsApp</h3>
-            <ul class="footer-links">
-              <li><a href="whatsapp.html">Join the Group</a></li>
-              <li><a href="whatsapp-policies.html">Group Policies</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Dental Wisdom Live</h3>
-            <ul class="footer-links">
-              <li><a href="live.html">Overview</a></li>
-              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
-            </ul>
-          </div>
-          <div>
-            <h3>Dental Wisdom Deals</h3>
-            <ul class="footer-links">
-              <li><a href="deals.html">Browse Deals</a></li>
-              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
-            </ul>
-          </div>
-        </div>
-
-        <!-- Column 3: Conference -->
         <div>
           <h3>Dental Wisdom Conference</h3>
           <ul class="footer-links">
             <li><a href="index.html">Overview</a></li>
-            <li><a href="conference-agenda.html">Agenda</a></li>
-            <li><a href="conference-speakers.html">Speakers</a></li>
-            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="agenda.html">Agenda</a></li>
+            <li><a href="speakers.html">Speakers</a></li>
             <li><a href="conference-faq.html">FAQs</a></li>
-            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
-            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+            <li><a href="sponsor.html" aria-current="page">Want to Sponsor?</a></li>
+            <li><a href="lecture.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+        <div class="footer-group">
+          <h3>Community</h3>
+          <div class="footer-subgroup">
+            <h4>Dental Wisdom Live</h4>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-present-sponsor.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup">
+            <h4>Dental Wisdom Deals</h4>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+            </ul>
+          </div>
+          <div class="footer-subgroup">
+            <h4>WhatsApp Group</h4>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3>Site</h3>
+          <ul class="footer-links">
+            <li><a href="terms.html">Terms &amp; Conditions</a></li>
+            <li><a href="privacy.html">Privacy Policy</a></li>
+            <li><a href="conference-faq.html#accessibility">Accessibility</a></li>
           </ul>
         </div>
       </div>
-
       <div class="footer-bottom">
         <span>&copy; 2026 Dental Wisdom. All rights reserved.</span>
-        <nav class="footer-legal" aria-label="Legal">
-          <a href="terms.html">Terms &amp; Conditions</a>
-          <span aria-hidden="true">•</span>
-          <a href="privacy.html">Privacy Policy</a>
-          <span aria-hidden="true">•</span>
-          <a href="conference-faq.html#accessibility">Accessibility</a>
-        </nav>
+        <a href="conference-faq.html#accessibility">Accessibility</a>
       </div>
     </div>
   </footer>

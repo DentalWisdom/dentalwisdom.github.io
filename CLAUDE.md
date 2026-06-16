@@ -19,7 +19,7 @@ Ben is the sole editor and not a developer. Explain any manual step he must take
 Tokens as CSS variables in `:root` (starting values in spec §2 — tune in Session 1, then frozen). Vibe: calm luxury, warm Jewish community, premium but approachable. Generous whitespace, large Playfair headlines, soft sand/ivory section bands, sea-glass and coral accents used sparingly. Motion: subtle only — IntersectionObserver fade-up on scroll, gentle card lifts, smooth modal entrance. Respect `prefers-reduced-motion`. Never flashy, never salesy.
 
 ## Conventions
-- Header, footer, floating Join button: identical markup on every page. Conference sub-nav (Overview • Agenda • Speakers • FAQ • Register) appears ONLY on index.html, conference-agenda.html, conference-speakers.html, conference-faq.html.
+- Header, footer, floating Join button: identical markup on every page. Conference sub-nav (Overview • Agenda • Speakers • FAQ • Register) appears ONLY on index.html, agenda.html, speakers.html, conference-faq.html.
 - Any change to a shared element must be applied to every page in the same session — grep to verify before finishing.
 - Mobile-first CSS; full-screen overlay menu on mobile per spec. Test mentally at 375px and 1280px.
 - Speakers page: 16 static hand-edited cards (name, specialty, short bio, sample course + time) opening a modal. Keep each card's markup self-contained so adding/removing a speaker is a copy-paste of one block.

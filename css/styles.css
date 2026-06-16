@@ -695,6 +695,7 @@ body.menu-open {
   padding: var(--space-lg) var(--space-md);
   text-align: center;
   margin-top: var(--space-lg);
+  color: var(--color-ink); /* reset inherited white */
 }
 
 .conf-pricing-eyebrow {
@@ -740,7 +741,7 @@ body.menu-open {
 
 .conf-photo-grid img {
   width: 100%;
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 3 / 2;
   object-fit: cover;
   border-radius: var(--radius-sm);
   display: block;

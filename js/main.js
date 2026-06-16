@@ -150,6 +150,31 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -----------------------------
+     FAQ Accordion
+     ----------------------------- */
+  document.querySelectorAll('.faq-item__trigger').forEach(function (trigger) {
+    var panel = document.getElementById(trigger.getAttribute('aria-controls'));
+    if (!panel) return;
+
+    trigger.addEventListener('click', function () {
+      var expanded = trigger.getAttribute('aria-expanded') === 'true';
+      // Collapse all in same list
+      var list = trigger.closest('.faq-list');
+      if (list) {
+        list.querySelectorAll('.faq-item__trigger').forEach(function (t) {
+          t.setAttribute('aria-expanded', 'false');
+          var p = document.getElementById(t.getAttribute('aria-controls'));
+          if (p) p.setAttribute('aria-hidden', 'true');
+        });
+      }
+      if (!expanded) {
+        trigger.setAttribute('aria-expanded', 'true');
+        panel.setAttribute('aria-hidden', 'false');
+      }
+    });
+  });
+
+  /* -----------------------------
      Footer logo: smooth scroll to top
      ----------------------------- */
   var footerLogo = document.querySelector('.footer-logo');

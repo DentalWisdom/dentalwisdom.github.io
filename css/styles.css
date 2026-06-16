@@ -1697,52 +1697,6 @@ body.menu-open {
   color: var(--color-coral);
 }
 
-/* Tiered sponsor display (conference-sponsors.html) */
-.sponsor-tier {
-  margin-top: var(--space-2xl);
-}
-
-.sponsor-tier:first-child {
-  margin-top: var(--space-lg);
-}
-
-.sponsor-tier__label {
-  text-align: center;
-  font-family: var(--font-heading);
-  text-transform: uppercase;
-  letter-spacing: 0.12em;
-  font-size: 0.8rem;
-  color: var(--color-text-muted);
-  margin-bottom: var(--space-md);
-}
-
-.sponsor-tier__label::after {
-  content: "";
-  display: block;
-  width: 48px;
-  height: 2px;
-  margin: var(--space-xs) auto 0;
-  background-color: var(--color-coral);
-  border-radius: 2px;
-}
-
-.sponsor-tier__grid {
-  display: grid;
-  gap: var(--space-md);
-  justify-content: center;
-}
-
-/* Higher tiers show larger logos / wider cards */
-.sponsor-tier__grid--platinum { grid-template-columns: repeat(auto-fit, minmax(190px, 230px)); }
-.sponsor-tier__grid--gold     { grid-template-columns: repeat(auto-fit, minmax(165px, 195px)); }
-.sponsor-tier__grid--silver   { grid-template-columns: repeat(auto-fit, minmax(140px, 165px)); }
-.sponsor-tier__grid--bronze   { grid-template-columns: repeat(auto-fit, minmax(120px, 145px)); }
-
-.sponsor-tier__grid--platinum .sponsor-card__logo { height: 120px; }
-.sponsor-tier__grid--gold     .sponsor-card__logo { height: 96px; }
-.sponsor-tier__grid--silver   .sponsor-card__logo { height: 78px; }
-.sponsor-tier__grid--bronze   .sponsor-card__logo { height: 62px; }
-
 /* Sponsor pop-up: logo header above the reused .modal styling */
 .sponsor-modal__logo {
   display: flex;

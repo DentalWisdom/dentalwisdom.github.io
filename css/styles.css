@@ -732,26 +732,32 @@ body.menu-open {
   text-align: center;
 }
 
-/* 2×2 photo grid */
+/* Asymmetric 2-column photo mosaic */
 .conf-photo-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
   gap: 0.75rem;
 }
 
-.conf-photo-grid img {
+.conf-photo-col {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.conf-photo-col img {
   width: 100%;
-  aspect-ratio: 4 / 3;
   object-fit: cover;
   border-radius: var(--radius-sm);
   display: block;
+  flex-shrink: 0;
 }
 
-/* Bottom row photos slightly taller, matching mockup */
-.conf-photo-grid img:nth-child(3),
-.conf-photo-grid img:nth-child(4) {
-  aspect-ratio: 3 / 2;
-}
+/* Short photos (top-left, bottom-right) */
+.conf-photo--short { height: 200px; }
+
+/* Tall photos (top-right, bottom-left) */
+.conf-photo--tall  { height: 300px; }
 
 /* Pricing block (legacy — kept for other pages) */
 .pricing-grid {

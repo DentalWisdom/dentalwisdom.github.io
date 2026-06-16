@@ -61,6 +61,27 @@ document.addEventListener('DOMContentLoaded', function () {
   var tabButtons = Array.prototype.slice.call(tabsEl.querySelectorAll('[role="tab"]'));
   var panels = Array.prototype.slice.call(panelsEl.querySelectorAll('[role="tabpanel"]'));
 
+  // Build prev/next arrow nav below the panels
+  var navEl = document.createElement('div');
+  navEl.className = 'agenda-day-nav';
+  navEl.setAttribute('aria-label', 'Navigate between days');
+  navEl.innerHTML =
+    '<button type="button" class="agenda-day-nav__btn agenda-day-nav__prev" id="agendaPrev" aria-label="Previous day">' +
+      '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 16 7 10 13 4"/></svg>' +
+      '<span>Previous day</span>' +
+    '</button>' +
+    '<span class="agenda-day-nav__label" id="agendaDayLabel" aria-live="polite"></span>' +
+    '<button type="button" class="agenda-day-nav__btn agenda-day-nav__next" id="agendaNext" aria-label="Next day">' +
+      '<span>Next day</span>' +
+      '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="7 4 13 10 7 16"/></svg>' +
+    '</button>';
+  panelsEl.parentNode.insertBefore(navEl, panelsEl.nextSibling);
+
+  var prevBtn = document.getElementById('agendaPrev');
+  var nextBtn = document.getElementById('agendaNext');
+  var dayLabel = document.getElementById('agendaDayLabel');
+  var currentIndex = 0;
+
   tabButtons.forEach(function (tab, index) {
     tab.addEventListener('click', function () {
       selectTab(index);
@@ -87,14 +108,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  prevBtn.addEventListener('click', function () {
+    if (currentIndex > 0) { selectTab(currentIndex - 1); }
+  });
+
+  nextBtn.addEventListener('click', function () {
+    if (currentIndex < tabButtons.length - 1) { selectTab(currentIndex + 1); }
+  });
+
   function selectTab(index) {
+    currentIndex = index;
     tabButtons.forEach(function (tab, i) {
       var isSelected = i === index;
       tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
       tab.setAttribute('tabindex', isSelected ? '0' : '-1');
       panels[i].hidden = !isSelected;
     });
+    dayLabel.textContent = dayOrder[index];
+    prevBtn.disabled = index === 0;
+    nextBtn.disabled = index === tabButtons.length - 1;
   }
+
+  // Initialise arrow nav
+  selectTab(0);
 
   function renderAgendaItem(item) {
     var title = (item.title || '').trim();

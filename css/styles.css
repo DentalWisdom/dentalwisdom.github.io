@@ -1646,6 +1646,52 @@ body.menu-open {
   }
 }
 
+/* ── Agenda day prev/next nav ─────────────────────────── */
+.agenda-day-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--space-md);
+  margin-top: var(--space-lg);
+  padding-top: var(--space-md);
+  border-top: 1px solid var(--color-border);
+}
+
+.agenda-day-nav__label {
+  font-family: var(--font-heading);
+  font-size: var(--fs-lg);
+  color: var(--color-text);
+  text-align: center;
+  flex: 1;
+}
+
+.agenda-day-nav__btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  background: none;
+  border: 1.5px solid var(--color-border);
+  border-radius: var(--radius-sm);
+  color: var(--color-primary);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
+  transition: background var(--transition-fast), border-color var(--transition-fast);
+}
+
+.agenda-day-nav__btn:hover:not(:disabled) {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: #fff;
+}
+
+.agenda-day-nav__btn:disabled {
+  opacity: 0.35;
+  cursor: default;
+}
+
+/* ─────────────────────────────────────────────────────── */
 .deals-suggest {
   text-align: center;
   color: var(--color-text-muted);

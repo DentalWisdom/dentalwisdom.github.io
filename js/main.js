@@ -187,6 +187,44 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -----------------------------
+     Gallery auto-scroll
+     ----------------------------- */
+  var gallery = document.querySelector('.gallery');
+  if (gallery) {
+    var paused = false;
+    var speed = 0.6; // px per frame
+
+    gallery.addEventListener('mouseenter', function () { paused = true; });
+    gallery.addEventListener('mouseleave', function () { paused = false; });
+    gallery.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+    gallery.addEventListener('touchend', function () {
+      setTimeout(function () { paused = false; }, 2000);
+    }, { passive: true });
+
+    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    if (!prefersReduced) {
+      (function tick() {
+        if (!paused) {
+          gallery.scrollLeft += speed;
+          // When we've scrolled past the halfway point, jump back to start seamlessly
+          if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
+            gallery.scrollLeft = 0;
+          }
+        }
+        requestAnimationFrame(tick);
+      })();
+
+      // Duplicate items so the loop is seamless
+      var items = Array.from(gallery.children);
+      items.forEach(function (item) {
+        var clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        gallery.appendChild(clone);
+      });
+    }
+  }
+
+  /* -----------------------------
      Join button: fade when footer scrolls into view
      ----------------------------- */
   var fab = document.querySelector('.join-fab');

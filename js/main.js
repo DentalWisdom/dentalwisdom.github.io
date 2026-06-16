@@ -203,6 +203,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
     if (!prefersReduced) {
+      // Duplicate items first so the loop is seamless
+      var items = Array.from(gallery.children);
+      items.forEach(function (item) {
+        var clone = item.cloneNode(true);
+        clone.setAttribute('aria-hidden', 'true');
+        gallery.appendChild(clone);
+      });
+
       (function tick() {
         if (!paused) {
           gallery.scrollLeft += speed;
@@ -213,14 +221,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         requestAnimationFrame(tick);
       })();
-
-      // Duplicate items so the loop is seamless
-      var items = Array.from(gallery.children);
-      items.forEach(function (item) {
-        var clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        gallery.appendChild(clone);
-      });
     }
   }
 

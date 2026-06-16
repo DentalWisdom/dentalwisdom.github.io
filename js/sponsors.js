@@ -72,6 +72,22 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* ----- Tiered layout (Sponsors page) ----- */
+
+  // Card widths (px) and ideal max columns per tier
+  var TIER_CARD_W  = { platinum: 230, gold: 195, silver: 165, bronze: 145 };
+  var TIER_MAX_COL = { platinum: 3,   gold: 4,   silver: 5,   bronze: 6   };
+  var GRID_GAP = 24; // matches --space-md
+
+  // Find the best column count so no row ends up with exactly 1 card.
+  // Tries from maxCols downward; accepts a remainder of 0 or ≥ 2.
+  function bestCols(n, maxCols) {
+    for (var c = maxCols; c >= 2; c--) {
+      var rem = n % c;
+      if (rem === 0 || rem >= 2) return c;
+    }
+    return Math.min(n, maxCols);
+  }
+
   if (tiersEl) {
     var html = '';
     var used = {};
@@ -83,9 +99,13 @@ document.addEventListener('DOMContentLoaded', function () {
       if (!inTier.length) return;
       inTier.forEach(function (o) { used[o.i] = true; });
 
+      var cols   = bestCols(inTier.length, TIER_MAX_COL[tier] || 4);
+      var cardW  = TIER_CARD_W[tier] || 165;
+      var maxW   = cols * cardW + (cols - 1) * GRID_GAP;
+
       html += '<section class="sponsor-tier">' +
         '<p class="sponsor-tier__label">' + escapeHtml(TIER_LABELS[tier]) + '</p>' +
-        '<div class="sponsor-tier__grid sponsor-tier__grid--' + tier + '">' +
+        '<div class="sponsor-tier__grid sponsor-tier__grid--' + tier + '" style="max-width:' + maxW + 'px">' +
         inTier.map(function (o) { return cardHtml(o.s, o.i); }).join('') +
         '</div></section>';
     });
@@ -95,9 +115,11 @@ document.addEventListener('DOMContentLoaded', function () {
       .map(function (s, i) { return { s: s, i: i }; })
       .filter(function (o) { return !used[o.i]; });
     if (leftovers.length) {
+      var lcols  = bestCols(leftovers.length, 4);
+      var lmaxW  = lcols * 165 + (lcols - 1) * GRID_GAP;
       html += '<section class="sponsor-tier">' +
         '<p class="sponsor-tier__label">Our Sponsors</p>' +
-        '<div class="sponsor-tier__grid sponsor-tier__grid--silver">' +
+        '<div class="sponsor-tier__grid sponsor-tier__grid--silver" style="max-width:' + lmaxW + 'px">' +
         leftovers.map(function (o) { return cardHtml(o.s, o.i); }).join('') +
         '</div></section>';
     }

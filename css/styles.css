@@ -683,7 +683,7 @@ body.menu-open {
   }
 }
 
-.conf-overview-left p {
+.conf-overview-left > p {
   color: rgba(255,255,255,0.85);
   line-height: 1.75;
   margin-bottom: 1em;

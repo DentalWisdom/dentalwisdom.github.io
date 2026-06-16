@@ -865,6 +865,10 @@ body.menu-open {
 /* -----------------------------
    8. Gallery / carousel
    ----------------------------- */
+.logo-scroll-wrap:has(.gallery-photo) .logo-scroll-track {
+  animation-duration: 120s;
+}
+
 .logo-scroll-item.gallery-photo {
   width: 320px;
   height: 240px;

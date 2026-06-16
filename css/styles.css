@@ -865,6 +865,23 @@ body.menu-open {
 /* -----------------------------
    8. Gallery / carousel
    ----------------------------- */
+.logo-scroll-item.gallery-photo {
+  width: 320px;
+  height: 240px;
+  border-radius: 14px;
+  overflow: hidden;
+  flex-shrink: 0;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+.logo-scroll-item.gallery-photo img {
+  width: 320px;
+  height: 240px;
+  object-fit: cover;
+  display: block;
+}
 .gallery {
   overflow: hidden;
   width: 100%;

@@ -109,12 +109,22 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   prevBtn.addEventListener('click', function () {
-    if (currentIndex > 0) { selectTab(currentIndex - 1); }
+    if (currentIndex > 0) { selectTab(currentIndex - 1); scrollToTabs(); }
   });
 
   nextBtn.addEventListener('click', function () {
-    if (currentIndex < tabButtons.length - 1) { selectTab(currentIndex + 1); }
+    if (currentIndex < tabButtons.length - 1) { selectTab(currentIndex + 1); scrollToTabs(); }
   });
+
+  function scrollToTabs() {
+    var offset = tabsEl.getBoundingClientRect().top + window.pageYOffset - 16;
+    // account for sticky header (and sub-nav if present)
+    var header = document.querySelector('.site-header');
+    var subnav = document.querySelector('.sub-nav');
+    if (header) offset -= header.offsetHeight;
+    if (subnav) offset -= subnav.offsetHeight;
+    window.scrollTo({ top: offset, behavior: 'smooth' });
+  }
 
   function selectTab(index) {
     currentIndex = index;

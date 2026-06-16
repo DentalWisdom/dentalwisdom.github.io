@@ -1040,7 +1040,71 @@ body.menu-open {
 }
 
 /* -----------------------------
-   11. Footer
+   11. Accordion (Conference Details)
+   ----------------------------- */
+
+.accordion {
+  border-top: 1px solid var(--color-border, #e0d8cc);
+  margin-bottom: var(--space-lg);
+}
+
+.accordion details {
+  border-bottom: 1px solid var(--color-border, #e0d8cc);
+}
+
+.accordion summary {
+  list-style: none;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: var(--space-sm) 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.1rem, 2vw, 1.35rem);
+  font-weight: 600;
+  color: var(--color-heading, #2c2c2c);
+  user-select: none;
+}
+
+.accordion summary::-webkit-details-marker { display: none; }
+
+.accordion summary::after {
+  content: '+';
+  font-size: 1.5rem;
+  font-weight: 300;
+  line-height: 1;
+  flex-shrink: 0;
+  transition: transform 0.25s ease;
+  color: var(--color-accent, #5b8e8a);
+}
+
+.accordion details[open] > summary::after {
+  content: '−';
+}
+
+.accordion__body {
+  padding: 0 0 var(--space-md);
+}
+
+.accordion__body p,
+.accordion__body ul,
+.accordion__body li {
+  font-size: 1rem;
+  line-height: 1.7;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .accordion details[open] .accordion__body {
+    animation: accordionOpen 0.2s ease;
+  }
+  @keyframes accordionOpen {
+    from { opacity: 0; transform: translateY(-4px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+}
+
+/* -----------------------------
+   12. Footer
    ----------------------------- */
 .site-footer {
   background-color: var(--color-ink);
@@ -1618,6 +1682,73 @@ body.menu-open {
 .deal-card .btn {
   margin-top: auto;
   align-self: flex-start;
+}
+
+/* Deal card — compact preview + clickable "View details →" */
+.deal-card {
+  cursor: pointer;
+  border: none;
+  text-align: left;
+  width: 100%;
+  background: var(--color-white);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.deal-card:hover,
+.deal-card:focus-visible {
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transform: translateY(-2px);
+  outline: 2px solid var(--color-seaglass);
+  outline-offset: 2px;
+}
+
+.deal-card__preview {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  line-height: 1.5;
+  margin-bottom: var(--space-sm);
+  flex: 1;
+}
+
+.deal-card__cta {
+  display: inline-block;
+  margin-top: auto;
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-seaglass);
+  letter-spacing: 0.02em;
+  transition: color 0.15s ease;
+}
+
+.deal-card:hover .deal-card__cta,
+.deal-card:focus-visible .deal-card__cta {
+  color: var(--color-coral);
+}
+
+/* Deal detail modal */
+.deal-modal .modal__dialog {
+  max-width: 540px;
+}
+
+.deal-modal__logo {
+  text-align: center;
+  margin-bottom: var(--space-md);
+}
+
+.deal-modal__logo img {
+  max-height: 100px;
+  max-width: 240px;
+  object-fit: contain;
+}
+
+.deal-modal__tagline {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: var(--fs-small);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  color: var(--color-text-muted);
+  margin-bottom: var(--space-sm);
 }
 
 /* -----------------------------

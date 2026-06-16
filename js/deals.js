@@ -116,6 +116,7 @@ document.addEventListener('DOMContentLoaded', function () {
         deal.shortDescription.toLowerCase().indexOf(query) !== -1 ||
         deal.category.toLowerCase().indexOf(query) !== -1 ||
         deal.promo.toLowerCase().indexOf(query) !== -1 ||
+        deal.link.toLowerCase().indexOf(query) !== -1 ||
         deal.keywords.toLowerCase().indexOf(query) !== -1;
       return matchesCategory && matchesQuery;
     });

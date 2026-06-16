@@ -2155,16 +2155,18 @@ body.menu-open {
 }
 
 .sponsor-tier__grid {
-  display: grid;
+  display: flex;
+  flex-wrap: wrap;
   gap: var(--space-md);
   justify-content: center;
 }
 
-/* Higher tiers show larger logos / wider cards */
-.sponsor-tier__grid--platinum { grid-template-columns: repeat(auto-fit, minmax(190px, 230px)); }
-.sponsor-tier__grid--gold     { grid-template-columns: repeat(auto-fit, minmax(165px, 195px)); }
-.sponsor-tier__grid--silver   { grid-template-columns: repeat(auto-fit, minmax(140px, 165px)); }
-.sponsor-tier__grid--bronze   { grid-template-columns: repeat(auto-fit, minmax(120px, 145px)); }
+/* Cards in each tier have a fixed width; flex-wrap + justify-content:center
+   gives you 3 per row and naturally centers any orphaned cards on the last row */
+.sponsor-tier__grid--platinum .sponsor-card { width: 230px; }
+.sponsor-tier__grid--gold     .sponsor-card { width: 195px; }
+.sponsor-tier__grid--silver   .sponsor-card { width: 165px; }
+.sponsor-tier__grid--bronze   .sponsor-card { width: 145px; }
 
 .sponsor-tier__grid--platinum .sponsor-card__logo { height: 120px; }
 .sponsor-tier__grid--gold     .sponsor-card__logo { height: 96px; }

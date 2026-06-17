@@ -64,7 +64,7 @@ window.AGENDA_DATA = [
   { day: "Shabbos", time: "11:00 AM", title: "Dvar Torah", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "12:00 PM", title: "Lunch", speaker: "", location: "OVO at The Altair" },
   { day: "Shabbos", time: "3:00 – 4:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
-  { day: "Shabbos", time: "4:00 – 5:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
+  { day: "Shabbos", time: "4:00 – 5:00 PM", title: "Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources", speaker: "Sam Waller, CFP®", speakerUrl: "conference-speakers.html#speaker-sam-waller", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "5:00 – 6:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "6:00 PM", title: "Mincha", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "6:30 PM", title: "Shalosh Seudos & Dental Halacha Shiur", speaker: "Rabbi Dr. David J. Katz", speakerUrl: "conference-speakers.html#speaker-rabbi-david-katz", location: "Shul", ce: true, ceCredits: 1 },

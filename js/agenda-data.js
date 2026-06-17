@@ -66,7 +66,7 @@ window.AGENDA_DATA = [
   { day: "Shabbos", time: "3:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1.5 },
   { day: "Shabbos", time: "4:30 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1.5 },
   { day: "Shabbos", time: "6:00 PM", title: "Mincha", speaker: "", location: "Shul" },
-  { day: "Shabbos", time: "6:30 PM", title: "Shalosh Seudos", speaker: "", location: "Shul" },
+  { day: "Shabbos", time: "6:30 PM", title: "Shalosh Seudos & Dental Halacha Shiur", speaker: "Rabbi Dr. David J. Katz", speakerUrl: "conference-speakers.html#speaker-rabbi-david-katz", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "7:00 PM", title: "Maariv", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "8:30 PM", title: "Closing Party", speaker: "", location: "Atrium" }
 ];

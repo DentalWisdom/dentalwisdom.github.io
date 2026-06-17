@@ -1999,9 +1999,8 @@ body.menu-open {
 }
 
 .agenda-item__sponsor {
-  font-size: var(--fs-small);
+  font-size: 0.9em;
   color: var(--color-slate);
-  margin: 0.15rem 0 0;
   font-style: italic;
 }
 .agenda-item__sponsor-link {

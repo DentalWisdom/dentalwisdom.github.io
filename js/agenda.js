@@ -165,13 +165,14 @@ document.addEventListener('DOMContentLoaded', function () {
         '</div>';
     }
     html += '<div class="agenda-item__details">';
-    html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
+    var titleHtml = escapeHtml(title || 'Untitled session');
     if (sponsor) {
-      var sponsorHtml = sponsor && sponsorUrl
+      var sponsorInline = sponsorUrl
         ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
         : escapeHtml(sponsor);
-      html += '<p class="agenda-item__sponsor">Sponsored by ' + sponsorHtml + '</p>';
+      titleHtml += ' <span class="agenda-item__sponsor">Sponsored by ' + sponsorInline + '</span>';
     }
+    html += '<h3>' + titleHtml + '</h3>';
     if (metaParts.length) {
       html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
     }

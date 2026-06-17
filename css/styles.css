@@ -1999,15 +1999,13 @@ body.menu-open {
 }
 
 .agenda-item__sponsor {
-  font-size: 0.9em;
-  color: var(--color-slate);
-  font-style: italic;
+  font-style: normal;
+  color: var(--color-text);
 }
 .agenda-item__sponsor-link {
-  color: var(--color-coral);
+  color: var(--color-gold);
   text-decoration: none;
-  font-weight: 600;
-  font-style: normal;
+  font-weight: 700;
 }
 .agenda-item__sponsor-link:hover {
   text-decoration: underline;

@@ -1953,6 +1953,15 @@ body.menu-open {
   font-size: 1.1rem;
 }
 
+.agenda-item__speaker-link {
+  color: var(--color-seaglass);
+  text-decoration: none;
+  font-weight: 600;
+}
+.agenda-item__speaker-link:hover {
+  text-decoration: underline;
+}
+
 .agenda-item__meta {
   color: var(--color-text-muted);
   font-size: var(--fs-small);

@@ -146,8 +146,19 @@ document.addEventListener('DOMContentLoaded', function () {
     var title = (item.title || '').trim();
     var time = (item.time || '').trim();
     var speaker = (item.speaker || '').trim();
+    var speakerUrl = (item.speakerUrl || '').trim();
     var location = (item.location || '').trim();
-    var meta = [speaker, location].filter(Boolean).join(' • ');
+
+    // Build speaker string — hyperlink if a speakerUrl is provided
+    var speakerHtml = '';
+    if (speaker) {
+      speakerHtml = speakerUrl
+        ? '<a href="' + escapeHtml(speakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(speaker) + '</a>'
+        : escapeHtml(speaker);
+    }
+
+    var locationHtml = location ? escapeHtml(location) : '';
+    var metaParts = [speakerHtml, locationHtml].filter(Boolean);
 
     var html = '<div class="agenda-item">';
     if (time) {
@@ -155,8 +166,8 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     html += '<div class="agenda-item__details">';
     html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
-    if (meta) {
-      html += '<p class="agenda-item__meta">' + escapeHtml(meta) + '</p>';
+    if (metaParts.length) {
+      html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
     }
     html += '</div></div>';
     return html;

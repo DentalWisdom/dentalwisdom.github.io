@@ -1,0 +1,572 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conference Details — Layout Options 2</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --ivory:      #FAF8F4;
+      --parchment:  #EDE8DF;
+      --sand:       #D4C9B5;
+      --gold:       #B8935A;
+      --gold-light: #D4AA6E;
+      --gold-pale:  #F5ECD9;
+      --coral:      #C97B5A;
+      --sea:        #6B9E96;
+      --ink:        #1C1C1E;
+      --slate:      #5C5C6B;
+      --white:      #FFFFFF;
+      --display: 'Playfair Display', Georgia, serif;
+      --body: 'Inter', system-ui, sans-serif;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    body { font-family: var(--body); color: var(--ink); background: #eae5dc; }
+
+    /* Nav */
+    .nav {
+      position: sticky; top: 0; z-index: 100;
+      background: var(--ink); padding: 0.65rem 1.5rem;
+      display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap;
+    }
+    .nav strong { font-family: var(--display); font-size: 0.85rem; color: var(--gold-light); margin-right: 0.4rem; }
+    .nav a {
+      color: #fff; text-decoration: none; font-size: 0.78rem; font-weight: 500;
+      padding: 0.25rem 0.7rem; border: 1px solid rgba(255,255,255,0.25); border-radius: 2rem;
+    }
+    .nav a:hover { background: rgba(255,255,255,0.12); }
+
+    /* Shared wrappers */
+    .block { padding: 5rem 0; }
+    .block:nth-child(odd)  { background: var(--white); }
+    .block:nth-child(even) { background: var(--ivory); }
+    .wrap { max-width: 1080px; margin: 0 auto; padding: 0 2rem; }
+    .wrap--narrow { max-width: 780px; margin: 0 auto; padding: 0 2rem; }
+
+    .tag {
+      display: block; text-align: center; font-size: 0.65rem; font-weight: 700;
+      letter-spacing: 0.14em; text-transform: uppercase; color: var(--coral);
+      margin-bottom: 0.4rem;
+    }
+    h2.head {
+      font-family: var(--display); font-size: clamp(1.9rem, 4vw, 2.8rem);
+      font-weight: 700; color: var(--ink); text-align: center; line-height: 1.2;
+    }
+    .rule { width: 2.5rem; height: 2px; background: var(--gold); margin: 0.8rem auto 0; }
+
+    p { font-size: 0.95rem; line-height: 1.75; color: var(--slate); margin-bottom: 0.7rem; }
+    p:last-child { margin-bottom: 0; }
+    ul { padding-left: 1.1rem; }
+    ul li { font-size: 0.95rem; line-height: 1.8; color: var(--slate); }
+    strong { color: var(--ink); }
+
+
+    /* ════════════════════════════════
+       OPTION F — Alternating Full-Bleed Bands
+       Each topic = its own band, alternating sand/white,
+       label + big serif title on left, content on right.
+    ════════════════════════════════ */
+    .bands { padding: 0; }
+    .band {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      min-height: 220px;
+    }
+    .band:nth-child(odd)  { background: var(--white); }
+    .band:nth-child(even) { background: var(--gold-pale); }
+    .band__label {
+      padding: 3rem 2.5rem 3rem 3rem;
+      display: flex; flex-direction: column; justify-content: center;
+      border-right: 1px solid var(--parchment);
+    }
+    .band__num {
+      font-family: var(--display); font-size: 3.5rem; font-weight: 700;
+      color: var(--parchment); line-height: 1; margin-bottom: 0.4rem;
+      user-select: none;
+    }
+    .band:nth-child(even) .band__num { color: #e0d4b8; }
+    .band__title {
+      font-family: var(--display); font-size: 1.3rem; font-weight: 600;
+      color: var(--ink); line-height: 1.3;
+    }
+    .band__body {
+      padding: 3rem 3rem 3rem 2.5rem;
+      display: flex; flex-direction: column; justify-content: center;
+    }
+    /* price chips in band */
+    .chips { display: flex; flex-wrap: wrap; gap: 0.6rem; margin: 0.75rem 0; }
+    .chip {
+      background: var(--white); border: 1px solid var(--parchment);
+      border-radius: 0.5rem; padding: 0.5rem 0.9rem;
+      display: flex; flex-direction: column; align-items: center;
+    }
+    .chip .amt { font-family: var(--display); font-size: 1.15rem; font-weight: 700; color: var(--gold); }
+    .chip .lbl { font-size: 0.72rem; color: var(--slate); margin-top: 0.05rem; white-space: nowrap; }
+    .band:nth-child(even) .chip { background: var(--white); }
+    @media (max-width: 660px) {
+      .band { grid-template-columns: 1fr; }
+      .band__label { border-right: none; border-bottom: 1px solid var(--parchment); padding: 2rem 1.5rem 1.5rem; }
+      .band__body { padding: 1.5rem 1.5rem 2rem; }
+    }
+
+
+    /* ════════════════════════════════
+       OPTION G — Editorial Pull-Quote Style
+       Lead with big Playfair sentences,
+       details in smaller supporting text.
+       Single-column, generous whitespace.
+    ════════════════════════════════ */
+    .editorial { display: flex; flex-direction: column; gap: 0; }
+    .ed-item {
+      display: grid; grid-template-columns: 3rem 1fr;
+      gap: 1.5rem; padding: 2.5rem 0;
+      border-top: 1px solid var(--parchment);
+    }
+    .ed-item:last-child { border-bottom: 1px solid var(--parchment); }
+    .ed-item__num {
+      font-family: var(--display); font-style: italic;
+      font-size: 1rem; color: var(--gold); padding-top: 0.3rem; text-align: right;
+    }
+    .ed-item__pull {
+      font-family: var(--display); font-size: 1.25rem; font-weight: 400;
+      color: var(--ink); line-height: 1.45; margin-bottom: 0.75rem;
+    }
+    .ed-item__detail { font-size: 0.88rem; color: var(--slate); line-height: 1.7; }
+    .ed-item__detail p { font-size: 0.88rem; margin-bottom: 0.5rem; }
+    .ed-chips { display: flex; flex-wrap: wrap; gap: 0.5rem; margin: 0.6rem 0; }
+    .ed-chip {
+      background: var(--gold-pale); border: 1px solid #e2d0aa;
+      border-radius: 0.4rem; padding: 0.35rem 0.7rem;
+      font-size: 0.82rem; color: var(--ink);
+    }
+    .ed-chip strong { font-weight: 600; color: var(--gold); }
+
+
+    /* ════════════════════════════════
+       OPTION H — Stat Hero + Supporting Text
+       Lead each section with a massive number
+       or date as the visual anchor.
+    ════════════════════════════════ */
+    .stat-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0; border: 1px solid var(--parchment);
+      border-radius: 1rem; overflow: hidden; margin-bottom: 3rem;
+    }
+    .stat-cell {
+      padding: 2rem 1.5rem; text-align: center;
+      border-right: 1px solid var(--parchment);
+    }
+    .stat-cell:last-child { border-right: none; }
+    .stat-cell__num {
+      font-family: var(--display); font-size: 2.4rem; font-weight: 700;
+      color: var(--gold); line-height: 1;
+    }
+    .stat-cell__label { font-size: 0.78rem; color: var(--slate); margin-top: 0.4rem; font-weight: 500; letter-spacing: 0.04em; }
+
+    .details-below { display: flex; flex-direction: column; gap: 2.5rem; }
+    .detail-row {
+      display: grid; grid-template-columns: 180px 1fr;
+      gap: 2rem; align-items: start;
+    }
+    .detail-row__key {
+      font-size: 0.72rem; font-weight: 700; letter-spacing: 0.1em;
+      text-transform: uppercase; color: var(--gold);
+      padding-top: 0.2rem; line-height: 1.5;
+    }
+    @media (max-width: 600px) {
+      .stat-grid { grid-template-columns: 1fr; }
+      .stat-cell { border-right: none; border-bottom: 1px solid var(--parchment); }
+      .stat-cell:last-child { border-bottom: none; }
+      .detail-row { grid-template-columns: 1fr; gap: 0.4rem; }
+    }
+
+    /* fee compare */
+    .fee-table { width: 100%; border-collapse: collapse; margin: 0.5rem 0; }
+    .fee-table td { padding: 0.55rem 0; border-bottom: 1px solid var(--parchment); font-size: 0.9rem; }
+    .fee-table td:last-child { text-align: right; font-family: var(--display); font-weight: 600; font-size: 1.05rem; color: var(--gold); }
+    .fee-table tr:last-child td { border-bottom: none; }
+
+
+    /* ════════════════════════════════
+       OPTION I — Horizontal scroll cards (mobile-native feel)
+       On desktop shows a neat row; on mobile scrolls.
+    ════════════════════════════════ */
+    .hscroll-outer { overflow-x: auto; padding-bottom: 1rem; -webkit-overflow-scrolling: touch; }
+    .hscroll-track {
+      display: flex; gap: 1.25rem;
+      width: max-content; padding: 0.25rem 0.1rem;
+    }
+    .hcard {
+      width: 320px; flex-shrink: 0;
+      background: var(--white); border-radius: 1rem;
+      border: 1px solid var(--parchment);
+      padding: 1.75rem; display: flex; flex-direction: column; gap: 0.75rem;
+      box-shadow: 0 2px 12px rgba(0,0,0,0.05);
+    }
+    .hcard__category {
+      font-size: 0.65rem; font-weight: 700; letter-spacing: 0.12em;
+      text-transform: uppercase; color: var(--gold);
+    }
+    .hcard__title {
+      font-family: var(--display); font-size: 1.2rem; font-weight: 600;
+      color: var(--ink); line-height: 1.3;
+    }
+    .hcard__body { flex: 1; }
+    .hcard__body p { font-size: 0.88rem; line-height: 1.7; }
+    .hcard hr { border: none; border-top: 1px solid var(--parchment); margin: 0.25rem 0; }
+    .hcard .chips { margin: 0; }
+    .hcard .chip { background: var(--ivory); }
+
+    .scroll-hint {
+      text-align: center; font-size: 0.78rem; color: var(--slate);
+      margin-top: 0.75rem; letter-spacing: 0.03em;
+    }
+
+  </style>
+</head>
+<body>
+
+<nav class="nav">
+  <strong>Options →</strong>
+  <a href="#f">F: Alternating Bands</a>
+  <a href="#g">G: Editorial</a>
+  <a href="#h">H: Stat Hero</a>
+  <a href="#i">I: Card Scroll</a>
+</nav>
+
+
+<!-- ════════════════════════════════════════
+     F — Alternating Full-Bleed Bands
+════════════════════════════════════════ -->
+<div class="block bands" id="f">
+  <div class="wrap" style="padding: 0; max-width: none;">
+    <div style="padding: 3.5rem 2rem 2.5rem; text-align: center; background: var(--white);">
+      <span class="tag">Option F — Alternating Bands</span>
+      <h2 class="head">Conference Details</h2>
+      <div class="rule"></div>
+    </div>
+
+    <div class="band">
+      <div class="band__label">
+        <div class="band__num">01</div>
+        <div class="band__title">Location &amp; Dates</div>
+      </div>
+      <div class="band__body">
+        <p>The Altair Hotel, Bay Harbor Islands, Miami — Wednesday evening <strong>March 3</strong> through Saturday evening <strong>March 6, 2027</strong>. Preferred hotel pricing arranged for all conference attendees; select your room during registration.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="band__label">
+        <div class="band__num">02</div>
+        <div class="band__title">Class Options &amp; CE Credits</div>
+      </div>
+      <div class="band__body">
+        <p>An estimated <strong>20 CE credits</strong> accredited through the AGD. Cross-specialty lectures and hands-on options, with multiple simultaneous sessions when scheduling permits. Topics, speakers and schedule published closer to the event.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="band__label">
+        <div class="band__num">03</div>
+        <div class="band__title">Hotel Accommodations</div>
+      </div>
+      <div class="band__body">
+        <p>Preferred room block at The Altair, exclusively for conference attendees. Select your room during registration — availability is limited. One night deposit required.</p>
+        <div class="chips">
+          <div class="chip"><span class="amt">~$400</span><span class="lbl">Studio King /night</span></div>
+          <div class="chip"><span class="amt">~$400</span><span class="lbl">Studio Queen /night</span></div>
+          <div class="chip"><span class="amt">~$600</span><span class="lbl">1 Bed Suite /night</span></div>
+          <div class="chip"><span class="amt">~$950</span><span class="lbl">2 Bed Suite /night</span></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="band__label">
+        <div class="band__num">04</div>
+        <div class="band__title">Davening &amp; Shabbos</div>
+      </div>
+      <div class="band__body">
+        <p>Daily on-site Minyanim for Shacharis, Mincha and Maariv. Optional Shabbos meals arranged for all conference attendees — indicate your preference during registration.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="band__label">
+        <div class="band__num">05</div>
+        <div class="band__title">Conference Fees — Dentists</div>
+      </div>
+      <div class="band__body">
+        <div class="chips">
+          <div class="chip"><span class="amt">$1,995</span><span class="lbl">Dentist</span></div>
+          <div class="chip"><span class="amt">$1,595</span><span class="lbl">Dental Resident</span></div>
+          <div class="chip"><span class="amt">$2,995</span><span class="lbl">Vendor Dentist</span></div>
+        </div>
+        <p><strong>Early Bird Pricing</strong> — may increase closer to the event. First 25 hotel guests receive a bottle of wine for Shabbos! Fee includes all lectures, CE, meals, and every evening event Wed–Motzei Shabbos.</p>
+      </div>
+    </div>
+
+    <div class="band">
+      <div class="band__label">
+        <div class="band__num">06</div>
+        <div class="band__title">Conference Fees — Spouses &amp; Children</div>
+      </div>
+      <div class="band__body">
+        <div class="chips">
+          <div class="chip"><span class="amt">$450</span><span class="lbl">Spouse</span></div>
+          <div class="chip"><span class="amt">$100</span><span class="lbl">Child (aged 3+)</span></div>
+        </div>
+        <p>Includes children's activities Thu &amp; Fri, Welcome event for adults, all Glatt Kosher meals, and all evening events through Motzei Shabbos.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     G — Editorial Pull-Quote Style
+════════════════════════════════════════ -->
+<div class="block" id="g">
+  <div class="wrap--narrow">
+    <span class="tag">Option G — Editorial (Playfair-led, single column)</span>
+    <h2 class="head">Conference Details</h2>
+    <div class="rule" style="margin-bottom: 2.5rem;"></div>
+
+    <div class="editorial">
+
+      <div class="ed-item">
+        <div class="ed-item__num">i.</div>
+        <div>
+          <div class="ed-item__pull">The Altair Hotel, Bay Harbor Islands, Miami — March 3–6, 2027.</div>
+          <div class="ed-item__detail">
+            <p>Wednesday evening through Saturday evening. Preferred pricing arranged for all conference attendees. Select your room during registration.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ed-item">
+        <div class="ed-item__num">ii.</div>
+        <div>
+          <div class="ed-item__pull">20 CE credits accredited through the Academy of General Dentistry.</div>
+          <div class="ed-item__detail">
+            <p>Cross-specialty lectures and hands-on options, with multiple simultaneous sessions when scheduling permits. Topics and speakers published closer to the event.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ed-item">
+        <div class="ed-item__num">iii.</div>
+        <div>
+          <div class="ed-item__pull">Preferred room rates at The Altair, exclusively for conference attendees.</div>
+          <div class="ed-item__detail">
+            <div class="ed-chips">
+              <span class="ed-chip"><strong>~$400</strong> Studio King/night</span>
+              <span class="ed-chip"><strong>~$400</strong> Studio Queen/night</span>
+              <span class="ed-chip"><strong>~$600</strong> 1 Bed Suite/night</span>
+              <span class="ed-chip"><strong>~$950</strong> 2 Bed Suite/night</span>
+            </div>
+            <p>Availability is limited — one night deposit required at booking.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ed-item">
+        <div class="ed-item__num">iv.</div>
+        <div>
+          <div class="ed-item__pull">Daily Minyanim on-site. Optional Shabbos meals for all attendees.</div>
+          <div class="ed-item__detail">
+            <p>Shacharis, Mincha and Maariv offered throughout the conference. Indicate your Shabbos meal preference during registration.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="ed-item">
+        <div class="ed-item__num">v.</div>
+        <div>
+          <div class="ed-item__pull">Everything included — from the Welcome event Wednesday evening to Motzei Shabbos.</div>
+          <div class="ed-item__detail">
+            <div class="ed-chips">
+              <span class="ed-chip"><strong>$1,995</strong> Dentist</span>
+              <span class="ed-chip"><strong>$1,595</strong> Dental Resident</span>
+              <span class="ed-chip"><strong>$2,995</strong> Vendor Dentist</span>
+              <span class="ed-chip"><strong>$450</strong> Spouse</span>
+              <span class="ed-chip"><strong>$100</strong> Child (aged 3+)</span>
+            </div>
+            <p><strong>Early Bird Pricing</strong> — may increase closer to the event. First 25 hotel guests receive a bottle of wine for Shabbos! Fee covers all lectures, CE, Glatt Kosher meals, and every evening event.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     H — Stat Hero + Clean Detail Rows
+════════════════════════════════════════ -->
+<div class="block" id="h">
+  <div class="wrap">
+    <span class="tag">Option H — Lead with the Numbers</span>
+    <h2 class="head">Conference Details</h2>
+    <div class="rule" style="margin-bottom: 2.5rem;"></div>
+
+    <!-- Key stats up top -->
+    <div class="stat-grid">
+      <div class="stat-cell">
+        <div class="stat-cell__num">Mar 3–6</div>
+        <div class="stat-cell__label">2027 · Miami</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell__num">~20</div>
+        <div class="stat-cell__label">CE Credits (AGD)</div>
+      </div>
+      <div class="stat-cell">
+        <div class="stat-cell__num">from $1,995</div>
+        <div class="stat-cell__label">Early Bird Registration</div>
+      </div>
+    </div>
+
+    <!-- Supporting detail rows -->
+    <div class="details-below">
+
+      <div class="detail-row">
+        <div class="detail-row__key">Venue</div>
+        <p>The Altair Hotel, Bay Harbor Islands, Miami. Preferred room rates arranged exclusively for conference attendees — select your room during registration.</p>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-row__key">CE &amp; Curriculum</div>
+        <p>~20 CE credits through the AGD. Cross-specialty lectures and hands-on options with multiple simultaneous sessions. Full schedule and speakers published closer to the event.</p>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-row__key">Hotel Rates</div>
+        <div>
+          <table class="fee-table">
+            <tr><td>Studio King</td><td>~$400/night</td></tr>
+            <tr><td>Studio Queen</td><td>~$400/night</td></tr>
+            <tr><td>1 Bed Suite</td><td>~$600/night</td></tr>
+            <tr><td>2 Bed Suite</td><td>~$950/night</td></tr>
+          </table>
+          <p style="margin-top:0.5rem; font-size:0.85rem;">One night deposit required. Availability limited to conference block.</p>
+        </div>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-row__key">Davening &amp; Shabbos</div>
+        <p>Daily on-site Minyanim (Shacharis, Mincha, Maariv). Optional Shabbos meals arranged for all attendees — indicate preference during registration.</p>
+      </div>
+
+      <div class="detail-row">
+        <div class="detail-row__key">Registration Fees</div>
+        <div>
+          <table class="fee-table">
+            <tr><td>Dentist</td><td>$1,995</td></tr>
+            <tr><td>Dental Resident</td><td>$1,595</td></tr>
+            <tr><td>Vendor Dentist</td><td>$2,995</td></tr>
+            <tr><td>Spouse</td><td>$450</td></tr>
+            <tr><td>Child (aged 3+)</td><td>$100</td></tr>
+          </table>
+          <p style="margin-top:0.6rem;"><strong>Early Bird Pricing</strong> — may increase closer to the event. First 25 hotel guests receive a bottle of wine for Shabbos! Fee includes all lectures, CE, Glatt Kosher meals, and every evening event Wed–Motzei Shabbos.</p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════
+     I — Horizontal Scroll Cards
+════════════════════════════════════════ -->
+<div class="block" id="i">
+  <div class="wrap">
+    <span class="tag">Option I — Horizontal Card Scroll</span>
+    <h2 class="head">Conference Details</h2>
+    <div class="rule" style="margin-bottom: 2.5rem;"></div>
+
+    <div class="hscroll-outer">
+      <div class="hscroll-track">
+
+        <div class="hcard">
+          <div class="hcard__category">Location &amp; Dates</div>
+          <div class="hcard__title">The Altair Hotel, Miami</div>
+          <hr>
+          <div class="hcard__body">
+            <p>Bay Harbor Islands — Wednesday evening March 3 through Saturday evening March 6, 2027. Preferred pricing arranged for all attendees.</p>
+          </div>
+        </div>
+
+        <div class="hcard">
+          <div class="hcard__category">CE Credits</div>
+          <div class="hcard__title">~20 CE Credits via AGD</div>
+          <hr>
+          <div class="hcard__body">
+            <p>Cross-specialty lectures and hands-on options. Multiple simultaneous sessions when scheduling permits. Full program published closer to the event.</p>
+          </div>
+        </div>
+
+        <div class="hcard">
+          <div class="hcard__category">Hotel</div>
+          <div class="hcard__title">Preferred Room Block</div>
+          <hr>
+          <div class="hcard__body">
+            <p>Exclusively for conference attendees. Select your room during registration — availability is limited.</p>
+            <div class="chips" style="margin-top:0.75rem;">
+              <div class="chip"><span class="amt">~$400</span><span class="lbl">Studio /night</span></div>
+              <div class="chip"><span class="amt">~$600</span><span class="lbl">1BR Suite /night</span></div>
+              <div class="chip"><span class="amt">~$950</span><span class="lbl">2BR Suite /night</span></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hcard">
+          <div class="hcard__category">Davening &amp; Shabbos</div>
+          <div class="hcard__title">Full Shabbos Experience</div>
+          <hr>
+          <div class="hcard__body">
+            <p>Daily on-site Minyanim for Shacharis, Mincha and Maariv. Optional Shabbos meals arranged for all attendees — indicate preference during registration.</p>
+          </div>
+        </div>
+
+        <div class="hcard">
+          <div class="hcard__category">Registration Fees — Dentists</div>
+          <div class="hcard__title">From $1,595 Early Bird</div>
+          <hr>
+          <div class="hcard__body">
+            <div class="chips">
+              <div class="chip"><span class="amt">$1,995</span><span class="lbl">Dentist</span></div>
+              <div class="chip"><span class="amt">$1,595</span><span class="lbl">Resident</span></div>
+              <div class="chip"><span class="amt">$2,995</span><span class="lbl">Vendor</span></div>
+            </div>
+            <p style="margin-top:0.5rem; font-size:0.85rem;">Includes all lectures, CE, Glatt Kosher meals, and every evening event. First 25 hotel guests receive a bottle of wine for Shabbos!</p>
+          </div>
+        </div>
+
+        <div class="hcard">
+          <div class="hcard__category">Registration Fees — Family</div>
+          <div class="hcard__title">Spouses &amp; Children Welcome</div>
+          <hr>
+          <div class="hcard__body">
+            <div class="chips">
+              <div class="chip"><span class="amt">$450</span><span class="lbl">Spouse</span></div>
+              <div class="chip"><span class="amt">$100</span><span class="lbl">Child (3+)</span></div>
+            </div>
+            <p style="margin-top:0.5rem; font-size:0.85rem;">Includes children's activities, all meals, and all evening events through Motzei Shabbos.</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+    <p class="scroll-hint">← scroll to see all →</p>
+  </div>
+</div>
+
+</body>
+</html>

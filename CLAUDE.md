@@ -1,5 +1,9 @@
 # CLAUDE.md — Dental Wisdom website
 
+## 📌 Reminder for next session
+Ben asked about **removing `.html` from URLs**. The plan: use the folder/index.html pattern (move each `page.html` → `page/index.html`). Doable in one batch but touches all 16 pages + every internal link. Ask Ben if he wants to tackle this before starting other work.
+<!-- REMINDER: clear this note once addressed -->
+
 ## What this is
 Static marketing site for Dental Wisdom (dentalwisdom.org): the 2027 conference (flagship), Dental Wisdom Live monthly CE, partner Deals, plus supporting pages. All requirements and exact copy live in `SITE_SPEC.md` — read it before any work. Exact copy in the spec is final: never rewrite it, only format it. Anything missing gets a visible placeholder plus `<!-- TODO: ... -->`.
 

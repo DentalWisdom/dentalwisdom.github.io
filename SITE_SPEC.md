@@ -12,40 +12,46 @@
 
 ## 1. Site Architecture (Final)
 
-**13 content pages (plus a custom 404)**
+**16 pages built (plus a custom 404)** — updated June 17, 2026
 
-<!-- TODO: Build order below for Speakers/Speaker FAQ/Sponsors/Sponsor FAQ/WhatsApp is provisional — finalize before we reach this part of the build. -->
+| Page                  | File              | Purpose                                              | Update Method     | Status |
+|-----------------------|-------------------|-------------------------------------------------------|-------------------|--------|
+| Main Conference       | `index.html`      | Core 2027 sales + experience page                    | Static HTML       | ✅ Built |
+| Dental Wisdom Live    | `live.html`       | Monthly online CE + calendar                         | Local data file   | ✅ Built |
+| Want to Get Involved? (Live) | `live-get-involved.html` | Companion to Live — sponsorship, giveaways, vendor spotlights, speaker opportunities | Static | ✅ Built |
+| Deals                 | `deals.html`      | Searchable + filterable partner offers               | Local data file   | ✅ Built |
+| Become a Deals Partner | `deals-partner.html` | Companion to Deals — why it was built + how companies can become a partner | Static | ✅ Built |
+| Terms & Conditions    | `terms.html`      | General site/community terms (links to Conference Terms) | Static       | ✅ Built |
+| Conference Terms & Conditions | `conference-terms.html` | Conference-specific legal page (Attendees/Exhibitors) | Static     | ✅ Built |
+| Privacy Policy        | `privacy.html`    | Privacy page                                         | Static            | ✅ Built |
+| Agenda                | `conference-agenda.html` | Full detailed schedule                         | Local data file   | ✅ Built |
+| Speakers              | `conference-speakers.html` | View all speaker profiles + bios             | Static            | ✅ Built |
+| Want to Lecture?      | `conference-new-speaker.html` | FAQ + application for people who want to lecture | Static    | ✅ Built (replaces planned speaker-faq.html) |
+| Sponsors              | `conference-sponsors.html` | View all confirmed sponsors, logos/tiers     | Local data file   | ✅ Built |
+| Want to Sponsor?      | `conference-new-sponsor.html` | FAQ + inquiry for businesses who want to sponsor | Static   | ✅ Built (replaces planned sponsor-faq.html) |
+| Join WhatsApp Group   | `whatsapp.html`   | Simple page with info/link to join the WhatsApp group | Static           | ✅ Built |
+| WhatsApp Policies     | `whatsapp-policies.html` | Group rules and FAQ                           | Static            | ✅ Built |
+| FAQ                   | `conference-faq.html` | Conference FAQ                                   | Static            | ✅ Built |
+| 404                   | `404.html`        | Custom not-found page                                | Static            | ✅ Built |
 
-| Page                  | File              | Purpose                                              | Update Method     | Build Order |
-|-----------------------|-------------------|-------------------------------------------------------|-------------------|-------------|
-| Main Conference       | `index.html`      | Core 2027 sales + experience page                    | Static HTML       | **1st**     |
-| Dental Wisdom Live    | `live.html`       | Monthly online CE + calendar                         | Google Sheet      | 2nd         |
-| Want to Get Involved? (Live) | `live-get-involved.html` | Companion to Live — sponsorship, giveaways, vendor spotlights, speaker opportunities | Static | Built (with Live, 2nd) |
-| Deals                 | `deals.html`      | Searchable + filterable partner offers               | Google Sheet      | 3rd         |
-| Become a Deals Partner | `deals-partner.html` | Companion to Deals — why it was built + how companies can become a partner | Static | Planned — added 2026-06-15 |
-| Giving (MDA)          | `giving.html`     | Tzedaka / Ambulance fundraiser                       | Static            | 4th         |
-| Terms & Conditions    | `terms.html`      | General site/community terms (links to Conference Terms) | Static       | 5th         |
-| Conference Terms & Conditions | `conference-terms.html` | Conference-specific legal page (Attendees/Exhibitors) | Static     | 5th (with Terms) |
-| Privacy Policy        | `privacy.html`    | Privacy page (text in §9)                            | Static            | 5th (with Terms) |
-| Agenda                | `conference-agenda.html` | Full detailed schedule                         | Google Sheet      | 6th         |
-| Speakers              | `conference-speakers.html` | View all speaker profiles + bios             | Static            | 7th         |
-| Speaker FAQ           | `speaker-faq.html`| FAQ + application for people who want to lecture     | Static            | 8th (TBD)   |
-| Sponsors              | `conference-sponsors.html` | View all confirmed sponsors (~10-20 logos/list) | Static          | 9th — Built (placeholder) |
-| Sponsor FAQ           | `sponsor-faq.html`| FAQ + inquiry for businesses who want to sponsor     | Static            | 10th (TBD)  |
-| Join WhatsApp Group   | `whatsapp.html`   | Simple page with info/link to join the WhatsApp group | Static           | 11th (TBD)  |
-| FAQ                   | `conference-faq.html` | Conference FAQ (includes Accessibility)          | Static            | 12th        |
+**Not planned / deferred:**
+- `giving.html` — Giving/MDA page deferred indefinitely; file kept in `_archive/` for reference.
 
 **Top Navigation** (on every page):  
-**Conference** | **Live** | **Deals** | **Giving**
+**Conference** | **Live** | **Deals**
 
-**Footer** (on every page, 4 columns):
-- **Dental Wisdom** — brand blurb + email
-- **The Conference** — Overview, Agenda, Speakers, FAQs, Want to Sponsor?, Want to Lecture?
-- **Programs** — Dental Wisdom Live, Deals, Giving, Join WhatsApp Group
-- **Site** — Terms & Conditions, Privacy Policy, Accessibility
+**Footer** (on every page, 3 content columns + brand):
+- **Dental Wisdom** — brand blurb + email (column 1)
+- **Dental Wisdom WhatsApp** — Join the Group, Group Policies
+- **Dental Wisdom Live** — Overview, Want to Get Involved?
+- **Dental Wisdom Deals** — Browse Deals, Become a Deals Partner
+- **Dental Wisdom Conference** — Overview, Agenda, Speakers, Sponsors, FAQs, Want to Sponsor?, Want to Lecture?
+- Footer bottom bar: © year • Terms & Conditions • Privacy Policy
 
-**Conference Sub-Navigation** (conference pages only — `index.html`, `conference-agenda.html`, `conference-speakers.html`, `conference-faq.html`):
-A slim secondary bar under the main header: Overview • Agenda • Speakers • FAQ • **Register** (accent button). It appears only within the conference section, so Live, Deals, and Giving stay uncluttered.
+No Accessibility link in footer. No Giving section in footer.
+
+**Conference Sub-Navigation** (conference pages only — `index.html`, `conference-agenda.html`, `conference-speakers.html`, `conference-sponsors.html`, `conference-faq.html`):
+A slim secondary bar under the main header: Overview • Agenda • Speakers • **Sponsors** • FAQ • **Register** (accent button).
 
 ---
 
@@ -74,7 +80,7 @@ A slim secondary bar under the main header: Overview • Agenda • Speakers •
   - Simple coral pill, label "Join the Network" (no "For Dentists Only" tag)
   - Opens modal with Jotform (you will build)
   - Modal intro text: "This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates." The "dentists only" criteria is also covered as a question in the Jotform application itself.
-- Consistent footer with Accessibility link
+- Consistent footer (no Accessibility link needed)
 
 ---
 
@@ -100,7 +106,7 @@ A slim secondary bar under the main header: Overview • Agenda • Speakers •
 - **Button**: “Reserve Your Place Today” → `https://pci.jotform.com/form/252998619124166`
 
 ### Conference Flyer Section
-Large, prominent placement right after the hero. Use your existing conference flyer JPG.
+~~Large, prominent placement right after the hero. Use your existing conference flyer JPG.~~ **Removed from index.html — flyer section is not used on the homepage.**
 
 ### Overview + Pricing Section
 **Exact Text** (from your PDF, broken into clean sections):
@@ -344,9 +350,8 @@ Companion page to Dental Wisdom Deals (added to the build plan 2026-06-15, built
 Includes all the detailed content you provided + new drafted items:
 - What happens after I register? (confirmed text)
 - What should I expect as a first-time attendee? (drafted)
-- Accessibility (drafted)
 
-**Accessibility** also has a short discreet link in the footer that jumps to the FAQ item.
+**Note:** Accessibility FAQ item and footer link removed — not needed.
 
 ---
 
@@ -505,10 +510,9 @@ If you have questions about this Privacy Policy or how we handle your informatio
 
 ---
 
-## 10. Accessibility Statement (Added to FAQ + Short Footer Link)
+## 10. ~~Accessibility Statement~~ (Removed — not needed)
 
-**Accessibility**  
-We are committed to making the Dental Wisdom Conference and website accessible to all participants. The venue complies with applicable ADA requirements. We provide reasonable accommodations upon advance written request (at least 30 days prior) to info@dentalwisdom.org.
+~~Accessibility section and footer link have been removed from the site.~~
 
 ---
 

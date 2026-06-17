@@ -157,12 +157,11 @@ document.addEventListener('DOMContentLoaded', function () {
     var classes = 'agenda-item' + (isCE ? ' agenda-item--ce' : '');
     var html = '<div class="' + classes + '">';
     if (time) {
-      html += '<div class="agenda-item__time">' + escapeHtml(time) + '</div>';
+      html += '<div class="agenda-item__time">' + escapeHtml(time) +
+        (isCE ? '<span class="agenda-item__ce-badge">CE Credit</span>' : '') +
+        '</div>';
     }
     html += '<div class="agenda-item__details">';
-    if (isCE) {
-      html += '<span class="agenda-item__ce-badge">CE</span>';
-    }
     html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
     if (metaParts.length) {
       html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';

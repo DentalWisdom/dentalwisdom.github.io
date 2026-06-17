@@ -1969,17 +1969,13 @@ body.menu-open {
 }
 
 .agenda-item__ce-badge {
-  display: inline-block;
+  display: block;
   font-size: 0.65rem;
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   color: var(--color-seaglass);
-  border: 1px solid var(--color-seaglass);
-  border-radius: 3px;
-  padding: 0.1rem 0.4rem;
-  margin-bottom: 0.25rem;
-  vertical-align: middle;
+  margin-top: 0.3rem;
 }
 
 .agenda-item__time {

@@ -18,7 +18,16 @@ Ben is the sole editor and not a developer. Explain any manual step he must take
 - Media: optimized images in `/images` (resize to max 1600px wide, WebP ~80 quality, `loading="lazy"` below the fold). Long videos = YouTube embeds. Hero = muted looping mp4 under ~8MB in `/images` with `autoplay muted loop playsinline` and a poster image; source clip per spec §4.
 
 ## Design system
-Tokens as CSS variables in `:root` (starting values in spec §2 — tune in Session 1, then frozen). Vibe: calm luxury, warm Jewish community, premium but approachable. Generous whitespace, large Playfair headlines, soft sand/ivory section bands, sea-glass and coral accents used sparingly. Motion: subtle only — IntersectionObserver fade-up on scroll, gentle card lifts, smooth modal entrance. Respect `prefers-reduced-motion`. Never flashy, never salesy.
+Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, premium but approachable. Generous whitespace, large Playfair headlines, soft sand/ivory section bands, sea-glass and coral accents used sparingly. Motion: subtle only — IntersectionObserver fade-up on scroll, gentle card lifts, smooth modal entrance. Respect `prefers-reduced-motion`. Never flashy, never salesy.
+
+**Current spacing tokens (tuned June 2026 — do not revert):**
+- `--space-xl: 3.25rem` (was 4rem) — standard section top/bottom padding
+- `--space-2xl: 4rem` (was 5rem) — hero, footer, large gaps
+- `.section--compact` uses `var(--space-lg)` = 2.5rem (fixed — was erroneously identical to `.section`)
+- `.section-heading` margin-bottom: `2rem` (was 2.5rem)
+- `.sponsor-strip-section` has no extra padding-bottom (removed duplicate stacking)
+- `#section-experience` (index.html): padding `1.75rem` top/bottom, bullet list max-width `860px`, item padding `0.85rem`
+- `#section-cta` (index.html): padding `1.5rem`, h2 margin-bottom `1rem`, questions margin-top `0.5rem`, gold line margin-bottom `0.75rem`
 
 ## Conventions
 - Header, footer, floating Join button: identical markup on every page. Conference sub-nav (Overview • Agenda • Speakers • **Sponsors** • FAQ • Register) appears ONLY on index.html, conference-agenda.html, conference-speakers.html, conference-sponsors.html, conference-faq.html.

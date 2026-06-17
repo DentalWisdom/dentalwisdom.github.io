@@ -233,6 +233,10 @@ ul {
   margin: 0 auto var(--space-lg);
 }
 
+.section-heading h1 {
+  font-size: var(--fs-h2);
+}
+
 .section-heading p {
   color: var(--color-text-muted);
 }
@@ -295,7 +299,7 @@ body.has-subnav [id] {
 }
 
 .btn-primary:hover {
-  background-color: #b9512f;
+  background-color: #9e7523;
   color: var(--color-white);
   box-shadow: var(--shadow-card-hover);
 }

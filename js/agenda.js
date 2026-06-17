@@ -142,8 +142,10 @@ document.addEventListener('DOMContentLoaded', function () {
     var speaker    = (item.speaker    || '').trim();
     var speakerUrl = (item.speakerUrl || '').trim();
     var location   = (item.location   || '').trim();
-    var isCE       = !!item.ce;
-    var ceCredits  = item.ceCredits || null;
+    var isCE        = !!item.ce;
+    var ceCredits   = item.ceCredits || null;
+    var sponsor     = (item.sponsor    || '').trim();
+    var sponsorUrl  = (item.sponsorUrl || '').trim();
 
     // Speaker — hyperlink if speakerUrl provided
     var speakerHtml = '';
@@ -164,6 +166,12 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     html += '<div class="agenda-item__details">';
     html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
+    if (sponsor) {
+      var sponsorHtml = sponsor && sponsorUrl
+        ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
+        : escapeHtml(sponsor);
+      html += '<p class="agenda-item__sponsor">Sponsored by ' + sponsorHtml + '</p>';
+    }
     if (metaParts.length) {
       html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
     }

@@ -41,7 +41,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "4:00 – 6:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "6:00 – 6:30 PM", title: "Break (Mincha & Maariv)", speaker: "", location: "Shul" },
   { day: "Thursday", time: "6:30 – 7:30 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
-  { day: "Thursday", time: "8:00 PM", title: "Welcome Party", speaker: "", location: "Atrium" },
+  { day: "Thursday", time: "8:00 PM", title: "Welcome Party", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "conference-sponsors.html" },
 
   // ---------------- Friday ----------------
   { day: "Friday", time: "6:00 – 7:00 AM", title: "Daf Yomi Shiur", speaker: "", location: "Library" },

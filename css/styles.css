@@ -680,6 +680,40 @@ body.menu-open {
   .card-grid--4 { grid-template-columns: repeat(4, 1fr); }
 }
 
+/* ── Live Delivers Cards ── */
+.live-delivers-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-sm);
+  padding: var(--space-md) var(--space-md) var(--space-lg);
+  border-top: 3px solid transparent;
+  transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+}
+
+.live-delivers-card:hover {
+  border-top-color: var(--color-gold-warm);
+}
+
+.live-delivers-icon {
+  color: var(--color-gold-warm);
+  line-height: 0;
+}
+
+.live-delivers-title {
+  font-family: var(--font-heading);
+  font-size: var(--fs-h3);
+  color: var(--color-ink);
+  margin: 0;
+}
+
+.live-delivers-blurb {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  line-height: 1.65;
+  margin: 0;
+}
+
 /* ── Conference Overview Section (navy split layout) ── */
 .conf-overview-section {
   background-color: var(--color-ink);
@@ -1409,7 +1443,7 @@ body.menu-open {
   display: flex;
   justify-content: center;
   margin-top: 0;
-  margin-bottom: 0.4rem;
+  margin-bottom: 1.25rem;
 }
 
 .footer-logo img {

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Want to Sponsor? | Dental Wisdom</title>
+  <meta name="description" content="Sponsor the 2027 Dental Wisdom Conference and connect your brand with a highly engaged community of Jewish dental professionals. Learn about sponsorship opportunities.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Want to Sponsor? | Dental Wisdom">
+  <meta property="og:description" content="Sponsor the 2027 Dental Wisdom Conference and connect your brand with a highly engaged community of Jewish dental professionals. Learn about sponsorship opportunities.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/conference-new-sponsor.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Conference 2027 — cross-specialty dental CE, March 3–6, 2027, Miami">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Want to Sponsor? | Dental Wisdom">
+  <meta name="twitter:description" content="Sponsor the 2027 Dental Wisdom Conference and connect your brand with a highly engaged community of Jewish dental professionals. Learn about sponsorship opportunities.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">Conference</span>
+        <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on this page (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <!-- Hero -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Sponsorship Opportunities</h1>
+          <p>Sponsorship opportunities for the Dental Wisdom Conference are intentionally limited and thoughtfully integrated to preserve the integrity of the experience.</p>
+        </div>
+        <div class="text-center" data-reveal style="margin-top: var(--space-lg);">
+          <a class="btn btn--primary" href="mailto:info@dentalwisdom.org?subject=Dental%20Wisdom%20Conference%20Sponsorship%20Inquiry">Email Us Today</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- Sponsor Q&A -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="legal" data-reveal>
+
+          <h2>Sponsor Questions &amp; Answers</h2>
+
+          <h3>What types of sponsors are you looking for?</h3>
+          <p>We are seeking a small, carefully selected group of sponsors who genuinely support high-quality, evidence-based dental education and respect a distraction-free learning environment.</p>
+          <p>We especially welcome companies that are already trusted and recommended by members of the Dental Wisdom community.</p>
+
+          <h3>How many attendees will be at the event?</h3>
+          <p>Attendance is intentionally limited to approximately 100 participants to maintain an intimate, high-touch, and interactive experience.</p>
+
+          <h3>What are the different sponsorship tiers?</h3>
+          <p>We offer several sponsorship levels with varying benefits. Full details, including benefits and pricing, are available in our sponsorship prospectus. Please contact us at <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a> to receive it.</p>
+
+          <h3>What sponsor exposure is included?</h3>
+          <p>Benefits vary by tier and may include logo placement on event materials and website, verbal acknowledgments, co-branded communications, and presence in the designated sponsor area.</p>
+
+          <h3>When do I need to confirm my sponsorship by?</h3>
+          <p>The sooner you confirm your sponsorship, the sooner your company will be included on the website, event materials, and printed collateral. We recommend securing your sponsorship as early as possible to maximize visibility.</p>
+
+          <h3>Can I get exclusivity?</h3>
+          <p>Yes, category exclusivity is available on select tiers. Please reach out to us with your specific exclusivity requests, and we will do our best to accommodate them.</p>
+
+          <h3>Which events at the conference can be sponsored?</h3>
+          <p>Many events and sessions throughout the conference can be sponsored, including:</p>
+          <ul>
+            <li>Lectures (via honorariums)</li>
+            <li>Breakfast, lunch, and snacks</li>
+            <li>Evening parties</li>
+            <li>Shabbos Oneg</li>
+            <li>Shalosh Seudos</li>
+          </ul>
+          <p>Additional sponsorship opportunities may be available depending on the tier.</p>
+
+          <h3>Will sponsors be allowed to present or sell during the event?</h3>
+          <p>Sponsorship packages may include limited promotional speaking time depending on the tier. All educational content remains fully independent. Depending on sponsorship tier, designated vendor tables will be available for product displays and informal conversations.</p>
+
+          <h3>Does sponsorship include attendance?</h3>
+          <p>Most packages include complimentary registration for sponsor representatives, giving you access to networking events, meals, and social functions.</p>
+
+          <h3>How is educational integrity protected?</h3>
+          <p>All lectures and hands-on classes are developed independently by the organizers and fully comply with AGD PACE standards. Sponsors have no influence over content or clinical recommendations.</p>
+
+          <h3>What are the rules for vendor tables and booth setup?</h3>
+          <p>Vendor table setup is available depending on your sponsorship tier. Sponsors granted table space will receive one folding table. You are responsible for providing your own extension cords if needed. Power outlets will be reasonably accessible.</p>
+
+          <h3>Can sponsors send materials in advance?</h3>
+          <p>Yes. Detailed guidance on shipping deadlines and procedures will be provided closer to the event.</p>
+
+          <h3>Can sponsors provide materials or branded items?</h3>
+          <p>Yes. Depending on the tier, sponsors may include approved product samples, educational materials, or branded items in welcome bags or for distribution.</p>
+
+          <h3>Will sponsors receive attendee contact information?</h3>
+          <p>Attendee contact information is shared only on an opt-in basis and in full compliance with privacy regulations.</p>
+
+          <h3>What is the value of sponsoring this event?</h3>
+          <p>This intimate gathering offers meaningful connections with engaged Jewish dentists — many of whom are practice owners and key decision-makers. You gain authentic alignment with a trusted, high-quality community rather than broad mass exposure.</p>
+
+          <h3>What are the sponsorship fees?</h3>
+          <p>Fees vary by tier and level of involvement. Please email <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a> for the current sponsorship prospectus and pricing details.</p>
+
+          <h3>What is the sponsorship cancellation policy?</h3>
+          <p>Terms will be clearly outlined in the sponsorship agreement. Fees are generally non-refundable once the agreement is signed and confirmed.</p>
+
+          <h3>Who should we contact regarding sponsorship?</h3>
+          <p>Please email <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>.</p>
+
+        </div>
+
+        <!-- Bottom CTA -->
+        <div class="text-center" data-reveal style="margin-top:3rem;">
+          <a class="btn btn--primary" href="mailto:info@dentalwisdom.org?subject=Dental%20Wisdom%20Conference%20Sponsorship%20Inquiry">Email Us Today</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,997 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Wisdom Conference 2027 | March 3–6, Bay Harbor Islands, Miami</title>
+  <meta name="description" content="Join us March 3–6, 2027 at The Altair Hotel in Miami for the Dental Wisdom Conference — cross-specialty dental CE, inspiring shiurim, glatt kosher meals, and an unforgettable Shabbos in a warm Jewish community.">
+  <meta property="og:title" content="Dental Wisdom Conference 2027">
+  <meta property="og:description" content="Join us March 3–6, 2027 at The Altair Hotel in Miami for the Dental Wisdom Conference — cross-specialty dental CE, inspiring shiurim, glatt kosher meals, and an unforgettable Shabbos in a warm Jewish community.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Conference 2027 — cross-specialty dental CE, March 3–6, 2027, Miami">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dental Wisdom Conference 2027">
+  <meta name="twitter:description" content="Join us March 3–6, 2027 at The Altair Hotel in Miami for the Dental Wisdom Conference — cross-specialty dental CE, inspiring shiurim, glatt kosher meals, and an unforgettable Shabbos in a warm Jewish community.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css?v=6">
+
+  <style>
+    /* ════════════════════════════════════════════════════════
+       TOKEN OVERRIDES — new palette, no teal/coral visible
+       ════════════════════════════════════════════════════════ */
+    :root {
+      --color-gold-warm:  #B8892A;
+      --color-parchment:  #EDE8DE;
+      --color-coral:      #B8892A;
+      --color-seaglass:   #1E2A38;
+      --color-cta:        #B8892A;
+      --color-accent:     #B8892A;
+    }
+
+    /* Base links */
+    a { color: var(--color-ink); text-decoration-color: rgba(30,42,56,0.25); }
+    a:hover { color: var(--color-gold-warm); text-decoration-color: var(--color-gold-warm); }
+    :focus-visible { outline-color: var(--color-gold-warm); }
+
+    /* Buttons */
+    .btn-primary { background-color: var(--color-gold-warm); color: #fff; border-color: var(--color-gold-warm); }
+    .btn-primary:hover, .btn-primary:focus-visible { background-color: #9e7523; border-color: #9e7523; color: #fff; }
+    .btn-secondary { background-color: transparent; border-color: var(--color-ink); color: var(--color-ink); }
+    .btn-secondary:hover, .btn-secondary:focus-visible { background-color: var(--color-ink); color: var(--color-ivory); }
+
+    /* Join FAB + modal */
+    .join-fab__button { background-color: var(--color-gold-warm); color: #fff; }
+    .join-fab__button:hover { background-color: #9e7523; }
+    .modal__close:hover { background-color: var(--color-gold-warm); color: #fff; }
+
+    /* Eyebrows */
+    .eyebrow, .conf-overview-eyebrow, .conf-pricing-eyebrow { color: var(--color-gold-warm); }
+
+    /* Texture: gold-only wash */
+    .texture {
+      background-image:
+        radial-gradient(circle at 10% 60%, rgba(184,137,42,0.05), transparent 40%),
+        radial-gradient(circle at 90% 40%, rgba(184,137,42,0.04), transparent 40%);
+    }
+
+    /* Footer links */
+    .site-footer a { color: rgba(251,249,244,0.68); text-decoration: none; }
+    .site-footer a:hover { color: var(--color-gold-warm); }
+
+    /* Pricing inside accordion */
+    .pricing-card__price { color: var(--color-gold-warm); }
+    .pricing-card { border-color: var(--color-parchment); }
+
+    /* ════════════════════════════════════════════════════════
+       #11 — NAV GOLD BORDER ON SCROLL
+       ════════════════════════════════════════════════════════ */
+    .site-nav__list a:hover,
+    .site-nav__list a[aria-current="page"] {
+      color: var(--color-ink);
+      border-bottom-color: var(--color-gold-warm);
+    }
+    .mobile-menu__list a:hover,
+    .mobile-menu__list a[aria-current="page"] { color: var(--color-gold-warm); }
+
+    /* Mobile menu logo */
+    .mobile-menu__logo {
+      display: block;
+      padding: 1.5rem 1.5rem 1rem;
+      border-bottom: 1px solid var(--color-border);
+      margin-bottom: 0.5rem;
+    }
+    .mobile-menu__logo img { height: 40px; width: auto; display: block; }
+
+    /* Sub-nav: wrap to 2 rows on mobile */
+    .sub-nav { overflow: visible; }
+    .sub-nav__bar {
+      overflow-x: visible;
+      flex-wrap: wrap;
+      white-space: normal;
+      height: auto;
+      padding: 0.5rem 0.75rem;
+      gap: 0.35rem 0.75rem;
+      justify-content: center;
+    }
+    .sub-nav__bar a,
+    .sub-nav__bar .btn { flex-shrink: 0; font-size: 0.8rem; }
+
+    .sub-nav__bar a:hover,
+    .sub-nav__bar a[aria-current="page"] {
+      color: var(--color-ink);
+      border-bottom: 2px solid var(--color-gold-warm);
+      padding-bottom: 2px;
+    }
+    .site-header {
+      transition: border-color 300ms ease, box-shadow 300ms ease;
+    }
+    .site-header.is-scrolled {
+      border-bottom-color: rgba(184,137,42,0.3);
+      box-shadow: 0 2px 24px rgba(30,42,56,0.07);
+    }
+
+    /* ════════════════════════════════════════════════════════
+       #1 — WARMER VIDEO OVERLAY
+       Lighter at top (lets the beach breathe),
+       deeper and warmer at bottom (grounds the text)
+       ════════════════════════════════════════════════════════ */
+    .hero__overlay {
+      background: linear-gradient(
+        to bottom,
+        rgba(18, 14, 8, 0.10) 0%,
+        rgba(18, 14, 8, 0.28) 45%,
+        rgba(18, 14, 8, 0.72) 100%
+      );
+    }
+
+    /* ════════════════════════════════════════════════════════
+       #2 — EDITORIAL H1: two-part typographic treatment
+       ════════════════════════════════════════════════════════ */
+
+    /* Split the H1 into a large main line + smaller italic subtitle */
+    .hero__h1-main {
+      display: block;
+      font-size: 2rem;
+      font-weight: 700;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+    .hero__h1-sub {
+      display: block;
+      font-size: 1.2rem;
+      font-weight: 400;
+      font-style: italic;
+      opacity: 0.82;
+      margin-top: 0.5rem;
+      line-height: 1.35;
+    }
+
+    /* Desktop: left-align and scale up */
+    @media (min-width: 768px) {
+      .hero__content { text-align: left; max-width: 760px; }
+      .hero__content h1 { margin-left: 0; margin-right: 0; max-width: none; }
+      .hero__lede { margin-left: 0; margin-right: 0; }
+      .hero__facts { justify-content: flex-start; gap: 0; }
+      .hero__facts span { display: inline-flex; align-items: center; white-space: nowrap; }
+      .hero__facts span + span::before {
+        content: '';
+        display: inline-block;
+        width: 1px;
+        height: 1em;
+        background: rgba(217,164,65,0.55);
+        margin: 0 1rem;
+        flex-shrink: 0;
+      }
+      .hero__h1-main { font-size: 3.5rem; }
+      .hero__h1-sub  { font-size: 1.75rem; }
+    }
+    @media (min-width: 1280px) {
+      .hero__h1-main { font-size: 4.25rem; }
+      .hero__h1-sub  { font-size: 2rem; }
+    }
+
+    /* ════════════════════════════════════════════════════════
+       #3 — ANIMATED SCROLL CUE
+       ════════════════════════════════════════════════════════ */
+    .hero__scroll-cue {
+      position: absolute;
+      bottom: 2.25rem;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.5rem;
+      color: rgba(255,255,255,0.55);
+      font-family: var(--font-body);
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      z-index: 3;
+      user-select: none;
+    }
+    .hero__scroll-line {
+      width: 1px;
+      height: 36px;
+      background: linear-gradient(to bottom, rgba(255,255,255,0.5) 0%, transparent 100%);
+      animation: scroll-pulse 2.2s ease-in-out infinite;
+      transform-origin: top;
+    }
+    @keyframes scroll-pulse {
+      0%   { opacity: 0.3; transform: scaleY(0.4) translateY(-30%); }
+      50%  { opacity: 0.9; transform: scaleY(1) translateY(0); }
+      100% { opacity: 0.3; transform: scaleY(0.4) translateY(-30%); }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .hero__scroll-line { animation: none; opacity: 0.4; }
+    }
+
+    /* ════════════════════════════════════════════════════════
+       #4 — STATS STRIP
+       ════════════════════════════════════════════════════════ */
+    .stats-strip {
+      background-color: #1E2A38;
+      border-top: 1px solid rgba(184,137,42,0.2);
+      border-bottom: 1px solid rgba(184,137,42,0.2);
+      padding: 1.75rem 0;
+    }
+    .stats-strip__inner {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 0;
+    }
+    .stats-strip__item {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 0.5rem 2rem;
+      text-align: center;
+    }
+    .stats-strip__number {
+      font-family: var(--font-heading);
+      font-size: 1.6rem;
+      font-weight: 700;
+      color: var(--color-gold-warm);
+      line-height: 1;
+    }
+    .stats-strip__label {
+      font-size: 0.7rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: rgba(251,249,244,0.6);
+      margin-top: 0.3rem;
+    }
+    .stats-strip__divider {
+      width: 1px;
+      height: 2.5rem;
+      background: rgba(184,137,42,0.25);
+      flex-shrink: 0;
+    }
+    @media (max-width: 640px) {
+      .stats-strip__inner { gap: 0.5rem 0; }
+      .stats-strip__item { padding: 0.4rem 1.1rem; }
+      .stats-strip__divider:nth-child(4),
+      .stats-strip__divider:nth-child(8) { display: none; }
+    }
+
+    /* Community intro (slot 3, ivory bg) */
+    .community-intro-section { background-color: #FBF9F4; }
+
+    /* ════════════════════════════════════════════════════════
+       OVERVIEW + PRICING — pricing box smaller + bottom-aligned
+       ════════════════════════════════════════════════════════ */
+    .conf-overview-left {
+      display: flex;
+      flex-direction: column;
+    }
+    .conf-pricing-box {
+      margin-top: auto;
+      border: 1px solid rgba(184,137,42,0.3);
+      border-top: 3px solid var(--color-gold-warm);
+      border-radius: var(--radius-md);
+      background-color: #fff;
+      padding: var(--space-md) var(--space-md);
+      text-align: center;
+    }
+    .conf-pricing-eyebrow {
+      font-size: 0.68rem;
+      letter-spacing: 0.14em;
+      margin-bottom: var(--space-xs);
+    }
+    .conf-pricing-row {
+      font-family: var(--font-heading);
+      font-size: 1.2rem;
+      color: var(--color-ink);
+      margin-bottom: 0.15rem;
+    }
+    .conf-pricing-row strong { color: var(--color-gold-warm); }
+    .conf-pricing-note {
+      font-size: 0.78rem;
+      color: var(--color-slate);
+      margin: var(--space-xs) 0 var(--space-sm);
+      line-height: 1.55;
+    }
+
+    /* Community intro two-column split — parchment on mobile, ivory on desktop */
+    .community-split {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-xl);
+      align-items: center;
+    }
+    @media (min-width: 900px) {
+      .community-split { grid-template-columns: 5fr 7fr; gap: var(--space-2xl); }
+    }
+    .community-split .section-heading { text-align: left; margin-bottom: 0; max-width: none; }
+    .community-split .section-heading h2 { font-size: 2rem; line-height: 1.2; }
+    @media (min-width: 1280px) { .community-split .section-heading h2 { font-size: 2.5rem; } }
+    .community-split .lede p { font-size: 1.05rem; line-height: 1.8; color: var(--color-ink); }
+    .community-split .lede p:last-child { margin-bottom: 0; }
+
+    /* ════════════════════════════════════════════════════════
+       #10 — GOLD RULE DIVIDERS (select sections)
+       ════════════════════════════════════════════════════════ */
+    #section-video { background-color: #FBF9F4; }
+    #section-video .container::before,
+    #section-experience .container::before,
+    #section-cta .container::before {
+      content: '';
+      display: block;
+      width: 44px;
+      height: 1px;
+      background: var(--color-gold-warm);
+      margin: 0 auto var(--space-lg);
+      opacity: 0.65;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       GALLERY — sand
+       ════════════════════════════════════════════════════════ */
+    #section-gallery { background-color: #F1ECE2; }
+    #section-gallery .section-heading h2 { margin-bottom: var(--space-xs); }
+    #section-gallery .section-heading p { font-size: 0.95rem; }
+
+    /* ════════════════════════════════════════════════════════
+       CONFERENCE DETAILS — white, document feel
+       ════════════════════════════════════════════════════════ */
+    #section-details { background-color: #FFFFFF; }
+    .accordion details { border-bottom: 1px solid var(--color-parchment); }
+    .accordion summary { padding: 1.25rem 1.25rem; font-size: 1rem; font-weight: 600; color: var(--color-ink); }
+    .accordion details[open] > summary { color: var(--color-gold-warm); }
+    .accordion__body { padding: 0 1.25rem 1.5rem; }
+
+    /* Compact pricing chips */
+    .pricing-compact {
+      display: flex; flex-wrap: wrap; gap: 0.75rem; margin: var(--space-md) 0;
+    }
+    .pricing-compact__item {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      background: #FBF9F4; border: 1px solid #EDE8DE;
+      border-radius: 8px; padding: 0.55rem 1.1rem;
+    }
+    .pricing-compact__price {
+      font-family: var(--font-heading); font-size: 1.25rem;
+      font-weight: 700; color: var(--color-gold-warm); line-height: 1;
+    }
+    .pricing-compact__label { font-size: 0.82rem; color: var(--color-slate); font-weight: 500; }
+
+    /* Compact room chips */
+    .room-compact { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: var(--space-md) 0; }
+    .room-compact__item {
+      display: flex; flex-direction: column; align-items: center;
+      background: #FBF9F4; border: 1px solid #EDE8DE;
+      border-radius: 8px; padding: 0.7rem 1.2rem; min-width: 110px; text-align: center;
+    }
+    .room-compact__type {
+      font-size: 0.72rem; color: var(--color-slate); font-weight: 600;
+      letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.3rem;
+    }
+    .room-compact__price {
+      font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-gold-warm);
+    }
+
+    /* Compact family chips */
+    .family-compact { display: flex; flex-wrap: wrap; gap: 0.75rem; margin: var(--space-md) 0; }
+    .family-compact__item {
+      display: flex; align-items: baseline; gap: 0.6rem;
+      background: #FBF9F4; border: 1px solid #EDE8DE;
+      border-radius: 8px; padding: 0.55rem 1.1rem;
+    }
+    .family-compact__price {
+      font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--color-gold-warm);
+    }
+    .family-compact__label { font-size: 0.82rem; color: var(--color-slate); font-weight: 500; }
+
+    /* ════════════════════════════════════════════════════════
+       WHAT YOU EXPERIENCE — parchment, editorial list
+       ════════════════════════════════════════════════════════ */
+    #section-experience { background-color: #EDE8DE; }
+    .experience-list {
+      list-style: none; padding: 0; margin: 0 auto var(--space-xl); max-width: 680px;
+    }
+    .experience-list li {
+      display: flex; align-items: flex-start; gap: 1.25rem;
+      padding: 1.25rem 0; border-bottom: 1px solid rgba(184,137,42,0.2);
+      font-size: 1.05rem; line-height: 1.6; color: var(--color-ink);
+    }
+    .experience-list li:first-child { border-top: 1px solid rgba(184,137,42,0.2); }
+    .experience-list li::before {
+      content: '✦'; color: var(--color-gold-warm); font-size: 0.65rem;
+      flex-shrink: 0; margin-top: 0.5rem; opacity: 0.8;
+    }
+    .experience-italic {
+      text-align: center; font-style: italic; color: var(--color-slate);
+      font-size: 1rem; max-width: 520px; margin: 0 auto var(--space-lg); line-height: 1.7;
+    }
+
+    /* ════════════════════════════════════════════════════════
+       SPONSORS — ivory
+       ════════════════════════════════════════════════════════ */
+    #section-sponsors { background-color: #FBF9F4; }
+    #section-sponsors .logo-scroll-wrap { margin-top: 0; }
+    .sponsor-thanks {
+      font-size: var(--fs-small);
+      color: var(--color-text-muted);
+      margin-bottom: var(--space-md);
+    }
+
+    /* ════════════════════════════════════════════════════════
+       FINAL CTA — ink, large editorial
+       ════════════════════════════════════════════════════════ */
+    #section-cta {
+      background-color: var(--color-ink);
+      text-align: center;
+      padding: var(--space-2xl) 0;
+    }
+    #section-cta h2 {
+      color: #fff; font-size: 2rem; max-width: 16ch;
+      margin: 0 auto var(--space-lg); line-height: 1.25;
+    }
+    @media (min-width: 768px) { #section-cta h2 { font-size: 2.75rem; } }
+    #section-cta .btn-primary { background-color: var(--color-gold-warm); border-color: var(--color-gold-warm); color: #fff; }
+    #section-cta .btn-primary:hover { background-color: #9e7523; }
+
+    /* ════════════════════════════════════════════════════════
+       HAVE QUESTIONS — sand
+       ════════════════════════════════════════════════════════ */
+    #section-questions { background-color: #F1ECE2; }
+    #section-questions h3 { font-size: 1.4rem; margin-bottom: var(--space-xs); }
+    #section-questions a[href^="mailto"] { color: var(--color-gold-warm); font-weight: 600; text-decoration: none; }
+    #section-questions a[href^="mailto"]:hover { text-decoration: underline; }
+
+  </style>
+</head>
+<body class="has-subnav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">Conference</span>
+        <img class="site-logo__mark" src="images/footer-logo-white.png" alt="Dental Wisdom">
+      </a>
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html" aria-current="page">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html" aria-current="page">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <div class="sub-nav">
+    <div class="container sub-nav__bar">
+      <a href="#overview" aria-current="page">Overview</a>
+      <a href="conference-agenda.html">Agenda</a>
+      <a href="conference-speakers.html">Speakers</a>
+      <a href="conference-sponsors.html">Sponsors</a>
+      <a href="conference-faq.html">FAQ</a>
+      <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Register</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <!-- ═══ 1. HERO — warm overlay, editorial H1, scroll cue ═══ -->
+    <section class="hero">
+      <video class="hero__media" autoplay muted loop playsinline poster="images/hero-poster.jpg">
+        <source src="images/hero.mp4" type="video/mp4">
+      </video>
+      <div class="hero__overlay"></div>
+      <div class="container hero__content" data-reveal>
+        <h1>
+          <span class="hero__h1-main">The Dental Wisdom Conference</span>
+          <span class="hero__h1-sub">isn't your typical dental CE event.</span>
+        </h1>
+        <p class="hero__lede">You'll engage with high-quality, cross-specialty lectures and hands-on education at a relaxed pace that allows real learning and absorption. Time to think. Space to connect with colleagues. Room to rest, recharge, and rejuvenate — professionally, socially, and spiritually. In a warm Jewish environment.</p>
+        <div class="hero__facts">
+          <span>March 3–6, 2027</span>
+          <span>20 CE Cross-specialty Credits</span>
+          <span>Miami, FL</span>
+        </div>
+        <p class="hero__note">4 nights &amp; Shabbos at The Altair.<br>Early bird pricing for a limited time.</p>
+        <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Reserve Your Place Today</a>
+      </div>
+      <!-- #3 Scroll cue -->
+      <div class="hero__scroll-cue" aria-hidden="true">
+        <span>Scroll</span>
+        <div class="hero__scroll-line"></div>
+      </div>
+    </section>
+
+    <!-- ═══ 2. STATS STRIP — ink band, scannable facts ═══ -->
+    <div class="stats-strip" role="region" aria-label="Conference at a glance">
+      <div class="container stats-strip__inner">
+        <div class="stats-strip__item">
+          <span class="stats-strip__number">3rd</span>
+          <span class="stats-strip__label">Annual Conference</span>
+        </div>
+        <div class="stats-strip__divider" aria-hidden="true"></div>
+        <div class="stats-strip__item">
+          <span class="stats-strip__number">20</span>
+          <span class="stats-strip__label">CE Credits</span>
+        </div>
+        <div class="stats-strip__divider" aria-hidden="true"></div>
+        <div class="stats-strip__item">
+          <span class="stats-strip__number">100+</span>
+          <span class="stats-strip__label">Attendees</span>
+        </div>
+        <div class="stats-strip__divider" aria-hidden="true"></div>
+        <div class="stats-strip__item">
+          <span class="stats-strip__number">15+</span>
+          <span class="stats-strip__label">Lectures</span>
+        </div>
+        <div class="stats-strip__divider" aria-hidden="true"></div>
+        <div class="stats-strip__item">
+          <span class="stats-strip__number">4</span>
+          <span class="stats-strip__label">Nights in Miami</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- ═══ 3. COMMUNITY INTRO — ivory, warm welcome copy ═══ -->
+    <section class="community-intro-section section" id="section-community-intro">
+      <div class="container">
+        <div class="community-split" data-reveal>
+          <div class="section-heading">
+            <h2>CE That Lets You Invest in Your Career, Your Wellness, and Your Community</h2>
+          </div>
+          <div class="lede">
+            <p>Join us for the 2027 Dental Wisdom Conference — our third time hosting this extraordinary event — taking place March 3–6, 2027 at The Altair Hotel in Bay Harbor Islands, Miami.</p>
+            <p>We're preparing an incredible gathering filled with inspiring shiurim, beautiful minyanim, meaningful cross-specialty lectures and hands-on CE, delicious glatt kosher meals, uplifting Shabbos programming, and genuine connections. This is a beautifully curated dental conference experience where you'll be fully immersed in the true warmth of the Dental Wisdom community.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 4. OVERVIEW + PRICING — ink, pricing box smaller + bottom-aligned ═══ -->
+    <section class="section conf-overview-section" id="overview">
+      <div class="container">
+        <div class="conf-overview-heading" data-reveal>
+          <p class="conf-overview-eyebrow">The 2027 Dental Wisdom Conference</p>
+          <h2 class="conf-overview-title">Created by Jewish Dentists, for Jewish Dentists</h2>
+        </div>
+        <div class="conf-overview-body">
+          <div class="conf-overview-left" data-reveal>
+            <p>The Dental Wisdom Conference was created to give Jewish dentists a chance to reset. To engage with meaningful, high-quality continuing education while finding calm and clarity. To reconnect with your work and yourself in the company of like-minded colleagues. An experience designed to support professional excellence, spiritual growth, and lasting community connection.</p>
+            <p>Set at The Altair Hotel in Bay Harbor Islands, the location is as intentional as the experience itself. Warm hospitality, ocean breezes, and a peaceful atmosphere support both deep focus and restoration.</p>
+            <div class="conf-pricing-box">
+              <p class="conf-pricing-eyebrow">Limited Time Only!</p>
+              <p class="conf-pricing-row"><strong>$1,995</strong> Dentist</p>
+              <p class="conf-pricing-row"><strong>$1,595</strong> Dental Resident</p>
+              <p class="conf-pricing-row"><strong>$2,995</strong> Vendor Dentist</p>
+              <p class="conf-pricing-note"><em>We expect the conference to sell out. As we approach the event, both attendance prices and hotel room rates will increase.</em></p>
+              <a class="btn btn-primary conf-pricing-btn" href="https://pci.jotform.com/form/252998619124166">Register &amp; Purchase</a>
+            </div>
+          </div>
+          <div class="conf-photo-grid" data-reveal>
+            <div class="conf-photo-col">
+              <img class="conf-photo--short" src="images/conf-photos/conf-photo-1.webp" alt="Dental Wisdom Conference CE session" loading="lazy">
+              <img class="conf-photo--tall" src="images/conf-photos/conf-photo-3.webp" alt="Bay Harbor Islands waterfront balcony view" loading="lazy" style="object-position: center 30%;">
+            </div>
+            <div class="conf-photo-col">
+              <img class="conf-photo--tall" src="images/conf-photos/conf-photo-2.webp" alt="The Altair Hotel pool and palm trees" loading="lazy">
+              <img class="conf-photo--short" src="images/conf-photos/conf-photo-4.webp" alt="Glatt kosher dinner at the conference" loading="lazy">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 5. VIDEO — ivory, gold rule ═══ -->
+    <section id="section-video" class="section">
+      <div class="container">
+        <div class="video-embed" data-reveal>
+          <iframe src="https://www.youtube.com/embed/OQZFNNB9YE0?si=FDCCACoNmqoCC6y4" title="A Glimpse of the Dental Wisdom Conference" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+        </div>
+        <div class="video-caption" data-reveal>
+          <em>A Glimpse of the Dental Wisdom Conference.</em>
+          <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Join the 2027 Dental Wisdom Conference!</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 7. GALLERY — sand ═══ -->
+    <section id="section-gallery" class="section">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>A Look Back</h2>
+        </div>
+      </div>
+      <div class="logo-scroll-wrap">
+        <div class="logo-scroll-track">
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-1.jpg" alt="Conference Photo 1"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-2.jpg" alt="Conference Photo 2"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-3.jpg" alt="Conference Photo 3"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-4.jpg" alt="Conference Photo 4"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-5.jpg" alt="Conference Photo 5"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-6.jpg" alt="Conference Photo 6"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-7.jpg" alt="Conference Photo 7"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-8.jpg" alt="Conference Photo 8"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-9.jpg" alt="Conference Photo 9"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-10.jpg" alt="Conference Photo 10"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-11.jpg" alt="Conference Photo 11"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-12.jpg" alt="Conference Photo 12"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-13.jpg" alt="Conference Photo 13"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-14.jpg" alt="Conference Photo 14"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-15.jpg" alt="Conference Photo 15"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-16.jpg" alt="Conference Photo 16"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-17.jpg" alt="Conference Photo 17"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-18.jpg" alt="Conference Photo 18"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-19.jpg" alt="Conference Photo 19"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-20.jpg" alt="Conference Photo 20"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-21.jpg" alt="Conference Photo 21"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-22.jpg" alt="Conference Photo 22"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-23.jpg" alt="Conference Photo 23"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-24.jpg" alt="Conference Photo 24"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-25.jpg" alt="Conference Photo 25"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-26.jpg" alt="Conference Photo 26"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-27.jpg" alt="Conference Photo 27"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-28.jpg" alt="Conference Photo 28"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-29.jpg" alt="Conference Photo 29"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-30.jpg" alt="Conference Photo 30"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-31.jpg" alt="Conference Photo 31"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-32.jpg" alt="Conference Photo 32"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-33.jpg" alt="Conference Photo 33"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-34.jpg" alt="Conference Photo 34"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-35.jpg" alt="Conference Photo 35"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-36.jpg" alt="Conference Photo 36"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-37.jpg" alt="Conference Photo 37"></div>
+          <div class="logo-scroll-item gallery-photo"><img src="images/gallery/gallery-38.jpg" alt="Conference Photo 38"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-1.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-2.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-3.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-4.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-5.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-6.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-7.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-8.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-9.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-10.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-11.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-12.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-13.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-14.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-15.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-16.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-17.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-18.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-19.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-20.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-21.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-22.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-23.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-24.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-25.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-26.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-27.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-28.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-29.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-30.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-31.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-32.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-33.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-34.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-35.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-36.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-37.jpg" alt=""></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="images/gallery/gallery-38.jpg" alt=""></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 8. CONFERENCE DETAILS — white ═══ -->
+    <section id="section-details" class="section">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>Conference Details</h2>
+        </div>
+        <div class="accordion" data-reveal>
+
+          <details>
+            <summary>Location &amp; Dates</summary>
+            <div class="accordion__body">
+              <p>The 2027 Dental Wisdom Conference will be held at The Altair Hotel, from Wednesday evening, March 3, through Saturday evening, March 6, 2027. We have made arrangements with the hotel for preferred pricing for conference attendees. During registration you will select which rooms you would like booked.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Class Options &amp; CE Credits</summary>
+            <div class="accordion__body">
+              <p>The 2027 Dental Wisdom Conference will offer an estimated 20 CE credits, that will be accredited through the Academy of General Dentistry (AGD). Lectures will be cross-specialty, include lecture and hands-on options, with multiple simultaneous class options when scheduling permits.</p>
+              <p>Lecture topics, speakers and schedule will be published closer to the event.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Hotel Accommodations</summary>
+            <div class="accordion__body">
+              <p>Dental Wisdom has secured a preferred room block with special rates at The Altair Hotel in Bay Harbor Islands, Miami, exclusively for conference attendees.</p>
+              <p>During the registration process, you will be able to select and book your preferred room type directly. Availability is limited and subject to the hotel's conference block.</p>
+              <div class="room-compact">
+                <div class="room-compact__item">
+                  <span class="room-compact__type">Studio King</span>
+                  <span class="room-compact__price">~$400<span style="font-size:0.7rem;font-weight:500;color:var(--color-slate);">/night</span></span>
+                </div>
+                <div class="room-compact__item">
+                  <span class="room-compact__type">Studio Queen</span>
+                  <span class="room-compact__price">~$400<span style="font-size:0.7rem;font-weight:500;color:var(--color-slate);">/night</span></span>
+                </div>
+                <div class="room-compact__item">
+                  <span class="room-compact__type">1 Bed Suite</span>
+                  <span class="room-compact__price">~$600<span style="font-size:0.7rem;font-weight:500;color:var(--color-slate);">/night</span></span>
+                </div>
+                <div class="room-compact__item">
+                  <span class="room-compact__type">2 Bed Suite</span>
+                  <span class="room-compact__price">~$950<span style="font-size:0.7rem;font-weight:500;color:var(--color-slate);">/night</span></span>
+                </div>
+              </div>
+              <p>One night deposit is required at time of booking.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Davening &amp; Shabbos</summary>
+            <div class="accordion__body">
+              <p>Daily Minyanim are offered on-site for Shacharis, Mincha and Maariv. Optional Shabbos meals are being arranged for all conference attendees.</p>
+              <p>During the registration process you will indicate if you would like to join Shabbos meals.</p>
+            </div>
+          </details>
+
+          <details>
+            <summary>Conference Fees &mdash; Dentists</summary>
+            <div class="accordion__body">
+              <p>Conference registration fees for dentists and dental professionals:</p>
+              <div class="pricing-compact">
+                <div class="pricing-compact__item">
+                  <span class="pricing-compact__price">$1,995</span>
+                  <span class="pricing-compact__label">Dentist</span>
+                </div>
+                <div class="pricing-compact__item">
+                  <span class="pricing-compact__price">$1,595</span>
+                  <span class="pricing-compact__label">Dental Resident</span>
+                </div>
+                <div class="pricing-compact__item">
+                  <span class="pricing-compact__price">$2,995</span>
+                  <span class="pricing-compact__label">Vendor Dentist</span>
+                </div>
+              </div>
+              <p><strong>Early Bird Pricing:</strong> These rates are available for a limited time only. Pricing may increase based on demand closer to the event.</p>
+              <p>As an added bonus, the first 25 attendees who book a room at The Altair Hotel will receive a beautiful bottle of wine for Shabbos, courtesy of the conference!</p>
+              <p>Included in the conference fee:</p>
+              <ul>
+                <li>All lectures and associated CE credits, including coffee and snacks throughout the program</li>
+                <li>Welcome event Wednesday evening</li>
+                <li>Glatt Kosher lunches on Thursday and Friday</li>
+                <li>Thursday night event with dinner and music</li>
+                <li>Friday night Oneg</li>
+                <li>Shalosh Seudos</li>
+                <li>Motzei Shabbos closing event with dinner and music</li>
+              </ul>
+            </div>
+          </details>
+
+          <details>
+            <summary>Conference Fees &mdash; Spouses &amp; Children</summary>
+            <div class="accordion__body">
+              <p>Conference registration fees for spouses and children:</p>
+              <div class="family-compact">
+                <div class="family-compact__item">
+                  <span class="family-compact__price">$450</span>
+                  <span class="family-compact__label">Spouse</span>
+                </div>
+                <div class="family-compact__item">
+                  <span class="family-compact__price">$100</span>
+                  <span class="family-compact__label">Child (aged 3+)</span>
+                </div>
+              </div>
+              <p>Included for family members:</p>
+              <ul>
+                <li>Children's activities on Thursday and Friday</li>
+                <li>Welcome event Wednesday evening for adults</li>
+                <li>Glatt Kosher lunches on Thursday and Friday</li>
+                <li>Thursday night event with dinner and music</li>
+                <li>Friday night Oneg</li>
+                <li>Shalosh Seudos</li>
+                <li>Motzei Shabbos closing event with dinner and music</li>
+              </ul>
+            </div>
+          </details>
+
+        </div>
+
+        <div class="link-row" data-reveal>
+          <a class="btn btn-secondary btn-equal" href="conference-faq.html">FAQs</a>
+          <a class="btn btn-secondary btn-equal" href="conference-agenda.html">Full Agenda</a>
+          <a class="btn btn-secondary btn-equal" href="conference-speakers.html">Featured Speakers</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 9. WHAT YOU EXPERIENCE — parchment, editorial list, gold rule ═══ -->
+    <section id="section-experience" class="section texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>What You Will Experience</h2>
+        </div>
+        <ul class="experience-list" data-reveal>
+          <li>Engage with the Dental Wisdom community in cross-specialty lectures and hands-on classes</li>
+          <li>Experience a warm and distinctive Jewish environment that fosters meaningful connections</li>
+          <li>Enjoy elegant family-friendly kosher events thoughtfully designed for both professionals and their families</li>
+          <li>Benefit from convenient on-site minyanim and inspiring Shiurim throughout</li>
+          <li>Join an unforgettable Shabbos together with optional premium Shabbos meals</li>
+        </ul>
+        <p class="experience-italic" data-reveal>This is not simply a dental conference. This is a 3-day 'Pesach Program' experience designed for Jewish dentists.</p>
+        <div class="link-row" data-reveal>
+          <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Register for the 2027 Dental Wisdom Conference</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 10. SPONSORS — ivory ═══ -->
+    <section id="section-sponsors" class="section sponsor-strip-section">
+      <div class="logo-scroll-wrap" data-reveal>
+        <div class="logo-scroll-track" id="logoScrollStrip"></div>
+      </div>
+      <div class="container text-center">
+        <p class="sponsor-thanks" data-reveal>Thank you to the partners who make Dental Wisdom possible.</p>
+        <div class="link-row" data-reveal>
+          <a class="btn btn-secondary" href="conference-sponsors.html">Meet All Our Sponsors &rarr;</a>
+          <a class="btn btn-secondary" href="conference-new-sponsor.html">Want to Sponsor?</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ═══ 11. FINAL CTA — ink, gold rule, large Playfair ═══ -->
+    <section id="section-cta" class="section">
+      <div class="container" data-reveal>
+        <h2>Reserve Your Seat Before We Run Out of Space!</h2>
+        <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Reserve Your Place Today</a>
+      </div>
+    </section>
+
+    <!-- ═══ 12. HAVE QUESTIONS — sand ═══ -->
+    <section id="section-questions" class="section text-center">
+      <div class="container" data-reveal>
+        <h3>Have Questions?</h3>
+        <p><a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        <p class="lede">The Dental Wisdom Conference is managed and organized by Dental Wisdom.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- FLOATING JOIN BUTTON + MODAL -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe id="JotFormIFrame-261626058813055" title="Join Request Form" onload="window.parent.scrollTo(0,0)" allowtransparency="true" allow="geolocation; microphone; camera; fullscreen; payment" src="https://form.jotform.com/261626058813055" frameborder="0" style="min-width:100%;max-width:100%;height:539px;border:none;" scrolling="no"></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+      <p class="modal__note">Curious about our WhatsApp community? <a href="whatsapp.html">Learn more</a>.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js?v=2"></script>
+  <script src="js/sponsors-data.js"></script>
+  <script src="js/sponsors.js"></script>
+
+  <!-- #11 — Nav gold border on scroll -->
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() {
+        header.classList.toggle('is-scrolled', window.scrollY > 60);
+      };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+
+</body>
+</html>

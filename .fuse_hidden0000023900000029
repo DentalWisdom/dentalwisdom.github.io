@@ -1,0 +1,245 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Wisdom Deals | Exclusive Offers for the Dental Wisdom Network</title>
+  <meta name="description" content="Exclusive deals and discounts from trusted dental vendors — curated for the Dental Wisdom network of Jewish dental professionals.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dental Wisdom Deals">
+  <meta property="og:description" content="Exclusive deals and discounts from trusted dental vendors — curated for the Dental Wisdom network of Jewish dental professionals.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/deals.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-deals.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Deals — exclusive offers from trusted dental partners">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dental Wisdom Deals">
+  <meta name="twitter:description" content="Exclusive deals and discounts from trusted dental vendors — curated for the Dental Wisdom network of Jewish dental professionals.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-deals.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">Deals</span>
+        <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html" aria-current="page">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/header-logo-blue.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html" aria-current="page">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on Deals (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <!-- ===================== HERO / INTRO ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Dental Wisdom Deals</h1>
+          <p>Curated Deals from Sponsors, Vendors &amp; Suppliers</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== SEARCH + CATEGORY FILTER ===================== -->
+    <section class="section section--ivory" id="deals-directory">
+      <div class="container">
+        <div class="deals-toolbar" data-reveal>
+          <div class="deals-search">
+            <label for="dealsSearch" class="visually-hidden">Search deals</label>
+            <svg class="deals-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="11" r="7"></circle>
+              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
+            </svg>
+            <input type="search" id="dealsSearch" placeholder="Search deals by name or keyword&hellip;" autocomplete="off">
+          </div>
+
+          <div class="deals-categories" id="dealsCategories" role="group" aria-label="Filter deals by category">
+            <!-- Category buttons populated by js/deals.js -->
+          </div>
+
+          <p class="deals-suggest">Know a great vendor for the network? <a class="btn btn-secondary" href="mailto:Info@DentalWisdom.org?subject=Vendor%20Suggestion%20for%20Dental%20Wisdom%20Deals">Suggest a Vendor</a></p>
+        </div>
+
+        <!-- ===================== DEALS GRID ===================== -->
+        <div class="deals-grid" id="dealsGrid" aria-live="polite">
+          <p class="placeholder" role="status">Loading deals&hellip;</p>
+        </div>
+
+        <p class="deals-no-results" id="dealsNoResults" role="status" hidden>No deals match your search &mdash; try a different word or category.</p>
+      </div>
+    </section>
+
+    <!-- ===================== BECOME A DEALS PARTNER ===================== -->
+    <section class="section section--sand texture cta-band">
+      <div class="container" data-reveal>
+        <h2>Become a Deals Partner</h2>
+        <p class="lede">Are you a vendor, supplier, or service provider that wants to reach the Dental Wisdom community? Learn how to get involved and offer exclusive value to our network of dental professionals.</p>
+        <div class="link-row">
+          <a class="btn btn-primary" href="deals-partner.html">Learn More</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+      <p class="modal__note">Curious about our WhatsApp community? <a href="whatsapp.html">Learn more</a>.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/deals-data.js"></script>
+  <script src="js/deals.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

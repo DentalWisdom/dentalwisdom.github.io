@@ -1,0 +1,642 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speakers | Dental Wisdom Conference 2027</title>
+  <meta name="description" content="Speakers for the 2027 Dental Wisdom Conference will be announced soon. Cross-specialty dental CE with leading practitioners. March 3–6, 2027, Miami, FL.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Speakers | Dental Wisdom Conference 2027">
+  <meta property="og:description" content="Speakers for the 2027 Dental Wisdom Conference will be announced soon. Cross-specialty dental CE with leading practitioners. March 3–6, 2027, Miami, FL.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/conference-speakers.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Conference 2027 — cross-specialty dental CE, March 3–6, 2027, Miami">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Speakers | Dental Wisdom Conference 2027">
+  <meta name="twitter:description" content="Speakers for the 2027 Dental Wisdom Conference will be announced soon. Cross-specialty dental CE with leading practitioners. March 3–6, 2027, Miami, FL.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* ===== Speaker grid & cards ===== */
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    @media (min-width: 480px) {
+      .speaker-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .speaker-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1100px) {
+      .speaker-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .speaker-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      transition: box-shadow var(--transition-base), transform var(--transition-base);
+      cursor: pointer;
+    }
+    .speaker-card:hover,
+    .speaker-card:focus-within {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-3px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .speaker-card:hover,
+      .speaker-card:focus-within { transform: none; }
+    }
+
+    .speaker-card__trigger {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+    }
+    .speaker-card__trigger:focus-visible {
+      outline: 3px solid var(--color-seaglass);
+      outline-offset: 2px;
+    }
+
+    /* Avatar — circular photo */
+    .speaker-avatar-wrap {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-lg) var(--space-md) var(--space-sm);
+    }
+    .speaker-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid var(--color-sand);
+      box-shadow: 0 4px 16px rgba(30,42,56,0.12);
+    }
+
+    /* Card body */
+    .speaker-card__body {
+      padding: var(--space-sm) var(--space-md) var(--space-md);
+      text-align: center;
+    }
+    .speaker-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-ink);
+      margin: 0 0 0.2rem;
+    }
+    .speaker-card__specialty {
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-seaglass);
+      margin: 0 0 var(--space-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .speaker-card__bio-snippet {
+      font-size: var(--fs-small);
+      color: var(--color-slate);
+      line-height: 1.5;
+      margin: 0 0 var(--space-sm);
+      text-align: left;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .speaker-card__course-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.25rem;
+      text-align: left;
+    }
+    .speaker-card__course-title {
+      font-size: var(--fs-small);
+      color: var(--color-ink);
+      font-weight: 500;
+      line-height: 1.4;
+      margin: 0 0 0.25rem;
+      text-align: left;
+    }
+    .speaker-card__time {
+      font-size: 0.78rem;
+      color: var(--color-coral);
+      font-weight: 600;
+      text-align: left;
+      display: block;
+    }
+    .speaker-card__cta {
+      display: inline-block;
+      margin-top: var(--space-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-seaglass);
+      text-decoration: none;
+    }
+
+    /* Placeholder notice */
+    .placeholder-notice {
+      display: inline-block;
+      background: var(--color-sand);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      color: var(--color-slate);
+      padding: 0.25rem 0.6rem;
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ===== Speaker modal ===== */
+    .speaker-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: var(--z-modal);
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-sm);
+    }
+    .speaker-modal.is-open {
+      display: flex;
+    }
+    .speaker-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 42, 56, 0.55);
+      backdrop-filter: blur(3px);
+    }
+    .speaker-modal__dialog {
+      position: relative;
+      z-index: 1;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 24px 80px rgba(30, 42, 56, 0.22);
+      max-width: 600px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      animation: modalIn 280ms ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to   { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .speaker-modal__dialog { animation: none; }
+    }
+    .speaker-modal__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--color-sand);
+      border: none;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--color-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .speaker-modal__close:focus-visible {
+      outline: 3px solid var(--color-seaglass);
+    }
+    .speaker-modal__avatar-wrap {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-xl) var(--space-md) var(--space-sm);
+      background: var(--color-sand);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .speaker-modal__avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 4px solid var(--color-white);
+      box-shadow: 0 6px 20px rgba(30,42,56,0.15);
+    }
+    .speaker-modal__body {
+      padding: var(--space-lg);
+    }
+    .speaker-modal__name {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--color-ink);
+      margin: 0 0 0.25rem;
+    }
+    .speaker-modal__specialty {
+      font-size: var(--fs-small);
+      font-weight: 700;
+      color: var(--color-seaglass);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 var(--space-md);
+    }
+    .speaker-modal__bio {
+      font-size: var(--fs-body);
+      color: var(--color-text);
+      line-height: 1.7;
+      margin: 0 0 var(--space-md);
+    }
+    .speaker-modal__session-box {
+      background: var(--color-sand);
+      border-radius: var(--radius-sm);
+      padding: var(--space-md);
+    }
+    .speaker-modal__session-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-slate);
+      margin: 0 0 0.4rem;
+    }
+    .speaker-modal__session-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-ink);
+      margin: 0 0 0.4rem;
+    }
+    .speaker-modal__session-time {
+      font-size: var(--fs-small);
+      color: var(--color-coral);
+      font-weight: 600;
+      margin: 0;
+    }
+  </style>
+</head>
+<body class="has-subnav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">Conference</span>
+        <img class="site-logo__mark" src="images/footer-logo-white.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html" aria-current="page">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html" aria-current="page">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Conference sub-navigation (index, agenda, speakers, conference-faq only) -->
+  <div class="sub-nav">
+    <div class="container sub-nav__bar">
+      <a href="index.html#overview">Overview</a>
+      <a href="conference-agenda.html">Agenda</a>
+      <a href="conference-speakers.html" aria-current="page">Speakers</a>
+      <a href="conference-sponsors.html">Sponsors</a>
+      <a href="conference-faq.html">FAQ</a>
+      <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Register</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="section section--sand texture">
+      <div class="container">
+
+        <div class="section-heading" data-reveal>
+          <h1>Speakers</h1>
+          <p>Meet the people teaching at the Dental Wisdom Conference 2027</p>
+        </div>
+
+        <!-- ===== SPEAKER GRID ===== -->
+        <div class="speaker-grid">
+
+          <!-- 1 -->
+          <article class="speaker-card" data-reveal
+            data-photo="https://randomuser.me/api/portraits/women/44.jpg"
+            data-name="Dr. Rachel Goldstein"
+            data-specialty="Cosmetic &amp; Restorative Dentistry"
+            data-bio="Dr. Goldstein is a cosmetic dentist in private practice in New York City, known for her expertise in full-mouth rehabilitation and aesthetic smile design. She has lectured internationally on digital smile workflows and ceramic restorations, and her cases have been featured in several peer-reviewed publications."
+            data-course="The Full Smile Workflow: From Digital Planning to Final Bonding"
+            data-time="Thursday, 9:00 – 10:30 AM">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="https://randomuser.me/api/portraits/women/44.jpg" alt="Dr. Rachel Goldstein" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Rachel Goldstein</h2>
+                <p class="speaker-card__specialty">Cosmetic &amp; Restorative</p>
+                <p class="speaker-card__bio-snippet">Cosmetic dentist in NYC specializing in full-mouth rehabilitation and aesthetic smile design. Lectured internationally on digital workflows and ceramics.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">The Full Smile Workflow: From Digital Planning to Final Bonding</p>
+                <p class="speaker-card__time">Thu 9:00 – 10:30 AM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 2 -->
+          <article class="speaker-card" data-reveal
+            data-photo="https://randomuser.me/api/portraits/men/32.jpg"
+            data-name="Dr. Michael Ohayon"
+            data-specialty="Implant Dentistry"
+            data-bio="Dr. Ohayon has placed over 5,000 implants across his 20-year career and serves as a faculty member at a major dental school. He is known for his mastery of immediate loading protocols, complex bone grafting, and making advanced implant concepts accessible for the general dentist."
+            data-course="Same-Day Teeth: Immediate Loading Protocols for Everyday Practice"
+            data-time="Thursday, 11:00 AM – 12:15 PM">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Dr. Michael Ohayon" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Michael Ohayon</h2>
+                <p class="speaker-card__specialty">Implant Dentistry</p>
+                <p class="speaker-card__bio-snippet">Has placed over 5,000 implants across his 20-year career. Faculty member and expert in immediate loading protocols and complex bone grafting.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Same-Day Teeth: Immediate Loading Protocols for Everyday Practice</p>
+                <p class="speaker-card__time">Thu 11:00 AM – 12:15 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 3 -->
+          <article class="speaker-card" data-reveal
+            data-photo="https://randomuser.me/api/portraits/men/52.jpg"
+            data-name="Dr. Daniel Levy"
+            data-specialty="Endodontics"
+            data-bio="Dr. Levy is a full-time endodontist who has contributed research on canal anatomy and retreatment complications. He is particularly known for making complex endo cases feel manageable for general dentists, and his hands-on workshops consistently sell out."
+            data-course="When to Refer and When to Treat: Endo Decision-Making in GP Practice"
+            data-time="Thursday, 3:30 – 4:45 PM">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="https://randomuser.me/api/portraits/men/52.jpg" alt="Dr. Daniel Levy" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Daniel Levy</h2>
+                <p class="speaker-card__specialty">Endodontics</p>
+                <p class="speaker-card__bio-snippet">Researcher and full-time endodontist specializing in canal anatomy and retreatment. Known for making complex endo feel manageable for GP dentists.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">When to Refer and When to Treat: Endo Decision-Making in GP Practice</p>
+                <p class="speaker-card__time">Thu 3:30 – 4:45 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+        </div><!-- /speaker-grid -->
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SPEAKER MODAL (single, populated by JS) ===== -->
+  <div class="speaker-modal" id="speakerModal" role="dialog" aria-modal="true" aria-labelledby="speakerModalName">
+    <div class="speaker-modal__backdrop" id="speakerModalBackdrop"></div>
+    <div class="speaker-modal__dialog">
+      <button class="speaker-modal__close" id="speakerModalClose" aria-label="Close">&times;</button>
+      <div class="speaker-modal__avatar-wrap">
+        <img class="speaker-modal__avatar" id="speakerModalAvatar" src="" alt="">
+      </div>
+      <div class="speaker-modal__body">
+        <h2 class="speaker-modal__name" id="speakerModalName"></h2>
+        <p class="speaker-modal__specialty" id="speakerModalSpecialty"></p>
+        <p class="speaker-modal__bio" id="speakerModalBio"></p>
+        <div class="speaker-modal__session-box">
+          <p class="speaker-modal__session-label">Session</p>
+          <p class="speaker-modal__session-title" id="speakerModalCourse"></p>
+          <p class="speaker-modal__session-time" id="speakerModalTime"></p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+
+  <script>
+    /* ===== Speaker modal logic ===== */
+    (function () {
+      var modal     = document.getElementById('speakerModal');
+      var backdrop  = document.getElementById('speakerModalBackdrop');
+      var closeBtn  = document.getElementById('speakerModalClose');
+      var avatar    = document.getElementById('speakerModalAvatar');
+      var nameEl    = document.getElementById('speakerModalName');
+      var specialty = document.getElementById('speakerModalSpecialty');
+      var bio       = document.getElementById('speakerModalBio');
+      var course    = document.getElementById('speakerModalCourse');
+      var time      = document.getElementById('speakerModalTime');
+
+      var lastFocused = null;
+
+      function openModal(card) {
+        lastFocused = document.activeElement;
+        var d = card.dataset;
+        avatar.src                  = d.photo;
+        avatar.alt                  = d.name;
+        nameEl.textContent          = d.name;
+        specialty.textContent       = d.specialty;
+        bio.textContent             = d.bio;
+        course.textContent          = d.course;
+        time.textContent            = d.time;
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
+      }
+
+      // Wire up each card
+      document.querySelectorAll('.speaker-card').forEach(function (card) {
+        card.querySelector('.speaker-card__trigger').addEventListener('click', function () {
+          openModal(card);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+        // Basic focus trap
+        if (e.key === 'Tab' && modal.classList.contains('is-open')) {
+          var focusable = modal.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])');
+          var first = focusable[0];
+          var last  = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    }());
+  </script>
+
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

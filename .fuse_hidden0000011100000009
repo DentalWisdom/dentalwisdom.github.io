@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Join the WhatsApp Group | Dental Wisdom</title>
+  <meta name="description" content="Join the Dental Wisdom WhatsApp community — a close-knit network of Jewish dental professionals sharing knowledge, resources, and connections.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Join the Dental Wisdom WhatsApp Community">
+  <meta property="og:description" content="Join the Dental Wisdom WhatsApp community — a close-knit network of Jewish dental professionals sharing knowledge, resources, and connections.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/whatsapp.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-community.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Dental Wisdom WhatsApp community for Jewish dentists">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Join the Dental Wisdom WhatsApp Community">
+  <meta name="twitter:description" content="Join the Dental Wisdom WhatsApp community — a close-knit network of Jewish dental professionals sharing knowledge, resources, and connections.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-community.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">WhatsApp</span>
+        <img class="site-logo__mark" src="images/footer-logo-white.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on this page (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <!-- NOTE for Ben: the page copy below is a first draft in the site's calm,
+       warm tone — SITE_SPEC.md marked this page's wording as "not yet provided",
+       so just say the word if you'd like anything reworded. -->
+
+  <main id="main">
+
+    <!-- ===================== HERO / INTRO ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Join the Dental Wisdom WhatsApp Community</h1>
+          <p>Stay connected with the Dental Wisdom network all year round.</p>
+        </div>
+        <div class="lede text-center" data-reveal>
+          <p>Our WhatsApp group is where the Dental Wisdom community stays in touch between events &mdash; session invitations and reminders, exclusive partner deals, conference updates, and genuine conversation with fellow Jewish dentists.</p>
+        </div>
+        <div class="link-row" data-reveal>
+          <button class="btn btn-primary" type="button" data-open-join-modal>Apply to Join</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHAT YOU'LL GET ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>What you&rsquo;ll receive as a member</h2>
+        </div>
+
+        <div class="card-grid card-grid--4" data-reveal>
+          <div class="card">
+            <p>Invitations and reminders for Dental Wisdom Live sessions</p>
+          </div>
+          <div class="card">
+            <p>Exclusive deals and offers from our partners</p>
+          </div>
+          <div class="card">
+            <p>Updates and announcements about the 2027 Conference</p>
+          </div>
+          <div class="card">
+            <p>Genuine connection with a warm community of Jewish dentists</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== HOW JOINING WORKS ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>How Joining Works</h2>
+          <p>To keep the group focused and welcoming, new members join by application.</p>
+        </div>
+
+        <div class="card-grid card-grid--3" data-reveal>
+          <div class="card">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Apply</h3>
+            <p>Tell us a little about yourself using our short questionnaire.</p>
+          </div>
+          <div class="card">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>We Review</h3>
+            <p>Our team reviews each application personally to keep the group focused and welcoming.</p>
+          </div>
+          <div class="card">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Welcome In</h3>
+            <p>Once approved, you&rsquo;ll receive an invitation to join the group directly on WhatsApp.</p>
+          </div>
+        </div>
+
+        <p class="lede text-center" style="margin-top: var(--space-lg);">Once you&rsquo;re a member, your phone number and any messages you send will be visible to other members of the group, per WhatsApp&rsquo;s own privacy policy. You can leave the group at any time. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+
+        <p class="lede text-center">Curious about who can join, our community culture, or how companies can get involved? See our <a href="whatsapp-policies.html">Group Policies</a>.</p>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="section section--ivory cta-band">
+      <div class="container" data-reveal>
+        <h2>Ready to join the conversation?</h2>
+        <p class="lede" style="margin-bottom: var(--space-md);">Apply below and our team will be in touch once your application has been reviewed.</p>
+        <div class="link-row">
+          <button class="btn btn-primary" type="button" data-open-join-modal>Apply to Join</button>
+          <a class="btn btn-secondary" href="live.html">Learn About Dental Wisdom Live</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

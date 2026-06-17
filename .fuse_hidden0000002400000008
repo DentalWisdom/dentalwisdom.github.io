@@ -1,0 +1,282 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms &amp; Conditions | Dental Wisdom</title>
+  <meta name="description" content="Terms and conditions for use of the Dental Wisdom website and participation in Dental Wisdom community programs.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Terms &amp; Conditions | Dental Wisdom">
+  <meta property="og:description" content="Terms and conditions for use of the Dental Wisdom website and participation in Dental Wisdom community programs.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/terms.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-general.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom — a warm community of Jewish dentists">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Terms &amp; Conditions | Dental Wisdom">
+  <meta name="twitter:description" content="Terms and conditions for use of the Dental Wisdom website and participation in Dental Wisdom community programs.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-general.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo site-logo--plain" href="index.html">
+        <img class="site-logo__mark" src="images/footer-logo-white.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on this page (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Terms &amp; Conditions</h1>
+        </div>
+
+        <div class="legal" data-reveal>
+          <p class="legal__meta">
+            Effective Date: January 1, 2026<br>
+            Last Updated: January 1, 2026
+          </p>
+
+          <p class="legal__intro">These Terms govern your participation in the Dental Wisdom WhatsApp Group and Dental Wisdom Live sessions. Separate, more detailed terms apply to the Dental Wisdom Conference, which can be found here: <a href="conference-terms.html">dentalwisdom.org/conference-terms</a>. By using this website or participating in any of our programs, you agree to the applicable terms.</p>
+
+          <h2>Participation in the Dental Wisdom WhatsApp Group</h2>
+
+          <p>The Dental Wisdom WhatsApp Group is a private community intended exclusively for licensed dentists. By applying for and accepting membership in the group, you agree to the following:</p>
+
+          <h3>Eligibility</h3>
+          <p>Membership is limited to currently licensed dentists. You represent and warrant that you are a licensed dentist at the time of joining and will remain so during your membership. Dental Wisdom LLC reserves the right to verify licensing status and to remove any member who does not meet this requirement.</p>
+
+          <h3>No Professional Advice</h3>
+          <p>The Dental Wisdom WhatsApp Group is a peer-to-peer discussion forum where members can share experiences, ask questions, and receive recommendations from other dentists. Nothing shared in the group constitutes professional, medical, legal, or financial advice. It is your sole responsibility to review any information or recommendations shared by other members and to make your own independent decisions on how to proceed. Dental Wisdom LLC and its organizers are not responsible for any advice, opinions, or recommendations shared by members, nor for any decisions you make based on such information.</p>
+
+          <h3>No Expectation of Privacy</h3>
+          <p>You acknowledge that the Dental Wisdom WhatsApp Group is monitored by the organizers. There is no expectation of privacy in the group. By participating, you consent to the review of your messages and content by the organizers.</p>
+
+          <h3>User Content License</h3>
+          <p>By posting content in the Dental Wisdom WhatsApp Group, you grant Dental Wisdom LLC a non-exclusive, royalty-free, perpetual, and worldwide license to use, reproduce, modify, distribute, and display such content for any purpose related to the operation and promotion of the Dental Wisdom community. Please note that this is generally true of any WhatsApp group or online forum in which you post content; we are stating it here for transparency and clarity.</p>
+
+          <h3>Promotion and Commercial Activity</h3>
+          <p>You may not post promotional, commercial, or marketing content on behalf of any company, vendor, sponsor, or third party. All such content must be submitted in advance to the organizers for review and express approval. Unauthorized promotional posts will be removed. Repeated or serious violations may result in immediate removal from the group without notice.</p>
+
+          <h3>Conduct</h3>
+          <p>You agree to maintain respectful and professional conduct at all times. Harassment, hate speech, discrimination, doxxing, or any behavior that disrupts the community may result in immediate removal from the group.</p>
+
+          <h3>Removal and Enforcement</h3>
+          <p>Dental Wisdom LLC and its organizers reserve the right to remove any member or any content from the group at any time, without prior notice or liability, if such member or content is deemed inconsistent with these Terms.</p>
+
+          <h3>Indemnification</h3>
+          <p>You agree to indemnify, defend, and hold harmless Dental Wisdom LLC, its owners, agents, employees, and contractors from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&rsquo; fees) arising out of or related to your participation in the Dental Wisdom WhatsApp Group or your violation of these Terms.</p>
+
+          <h3>Third-Party Platform Disclaimer</h3>
+          <p>The Dental Wisdom WhatsApp Group operates on the WhatsApp platform, which is owned and operated by Meta Platforms, Inc. Dental Wisdom LLC is not responsible for the availability, security, or performance of WhatsApp. Your use of WhatsApp is subject to Meta&rsquo;s terms of service and privacy policy.</p>
+
+          <h3>Limitation of Liability</h3>
+          <p>To the fullest extent permitted by law, Dental Wisdom LLC, its owners, agents, employees, and contractors shall not be liable for any direct, indirect, incidental, special, consequential, punitive, or exemplary damages arising out of or related to your participation in the Dental Wisdom WhatsApp Group.</p>
+
+          <h3>Dispute Resolution</h3>
+          <p>Any dispute arising out of or relating to these Terms or your participation in the Dental Wisdom WhatsApp Group shall first be attempted to be resolved through good-faith discussions between you and Dental Wisdom LLC. If the dispute cannot be resolved informally, it may be submitted to binding arbitration in accordance with the rules of the American Arbitration Association. The arbitration shall take place in Colorado or via video conference, at the election of Dental Wisdom LLC. Each party shall bear its own costs of arbitration unless the arbitrator determines otherwise.</p>
+
+          <h2>Participation in Dental Wisdom Live</h2>
+
+          <h3>Participation in Dental Wisdom Live</h3>
+          <p>Dental Wisdom Live consists of monthly online continuing education sessions organized by Dental Wisdom LLC. These sessions are provided free of charge to licensed dentists who are members of the Dental Wisdom community. By registering for, attending, presenting at, or sponsoring any Dental Wisdom Live session, you agree to the following:</p>
+
+          <h3>Recording and Content Ownership</h3>
+          <p>Dental Wisdom LLC reserves the right to record all Dental Wisdom Live sessions. By participating in any session (as an attendee, presenter, or sponsor), you acknowledge and agree that Dental Wisdom LLC retains full ownership of all recordings and related content. Dental Wisdom LLC may use, reproduce, edit, distribute, and display such recordings and content for any purpose, including promotional, educational, and archival uses, without further consent or compensation.</p>
+
+          <h3>No Professional Advice</h3>
+          <p>The content presented during Dental Wisdom Live sessions, including any comments, opinions, or recommendations made by presenters, sponsors, or attendees, is for educational and informational purposes only. It does not constitute professional, medical, legal, or financial advice. Dental Wisdom LLC and its organizers are not responsible for any decisions made based on information shared during these sessions.</p>
+
+          <h3>Technical Issues and Session Quality</h3>
+          <p>Dental Wisdom LLC makes no guarantees regarding the quality, availability, or technical performance of Dental Wisdom Live sessions. Dental Wisdom LLC shall not be liable for any loss, damage, or inconvenience resulting from technical difficulties or the inability to attend or fully participate in a session.</p>
+
+          <h3>Sponsors and Presenters</h3>
+          <p>Sponsors and presenters participate at the invitation of Dental Wisdom LLC. All promotional content, introductions, giveaways, or sponsored segments must be pre-approved. Sponsors and presenters are required to disclose any actual or potential conflicts of interest. Dental Wisdom LLC reserves the right to modify, decline, or remove any content that does not align with the educational focus or values of the program.</p>
+
+          <h3>Removal and Enforcement</h3>
+          <p>Dental Wisdom LLC reserves the right to remove any attendee, presenter, or sponsor from a session, or to revoke access to future sessions, at its sole discretion and without prior notice or liability.</p>
+
+          <h3>Indemnification</h3>
+          <p>You agree to indemnify, defend, and hold harmless Dental Wisdom LLC, its owners, agents, employees, and contractors from and against any and all claims, damages, losses, liabilities, costs, and expenses (including reasonable attorneys&rsquo; fees) arising out of or related to your participation in Dental Wisdom Live sessions or your violation of these Terms.</p>
+
+          <h3>Third-Party Platform Disclaimer</h3>
+          <p>Dental Wisdom Live sessions are hosted on third-party platforms. Dental Wisdom LLC is not responsible for the availability, security, or performance of any third-party platform.</p>
+
+          <h3>Limitation of Liability</h3>
+          <p>To the fullest extent permitted by law, Dental Wisdom LLC, its owners, agents, employees, and contractors shall not be liable for any direct, indirect, incidental, special, consequential, punitive, or exemplary damages arising out of or related to your participation in Dental Wisdom Live sessions.</p>
+
+          <h3>Dispute Resolution</h3>
+          <p>Any dispute arising out of or relating to these Terms or your participation in Dental Wisdom Live shall first be attempted to be resolved through good-faith discussions between you and Dental Wisdom LLC. If the dispute cannot be resolved informally, it may be submitted to binding arbitration in accordance with the rules of the American Arbitration Association. The arbitration shall take place in Colorado or via video conference, at the election of Dental Wisdom LLC. Each party shall bear its own costs of arbitration unless the arbitrator determines otherwise.</p>
+
+          <h2>Participation in the Dental Wisdom Conference</h2>
+          <p>All terms and conditions governing registration, attendance, sponsorship, and participation in the Dental Wisdom Conference are available at: <a href="conference-terms.html">dentalwisdom.org/conference-terms</a>.</p>
+          <p>By registering for or attending the Dental Wisdom Conference, you agree to be bound by the terms published at the link above.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals &mdash; connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+      <p class="modal__note">Curious about our WhatsApp community? <a href="whatsapp.html">Learn more</a>.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

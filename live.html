@@ -40,7 +40,7 @@
     <div class="container site-header__bar">
       <a class="site-logo" href="index.html">
         <span class="site-logo__section">Live</span>
-        <img class="site-logo__mark" src="images/footer-logo-white.png" alt="Dental Wisdom">
+        <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
       </a>
 
       <nav class="site-nav" aria-label="Primary">
@@ -65,7 +65,7 @@
   <!-- Mobile full-screen overlay menu -->
   <div class="mobile-menu" id="mobileMenu">
     <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
-      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+      <img src="images/header-logo-blue.png" alt="Dental Wisdom">
     </a>
     <nav aria-label="Mobile">
       <ul class="mobile-menu__list">
@@ -101,22 +101,68 @@
     <section class="section section--ivory">
       <div class="container">
         <div class="section-heading" data-reveal>
-          <h2>Every Dental Wisdom Live session delivers:</h2>
+          <h2>Each Live session delivers:</h2>
         </div>
 
-        <div class="card-grid card-grid--4" data-reveal>
-          <div class="card">
-            <p>Cutting-edge techniques and practical solutions from leading industry experts and experienced practitioners</p>
+        <div class="card-grid card-grid--4 live-delivers-grid" data-reveal>
+
+          <!-- Card 1: Expert content -->
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M32 22l4 2-4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M36 24h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Expert-Led Education</h3>
+            <p class="live-delivers-blurb">Cutting-edge techniques and practical solutions from leading practitioners — directly applicable to your practice.</p>
           </div>
-          <div class="card">
-            <p>Real-time Q&amp;A for meaningful engagement</p>
+
+          <!-- Card 2: Live Q&A -->
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <path d="M8 10a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H28l-8 8v-8h-8a4 4 0 0 1-4-4V10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="17" cy="19" r="2" fill="currentColor"/>
+                <circle cx="24" cy="19" r="2" fill="currentColor"/>
+                <circle cx="31" cy="19" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Live Q&amp;A</h3>
+            <p class="live-delivers-blurb">Ask your questions in real time and get meaningful answers from the experts — not a recording, not a chatbot.</p>
           </div>
-          <div class="card">
-            <p>Valuable CE credits with every session</p>
+
+          <!-- Card 3: CE Credits -->
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <rect x="6" y="10" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 20h20M14 27h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="35" cy="35" r="7" fill="var(--color-ivory)" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 35l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">CE Credits Included</h3>
+            <p class="live-delivers-blurb">Earn valuable continuing education credits with every session — keeping your license current has never been easier.</p>
           </div>
-          <div class="card">
-            <p>Exciting giveaways in every session</p>
+
+          <!-- Card 4: Giveaways -->
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <rect x="8" y="20" width="32" height="22" rx="2" stroke="currentColor" stroke-width="2"/>
+                <rect x="6" y="13" width="36" height="9" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 13v29" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 13c0 0-4-8 0-8s4 8 0 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M24 13c0 0 4-8 0-8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Exclusive Giveaways</h3>
+            <p class="live-delivers-blurb">Something exciting in every session — because showing up for your community should feel like a reward.</p>
           </div>
+
         </div>
 
         <p class="lede text-center" style="margin-top: var(--space-lg);">This is high-value, interactive education designed to help you stay at the forefront of modern dentistry while strengthening our community.</p>
@@ -160,22 +206,32 @@
           <h2>How Dental Wisdom Live Works</h2>
         </div>
 
-        <div class="card-grid card-grid--3" data-reveal>
-          <div class="card">
-            <span class="step-number" aria-hidden="true">1</span>
-            <h3>Join the Network</h3>
-            <p>Become part of the Dental Wisdom WhatsApp community to receive session invitations, reminders, and updates.</p>
+        <div class="steps-row" data-reveal>
+
+          <div class="step-item">
+            <div class="step-bubble" aria-hidden="true">1</div>
+            <div class="step-body">
+              <h3 class="step-title">Join the Community</h3>
+              <p class="step-desc">Become part of the Dental Wisdom WhatsApp family — your home base for invitations, reminders, and the inside scoop on every upcoming session.</p>
+            </div>
           </div>
-          <div class="card">
-            <span class="step-number" aria-hidden="true">2</span>
-            <h3>Register for Sessions</h3>
-            <p>Sign up for the sessions that interest you. All sessions are free for active network members.</p>
+
+          <div class="step-item">
+            <div class="step-bubble" aria-hidden="true">2</div>
+            <div class="step-body">
+              <h3 class="step-title">Claim Your Spot</h3>
+              <p class="step-desc">Browse upcoming sessions and sign up for what speaks to you. Every session is completely free for active network members.</p>
+            </div>
           </div>
-          <div class="card">
-            <span class="step-number" aria-hidden="true">3</span>
-            <h3>Attend Live &amp; Earn CE</h3>
-            <p>Join the live session, participate in Q&amp;A, and receive your CE credits after the session.</p>
+
+          <div class="step-item">
+            <div class="step-bubble" aria-hidden="true">3</div>
+            <div class="step-body">
+              <h3 class="step-title">Show Up &amp; Win</h3>
+              <p class="step-desc">Join live, engage with the experts, earn your CE credits — and walk away with a chance at exclusive giveaways every single session.</p>
+            </div>
           </div>
+
         </div>
       </div>
     </section>
@@ -204,7 +260,7 @@
         <!-- Column 1: Brand -->
         <div class="footer-brand">
           <a class="footer-logo" href="#" aria-label="Back to top of page">
-            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+            <img src="images/footer-logo-white-trimmed.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
           </a>
           <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
           <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>

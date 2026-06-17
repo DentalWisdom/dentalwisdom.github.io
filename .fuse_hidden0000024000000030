@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Want to Get Involved? | Dental Wisdom Live</title>
+  <meta name="description" content="Interested in presenting or sponsoring a Dental Wisdom Live session? Learn how to get involved and reach our engaged dental professional community.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Want to Get Involved with Dental Wisdom Live?">
+  <meta property="og:description" content="Interested in presenting or sponsoring a Dental Wisdom Live session? Learn how to get involved and reach our engaged dental professional community.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/live-get-involved.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-live.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Live — monthly online continuing education for the network">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Want to Get Involved with Dental Wisdom Live?">
+  <meta name="twitter:description" content="Interested in presenting or sponsoring a Dental Wisdom Live session? Learn how to get involved and reach our engaged dental professional community.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-live.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">Live</span>
+        <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/header-logo-blue.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on this page (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <!-- ===================== HERO / INTRO ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Want to Get Involved?</h1>
+          <p>Sponsorship, giveaways, and speaker opportunities with Dental Wisdom Live</p>
+        </div>
+        <div class="lede text-center" data-reveal>
+          <p>Dental Wisdom Live is our monthly online continuing education series, created exclusively for the Dental Wisdom network. We welcome aligned companies and organizations that genuinely want to support high-quality education and the growth of our community.</p>
+          <p>Below are the most common ways companies can get involved.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GET INVOLVED CONTENT ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="legal" data-reveal>
+
+          <h2>Why Get Involved with Dental Wisdom Live?</h2>
+
+          <h3>What is the value of sponsoring or participating in Dental Wisdom Live?</h3>
+          <p>Dental Wisdom Live reaches a highly engaged, targeted audience of Jewish dentists who are actively invested in their professional growth. Sessions are intentionally high-quality, practical, and community-oriented. Partnering with Dental Wisdom Live allows your brand to associate with trusted education while building authentic relationships within a close-knit professional network.</p>
+
+          <h2>Sponsorship Opportunities</h2>
+
+          <h3>What sponsorship opportunities are available for Dental Wisdom Live?</h3>
+          <p>We offer limited sponsorship opportunities for individual sessions as well as multi-session packages. These can include branding during the session, recognition in pre- and post-session communications, and other integrated touchpoints. Because we keep attendance and sponsorship intentionally limited, every partner receives meaningful visibility without overwhelming the educational experience.</p>
+
+          <h3>Can my company sponsor an entire Dental Wisdom Live session?</h3>
+          <p>Yes. Companies may sponsor individual sessions or a series of sessions. Session sponsorship typically includes branding, a short introduction, and the opportunity to support the educational content.</p>
+
+          <h2>Giveaways &amp; Promotions</h2>
+
+          <h3>Can sponsors offer giveaways or door prizes during a session?</h3>
+          <p>Yes. We welcome relevant, professional giveaways that add value for attendees (such as product samples, educational resources, or tools). All giveaways must be pre-approved by the organizers to ensure they align with the educational and community-focused nature of the program.</p>
+
+          <h3>Are there guidelines for giveaways?</h3>
+          <p>Giveaways should be thoughtful and relevant to dental professionals. We generally avoid overly promotional or low-value items. Organizers reserve the right to approve or decline proposed giveaways.</p>
+
+          <h2>Vendor Spotlights</h2>
+
+          <h3>Can we have a short vendor spotlight or introduction during a session?</h3>
+          <p>Yes. Depending on the sponsorship level, we can include a brief (approximately 30–60 second) vendor spotlight or introduction at the beginning or end of a session. These spotlights are meant to be informative rather than sales-focused and must be pre-approved.</p>
+
+          <h3>What is the difference between a vendor spotlight and a full presentation?</h3>
+          <p>A vendor spotlight is a short, approved introduction or mention. A full presentation or sponsored educational segment would be considered a different level of involvement and is handled on a case-by-case basis to protect the educational integrity of the program.</p>
+
+          <h2>Speaker &amp; Content Opportunities</h2>
+
+          <h3>Can we recommend or select a speaker for a Dental Wisdom Live session?</h3>
+          <p>Yes. We welcome thoughtful recommendations for speakers and topics, especially when they are paired with sponsorship support. All speakers and topics are ultimately selected by the Dental Wisdom team to ensure they meet our standards for quality, relevance, and alignment with our community values.</p>
+
+          <h3>Can a sponsor deliver or co-present educational content?</h3>
+          <p>In select cases, yes — particularly when the content is genuinely educational and not primarily promotional. These opportunities are evaluated individually to maintain the high educational standard our members expect.</p>
+
+          <h2>Other Ways to Get Involved</h2>
+
+          <h3>Are there other ways for companies to support Dental Wisdom Live?</h3>
+          <p>Yes. Other opportunities include:</p>
+          <ul>
+            <li>Providing relevant resources or tools for attendees</li>
+            <li>Supporting giveaways or prizes across multiple sessions</li>
+            <li>Exploring multi-month or annual partnership packages</li>
+          </ul>
+          <p>We are happy to discuss custom opportunities that align with both your goals and the values of the Dental Wisdom community.</p>
+
+          <h2>How to Get Started</h2>
+
+          <h3>How do we inquire about getting involved with Dental Wisdom Live?</h3>
+          <p>Please email us at <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a> with the subject line "Dental Wisdom Live Partnership Inquiry." In your message, please include:</p>
+          <ul>
+            <li>A brief overview of your company and what you offer</li>
+            <li>The type of involvement you're most interested in (session sponsorship, giveaways, speaker recommendation, etc.)</li>
+            <li>Any specific sessions or timing preferences you have in mind</li>
+          </ul>
+          <p>We review all inquiries thoughtfully and will respond within a few business days.</p>
+
+          <h3>Is there a formal application or prospectus?</h3>
+          <p>We currently handle Dental Wisdom Live partnerships on a more personalized basis rather than through a public prospectus. This allows us to ensure every partnership feels like a natural fit for our community.</p>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== CONTACT CTA ===================== -->
+    <section class="section section--sand texture cta-band">
+      <div class="container" data-reveal>
+        <h2>Get in Touch</h2>
+        <p class="lede" style="margin-bottom: var(--space-md);">Email us at <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a> with the subject line "Dental Wisdom Live Partnership Inquiry" to discuss getting involved with Dental Wisdom Live.</p>
+        <div class="link-row">
+          <a class="btn btn-primary" href="mailto:Info@DentalWisdom.org">Email Us</a>
+          <a class="btn btn-secondary" href="live.html">Back to Dental Wisdom Live</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+      <p class="modal__note">Curious about our WhatsApp community? <a href="whatsapp.html">Learn more</a>.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FAQ | Dental Wisdom Conference 2027</title>
+  <meta name="description" content="Answers to common questions about the Dental Wisdom Conference 2027 — registration, hotel, CE credits, kosher meals, Shabbos, family attendance, and more.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="FAQ | Dental Wisdom Conference 2027">
+  <meta property="og:description" content="Answers to common questions about the Dental Wisdom Conference 2027 — registration, hotel, CE credits, kosher meals, Shabbos, family attendance, and more.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/conference-faq.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Conference 2027 — cross-specialty dental CE, March 3–6, 2027, Miami">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="FAQ | Dental Wisdom Conference 2027">
+  <meta name="twitter:description" content="Answers to common questions about the Dental Wisdom Conference 2027 — registration, hotel, CE credits, kosher meals, Shabbos, family attendance, and more.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body class="has-subnav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">Conference</span>
+        <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html" aria-current="page">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html" aria-current="page">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Conference sub-navigation (index, agenda, speakers, conference-faq only) -->
+  <div class="sub-nav">
+    <div class="container sub-nav__bar">
+      <a href="index.html#overview">Overview</a>
+      <a href="conference-agenda.html">Agenda</a>
+      <a href="conference-speakers.html">Speakers</a>
+      <a href="conference-sponsors.html">Sponsors</a>
+      <a href="conference-faq.html" aria-current="page">FAQ</a>
+      <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Register</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Frequently Asked Questions</h1>
+          <p>Everything you need to know about the Dental Wisdom Conference 2027</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="legal" data-reveal>
+
+          <!-- Location & Getting There -->
+          <h2>Location &amp; Getting There</h2>
+
+          <h3>When is the Dental Wisdom Conference?</h3>
+          <p>The Dental Wisdom Conference will take place March 3–6, 2027 at The Altair Hotel in Bay Harbor Islands, Miami.</p>
+
+          <h3>Where is the conference held?</h3>
+          <p>The entire event will be held at The Altair Hotel, a beautiful waterfront boutique hotel located at: 9540 West Bay Harbor Drive, Bay Harbor Islands, FL 33154. All lectures, hands-on classes, meals, and social events take place on-site at the hotel.</p>
+
+          <h3>How do I get to the hotel?</h3>
+          <p>Most attendees fly into Miami International Airport (MIA) or Fort Lauderdale-Hollywood International Airport (FLL).</p>
+          <ul>
+            <li>MIA is approximately 15 miles (about 24 minutes drive) from the hotel.</li>
+            <li>FLL is about 20–25 miles away.</li>
+          </ul>
+          <p>Uber, taxi, or rideshare are the easiest options. No official shuttle is provided.</p>
+
+          <h3>Can I attend without staying at the host hotel?</h3>
+          <p>We strongly recommend staying at The Altair Hotel for the full conference experience. As a bonus, the first 25 attendees who book a room at the hotel will receive a complimentary bottle of wine for Shabbos.</p>
+
+          <!-- Schedule & Program -->
+          <h2>Schedule &amp; Program</h2>
+
+          <h3>What is the daily schedule?</h3>
+          <p>Please note that the schedule below is tentative. Organizers reserve the right to make adjustments as needed. The final schedule will be published closer to the event.</p>
+          <ul>
+            <li><strong>Wednesday:</strong> Welcome event for adults at 8:30 PM</li>
+            <li><strong>Thursday:</strong> Daf Yomi at 6 AM, Davening at 7 AM, Breakfast at 8 AM, Lectures 9 AM–12 PM, Lunch, Afternoon lectures 1 PM–7:30 PM, followed by 8 PM party with glatt kosher dinner and music.</li>
+            <li><strong>Friday:</strong> Daf Yomi at 6 AM, Davening at 7 AM, Breakfast at 8 AM, Lectures 9 AM–12 PM, Lunch, Afternoon lectures until Shabbos. Davening, Shabbos dinner, Oneg, and shiurim in the evening.</li>
+            <li><strong>Shabbos:</strong> Breakfast at 8:30 AM, Davening at 9 AM, Lunch at 12 PM, Afternoon shiurim, Mincha, Shalosh Seudos, Maariv, followed by a closing party.</li>
+          </ul>
+
+          <h3>Who is lecturing and what classes will be offered?</h3>
+          <p>We are actively curating and selecting great speakers from all dental specialties, staying consistent with our approach from previous conferences.</p>
+          <p>The program will feature a mix of standard lectures, smaller intimate classes, and hands-on sessions. If you are interested in lecturing, please <a href="conference-new-speaker.html">apply here</a>.</p>
+          <p>A full list of lectures and class topics will be published closer to the event.</p>
+
+          <h3>Will sessions be recorded?</h3>
+          <p>Sessions will not be recorded. In-person attendance is required to receive CE credits.</p>
+
+          <h3>What is the dress code?</h3>
+          <p>Business casual to professional attire is recommended. Many attendees wear suits, blazers, and smart dresses. We encourage everyone to look polished and professional.</p>
+
+          <!-- Who It's For & Format -->
+          <h2>Who It's For &amp; Format</h2>
+
+          <h3>Who is this event for?</h3>
+          <p>This conference is designed for Jewish dentists who want to combine high-quality continuing education with meaningful Jewish community. Expect inspiring shiurim, beautiful minyanim, cross-specialty lectures, hands-on CE, delicious glatt kosher meals, uplifting Shabbos programming, and genuine connections within the Dental Wisdom community.</p>
+
+          <h3>What is the format of the event?</h3>
+          <p>This is a small, intimate, invitation-style continuing education event with limited attendance. You can expect interactive lectures, hands-on classes, and plenty of time for networking over meals and social events.</p>
+
+          <h3>Will there be sponsors or exhibitors?</h3>
+          <p>A limited number of aligned sponsors may support the event. Sponsorship does not influence the educational content. More information on sponsoring can be found <a href="conference-new-sponsor.html">here</a>.</p>
+
+          <!-- CE Credits -->
+          <h2>CE Credits</h2>
+
+          <h3>How many CE credits will be offered?</h3>
+          <p>20 CE credits will be offered in accordance with AGD PACE guidelines. Final credit hours are subject to change.</p>
+
+          <h3>Is this event AGD PACE approved?</h3>
+          <p>Yes, the course is hosted by an AGD PACE approved provider.</p>
+
+          <h3>How will CE attendance be verified?</h3>
+          <p>Attendance verification and course evaluations are required to receive CE credit. Details will be provided during the event.</p>
+
+          <!-- Registration & Cost -->
+          <h2>Registration &amp; Cost</h2>
+
+          <h3>How does registration work?</h3>
+          <p>Due to limited capacity, early interest does not guarantee a seat. Your registration is only confirmed once payment is received and you receive an email confirmation from the organizers.</p>
+
+          <h3>How much does the Dental Wisdom Conference cost for dentists to attend?</h3>
+          <ul>
+            <li>Dentist: $1,995</li>
+            <li>Dental Student or Dental Resident: $1,595</li>
+            <li>Vendor Dentist: $2,995</li>
+          </ul>
+          <p>We reserve the right to raise pricing dynamically based on demand due to limited space. Register early to lock in the current rates.</p>
+
+          <h3>How much does it cost for my spouse and children to attend?</h3>
+          <ul>
+            <li>Spouse: $450</li>
+            <li>Child (age 3 and older): $100</li>
+          </ul>
+
+          <h3>What does registration include?</h3>
+          <p><strong>For Dentists:</strong></p>
+          <ul>
+            <li>All lectures and CE credits</li>
+            <li>Coffee and snacks throughout the program</li>
+            <li>Welcome event (Wednesday evening)</li>
+            <li>Glatt kosher lunches (Thursday &amp; Friday)</li>
+            <li>Thursday night dinner + music</li>
+            <li>Friday night Oneg</li>
+            <li>Shalosh Seudos</li>
+            <li>Motzei Shabbos closing event with dinner + music</li>
+          </ul>
+          <p><strong>For Registered Family Members (Spouse &amp; Children):</strong></p>
+          <ul>
+            <li>Children's activities (Thursday &amp; Friday)</li>
+            <li>Glatt kosher lunches (Thursday &amp; Friday)</li>
+            <li>Thursday night dinner + music</li>
+            <li>Friday night Oneg</li>
+            <li>Shalosh Seudos</li>
+            <li>Motzei Shabbos closing event with dinner + music</li>
+          </ul>
+
+          <!-- Hotel & Accommodations -->
+          <h2>Hotel &amp; Accommodations</h2>
+
+          <h3>Is the hotel included in the registration fee?</h3>
+          <p>No, hotel accommodations are not included in the registration fee.</p>
+          <p>We have secured a special room block at The Altair Hotel. During the registration process, you will be able to select your preferred dates and room type directly. Availability is limited and subject to the hotel's conference block.</p>
+          <p><strong>Available Room Rates (per night):</strong></p>
+          <ul>
+            <li>Studio King: ~$400</li>
+            <li>Studio Queen: ~$400</li>
+            <li>1 Bedroom Suite: ~$600</li>
+            <li>2 Bedroom Suite: ~$950</li>
+          </ul>
+          <p>A one-night deposit is required at the time of booking. Final agreed upon costs, including local taxes and resort fees, will be shared by the hotel concierge.</p>
+
+          <h3>Can I get a bigger room or extend my stay?</h3>
+          <p>Yes. You can upgrade to a larger room or extend your stay beyond the conference dates. During registration you can select your preferred dates and room type. If you'd like to upgrade or add extra nights after registering, just let us know and we'll coordinate directly with the hotel (subject to availability and hotel policies).</p>
+
+          <!-- Policies -->
+          <h2>Policies</h2>
+
+          <h3>What is the cancellation and refund policy?</h3>
+          <p>All registration fees are non-refundable except in cases of documented medical emergencies (doctor's note required, subject to Organizers' reasonable approval). Registrations are non-transferable and no substitutions or name changes are permitted.</p>
+
+          <!-- Contact -->
+          <h2>Still Have Questions?</h2>
+
+          <h3>Who can I contact with questions?</h3>
+          <p>Please email <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>.</p>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

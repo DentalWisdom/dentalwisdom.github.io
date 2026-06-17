@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Conference Terms &amp; Conditions | Dental Wisdom</title>
+  <meta name="description" content="Terms and conditions governing registration and participation in the Dental Wisdom Conference 2027, organized by Dental Wisdom LLC.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Conference Terms &amp; Conditions | Dental Wisdom">
+  <meta property="og:description" content="Terms and conditions governing registration and participation in the Dental Wisdom Conference 2027, organized by Dental Wisdom LLC.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/conference-terms.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Conference 2027 — cross-specialty dental CE, March 3–6, 2027, Miami">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Conference Terms &amp; Conditions | Dental Wisdom">
+  <meta name="twitter:description" content="Terms and conditions governing registration and participation in the Dental Wisdom Conference 2027, organized by Dental Wisdom LLC.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo site-logo--plain" href="index.html">
+        <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on this page (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Conference Terms &amp; Conditions</h1>
+        </div>
+
+        <div class="legal" data-reveal>
+          <p class="legal__meta">
+            Effective Date: January 1, 2025<br>
+            Last Updated: January 1, 2025<br>
+            Governing Law: State of Colorado
+          </p>
+
+          <p class="legal__intro"><strong>Please read carefully.</strong> By accessing or using this website, joining the WhatsApp Group, or attending or exhibiting at the annual Conference, you agree to be bound by these Terms of Use. If you do not agree, please discontinue use immediately.</p>
+
+          <p>These Terms &amp; Conditions apply specifically to the Dental Wisdom Conference. Additional terms govern participation in the Dental Wisdom WhatsApp Group and Dental Wisdom Live sessions. Those terms are available on our main Terms page: <a href="terms.html">dentalwisdom.org/terms</a>.</p>
+
+          <p>These Terms of Service ("Terms") govern your registration for and participation in the Dental Wisdom Conference ("Conference") scheduled for March 3&ndash;6, 2027, at The Altair Bay Harbor Hotel, 9540 West Bay Harbor Drive, Bay Harbor Islands, FL 33154, organized by Dental Wisdom LLC, a Colorado LLC ("Organizers"). By registering or attending (as attendee, guest, vendor, exhibitor, sponsor, or advertiser), you agree to these binding Terms.</p>
+
+          <!-- ===================== FOR ATTENDEES ===================== -->
+          <h2 id="attendees">For Attendees</h2>
+
+          <h3>Registration and Fees</h3>
+          <p>All registration fees for the Conference are non-refundable except for documented medical emergencies (doctor's note required; subject to Organizers' reasonable approval). Payments are final upon submission. A valid email address is required for registration and all communications. Registration is confirmed only upon receipt of payment and email confirmation from Organizers. Registrations are non-transferable; no substitutions or name changes are permitted.</p>
+
+          <h3>Program Changes and Continuing Education</h3>
+          <p>The program, speakers, schedule, and activities may change without notice. CE credits may be offered but are not guaranteed in number, approval, or acceptance by any licensing board; attendees must self-report, track their own credits, verify requirements with their board, and hold Organizers harmless for any issues.</p>
+
+          <h3>Photography, Video, and Media Release</h3>
+          <p>By attending, you expressly grant Organizers an irrevocable, perpetual, worldwide, royalty-free license to photograph, video, or otherwise record your likeness and the likeness of any registered guests or minors accompanying you, and use, reproduce, edit, distribute, and display it for promotional, educational, or archival purposes, without compensation or approval. You represent that you have the authority to grant this license on behalf of any such accompanying registered guests or minors. You waive inspection rights, moral rights, and claims for privacy or publicity invasion, except as prohibited by law.</p>
+
+          <h3>Dietary Accommodations</h3>
+          <p>All provided meals are kosher. Organizers make no further representations on allergies, preferences, or specific kashrut standards. Attendees with special needs assume all risks and should contact Organizers in advance.</p>
+
+          <h3>Guests and Minors</h3>
+          <p>Spouses, children, and other guests are invited and welcome to attend appropriate Conference events (e.g., social functions, meals where provided). However, spouses and children must register in advance (or on-site if permitted) to be included and gain access to any events, meals, or activities. Registration may be complimentary or at a reduced rate (details provided during registration process). Unregistered guests/minors will not be permitted entry to Conference activities. Attendees are responsible for supervising any registered guests/minors at all times; minors must be accompanied by a registered adult attendee. By registering minors, you (as parent/guardian) assume all risks on their behalf and waive claims as set forth in the Participation Risks section below. No childcare is provided.</p>
+
+          <h3>Accessibility and Accommodations</h3>
+          <p>The Conference venue complies with applicable ADA requirements. Organizers will provide reasonable accommodations for disabilities upon advance written request (at least 30 days prior) to <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>, including auxiliary aids where feasible. Attendees are responsible for notifying Organizers of needs; failure to do so may limit available accommodations.</p>
+
+          <h3>Conduct, Professional Dress, and Removal</h3>
+          <p>Attendees must maintain respectful, professional behavior and adhere to a professional dress code (business casual or equivalent; no jeans, athletic wear, or offensive attire). Violations &mdash; including harassment, disruption, unauthorized recording, or non-compliance &mdash; may result in immediate removal without refund or compensation, at Organizers' sole discretion.</p>
+
+          <h3>Community Engagement (WhatsApp Group)</h3>
+          <p>Participation in the Dental Wisdom community, including the WhatsApp group and any related chats, is limited to licensed dentists. As a member, you may not post promotional content on behalf of a vendor, sponsor, or business, and you may not allow a vendor or business to direct you to post advertisements or promotions on their behalf. Any promotional posts, announcements, marketing content, product recommendations, or similar commercial communications must be submitted directly to the community organizers (Lisa or Ben) for prior review and approval before being shared in the group. Content posted without approval will be removed, and repeated or serious violations may result in removal from the group. These measures help preserve the trust, collegiality, and non-commercial atmosphere that make this community valuable.</p>
+
+          <h3>Recording and Intellectual Property</h3>
+          <p>No audio, video, or photographic recording of sessions, speakers, or materials is permitted without explicit Organizers' written permission. All Conference content is protected intellectual property; unauthorized reproduction, distribution, or sharing is prohibited.</p>
+
+          <h3>False or Defamatory Statements</h3>
+          <p>By registering for or attending the Conference, you agree not to make or publish any false or defamatory public statements about the Conference, the Organizers, their affiliates, or representatives. Nothing in this provision is intended to restrict your rights under the Consumer Review Fairness Act, any federal or state law protecting honest reviews, truthful statements required by law, or protected communications.</p>
+
+          <h3>Participation Risks</h3>
+          <p>Participation is at your own risk. To the fullest extent permitted by Colorado law, you expressly waive and release Organizers, and Organizers' owners, agents, employees, and contractors from liability for any loss, injury, damage, expenses, or any and all damages arising from any and all claims (but excluding gross negligence, willful misconduct, or violations of statutory duties where not waivable). You expressly assume all risks related to travel, health, weather, venue conditions, and participation (including voluntary assumption of risks of exposure to communicable diseases).</p>
+
+          <h3>Indemnification</h3>
+          <p>You agree to indemnify and hold harmless Organizers, and its owners, agents, employees, and contractors from any and all claims arising from or related to your attendance at or participation in the Conference.</p>
+
+          <h3>Waiver of Consequential Damages; Limitation of Liability</h3>
+          <p>In no event shall Organizers, or its owners, agents, employees, and contractors be liable for consequential, indirect, incidental, special, exemplary, punitive, or enhanced damages, lost profits or revenues, or diminution in value, arising out of or relating to any claims. Organizers' and its owners', agents', employees', and contractors' aggregate liability arising out of these Terms will not exceed the amount you paid to Organizers to attend the Conference.</p>
+
+          <h3>Force Majeure and Cancellation</h3>
+          <p>In case of force majeure (e.g., war, terrorism, pandemic, natural disaster, severe weather, government restrictions, strikes, or other events beyond Organizers' control), or for any other reason, the Conference may be modified, postponed, relocated, or canceled at Organizers' discretion. Organizers will provide reasonable notice when possible. Refunds are not guaranteed due to non-recoverable costs (venue, vendors); however, prorated refunds, transferable credits, or priority access to future events may be offered where feasible, at Organizers' sole discretion. Organizers will have no further liability for changes, delays, or cancellations.</p>
+
+          <h3>Personal Expenses and Travel</h3>
+          <p>Attendees are solely responsible for all personal costs (travel, lodging, transportation, non-provided meals, etc.). Organizers have no liability for reimbursement in case of changes, postponement, relocation, or cancellation. Comprehensive travel insurance is strongly recommended.</p>
+
+          <h3>No Endorsement</h3>
+          <p>Views expressed by speakers, Vendors, or others are their own and not necessarily those of Organizers. Organizers do not endorse any products, services, or information presented.</p>
+
+          <h3>Data Privacy</h3>
+          <p>We collect personal information you provide during registration (e.g., name, email, contact details, professional information, and any dietary specifications). Organizers do not collect or disclose any personal data of children. This information is used solely for Conference administration, communications (e.g., updates, confirmations, program changes), processing payments, and providing conference-related services. We do not sell your personal information. We may share limited attendee contact information (e.g., name, email, company) with conference sponsors, partners, or exhibitors only if you explicitly opt in / consent during registration (or via a separate checkbox/opt-in). You may withdraw consent at any time by contacting us at <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>. We take reasonable steps to protect your information from unauthorized access or disclosure, but no method of transmission over the internet is 100% secure. For questions about your data, contact <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>. See also our <a href="privacy.html">Privacy Policy</a>.</p>
+
+          <h3>Changes to Terms</h3>
+          <p>Terms may be updated at Organizers' discretion. Material changes (e.g., date, venue, major program alterations) will be emailed to registered attendees/Vendors and posted at this page.</p>
+
+          <h3>Governing Law and Venue</h3>
+          <p>These Terms shall be governed by the laws of the State of Colorado, without regard to conflict of laws principles. Any disputes arising hereunder shall be resolved exclusively in the state or federal courts located in Denver County, Colorado (or the U.S. District Court for the District of Colorado, as applicable). You consent to the personal jurisdiction and venue of such courts and waive any objection based on inconvenient forum or improper venue.</p>
+
+          <h3>Severability, No Waiver, and Entire Agreement</h3>
+          <p>Invalid provisions do not affect others. No waiver of any breach constitutes a waiver of subsequent breaches. These Terms are the entire agreement, superseding prior understandings.</p>
+
+          <h3>Contact</h3>
+          <p><a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a></p>
+
+          <!-- ===================== FOR EXHIBITORS & BRANDS ===================== -->
+          <h2 id="exhibitors-brands">For Exhibitors &amp; Brands</h2>
+
+          <h3>Registration and Fees</h3>
+          <p>All fees to participate, exhibit, advertise, or sponsor are non-refundable except as specified in the Force Majeure and Cancellation section below. Payments are final upon submission. A valid email address is required for registration and all communications. Participation is confirmed only upon receipt of payment, agreement to these Terms and any applicable sponsorship or exhibitor agreement/prospectus, and confirmation from Organizers. Registrations are non-transferable; no substitutions or name changes are permitted without Organizers' approval.</p>
+
+          <h3>Vendors / Exhibitors</h3>
+          <p>Vendors, exhibitors, sponsors, or advertisers ("Vendors") who pay fees to participate, exhibit, advertise, or sponsor agree to these Terms (as applicable) and any agreement or prospectus provided by Organizers. Vendor participation is subject to Organizers' approval and may be denied or revoked at any time. Vendors must maintain general liability insurance of at least $1,000,000 per occurrence (naming Dental Wisdom LLC as an additional insured) and provide proof upon request. Vendors assume full responsibility for their booth setup, products, demos, materials, and activities (including compliance with all venue, safety, and applicable laws such as fire codes and health regulations; non-compliance may result in removal). Vendors indemnify and hold harmless Organizers from any and all claims, damages, losses, or expenses (including attorneys' fees) arising from their participation, products, services, negligence, or violations (including product liability or IP infringement). Organizers disclaim all liability for Vendor actions/products and make no endorsements. Vendors grant Organizers a royalty-free license to use their logos, booth photos/videos, and related materials for promotional purposes. Violations may result in immediate removal without refund.</p>
+
+          <h3>Sponsors and Participating Brands</h3>
+          <p>Sponsors and brands participating in the Dental Wisdom Conference through exposure opportunities &mdash; such as providing product samples, promotional materials, swag, or other items for distribution &mdash; hereby grant Organizers an irrevocable, perpetual, worldwide, royalty-free license to photograph, video, or otherwise record such materials and their display or distribution at the Conference, and to use, reproduce, edit, distribute, and display these images and recordings for promotional, educational, or archival purposes, without compensation or further approval. Such sponsors and brands further agree to indemnify and hold harmless Organizers, their owners, agents, employees, and contractors from any and all claims, damages, losses, or expenses (including attorneys' fees) arising from or related to the provided materials, their distribution, or any associated activities, including but not limited to claims of product liability, intellectual property infringement, or negligence.</p>
+
+          <h3>Photography, Video, and Media Release</h3>
+          <p>By attending or exhibiting, you expressly grant Organizers an irrevocable, perpetual, worldwide, royalty-free license to photograph, video, or otherwise record your likeness, your staff, and your booth or materials, and to use, reproduce, edit, distribute, and display it for promotional, educational, or archival purposes, without compensation or approval. You represent that you have the authority to grant this license on behalf of any accompanying staff or representatives. You waive inspection rights, moral rights, and claims for privacy or publicity invasion, except as prohibited by law.</p>
+
+          <h3>Dietary Accommodations</h3>
+          <p>All provided meals are kosher. Organizers make no further representations on allergies, preferences, or specific kashrut standards. Exhibitors and their staff with special needs assume all risks and should contact Organizers in advance.</p>
+
+          <h3>Guests and Minors</h3>
+          <p>Spouses, children, and other guests of exhibitor staff are invited and welcome to attend appropriate Conference events (e.g., social functions, meals where provided). However, spouses and children must register in advance (or on-site if permitted) to be included and gain access to any events, meals, or activities. Registration may be complimentary or at a reduced rate (details provided during the registration process). Unregistered guests/minors will not be permitted entry to Conference activities. Exhibitors are responsible for supervising any registered guests/minors at all times; minors must be accompanied by a registered adult. By registering minors, you (as parent/guardian) assume all risks on their behalf and waive claims as set forth in the Participation Risks section below. No childcare is provided.</p>
+
+          <h3>Accessibility and Accommodations</h3>
+          <p>The Conference venue complies with applicable ADA requirements. Organizers will provide reasonable accommodations for disabilities upon advance written request (at least 30 days prior) to <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>, including auxiliary aids where feasible. Exhibitors are responsible for notifying Organizers of needs; failure to do so may limit available accommodations.</p>
+
+          <h3>Conduct, Professional Dress, and Removal</h3>
+          <p>Exhibitors and their staff must maintain respectful, professional behavior and adhere to a professional dress code (business casual or equivalent; no jeans, athletic wear, or offensive attire). Violations &mdash; including harassment, disruption, unauthorized recording, or non-compliance &mdash; may result in immediate removal without refund or compensation, at Organizers' sole discretion.</p>
+
+          <h3>Community Engagement (WhatsApp Group)</h3>
+          <p>Participation in the Dental Wisdom community, including the WhatsApp group and any related chats, is strictly limited to licensed dentists. Vendors, sponsors, sales representatives, and other non-dentist individuals or businesses &mdash; including companies led by dentists who are themselves members of the group &mdash; may not join or participate in the group. You may not post directly in the group to promote your products, services, or company, and you may not ask, encourage, or direct any member to post advertisements or promotions on your behalf. Any promotional content shared on your behalf must first be submitted to the community organizers (Lisa or Ben) for review and express approval. Unapproved promotional content will be removed, and repeated or serious violations may result in removal of the member who posted it from the group.</p>
+
+          <h3>Recording and Intellectual Property</h3>
+          <p>No audio, video, or photographic recording of sessions, speakers, or materials is permitted without explicit Organizers' written permission. All Conference content is protected intellectual property; unauthorized reproduction, distribution, or sharing is prohibited.</p>
+
+          <h3>False or Defamatory Statements</h3>
+          <p>By registering for or attending the Conference, you agree not to make or publish any false or defamatory public statements about the Conference, the Organizers, their affiliates, or representatives. Nothing in this provision is intended to restrict your rights under the Consumer Review Fairness Act, any federal or state law protecting honest reviews, truthful statements required by law, or protected communications.</p>
+
+          <h3>Participation Risks</h3>
+          <p>Participation is at your own risk. To the fullest extent permitted by Colorado law, you expressly waive and release Organizers, and Organizers' owners, agents, employees, and contractors from liability for any loss, injury, damage, expenses, or any and all damages arising from any and all claims (but excluding gross negligence, willful misconduct, or violations of statutory duties where not waivable). You expressly assume all risks related to travel, health, weather, venue conditions, and participation (including voluntary assumption of risks of exposure to communicable diseases).</p>
+
+          <h3>Indemnification</h3>
+          <p>You agree to indemnify and hold harmless Organizers, and its owners, agents, employees, and contractors from any and all claims arising from or related to your participation in the Conference.</p>
+
+          <h3>Waiver of Consequential Damages; Limitation of Liability</h3>
+          <p>In no event shall Organizers, or its owners, agents, employees, and contractors be liable for consequential, indirect, incidental, special, exemplary, punitive, or enhanced damages, lost profits or revenues, or diminution in value, arising out of or relating to any claims. Organizers' and its owners', agents', employees', and contractors' aggregate liability arising out of these Terms will not exceed the amount you paid to Organizers to participate in the Conference.</p>
+
+          <h3>Force Majeure and Cancellation</h3>
+          <p>In case of force majeure (e.g., war, terrorism, pandemic, natural disaster, severe weather, government restrictions, strikes, or other events beyond Organizers' control), or for any other reason, the Conference may be modified, postponed, relocated, or canceled at Organizers' discretion. Organizers will provide reasonable notice when possible. Refunds are not guaranteed due to non-recoverable costs (venue, vendors); however, prorated refunds, transferable credits, or priority access to future events may be offered where feasible, at Organizers' sole discretion. Organizers will have no further liability for changes, delays, or cancellations.</p>
+
+          <h3>Personal Expenses and Travel</h3>
+          <p>Exhibitors are solely responsible for all personal and business costs (travel, lodging, transportation, shipping, non-provided meals, etc.). Organizers have no liability for reimbursement in case of changes, postponement, relocation, or cancellation. Comprehensive travel insurance is strongly recommended.</p>
+
+          <h3>No Endorsement</h3>
+          <p>Views expressed by speakers, Vendors, or others are their own and not necessarily those of Organizers. Organizers do not endorse any products, services, or information presented, and a Vendor's participation does not constitute an endorsement by Organizers of that Vendor's products or services.</p>
+
+          <h3>Data Privacy</h3>
+          <p>We collect personal information you provide during registration (e.g., name, email, contact details, professional/company information, and any dietary specifications). This information is used solely for Conference administration, communications (e.g., updates, confirmations, program changes), processing payments, and providing conference-related services. We do not sell your personal information. We may share limited attendee contact information (e.g., name, email, company) with conference sponsors, partners, or exhibitors only if the attendee explicitly opts in / consents during registration. We take reasonable steps to protect information from unauthorized access or disclosure, but no method of transmission over the internet is 100% secure. For questions about data, contact <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>. See also our <a href="privacy.html">Privacy Policy</a>.</p>
+
+          <h3>Changes to Terms</h3>
+          <p>Terms may be updated at Organizers' discretion. Material changes (e.g., date, venue, major program alterations) will be emailed to registered attendees/Vendors and posted at this page.</p>
+
+          <h3>Governing Law and Venue</h3>
+          <p>These Terms shall be governed by the laws of the State of Colorado, without regard to conflict of laws principles. Any disputes arising hereunder shall be resolved exclusively in the state or federal courts located in Denver County, Colorado (or the U.S. District Court for the District of Colorado, as applicable). You consent to the personal jurisdiction and venue of such courts and waive any objection based on inconvenient forum or improper venue.</p>
+
+          <h3>Severability, No Waiver, and Entire Agreement</h3>
+          <p>Invalid provisions do not affect others. No waiver of any breach constitutes a waiver of subsequent breaches. These Terms are the entire agreement, superseding prior understandings.</p>
+
+          <h3>Contact</h3>
+          <p><a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a></p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals &mdash; connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+      <p class="modal__note">Curious about our WhatsApp community? <a href="whatsapp.html">Learn more</a>.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

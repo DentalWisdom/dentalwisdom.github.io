@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>WhatsApp Group Policies | Dental Wisdom</title>
+  <meta name="description" content="Community guidelines and policies for the Dental Wisdom WhatsApp group — who can join, how to participate, and what to expect.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="WhatsApp Group Policies | Dental Wisdom">
+  <meta property="og:description" content="Community guidelines and policies for the Dental Wisdom WhatsApp group — who can join, how to participate, and what to expect.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/whatsapp-policies.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-community.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Dental Wisdom WhatsApp community for Jewish dentists">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="WhatsApp Group Policies | Dental Wisdom">
+  <meta name="twitter:description" content="Community guidelines and policies for the Dental Wisdom WhatsApp group — who can join, how to participate, and what to expect.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-community.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">WhatsApp</span>
+        <img class="site-logo__mark" src="images/footer-logo-white.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on this page (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <!-- ===================== HERO / INTRO ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>WhatsApp Group Policies</h1>
+          <p>How the Dental Wisdom Chat works, and how companies can get involved.</p>
+        </div>
+        <div class="lede text-center" data-reveal>
+          <p>Looking to join the chat yourself? Visit the <a href="whatsapp.html">WhatsApp Community page</a> to apply.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== GROUP POLICIES & COMPANY INFO ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="legal" data-reveal>
+          <h2>Who Can Join</h2>
+
+          <h3>Who is eligible to join the Dental Wisdom Chat?</h3>
+          <p>The chat is open to licensed dentists only. We do not accept vendors, sponsors, sales representatives, practice support staff, or family members of dentists. This policy exists to preserve an authentic dentist-to-dentist environment where members can speak freely without commercial pressure.</p>
+
+          <h3>Why is the group limited to dentists only?</h3>
+          <p>We believe the value of this community comes from dentists being able to discuss real issues with peers who truly understand the day-to-day realities of practice ownership and clinical decision-making. Introducing non-dentists often changes the dynamic and leads to selling or one-sided conversations.</p>
+
+          <h2>Community Culture and Activity</h2>
+
+          <h3>What is the culture of the Dental Wisdom Chat?</h3>
+          <p>The chat is intentionally supportive and non-competitive. Members are encouraged to share knowledge generously, ask for help when needed, and treat one another with respect and collegiality.</p>
+
+          <h3>How active is the chat?</h3>
+          <p>The Dental Wisdom Chat is very active, with regular discussions and engagement among members throughout the week.</p>
+
+          <h2>Our Approach to Companies and Promotion</h2>
+
+          <h3>Can companies or sponsors post directly in the chat?</h3>
+          <p>No. All posts in the chat come directly from the organizers. We do not allow companies, vendors, or sponsors to post directly in the group. This includes situations where a member attempts to post on behalf of a company or vendor. Any posts that do not align with this approach will be removed to protect the non-commercial, dentist-to-dentist nature of the community.</p>
+
+          <h3>How can companies or sponsors reach the Dental Wisdom community?</h3>
+          <p>Companies and sponsors who wish to share an upcoming event, promotion, resource, announcement, or opportunity must reach out directly to the organizers. If approved, the information will be shared with the community on their behalf in a respectful and non-intrusive way.</p>
+
+          <h3>What kind of company content is typically approved?</h3>
+          <p>We occasionally share relevant opportunities, educational resources, or events that we believe would genuinely benefit the community. All content is reviewed for relevance, tone, and alignment with the group&rsquo;s values before being posted.</p>
+
+          <h3>Is there paid advertising or sponsorship available in the chat?</h3>
+          <p>We do not offer paid advertising or direct sponsorship placements within the chat itself. Our priority is protecting the non-commercial, dentist-to-dentist nature of the community. Approved announcements are shared at the discretion of the organizers.</p>
+
+          <h3>Why are you so strict about selling and promotion in the chat?</h3>
+          <p>We have seen many professional communities lose their value once they become filled with constant selling. Our goal is to protect a space where dentists can ask for help, share knowledge, and build real relationships without feeling like they are being sold to on a regular basis.</p>
+
+          <h2>How Companies Can Get Involved</h2>
+
+          <h3>How do we inquire about sharing something with the Dental Wisdom community?</h3>
+          <p>Please email us at <a href="mailto:info@dentalwisdom.org?subject=Chat%20Announcement%20Inquiry">info@dentalwisdom.org</a> with the subject line &ldquo;Chat Announcement Inquiry.&rdquo; In your message, please include a clear description of what you would like to share and why you believe it would be valuable to the community.</p>
+
+          <h3>How long does it take to hear back?</h3>
+          <p>We aim to respond to company inquiries within a few business days. Please note that not all requests are approved, as we are selective about what is shared in the group.</p>
+
+          <h3>Is there a cost associated with having something shared in the chat?</h3>
+          <p>There is currently no cost to have approved content shared with the community. We evaluate requests based on relevance and value to our members rather than payment.</p>
+
+          <h2>How to Join (for Dentists)</h2>
+
+          <h3>How do I join the Dental Wisdom Chat?</h3>
+          <p>Use the &ldquo;Apply to Join&rdquo; button on the <a href="whatsapp.html">WhatsApp Community page</a> to complete the short application form. It asks a few basic questions to confirm that you are a dentist and that your goals align with the values of the community.</p>
+
+          <h3>Is there a cost to join?</h3>
+          <p>No. The Dental Wisdom Chat is completely free for all approved members.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="section section--ivory cta-band">
+      <div class="container" data-reveal>
+        <h2>Ready to join the conversation?</h2>
+        <p class="lede" style="margin-bottom: var(--space-md);">Apply on the WhatsApp Community page and our team will be in touch once your application has been reviewed.</p>
+        <div class="link-row">
+          <a class="btn btn-primary" href="whatsapp.html">Go to WhatsApp Community Page</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

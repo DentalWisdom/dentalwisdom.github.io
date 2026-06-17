@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Want to Lecture? | Dental Wisdom</title>
+  <meta name="description" content="Interested in lecturing at the 2027 Dental Wisdom Conference? Apply here to join our speaker lineup for cross-specialty dental CE in Miami.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Want to Lecture? | Dental Wisdom">
+  <meta property="og:description" content="Interested in lecturing at the 2027 Dental Wisdom Conference? Apply here to join our speaker lineup for cross-specialty dental CE in Miami.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/conference-new-speaker.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Conference 2027 — cross-specialty dental CE, March 3–6, 2027, Miami">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Want to Lecture? | Dental Wisdom">
+  <meta name="twitter:description" content="Interested in lecturing at the 2027 Dental Wisdom Conference? Apply here to join our speaker lineup for cross-specialty dental CE in Miami.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">Conference</span>
+        <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/header-logo-blue.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on this page (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Lecturing Opportunities</h1>
+          <p>Lecturing opportunities at the Dental Wisdom Conference are intentionally limited and hand-picked from within our own community. We carefully select speakers who embody the values, clinical excellence, and spirit of the Dental Wisdom network.</p>
+        </div>
+        <div class="text-center" data-reveal style="margin-top:2rem;">
+          <a class="btn btn--primary" href="mailto:info@dentalwisdom.org?subject=Dental%20Wisdom%20Conference%20Lecturing%20Inquiry">Email Us Today</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FAQ ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="legal" data-reveal>
+
+          <h2>Lecture Questions &amp; Answers</h2>
+
+          <h3>Who is eligible to lecture at the Dental Wisdom Conference?</h3>
+          <p>We primarily select lecturers from within our vibrant Dental Wisdom community — a trusted network of approximately 800 Jewish dentists. We strongly prefer speakers who are active members of the community or have been directly referred by an active member.</p>
+
+          <h3>How are speakers selected?</h3>
+          <p>The organizers personally review all interested lecturers and carefully curate a balanced program that includes large lectures, intimate smaller classes, and hands-on courses. Final decisions on speakers, topics, and formats are made by the organizers to ensure every session delivers practical, high-value skills that attendees can implement immediately in their practice.</p>
+
+          <h3>What types of lectures and classes are you looking for?</h3>
+          <p>We are looking for cutting-edge, practical, and multi-specialty topics across all areas of dentistry. We welcome both clinical and practice-management focused presentations.</p>
+          <p>We also welcome dental-related shiurim that combine Torah perspectives with professional growth and ethical practice.</p>
+          <p>Lecturers are warmly encouraged to connect us with potential vendors or companies they work with that may be interested in sponsoring the event. In many cases, we can offer an honorarium for lectures, particularly when linked to a sponsorship.</p>
+
+          <h3>How many speakers do you typically select?</h3>
+          <p>We typically select between 10–15 speakers in total to fill three full days of programming.</p>
+
+          <h3>What should be included in a lecture proposal?</h3>
+          <p>No need to prepare anything formal yet. Simply reach out with a working topic, a short description, and any relevant speaking experiences. It is also very helpful if you let us know if there are any companies you currently work with that might be interested in sponsoring the event and providing an honorarium.</p>
+
+          <h3>What is the process to apply to lecture?</h3>
+          <p>Simply reach out to us directly at <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>. If you are an active member of the Dental Wisdom WhatsApp group, you may also message the event organizer directly there.</p>
+
+          <h3>Is there a deadline to submit a lecture proposal?</h3>
+          <p>There is no strict deadline, but we encourage you to reach out as early as possible. Early submissions receive priority as we build the program.</p>
+
+          <h3>What are the benefits of being a speaker?</h3>
+          <p>Speaking at the Dental Wisdom Conference is a meaningful way to give back to the community, share your expertise, help younger dentists grow, and strengthen connections within our network.</p>
+
+          <h3>Will speakers receive compensation or honorarium?</h3>
+          <p>Honorariums are offered on a case-by-case basis depending on the topic, length, and format of the presentation. Some speakers may also receive partial or full complimentary registration.</p>
+          <p>Many lecturers also choose to sponsor the event through their companies or brands.</p>
+
+          <h3>How long are the lecture slots?</h3>
+          <p>Lecture slots typically range from 1 to 4 hours, depending on the topic and format.</p>
+
+          <h3>Do you accept hands-on or workshop-style presentations?</h3>
+          <p>Yes. We welcome hands-on workshops and interactive sessions, as they are a valuable part of the conference experience.</p>
+
+          <h3>What AV / technical support is provided?</h3>
+          <p>A dedicated AV team will be on-site to support all speakers throughout the conference.</p>
+
+          <h3>Can I promote my products or services during my lecture?</h3>
+          <p>All lectures must comply with AGD PACE guidelines. Promotional lectures focused primarily on selling products or services are not aligned with the educational integrity of this event.</p>
+
+          <h3>Will my lecture be recorded?</h3>
+          <p>Lectures are generally not recorded. In-person attendance is required to receive CE credits.</p>
+
+          <h3>When will speakers be notified if their proposal is accepted?</h3>
+          <p>We aim to finalize the program as early as possible. Early applicants will be notified first.</p>
+
+          <h3>Can I co-present with another dentist?</h3>
+          <p>Yes. If you would like to co-present with another dentist, please mention this when you reach out so we can discuss the opportunity together.</p>
+
+          <h3>Do you provide speaker preparation support or coaching?</h3>
+          <p>Yes. We are happy to discuss potential topics with you and provide feedback to ensure your presentation aligns with the goals and standards of the conference.</p>
+
+          <h3>Where can I submit my lecture proposal?</h3>
+          <p>Please email your proposal or inquiry to <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a>.</p>
+
+        </div>
+
+        <!-- Closing CTA -->
+        <div class="text-center" data-reveal style="margin-top:3rem;">
+          <a class="btn btn--primary" href="mailto:info@dentalwisdom.org?subject=Dental%20Wisdom%20Conference%20Lecturing%20Inquiry">Email Us Today</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

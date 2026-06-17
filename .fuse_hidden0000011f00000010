@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dental Wisdom Live | Monthly CE for the Dental Wisdom Network</title>
+  <meta name="description" content="Dental Wisdom Live: free monthly online CE sessions exclusively for the Dental Wisdom network — live, interactive, with real-time Q&A and CE credits.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Dental Wisdom Live">
+  <meta property="og:description" content="Dental Wisdom Live: free monthly online CE sessions exclusively for the Dental Wisdom network — live, interactive, with real-time Q&A and CE credits.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/live.html">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-live.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Live — monthly online continuing education for the network">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Dental Wisdom Live">
+  <meta name="twitter:description" content="Dental Wisdom Live: free monthly online CE sessions exclusively for the Dental Wisdom network — live, interactive, with real-time Q&A and CE credits.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-live.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="images/favicon.png">
+  <link rel="apple-touch-icon" href="images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="index.html">
+        <span class="site-logo__section">Live</span>
+        <img class="site-logo__mark" src="images/footer-logo-white.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="index.html">Conference</a></li>
+          <li><a href="live.html" aria-current="page">Live</a></li>
+          <li><a href="deals.html">Deals</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="index.html">Conference</a></li>
+        <li><a href="live.html" aria-current="page">Live</a></li>
+        <li><a href="deals.html">Deals</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- No conference sub-navigation on Live (sub-nav appears only on
+       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+
+  <main id="main">
+
+    <!-- ===================== HERO / INTRO ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h1>Dental Wisdom Live</h1>
+          <p>Monthly continuing education designed exclusively for the Dental Wisdom network.</p>
+        </div>
+        <div class="lede text-center" data-reveal>
+          <p>We have launched an online continuing education (CE) series exclusively for the Dental Wisdom network. The program features live, interactive sessions where leading industry experts and experienced practitioners present cutting-edge techniques, practical solutions, and relevant products for modern dental practice — followed by real-time Q&amp;A.</p>
+        </div>
+        <div class="link-row" data-reveal>
+          <a class="btn btn-primary" href="#upcoming-sessions">Browse Upcoming Sessions</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== WHAT YOU GET ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>Every Dental Wisdom Live session delivers:</h2>
+        </div>
+
+        <div class="card-grid card-grid--4 live-delivers-grid" data-reveal>
+
+          <!-- Card 1: Expert content -->
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M12 38c0-6.627 5.373-12 12-12s12 5.373 12 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M32 22l4 2-4 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                <path d="M36 24h6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Expert-Led Education</h3>
+            <p class="live-delivers-blurb">Cutting-edge techniques and practical solutions from leading practitioners — directly applicable to your practice.</p>
+          </div>
+
+          <!-- Card 2: Live Q&A -->
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <path d="M8 10a4 4 0 0 1 4-4h24a4 4 0 0 1 4 4v18a4 4 0 0 1-4 4H28l-8 8v-8h-8a4 4 0 0 1-4-4V10Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <circle cx="17" cy="19" r="2" fill="currentColor"/>
+                <circle cx="24" cy="19" r="2" fill="currentColor"/>
+                <circle cx="31" cy="19" r="2" fill="currentColor"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Live Q&amp;A</h3>
+            <p class="live-delivers-blurb">Ask your questions in real time and get meaningful answers from the experts — not a recording, not a chatbot.</p>
+          </div>
+
+          <!-- Card 3: CE Credits -->
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <rect x="6" y="10" width="36" height="26" rx="3" stroke="currentColor" stroke-width="2"/>
+                <path d="M14 20h20M14 27h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <circle cx="35" cy="35" r="7" fill="var(--color-ivory)" stroke="currentColor" stroke-width="2"/>
+                <path d="M32 35l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">CE Credits Included</h3>
+            <p class="live-delivers-blurb">Earn valuable continuing education credits with every session — keeping your license current has never been easier.</p>
+          </div>
+
+          <!-- Card 4: Giveaways -->
+          <div class="card live-delivers-card">
+            <div class="live-delivers-icon" aria-hidden="true">
+              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" width="48" height="48">
+                <rect x="8" y="20" width="32" height="22" rx="2" stroke="currentColor" stroke-width="2"/>
+                <rect x="6" y="13" width="36" height="9" rx="2" stroke="currentColor" stroke-width="2"/>
+                <path d="M24 13v29" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                <path d="M24 13c0 0-4-8 0-8s4 8 0 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+                <path d="M24 13c0 0 4-8 0-8" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <h3 class="live-delivers-title">Exclusive Giveaways</h3>
+            <p class="live-delivers-blurb">Something exciting in every session — because showing up for your community should feel like a reward.</p>
+          </div>
+
+        </div>
+
+        <p class="lede text-center" style="margin-top: var(--space-lg);">This is high-value, interactive education designed to help you stay at the forefront of modern dentistry while strengthening our community.</p>
+      </div>
+    </section>
+
+    <!-- ===================== UPCOMING SESSIONS ===================== -->
+    <section class="section section--sand texture" id="upcoming-sessions">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>Upcoming Sessions</h2>
+          <p>Live, interactive CE — exclusively for the Dental Wisdom network.</p>
+        </div>
+
+        <div class="session-list" id="upcomingSessions" data-reveal aria-live="polite">
+          <p class="placeholder" role="status">Loading upcoming sessions…</p>
+        </div>
+
+        <p class="lede text-center" style="margin-top: var(--space-lg);">All sessions are free for Dental Wisdom network members. Session times are chosen based on member input for maximum convenience.</p>
+      </div>
+    </section>
+
+    <!-- ===================== PAST SESSIONS ===================== -->
+    <section class="section section--ivory" id="past-sessions">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>Past Sessions</h2>
+        </div>
+
+        <div class="session-list" id="pastSessions" data-reveal aria-live="polite">
+          <p class="placeholder" role="status">Loading past sessions…</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== HOW IT WORKS ===================== -->
+    <section class="section section--sand texture">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2>How Dental Wisdom Live Works</h2>
+        </div>
+
+        <div class="card-grid card-grid--3" data-reveal>
+          <div class="card">
+            <span class="step-number" aria-hidden="true">1</span>
+            <h3>Join the Network</h3>
+            <p>Become part of the Dental Wisdom WhatsApp community to receive session invitations, reminders, and updates.</p>
+          </div>
+          <div class="card">
+            <span class="step-number" aria-hidden="true">2</span>
+            <h3>Register for Sessions</h3>
+            <p>Sign up for the sessions that interest you. All sessions are free for active network members.</p>
+          </div>
+          <div class="card">
+            <span class="step-number" aria-hidden="true">3</span>
+            <h3>Attend Live &amp; Earn CE</h3>
+            <p>Join the live session, participate in Q&amp;A, and receive your CE credits after the session.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== FINAL CTA ===================== -->
+    <section class="section section--ivory cta-band">
+      <div class="container" data-reveal>
+        <h2>Stay connected and keep growing.</h2>
+        <p class="lede" style="margin-bottom: var(--space-md);">Dental Wisdom Live is one of the many ways we support our community year-round — with practical education, meaningful connection, and access to leading voices in dentistry.</p>
+        <div class="link-row">
+          <button class="btn btn-primary" type="button" data-open-join-modal>Join the WhatsApp Network</button>
+          <a class="btn btn-secondary" href="#upcoming-sessions">View All Upcoming Sessions</a>
+        </div>
+        <p class="lede" style="margin-top: var(--space-md);">Interested in presenting or sponsoring a session? <a href="live-get-involved.html">Find out how</a>.</p>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#" aria-label="Back to top of page">
+            <img src="images/footer-logo-white.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 3-day annual conference.</p>
+          <p>Questions? <a href="mailto:Info@DentalWisdom.org">Info@DentalWisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="whatsapp.html">Join the Group</a></li>
+              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="live.html">Overview</a></li>
+              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="deals.html">Browse Deals</a></li>
+              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="index.html">Overview</a></li>
+            <li><a href="conference-agenda.html">Agenda</a></li>
+            <li><a href="conference-speakers.html">Speakers</a></li>
+            <li><a href="conference-sponsors.html">Sponsors</a></li>
+            <li><a href="conference-faq.html">FAQs</a></li>
+            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
+            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="terms.html">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="privacy.html">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join the Network</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+          onload="window.parent.scrollTo(0,0)"
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+      <p class="modal__note">Curious about our WhatsApp community? <a href="whatsapp.html">Learn more</a>.</p>
+    </div>
+  </div>
+
+  <script src="js/main.js"></script>
+  <script src="js/live-data.js"></script>
+  <script src="js/live.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

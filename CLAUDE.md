@@ -24,7 +24,7 @@ Tokens as CSS variables in `:root` (starting values in spec §2 — tune in Sess
 - Header, footer, floating Join button: identical markup on every page. Conference sub-nav (Overview • Agenda • Speakers • **Sponsors** • FAQ • Register) appears ONLY on index.html, conference-agenda.html, conference-speakers.html, conference-sponsors.html, conference-faq.html.
 - Any change to a shared element must be applied to every page in the same session — grep to verify before finishing.
 - Mobile-first CSS; full-screen overlay menu on mobile per spec. Test mentally at 375px and 1280px.
-- Speakers page: 16 static hand-edited cards (name, specialty, short bio, sample course + time) opening a modal. Keep each card's markup self-contained so adding/removing a speaker is a copy-paste of one block.
+- Speakers page: currently 3 placeholder cards with fake names/photos — real speakers still to be added. Target ~16 cards total. Each card is self-contained markup (name, specialty, short bio, sample course + time, photo) opening a modal — adding/removing a speaker is a copy-paste of one block.
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link.
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.

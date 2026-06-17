@@ -31,6 +31,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+  <style>
+    .live-cta-buttons {
+      display: grid;
+      grid-template-columns: repeat(4, auto);
+      gap: var(--space-md);
+      justify-content: center;
+      margin: 0 auto;
+    }
+    @media (max-width: 640px) {
+      .live-cta-buttons { grid-template-columns: repeat(2, auto); }
+    }
+    .live-cta-buttons .btn {
+      white-space: nowrap;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem 1.6rem;
+    }
+  </style>
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -241,9 +260,9 @@
       <div class="container" data-reveal>
         <h2>Never miss a session. Never stop learning.</h2>
         <p class="lede" style="margin-bottom: var(--space-md);">Dental Wisdom Live is one of the many ways we support our community year-round — with practical education, meaningful connection, and access to leading voices in dentistry.</p>
-        <div class="link-row">
-          <button class="btn btn-primary" type="button" data-open-join-modal>Join the WhatsApp Network</button>
-          <a class="btn btn-secondary" href="#upcoming-sessions">View Upcoming Sessions</a>
+        <div class="live-cta-buttons">
+          <button class="btn btn-primary" type="button" data-open-join-modal>Join the Network</button>
+          <a class="btn btn-secondary" href="#upcoming-sessions">Upcoming Sessions</a>
           <a class="btn btn-secondary" href="index.html">The Conference</a>
           <a class="btn btn-secondary" href="deals.html">Partner Deals</a>
         </div>

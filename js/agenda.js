@@ -1,18 +1,21 @@
 /* =========================================================
-   Dental Wisdom Conference — Agenda tabs
-   Reads from window.AGENDA_DATA (js/agenda-data.js — see
-   SITE_SPEC.md §6) and builds a day-by-day tabbed schedule
-   using the standard ARIA tabs pattern (role="tablist" /
-   "tab" / "tabpanel").
+   Dental Wisdom Conference — Agenda
+   Reads from window.AGENDA_DATA (js/agenda-data.js).
 
-   Fields per agenda item: day, time, title, speaker, location.
+   Default view: all days stacked, fully scrollable.
+   Filter bar: "All Days" + one button per day.
+   Clicking a day shows only that day; prev/next arrows
+   let you step through days in single-day mode.
+
+   Fields per agenda item: day, time, title, speaker,
+   speakerUrl, location, ce (boolean — CE credit lecture).
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
-  var tabsEl = document.getElementById('agendaTabs');
-  var panelsEl = document.getElementById('agendaPanels');
+  var filterEl  = document.getElementById('agendaTabs');    // filter bar
+  var panelsEl  = document.getElementById('agendaPanels');  // day sections
 
-  if (!tabsEl || !panelsEl) return;
+  if (!filterEl || !panelsEl) return;
 
   var items = window.AGENDA_DATA || [];
 
@@ -21,50 +24,40 @@ document.addEventListener('DOMContentLoaded', function () {
     return;
   }
 
-  // Group items by day, preserving the order days first appear.
+  // Group items by day, preserving insertion order.
   var dayOrder = [];
-  var groups = {};
+  var groups   = {};
   items.forEach(function (item) {
     var day = (item.day || '').trim() || 'Schedule';
-    if (!groups[day]) {
-      groups[day] = [];
-      dayOrder.push(day);
-    }
+    if (!groups[day]) { groups[day] = []; dayOrder.push(day); }
     groups[day].push(item);
   });
 
-  // Build tab buttons.
-  var tabIds = dayOrder.map(function (day, index) {
-    return 'agenda-tab-' + slugify(day) + '-' + index;
-  });
-  var panelIds = dayOrder.map(function (day, index) {
-    return 'agenda-panel-' + slugify(day) + '-' + index;
-  });
-
-  tabsEl.innerHTML = dayOrder.map(function (day, index) {
-    var selected = index === 0 ? 'true' : 'false';
-    var tabindex = index === 0 ? '0' : '-1';
-    return '<button type="button" class="agenda-tabs__btn" role="tab" id="' + tabIds[index] +
-      '" aria-selected="' + selected + '" aria-controls="' + panelIds[index] +
-      '" tabindex="' + tabindex + '">' + escapeHtml(day) + '</button>';
-  }).join('');
-
-  // Build tab panels.
-  panelsEl.innerHTML = dayOrder.map(function (day, index) {
+  // ── Build day sections ──────────────────────────────────
+  panelsEl.innerHTML = dayOrder.map(function (day) {
     var itemsHtml = groups[day].map(renderAgendaItem).join('');
-    var hidden = index === 0 ? '' : ' hidden';
-    return '<div class="agenda-list" role="tabpanel" id="' + panelIds[index] +
-      '" aria-labelledby="' + tabIds[index] + '" tabindex="0"' + hidden + '>' +
-      itemsHtml + '</div>';
+    return '<div class="agenda-day-section" data-day="' + escapeHtml(day) + '">' +
+      '<h2 class="agenda-day-heading">' + escapeHtml(day) + '</h2>' +
+      '<div class="agenda-list">' + itemsHtml + '</div>' +
+      '</div>';
   }).join('');
 
-  var tabButtons = Array.prototype.slice.call(tabsEl.querySelectorAll('[role="tab"]'));
-  var panels = Array.prototype.slice.call(panelsEl.querySelectorAll('[role="tabpanel"]'));
+  var sections = Array.prototype.slice.call(panelsEl.querySelectorAll('.agenda-day-section'));
 
-  // Build prev/next arrow nav below the panels
+  // ── Build filter bar ────────────────────────────────────
+  var allBtn = '<button type="button" class="agenda-tabs__btn is-active" data-filter="all">All Days</button>';
+  var dayBtns = dayOrder.map(function (day) {
+    return '<button type="button" class="agenda-tabs__btn" data-filter="' + escapeHtml(day) + '">' + escapeHtml(day) + '</button>';
+  }).join('');
+  filterEl.innerHTML = allBtn + dayBtns;
+
+  var filterBtns = Array.prototype.slice.call(filterEl.querySelectorAll('.agenda-tabs__btn'));
+
+  // ── Build prev/next nav (single-day mode only) ──────────
   var navEl = document.createElement('div');
   navEl.className = 'agenda-day-nav';
   navEl.setAttribute('aria-label', 'Navigate between days');
+  navEl.setAttribute('hidden', '');
   navEl.innerHTML =
     '<button type="button" class="agenda-day-nav__btn agenda-day-nav__prev" id="agendaPrev" aria-label="Previous day">' +
       '<svg width="20" height="20" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="13 16 7 10 13 4"/></svg>' +
@@ -77,48 +70,61 @@ document.addEventListener('DOMContentLoaded', function () {
     '</button>';
   panelsEl.parentNode.insertBefore(navEl, panelsEl.nextSibling);
 
-  var prevBtn = document.getElementById('agendaPrev');
-  var nextBtn = document.getElementById('agendaNext');
+  var prevBtn  = document.getElementById('agendaPrev');
+  var nextBtn  = document.getElementById('agendaNext');
   var dayLabel = document.getElementById('agendaDayLabel');
-  var currentIndex = 0;
 
-  tabButtons.forEach(function (tab, index) {
-    tab.addEventListener('click', function () {
-      selectTab(index);
+  var currentFilter = 'all'; // 'all' or a day name
+
+  // ── Filter logic ────────────────────────────────────────
+  function applyFilter(filter) {
+    currentFilter = filter;
+
+    // Update button states
+    filterBtns.forEach(function (btn) {
+      var active = btn.dataset.filter === filter;
+      btn.classList.toggle('is-active', active);
+      btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
-    tab.addEventListener('keydown', function (event) {
-      var newIndex = null;
+    if (filter === 'all') {
+      // Show all sections
+      sections.forEach(function (s) { s.hidden = false; });
+      navEl.setAttribute('hidden', '');
+    } else {
+      // Show only the matching section
+      sections.forEach(function (s) {
+        s.hidden = s.dataset.day !== filter;
+      });
+      // Update prev/next
+      var idx = dayOrder.indexOf(filter);
+      prevBtn.disabled = idx <= 0;
+      nextBtn.disabled = idx >= dayOrder.length - 1;
+      dayLabel.textContent = filter;
+      navEl.removeAttribute('hidden');
+    }
+  }
 
-      if (event.key === 'ArrowRight' || event.key === 'ArrowDown') {
-        newIndex = (index + 1) % tabButtons.length;
-      } else if (event.key === 'ArrowLeft' || event.key === 'ArrowUp') {
-        newIndex = (index - 1 + tabButtons.length) % tabButtons.length;
-      } else if (event.key === 'Home') {
-        newIndex = 0;
-      } else if (event.key === 'End') {
-        newIndex = tabButtons.length - 1;
-      }
-
-      if (newIndex !== null) {
-        event.preventDefault();
-        selectTab(newIndex);
-        tabButtons[newIndex].focus();
-      }
+  // Wire filter buttons
+  filterBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      applyFilter(btn.dataset.filter);
     });
   });
 
+  // Wire prev/next
   prevBtn.addEventListener('click', function () {
-    if (currentIndex > 0) { selectTab(currentIndex - 1); scrollToTabs(); }
+    var idx = dayOrder.indexOf(currentFilter);
+    if (idx > 0) { applyFilter(dayOrder[idx - 1]); scrollToFilter(); }
   });
 
   nextBtn.addEventListener('click', function () {
-    if (currentIndex < tabButtons.length - 1) { selectTab(currentIndex + 1); scrollToTabs(); }
+    var idx = dayOrder.indexOf(currentFilter);
+    if (idx < dayOrder.length - 1) { applyFilter(dayOrder[idx + 1]); scrollToFilter(); }
   });
 
-  function scrollToTabs() {
-    var offset = tabsEl.getBoundingClientRect().top + window.pageYOffset - 16;
-    // account for sticky header (and sub-nav if present)
+  function scrollToFilter() {
+    var offset = filterEl.getBoundingClientRect().top + window.pageYOffset - 16;
     var header = document.querySelector('.site-header');
     var subnav = document.querySelector('.sub-nav');
     if (header) offset -= header.offsetHeight;
@@ -126,30 +132,19 @@ document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo({ top: offset, behavior: 'smooth' });
   }
 
-  function selectTab(index) {
-    currentIndex = index;
-    tabButtons.forEach(function (tab, i) {
-      var isSelected = i === index;
-      tab.setAttribute('aria-selected', isSelected ? 'true' : 'false');
-      tab.setAttribute('tabindex', isSelected ? '0' : '-1');
-      panels[i].hidden = !isSelected;
-    });
-    dayLabel.textContent = dayOrder[index];
-    prevBtn.disabled = index === 0;
-    nextBtn.disabled = index === tabButtons.length - 1;
-  }
+  // Start in all-days mode
+  applyFilter('all');
 
-  // Initialise arrow nav
-  selectTab(0);
-
+  // ── Render helpers ──────────────────────────────────────
   function renderAgendaItem(item) {
-    var title = (item.title || '').trim();
-    var time = (item.time || '').trim();
-    var speaker = (item.speaker || '').trim();
+    var title      = (item.title      || '').trim();
+    var time       = (item.time       || '').trim();
+    var speaker    = (item.speaker    || '').trim();
     var speakerUrl = (item.speakerUrl || '').trim();
-    var location = (item.location || '').trim();
+    var location   = (item.location   || '').trim();
+    var isCE       = !!item.ce;
 
-    // Build speaker string — hyperlink if a speakerUrl is provided
+    // Speaker — hyperlink if speakerUrl provided
     var speakerHtml = '';
     if (speaker) {
       speakerHtml = speakerUrl
@@ -157,14 +152,17 @@ document.addEventListener('DOMContentLoaded', function () {
         : escapeHtml(speaker);
     }
 
-    var locationHtml = location ? escapeHtml(location) : '';
-    var metaParts = [speakerHtml, locationHtml].filter(Boolean);
+    var metaParts = [speakerHtml, location ? escapeHtml(location) : ''].filter(Boolean);
 
-    var html = '<div class="agenda-item">';
+    var classes = 'agenda-item' + (isCE ? ' agenda-item--ce' : '');
+    var html = '<div class="' + classes + '">';
     if (time) {
       html += '<div class="agenda-item__time">' + escapeHtml(time) + '</div>';
     }
     html += '<div class="agenda-item__details">';
+    if (isCE) {
+      html += '<span class="agenda-item__ce-badge">CE</span>';
+    }
     html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
     if (metaParts.length) {
       html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';

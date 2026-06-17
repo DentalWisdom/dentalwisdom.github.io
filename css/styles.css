@@ -1887,7 +1887,7 @@ body.menu-open {
   color: var(--color-white);
 }
 
-/* Agenda tabs (Agenda page) */
+/* Agenda filter bar (Agenda page) */
 .agenda-tabs {
   display: flex;
   flex-wrap: wrap;
@@ -1913,10 +1913,27 @@ body.menu-open {
   border-color: var(--color-accent);
 }
 
-.agenda-tabs__btn[aria-selected="true"] {
+.agenda-tabs__btn.is-active {
   background-color: var(--color-accent);
   border-color: var(--color-accent);
   color: var(--color-white);
+}
+
+/* Day heading shown in all-days view */
+.agenda-day-section + .agenda-day-section {
+  margin-top: var(--space-xl);
+}
+
+.agenda-day-heading {
+  font-family: var(--font-heading);
+  font-size: clamp(1.3rem, 3vw, 1.7rem);
+  color: var(--color-ink);
+  margin: 0 0 var(--space-md);
+  padding-bottom: 0.5rem;
+  border-bottom: 2px solid var(--color-sand);
+  max-width: 760px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .agenda-list {
@@ -1940,6 +1957,29 @@ body.menu-open {
 
 .agenda-item:last-child {
   border-bottom: none;
+}
+
+/* CE lecture highlight */
+.agenda-item--ce {
+  background: linear-gradient(to right, rgba(82,153,145,0.07) 0%, transparent 100%);
+  border-left: 3px solid var(--color-seaglass);
+  padding-left: var(--space-sm);
+  margin-left: -var(--space-sm);
+  border-bottom-color: rgba(82,153,145,0.18);
+}
+
+.agenda-item__ce-badge {
+  display: inline-block;
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--color-seaglass);
+  border: 1px solid var(--color-seaglass);
+  border-radius: 3px;
+  padding: 0.1rem 0.4rem;
+  margin-bottom: 0.25rem;
+  vertical-align: middle;
 }
 
 .agenda-item__time {
@@ -1980,7 +2020,7 @@ body.menu-open {
   }
 }
 
-/* ── Agenda day prev/next nav ─────────────────────────── */
+/* ── Agenda day prev/next nav (single-day mode) ───────── */
 .agenda-day-nav {
   display: flex;
   align-items: center;
@@ -1989,6 +2029,10 @@ body.menu-open {
   margin-top: var(--space-lg);
   padding-top: var(--space-md);
   border-top: 1px solid var(--color-border);
+}
+
+.agenda-day-nav[hidden] {
+  display: none;
 }
 
 .agenda-day-nav__label {

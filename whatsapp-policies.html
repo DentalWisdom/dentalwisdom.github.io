@@ -64,6 +64,9 @@
 
   <!-- Mobile full-screen overlay menu -->
   <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+      <img src="images/footer-logo-white-trimmed.png" alt="Dental Wisdom">
+    </a>
     <nav aria-label="Mobile">
       <ul class="mobile-menu__list">
         <li><a href="index.html">Conference</a></li>
@@ -261,5 +264,14 @@
   </div>
 
   <script src="js/main.js"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
 </body>
 </html>

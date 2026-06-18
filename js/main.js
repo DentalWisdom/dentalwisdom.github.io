@@ -242,7 +242,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var logoScrollWrap = document.querySelector('.logo-scroll-wrap');
   if (logoScrollWrap) {
     var stripPaused = false;
-    var stripSpeed = 0.5; // px per frame — gentle pace
+    var stripSpeed = 0.35; // px per frame — gentle pace
 
     logoScrollWrap.addEventListener('mouseenter', function () { stripPaused = true; });
     logoScrollWrap.addEventListener('mouseleave', function () { stripPaused = false; });

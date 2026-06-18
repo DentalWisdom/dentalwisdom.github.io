@@ -187,6 +187,18 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -----------------------------
+     Sub-nav Overview link: scroll to top
+     ----------------------------- */
+  var subnavOverview = document.getElementById('subnavOverview');
+  if (subnavOverview) {
+    subnavOverview.addEventListener('click', function(e) {
+      e.preventDefault();
+      var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      window.scrollTo({ top: 0, behavior: prefersReduced ? 'auto' : 'smooth' });
+    });
+  }
+
+  /* -----------------------------
      Gallery auto-scroll
      ----------------------------- */
   var gallery = document.querySelector('.gallery');

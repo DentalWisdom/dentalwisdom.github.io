@@ -40,21 +40,24 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/crown-catapult.png",
     link: "https://crowncatapult.com/",
     blurb: "The exclusive financial hub for dental professionals — access curated investment opportunities, expert practice valuations, and advisory services built by and for dentists.",
-    tier: "platinum"
+    tier: "platinum",
+    attending: true
   },
   {
     name: "Orthobrain",
     logoUrl: "/images/sponsors/orthobrain.png",
     link: "https://orthobrain.com/",
     blurb: "Integrate orthodontics into your practice easily and profitably with orthodontist-led treatment planning and SimplyClear aligners — no orthodontic residency required.",
-    tier: "platinum"
+    tier: "platinum",
+    attending: true
   },
   {
     name: "Touro College of Dental Medicine",
     logoUrl: "/images/sponsors/touro.png",
     link: "https://dental.touro.edu/",
     blurb: "Touro College of Dental Medicine trains the next generation of compassionate, community-focused dental professionals with an emphasis on innovation, clinical excellence, and service.",
-    tier: "platinum"
+    tier: "platinum",
+    attending: true
   },
   {
     name: "Emerald Dental Lab",

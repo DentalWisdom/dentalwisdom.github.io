@@ -31,6 +31,39 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* CE / Full Schedule pill toggle */
+    .agenda-view-toggle {
+      display: inline-flex;
+      gap: 0;
+      background: var(--color-sand);
+      border-radius: 2rem;
+      padding: 3px;
+      margin-bottom: var(--space-md);
+    }
+    .agenda-view-toggle__btn {
+      background: none;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.45rem 1.25rem;
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-slate);
+      cursor: pointer;
+      transition: background var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
+      white-space: nowrap;
+    }
+    .agenda-view-toggle__btn.is-active {
+      background: var(--color-white);
+      color: var(--color-ink);
+      box-shadow: 0 1px 4px rgba(30,42,56,0.13);
+    }
+    .agenda-view-toggle__btn:focus-visible {
+      outline: 3px solid var(--color-seaglass);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
 <body class="has-subnav">
   <a class="skip-link" href="#main">Skip to content</a>

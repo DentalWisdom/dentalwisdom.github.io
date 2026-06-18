@@ -3,12 +3,14 @@
    Reads from window.AGENDA_DATA (js/agenda-data.js).
 
    Default view: all days stacked, fully scrollable.
+   View toggle: "Full Schedule" | "CE Only" pill above filter bar.
    Filter bar: "All Days" + one button per day.
    Clicking a day shows only that day; prev/next arrows
    let you step through days in single-day mode.
 
    Fields per agenda item: day, time, title, speaker,
-   speakerUrl, location, ce (boolean — CE credit lecture).
+   speakerUrl, location, ce (boolean — CE credit lecture),
+   showInCEView (boolean — include in CE-only view even if not CE).
    ========================================================= */
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -44,6 +46,18 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var sections = Array.prototype.slice.call(panelsEl.querySelectorAll('.agenda-day-section'));
 
+  // ── Build CE view toggle ────────────────────────────────
+  var toggleEl = document.createElement('div');
+  toggleEl.className = 'agenda-view-toggle';
+  toggleEl.setAttribute('aria-label', 'Schedule view');
+  toggleEl.innerHTML =
+    '<button type="button" class="agenda-view-toggle__btn is-active" data-view="all">Full Schedule</button>' +
+    '<button type="button" class="agenda-view-toggle__btn" data-view="ce">CE Only</button>';
+  filterEl.parentNode.insertBefore(toggleEl, filterEl);
+
+  var viewBtns = Array.prototype.slice.call(toggleEl.querySelectorAll('.agenda-view-toggle__btn'));
+  var ceMode = false;
+
   // ── Build filter bar ────────────────────────────────────
   var allBtn = '<button type="button" class="agenda-tabs__btn is-active" data-filter="all">All Days</button>';
   var dayBtns = dayOrder.map(function (day) {
@@ -76,51 +90,79 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var currentFilter = 'all'; // 'all' or a day name
 
-  // ── Filter logic ────────────────────────────────────────
-  function applyFilter(filter) {
-    currentFilter = filter;
+  // ── Combined filter logic ───────────────────────────────
+  function applyFilters() {
+    // 1. Day: show/hide whole sections
+    sections.forEach(function (s) {
+      s.hidden = currentFilter !== 'all' && s.dataset.day !== currentFilter;
+    });
 
-    // Update button states
+    // 2. CE: show/hide individual items within visible sections
+    var allItems = Array.prototype.slice.call(panelsEl.querySelectorAll('.agenda-item'));
+    allItems.forEach(function (item) {
+      if (ceMode) {
+        item.hidden = !item.dataset.ceView;
+      } else {
+        item.hidden = false;
+      }
+    });
+
+    // 3. In CE mode, also hide sections that end up with no visible items
+    if (ceMode) {
+      sections.forEach(function (s) {
+        if (s.hidden) return; // already hidden by day filter
+        var visible = s.querySelectorAll('.agenda-item:not([hidden])');
+        s.hidden = visible.length === 0;
+      });
+    }
+
+    // 4. Day filter button states
     filterBtns.forEach(function (btn) {
-      var active = btn.dataset.filter === filter;
+      var active = btn.dataset.filter === currentFilter;
       btn.classList.toggle('is-active', active);
       btn.setAttribute('aria-pressed', active ? 'true' : 'false');
     });
 
-    if (filter === 'all') {
-      // Show all sections
-      sections.forEach(function (s) { s.hidden = false; });
+    // 5. Prev/next nav
+    if (currentFilter === 'all') {
       navEl.setAttribute('hidden', '');
     } else {
-      // Show only the matching section
-      sections.forEach(function (s) {
-        s.hidden = s.dataset.day !== filter;
-      });
-      // Update prev/next
-      var idx = dayOrder.indexOf(filter);
+      var idx = dayOrder.indexOf(currentFilter);
       prevBtn.disabled = idx <= 0;
       nextBtn.disabled = idx >= dayOrder.length - 1;
-      dayLabel.textContent = filter;
+      dayLabel.textContent = currentFilter;
       navEl.removeAttribute('hidden');
     }
   }
 
-  // Wire filter buttons
+  // Wire CE toggle
+  viewBtns.forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      ceMode = btn.dataset.view === 'ce';
+      viewBtns.forEach(function (b) {
+        b.classList.toggle('is-active', b === btn);
+      });
+      applyFilters();
+    });
+  });
+
+  // Wire day filter buttons
   filterBtns.forEach(function (btn) {
     btn.addEventListener('click', function () {
-      applyFilter(btn.dataset.filter);
+      currentFilter = btn.dataset.filter;
+      applyFilters();
     });
   });
 
   // Wire prev/next
   prevBtn.addEventListener('click', function () {
     var idx = dayOrder.indexOf(currentFilter);
-    if (idx > 0) { applyFilter(dayOrder[idx - 1]); scrollToFilter(); }
+    if (idx > 0) { currentFilter = dayOrder[idx - 1]; applyFilters(); scrollToFilter(); }
   });
 
   nextBtn.addEventListener('click', function () {
     var idx = dayOrder.indexOf(currentFilter);
-    if (idx < dayOrder.length - 1) { applyFilter(dayOrder[idx + 1]); scrollToFilter(); }
+    if (idx < dayOrder.length - 1) { currentFilter = dayOrder[idx + 1]; applyFilters(); scrollToFilter(); }
   });
 
   function scrollToFilter() {
@@ -132,8 +174,8 @@ document.addEventListener('DOMContentLoaded', function () {
     window.scrollTo({ top: offset, behavior: 'smooth' });
   }
 
-  // Start in all-days mode
-  applyFilter('all');
+  // Start in all-days / full-schedule mode
+  applyFilters();
 
   // ── Render helpers ──────────────────────────────────────
   function renderAgendaItem(item) {
@@ -146,6 +188,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var ceCredits   = item.ceCredits || null;
     var sponsor     = (item.sponsor    || '').trim();
     var sponsorUrl  = (item.sponsorUrl || '').trim();
+    var isCEView    = isCE || !!item.showInCEView;
 
     // Speaker — hyperlink if speakerUrl provided
     var speakerHtml = '';
@@ -158,7 +201,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var metaParts = [speakerHtml, location ? escapeHtml(location) : ''].filter(Boolean);
 
     var classes = 'agenda-item' + (isCE ? ' agenda-item--ce' : '');
-    var html = '<div class="' + classes + '">';
+    var ceViewAttr = isCEView ? ' data-ce-view="1"' : '';
+    var html = '<div class="' + classes + '"' + ceViewAttr + '>';
     if (time) {
       html += '<div class="agenda-item__time">' + escapeHtml(time) +
         (isCE ? '<span class="agenda-item__ce-badge">' + (ceCredits ? ceCredits + ' CE Credit' + (ceCredits !== 1 ? 's' : '') : 'CE Credit') + '</span>' : '') +
@@ -178,10 +222,6 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     html += '</div></div>';
     return html;
-  }
-
-  function slugify(str) {
-    return String(str).toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
   }
 
   function escapeHtml(str) {

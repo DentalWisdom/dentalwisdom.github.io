@@ -2460,26 +2460,30 @@ body.menu-open {
 .sponsor-modal__tier--silver   { background: #e8ecf0; color: #3a4a5a; }
 .sponsor-modal__tier--bronze   { background: #f0e8e0; color: #6a4a38; }
 
-/* "Attending" gold pill badge — card and modal */
+/* "Attending" gold pill badge — matches tier pill style exactly */
 .sponsor-attending-badge {
   display: inline-flex;
   align-items: center;
   gap: 3px;
   background: #f5e9c8;
   color: #7a5a10;
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 3px 8px;
-  border-radius: 999px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
   line-height: 1;
 }
 
-/* Card: badge sits between name and cta, centered */
+/* Card: badge pinned top-left */
+.sponsor-card {
+  position: relative;
+}
 .sponsor-card__attending {
-  display: flex;
-  justify-content: center;
-  margin: 2px 0;
+  position: absolute;
+  top: 8px;
+  left: 8px;
 }
 
 /* Modal: tier pill + attending badge side by side */

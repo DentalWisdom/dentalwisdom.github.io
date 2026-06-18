@@ -55,7 +55,7 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "4:00 – 5:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Friday", time: "6:00 PM", title: "Mincha & Maariv", speaker: "", location: "Shul" },
   { day: "Friday", time: "8:00 PM", title: "Dinner", speaker: "", location: "OVO at The Altair" },
-  { day: "Friday", time: "10:30 PM", title: "Oneg", speaker: "", location: "Shul", sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
+  { day: "Friday", time: "10:30 PM", title: "Oneg", speaker: "", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
 
   // ---------------- Shabbos ----------------
   { day: "Shabbos", time: "8:15 – 9:00 AM", title: "Pre-Davening Shiur", speaker: "", location: "Library" },

@@ -40,7 +40,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "2:00 – 4:00 PM", title: "'Hopeless' to Heroic: Modern Approaches to Periodontal Regeneration and Plastic Surgery", speaker: "Dr. Sean Ference", speakerUrl: "/conference-speakers#speaker-sean-ference", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "4:00 – 6:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "6:00 – 6:30 PM", title: "Break (Mincha & Maariv)", speaker: "", location: "Shul" },
-  { day: "Thursday", time: "6:30 – 7:30 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1.5 },
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors" },
 
   // ---------------- Friday ----------------
@@ -55,13 +55,13 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "4:00 – 5:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Friday", time: "6:00 PM", title: "Mincha & Maariv", speaker: "", location: "Shul" },
   { day: "Friday", time: "8:00 PM", title: "Dinner", speaker: "", location: "OVO at The Altair" },
-  { day: "Friday", time: "10:30 PM", title: "Oneg", speaker: "", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
+  { day: "Friday", time: "10:30 PM", title: "Shiur & Oneg", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
 
   // ---------------- Shabbos ----------------
-  { day: "Shabbos", time: "8:15 – 9:00 AM", title: "Pre-Davening Shiur", speaker: "", location: "Library" },
+  { day: "Shabbos", time: "8:15 – 9:15 AM", title: "Pre-Davening Shiur", speaker: "", location: "Library", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "9:00 AM", title: "Davening", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "11:00 AM", title: "Kiddush", speaker: "", location: "Shul" },
-  { day: "Shabbos", time: "11:00 AM", title: "Dvar Torah", speaker: "", location: "Shul" },
+  { day: "Shabbos", time: "11:00 AM", title: "Dvar Torah", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "12:00 PM", title: "Lunch", speaker: "", location: "OVO at The Altair" },
   { day: "Shabbos", time: "3:00 – 4:00 PM", title: "Lecture Title TBD", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "4:00 – 5:00 PM", title: "Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources", speaker: "Sam Waller, CFP®", speakerUrl: "/conference-speakers#speaker-sam-waller", location: "Shul", ce: true, ceCredits: 1 },

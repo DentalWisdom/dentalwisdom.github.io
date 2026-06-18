@@ -69,6 +69,6 @@ window.AGENDA_DATA = [
   { day: "Shabbos", time: "6:00 PM", title: "Mincha", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "6:30 PM", title: "Shalosh Seudos & Dental Halacha Shiur", speaker: "Rabbi Dr. David J. Katz", speakerUrl: "/conference-speakers#speaker-rabbi-david-katz", location: "Shul", ce: true, ceCredits: 1, sponsor: "Touro College of Dental Medicine", sponsorUrl: "/conference-sponsors" },
   { day: "Shabbos", time: "7:00 PM", title: "Maariv", speaker: "", location: "Shul" },
-  { day: "Shabbos", time: "8:30 PM", title: "Closing Party", speaker: "", location: "Atrium" },
+  { day: "Shabbos", time: "8:30 PM", title: "Closing Party", speaker: "", location: "Atrium", sponsor: "orthobrain", sponsorUrl: "/conference-sponsors" },
   { day: "Shabbos", time: "10:30 PM", title: "Daf Yomi Shiur", speaker: "", location: "Library" }
 ];

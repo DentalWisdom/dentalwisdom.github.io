@@ -2442,8 +2442,9 @@ body.menu-open {
 .sponsor-tier__grid--silver   .sponsor-card__logo { height: 78px; }
 .sponsor-tier__grid--bronze   .sponsor-card__logo { height: 62px; }
 
-/* Sponsor tier badge inside the pop-up */
-.sponsor-modal__tier {
+/* Shared pill style — tier badge and attending badge */
+.sponsor-modal__tier,
+.sponsor-attending-badge {
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 700;
@@ -2452,28 +2453,15 @@ body.menu-open {
   padding: 3px 10px;
   border-radius: 20px;
   line-height: 1.4;
-  margin-bottom: var(--space-xs);
-  background: var(--color-sand);
-  color: var(--color-ink);
+  margin: 0;
+  vertical-align: middle;
 }
+.sponsor-modal__tier { background: var(--color-sand); color: var(--color-ink); }
 .sponsor-modal__tier--platinum { background: #e8e0d0; color: #5a4a2a; }
 .sponsor-modal__tier--gold     { background: #f5e9c8; color: #7a5a10; }
 .sponsor-modal__tier--silver   { background: #e8ecf0; color: #3a4a5a; }
 .sponsor-modal__tier--bronze   { background: #f0e8e0; color: #6a4a38; }
-
-/* "Attending" gold pill badge — matches tier pill style exactly */
-.sponsor-attending-badge {
-  display: inline-block;
-  background: #f5e9c8;
-  color: #7a5a10;
-  font-size: 0.7rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-  padding: 3px 10px;
-  border-radius: 20px;
-  line-height: 1.4;
-}
+.sponsor-attending-badge       { background: #f5e9c8; color: #7a5a10; }
 
 /* Card: badge pinned top-left */
 .sponsor-card {
@@ -2492,9 +2480,6 @@ body.menu-open {
   gap: 8px;
   flex-wrap: wrap;
   margin-bottom: 0.5rem;
-}
-.sponsor-modal__tier {
-  margin-bottom: 0 !important;
 }
 
 /* Sponsor pop-up: logo header above the reused .modal styling */

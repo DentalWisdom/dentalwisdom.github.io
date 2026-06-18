@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', function () {
     bronze: 'Bronze Sponsors'
   };
 
+  var ATTENDING_BADGE = '<span class="sponsor-attending-badge" aria-label="In attendance at conference">' +
+    '<svg width="11" height="11" viewBox="0 0 11 11" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" style="display:inline-block;vertical-align:middle;margin-right:3px"><polyline points="1.5,5.5 4.5,8.5 9.5,2.5" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>' +
+    'Attending</span>';
+
   var sponsors = (window.SPONSORS_DATA || [])
     .map(function (row) {
       return {
@@ -38,7 +42,8 @@ document.addEventListener('DOMContentLoaded', function () {
         logoUrl: (row.logoUrl || '').trim(),
         link: (row.link || '').trim(),
         blurb: (row.blurb || '').trim(),
-        tier: (row.tier || '').trim().toLowerCase()
+        tier: (row.tier || '').trim().toLowerCase(),
+        attending: !!row.attending
       };
     })
     .filter(function (s) { return s.name; });
@@ -57,9 +62,13 @@ document.addEventListener('DOMContentLoaded', function () {
         '" alt="' + escapeAttr(s.name + ' logo') + '" loading="lazy"></span>'
       : '<span class="sponsor-card__logo sponsor-card__logo--text">' + escapeHtml(s.name) + '</span>';
 
+    var badge = s.attending ? ATTENDING_BADGE : '';
+
     return '<button type="button" class="sponsor-card" data-sponsor-index="' + i +
-      '" aria-haspopup="dialog">' + inner +
+      '" aria-haspopup="dialog">' +
+      inner +
       '<span class="sponsor-card__name">' + escapeHtml(s.name) + '</span>' +
+      (badge ? '<span class="sponsor-card__attending">' + badge + '</span>' : '') +
       '<span class="sponsor-card__cta">View details &rarr;</span>' +
       '</button>';
   }
@@ -161,7 +170,10 @@ document.addEventListener('DOMContentLoaded', function () {
       '<div class="modal__dialog">' +
         '<button class="modal__close" id="sponsorModalClose" aria-label="Close" data-sponsor-close>&times;</button>' +
         '<div class="sponsor-modal__logo"><img id="sponsorModalLogo" src="" alt=""></div>' +
-        '<span class="sponsor-modal__tier" id="sponsorModalTier"></span>' +
+        '<div class="sponsor-modal__meta">' +
+          '<span class="sponsor-modal__tier" id="sponsorModalTier"></span>' +
+          '<span class="sponsor-modal__attending" id="sponsorModalAttending" style="display:none">' + ATTENDING_BADGE + '</span>' +
+        '</div>' +
         '<h2 class="modal__title" id="sponsorModalName"></h2>' +
         '<p id="sponsorModalBlurb"></p>' +
         '<div class="link-row" id="sponsorModalLinkRow">' +
@@ -178,6 +190,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var blurbEl = modal.querySelector('#sponsorModalBlurb');
   var linkRow = modal.querySelector('#sponsorModalLinkRow');
   var linkEl = modal.querySelector('#sponsorModalLink');
+  var attendingEl = modal.querySelector('#sponsorModalAttending');
   var lastFocused = null;
 
   function getFocusable() {
@@ -188,6 +201,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
   function openModal(sponsor) {
     lastFocused = document.activeElement;
+
+    if (attendingEl) {
+      attendingEl.style.display = sponsor.attending ? '' : 'none';
+    }
 
     if (sponsor.logoUrl) {
       logoEl.src = sponsor.logoUrl;

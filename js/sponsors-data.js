@@ -32,7 +32,8 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/livewell-capital.png",
     link: "https://www.livewellcapital.com/",
     blurb: "Personalized wealth management and financial planning for dental professionals — helping dentists build, protect, and transfer lasting financial security.",
-    tier: "platinum"
+    tier: "platinum",
+    attending: true
   },
   {
     name: "Crown Catapult",

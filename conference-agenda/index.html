@@ -3,23 +3,23 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dental Wisdom Deals | Exclusive Offers for the Dental Wisdom Network</title>
-  <meta name="description" content="Exclusive deals and discounts from trusted dental vendors — curated for the Dental Wisdom network of Jewish dental professionals.">
+  <title>Agenda | Dental Wisdom Conference 2027</title>
+  <meta name="description" content="The day-by-day schedule for the 2027 Dental Wisdom Conference — lectures, hands-on sessions, davening, meals, and Shabbos programming. March 3–6, 2027, Miami, FL.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Dental Wisdom Deals">
-  <meta property="og:description" content="Exclusive deals and discounts from trusted dental vendors — curated for the Dental Wisdom network of Jewish dental professionals.">
+  <meta property="og:title" content="Agenda | Dental Wisdom Conference 2027">
+  <meta property="og:description" content="The day-by-day schedule for the 2027 Dental Wisdom Conference — lectures, hands-on sessions, davening, meals, and Shabbos programming. March 3–6, 2027, Miami, FL.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dentalwisdom.org/deals.html">
-  <meta property="og:image" content="https://dentalwisdom.org/images/social-deals.jpg">
+  <meta property="og:url" content="https://dentalwisdom.org/conference-agenda">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
-  <meta property="og:image:alt" content="Dental Wisdom Deals — exclusive offers from trusted dental partners">
+  <meta property="og:image:alt" content="Dental Wisdom Conference 2027 — cross-specialty dental CE, March 3–6, 2027, Miami">
   <meta property="og:site_name" content="Dental Wisdom">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dental Wisdom Deals">
-  <meta name="twitter:description" content="Exclusive deals and discounts from trusted dental vendors — curated for the Dental Wisdom network of Jewish dental professionals.">
-  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-deals.jpg">
+  <meta name="twitter:title" content="Agenda | Dental Wisdom Conference 2027">
+  <meta name="twitter:description" content="The day-by-day schedule for the 2027 Dental Wisdom Conference — lectures, hands-on sessions, davening, meals, and Shabbos programming. March 3–6, 2027, Miami, FL.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
 
   <!-- Favicon -->
   <link rel="icon" type="image/png" href="images/favicon.png">
@@ -31,23 +31,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="css/styles.css">
+
+  <style>
+    /* CE / Full Schedule pill toggle */
+    .agenda-view-toggle {
+      display: flex;
+      justify-content: center;
+      gap: 0;
+      background: var(--color-sand);
+      border-radius: 2rem;
+      padding: 3px;
+      margin: 0 auto var(--space-md);
+      width: fit-content;
+    }
+    .agenda-view-toggle__btn {
+      background: none;
+      border: none;
+      border-radius: 2rem;
+      padding: 0.45rem 1.25rem;
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-slate);
+      cursor: pointer;
+      transition: background var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
+      white-space: nowrap;
+    }
+    .agenda-view-toggle__btn.is-active {
+      background: var(--color-white);
+      color: var(--color-ink);
+      box-shadow: 0 1px 4px rgba(30,42,56,0.13);
+    }
+    .agenda-view-toggle__btn:focus-visible {
+      outline: 3px solid var(--color-seaglass);
+      outline-offset: 2px;
+    }
+  </style>
 </head>
-<body>
+<body class="has-subnav">
   <a class="skip-link" href="#main">Skip to content</a>
 
   <!-- ===================== HEADER (shared on every page) ===================== -->
   <header class="site-header">
     <div class="container site-header__bar">
-      <a class="site-logo" href="index.html">
-        <span class="site-logo__section">Deals</span>
+      <a class="site-logo" href="/">
+        <span class="site-logo__section">Conference</span>
         <img class="site-logo__mark" src="images/header-logo-blue.png" alt="Dental Wisdom">
       </a>
 
       <nav class="site-nav" aria-label="Primary">
         <ul class="site-nav__list">
-          <li><a href="index.html">Conference</a></li>
-          <li><a href="live.html">Live</a></li>
-          <li><a href="deals.html" aria-current="page">Deals</a></li>
+          <li><a href="/" aria-current="page">Conference</a></li>
+          <li><a href="/live">Live</a></li>
+          <li><a href="/deals">Deals</a></li>
         </ul>
       </nav>
 
@@ -64,69 +99,74 @@
 
   <!-- Mobile full-screen overlay menu -->
   <div class="mobile-menu" id="mobileMenu">
-    <a class="mobile-menu__logo" href="index.html" aria-label="Dental Wisdom home">
+    <a class="mobile-menu__logo" href="/" aria-label="Dental Wisdom home">
       <img src="images/header-logo-blue.png" alt="Dental Wisdom">
     </a>
     <nav aria-label="Mobile">
       <ul class="mobile-menu__list">
-        <li><a href="index.html">Conference</a></li>
-        <li><a href="live.html">Live</a></li>
-        <li><a href="deals.html" aria-current="page">Deals</a></li>
+        <li><a href="/" aria-current="page">Conference</a></li>
+        <li><a href="/live">Live</a></li>
+        <li><a href="/deals">Deals</a></li>
       </ul>
     </nav>
   </div>
 
-  <!-- No conference sub-navigation on Deals (sub-nav appears only on
-       index.html, conference-agenda.html, conference-speakers.html, conference-faq.html per CLAUDE.md) -->
+  <!-- Conference sub-navigation (index, agenda, speakers, conference-faq only) -->
+  <div class="sub-nav">
+    <div class="container sub-nav__bar">
+      <a href="/">Overview</a>
+      <a href="/conference-agenda" aria-current="page">Agenda</a>
+      <a href="/conference-speakers">Speakers</a>
+      <a href="/conference-sponsors">Sponsors</a>
+      <a href="/conference-faq">FAQ</a>
+      <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Register</a>
+    </div>
+  </div>
 
   <main id="main">
 
-    <!-- ===================== HERO / INTRO ===================== -->
     <section class="section section--compact section--sand texture">
       <div class="container">
         <div class="section-heading" data-reveal>
-          <h1>Dental Wisdom Deals</h1>
-          <p>Curated Deals from Sponsors, Vendors &amp; Suppliers</p>
+          <h1>Agenda</h1>
+          <p>The full Dental Wisdom Conference 2027 schedule</p>
         </div>
       </div>
     </section>
 
-    <!-- ===================== SEARCH + CATEGORY FILTER ===================== -->
-    <section class="section section--ivory" id="deals-directory">
+    <section class="section section--ivory" id="agenda-schedule">
       <div class="container">
-        <div class="deals-toolbar" data-reveal>
-          <div class="deals-search">
-            <label for="dealsSearch" class="visually-hidden">Search deals</label>
-            <svg class="deals-search__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <circle cx="11" cy="11" r="7"></circle>
-              <line x1="21" y1="21" x2="16.65" y2="16.65"></line>
-            </svg>
-            <input type="search" id="dealsSearch" placeholder="Search deals by name or keyword&hellip;" autocomplete="off">
-          </div>
-
-          <div class="deals-categories" id="dealsCategories" role="group" aria-label="Filter deals by category">
-            <!-- Category buttons populated by js/deals.js -->
-          </div>
-
-          <p class="deals-suggest">Know a great vendor for the network? <a class="btn btn-secondary" href="mailto:Info@DentalWisdom.org?subject=Vendor%20Suggestion%20for%20Dental%20Wisdom%20Deals">Suggest a Vendor</a></p>
+        <!-- Schedule data lives in js/agenda-data.js per SITE_SPEC §6.
+             Lecture sessions without a confirmed speaker show "Speaker TBD". -->
+        <div class="agenda-tabs" id="agendaTabs" role="tablist" aria-label="Conference day" data-reveal>
+          <!-- Tab buttons populated by js/agenda.js -->
         </div>
 
-        <!-- ===================== DEALS GRID ===================== -->
-        <div class="deals-grid" id="dealsGrid" aria-live="polite">
-          <p class="placeholder" role="status">Loading deals&hellip;</p>
+        <div id="agendaPanels" data-reveal>
+          <!-- Tab panels populated by js/agenda.js -->
         </div>
-
-        <p class="deals-no-results" id="dealsNoResults" role="status" hidden>No deals match your search &mdash; try a different word or category.</p>
       </div>
     </section>
 
-    <!-- ===================== BECOME A DEALS PARTNER ===================== -->
-    <section class="section section--sand texture cta-band">
-      <div class="container" data-reveal>
-        <h2>Become a Deals Partner</h2>
-        <p class="lede">Are you a vendor, supplier, or service provider that wants to reach the Dental Wisdom community? Learn how to get involved and offer exclusive value to our network of dental professionals.</p>
-        <div class="link-row">
-          <a class="btn btn-primary" href="deals-partner.html">Learn More</a>
+    <section class="section section--sand texture sponsor-strip-section" aria-labelledby="sponsors-heading">
+      <div class="container">
+        <div class="section-heading" data-reveal>
+          <h2 id="sponsors-heading">Our Sponsors</h2>
+          <p>Thank you to the partners who make Dental Wisdom possible.</p>
+        </div>
+      </div>
+
+      <!-- Full-bleed scroll strip (no side padding) -->
+      <div class="logo-scroll-wrap" data-reveal>
+        <div class="logo-scroll-track" id="logoScrollStrip">
+          <!-- Populated by js/sponsors.js -->
+        </div>
+      </div>
+
+      <div class="container">
+        <div class="link-row" data-reveal>
+          <a class="btn btn-secondary" href="/conference-sponsors">Meet All Our Sponsors</a>
+          <a class="btn btn-secondary" href="/conference-new-sponsor">Want to Sponsor?</a>
         </div>
       </div>
     </section>
@@ -152,22 +192,22 @@
           <div>
             <h3>Dental Wisdom WhatsApp</h3>
             <ul class="footer-links">
-              <li><a href="whatsapp.html">Join the Group</a></li>
-              <li><a href="whatsapp-policies.html">Group Policies</a></li>
+              <li><a href="/whatsapp">Join the Group</a></li>
+              <li><a href="/whatsapp-policies">Group Policies</a></li>
             </ul>
           </div>
           <div>
             <h3>Dental Wisdom Live</h3>
             <ul class="footer-links">
-              <li><a href="live.html">Overview</a></li>
-              <li><a href="live-get-involved.html">Want to Get Involved?</a></li>
+              <li><a href="/live">Overview</a></li>
+              <li><a href="/live-get-involved">Want to Get Involved?</a></li>
             </ul>
           </div>
           <div>
             <h3>Dental Wisdom Deals</h3>
             <ul class="footer-links">
-              <li><a href="deals.html">Browse Deals</a></li>
-              <li><a href="deals-partner.html">Become a Deals Partner</a></li>
+              <li><a href="/deals">Browse Deals</a></li>
+              <li><a href="/deals-partner">Become a Deals Partner</a></li>
             </ul>
           </div>
         </div>
@@ -176,13 +216,13 @@
         <div>
           <h3>Dental Wisdom Conference</h3>
           <ul class="footer-links">
-            <li><a href="index.html">Overview</a></li>
-            <li><a href="conference-agenda.html">Agenda</a></li>
-            <li><a href="conference-speakers.html">Speakers</a></li>
-            <li><a href="conference-sponsors.html">Sponsors</a></li>
-            <li><a href="conference-faq.html">FAQs</a></li>
-            <li><a href="conference-new-sponsor.html">Want to Sponsor?</a></li>
-            <li><a href="conference-new-speaker.html">Want to Lecture?</a></li>
+            <li><a href="/">Overview</a></li>
+            <li><a href="/conference-agenda">Agenda</a></li>
+            <li><a href="/conference-speakers">Speakers</a></li>
+            <li><a href="/conference-sponsors">Sponsors</a></li>
+            <li><a href="/conference-faq">FAQs</a></li>
+            <li><a href="/conference-new-sponsor">Want to Sponsor?</a></li>
+            <li><a href="/conference-new-speaker">Want to Lecture?</a></li>
           </ul>
         </div>
       </div>
@@ -190,9 +230,9 @@
       <div class="footer-bottom">
         <span>&copy; 2026&ndash;2027 Dental Wisdom. All rights reserved.</span>
         <nav class="footer-legal" aria-label="Legal">
-          <a href="terms.html">Terms &amp; Conditions</a>
+          <a href="/terms">Terms &amp; Conditions</a>
           <span aria-hidden="true">•</span>
-          <a href="privacy.html">Privacy Policy</a>
+          <a href="/privacy">Privacy Policy</a>
         </nav>
       </div>
     </div>
@@ -224,13 +264,14 @@
         <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
         <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
       </div>
-      <p class="modal__note">Curious about our WhatsApp community? <a href="whatsapp.html">Learn more</a>.</p>
     </div>
   </div>
 
   <script src="js/main.js"></script>
-  <script src="js/deals-data.js"></script>
-  <script src="js/deals.js"></script>
+  <script src="js/agenda-data.js"></script>
+  <script src="js/agenda.js"></script>
+  <script src="js/sponsors-data.js"></script>
+  <script src="js/sponsors.js"></script>
   <script>
     (function() {
       var header = document.querySelector('.site-header');

@@ -2277,7 +2277,11 @@ body.menu-open {
   display: flex;
   gap: var(--space-md);
   width: max-content;
-  animation: logoScroll 40s linear infinite;
+  animation: logoScroll 60s linear infinite;
+}
+
+.logo-scroll-wrap:hover .logo-scroll-track {
+  animation-play-state: paused;
 }
 
 @keyframes logoScroll {

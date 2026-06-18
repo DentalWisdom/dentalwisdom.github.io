@@ -44,7 +44,7 @@ window.SPONSORS_DATA = [
     attending: true
   },
   {
-    name: "Orthobrain",
+    name: "orthobrain",
     logoUrl: "/images/sponsors/orthobrain.png",
     link: "https://orthobrain.com/",
     blurb: "Integrate orthodontics into your practice easily and profitably with orthodontist-led treatment planning and SimplyClear aligners — no orthodontic residency required.",

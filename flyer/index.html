@@ -271,9 +271,14 @@
     text-transform: uppercase;
   }
 
+  @media screen {
+    .bottom-bar a { color: inherit; text-decoration: underline; text-underline-offset: 2px; }
+    .bottom-bar a:hover { color: #B8892A; }
+  }
   @media print {
     @page { size: 11in 8.5in landscape; margin: 0; }
     body { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .bottom-bar a { text-decoration: none; color: inherit; }
   }
 </style>
 </head>
@@ -362,7 +367,7 @@
   </div>
 
   <div class="bottom-bar">
-    Dental Wisdom Conference &nbsp;·&nbsp; March 3–6, 2027 &nbsp;·&nbsp; The Altair Hotel, Bay Harbor Islands, Miami &nbsp;·&nbsp; dentalwisdom.org
+    Dental Wisdom Conference &nbsp;·&nbsp; March 3–6, 2027 &nbsp;·&nbsp; The Altair Hotel, Bay Harbor Islands, Miami &nbsp;·&nbsp; <a href="https://dentalwisdom.org">dentalwisdom.org</a>
   </div>
 </div>
 

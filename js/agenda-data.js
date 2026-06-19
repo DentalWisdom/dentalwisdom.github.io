@@ -34,7 +34,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "8:00 – 8:45 AM", title: "Breakfast", speaker: "", location: "OVO at The Altair" },
   { day: "Thursday", time: "8:15 – 8:45 AM", title: "Registration", speaker: "", location: "" },
   { day: "Thursday", time: "8:45 – 9:00 AM", title: "Welcoming Remarks", speaker: "Dr. Lisa (Greenstein) Sokol", location: "Shul", showInCEView: true, event: true },
-  { day: "Thursday", time: "9:00 – 10:00 AM", title: "Product Development – The Story of TheraBreath", speaker: "Dr. Harold Katz", speakerUrl: "/conference-speakers#speaker-harold-katz", location: "Shul", ce: true, ceCredits: 1 },
+  { day: "Thursday", time: "9:00 – 10:00 AM", title: "The Fresh Breath Revolution Started with One Dentist's Determination", speaker: "Dr. Harold Katz", speakerUrl: "/conference-speakers#speaker-harold-katz", location: "Shul", ce: true, ceCredits: 1, sponsor: "TheraBreath", sponsorUrl: "/conference-sponsors" },
   { day: "Thursday", time: "10:00 AM – 12:00 PM", title: "Designing Smiles That Last: Modern Prosthodontic Strategies for Predictable, Aesthetic & Functional Excellence", speaker: "Dr. Daniel Greenbaum", speakerUrl: "/conference-speakers#speaker-daniel-greenbaum", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "12:00 – 2:00 PM", title: "Lunch", speaker: "", location: "OVO at The Altair", sponsor: "Sponsor 2 TBD", event: true },
   { day: "Thursday", time: "2:00 – 4:00 PM", title: "'Hopeless' to Heroic: Modern Approaches to Periodontal Regeneration and Plastic Surgery", speaker: "Dr. Sean Ference", speakerUrl: "/conference-speakers#speaker-sean-ference", location: "Shul", ce: true, ceCredits: 2 },

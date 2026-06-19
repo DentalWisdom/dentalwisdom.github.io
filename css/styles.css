@@ -434,7 +434,8 @@ body.has-subnav [id] {
   width: 44px;
   height: 44px;
   background: transparent;
-  border: none;
+  border: 2px solid var(--color-ink);
+  border-radius: 6px;
   cursor: pointer;
   color: var(--color-ink);
   z-index: calc(var(--z-overlay-menu) + 1);
@@ -450,7 +451,7 @@ body.has-subnav [id] {
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background-color: #1E2938;
+  background-color: var(--color-sand);
   z-index: var(--z-overlay-menu);
   display: flex;
   flex-direction: column;
@@ -470,7 +471,7 @@ body.has-subnav [id] {
 .mobile-menu__logo {
   display: block;
   padding: 1.5rem 1.5rem 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(30,42,56,0.15);
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -479,6 +480,9 @@ body.has-subnav [id] {
   height: 44px;
   width: auto;
   display: inline-block;
+  border: 2px solid var(--color-ink);
+  border-radius: 6px;
+  padding: 0.5rem 1rem;
 }
 
 .mobile-menu__list {
@@ -494,14 +498,20 @@ body.has-subnav [id] {
 .mobile-menu__list a {
   font-family: var(--font-heading);
   font-size: 1.75rem;
-  color: var(--color-white);
+  color: var(--color-ink);
   text-decoration: none;
   font-weight: 700;
 }
 
-.mobile-menu__list a:hover,
+.mobile-menu__list a:hover {
+  color: var(--color-ink);
+  border-bottom: 2px solid var(--color-gold-warm);
+}
+
 .mobile-menu__list a[aria-current="page"] {
-  color: var(--color-gold-warm);
+  color: var(--color-ink);
+  border-bottom: 2px solid var(--color-gold-warm);
+  text-decoration: none;
 }
 
 body.menu-open {
@@ -2767,16 +2777,16 @@ a:hover { color: var(--color-gold-warm); text-decoration-color: var(--color-gold
   border-bottom-color: var(--color-gold-warm);
 }
 .mobile-menu__list a:hover,
-.mobile-menu__list a[aria-current="page"] { color: var(--color-gold-warm); }
+.mobile-menu__list a[aria-current="page"] { color: var(--color-ink); border-bottom: 2px solid var(--color-gold-warm); text-decoration: none; }
 
 /* Mobile menu logo */
 .mobile-menu__logo {
   display: block;
   padding: 1.5rem 1.5rem 1rem;
-  border-bottom: 1px solid rgba(255,255,255,0.15);
+  border-bottom: 1px solid rgba(30,42,56,0.15);
   margin-bottom: 0.5rem;
 }
-.mobile-menu__logo img { height: 40px; width: auto; display: block; }
+.mobile-menu__logo img { height: 40px; width: auto; display: inline-block; border: 2px solid var(--color-ink); border-radius: 6px; padding: 0.5rem 1rem; }
 
 /* Sub-nav: wrap to 2 rows on mobile */
 .sub-nav { overflow: visible; }

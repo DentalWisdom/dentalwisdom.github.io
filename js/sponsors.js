@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
     stripEl.innerHTML = sponsors.map(function (s) {
       if (s.logoUrl) {
         return '<div class="logo-scroll-item">' +
-          '<img src="' + escapeAttr(s.logoUrl) + '" alt="' + escapeAttr(s.name) + '">' +
+          '<img src="' + escapeAttr(s.logoUrl) + '" alt="' + escapeAttr(s.name) + '" loading="lazy">' +
           '</div>';
       }
       return '<div class="logo-scroll-item logo-scroll-item--text">' + escapeHtml(s.name) + '</div>';

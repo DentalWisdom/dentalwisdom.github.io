@@ -55,11 +55,16 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.
 
+## Known intentional decisions (do not "fix" these)
+- **Pricing label on homepage**: The homepage pricing box and accordion say "Dental Resident" (concise). The FAQ says "Dental Student or Dental Resident" (more complete). Both are correct — this discrepancy is intentional.
+- **CSS cache version**: The stylesheet loads as `styles.css?v=7`. Bump the version number (e.g. `?v=8`) every time you make CSS changes so returning visitors get the updated file. Do this in every HTML file (grep for `styles.css?v=` to find all occurrences).
+
 ## Workflow rules
 - One page per session, in the spec's build order. Start each session by proposing a short plan; wait for approval before writing code.
 - Session 1 also builds the scaffold: folder structure, styles.css with tokens, shared header/footer/modal, and index.html.
 - Commit after each approved page: `git add -A && git commit -m "Build <page>"`. Never leave a session uncommitted.
-- Local preview: `python3 -m http.server 8000` from the repo root, then http://localhost:8000.
+- Local preview: from the site folder: `cd ~/Desktop/Dental\ Wisdom\ Site && python3 -m http.server 8000`, then http://localhost:8000.
+- **Terminal commands**: Always include the `cd` step so Ben can copy-paste the whole thing. Format: `cd ~/Desktop/Dental\ Wisdom\ Site && <command>`.
 - Do not touch DNS, CNAME, or Squarespace until Ben explicitly starts the launch step.
 - **File flow**: All changes go to the local Desktop folder (`/Users/dr.lisa/Desktop/Dental Wisdom Site`) first and are committed locally. Never push to GitHub — Ben pushes manually when ready with `git push origin main`. Never instruct or trigger a push; just remind Ben to push after a session if he wants GitHub updated.
 

@@ -199,12 +199,14 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -----------------------------
-     Logo scroll strips — touch pause/resume (all instances)
+     Logo scroll strips — touch pause/resume + keyboard pause button
      Hover-pause is handled via CSS @media(hover:hover).
      On touch: pause animation, resume after 5 s.
+     Keyboard/click: toggle via is-paused class.
      ----------------------------- */
   var logoScrollWraps = document.querySelectorAll('.logo-scroll-wrap');
   logoScrollWraps.forEach(function (wrap) {
+    // Touch pause
     var resumeTimer = null;
     wrap.addEventListener('touchstart', function () {
       clearTimeout(resumeTimer);
@@ -220,6 +222,21 @@ document.addEventListener('DOMContentLoaded', function () {
         wrap.classList.remove('is-touch-paused');
       }, 5000);
     }, { passive: true });
+
+    // Inject keyboard-accessible pause/play button (WCAG 2.2.2)
+    // Skip if reduced-motion is set (animation is already off via CSS)
+    if (!window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+      var btn = document.createElement('button');
+      btn.className = 'scroll-pause-btn';
+      btn.setAttribute('aria-pressed', 'false');
+      btn.textContent = '⏸ Pause';
+      btn.addEventListener('click', function () {
+        var isPaused = wrap.classList.toggle('is-paused');
+        btn.setAttribute('aria-pressed', isPaused ? 'true' : 'false');
+        btn.textContent = isPaused ? '▶ Play' : '⏸ Pause';
+      });
+      wrap.insertAdjacentElement('afterend', btn);
+    }
   });
 
   /* -----------------------------

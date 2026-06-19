@@ -91,8 +91,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (!opts.isPast && s.registerLink) {
         html += '<a class="btn btn-primary" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Register</a>';
-      } else if (opts.isPast) {
-        html += '<span class="session-item__sponsor" style="font-style:italic;">Recording available upon request.</span>';
       }
 
       html += '</div>'; // .session-item__footer

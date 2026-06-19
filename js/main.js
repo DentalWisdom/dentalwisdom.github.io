@@ -199,73 +199,23 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   /* -----------------------------
-     Gallery auto-scroll
+     Logo scroll strips — touch pause/resume (all instances)
+     Hover-pause is handled via CSS @media(hover:hover).
+     On touch: pause animation, resume after 5 s.
      ----------------------------- */
-  var gallery = document.querySelector('.gallery');
-  if (gallery) {
-    var paused = false;
-    var speed = 0.6; // px per frame
-
-    gallery.addEventListener('mouseenter', function () { paused = true; });
-    gallery.addEventListener('mouseleave', function () { paused = false; });
-    gallery.addEventListener('touchstart', function () { paused = true; }, { passive: true });
-    gallery.addEventListener('touchend', function () {
-      setTimeout(function () { paused = false; }, 2000);
+  var logoScrollWraps = document.querySelectorAll('.logo-scroll-wrap');
+  logoScrollWraps.forEach(function (wrap) {
+    var resumeTimer = null;
+    wrap.addEventListener('touchstart', function () {
+      clearTimeout(resumeTimer);
+      wrap.classList.add('is-touch-paused');
     }, { passive: true });
-
-    var prefersReduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReduced) {
-      // Duplicate items first so the loop is seamless
-      var items = Array.from(gallery.children);
-      items.forEach(function (item) {
-        var clone = item.cloneNode(true);
-        clone.setAttribute('aria-hidden', 'true');
-        gallery.appendChild(clone);
-      });
-
-      (function tick() {
-        if (!paused) {
-          gallery.scrollLeft += speed;
-          // When we've scrolled past the halfway point, jump back to start seamlessly
-          if (gallery.scrollLeft >= gallery.scrollWidth / 2) {
-            gallery.scrollLeft = 0;
-          }
-        }
-        requestAnimationFrame(tick);
-      })();
-    }
-  }
-
-  /* -----------------------------
-     Logo scroll strip auto-scroll (agenda + homepage)
-     ----------------------------- */
-  var logoScrollWrap = document.querySelector('.logo-scroll-wrap');
-  if (logoScrollWrap) {
-    var stripPaused = false;
-    var stripSpeed = 0.35; // px per frame — gentle pace
-
-    logoScrollWrap.addEventListener('mouseenter', function () { stripPaused = true; });
-    logoScrollWrap.addEventListener('mouseleave', function () { stripPaused = false; });
-    logoScrollWrap.addEventListener('touchstart', function () { stripPaused = true; }, { passive: true });
-    logoScrollWrap.addEventListener('touchend', function () {
-      setTimeout(function () { stripPaused = false; }, 2000);
+    wrap.addEventListener('touchend', function () {
+      resumeTimer = setTimeout(function () {
+        wrap.classList.remove('is-touch-paused');
+      }, 5000);
     }, { passive: true });
-
-    var prefersReducedStrip = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-    if (!prefersReducedStrip) {
-      (function tickStrip() {
-        if (!stripPaused) {
-          logoScrollWrap.scrollLeft += stripSpeed;
-          // Seamless loop: jump back when we've passed the halfway point
-          var track = logoScrollWrap.querySelector('.logo-scroll-track');
-          if (track && logoScrollWrap.scrollLeft >= track.scrollWidth / 2) {
-            logoScrollWrap.scrollLeft = 0;
-          }
-        }
-        requestAnimationFrame(tickStrip);
-      })();
-    }
-  }
+  });
 
   /* -----------------------------
      Join button: fade when footer scrolls into view

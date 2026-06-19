@@ -450,7 +450,7 @@ body.has-subnav [id] {
 .mobile-menu {
   position: fixed;
   inset: 0;
-  background-color: var(--color-ivory);
+  background-color: var(--color-ink);
   z-index: var(--z-overlay-menu);
   display: flex;
   flex-direction: column;
@@ -470,7 +470,7 @@ body.has-subnav [id] {
 .mobile-menu__logo {
   display: block;
   padding: 1.5rem 1.5rem 1rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   margin-bottom: 0.5rem;
   text-align: center;
 }
@@ -494,7 +494,7 @@ body.has-subnav [id] {
 .mobile-menu__list a {
   font-family: var(--font-heading);
   font-size: 1.75rem;
-  color: var(--color-ink);
+  color: var(--color-white);
   text-decoration: none;
   font-weight: 700;
 }
@@ -637,6 +637,15 @@ body.menu-open {
 .hero__facts span {
   display: inline-flex;
   align-items: center;
+}
+
+/* Mobile: stack each fact on its own line */
+@media (max-width: 767px) {
+  .hero__facts {
+    flex-direction: column;
+    gap: 0.35rem;
+    align-items: center;
+  }
 }
 
 .hero__note {
@@ -2344,7 +2353,14 @@ body.menu-open {
   animation: logoScroll 60s linear infinite;
 }
 
-.logo-scroll-wrap:hover .logo-scroll-track {
+/* Hover-pause only on real pointer devices — prevents mobile touch getting stuck */
+@media (hover: hover) {
+  .logo-scroll-wrap:hover .logo-scroll-track {
+    animation-play-state: paused;
+  }
+}
+/* JS adds this class on touch; removed after 5s */
+.logo-scroll-wrap.is-touch-paused .logo-scroll-track {
   animation-play-state: paused;
 }
 
@@ -2755,7 +2771,7 @@ a:hover { color: var(--color-gold-warm); text-decoration-color: var(--color-gold
 .mobile-menu__logo {
   display: block;
   padding: 1.5rem 1.5rem 1rem;
-  border-bottom: 1px solid var(--color-border);
+  border-bottom: 1px solid rgba(255,255,255,0.15);
   margin-bottom: 0.5rem;
 }
 .mobile-menu__logo img { height: 40px; width: auto; display: block; }
@@ -2840,6 +2856,9 @@ a:hover { color: var(--color-gold-warm); text-decoration-color: var(--color-gold
 }
 
 /* ────── ANIMATED SCROLL CUE ────── */
+@media (max-width: 767px) {
+  .hero__scroll-cue { display: none; }
+}
 .hero__scroll-cue {
   position: absolute;
   bottom: 2.25rem;

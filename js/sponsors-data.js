@@ -73,7 +73,8 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/mb-precious-metals.png",
     link: "https://mbpreciousmetals.com/",
     blurb: "Trusted dental refiner with over 50 years of experience — MB Precious Metals comes to your office, assays your scrap on-site, and pays you the highest value for gold, silver, platinum, and palladium.",
-    tier: "gold"
+    tier: "gold",
+    attending: true
   },
   {
     name: "Crazy Dental",
@@ -195,8 +196,9 @@ window.SPONSORS_DATA = [
     name: "Pizza Biza",
     logoUrl: "/images/sponsors/pizza-bizza.png",
     link: "https://www.pizzabiza.com/",
-    blurb: "Beloved kosher pizza right in Miami — the go-to spot for Dental Wisdom conference-goers looking for a great meal with great company.",
-    tier: "bronze"
+    blurb: "Beloved kosher pizza with locations in New York, New Jersey, and Miami — the go-to spot for Dental Wisdom conference-goers looking for a great meal with great company.",
+    tier: "bronze",
+    attending: true
   },
   {
     name: "Citron Films",

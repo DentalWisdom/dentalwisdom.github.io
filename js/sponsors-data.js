@@ -173,7 +173,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "CG Insurance Group",
-    logoUrl: "/images/sponsors/gc-insurance-group.png",
+    logoUrl: "/images/sponsors/cg-insurance-group.png",
     link: "https://cginsurancegroup.com/dental-wisdom/",
     blurb: "Comprehensive insurance solutions tailored for dental professionals — protecting your practice, team, and livelihood with coverage that understands the unique needs of dentistry.",
     tier: "bronze"

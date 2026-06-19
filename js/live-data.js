@@ -41,7 +41,7 @@ window.LIVE_DATA = [
     sponsor: "orthobrain",
     sponsorLink: "https://orthobrain.com/",
     sortDate: "2026-06-18",
-    status: "upcoming"
+    status: "past"
   },
   {
     title: "All-on-X Surgery and Restoration - Does it all have to be done on the same day or can it be staged? 5 Patient treatments showing everything from planning to restoration",

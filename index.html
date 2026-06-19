@@ -34,6 +34,23 @@
     .hero__note {
       text-shadow: 0 1px 8px rgba(0, 0, 0, 0.45);
     }
+
+    /* Testimonial carousel */
+    .tc { text-align: center; }
+    .tc__eyebrow { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold-text); margin: 0 0 0.4rem; }
+    .tc__heading { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--color-ink); margin: 0 0 2rem; }
+    .tc__qmark { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 0.5; color: #d4c4a0; display: block; margin-bottom: 1.25rem; }
+    .tc__stars { color: var(--color-gold-warm); font-size: 1rem; letter-spacing: 3px; margin-bottom: 1rem; }
+    .tc__quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.075rem; line-height: 1.75; color: var(--color-ink); max-width: 640px; margin: 0 auto 1.25rem; min-height: 5rem; display: flex; align-items: center; justify-content: center; }
+    .tc__divider { width: 100px; height: 1px; background: #d4c4a0; margin: 0 auto 1.25rem; }
+    .tc__name { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); margin: 0 0 0.2rem; }
+    .tc__cred { font-size: 0.6875rem; color: var(--color-gold-text); margin: 0; letter-spacing: 0.04em; }
+    .tc__nav { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 1.75rem; }
+    .tc__arrow { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--color-gold-warm); background: none; color: var(--color-gold-warm); cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+    .tc__arrow:hover { background: #faf3e4; }
+    .tc__dots { display: flex; align-items: center; gap: 6px; }
+    .tc__dot { height: 2px; width: 14px; border-radius: 2px; background: #d4c4a0; transition: all 0.25s; cursor: pointer; border: none; padding: 0; }
+    .tc__dot--active { background: var(--color-gold-text); width: 28px; }
   </style>
 
 </head>
@@ -445,7 +462,69 @@
       </div>
     </section>
 
-    <!-- ═══ 9. SPONSORS — ivory ═══ -->
+    <!-- ═══ 9. TESTIMONIALS — attendees ═══ -->
+    <section id="section-testimonials" class="section section--ivory" aria-label="What dentists are saying">
+      <div class="container">
+        <div class="tc" data-reveal>
+          <p class="tc__eyebrow">What Dentists Are Saying</p>
+          <h2 class="tc__heading">Voices from Past Attendees</h2>
+          <span class="tc__qmark" aria-hidden="true">"</span>
+          <div class="tc__stars" aria-label="5 stars">★★★★★</div>
+          <blockquote class="tc__quote" id="tc-home-quote"></blockquote>
+          <div class="tc__divider" aria-hidden="true"></div>
+          <p class="tc__name" id="tc-home-name"></p>
+          <p class="tc__cred" id="tc-home-cred"></p>
+          <div class="tc__nav" role="group" aria-label="Testimonial navigation">
+            <button class="tc__arrow" id="tc-home-prev" aria-label="Previous testimonial">&#8592;</button>
+            <div class="tc__dots" id="tc-home-dots" role="tablist" aria-label="Testimonials"></div>
+            <button class="tc__arrow" id="tc-home-next" aria-label="Next testimonial">&#8594;</button>
+          </div>
+        </div>
+      </div>
+      <!-- TODO: Replace placeholder testimonials with real quotes, names, and credentials -->
+      <script>
+        (function() {
+          var testimonials = [
+            { quote: "One of the most meaningful CE weekends I’ve ever attended. The combination of Torah learning and top-tier dental education is something you simply can’t find anywhere else.", name: "Dr. A.B.", cred: "General Dentist · New York, NY" },
+            { quote: "The speakers were world-class and the content was immediately applicable. I came back to my practice Monday morning with concrete ideas I could actually use.", name: "Dr. M.L.", cred: "Periodontist · Chicago, IL" },
+            { quote: "Finally a conference built for our community. The Shabbos atmosphere, the learning, the camaraderie — it exceeded every expectation I had going in.", name: "Dr. S.G.", cred: "Endodontist · Los Angeles, CA" },
+            { quote: "I’ve been to dozens of dental conferences. This is the only one I’ve left feeling genuinely inspired — as a dentist and as a Jew. Already signed up for next year.", name: "Dr. R.F.", cred: "Orthodontist · Teaneck, NJ" },
+            { quote: "The networking alone was worth it. Meeting so many frum dental professionals in a beautiful setting, with real learning woven throughout — truly special.", name: "Dr. E.K.", cred: "Oral Surgeon · Baltimore, MD" }
+          ];
+          var current = 0;
+          var quoteEl = document.getElementById('tc-home-quote');
+          var nameEl = document.getElementById('tc-home-name');
+          var credEl = document.getElementById('tc-home-cred');
+          var dotsEl = document.getElementById('tc-home-dots');
+          var dots = [];
+          function render() {
+            var t = testimonials[current];
+            quoteEl.textContent = '“' + t.quote + '”';
+            nameEl.textContent = t.name;
+            credEl.textContent = t.cred;
+            dots.forEach(function(d, i) {
+              d.classList.toggle('tc__dot--active', i === current);
+              d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+            });
+          }
+          testimonials.forEach(function(_, i) {
+            var d = document.createElement('button');
+            d.className = 'tc__dot' + (i === 0 ? ' tc__dot--active' : '');
+            d.setAttribute('role', 'tab');
+            d.setAttribute('aria-label', 'Testimonial ' + (i + 1));
+            d.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+            d.addEventListener('click', function() { current = i; render(); });
+            dotsEl.appendChild(d);
+            dots.push(d);
+          });
+          document.getElementById('tc-home-prev').addEventListener('click', function() { current = (current - 1 + testimonials.length) % testimonials.length; render(); });
+          document.getElementById('tc-home-next').addEventListener('click', function() { current = (current + 1) % testimonials.length; render(); });
+          render();
+        })();
+      </script>
+    </section>
+
+    <!-- ═══ 10. SPONSORS — ivory ═══ -->
     <section id="section-sponsors" class="section sponsor-strip-section">
       <div class="logo-scroll-wrap" data-reveal>
         <div class="logo-scroll-track" id="logoScrollStrip"></div>

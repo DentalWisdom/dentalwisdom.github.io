@@ -215,6 +215,11 @@ document.addEventListener('DOMContentLoaded', function () {
         wrap.classList.remove('is-touch-paused');
       }, 5000);
     }, { passive: true });
+    wrap.addEventListener('touchcancel', function () {
+      resumeTimer = setTimeout(function () {
+        wrap.classList.remove('is-touch-paused');
+      }, 5000);
+    }, { passive: true });
   });
 
   /* -----------------------------

@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var sessions = window.LIVE_DATA || [];
 
   var upcoming = sessions.filter(function (s) { return s.status === 'upcoming'; });
-  var past     = sessions.filter(function (s) { return s.status === 'past'; });
+  var past     = sessions.filter(function (s) { return s.status === 'past'; })
+                         .sort(function (a, b) { return (b.sortDate || '').localeCompare(a.sortDate || ''); });
 
   render(upcoming, upcomingEl, { buttonLabel: 'Register', isPast: false });
   render(past,     pastEl,     { isPast: true });

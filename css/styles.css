@@ -705,6 +705,10 @@ body.menu-open {
   grid-template-columns: 1fr;
 }
 
+@media (min-width: 540px) {
+  .card-grid--3 { grid-template-columns: repeat(2, 1fr); }
+}
+
 @media (min-width: 640px) {
   .card-grid--2 { grid-template-columns: repeat(2, 1fr); }
 }
@@ -2390,33 +2394,6 @@ body.menu-open {
   animation-play-state: paused;
 }
 
-/* Pause/play button for scroll strips */
-.scroll-pause-btn {
-  display: block;
-  margin: var(--space-sm) auto 0;
-  background: transparent;
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: 0.35rem 1rem;
-  font-family: var(--font-body);
-  font-size: 0.8rem;
-  font-weight: 600;
-  color: var(--color-text-muted);
-  cursor: pointer;
-  transition: border-color var(--transition-base), color var(--transition-base);
-  letter-spacing: 0.04em;
-}
-.scroll-pause-btn:hover {
-  border-color: var(--color-ink);
-  color: var(--color-ink);
-}
-.scroll-pause-btn:focus-visible {
-  outline: 3px solid var(--color-gold-warm);
-  outline-offset: 2px;
-}
-@media (prefers-reduced-motion: reduce) {
-  .scroll-pause-btn { display: none; }
-}
 
 @keyframes logoScroll {
   0%   { transform: translateX(0); }

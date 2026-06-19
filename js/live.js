@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var past     = sessions.filter(function (s) { return s.status === 'past'; });
 
   render(upcoming, upcomingEl, { buttonLabel: 'Register', isPast: false });
-  render(past,     pastEl,     { buttonLabel: 'Watch Recording', isPast: true });
+  render(past,     pastEl,     { isPast: true });
 
   var SESSIONS_LIMIT = 3;
 

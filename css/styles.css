@@ -16,7 +16,7 @@
   --color-ink: #1E2A38;
   --color-gold: #B8892A;      /* warm gold (was #D9A441) */
   --color-gold-warm: #B8892A; /* canonical warm gold token */
-  --color-gold-dark: var(--color-gold-dark); /* darkened gold — button hover backgrounds */
+  --color-gold-dark: #9e7523; /* darkened gold — button hover backgrounds */
   --color-gold-text: #8C6A1A; /* darkened gold for text — passes WCAG AA (4.65:1 on white) */
   --color-parchment: #EDE8DE; /* warm section band */
   --color-slate: #5C6670;
@@ -3092,7 +3092,7 @@ a:hover { color: var(--color-gold-warm); text-decoration-color: var(--color-gold
 .family-compact__label { font-size: 0.82rem; color: var(--color-slate); font-weight: 500; }
 
 /* ────── WHAT YOU EXPERIENCE — dark blue ────── */
-#section-experience { background-color: #1E2A38; padding-top: 1.75rem; padding-bottom: 1.75rem; }
+#section-experience { background-color: #1E2A38; padding-top: 1.75rem; padding-bottom: 2.5rem; }
 #section-experience .section-heading h2 { color: #fff; }
 .experience-list {
   list-style: none; padding: 0; margin: 0 auto var(--space-md); max-width: 860px;

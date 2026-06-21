@@ -61,6 +61,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.
 
 ## Known intentional decisions (do not "fix" these)
+- **Mobile menu focus target (`js/main.js`, `openMenu`)**: focuses the first link in `.mobile-menu__list` (e.g. "Conference"), NOT the logo link. Focusing the logo link makes the browser's gold focus ring stack on top of the logo's navy border, which looks like two nested boxes. Do not change this back to `mobileMenu.querySelector('a')`.
 - **Pricing label on homepage**: The homepage pricing box and accordion say "Dental Resident" (concise). The FAQ says "Dental Student or Dental Resident" (more complete). Both are correct — this discrepancy is intentional.
 - **CSS cache version**: The stylesheet currently loads as `styles.css?v=9`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):
   ```python
@@ -93,6 +94,7 @@ All gold values are tokenized. Never use hardcoded hex for gold colors anywhere:
 - **Terminal commands**: Always include the `cd` step so Ben can copy-paste the whole thing. Format: `cd ~/Desktop/Dental\ Wisdom\ Site && <command>`.
 - Do not touch DNS, CNAME, or Squarespace until Ben explicitly starts the launch step.
 - **File flow**: All changes go to the local Desktop folder (`/Users/dr.lisa/Desktop/Dental Wisdom Site`) first and are committed locally. Never push to GitHub — Ben pushes manually when ready with `git push origin main`. Never instruct or trigger a push; just remind Ben to push after a session if he wants GitHub updated.
+- **After every fix, say it out loud**: explicitly tell Ben "this is saved locally but won't show on dentalwisdom.org or dentalwisdom.github.io until you push" — every time, not just once. If Ben reports a bug "still happening" right after a fix, check first whether he's looking at the live published site (uncommitted-but-unpushed fixes never show there) vs. the local preview (`localhost:8000`) — ask which one he's checking before assuming the fix failed.
 
 ## Saving tokens / chat length
 - Long chats use up more of Ben's usage budget as they go (everything said so far gets re-read each turn). To keep this efficient, tell Ben when it's a good moment to start a fresh chat — right after a page is finished and committed, or after a big batch of edits is wrapped up and confirmed.

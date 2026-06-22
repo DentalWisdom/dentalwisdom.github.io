@@ -43,7 +43,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Pediatric Dentistry Part 1: Lecture Title TBD", speaker: "Dr. Sara Werb", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "301A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Ortho Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Implants Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "311A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Painting", speaker: "Speaker TBD", location: "320A1", concurrent: "thu-630-breakout" },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Brush & Unwind: Paint Night", speaker: "Speaker TBD", location: "320A1", concurrent: "thu-630-breakout" },
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors", event: true },
 
   // ---------------- Friday ----------------
@@ -58,7 +58,7 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Pediatric Dentistry Part 2: Lecture Title TBD", speaker: "Dr. Sara Werb", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "301A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Implants Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 4:00 PM", title: "Built to Scale: Practice Management from 1 to 3 to 5+ Locations", speaker: "Dr. Marc Faber", speakerUrl: "/conference-speakers#speaker-marc-faber", location: "311A1", ce: true, ceCredits: 1, concurrent: "fri-300-breakout" },
-  { day: "Friday", time: "3:00 – 5:00 PM", title: "Painting", speaker: "Speaker TBD", location: "320A1", concurrent: "fri-300-breakout" },
+  { day: "Friday", time: "3:00 – 5:00 PM", title: "Brush & Unwind: Paint Night", speaker: "Speaker TBD", location: "320A1", concurrent: "fri-300-breakout" },
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
   { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "", location: "Shul" },
   { day: "Friday", time: "8:00 PM", title: "Shabbos Dinner", speaker: "", location: "OVO at The Altair" },

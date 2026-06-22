@@ -258,8 +258,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var isCE        = !!item.ce;
     var isEvent     = !!item.event;
     var ceCredits   = item.ceCredits || null;
-    var sponsor     = (item.sponsor    || '').trim();
-    var sponsorUrl  = (item.sponsorUrl || '').trim();
+    var sponsor      = (item.sponsor      || '').trim();
+    var sponsorUrl   = (item.sponsorUrl   || '').trim();
+    var sponsorLabel = (item.sponsorLabel || 'Sponsored by').trim();
     var isCEView    = isCE || !!item.showInCEView;
 
     // Speaker — hyperlink if speakerUrl provided
@@ -286,7 +287,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var sponsorInline = sponsorUrl
         ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
         : escapeHtml(sponsor);
-      metaParts.unshift('<strong class="agenda-item__sponsor-label">Sponsored by ' + sponsorInline + '</strong>');
+      metaParts.unshift('<strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</strong>');
     }
     if (metaParts.length) {
       html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';

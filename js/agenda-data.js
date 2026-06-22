@@ -60,7 +60,7 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "3:00 – 4:00 PM", title: "Built to Scale: Practice Management from 1 to 3 to 5+ Locations", speaker: "Dr. Marc Faber", speakerUrl: "/conference-speakers#speaker-marc-faber", location: "311A1", ce: true, ceCredits: 1, concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Canvas & Calm: Paint Social", speaker: "Speaker TBD", location: "320A1", concurrent: "fri-300-breakout" },
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
-  { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "", location: "Shul" },
+  { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul", sponsor: "APEX Reimbursement Specialists & CG Insurance Group", sponsorUrl: "/conference-sponsors", sponsorLabel: "Compliments of" },
   { day: "Friday", time: "8:00 PM", title: "Shabbos Dinner", speaker: "", location: "OVO at The Altair" },
   { day: "Friday", time: "10:30 PM", title: "Shiur & Oneg", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
 

@@ -42,7 +42,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 - Any change to a shared element must be applied to every page in the same session — grep to verify before finishing.
 - Mobile-first CSS; full-screen overlay menu on mobile per spec. Test mentally at 375px and 1280px.
 - **URL structure (June 2026)**: All pages use the folder/index.html pattern — no `.html` in URLs. `dentalwisdom.org/conference-agenda` serves `conference-agenda/index.html`, etc. Only `index.html` and `404.html` live at the root. Never create new `.html` files at the root; always create `new-page/index.html`.
-- Speakers page (`conference-speakers/index.html`): **5 real speakers confirmed** (see below). Target ~16 cards total. Adding a speaker = copy one `<article class="speaker-card">` block and fill in the data attributes — no JS changes needed. Removing = delete that block.
+- Speakers page (`conference-speakers/index.html`): **8 real speakers confirmed** (see below). Target ~16 cards total. Adding a speaker = copy one `<article class="speaker-card">` block and fill in the data attributes — no JS changes needed. Removing = delete that block.
 - Speaker modal is **760px wide** (`max-width: 760px`) and **92vh tall** — larger than default to accommodate long bios. Both the ✕ button and clicking outside close it. Esc also closes.
 - **Sponsor support in modal**: add `data-sponsor-name`, `data-sponsor-url`, `data-sponsor-logo` attributes to an article to show a logo + link at the bottom of the bio. Logos live in `images/sponsors/`. Currently wired for Sam Waller (LiveWell Capital) and Rabbi Dr. Katz (Touro).
 
@@ -51,9 +51,12 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 |---|------|-----------|---------|------|---------|
 | 1 | Dr. Harold Katz | `speaker-harold-katz` | Product Development – The Story of TheraBreath | Thu 9–10am | — |
 | 2 | Dr. Daniel Greenbaum | `speaker-daniel-greenbaum` | Designing Smiles That Last… | Thu 10am–12pm | — |
-| 3 | Dr. Sean Ference | `speaker-sean-ference` | 'Hopeless' to Heroic… | Thu 2–4pm | — |
+| 3 | Dr. Sean Ference | `speaker-sean-ference` | 'Hopeless' to Heroic… | Fri 10:30am–12pm | — |
 | 4 | Sam Waller, CFP® | `speaker-sam-waller` | Life Insurance: Bitachon or Hishtadlus? | Shabbos 4–5pm | LiveWell Capital |
 | 5 | Rabbi Dr. David J. Katz | `speaker-rabbi-david-katz` | Dental Halacha Shiur (Shalosh Seudos) | Shabbos 6:30pm | Touro College of Dental Medicine |
+| 6 | Dr. Gabe Hershman | `speaker-gabe-hershman` | OMFS Lecture Title TBD | Thu 2–4pm | — |
+| 7 | Dr. Ariel Steinberger | `speaker-ariel-steinberger` | Cosmetic Dentistry Lecture Title TBD | Thu 4–6pm | — |
+| 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 (Lecture Titles TBD) | Thu 6:30–8pm & Fri 3–5pm | — |
 
 Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `Speaker Bios & Pictures/`.
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link. Logo scroll strips have a keyboard pause/play button (WCAG 2.2.2) injected by `js/main.js` — skip injection when `prefers-reduced-motion` is set (CSS already stops the animation). Hero video autoplay is suppressed by JS when `prefers-reduced-motion` is set.

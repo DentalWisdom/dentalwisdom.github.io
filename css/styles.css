@@ -1961,11 +1961,12 @@ body.menu-open {
   color: var(--color-white);
 }
 
-/* Agenda filter bar (Agenda page) */
+/* Agenda filter bar (Agenda page) — quiet text tabs, underline on the
+   active day, matching the editorial program style below it */
 .agenda-tabs {
   display: flex;
   flex-wrap: wrap;
-  gap: var(--space-xs);
+  gap: var(--space-md);
   justify-content: center;
   margin-bottom: var(--space-lg);
 }
@@ -1974,27 +1975,22 @@ body.menu-open {
   font-family: var(--font-body);
   font-size: var(--fs-small);
   font-weight: 600;
-  color: var(--color-text);
-  background-color: var(--color-white);
-  border: 1px solid var(--color-border);
-  border-radius: 999px;
-  padding: 0.6rem 1.4rem;
+  color: var(--color-slate);
+  background: none;
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: 0.4rem 0.1rem;
   cursor: pointer;
-  flex: 1;
-  min-width: 100px;
-  max-width: 160px;
-  text-align: center;
-  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
+  transition: color var(--transition-base), border-color var(--transition-base);
 }
 
 .agenda-tabs__btn:hover {
-  border-color: var(--color-accent);
+  color: var(--color-ink);
 }
 
 .agenda-tabs__btn.is-active {
-  background-color: var(--color-accent);
-  border-color: var(--color-accent);
-  color: var(--color-white);
+  color: var(--color-ink);
+  border-bottom-color: var(--color-gold-warm);
 }
 
 /* Day heading shown in all-days view */
@@ -2020,7 +2016,7 @@ body.menu-open {
   display: block;
   width: 60px;
   height: 2px;
-  background: var(--color-gold-warm);
+  background: var(--color-border);
   margin: 0.9rem auto 0;
 }
 
@@ -2057,13 +2053,14 @@ body.menu-open {
   gap: 0.5rem;
 }
 
-/* CE credit indicator — pill badge */
+/* CE credit indicator — pill badge (kept neutral; gold is reserved for
+   the time label and sponsor credit only — see June 2026 design note) */
 .agenda-item__ce-badge {
   display: inline-block;
   font-size: 0.7rem;
   font-weight: 700;
-  color: var(--color-gold-text);
-  border: 1px solid var(--color-gold-warm);
+  color: var(--color-ink);
+  border: 1px solid var(--color-ink);
   border-radius: 1rem;
   padding: 0.15rem 0.65rem;
 }
@@ -2135,12 +2132,12 @@ body.menu-open {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  color: var(--color-gold-text);
+  color: var(--color-ink);
   margin: 0 0 0.7rem;
 }
 
 .agenda-concurrent-block__list {
-  border-left: 1px solid var(--color-gold-warm);
+  border-left: 1px solid var(--color-border);
   padding-left: 1rem;
 }
 

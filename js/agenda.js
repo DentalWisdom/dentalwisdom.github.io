@@ -183,6 +183,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // ── Render helpers ──────────────────────────────────────
 
+  // Drops a redundant ":00" from a displayed time (e.g. "9:00 AM" -> "9 AM",
+  // "6:00 – 7:00 AM" -> "6 – 7 AM") but leaves real minutes alone
+  // (e.g. "8:45 AM", "6:09 PM" are untouched).
+  function formatTime(str) {
+    return String(str || '').replace(/:00(?=\s|$)/g, '');
+  }
+
   // Groups consecutive items sharing the same `concurrent` id into a block.
   function renderDayItems(items) {
     var html = '';

@@ -34,33 +34,30 @@
   <link rel="stylesheet" href="/css/styles.css?v=20">
 
   <style>
-    /* CE / Full Schedule pill toggle */
+    /* CE / Full Schedule toggle — quiet text toggle, underline on the
+       active option, matching the agenda filter tabs below it */
     .agenda-view-toggle {
       display: flex;
       justify-content: center;
-      gap: 0;
-      background: var(--color-sand);
-      border-radius: 2rem;
-      padding: 3px;
+      gap: var(--space-md);
       margin: 0 auto var(--space-md);
       width: fit-content;
     }
     .agenda-view-toggle__btn {
       background: none;
       border: none;
-      border-radius: 2rem;
-      padding: 0.45rem 1.25rem;
+      border-bottom: 2px solid transparent;
+      padding: 0.4rem 0.1rem;
       font-size: var(--fs-small);
       font-weight: 600;
       color: var(--color-slate);
       cursor: pointer;
-      transition: background var(--transition-base), color var(--transition-base), box-shadow var(--transition-base);
+      transition: color var(--transition-base), border-color var(--transition-base);
       white-space: nowrap;
     }
     .agenda-view-toggle__btn.is-active {
-      background: var(--color-white);
       color: var(--color-ink);
-      box-shadow: 0 1px 4px rgba(30,42,56,0.13);
+      border-bottom-color: var(--color-gold-warm);
     }
     .agenda-view-toggle__btn:focus-visible {
       outline: 3px solid var(--color-ink);
@@ -155,7 +152,7 @@
       <div class="container">
         <div class="section-heading" data-reveal>
           <h2 id="sponsors-heading">Our Sponsors</h2>
-          <p>Thank you to the partners who make Dental Wisdom possible.</p>
+          <p>Thank you to the partners who make the Dental Wisdom Conference possible.</p>
         </div>
       </div>
 

@@ -21,6 +21,11 @@
                shown larger). Anything unrecognized falls to the
                bottom group. The Agenda page ignores tiers and
                shows everyone together.
+     pastSponsor - Optional boolean. Set true for a sponsor who
+               supported a past conference but isn't confirmed for
+               2027 — shows a muted gray "Past Sponsor" pill on the
+               card/modal. Ignored if `attending` is also true (the
+               gold Attending pill takes priority).
 
    ========================================================= */
 
@@ -64,7 +69,8 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/emerald-dental-lab.png",
     link: "https://www.emeralddentallab.com/promo/",
     blurb: "Premium full-service dental laboratory delivering precision-crafted restorations — crowns, bridges, implant prosthetics, and more — with artisan quality and turnaround you can count on.",
-    tier: "platinum"
+    tier: "platinum",
+    attending: true
   },
 
   /* ── GOLD ─────────────────────────────────────────────── */
@@ -88,35 +94,40 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/lasso-md.png",
     link: "https://www.lassomd.com/work-with-us/partners/dental-wisdom",
     blurb: "AI-powered digital marketing, website design, and practice growth platform built exclusively for dentists — helping practices attract more ideal patients and grow revenue with less effort.",
-    tier: "gold"
+    tier: "gold",
+    pastSponsor: true
   },
   {
     name: "Reach",
     logoUrl: "/images/sponsors/reach.png",
     link: "https://lp.getreach.co/dentalwisdom",
     blurb: "Dedicated virtual assistants and smart automation for dental practices — handling calls, insurance verification, recall, and reactivation so your team can focus fully on patient care.",
-    tier: "gold"
+    tier: "gold",
+    pastSponsor: true
   },
   {
     name: "Pearl",
     logoUrl: "/images/sponsors/pearl.png",
     link: "https://discover.hellopearl.com/dental-wisdom/",
     blurb: "Leading dental AI platform for real-time pathology detection, practice analytics, and insurance verification — helping practices deliver better care and grow production.",
-    tier: "gold"
+    tier: "gold",
+    pastSponsor: true
   },
   {
     name: "TheraBreath",
     logoUrl: "/images/sponsors/therabreath.png",
     link: "https://www.therabreath.com/",
     blurb: "Dentist-formulated oral health products trusted by millions — TheraBreath's clinically tested rinses, toothpastes, and sprays target the root causes of bad breath and gum issues.",
-    tier: "gold"
+    tier: "gold",
+    pastSponsor: true
   },
   {
     name: "APEX",
     logoUrl: "/images/sponsors/apex.png",
     link: "https://apexreimbursement.com/dental-wisdom/",
     blurb: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
-    tier: "gold"
+    tier: "gold",
+    pastSponsor: true
   },
 
   /* ── SILVER ───────────────────────────────────────────── */
@@ -125,42 +136,48 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/ultradent.png",
     link: "https://www.ultradent.com/",
     blurb: "Global leader in professional dental products — from whitening and bonding to endodontics and hygiene, Ultradent's clinician-developed innovations set the standard for simplicity and quality.",
-    tier: "silver"
+    tier: "silver",
+    pastSponsor: true
   },
   {
     name: "Nobel Biocare",
     logoUrl: "/images/sponsors/nobel-biocare.png",
     link: "https://www.nobelbiocare.com/",
     blurb: "Pioneer and global leader in implant dentistry — Nobel Biocare's evidence-based solutions for full-arch and single-tooth restoration are trusted by clinicians in over 80 countries.",
-    tier: "silver"
+    tier: "silver",
+    pastSponsor: true
   },
   {
     name: "Zolli Candy",
     logoUrl: "/images/sponsors/zolli-candy.png",
     link: "https://www.zollicandy.com/",
     blurb: "The world's first clinically proven cavity-fighting candy — sugar-free, kid-loved, and dentist-approved, Zolli Candy makes it easy to promote healthy habits without sacrificing joy.",
-    tier: "silver"
+    tier: "silver",
+    pastSponsor: true
   },
   {
     name: "Blue Sky Bio",
     logoUrl: "/images/sponsors/blue-sky-bio.png",
     link: "https://blueskybio.com/",
     blurb: "Affordable, powerful implant planning software and surgical guide design tools — Blue Sky Bio gives clinicians everything they need to plan and deliver precise, predictable implant outcomes.",
-    tier: "silver"
+    tier: "silver",
+    pastSponsor: true
   },
   {
     name: "Adin",
     logoUrl: "/images/sponsors/adin.png",
     link: "https://www.adin-implants.com/",
     blurb: "Israeli-engineered implant systems distributed in over 40 countries — Adin delivers high primary stability and proven clinical performance at a price that makes implants more accessible.",
-    tier: "silver"
+    tier: "silver",
+    pastSponsor: true
   },
   {
     name: "Dental Processing Solutions",
     logoUrl: "/images/sponsors/dental-processing-solutions.png",
     link: "https://dentalprocessingsolutions.com/",
     blurb: "Streamlined payment processing and billing solutions built for dental practices — reducing administrative friction, improving cash flow, and simplifying how you collect from patients and insurers.",
-    tier: "silver"
+    tier: "silver",
+    pastSponsor: true
   },
 
   /* ── BRONZE / SUPPORTING ──────────────────────────────── */
@@ -169,28 +186,32 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/aafe.png",
     link: "https://facialesthetics.org/",
     blurb: "The American Academy of Facial Esthetics offers hands-on training in Botox, fillers, and facial aesthetics for dental and medical professionals — expanding your clinical scope and practice revenue.",
-    tier: "bronze"
+    tier: "bronze",
+    pastSponsor: true
   },
   {
     name: "CG Insurance Group",
     logoUrl: "/images/sponsors/cg-insurance-group.png",
     link: "https://cginsurancegroup.com/dental-wisdom/",
     blurb: "Comprehensive insurance solutions tailored for dental professionals — protecting your practice, team, and livelihood with coverage that understands the unique needs of dentistry.",
-    tier: "bronze"
+    tier: "bronze",
+    pastSponsor: true
   },
   {
     name: "Pul Dental",
     logoUrl: "/images/sponsors/pul-dental.png",
     link: "https://puldental.com/",
     blurb: "Innovative tools and accessories that make wearing and removing clear aligners and retainers easier for patients — boosting compliance, comfort, and satisfaction throughout treatment.",
-    tier: "bronze"
+    tier: "bronze",
+    pastSponsor: true
   },
   {
     name: "The Altair Hotel",
     logoUrl: "/images/sponsors/the-altair-hotel.png",
     link: "https://www.thealtairhotel.com",
     blurb: "The Altair Bay Harbor is a boutique Shabbos-friendly luxury hotel in Miami's Bay Harbor Islands — the official conference hotel of Dental Wisdom 2027, offering comfort, community, and exceptional hospitality.",
-    tier: "bronze"
+    tier: "bronze",
+    attending: true
   },
   {
     name: "Pizza Biza",
@@ -214,6 +235,7 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/wonderful-dental.png",
     link: "https://wonderfuldental.com/",
     blurb: "Award-winning, dentist-developed prophy paste and fluoride varnish in delicious, kid-approved flavors — made in the USA, dye-free, and rated #1 for taste by patients and hygienists alike.",
-    tier: "bronze"
+    tier: "bronze",
+    pastSponsor: true
   }
 ];

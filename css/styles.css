@@ -2618,9 +2618,10 @@ body.menu-open {
 .sponsor-tier__grid--silver   .sponsor-card__logo { height: 78px; }
 .sponsor-tier__grid--bronze   .sponsor-card__logo { height: 62px; }
 
-/* Shared pill style — tier badge and attending badge */
+/* Shared pill style — tier badge, attending badge, past-sponsor badge */
 .sponsor-modal__tier,
-.sponsor-attending-badge {
+.sponsor-attending-badge,
+.sponsor-past-badge {
   display: inline-block;
   font-family: var(--font-body);
   font-size: 0.7rem;
@@ -2639,6 +2640,8 @@ body.menu-open {
 .sponsor-modal__tier--silver   { background: #e8ecf0; color: #3a4a5a; }
 .sponsor-modal__tier--bronze   { background: #f0e8e0; color: #6a4a38; }
 .sponsor-attending-badge       { background: #f5e9c8; color: #7a5a10; }
+/* Muted gray — visually quieter than the gold Attending pill */
+.sponsor-past-badge            { background: #e4e2dd; color: #5a5650; }
 
 /* Card: attending badge pinned top-left */
 .sponsor-card {

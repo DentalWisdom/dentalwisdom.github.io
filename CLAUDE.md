@@ -62,10 +62,10 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 3 | Dr. Sean Ference | `speaker-sean-ference` | 'Hopeless' to Heroic… | Fri 10:30am–12pm | — |
 | 4 | Sam Waller, CFP® | `speaker-sam-waller` | Life Insurance: Bitachon or Hishtadlus? | Shabbos 4–5pm | LiveWell Capital |
 | 5 | Rabbi Dr. David J. Katz | `speaker-rabbi-david-katz` | Dental Halacha Shiur (Shalosh Seudos) | Shabbos 6:30pm | Touro College of Dental Medicine |
-| 6 | Dr. Gabe Hershman | `speaker-gabe-hershman` | OMFS Lecture Title TBD | Thu 2–4pm | — |
-| 7 | Dr. Ariel Steinberger | `speaker-ariel-steinberger` | Cosmetic Dentistry Lecture Title TBD | Thu 4–6pm | — |
+| 6 | Dr. Gabe Hershman | `speaker-gabe-hershman` | Beyond the Extraction: Advanced Surgical Solutions for the Modern Dental Practice | Thu 2–4pm | — |
+| 7 | Dr. Ariel Steinberger | `speaker-ariel-steinberger` | The Art of the Smile: Blending Science and Aesthetics for Transformative Results | Thu 4–6pm | — |
 | 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 (Lecture Titles TBD) | Thu 6:30–8pm & Fri 3–5pm | — |
-| 9 | Dr. Dan German | `speaker-dan-german` | Ortho Tips and Tricks | Fri 1:30–3pm | orthobrain |
+| 9 | Dr. Dan German | `speaker-dan-german` | Straight Talk: Game-Changing Tips and Tricks Every GP Should Know in Orthodontics | Fri 1:30–3pm | orthobrain |
 | 10 | Dr. Samuel Schuster | `speaker-samuel-schuster` | Pre-Davening Shiur | Shabbos 8:15–9:15am | — |
 
 Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `Speaker Bios & Pictures/`. Dr. Samuel Schuster's photo is still TODO — no headshot provided yet (see placeholder note in conference-speakers/index.html).

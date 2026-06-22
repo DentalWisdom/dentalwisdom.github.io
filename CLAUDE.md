@@ -57,7 +57,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 6 | Dr. Gabe Hershman | `speaker-gabe-hershman` | OMFS Lecture Title TBD | Thu 2–4pm | — |
 | 7 | Dr. Ariel Steinberger | `speaker-ariel-steinberger` | Cosmetic Dentistry Lecture Title TBD | Thu 4–6pm | — |
 | 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 (Lecture Titles TBD) | Thu 6:30–8pm & Fri 3–5pm | — |
-| 9 | Dr. Dan German | `speaker-dan-german` | Ortho Hands-On Lecture Title TBD | Thu 6:30–8pm | orthobrain |
+| 9 | Dr. Dan German | `speaker-dan-german` | Ortho Tips and Tricks | Fri 1:30–3pm | orthobrain |
 
 Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `Speaker Bios & Pictures/`.
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link. Logo scroll strips have a keyboard pause/play button (WCAG 2.2.2) injected by `js/main.js` — skip injection when `prefers-reduced-motion` is set (CSS already stops the animation). Hero video autoplay is suppressed by JS when `prefers-reduced-motion` is set.

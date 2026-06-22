@@ -238,46 +238,48 @@ document.addEventListener('DOMContentLoaded', function () {
 
       html += '<div class="agenda-concurrent-card">';
 
+      // Build the shared meta line the same way every other agenda card does:
+      // Sponsored by X • Speaker • Location — all on one line.
+      var metaParts = [];
+
       if (parts) {
-        // Multi-part session sharing one room/time block — one compact line per lecture.
-        parts.forEach(function (part) {
-          var partTitle      = (part.title      || '').trim();
+        // Multi-part session sharing one room/time block — one title line per
+        // lecture (prefixed "Part 1:", "Part 2:", etc.), with all speakers
+        // rolled into the shared meta line below.
+        parts.forEach(function (part, idx) {
+          var partTitle = (part.title || '').trim();
+          html += '<p class="agenda-concurrent-card__part-line">Part ' + (idx + 1) + ': ' + escapeHtml(partTitle || 'Session TBD') + '</p>';
+
           var partSpeaker    = (part.speaker    || '').trim();
           var partSpeakerUrl = (part.speakerUrl || '').trim();
-          var partSpeakerHtml = '';
           if (partSpeaker) {
-            partSpeakerHtml = partSpeakerUrl
+            metaParts.push(partSpeakerUrl
               ? '<a href="' + escapeHtml(partSpeakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(partSpeaker) + '</a>'
-              : escapeHtml(partSpeaker);
+              : escapeHtml(partSpeaker));
           }
-          html += '<p class="agenda-concurrent-card__part-line">' +
-            '<span class="agenda-concurrent-card__part-title">' + escapeHtml(partTitle || 'Session TBD') + '</span>' +
-            (partSpeakerHtml ? ' — ' + partSpeakerHtml : '') +
-            '</p>';
         });
-        if (location) {
-          html += '<p class="agenda-item__meta agenda-concurrent-card__location">' + escapeHtml(location) + '</p>';
-        }
       } else {
-        var speakerHtml = '';
-        if (speaker) {
-          speakerHtml = speakerUrl
-            ? '<a href="' + escapeHtml(speakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(speaker) + '</a>'
-            : escapeHtml(speaker);
-        }
-        var metaParts = [speakerHtml, location ? escapeHtml(location) : ''].filter(Boolean);
-
         html += '<h3>' + escapeHtml(title || 'Session TBD') + '</h3>';
-        if (metaParts.length) {
-          html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
+        if (speaker) {
+          metaParts.push(speakerUrl
+            ? '<a href="' + escapeHtml(speakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(speaker) + '</a>'
+            : escapeHtml(speaker));
         }
+      }
+
+      if (location) {
+        metaParts.push(escapeHtml(location));
       }
 
       if (sponsor) {
         var sponsorInline = sponsorUrl
           ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
           : escapeHtml(sponsor);
-        html += '<p class="agenda-item__meta agenda-concurrent-card__sponsor"><strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</strong></p>';
+        metaParts.unshift('<strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</strong>');
+      }
+
+      if (metaParts.length) {
+        html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
       }
 
       html += '</div>';

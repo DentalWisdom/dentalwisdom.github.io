@@ -2161,31 +2161,23 @@ body.menu-open {
   font-size: 0.78rem;
 }
 
-/* Multi-part session sharing one concurrent-block card — compact, one line per lecture */
+/* Multi-part session sharing one concurrent-block card — one title line per
+   lecture (styled like the card's normal h3), speakers/location/sponsor all
+   roll into the single shared meta line below, same as every other card. */
 .agenda-concurrent-card__part-line {
-  font-size: 0.78rem;
-  color: var(--color-text-muted);
   margin: 0;
-  line-height: 1.45;
+  font-size: 0.95rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--color-text);
 }
 
 .agenda-concurrent-card__part-line + .agenda-concurrent-card__part-line {
-  margin-top: 0.25rem;
+  margin-top: 0.2rem;
 }
 
-.agenda-concurrent-card__part-title {
-  color: var(--color-text);
-  font-weight: 600;
-}
-
-.agenda-concurrent-card__location {
-  margin-top: 0.4rem;
-}
-
-.agenda-concurrent-card__sponsor {
-  margin-top: 0.5rem;
-  padding-top: 0.5rem;
-  border-top: 1px solid var(--color-border);
+.agenda-concurrent-card__part-line:last-of-type {
+  margin-bottom: 0.3rem;
 }
 
 @media (max-width: 639px) {

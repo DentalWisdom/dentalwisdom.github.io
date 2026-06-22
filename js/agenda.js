@@ -11,7 +11,8 @@
    Fields per agenda item: day, time, title, speaker,
    speakerUrl, location, ce (boolean — CE credit lecture),
    showInCEView (boolean — include in CE-only view even if not CE),
-   sponsor/sponsorUrl/sponsorLabel, and parts (array, for a
+   sponsor/sponsorUrl/sponsorLabel (or sponsors array for
+   multiple sponsors on one card), and parts (array, for a
    multi-part session sharing one concurrent-block card).
    See js/agenda-data.js for full field docs.
    ========================================================= */
@@ -231,9 +232,6 @@ document.addEventListener('DOMContentLoaded', function () {
       var speaker      = (item.speaker      || '').trim();
       var speakerUrl   = (item.speakerUrl   || '').trim();
       var location     = (item.location     || '').trim();
-      var sponsor      = (item.sponsor      || '').trim();
-      var sponsorUrl   = (item.sponsorUrl   || '').trim();
-      var sponsorLabel = (item.sponsorLabel || 'Sponsored by').trim();
       var parts        = Array.isArray(item.parts) ? item.parts : null;
 
       html += '<div class="agenda-concurrent-card">';
@@ -271,11 +269,9 @@ document.addEventListener('DOMContentLoaded', function () {
         metaParts.push(escapeHtml(location));
       }
 
-      if (sponsor) {
-        var sponsorInline = sponsorUrl
-          ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
-          : escapeHtml(sponsor);
-        metaParts.unshift('<strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</strong>');
+      var sponsorMeta = sponsorMetaHtml(item);
+      if (sponsorMeta) {
+        metaParts.unshift(sponsorMeta);
       }
 
       if (metaParts.length) {
@@ -298,9 +294,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var isCE        = !!item.ce;
     var isEvent     = !!item.event;
     var ceCredits   = item.ceCredits || null;
-    var sponsor      = (item.sponsor      || '').trim();
-    var sponsorUrl   = (item.sponsorUrl   || '').trim();
-    var sponsorLabel = (item.sponsorLabel || 'Sponsored by').trim();
     var isCEView    = isCE || !!item.showInCEView;
 
     // Speaker — hyperlink if speakerUrl provided
@@ -323,17 +316,45 @@ document.addEventListener('DOMContentLoaded', function () {
     }
     html += '<div class="agenda-item__details">';
     html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
-    if (sponsor) {
-      var sponsorInline = sponsorUrl
-        ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
-        : escapeHtml(sponsor);
-      metaParts.unshift('<strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</strong>');
+    var sponsorMeta = sponsorMetaHtml(item);
+    if (sponsorMeta) {
+      metaParts.unshift(sponsorMeta);
     }
     if (metaParts.length) {
       html += '<p class="agenda-item__meta">' + metaParts.join(' • ') + '</p>';
     }
     html += '</div></div>';
     return html;
+  }
+
+  // Builds the "Sponsored by X" / "Compliments of X & Y" meta string for
+  // an agenda item. Supports a `sponsors` array (multiple sponsors, each
+  // its own hyperlink, joined by a plain-text "&") or the legacy single
+  // sponsor/sponsorUrl fields. Returns '' if there's no sponsor at all.
+  function sponsorMetaHtml(item) {
+    var sponsorLabel = (item.sponsorLabel || 'Sponsored by').trim();
+    var sponsorsList = Array.isArray(item.sponsors) ? item.sponsors : null;
+
+    if (sponsorsList && sponsorsList.length) {
+      var links = sponsorsList.map(function (s) {
+        var name = (s.name || '').trim();
+        var url  = (s.url  || '').trim();
+        if (!name) { return ''; }
+        return url
+          ? '<a href="' + escapeHtml(url) + '" class="agenda-item__sponsor-link">' + escapeHtml(name) + '</a>'
+          : escapeHtml(name);
+      }).filter(Boolean);
+      if (!links.length) { return ''; }
+      return '<strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + links.join(' &amp; ') + '</strong>';
+    }
+
+    var sponsor    = (item.sponsor    || '').trim();
+    var sponsorUrl = (item.sponsorUrl || '').trim();
+    if (!sponsor) { return ''; }
+    var sponsorInline = sponsorUrl
+      ? '<a href="' + escapeHtml(sponsorUrl) + '" class="agenda-item__sponsor-link">' + escapeHtml(sponsor) + '</a>'
+      : escapeHtml(sponsor);
+    return '<strong class="agenda-item__sponsor-label">' + escapeHtml(sponsorLabel) + ' ' + sponsorInline + '</strong>';
   }
 
   function escapeHtml(str) {

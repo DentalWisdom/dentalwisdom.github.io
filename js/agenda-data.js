@@ -17,6 +17,12 @@
                   sponsorLabel) on the card, linked to sponsorUrl. Also
                   works inside a concurrent block (applies to that one
                   card, covering its whole time block).
+     sponsors   - Optional. Use instead of sponsor/sponsorUrl when two
+                  or more sponsors share credit on one card, e.g.
+                  [{ name: "A", url: "/conference-sponsors" },
+                   { name: "B", url: "/conference-sponsors" }].
+                  Each name is its own hyperlink; the joining "&" is
+                  plain text, not a link. sponsorLabel still applies.
      parts      - Optional, only used on a card inside a concurrent
                   block. For a single room's slot that's really a
                   back-to-back multi-lecture session with different
@@ -82,7 +88,11 @@ window.AGENDA_DATA = [
     sponsor: "Citron Films", sponsorUrl: "/conference-sponsors" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Canvas & Calm: Paint Social", speaker: "Speaker TBD", location: "320A1", concurrent: "fri-300-breakout" },
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
-  { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul", sponsor: "APEX Reimbursement Specialists & CG Insurance Group", sponsorUrl: "/conference-sponsors", sponsorLabel: "Compliments of" },
+  { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul",
+    sponsors: [
+      { name: "APEX Reimbursement Specialists", url: "/conference-sponsors" },
+      { name: "CG Insurance Group", url: "/conference-sponsors" }
+    ], sponsorLabel: "Compliments of" },
   { day: "Friday", time: "8:00 PM", title: "Shabbos Dinner", speaker: "", location: "OVO at The Altair" },
   { day: "Friday", time: "10:30 PM", title: "Shiur & Oneg", speaker: "Speaker TBD", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
 

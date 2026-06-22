@@ -358,6 +358,25 @@
     .speaker-modal__sponsor-row .speaker-modal__sponsor-logo {
       max-height: 90px;
     }
+    .speaker-modal__video-box {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-border);
+    }
+    .speaker-modal__video-label {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--color-ink);
+      text-align: center;
+      margin: 0 0 var(--space-sm);
+    }
+    .speaker-modal__video iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-sm);
+      display: block;
+      border: none;
+    }
   </style>
 </head>
 <body class="has-subnav">
@@ -660,7 +679,9 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
             data-sponsor-logo="/images/sponsors/apex.png"
             data-sponsor2-name="CG Insurance Group"
             data-sponsor2-url="https://cginsurancegroup.com/dental-wisdom/"
-            data-sponsor2-logo="/images/sponsors/cg-insurance-group.png">
+            data-sponsor2-logo="/images/sponsors/cg-insurance-group.png"
+            data-video-url="https://www.youtube.com/embed/Lm9P7bNOSfg"
+            data-video-label="A Havdalah Moment with Gobbie — 2026 Dental Wisdom Conference">
             <button class="speaker-card__trigger" aria-haspopup="dialog">
               <div class="speaker-avatar-wrap">
                 <img class="speaker-avatar" src="/images/speaker-gobbie-cohn.webp" alt="Gobbie Cohn" loading="lazy">
@@ -791,6 +812,10 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
           <p class="speaker-modal__session-time" id="speakerModalTime"></p>
         </div>
         <div id="speakerModalSponsor" class="speaker-modal__sponsor-box" hidden></div>
+        <div id="speakerModalVideoBox" class="speaker-modal__video-box" hidden>
+          <p class="speaker-modal__video-label" id="speakerModalVideoLabel"></p>
+          <div id="speakerModalVideo" class="speaker-modal__video"></div>
+        </div>
       </div>
     </div>
   </div>
@@ -904,6 +929,9 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
       var bio       = document.getElementById('speakerModalBio');
       var course    = document.getElementById('speakerModalCourse');
       var time      = document.getElementById('speakerModalTime');
+      var videoBox  = document.getElementById('speakerModalVideoBox');
+      var videoLabel = document.getElementById('speakerModalVideoLabel');
+      var videoEl   = document.getElementById('speakerModalVideo');
 
       var lastFocused = null;
 
@@ -944,6 +972,19 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
         } else {
           sponsorBox.hidden = true;
           sponsorBox.innerHTML = '';
+        }
+
+        // Video block (optional — shows a labeled YouTube embed at the bottom of the modal)
+        if (d.videoUrl) {
+          videoLabel.textContent = d.videoLabel || '';
+          videoLabel.hidden = !d.videoLabel;
+          videoEl.innerHTML = '<iframe src="' + d.videoUrl + '?rel=0" title="' + d.name + ' video"' +
+            ' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+            ' allowfullscreen></iframe>';
+          videoBox.hidden = false;
+        } else {
+          videoBox.hidden = true;
+          videoEl.innerHTML = '';
         }
 
         modal.classList.add('is-open');

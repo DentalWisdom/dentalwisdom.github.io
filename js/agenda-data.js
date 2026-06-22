@@ -76,7 +76,7 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Implants Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Built to Scale: Practice Management from 1 to 3 to 5+ Locations / Videography Meets AI: DIY Workshop", location: "311A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout",
     parts: [
-      { title: "Built to Scale: 1 to 3 to 5+ Locations", speaker: "Dr. Marc Faber", speakerUrl: "/conference-speakers#speaker-marc-faber" },
+      { title: "Built to Scale: 1 to 3+ Locations", speaker: "Dr. Marc Faber", speakerUrl: "/conference-speakers#speaker-marc-faber" },
       { title: "Videography Meets AI", speaker: "Yaakov Citron", speakerUrl: "/conference-speakers#speaker-yaakov-citron" }
     ],
     sponsor: "Citron Films", sponsorUrl: "/conference-sponsors" },

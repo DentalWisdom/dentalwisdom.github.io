@@ -530,7 +530,24 @@ After you complete your registration, you will receive an immediate receipt and 
 
 ---
 
-## 13. Build Process (Claude Code — Sequential)
+## 13. Shabbos Meals FAQ (Confirmed Text)
+
+**Are Shabbos meals included in my registration?**  
+Shabbos meals are optional and not included in the conference registration fee. They're managed directly by OVO at The Altair Hotel. If you'd like to join, simply indicate this during your conference registration.
+
+**How do I reserve Shabbos meals, and how much do they cost?**  
+After you complete your conference registration, you'll receive an email with a direct link to reserve your Shabbos meals. These meals are in high demand and tend to sell out quickly, so we recommend booking your spot as soon as you receive the link (typically 5–6 months before the conference). Estimated pricing is approximately $165 per adult and $90 per child for Shabbos Dinner, and $140 per adult and $75 per child for Shabbos Kiddush & Lunch. Menus are subject to change and are served under strict Glatt Kosher supervision.
+
+**What's on the menu for Shabbos meals?**  
+Indulge in exquisite, chef-crafted Shabbos meals at OVO at The Altair Hotel. These beautifully prepared Glatt Kosher meals offer a lavish yet elegant dining experience that honors Shabbos Kodesh.
+
+*Shabbos Dinner:* Each table is elegantly preset with wine, grape juice, challah bread, hummus, tahini, matbucha, potato salad, Israeli salad, baba ganoush, red cabbage, and corn salad. The first course features Moroccan-style salmon and gefilte fish. The second course is chicken soup with noodles and mini croutons. A kids' buffet offers chicken fingers, hot dogs, and pasta. The main course includes Dijon-crusted prime rib, sweet chicken with dried fruit, baby chicken in gravy, and meatballs in sweet sauce served with rice. A carving station offers brisket, lamb, prime rib, and whole chicken. Sides include potatoes, kugel, white rice, rosemary potatoes, and green beans. Dessert consists of mini petit fours, cookies, cakes, and fresh fruit, with a selection of sodas and soft drinks.
+
+*Shabbos Kiddush & Lunch:* The Shabbos Kiddush begins with a delightful spread of wine, grape juice, cakes, cookies, babka, herring, cured fish, gefilte fish with horseradish, chicken liver salad, egg salad, salmon lox, and cold cuts. Following Kiddush, lunch is served family-style with each table set with challah, hummus, tahini, coleslaw, baba ganoush, matbucha, and green salad. A kids' menu offers chicken fingers and pasta. The main course features schnitzel or grilled chicken, cholent with kishke, hot pastrami, corned beef, smoked turkey, Yerushalmi kugel, potato kugel, and grilled vegetables. Dessert includes mini petit fours, fresh fruit, and cakes, served with hot tea and coffee. Drinks throughout the meal include a selection of sodas and soft drinks.
+
+---
+
+## 14. Build Process (Claude Code — Sequential)
 
 1. All building happens in **Claude Code** (Claude Desktop → Code tab) inside a GitHub repo created on day one — no copy-pasting HTML out of a chat. Claude Code automatically reads `CLAUDE.md` and this spec at the start of every session.
 2. **One page per session**, in the build order above. Each session: short plan → build → Ben previews in the browser → tweaks → commit.

@@ -584,6 +584,16 @@ body.menu-open {
   min-width: 100%;
 }
 
+/* Desktop: center the sub-nav bar. The earlier @media(min-width:768px)
+   block above also sets this, but the unconditional rule right above
+   (added June 19 for mobile scrolling) comes later in source order and
+   was winning the cascade on desktop too — this restores centering. */
+@media (min-width: 768px) {
+  .sub-nav__bar {
+    justify-content: center;
+  }
+}
+
 .sub-nav__bar a {
   white-space: nowrap;
   font-size: 0.8rem;

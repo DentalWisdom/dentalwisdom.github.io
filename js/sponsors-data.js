@@ -33,22 +33,6 @@ window.SPONSORS_DATA = [
 
   /* ── PLATINUM ─────────────────────────────────────────── */
   {
-    name: "LiveWell Capital",
-    logoUrl: "/images/sponsors/livewell-capital.png",
-    link: "https://www.livewellcapital.com/",
-    blurb: "Personalized wealth management and financial planning for dental professionals — helping dentists build, protect, and transfer lasting financial security.",
-    tier: "platinum",
-    attending: true
-  },
-  {
-    name: "Crown Catapult",
-    logoUrl: "/images/sponsors/crown-catapult.png",
-    link: "https://crowncatapult.com/",
-    blurb: "The exclusive financial hub for dental professionals — access curated investment opportunities, expert practice valuations, and advisory services built by and for dentists.",
-    tier: "platinum",
-    attending: true
-  },
-  {
     name: "orthobrain",
     logoUrl: "/images/sponsors/orthobrain.png",
     link: "https://orthobrain.com/",
@@ -61,6 +45,22 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/touro.png",
     link: "https://dental.touro.edu/",
     blurb: "Touro College of Dental Medicine trains the next generation of compassionate, community-focused dental professionals with an emphasis on innovation, clinical excellence, and service.",
+    tier: "platinum",
+    attending: true
+  },
+  {
+    name: "LiveWell Capital",
+    logoUrl: "/images/sponsors/livewell-capital.png",
+    link: "https://www.livewellcapital.com/",
+    blurb: "Personalized wealth management and financial planning for dental professionals — helping dentists build, protect, and transfer lasting financial security.",
+    tier: "platinum",
+    attending: true
+  },
+  {
+    name: "Crown Catapult",
+    logoUrl: "/images/sponsors/crown-catapult.png",
+    link: "https://crowncatapult.com/",
+    blurb: "The exclusive financial hub for dental professionals — access curated investment opportunities, expert practice valuations, and advisory services built by and for dentists.",
     tier: "platinum",
     attending: true
   },

@@ -64,7 +64,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "4:00 – 6:00 PM", title: "The Art of the Smile: Blending Science and Aesthetics for Transformative Results", speaker: "Dr. Ariel Steinberger", speakerUrl: "/conference-speakers#speaker-ariel-steinberger", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "6:00 – 6:30 PM", title: "Break (Mincha & Maariv)", speaker: "", location: "Shul" },
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Intraosseous Anesthesia: Advanced Techniques for Predictable & Profound Pain Control", speaker: "Dr. Sara Werb", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "301A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Build Your Clear Aligner Skill Set: A Hands-On Workshop for GPs", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Build Your Clear Aligner Skill Set: A Hands-On Workshop for GPs", speaker: "Speaker TBD", location: "310A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout", sponsor: "orthobrain", sponsorUrl: "/conference-sponsors" },
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Implants Hands-On: Lecture Title TBD", speaker: "Speaker TBD", location: "311A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
   { day: "Thursday", time: "6:30 – 8:00 PM", title: "Brush & Unwind: Paint Night", speaker: "Speaker TBD", location: "320A1", concurrent: "thu-630-breakout" },
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors", event: true },

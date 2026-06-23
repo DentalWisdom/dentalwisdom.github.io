@@ -52,7 +52,7 @@ window.AGENDA_DATA = [
   { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Registration & Opening Night Reception: Cigars, Scotch & Hors d'Oeuvres", speaker: "", location: "Atrium", event: true },
 
   // ---------------- Thursday ----------------
-  { day: "Thursday", time: "6:00 – 7:00 AM", title: "Daf Yomi Shiur", speaker: "", location: "Library" },
+  { day: "Thursday", time: "6:00 – 7:00 AM", title: "MDY Daf Yomi Shiur", speaker: "", location: "Library" },
   { day: "Thursday", time: "7:00 – 8:00 AM", title: "Shacharis", speaker: "", location: "Library" },
   { day: "Thursday", time: "8:00 – 8:45 AM", title: "Breakfast", speaker: "", location: "OVO at The Altair" },
   { day: "Thursday", time: "8:15 – 8:45 AM", title: "Registration", speaker: "", location: "Atrium" },
@@ -70,7 +70,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors", event: true },
 
   // ---------------- Friday ----------------
-  { day: "Friday", time: "6:00 – 7:00 AM", title: "Daf Yomi Shiur", speaker: "", location: "Library" },
+  { day: "Friday", time: "6:00 – 7:00 AM", title: "MDY Daf Yomi Shiur", speaker: "", location: "Library" },
   { day: "Friday", time: "7:00 – 8:00 AM", title: "Shacharis", speaker: "", location: "Library" },
   { day: "Friday", time: "8:00 – 8:45 AM", title: "Breakfast", speaker: "", location: "OVO at The Altair" },
   { day: "Friday", time: "8:45 – 9:00 AM", title: "Welcoming Remarks", speaker: "Dr. Lisa (Greenstein) Sokol", location: "Shul", showInCEView: true, event: true },
@@ -103,5 +103,5 @@ window.AGENDA_DATA = [
   { day: "Shabbos", time: "6:30 PM", title: "Shalosh Seudos & Dental Halacha Shiur", speaker: "Rabbi Dr. David J. Katz", speakerUrl: "/conference-speakers#speaker-rabbi-david-katz", location: "Shul", ce: true, ceCredits: 1, sponsor: "Touro College of Dental Medicine", sponsorUrl: "/conference-sponsors" },
   { day: "Shabbos", time: "7:09 PM", title: "Maariv & Havdalah", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "8:30 PM", title: "Closing Night Celebration — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "orthobrain", sponsorUrl: "/conference-sponsors", event: true },
-  { day: "Shabbos", time: "10:30 PM", title: "Daf Yomi Shiur", speaker: "", location: "Library" }
+  { day: "Shabbos", time: "10:30 PM", title: "MDY Daf Yomi Shiur", speaker: "", location: "Library" }
 ];

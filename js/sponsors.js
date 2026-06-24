@@ -163,7 +163,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  if (!tiersEl && !gridEl) return; // strip-only pages don't need the modal
+  if (!tiersEl && !gridEl && !hasStaticCards) return; // strip-only pages don't need the modal
 
   /* ----- Inject the shared pop-up (once) ----- */
   var modal = document.getElementById('sponsorModal');

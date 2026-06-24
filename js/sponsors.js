@@ -162,7 +162,7 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  if (!tiersEl && !gridEl) return; // strip-only pages don't need the modal
+  // Modal is always set up so other pages (e.g. Live) can call openSponsorByName()
 
   /* ----- Inject the shared pop-up (once) ----- */
   var modal = document.getElementById('sponsorModal');
@@ -337,6 +337,12 @@ document.addEventListener('DOMContentLoaded', function () {
   modal.querySelectorAll('[data-sponsor-close]').forEach(function (el) {
     el.addEventListener('click', closeModal);
   });
+
+  // Global hook so other pages (e.g. Live) can open a sponsor modal by name
+  window.openSponsorByName = function (name) {
+    var match = sponsors.find(function (s) { return s.name === name; });
+    if (match) openModal(match);
+  };
 
   /* ----- Helpers ----- */
   function escapeHtml(str) {

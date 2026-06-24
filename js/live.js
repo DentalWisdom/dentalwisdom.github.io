@@ -80,7 +80,16 @@ document.addEventListener('DOMContentLoaded', function () {
 
       if (s.sponsor) {
         html += '<span class="session-item__sponsor">Sponsored by ';
-        if (s.sponsorLink) {
+        // If sponsor exists in SPONSORS_DATA, show a small logo+name button
+        // that opens the shared sponsor modal — single source of truth.
+        var sponsorData = (window.SPONSORS_DATA || []).find(function (d) { return d.name === s.sponsor; });
+        if (sponsorData) {
+          html += '<button type="button" class="session-item__sponsor-btn" onclick="window.openSponsorByName(' + JSON.stringify(s.sponsor) + ')">';
+          if (sponsorData.logoUrl) {
+            html += '<img src="' + escAttr(sponsorData.logoUrl) + '" alt="" aria-hidden="true" class="session-item__sponsor-logo">';
+          }
+          html += '<span>' + escHtml(s.sponsor) + '</span></button>';
+        } else if (s.sponsorLink) {
           html += '<a href="' + escAttr(s.sponsorLink) + '" target="_blank" rel="noopener">' + escHtml(s.sponsor) + '</a>';
         } else {
           html += escHtml(s.sponsor);

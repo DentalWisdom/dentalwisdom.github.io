@@ -68,10 +68,6 @@
 
   <!-- Supporting -->
   <url>
-    <loc>https://dentalwisdom.org/flyer</loc>
-    <priority>0.4</priority>
-  </url>
-  <url>
     <loc>https://dentalwisdom.org/privacy</loc>
     <priority>0.3</priority>
   </url>

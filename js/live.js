@@ -22,7 +22,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var past     = sessions.filter(function (s) { return s.status === 'past'; })
                          .sort(function (a, b) { return (b.sortDate || '').localeCompare(a.sortDate || ''); });
 
-  render(upcoming, upcomingEl, { buttonLabel: 'Register', isPast: false });
+  render(upcoming, upcomingEl, { buttonLabel: 'Sign Up', isPast: false });
   render(past,     pastEl,     { isPast: true });
 
   var SESSIONS_LIMIT = 3;
@@ -97,14 +97,14 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         html += '</span>';
         if (!opts.isPast && s.registerLink) {
-          html += '<a class="btn btn-primary" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Register</a>';
+          html += '<a class="btn btn-live" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Sign Up</a>';
         }
         html += '</div>'; // .session-item__footer
       } else if (!showLogoCol && !opts.isPast && s.registerLink) {
-        // No sponsor text, but still needs a register button
+        // No sponsor text, but still needs a sign-up button
         html += '<div class="session-item__footer">';
         html += '<span></span>';
-        html += '<a class="btn btn-primary" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Register</a>';
+        html += '<a class="btn btn-live" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Sign Up</a>';
         html += '</div>';
       }
 
@@ -120,7 +120,7 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '<img src="' + escAttr(sponsorData.logoUrl) + '" alt="' + escAttr(sponsorData.name) + ' logo" loading="lazy">';
         html += '</button>';
         if (!opts.isPast && s.registerLink) {
-          html += '<a class="btn btn-primary session-item__logo-register" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Register</a>';
+          html += '<a class="btn btn-live session-item__logo-register" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Sign Up</a>';
         }
         html += '</div>'; // .session-item__logo-col
       }

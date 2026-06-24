@@ -80,7 +80,21 @@
     max-height: 100%;
     object-fit: contain;
   }
-  /* Register button sits flush below the logo */
+  /* Live-page "Sign Up" button — navy, distinct from the gold conference Register button */
+  .btn-live {
+    background-color: var(--color-ink);
+    color: var(--color-ivory);
+    border-color: var(--color-ink);
+  }
+  .btn-live:hover,
+  .btn-live:focus-visible {
+    background-color: #2e3f52;
+    border-color: #2e3f52;
+    color: var(--color-ivory);
+    box-shadow: var(--shadow-card-hover);
+  }
+
+  /* Sign Up button sits flush below the logo */
   .session-item__logo-register {
     display: block;
     width: 100%;

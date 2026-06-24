@@ -139,14 +139,16 @@ img, video {
 }
 
 a {
-  color: var(--color-accent);
+  color: var(--color-ink);
   text-decoration: underline;
+  text-decoration-color: rgba(30,42,56,0.25);
   text-decoration-thickness: 1px;
   text-underline-offset: 2px;
 }
 
 a:hover {
-  color: var(--color-cta);
+  color: var(--color-gold-warm);
+  text-decoration-color: var(--color-gold-warm);
 }
 
 h1, h2, h3, h4 {
@@ -1318,7 +1320,7 @@ body.menu-open {
 
 .join-fab__button:hover {
   transform: translateY(-2px);
-  background-color: #b9512f;
+  background-color: var(--color-gold-dark);
 }
 
 .join-fab {
@@ -2817,16 +2819,7 @@ body.menu-open {
    ============================================================ */
 
 /* ────── TOKEN OVERRIDES — gold palette ────── */
-:root {
-  --color-gold-warm:  #B8892A;
-  --color-parchment:  #EDE8DE;
-  --color-cta:        #B8892A;
-  --color-accent:     #B8892A;
-}
-
-/* Base links */
-a { color: var(--color-ink); text-decoration-color: rgba(30,42,56,0.25); }
-a:hover { color: var(--color-gold-warm); text-decoration-color: var(--color-gold-warm); }
+/* Note: duplicate :root block removed; base link color consolidated into the shared a{} rule above. */
 :focus-visible { outline-color: var(--color-gold-warm); }
 
 /* Buttons */

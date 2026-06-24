@@ -60,15 +60,17 @@
   .session-item__logo-col {
     flex: 0 0 160px;
     display: flex;
-    align-items: center;
+    flex-direction: column;
+    align-items: stretch;
     justify-content: center;
+    gap: var(--space-sm);
     border-left: 1px solid var(--color-border);
     padding-left: var(--space-md);
   }
   /* Override .sponsor-card defaults for the compact logo box */
   .session-item__logo-btn {
     flex-direction: row;
-    width: 140px;
+    width: 100%;
     height: 90px;
     padding: 8px 10px;
     gap: 0;
@@ -78,7 +80,14 @@
     max-height: 100%;
     object-fit: contain;
   }
-  /* Mobile: stack logo below body content */
+  /* Register button sits flush below the logo */
+  .session-item__logo-register {
+    display: block;
+    width: 100%;
+    text-align: center;
+    box-sizing: border-box;
+  }
+  /* Mobile: stack logo col below body content */
   @media (max-width: 540px) {
     .session-item__logo-col {
       flex: 0 0 100%;
@@ -86,7 +95,12 @@
       border-top: 1px solid var(--color-border);
       padding-left: 0;
       padding-top: var(--space-sm);
-      justify-content: flex-start;
+    }
+    .session-item__logo-btn {
+      width: 140px;
+    }
+    .session-item__logo-register {
+      width: 140px;
     }
   }
   </style>

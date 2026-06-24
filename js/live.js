@@ -86,10 +86,9 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '<p class="session-item__desc">' + escHtml(firstPara) + '</p>';
       }
 
-      // Footer: "Sponsored by" text (only when no logo column) + CTA
-      html += '<div class="session-item__footer">';
-
+      // Footer: "Sponsored by" text only when no logo column
       if (!showLogoCol && s.sponsor) {
+        html += '<div class="session-item__footer">';
         html += '<span class="session-item__sponsor">Sponsored by ';
         if (s.sponsorLink) {
           html += '<a href="' + escAttr(s.sponsorLink) + '" target="_blank" rel="noopener">' + escHtml(s.sponsor) + '</a>';
@@ -97,18 +96,21 @@ document.addEventListener('DOMContentLoaded', function () {
           html += escHtml(s.sponsor);
         }
         html += '</span>';
-      } else {
-        html += '<span></span>'; // spacer so button stays right-aligned
-      }
-
-      if (!opts.isPast && s.registerLink) {
+        if (!opts.isPast && s.registerLink) {
+          html += '<a class="btn btn-primary" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Register</a>';
+        }
+        html += '</div>'; // .session-item__footer
+      } else if (!showLogoCol && !opts.isPast && s.registerLink) {
+        // No sponsor text, but still needs a register button
+        html += '<div class="session-item__footer">';
+        html += '<span></span>';
         html += '<a class="btn btn-primary" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Register</a>';
+        html += '</div>';
       }
 
-      html += '</div>'; // .session-item__footer
       html += '</div>'; // .session-item__body
 
-      // Sponsor logo column — clickable button opens the shared sponsor modal
+      // Sponsor logo column — logo card + register button stacked on the right
       if (showLogoCol) {
         html += '<div class="session-item__logo-col">';
         html += '<button type="button" class="sponsor-card session-item__logo-btn"'
@@ -117,6 +119,9 @@ document.addEventListener('DOMContentLoaded', function () {
           + ' aria-label="View ' + escAttr(sponsorData.name) + ' details">';
         html += '<img src="' + escAttr(sponsorData.logoUrl) + '" alt="' + escAttr(sponsorData.name) + ' logo" loading="lazy">';
         html += '</button>';
+        if (!opts.isPast && s.registerLink) {
+          html += '<a class="btn btn-primary session-item__logo-register" href="' + escAttr(s.registerLink) + '" target="_blank" rel="noopener">Register</a>';
+        }
         html += '</div>'; // .session-item__logo-col
       }
 

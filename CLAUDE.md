@@ -5,6 +5,12 @@ Static marketing site for Dental Wisdom (dentalwisdom.org): the 2027 conference 
 
 **All 16 pages + 404 are built.** The site is in maintenance/content-update mode — no new pages planned currently. `giving.html` is deferred; it lives in `_archive/` only.
 
+**Agenda and Speakers pages are currently showing "Coming Soon" placeholders** (as of June 2026). The full built pages are archived and ready to restore:
+- `_archive/conference-agenda-full.html` → restore to `conference-agenda/index.html`
+- `_archive/conference-speakers-full.html` → restore to `conference-speakers/index.html`
+
+To restore either page: copy the archive file over the placeholder and commit. Do NOT rebuild from scratch — the full pages with all content already exist in `_archive/`.
+
 ## Open follow-ups
 - **Once the full agenda is finalized AND all speaker cards are done** (all "Speaker TBD" / "Lecture Title TBD" slots in `js/agenda-data.js` filled in, all ~16 speaker cards added to `conference-speakers/index.html`), revisit every line on the site that still reads as "lineup pending" — they'll be stale once the roster is final:
   - `conference-speakers/index.html` — the italic line below the speaker grid: "Additional speakers to be announced." (remove or update once no more speakers are coming)

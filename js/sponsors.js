@@ -257,10 +257,33 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (videoEl) {
       if (sponsor.videoUrl) {
-        videoEl.innerHTML = '<iframe src="' + escapeAttr(sponsor.videoUrl) +
-          '?rel=0" title="' + escapeAttr(sponsor.name) + ' video"' +
-          ' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
-          ' allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:6px;display:block"></iframe>';
+        var isWistia = sponsor.videoUrl.indexOf('wistia') !== -1;
+        if (isWistia) {
+          // Inject Wistia player script once
+          if (!document.getElementById('wistia-player-js')) {
+            var ws = document.createElement('script');
+            ws.id = 'wistia-player-js';
+            ws.src = 'https://fast.wistia.net/player.js';
+            ws.async = true;
+            document.head.appendChild(ws);
+          }
+          // Responsive 16:9 wrapper matching Wistia's recommended embed pattern
+          videoEl.innerHTML =
+            '<div style="padding:56.25% 0 0 0;position:relative;">' +
+              '<div style="height:100%;left:0;position:absolute;top:0;width:100%;">' +
+                '<iframe src="' + escapeAttr(sponsor.videoUrl) + '" title="' + escapeAttr(sponsor.name) + ' video"' +
+                ' allow="autoplay; fullscreen" allowtransparency="true" frameborder="0" scrolling="no"' +
+                ' width="100%" height="100%" style="border-radius:6px"></iframe>' +
+              '</div>' +
+            '</div>';
+        } else {
+          // YouTube / other: append rel=0 to suppress related videos
+          var videoSrc = sponsor.videoUrl +
+            (sponsor.videoUrl.indexOf('?') !== -1 ? '&' : '?') + 'rel=0';
+          videoEl.innerHTML = '<iframe src="' + escapeAttr(videoSrc) + '" title="' + escapeAttr(sponsor.name) + ' video"' +
+            ' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+            ' allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:6px;display:block"></iframe>';
+        }
         videoEl.style.display = '';
       } else {
         videoEl.innerHTML = '';

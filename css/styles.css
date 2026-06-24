@@ -517,14 +517,14 @@ body.has-subnav [id] {
   text-decoration: none;
 }
 
-/* Match sub-nav behavior: focus shows the same gold underline as
-   hover/current page, never the boxed outline (the menu auto-focuses
-   the first link every time it opens, so the box would show on every
-   open rather than only on real keyboard navigation). */
+/* Focus indicator for mobile menu links — uses an outline rather than
+   the gold underline so it doesn't visually clash with aria-current="page".
+   The auto-focus on open targets the first link, so this must look
+   clearly different from the active-page underline. */
 .mobile-menu__list a:focus-visible {
-  outline: none;
-  color: var(--color-ink);
-  border-bottom: 2px solid var(--color-gold-warm);
+  outline: 2px solid var(--color-gold-warm);
+  outline-offset: 4px;
+  border-bottom: none;
 }
 
 body.menu-open {

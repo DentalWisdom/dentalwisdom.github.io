@@ -12,6 +12,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var sessions = window.LIVE_DATA || [];
 
+  // Build a name → index lookup from SPONSORS_DATA so we can open sponsor modals
+  var sponsorIndexMap = {};
+  (window.SPONSORS_DATA || []).forEach(function (s, i) {
+    if (s.name) sponsorIndexMap[s.name] = i;
+  });
+
   var upcoming = sessions.filter(function (s) { return s.status === 'upcoming'; });
   var past     = sessions.filter(function (s) { return s.status === 'past'; })
                          .sort(function (a, b) { return (b.sortDate || '').localeCompare(a.sortDate || ''); });
@@ -48,6 +54,11 @@ document.addEventListener('DOMContentLoaded', function () {
 
       var modClass = opts.isPast ? ' session-item--past' : '';
 
+      // Resolve sponsor logo column (if sponsorName matches an entry in SPONSORS_DATA)
+      var sponsorIdx = (s.sponsorName !== undefined) ? sponsorIndexMap[s.sponsorName] : undefined;
+      var sponsorData = (sponsorIdx !== undefined) ? (window.SPONSORS_DATA || [])[sponsorIdx] : null;
+      var showLogoCol = !!(sponsorData && sponsorData.logoUrl);
+
       var html = '<article class="session-item' + modClass + hidden + '">';
 
       // Date badge
@@ -75,10 +86,10 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '<p class="session-item__desc">' + escHtml(firstPara) + '</p>';
       }
 
-      // Footer: sponsor + CTA
+      // Footer: "Sponsored by" text (only when no logo column) + CTA
       html += '<div class="session-item__footer">';
 
-      if (s.sponsor) {
+      if (!showLogoCol && s.sponsor) {
         html += '<span class="session-item__sponsor">Sponsored by ';
         if (s.sponsorLink) {
           html += '<a href="' + escAttr(s.sponsorLink) + '" target="_blank" rel="noopener">' + escHtml(s.sponsor) + '</a>';
@@ -96,6 +107,19 @@ document.addEventListener('DOMContentLoaded', function () {
 
       html += '</div>'; // .session-item__footer
       html += '</div>'; // .session-item__body
+
+      // Sponsor logo column — clickable button opens the shared sponsor modal
+      if (showLogoCol) {
+        html += '<div class="session-item__logo-col">';
+        html += '<button type="button" class="sponsor-card session-item__logo-btn"'
+          + ' data-sponsor-index="' + sponsorIdx + '"'
+          + ' aria-haspopup="dialog"'
+          + ' aria-label="View ' + escAttr(sponsorData.name) + ' details">';
+        html += '<img src="' + escAttr(sponsorData.logoUrl) + '" alt="' + escAttr(sponsorData.name) + ' logo" loading="lazy">';
+        html += '</button>';
+        html += '</div>'; // .session-item__logo-col
+      }
+
       html += '</article>'; // .session-item
 
       return html;

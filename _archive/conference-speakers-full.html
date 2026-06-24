@@ -1,0 +1,1061 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Speakers | Dental Wisdom Conference 2027</title>
+  <meta name="description" content="Meet the faculty bringing the 2027 Dental Wisdom Conference to life — cross-specialty practitioners and thought leaders joining us in Miami, March 3–6, 2027.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Speakers | Dental Wisdom Conference 2027">
+  <meta property="og:description" content="Meet the faculty bringing the 2027 Dental Wisdom Conference to life — cross-specialty practitioners and thought leaders joining us in Miami, March 3–6, 2027.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/conference-speakers">
+<link rel="canonical" href="https://dentalwisdom.org/conference-speakers">
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Dental Wisdom Conference 2027 — cross-specialty dental CE, March 3–6, 2027, Miami">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Speakers | Dental Wisdom Conference 2027">
+  <meta name="twitter:description" content="Meet the faculty bringing the 2027 Dental Wisdom Conference to life — cross-specialty practitioners and thought leaders joining us in Miami, March 3–6, 2027.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="/css/styles.css?v=25">
+
+  <style>
+    /* ===== Speaker grid & cards ===== */
+    .speaker-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: var(--space-md);
+      margin-top: var(--space-lg);
+    }
+    @media (min-width: 480px) {
+      .speaker-grid { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 900px) {
+      .speaker-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    @media (min-width: 1100px) {
+      .speaker-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+
+    .speaker-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+      transition: box-shadow var(--transition-base), transform var(--transition-base);
+      cursor: pointer;
+    }
+    .speaker-card:hover,
+    .speaker-card:focus-within {
+      box-shadow: var(--shadow-card-hover);
+      transform: translateY(-3px);
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .speaker-card:hover,
+      .speaker-card:focus-within { transform: none; }
+    }
+
+    .speaker-card__trigger {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 0;
+      cursor: pointer;
+      text-align: left;
+    }
+    .speaker-card__trigger:focus-visible {
+      outline: 3px solid var(--color-ink);
+      outline-offset: 2px;
+    }
+
+    /* Avatar — circular photo */
+    .speaker-avatar-wrap {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-lg) var(--space-md) var(--space-sm);
+    }
+    .speaker-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid var(--color-sand);
+      box-shadow: 0 4px 16px rgba(30,42,56,0.12);
+    }
+    /* Placeholder avatar — shown for speakers without a headshot yet (initials monogram) */
+    .speaker-avatar--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-sand);
+      color: var(--color-ink);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.75rem;
+      letter-spacing: 0.04em;
+    }
+
+    /* Card body */
+    .speaker-card__body {
+      padding: var(--space-sm) var(--space-md) var(--space-md);
+      text-align: center;
+    }
+    .speaker-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-ink);
+      margin: 0 0 0.2rem;
+    }
+    .speaker-card__specialty {
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-ink);
+      margin: 0 0 var(--space-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .speaker-card__bio-snippet {
+      font-size: var(--fs-small);
+      color: var(--color-slate);
+      line-height: 1.5;
+      margin: 0 0 var(--space-sm);
+      text-align: left;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+    .speaker-card__course-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.25rem;
+      text-align: left;
+    }
+    .speaker-card__course-title {
+      font-size: var(--fs-small);
+      color: var(--color-ink);
+      font-weight: 500;
+      line-height: 1.4;
+      margin: 0 0 0.25rem;
+      text-align: left;
+    }
+    .speaker-card__time {
+      font-size: 0.78rem;
+      color: var(--color-gold-warm);
+      font-weight: 600;
+      text-align: left;
+      display: block;
+    }
+    .speaker-card__cta {
+      display: inline-block;
+      margin-top: var(--space-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-ink);
+      text-decoration: none;
+    }
+
+    /* Day group headings */
+    .speaker-day-group {
+      margin-top: var(--space-xl);
+      margin-bottom: var(--space-md);
+    }
+    .speaker-day-group:first-child {
+      margin-top: 0;
+    }
+    .speaker-day-heading {
+      font-family: var(--font-heading);
+      font-size: clamp(1.3rem, 2.5vw, 1.75rem);
+      color: var(--color-ink);
+      margin: 0 0 0.5rem;
+    }
+    .speaker-day-heading::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--color-ink);
+      margin-top: 0.4rem;
+    }
+
+    /* Placeholder notice */
+    .placeholder-notice {
+      display: inline-block;
+      background: var(--color-sand);
+      border: 1px dashed var(--color-border);
+      border-radius: var(--radius-sm);
+      font-size: 0.75rem;
+      color: var(--color-slate);
+      padding: 0.25rem 0.6rem;
+      margin-bottom: var(--space-lg);
+    }
+
+    /* ===== Speaker modal ===== */
+    .speaker-modal {
+      display: none;
+      position: fixed;
+      inset: 0;
+      z-index: var(--z-modal);
+      align-items: center;
+      justify-content: center;
+      padding: var(--space-sm);
+    }
+    .speaker-modal.is-open {
+      display: flex;
+    }
+    .speaker-modal__backdrop {
+      position: absolute;
+      inset: 0;
+      background: rgba(30, 42, 56, 0.55);
+      backdrop-filter: blur(3px);
+    }
+    .speaker-modal__dialog {
+      position: relative;
+      z-index: 1;
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 24px 80px rgba(30, 42, 56, 0.22);
+      max-width: 760px;
+      width: 100%;
+      max-height: 92vh;
+      overflow-y: auto;
+      animation: modalIn 280ms ease;
+    }
+    @keyframes modalIn {
+      from { opacity: 0; transform: translateY(12px) scale(0.98); }
+      to   { opacity: 1; transform: none; }
+    }
+    @media (prefers-reduced-motion: reduce) {
+      .speaker-modal__dialog { animation: none; }
+    }
+    .speaker-modal__close {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: var(--color-sand);
+      border: none;
+      border-radius: 50%;
+      width: 2rem;
+      height: 2rem;
+      font-size: 1.2rem;
+      line-height: 1;
+      cursor: pointer;
+      color: var(--color-ink);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .speaker-modal__close:focus-visible {
+      outline: 3px solid var(--color-ink);
+    }
+    .speaker-modal__avatar-wrap {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-xl) var(--space-md) var(--space-sm);
+      background: var(--color-sand);
+      border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    }
+    .speaker-modal__avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 4px solid var(--color-white);
+      box-shadow: 0 6px 20px rgba(30,42,56,0.15);
+    }
+    /* Placeholder avatar — shown for speakers without a headshot yet (initials monogram) */
+    .speaker-modal__avatar--placeholder {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: var(--color-white);
+      color: var(--color-ink);
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 2.25rem;
+      letter-spacing: 0.04em;
+    }
+    .speaker-modal__avatar--placeholder[hidden] {
+      display: none;
+    }
+    .speaker-modal__body {
+      padding: var(--space-lg);
+    }
+    .speaker-modal__name {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--color-ink);
+      margin: 0 0 0.25rem;
+    }
+    .speaker-modal__specialty {
+      font-size: var(--fs-small);
+      font-weight: 700;
+      color: var(--color-ink);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 var(--space-md);
+    }
+    .speaker-modal__bio {
+      font-size: var(--fs-body);
+      color: var(--color-text);
+      line-height: 1.7;
+      margin: 0 0 var(--space-md);
+    }
+    .speaker-modal__bio p {
+      margin: 0 0 1em;
+    }
+    .speaker-modal__bio p:last-child {
+      margin-bottom: 0;
+    }
+    .speaker-modal__session-box {
+      background: var(--color-sand);
+      border-radius: var(--radius-sm);
+      padding: var(--space-md);
+    }
+    .speaker-modal__session-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-slate);
+      margin: 0 0 0.4rem;
+    }
+    .speaker-modal__session-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-ink);
+      margin: 0 0 0.4rem;
+    }
+    .speaker-modal__session-time {
+      font-size: var(--fs-small);
+      color: var(--color-gold-warm);
+      font-weight: 600;
+      margin: 0;
+    }
+    .speaker-modal__sponsor-box {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+    .speaker-modal__sponsor-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-slate);
+      margin: 0 0 0.6rem;
+    }
+    .speaker-modal__sponsor-link {
+      display: inline-block;
+    }
+    .speaker-modal__sponsor-logo {
+      max-height: 140px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+    .speaker-modal__sponsor-row {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      gap: var(--space-lg);
+    }
+    .speaker-modal__sponsor-row .speaker-modal__sponsor-logo {
+      max-height: 90px;
+    }
+    .speaker-modal__video-box {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-border);
+    }
+    .speaker-modal__video-label {
+      font-family: var(--font-heading);
+      font-size: 1rem;
+      color: var(--color-ink);
+      text-align: center;
+      margin: 0 0 var(--space-sm);
+    }
+    .speaker-modal__video iframe {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      border-radius: var(--radius-sm);
+      display: block;
+      border: none;
+    }
+  </style>
+</head>
+<body class="has-subnav">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="/">
+        <span class="site-logo__section">Conference</span>
+        <img class="site-logo__mark" src="/images/header-logo-blue.png" alt="Dental Wisdom">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="/" aria-current="page">Conference</a></li>
+          <li><a href="/live">Live</a></li>
+          <li><a href="/deals">Deals</a></li>
+          <li><a href="/whatsapp">WhatsApp</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line x1="3" y1="6" x2="21" y2="6"></line>
+          <line x1="3" y1="12" x2="21" y2="12"></line>
+          <line x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu">
+    <a class="mobile-menu__logo" href="/" aria-label="Dental Wisdom home">
+      <img src="/images/header-logo-blue.png" alt="Dental Wisdom">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="/" aria-current="page">Conference</a></li>
+        <li><a href="/live">Live</a></li>
+        <li><a href="/deals">Deals</a></li>
+        <li><a href="/whatsapp">WhatsApp</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Conference sub-navigation (index, agenda, speakers, conference-faq only) -->
+  <div class="sub-nav">
+    <div class="container sub-nav__bar">
+      <a href="/">Overview</a>
+      <a href="/conference-agenda">Agenda</a>
+      <a href="/conference-speakers" aria-current="page">Speakers</a>
+      <a href="/conference-sponsors">Sponsors</a>
+      <a href="/conference-faq">FAQ</a>
+      <a class="btn btn-primary" href="https://pci.jotform.com/form/252998619124166">Register</a>
+    </div>
+  </div>
+
+  <main id="main">
+
+    <section class="section section--sand texture">
+      <div class="container">
+
+        <div class="section-heading" data-reveal>
+          <h1>Speakers</h1>
+          <p>Meet our 2027 faculty.</p>
+        </div>
+
+        <!-- ===== SPEAKER GRID ===== -->
+
+        <!-- Thursday -->
+        <div class="speaker-day-group" data-reveal>
+          <h2 class="speaker-day-heading">Thursday</h2>
+        </div>
+        <div class="speaker-grid">
+
+          <!-- 1: Dr. Harold Katz -->
+          <article class="speaker-card" id="speaker-harold-katz" data-reveal
+            data-photo="/images/speaker-harold-katz.jpg"
+            data-name="Dr. Harold Katz"
+            data-specialty="Oral Health &amp; Product Development"
+            data-bio="Dr. Harold Katz is the founder of The California Breath Clinics and the developer of the TheraBreath line of oral care products. He is the internationally recognized expert in the fields of bad breath, taste disorders, tonsil stones, and dry mouth — known as the 'Bad Breath Guru' through appearances on The View, the CBS Early Show, and more. A graduate of the UCLA School of Dentistry with a separate degree in Bacteriology, Dr. Katz began his breakthrough research in the early 1990s after struggling to help his teenage daughter with her bad breath. His discovery that bad breath is caused by sulfur-producing bacteria — not the digestive system — led to the founding of TheraBreath in 1993."
+            data-course="The Fresh Breath Revolution Started with One Dentist's Determination"
+            data-time="Thursday, 9:00 – 10:00 AM"
+            data-sponsor-name="TheraBreath"
+            data-sponsor-url="https://www.therabreath.com/"
+            data-sponsor-logo="/images/sponsors/therabreath.png">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-harold-katz.jpg" alt="Dr. Harold Katz" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Harold Katz</h2>
+                <p class="speaker-card__specialty">Oral Health &amp; Product Development</p>
+                <p class="speaker-card__bio-snippet">Founder of TheraBreath and The California Breath Clinics. UCLA-trained dentist and bacteriologist recognized worldwide as the foremost expert on bad breath, taste disorders, and dry mouth.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">The Fresh Breath Revolution Started with One Dentist's Determination</p>
+                <p class="speaker-card__time">Thu 9:00 – 10:00 AM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 2: Dr. Daniel Greenbaum -->
+          <article class="speaker-card" id="speaker-daniel-greenbaum" data-reveal
+            data-photo="/images/speaker-daniel-greenbaum.jpg"
+            data-name="Dr. Daniel Greenbaum"
+            data-specialty="Prosthodontics &amp; Implantology"
+            data-bio="Dr. Daniel Greenbaum is a Board-Certified Prosthodontist with Advanced Fellowship Training in Implantology and Periodontology. Originally from Rockland County, NY, he completed his undergraduate studies at CUNY Queens College (summa cum laude, 2003) and received his DDS from Columbia University in 2007. He completed a General Practice Residency at Montefiore Medical Center, specialty training in Prosthodontics at the University of Maryland (MS, 2011), and an additional Fellowship in Implantology and Periodontology (2012). Since then, Dr. Greenbaum has maintained an active private practice, taught at dental schools and study clubs, and participated in multiple dental education organizations."
+            data-course="Designing Smiles That Last: Modern Prosthodontic Strategies for Predictable, Aesthetic &amp; Functional Excellence"
+            data-time="Thursday, 10:00 AM – 12:00 PM">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-daniel-greenbaum.jpg" alt="Dr. Daniel Greenbaum" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Daniel Greenbaum</h2>
+                <p class="speaker-card__specialty">Prosthodontics &amp; Implantology</p>
+                <p class="speaker-card__bio-snippet">Board-Certified Prosthodontist with Advanced Fellowship Training in Implantology and Periodontology. Columbia DDS, University of Maryland specialty training. Active clinician, educator, and dental education organization member.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Designing Smiles That Last: Modern Prosthodontic Strategies for Predictable, Aesthetic &amp; Functional Excellence</p>
+                <p class="speaker-card__time">Thu 10:00 AM – 12:00 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 6: Dr. Gabe Hershman -->
+          <article class="speaker-card" id="speaker-gabe-hershman" data-reveal
+            data-photo="/images/speaker-gabe-hershman.jpg"
+            data-name="Dr. Gabe Hershman"
+            data-specialty="Oral &amp; Maxillofacial Surgery"
+            data-bio="Dr. Gabe Hershman is a board-certified Oral and Maxillofacial Surgeon with over 10 years of experience in the private sector, with a specific interest in patient-driven care and business administration. His boutique surgical practice gives individual attention to every patient, creating an experience in which each patient feels as though they are the only patient in the practice. His team is trained to deliver care at the highest level, with a focus on process and successful surgical outcomes."
+            data-course="Beyond the Extraction: Advanced Surgical Solutions for the Modern Dental Practice"
+            data-time="Thursday, 2:00 – 4:00 PM">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-gabe-hershman.jpg" alt="Dr. Gabe Hershman" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Gabe Hershman</h2>
+                <p class="speaker-card__specialty">Oral &amp; Maxillofacial Surgery</p>
+                <p class="speaker-card__bio-snippet">Board-certified Oral and Maxillofacial Surgeon with over 10 years in private practice. Runs a boutique surgical practice focused on individualized, patient-driven care.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Beyond the Extraction: Advanced Surgical Solutions for the Modern Dental Practice</p>
+                <p class="speaker-card__time">Thu 2:00 – 4:00 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 7: Dr. Ariel Steinberger -->
+          <article class="speaker-card" id="speaker-ariel-steinberger" data-reveal
+            data-photo="/images/speaker-ariel-steinberger.webp"
+            data-name="Dr. Ariel Steinberger"
+            data-specialty="Cosmetic Dentistry"
+            data-bio="Dr. Ariel Steinberger is a cosmetic dentist based in Massapequa Park whose approach is focused on relationship-building. He carefully listens to his patients and addresses their concerns with the ultimate goal of excellence, optimal care, and beautiful smiles. Whether people come to him due to tooth pain, trauma, or cosmetic insecurities, he loves being able to make an immediate, positive impact in their lives."
+            data-course="The Art of the Smile: Blending Science and Aesthetics for Transformative Results"
+            data-time="Thursday, 4:00 – 6:00 PM">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-ariel-steinberger.webp" alt="Dr. Ariel Steinberger" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Ariel Steinberger</h2>
+                <p class="speaker-card__specialty">Cosmetic Dentistry</p>
+                <p class="speaker-card__bio-snippet">Massapequa Park cosmetic dentist focused on relationship-building — listening closely to patients to deliver excellence, optimal care, and beautiful smiles.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">The Art of the Smile: Blending Science and Aesthetics for Transformative Results</p>
+                <p class="speaker-card__time">Thu 4:00 – 6:00 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+        </div><!-- /speaker-grid thursday -->
+
+        <!-- Friday -->
+        <div class="speaker-day-group" data-reveal>
+          <h2 class="speaker-day-heading">Friday</h2>
+        </div>
+        <div class="speaker-grid">
+
+          <!-- Dr. Sara Werb -->
+          <article class="speaker-card" id="speaker-sara-werb" data-reveal
+            data-photo="/images/speaker-sara-werb.png"
+            data-name="Dr. Sara Werb"
+            data-specialty="Anesthesia &amp; Restorative Dentistry"
+            data-bio="Dr. Sara Werb was born and raised in Toronto. She completed an Honours Bachelor of Science at the University of Toronto and received her Master's in Education from Canisius College in Buffalo, NY, where she conducted research on creating a high school program that allowed female students to excel in STEM. During her Master's, she won a bet and had her dental school application to the University of Toronto paid for. She decided to attend, did not enjoy it at first, but began shadowing a general dentist who taught her to incorporate a love of teaching into practice and encouraged her to apply to pediatric dentistry. She then completed a pediatric dental residency at Jacobi Medical Center, where she received extensive training in various behavior management techniques, treatment of special needs patients, a pediatric medicine rotation, pediatric emergency room training, and anesthesia."
+            data-course="Part 1: Intraosseous Anesthesia: Advanced Techniques for Predictable &amp; Profound Pain Control (Fri) | Part 2: Hands-On Zirconia Crown Mastery: Anterior Esthetics &amp; Posterior Strength Workshop (Fri)"
+            data-time="Friday, 10:00 – 11:00 AM &amp; Friday, 3:00 – 5:00 PM"
+            data-sponsor-name="NuSmile"
+            data-sponsor-url="https://www.nusmile.com/"
+            data-sponsor-logo="/images/sponsors/nusmile.png">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-sara-werb.png" alt="Dr. Sara Werb" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Sara Werb</h2>
+                <p class="speaker-card__specialty">Anesthesia &amp; Restorative Dentistry</p>
+                <p class="speaker-card__bio-snippet">Dentist trained at Jacobi Medical Center with extensive clinical experience. Presenting two hands-on workshops: intraosseous anesthesia Friday morning and zirconia crown mastery Friday afternoon.</p>
+                <p class="speaker-card__course-label">Sessions</p>
+                <p class="speaker-card__course-title">Intraosseous Anesthesia Workshop (Fri) &amp; Zirconia Crown Mastery Workshop (Fri)</p>
+                <p class="speaker-card__time">Fri 10:00 – 11:00 AM &amp; Fri 3:00 – 5:00 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- Dr. Sean Ference -->
+          <article class="speaker-card" id="speaker-sean-ference" data-reveal
+            data-photo="/images/speaker-sean-ference.webp"
+            data-name="Dr. Sean Ference"
+            data-specialty="Periodontics &amp; Implant Dentistry"
+            data-bio="Sean Ference, DDS, MDS, is a Periodontist at Capital Region Periodontics and Dental Implants in Albany, New York. He completed his undergraduate studies at Binghamton University, dental training at Stony Brook University School of Dental Medicine, and specialty training in Periodontics at the University of Tennessee College of Dentistry, where he also earned his master's degree in dental science. Dr. Sean is board certified in Periodontics and Implant Dentistry, a member of the American Academy of Periodontology and the American Dental Association, with clinical interests in bone regeneration, implant dentistry, and soft tissue grafting."
+            data-course="'Hopeless' to Heroic: Modern Approaches to Periodontal Regeneration and Plastic Surgery"
+            data-time="Friday, 11:00 AM – 12:30 PM">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-sean-ference.webp" alt="Dr. Sean Ference" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Sean Ference</h2>
+                <p class="speaker-card__specialty">Periodontics &amp; Implant Dentistry</p>
+                <p class="speaker-card__bio-snippet">Board-certified Periodontist at Capital Region Periodontics and Dental Implants, Albany, NY. Specialist in bone regeneration, implant dentistry, and soft tissue grafting.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">'Hopeless' to Heroic: Modern Approaches to Periodontal Regeneration and Plastic Surgery</p>
+                <p class="speaker-card__time">Fri 11:00 AM – 12:30 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- Yaakov Citron -->
+          <article class="speaker-card" id="speaker-yaakov-citron" data-reveal
+            data-photo="/images/speaker-yaakov-citron.jpg"
+            data-name="Yaakov Citron"
+            data-specialty="Videography &amp; Content Strategy"
+            data-bio="Yaakov Citron (also known as Jacob Citron) is a strategic videographer, content creator, and the founder of Citron Films. Based between New Jersey and Israel, he produces impactful promotional videos, event coverage, and storytelling campaigns for healthcare, nonprofits, educational institutions, and mission-driven businesses worldwide."
+            data-course="The 5-Step AI Video Playbook: A Hands-On Workshop for Building Usable Digital Assets for Your Practice"
+            data-time="Friday, 3:00 – 5:00 PM"
+            data-sponsor-name="Citron Films"
+            data-sponsor-url="https://hc.citronfilms.com"
+            data-sponsor-logo="/images/sponsors/citron-films.png"
+            data-video-url="https://www.youtube.com/embed/z019852_Zmk"
+            data-video-label="Citron Films">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-yaakov-citron.jpg" alt="Yaakov Citron" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Yaakov Citron</h2>
+                <p class="speaker-card__specialty">Videography &amp; Content Strategy</p>
+                <p class="speaker-card__bio-snippet">Strategic videographer, content creator, and founder of Citron Films. Produces promotional videos, event coverage, and storytelling campaigns for healthcare, nonprofits, and mission-driven businesses worldwide.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">The 5-Step AI Video Playbook: A Hands-On Workshop for Building Usable Digital Assets for Your Practice</p>
+                <p class="speaker-card__time">Fri 3:00 – 5:00 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- Gobbie Cohn -->
+          <article class="speaker-card" id="speaker-gobbie-cohn" data-reveal
+            data-photo="/images/speaker-gobbie-cohn.webp"
+            data-name="Gobbie Cohn"
+            data-specialty="Practice Management &amp; Insurance"
+            data-bio="Gobbie Cohn is a Managing Partner at APEX Reimbursement Specialists, where he helps dental practices nationwide maximize insurance revenue and improve their bottom line. With a strategic, results-driven approach, Gobbie leads marketing strategy, client growth, and operational execution at APEX. His team consistently delivers 7–10% average increases in insurance reimbursements through UCR fee analysis, credentialing support, and coding reviews — initiatives that have uncovered millions in additional production for dental practices across the country.
+
+Gobbie brings more than 25 years of experience in business development and the insurance industry. He earned his MBA from the University of Maryland and previously founded CG Insurance Group. Prior to that, he served as a producer and marketing manager at Howden Insurance Brokers (now PRS). A licensed insurance producer since 2001, Gobbie has developed deep expertise in sales, client relations, risk management, and account management, with particular strength in the Life Sciences and Technology sectors.
+
+In addition to his work in dental revenue optimization, Gobbie is a dynamic voice talent, singer, and cantor known for his rich, expressive voice and emotionally resonant performances. He has released original music and regularly performs at community events."
+            data-course="Mincha, Kabbalas Shabbos &amp; Maariv"
+            data-time="Friday, 6:15 PM"
+            data-sponsor-label="Compliments of"
+            data-sponsor-name="APEX Reimbursement Specialists"
+            data-sponsor-url="https://apexreimbursement.com/dental-wisdom/"
+            data-sponsor-logo="/images/sponsors/apex.png"
+            data-sponsor2-name="CG Insurance Group"
+            data-sponsor2-url="https://cginsurancegroup.com/dental-wisdom/"
+            data-sponsor2-logo="/images/sponsors/cg-insurance-group.png"
+            data-video-url="https://www.youtube.com/embed/Lm9P7bNOSfg"
+            data-video-label="A Havdalah Moment with Gobbie — 2026 Dental Wisdom Conference">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-gobbie-cohn.webp" alt="Gobbie Cohn" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Gobbie Cohn</h2>
+                <p class="speaker-card__specialty">Practice Management &amp; Insurance</p>
+                <p class="speaker-card__bio-snippet">Managing Partner at APEX Reimbursement Specialists, helping dental practices nationwide boost insurance revenue. 25+ years in insurance and business development; also a celebrated cantor and recording vocalist.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Mincha, Kabbalas Shabbos &amp; Maariv</p>
+                <p class="speaker-card__time">Fri 6:15 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+        </div><!-- /speaker-grid friday -->
+
+        <!-- Shabbos -->
+        <div class="speaker-day-group" data-reveal>
+          <h2 class="speaker-day-heading">Shabbos</h2>
+        </div>
+        <div class="speaker-grid">
+
+          <!-- Dr. Samuel Schuster -->
+          <!-- TODO: add headshot photo for Dr. Samuel Schuster to /images/speaker-samuel-schuster.jpg, then swap the placeholder div below back to an <img> (see speaker-harold-katz card for the pattern) and set data-photo to the real path -->
+          <article class="speaker-card" id="speaker-samuel-schuster" data-reveal
+            data-photo=""
+            data-initials="SS"
+            data-name="Dr. Samuel Schuster"
+            data-specialty="General Dentistry"
+            data-bio="Dr. Samuel Schuster is a dentist at Schuster Family Dentistry near Monsey, New York. He earned his Doctor of Dental Surgery (DDS) from Stony Brook University and holds a Bachelor of Science in Biology from Touro University, which he completed in 2009. With a strong scientific foundation and comprehensive clinical training, Dr. Schuster is committed to providing high-quality, patient-centered dental care to families in his community."
+            data-course="Pre-Davening Shiur"
+            data-time="Shabbos, 8:15 AM">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <div class="speaker-avatar speaker-avatar--placeholder" aria-hidden="true">SS</div>
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Samuel Schuster</h2>
+                <p class="speaker-card__specialty">General Dentistry</p>
+                <p class="speaker-card__bio-snippet">Dentist at Schuster Family Dentistry near Monsey, NY. DDS from Stony Brook University; BS in Biology from Touro University (2009).</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Pre-Davening Shiur</p>
+                <p class="speaker-card__time">Shabbos, 8:15 AM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 4: Sam Waller -->
+          <article class="speaker-card" id="speaker-sam-waller" data-reveal
+            data-photo="/images/speaker-sam-waller.png"
+            data-name="Sam Waller, CFP®, RICP®, ChFC®, CLU®"
+            data-specialty="Financial Planning &amp; Wealth Management"
+            data-bio="Sam Waller has been a Financial Planner and Wealth Management Advisor since 2002, holding the CFP®, RICP®, ChFC®, and CLU® designations. A Life and Qualifying Member of the Million Dollar Round Table, he specializes in comprehensive financial planning for attorneys, physicians, finance executives, and individuals approaching or in retirement. His areas of focus include wealth management, fee-based financial planning, retirement income and distribution strategies, tax planning, risk mitigation, and insurance planning. Sam and his wife Bruria live in the Five Towns with their four children."
+            data-course="Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources"
+            data-time="Shabbos, 4:45 PM"
+            data-sponsor-name="LiveWell Capital"
+            data-sponsor-url="https://www.livewellcapital.com/"
+            data-sponsor-logo="/images/sponsors/livewell-capital.png">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-sam-waller.png" alt="Sam Waller" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Sam Waller, CFP®</h2>
+                <p class="speaker-card__specialty">Financial Planning &amp; Wealth Management</p>
+                <p class="speaker-card__bio-snippet">Financial Planner and Wealth Management Advisor since 2002. Life and Qualifying Member of the Million Dollar Round Table, specializing in financial planning for physicians, attorneys, and finance executives.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources</p>
+                <p class="speaker-card__time">Shabbos, 4:45 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+          <!-- 5: Rabbi Dr. David J. Katz -->
+          <article class="speaker-card" id="speaker-rabbi-david-katz" data-reveal
+            data-photo="/images/speaker-rabbi-david-katz.jpg"
+            data-name="Rabbi Dr. David J. Katz"
+            data-specialty="Dental Medicine &amp; Jewish Law"
+            data-bio="Rabbi Dr. David J. Katz serves as Vice Dean for Clinical Affairs and Associate Professor of Dental Medicine at Touro College of Dental Medicine, overseeing Quality Assurance, Clinical Policy, Infection Prevention, and related committees. With more than 35 years of experience, he previously served as Associate Clinical Professor at Columbia University College of Dental Medicine and as Director of Oral Diagnosis and Treatment Planning at New York Presbyterian Hospital. He is a Fellow of the Academy of General Dentistry (FAGD) with advanced training in Implantology, and received recognition from the City of New York and Congress for his service on the Dental Identification Unit following 9/11. Rabbi Dr. Katz is a leading authority on Jewish law as it applies to dentistry, author of Kesser Dovid: The Halachic Guide to Dentistry, and maintains a private practice in Teaneck, New Jersey."
+            data-course="Dental Halacha Shiur (Shalosh Seudos) — sponsored by Touro College of Dental Medicine"
+            data-time="Shabbos, 6:10 PM"
+            data-sponsor-name="Touro College of Dental Medicine"
+            data-sponsor-url="https://dental.touro.edu/"
+            data-sponsor-logo="/images/sponsors/touro.png">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-rabbi-david-katz.jpg" alt="Rabbi Dr. David J. Katz" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Rabbi Dr. David J. Katz</h2>
+                <p class="speaker-card__specialty">Dental Medicine &amp; Jewish Law</p>
+                <p class="speaker-card__bio-snippet">Vice Dean for Clinical Affairs at Touro College of Dental Medicine. Leading authority on Jewish law in dentistry and author of Kesser Dovid: The Halachic Guide to Dentistry.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Dental Halacha Shiur — sponsored by Touro College of Dental Medicine</p>
+                <p class="speaker-card__time">Shabbos, 6:10 PM</p>
+                <span class="speaker-card__cta">View bio →</span>
+              </div>
+            </button>
+          </article>
+
+        </div><!-- /speaker-grid shabbos -->
+
+        <p style="text-align:center; margin-top: var(--space-lg); color: var(--color-text-muted); font-style: italic;" data-reveal>Additional speakers to be announced.</p>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== SPEAKER MODAL (single, populated by JS) ===== -->
+  <div class="speaker-modal" id="speakerModal" role="dialog" aria-modal="true" aria-labelledby="speakerModalName">
+    <div class="speaker-modal__backdrop" id="speakerModalBackdrop"></div>
+    <div class="speaker-modal__dialog">
+      <button class="speaker-modal__close" id="speakerModalClose" aria-label="Close">&times;</button>
+      <div class="speaker-modal__avatar-wrap">
+        <img class="speaker-modal__avatar" id="speakerModalAvatar" src="" alt="">
+        <div class="speaker-modal__avatar speaker-modal__avatar--placeholder" id="speakerModalAvatarPlaceholder" hidden aria-hidden="true"></div>
+      </div>
+      <div class="speaker-modal__body">
+        <h2 class="speaker-modal__name" id="speakerModalName"></h2>
+        <p class="speaker-modal__specialty" id="speakerModalSpecialty"></p>
+        <div class="speaker-modal__bio" id="speakerModalBio"></div>
+        <div class="speaker-modal__session-box">
+          <p class="speaker-modal__session-label">Session</p>
+          <p class="speaker-modal__session-title" id="speakerModalCourse"></p>
+          <p class="speaker-modal__session-time" id="speakerModalTime"></p>
+        </div>
+        <div id="speakerModalSponsor" class="speaker-modal__sponsor-box" hidden></div>
+        <div id="speakerModalVideoBox" class="speaker-modal__video-box" hidden>
+          <p class="speaker-modal__video-label" id="speakerModalVideoLabel"></p>
+          <div id="speakerModalVideo" class="speaker-modal__video"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#top" aria-label="Back to top of page" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+            <img src="/images/footer-logo-white-trimmed.png" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 4-day annual conference.</p>
+          <p>Questions? <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="/whatsapp">Join the Group</a></li>
+              <li><a href="/whatsapp-policies">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="/live">CE Sessions</a></li>
+              <li><a href="/live-present">Want to Present?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="/deals">Browse Deals</a></li>
+              <li><a href="/deals-partner">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="/">Overview</a></li>
+            <li><a href="/conference-agenda">Agenda</a></li>
+            <li><a href="/conference-speakers">Speakers</a></li>
+            <li><a href="/conference-sponsors">Sponsors</a></li>
+            <li><a href="/conference-faq">FAQs</a></li>
+            <li><a href="/conference-new-sponsor">Want to Sponsor?</a></li>
+            <li><a href="/conference-new-speaker">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="/terms">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="/privacy">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
+  <div class="join-fab">
+    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join WhatsApp Group</button>
+  </div>
+
+  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
+    <div class="modal__backdrop" data-modal-close></div>
+    <div class="modal__dialog">
+      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
+      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
+      <p>This community is for dentists — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
+      <div class="modal__iframe-wrap">
+        <iframe
+          id="JotFormIFrame-261626058813055"
+          title="Join Request Form"
+         
+          allowtransparency="true"
+          allow="geolocation; microphone; camera; fullscreen; payment"
+          src="https://form.jotform.com/261626058813055"
+          frameborder="0"
+          style="min-width:100%;max-width:100%;height:539px;border:none;"
+          scrolling="no"
+        ></iframe>
+        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
+        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
+      </div>
+      <p class="modal__note">Curious about our WhatsApp community? <a href="/whatsapp">Learn more</a>.</p>
+    </div>
+  </div>
+
+  <script src="/js/main.js"></script>
+
+  <script>
+    /* ===== Speaker modal logic ===== */
+    (function () {
+      var modal     = document.getElementById('speakerModal');
+      var backdrop  = document.getElementById('speakerModalBackdrop');
+      var closeBtn  = document.getElementById('speakerModalClose');
+      var avatar    = document.getElementById('speakerModalAvatar');
+      var avatarPlaceholder = document.getElementById('speakerModalAvatarPlaceholder');
+      var nameEl    = document.getElementById('speakerModalName');
+      var specialty = document.getElementById('speakerModalSpecialty');
+      var bio       = document.getElementById('speakerModalBio');
+      var course    = document.getElementById('speakerModalCourse');
+      var time      = document.getElementById('speakerModalTime');
+      var videoBox  = document.getElementById('speakerModalVideoBox');
+      var videoLabel = document.getElementById('speakerModalVideoLabel');
+      var videoEl   = document.getElementById('speakerModalVideo');
+
+      var lastFocused = null;
+
+      function openModal(card) {
+        lastFocused = document.activeElement;
+        var d = card.dataset;
+        if (d.photo) {
+          avatar.src     = d.photo;
+          avatar.alt     = d.name;
+          avatar.hidden  = false;
+          avatarPlaceholder.hidden = true;
+        } else {
+          avatar.hidden  = true;
+          avatarPlaceholder.hidden = false;
+          avatarPlaceholder.textContent = d.initials || '';
+        }
+        nameEl.textContent          = d.name;
+        specialty.textContent       = d.specialty;
+        var bioParas = (d.bio || '').split(/\n\s*\n/).filter(Boolean);
+        bio.innerHTML = bioParas.map(function (p) {
+          return '<p>' + p.trim()
+            .replace(/&/g, '&amp;')
+            .replace(/</g, '&lt;')
+            .replace(/>/g, '&gt;') + '</p>';
+        }).join('');
+        course.textContent          = d.course;
+        time.textContent            = d.time;
+
+        // Sponsor block (supports one or two logos side by side, and an optional custom label)
+        var sponsorBox = document.getElementById('speakerModalSponsor');
+        if (d.sponsorName && d.sponsorUrl && d.sponsorLogo) {
+          var sponsorLabel = d.sponsorLabel || 'Sponsored by';
+          var logosHtml =
+            '<a href="' + d.sponsorUrl + '" target="_blank" rel="noopener" class="speaker-modal__sponsor-link">' +
+              '<img src="' + d.sponsorLogo + '" alt="' + d.sponsorName + '" class="speaker-modal__sponsor-logo">' +
+            '</a>';
+          if (d.sponsor2Name && d.sponsor2Url && d.sponsor2Logo) {
+            logosHtml += '<a href="' + d.sponsor2Url + '" target="_blank" rel="noopener" class="speaker-modal__sponsor-link">' +
+              '<img src="' + d.sponsor2Logo + '" alt="' + d.sponsor2Name + '" class="speaker-modal__sponsor-logo">' +
+            '</a>';
+          }
+          sponsorBox.innerHTML =
+            '<p class="speaker-modal__sponsor-label">' + sponsorLabel + '</p>' +
+            '<div class="speaker-modal__sponsor-row">' + logosHtml + '</div>';
+          sponsorBox.hidden = false;
+        } else {
+          sponsorBox.hidden = true;
+          sponsorBox.innerHTML = '';
+        }
+
+        // Video block (optional — shows a labeled YouTube embed at the bottom of the modal)
+        if (d.videoUrl) {
+          videoLabel.textContent = d.videoLabel || '';
+          videoLabel.hidden = !d.videoLabel;
+          videoEl.innerHTML = '<iframe src="' + d.videoUrl + '?rel=0" title="' + d.name + ' video"' +
+            ' frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+            ' allowfullscreen></iframe>';
+          videoBox.hidden = false;
+        } else {
+          videoBox.hidden = true;
+          videoEl.innerHTML = '';
+        }
+
+        modal.classList.add('is-open');
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+
+      function closeModal() {
+        modal.classList.remove('is-open');
+        document.body.style.overflow = '';
+        if (lastFocused) lastFocused.focus();
+      }
+
+      // Wire up each card
+      document.querySelectorAll('.speaker-card').forEach(function (card) {
+        card.querySelector('.speaker-card__trigger').addEventListener('click', function () {
+          openModal(card);
+        });
+      });
+
+      closeBtn.addEventListener('click', closeModal);
+      backdrop.addEventListener('click', closeModal);
+
+      document.addEventListener('keydown', function (e) {
+        if (e.key === 'Escape' && modal.classList.contains('is-open')) {
+          closeModal();
+        }
+        // Basic focus trap
+        if (e.key === 'Tab' && modal.classList.contains('is-open')) {
+          var focusable = modal.querySelectorAll('button, [href], input, [tabindex]:not([tabindex="-1"])');
+          var first = focusable[0];
+          var last  = focusable[focusable.length - 1];
+          if (e.shiftKey && document.activeElement === first) {
+            e.preventDefault();
+            last.focus();
+          } else if (!e.shiftKey && document.activeElement === last) {
+            e.preventDefault();
+            first.focus();
+          }
+        }
+      });
+    }());
+  </script>
+
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+</body>
+</html>

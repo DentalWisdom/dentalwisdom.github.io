@@ -1,0 +1,3 @@
+127.0.0.1 - - [15/Jun/2026 13:50:10] "GET /agenda.html HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 13:50:10] "GET /js/agenda-data.js HTTP/1.1" 200 -
+127.0.0.1 - - [15/Jun/2026 13:50:10] "GET /js/sponsors-data.js HTTP/1.1" 200 -

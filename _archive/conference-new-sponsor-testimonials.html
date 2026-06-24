@@ -1,0 +1,82 @@
+<!-- Saved testimonials carousel for conference-new-sponsor/index.html
+     To restore: copy the <style> block into the <head>, and the <section> block
+     back into <main> between the hero section and the Sponsor Q&A section.
+     Replace the placeholder names/quotes/titles with real ones first. -->
+
+<!-- STYLE BLOCK (paste into <head>) -->
+<style>
+  /* Testimonial carousel */
+  .tc { text-align: center; }
+  .tc__eyebrow { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; color: var(--color-gold-text); margin: 0 0 0.4rem; }
+  .tc__heading { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--color-ink); margin: 0 0 2rem; }
+  .tc__qmark { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 0.5; color: #d4c4a0; display: block; margin-bottom: 1.25rem; }
+  .tc__stars { color: var(--color-gold-warm); font-size: 1rem; letter-spacing: 3px; margin-bottom: 1rem; }
+  .tc__quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.075rem; line-height: 1.75; color: var(--color-ink); max-width: 640px; margin: 0 auto 1.25rem; min-height: 5rem; display: flex; align-items: center; justify-content: center; }
+  .tc__divider { width: 100px; height: 1px; background: #d4c4a0; margin: 0 auto 1.25rem; }
+  .tc__name { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); margin: 0 0 0.2rem; }
+  .tc__cred { font-size: 0.6875rem; color: var(--color-gold-text); margin: 0; letter-spacing: 0.04em; }
+  .tc__nav { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 1.75rem; }
+  .tc__arrow { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--color-gold-warm); background: none; color: var(--color-gold-warm); cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
+  .tc__arrow:hover { background: #faf3e4; }
+  .tc__dots { display: flex; align-items: center; gap: 6px; }
+  .tc__dot { height: 2px; width: 14px; border-radius: 2px; background: #d4c4a0; transition: all 0.25s; cursor: pointer; border: none; padding: 0; }
+  .tc__dot--active { background: var(--color-gold-text); width: 28px; }
+</style>
+
+<!-- SECTION BLOCK (paste between hero and Sponsor Q&A sections) -->
+<section id="section-sponsor-testimonials" class="section" style="background-color: var(--color-white);" aria-label="From our sponsors">
+  <div class="container">
+    <div class="tc" data-reveal>
+      <p class="tc__eyebrow">From Our Sponsors</p>
+      <h2 class="tc__heading">Why Companies Choose to Sponsor</h2>
+      <span class="tc__qmark" aria-hidden="true">"</span>
+      <div class="tc__stars" aria-label="5 stars">★★★★★</div>
+      <blockquote class="tc__quote" id="tc-sponsor-quote"></blockquote>
+      <div class="tc__divider" aria-hidden="true"></div>
+      <p class="tc__name" id="tc-sponsor-name"></p>
+      <p class="tc__cred" id="tc-sponsor-cred"></p>
+      <div class="tc__nav" role="group" aria-label="Testimonial navigation">
+        <button class="tc__arrow" id="tc-sponsor-prev" aria-label="Previous testimonial">&#8592;</button>
+        <div class="tc__dots" id="tc-sponsor-dots" role="tablist" aria-label="Testimonials"></div>
+        <button class="tc__arrow" id="tc-sponsor-next" aria-label="Next testimonial">&#8594;</button>
+      </div>
+    </div>
+  </div>
+  <script>
+    (function() {
+      var testimonials = [
+        { quote: "REPLACE WITH REAL QUOTE.", name: "First Last", cred: "Title · Company Name" },
+        { quote: "REPLACE WITH REAL QUOTE.", name: "First Last", cred: "Title · Company Name" }
+      ];
+      var current = 0;
+      var quoteEl = document.getElementById('tc-sponsor-quote');
+      var nameEl = document.getElementById('tc-sponsor-name');
+      var credEl = document.getElementById('tc-sponsor-cred');
+      var dotsEl = document.getElementById('tc-sponsor-dots');
+      var dots = [];
+      function render() {
+        var t = testimonials[current];
+        quoteEl.textContent = '"' + t.quote + '"';
+        nameEl.textContent = t.name;
+        credEl.textContent = t.cred;
+        dots.forEach(function(d, i) {
+          d.classList.toggle('tc__dot--active', i === current);
+          d.setAttribute('aria-selected', i === current ? 'true' : 'false');
+        });
+      }
+      testimonials.forEach(function(_, i) {
+        var d = document.createElement('button');
+        d.className = 'tc__dot' + (i === 0 ? ' tc__dot--active' : '');
+        d.setAttribute('role', 'tab');
+        d.setAttribute('aria-label', 'Testimonial ' + (i + 1));
+        d.setAttribute('aria-selected', i === 0 ? 'true' : 'false');
+        d.addEventListener('click', function() { current = i; render(); });
+        dotsEl.appendChild(d);
+        dots.push(d);
+      });
+      document.getElementById('tc-sponsor-prev').addEventListener('click', function() { current = (current - 1 + testimonials.length) % testimonials.length; render(); });
+      document.getElementById('tc-sponsor-next').addEventListener('click', function() { current = (current + 1) % testimonials.length; render(); });
+      render();
+    })();
+  </script>
+</section>

@@ -21,7 +21,8 @@ document.addEventListener('DOMContentLoaded', function () {
   var tiersEl  = document.getElementById('sponsorTiers');
   var gridEl   = document.getElementById('sponsorGrid');
   var stripEl  = document.getElementById('logoScrollStrip');
-  if (!tiersEl && !gridEl && !stripEl) return;
+  var hasStaticCards = document.querySelectorAll('.sponsor-card').length > 0;
+  if (!tiersEl && !gridEl && !stripEl && !hasStaticCards) return;
 
   var TIER_ORDER = ['platinum', 'gold', 'silver', 'bronze'];
   var TIER_LABELS = {

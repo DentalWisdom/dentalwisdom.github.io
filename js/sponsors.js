@@ -48,7 +48,8 @@ document.addEventListener('DOMContentLoaded', function () {
         attending: !!row.attending,
         pastSponsor: !!row.pastSponsor && !row.attending,
         pending: !!row.pending,
-        videoUrl: (row.videoUrl || '').trim()
+        videoUrl: (row.videoUrl || '').trim(),
+        photoUrl: (row.photoUrl || '').trim()
       };
     })
     .filter(function (s) { return s.name; });
@@ -191,6 +192,7 @@ document.addEventListener('DOMContentLoaded', function () {
           '<a class="btn btn-primary" id="sponsorModalLink" href="#" target="_blank" rel="noopener">Visit website &rarr;</a>' +
         '</div>' +
         '<div class="sponsor-modal__video" id="sponsorModalVideo" style="display:none"></div>' +
+        '<div class="sponsor-modal__photo" id="sponsorModalPhoto" style="display:none"></div>' +
       '</div>';
     document.body.appendChild(modal);
   }
@@ -206,6 +208,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var pastEl = modal.querySelector('#sponsorModalPast');
   var pendingEl = modal.querySelector('#sponsorModalPending');
   var videoEl = modal.querySelector('#sponsorModalVideo');
+  var photoEl = modal.querySelector('#sponsorModalPhoto');
   var lastFocused = null;
 
   function getFocusable() {
@@ -292,6 +295,19 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     }
 
+    if (photoEl) {
+      if (sponsor.photoUrl) {
+        // onerror hides the block if the image file isn't there yet
+        photoEl.innerHTML = '<img src="' + escapeAttr(sponsor.photoUrl) + '"' +
+          ' alt="' + escapeAttr(sponsor.name + ' promotional flyer') + '" loading="lazy"' +
+          ' onerror="this.parentNode.style.display=\'none\'">';
+        photoEl.style.display = '';
+      } else {
+        photoEl.innerHTML = '';
+        photoEl.style.display = 'none';
+      }
+    }
+
     modal.classList.add('is-open');
     document.body.classList.add('menu-open'); // reuse site scroll-lock
     document.addEventListener('keydown', handleKeydown);
@@ -304,6 +320,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.body.classList.remove('menu-open');
     document.removeEventListener('keydown', handleKeydown);
     if (videoEl) { videoEl.innerHTML = ''; videoEl.style.display = 'none'; }
+    if (photoEl) { photoEl.innerHTML = ''; photoEl.style.display = 'none'; }
     if (lastFocused) lastFocused.focus();
   }
 

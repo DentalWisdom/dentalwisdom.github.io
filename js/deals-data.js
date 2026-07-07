@@ -26,6 +26,7 @@ window.DEALS_DATA = [
     link: "https://www.crazydentalprices.com/dentalwisdom",
     promo: "10% off First Order (WISDOM10) + Free Ground Shipping (WISDOMSHIP)",
     imageUrl: "/images/deals/dental-supplies.png",
+    flyerUrl: "/images/deals/crazy-dental-flyer.png",
     keywords: "supplies consumables burs handpieces gloves composite anesthetic disposables infection control PPE materials resin bonding adhesive glass ionomer amalgam cavity liner matrix bands wedges polishing discs alginate PVS impression bite registration temporary crown dental stone local anesthetic cartridges lidocaine articaine topical anesthetic syringe needles nitrile masks N95 respirators face shields surface disinfectant sterilization pouches autoclave ultrasonic cleaner carbide diamond prophy angles cups paste scaler curettes explorer probe spoon excavator dental mirror cotton forceps fluoride varnish sealant endodontic files gutta-percha root canal sealer sodium hypochlorite EDTA elastic separators brackets cotton rolls gauze saliva ejectors HVE tips dental bibs"
   },
   {

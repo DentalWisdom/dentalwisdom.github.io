@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', function () {
         link: (row.link || '').trim(),
         promo: (row.promo || '').trim(),
         imageUrl: (row.imageUrl || '').trim(),
+        flyerUrl: (row.flyerUrl || '').trim(),
         keywords: (row.keywords || '').trim()
       };
     })
@@ -220,6 +221,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="link-row" id="dealModalLinkRow">' +
           '<a class="btn btn-primary" id="dealModalLink" href="#" target="_blank" rel="noopener">View Deal &rarr;</a>' +
         '</div>' +
+        '<div class="deal-modal__photo" id="dealModalPhoto" style="display:none"></div>' +
       '</div>';
     document.body.appendChild(modal);
 
@@ -271,6 +273,20 @@ document.addEventListener('DOMContentLoaded', function () {
       linkRow.style.display = '';
     } else {
       linkRow.style.display = 'none';
+    }
+
+    var photoEl = modal.querySelector('#dealModalPhoto');
+    if (photoEl) {
+      if (deal.flyerUrl) {
+        // onerror hides the block if the image file isn't there yet
+        photoEl.innerHTML = '<img src="' + escapeAttr(deal.flyerUrl) + '"' +
+          ' alt="' + escapeAttr(deal.shortDescription + ' promotional flyer') + '" loading="lazy"' +
+          ' onerror="this.parentNode.style.display=\'none\'">';
+        photoEl.style.display = '';
+      } else {
+        photoEl.innerHTML = '';
+        photoEl.style.display = 'none';
+      }
     }
 
     modal.classList.add('is-open');

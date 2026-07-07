@@ -2689,6 +2689,21 @@ body.menu-open {
   overflow: hidden;
 }
 
+/* Featured promotional flyer / photo at the bottom of a sponsor or deal modal */
+.sponsor-modal__photo,
+.deal-modal__photo {
+  margin-top: var(--space-md);
+}
+
+.sponsor-modal__photo img,
+.deal-modal__photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 6px;
+  border: 1px solid var(--color-border, #e6e0d4);
+}
+
 /* -----------------------------
    FAQ Accordion
    ----------------------------- */

@@ -218,6 +218,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<p class="deal-modal__tagline" id="dealModalTagline"></p>' +
         '<p id="dealModalDescription"></p>' +
         '<p class="deal-card__promo" id="dealModalPromo"></p>' +
+        '<div class="deal-modal__video" id="dealModalVideo" style="display:none;margin:1rem 0"></div>' +
         '<div class="link-row" id="dealModalLinkRow">' +
           '<a class="btn btn-primary" id="dealModalLink" href="#" target="_blank" rel="noopener">View Deal &rarr;</a>' +
         '</div>' +
@@ -275,6 +276,22 @@ document.addEventListener('DOMContentLoaded', function () {
       linkRow.style.display = 'none';
     }
 
+    var videoEl = modal.querySelector('#dealModalVideo');
+    if (videoEl) {
+      if (deal.videoUrl) {
+        var videoSrc = deal.videoUrl +
+          (deal.videoUrl.indexOf('?') !== -1 ? '&' : '?') + 'rel=0';
+        videoEl.innerHTML = '<iframe src="' + escapeAttr(videoSrc) + '" title="' +
+          escapeAttr(deal.title) + ' video" frameborder="0"' +
+          ' allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"' +
+          ' allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:6px;display:block"></iframe>';
+        videoEl.style.display = '';
+      } else {
+        videoEl.innerHTML = '';
+        videoEl.style.display = 'none';
+      }
+    }
+
     var photoEl = modal.querySelector('#dealModalPhoto');
     if (photoEl) {
       if (deal.flyerUrl) {
@@ -305,6 +322,9 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.classList.remove('is-open');
     document.body.classList.remove('menu-open');
     modal.removeEventListener('keydown', trapFocus);
+    // Clear the video iframe so playback/audio stops when the popup closes
+    var videoEl = modal.querySelector('#dealModalVideo');
+    if (videoEl) { videoEl.innerHTML = ''; videoEl.style.display = 'none'; }
     if (lastFocused) lastFocused.focus();
   }
 

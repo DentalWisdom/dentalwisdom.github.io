@@ -283,10 +283,11 @@ window.DEALS_DATA = [
     title: "Reach (Virtual Dental Assistants)",
     shortDescription: "Virtual Assistants",
     category: "Staffing & Recruiting",
-    description: "Dedicated virtual dental assistants for front and back office tasks. Save up to 50% on labor costs.",
+    description: "Reach provides dedicated Virtual Assistants for dental practices across the United States, helping solve major challenges like staffing reliability, rising labor costs, and missed patient opportunities. Unlike traditional outsourcing, Reach offers fully dedicated team members who work directly within a practice's systems, supporting tasks like phone call handling, insurance verification, revenue cycle management, patient billing, and other administrative work.",
     link: "https://lp.getreach.co/dentalwisdom",
     promo: "$500 Off First Month",
     imageUrl: "/images/deals/reach.png",
+    videoUrl: "https://www.youtube.com/embed/wKfRq7IJdtI",
     keywords: "virtual assistant VA remote worker front desk scheduling insurance billing outsource offshore labor cost savings"
   },
   {

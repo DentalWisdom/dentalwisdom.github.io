@@ -105,9 +105,10 @@ window.SPONSORS_DATA = [
     name: "Reach",
     logoUrl: "/images/sponsors/reach.png",
     link: "https://lp.getreach.co/dentalwisdom",
-    blurb: "Dedicated virtual assistants and smart automation for dental practices — handling calls, insurance verification, recall, and reactivation so your team can focus fully on patient care.",
+    blurb: "Reach provides dedicated Virtual Assistants for dental practices across the United States, helping solve major challenges like staffing reliability, rising labor costs, and missed patient opportunities. Unlike traditional outsourcing, Reach offers fully dedicated team members who work directly within a practice's systems, supporting tasks like phone call handling, insurance verification, revenue cycle management, patient billing, and other administrative work.",
     tier: "gold",
-    pastSponsor: true
+    pastSponsor: true,
+    videoUrl: "https://www.youtube.com/embed/wKfRq7IJdtI"
   },
   {
     name: "Pearl",

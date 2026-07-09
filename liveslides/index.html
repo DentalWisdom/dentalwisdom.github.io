@@ -118,8 +118,14 @@
   #s-spot .sphead{display:flex;justify-content:space-between;align-items:center;gap:24px;}
   #s-spot .splogo{max-height:78px;max-width:320px;object-fit:contain;}
   #s-spot .tagline{flex:1;display:flex;align-items:center;}
-  #s-spot .tagline p{font-family:var(--font-head);font-size:54px;line-height:1.1;font-style:italic;color:var(--ink);}
-  #s-spot .tagline p .g{color:var(--gold);}
+  #s-spot .spot-content{flex:1;display:flex;flex-direction:column;justify-content:center;}
+  #s-spot .spot-head{font-family:var(--font-head);font-size:54px;line-height:1.1;font-style:italic;color:var(--ink);}
+  #s-spot .spot-head .g{color:var(--gold);}
+  #s-spot .spot-content.has-bullets .spot-head{font-size:42px;margin-bottom:26px;}
+  #s-spot .spot-bullets{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 46px;max-width:920px;}
+  #s-spot .spot-bullets li{display:flex;gap:13px;align-items:center;font-size:19px;color:var(--ink);font-weight:600;}
+  #s-spot .spot-bullets li::before{content:"";width:12px;height:12px;background:var(--gold);border-radius:3px;flex:none;}
+  #s-spot .spot-bullets:empty{display:none;}
   #s-spot .spfoot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:24px;}
   #s-spot .spfoot .k{font-size:12px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;font-weight:600;}
   #s-spot .spfoot .name{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:4px;}
@@ -179,6 +185,7 @@
   #s-give .prizecard .sponsor{font-weight:700;font-size:18px;color:var(--ink);margin-top:3px;}
   #s-give .poolnote{margin-top:18px;font-size:14px;color:var(--muted);}
   #s-give .poolnote strong{color:var(--pink-dark);}
+  #s-give .finelegal{flex:none;padding-top:14px;font-size:10.5px;line-height:1.5;color:#9aa1ac;}
 
   /* fixed chrome */
   #progressbar{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:30;transition:width .4s ease;}
@@ -205,15 +212,19 @@
   .btn-ghost{background:#efe9dd;color:var(--ink);} .btn-ghost:hover{background:#e5dfcf;}
   .btn-pink{background:var(--pink);color:#fff;} .btn-pink:hover{background:var(--pink-dark);}
 
-  #winnerSheet .sheet{text-align:center;width:560px;background:linear-gradient(160deg,#fff 0%,#fff5f8 100%);}
-  #winnerSheet .k{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:#c0507a;font-weight:600;}
-  #winnerSheet .who{font-family:var(--font-head);font-weight:700;font-size:52px;color:var(--ink);margin:12px 0;line-height:1.04;}
-  #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:24px;color:var(--pink-dark);}
-  #winnerSheet .sponsorline{font-size:13px;color:var(--muted);letter-spacing:1px;margin-top:4px;text-transform:uppercase;}
-  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;height:70px;margin:16px auto 4px;}
-  #winnerSheet .w-logowrap img{max-height:58px;max-width:230px;object-fit:contain;}
-  #winnerSheet .confirm{margin:22px auto 6px;background:#fdeef1;border:1px dashed #e5a9ba;border-radius:12px;padding:15px 18px;font-size:18px;font-weight:700;color:var(--pink-dark);max-width:400px;}
+  #winnerSheet .sheet{text-align:center;width:580px;background:linear-gradient(160deg,#fff 0%,#fff5f8 100%);}
+  #winnerSheet .k{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#c0507a;font-weight:700;}
+  #winnerSheet .who{font-family:var(--font-head);font-weight:700;font-size:52px;color:var(--ink);margin:8px 0 4px;line-height:1.04;}
+  #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:23px;color:var(--pink-dark);margin-bottom:18px;}
+  #winnerSheet .sponsorband{background:var(--navy);border-radius:16px;padding:18px;margin-bottom:16px;display:flex;flex-direction:column;align-items:center;gap:10px;}
+  #winnerSheet .sponsorband .th{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
+  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:10px;padding:12px 22px;min-height:66px;}
+  #winnerSheet .w-logowrap img{max-height:50px;max-width:220px;object-fit:contain;}
+  #winnerSheet .sponsorline{font-size:16px;color:#fff;letter-spacing:.4px;font-weight:700;}
+  #winnerSheet .confirm{margin:0 auto;background:#fdeef1;border:1px dashed #e5a9ba;border-radius:12px;padding:14px 18px;font-size:17px;font-weight:700;color:var(--pink-dark);max-width:420px;}
   #winnerSheet .row{justify-content:center;margin-top:20px;}
+  .confetti-pc{position:fixed;top:-16px;z-index:60;border-radius:2px;pointer-events:none;animation:cfall 2.7s linear forwards;}
+  @keyframes cfall{to{transform:translateY(110vh) rotate(680deg);opacity:.85;}}
 </style>
 </head>
 <body>
@@ -303,7 +314,12 @@
           <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
           <img class="splogo" id="t-spot-logo" src="" alt="Sponsor logo">
         </div>
-        <div class="tagline"><p><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p></div>
+        <div class="tagline">
+          <div class="spot-content" id="t-spot-content">
+            <p class="spot-head"><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p>
+            <ul class="spot-bullets" id="t-spot-bullets"></ul>
+          </div>
+        </div>
         <div class="baseline spfoot">
           <div>
             <div class="k">Contact</div>
@@ -311,7 +327,7 @@
             <div class="co" id="t-spot-co">Live Well Capital</div>
           </div>
           <div class="right">
-            <div class="k">Call</div>
+            <div class="k" id="t-spot-calllabel">Call</div>
             <div class="phone" id="t-spot-phone">(917) 715-2188</div>
             <div class="web" id="t-spot-web">livewealthcapital.com</div>
           </div>
@@ -370,6 +386,7 @@
             <div class="poolnote"><strong id="gw-count">0</strong> names in the wheel · tap <em>Add names</em> below to load the list.</div>
           </div>
         </div>
+        <div class="finelegal">We'll grab the attendee list at the start of the call and add everyone to the spinning wheel for some great prizes. You must be in attendance to win. Winners, please text Lisa right away to confirm and claim your prize. If you've already received that exact prize, please let us know so we can re-spin for someone else and keep things fair for all!</div>
       </div>
     </section>
 
@@ -444,11 +461,14 @@
 <!-- winner overlay -->
 <div class="overlay" id="winnerSheet">
   <div class="sheet">
-    <div class="k">We have a winner</div>
+    <div class="k">🎉 We have a winner!</div>
     <div class="who" id="w-name">—</div>
     <div class="prizeline" id="w-prize">—</div>
-    <div class="sponsorline" id="w-sponsor">—</div>
-    <div class="w-logowrap" id="w-logowrap"><img id="w-logo" alt=""></div>
+    <div class="sponsorband">
+      <div class="th">Thank you to our sponsor</div>
+      <div class="w-logowrap" id="w-logowrap"><img id="w-logo" alt=""></div>
+      <div class="sponsorline" id="w-sponsor">—</div>
+    </div>
     <div class="confirm">Make sure to text Lisa to confirm.</div>
     <div class="row">
       <button class="btn btn-ghost" id="w-close">Close</button>
@@ -463,33 +483,40 @@
    (Ben: just tell Claude the new values and they'll be updated.)
    ============================================================ */
 const DECK = {
-  title:       { date: "Thursday, June 18", time: "8:00 PM EST" },
+  title:       { date: "Thursday, July 9", time: "8:00 PM EST" },
   opener:      "Dr. Lisa Sokol",                       // slide 2 (rarely changes)
   dvarSpeaker: "Dr. Stephen Berchin",                  // slide 3
   conference:  { validUntil: "May 21<sup>st</sup>" },  // slides 4 & 8 promo-code date
 
   spotlight: {                                         // slide 5 — new every month
-    category: "Wealth Management",
-    logo:     "/images/sponsors/livewell-capital.png",
-    tagline1: "Wealth That Lives Well —",              // ink-colored part
-    tagline2: "Today, Tomorrow, and Beyond.",          // gold part
-    name:     "Sam Waller",
-    company:  "Live Well Capital",
-    phone:    "(917) 715-2188",
-    website:  "livewealthcapital.com"
+    category: "Dental Supplies",
+    logo:     "/images/sponsors/crazy-dental.png",
+    tagline1: "Guaranteed Lowest Price",               // ink-colored part of headline
+    tagline2: "on Our Top-Selling Products",           // gold part of headline
+    bullets:  [                                        // optional — 0 or 4 look best; omit for none
+      "Manufacturer Authorized",
+      "Premier Customer Service",
+      "110% Price Match Guarantee",
+      "Best-In-Class Logistics"
+    ],
+    name:      "Chaim",
+    company:   "Crazy Dental Prices",
+    callLabel: "Call or Text",                         // right-side label (default: "Call")
+    phone:     "(404) 944-5293",
+    website:   "crazydentalprices.com/dentalwisdom"
   },
 
   lecture: {                                           // slide 6 — the class
     ce:       "1 CE Credit",
-    title:    "Straight Forward",
-    subtitle: "Building Your Clear Aligner Practice",
-    doctor:   "Dr. Sam Glick",
-    role:     "Key Opinion Leader, orthobrain",
-    logo:     "/images/sponsors/orthobrain.png",
-    website:  "orthobrain.com",
+    title:    "All-on-X Surgery & Restoration",
+    subtitle: "Same Day or Staged? Five Patient Cases from Planning to Restoration",
+    doctor:   "Dr. Daniel Reich",
+    role:     "Presented in partnership with Adin Implants",
+    logo:     "/images/sponsors/adin.png",
+    website:  "adin-implants.com",
     description: [
-      "Straight Forward: Building Your Clear Aligner Practice is a practical, team-focused CE course designed to help dentists confidently grow their clear aligner services. Participants will learn how to empower their entire dental team, streamline workflows, and master smarter case selection to deliver more predictable, successful outcomes with fewer refinements and complications.",
-      "Through real-world strategies and proven clinical tips, this course equips you with the essential “tools” you need — from patient communication and team delegation to treatment planning and troubleshooting — so you can build a thriving, efficient clear aligner practice with greater confidence and consistency."
+      "The All-on-X concept has transformed full-arch rehabilitation — but does every case require immediate surgery and restoration on the same day? Dr. Daniel Reich examines the clinical considerations, advantages, and limitations of both immediate and staged treatment approaches.",
+      "Through five comprehensive patient cases, attendees follow the complete journey — from diagnosis and digital planning through surgical placement, provisionalization, and final restoration — with practical insight into patient selection, sequencing, and the real-world decisions that drive predictable, long-term results."
     ]
   },
 
@@ -514,8 +541,13 @@ function fillDeck(){
   var s=DECK.spotlight;
   txt('t-spot-cat',s.category);
   var slogo=document.getElementById('t-spot-logo'); slogo.src=imgPath(s.logo); slogo.alt=s.company+' logo';
-  txt('t-spot-tag1',s.tagline1); txt('t-spot-tag2',s.tagline2);
+  txt('t-spot-tag1',s.tagline1); txt('t-spot-tag2',s.tagline2||'');
+  var bl=document.getElementById('t-spot-bullets');
+  var hasB=!!(s.bullets&&s.bullets.length);
+  bl.innerHTML=hasB?s.bullets.map(function(b){return '<li>'+b+'</li>';}).join(''):'';
+  document.getElementById('t-spot-content').classList.toggle('has-bullets',hasB);
   txt('t-spot-name',s.name); txt('t-spot-co',s.company);
+  txt('t-spot-calllabel',s.callLabel||'Call');
   txt('t-spot-phone',s.phone); txt('t-spot-web',s.website);
 
   var l=DECK.lecture;
@@ -656,17 +688,36 @@ wheelEl.addEventListener('transitionend',function(){
   var idx=window._pendingWinner, name=namePool[idx], g=DECK.giveaways[gwIndex];
   document.getElementById('w-name').textContent=name;
   document.getElementById('w-prize').textContent=g.prize;
-  document.getElementById('w-sponsor').textContent='Compliments of '+g.sponsor;
+  document.getElementById('w-sponsor').textContent=g.sponsor;
   var wwrap=document.getElementById('w-logowrap'), wlg=document.getElementById('w-logo');
   if(g.logo){ wlg.src=imgPath(g.logo); wlg.alt=g.sponsor+' logo'; wwrap.style.display='flex'; }
   else { wwrap.style.display='none'; }
   document.getElementById('winnerSheet').classList.add('show');
-  namePool.splice(idx,1);
-  updateNameUI();
+  confettiBurst();
 });
+function removePendingWinner(){
+  if(window._pendingWinner==null) return;
+  namePool.splice(window._pendingWinner,1);
+  window._pendingWinner=null;
+  updateNameUI();
+}
+function closeWinner(){ document.getElementById('winnerSheet').classList.remove('show'); removePendingWinner(); }
+function confettiBurst(){
+  var colors=['#e76f51','#f4a261','#e9c46a','#d15a7a','#CBA24C','#ffffff'];
+  for(var i=0;i<70;i++){
+    var d=document.createElement('div');
+    d.className='confetti-pc';
+    d.style.left=(Math.random()*100)+'vw';
+    d.style.background=colors[i%colors.length];
+    var sz=(6+Math.random()*7); d.style.width=sz+'px'; d.style.height=sz+'px';
+    d.style.animationDelay=(Math.random()*0.35)+'s';
+    document.body.appendChild(d);
+    (function(el){ setTimeout(function(){ if(el&&el.remove) el.remove(); },3100); })(d);
+  }
+}
 document.getElementById('spinBtn').addEventListener('click',spin);
-document.getElementById('w-close').addEventListener('click',function(){ document.getElementById('winnerSheet').classList.remove('show'); });
-document.getElementById('w-again').addEventListener('click',function(){ document.getElementById('winnerSheet').classList.remove('show'); setTimeout(spin,250); });
+document.getElementById('w-close').addEventListener('click',closeWinner);
+document.getElementById('w-again').addEventListener('click',function(){ closeWinner(); setTimeout(spin,280); });
 
 // ---- overlays ----
 function anyOverlayOpen(){ return document.querySelector('.overlay.show')!==null; }

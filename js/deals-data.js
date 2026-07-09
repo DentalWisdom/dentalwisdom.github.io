@@ -444,7 +444,7 @@ window.DEALS_DATA = [
     title: "The Altair Hotel",
     shortDescription: "Official Conference Hotel",
     category: "Israel & Kosher",
-    description: "The Altair Hotel in Bay Harbor Islands, FL is the only Miami-area luxury hotel fully designed with kosher travel and Shabbos in mind — featuring manual hard keys, a Shabbos elevator, daily minyanim, and in-room hot plates and urns. It's also home to OVO, the premier kosher restaurant. The official conference hotel of Dental Wisdom 2027.",
+    description: "The Altair Hotel in Bay Harbor Islands, FL is the only Miami-area luxury hotel fully designed with kosher travel and Shabbos in mind — featuring manual hard keys, a Shabbos elevator, daily minyanim, and in-room hot plates and urns. It's also home to OVO, the premier kosher restaurant. The official partner of the Dental Wisdom Conference in March 2027.",
     link: "https://www.thealtairhotel.com",
     promo: "",
     imageUrl: "/images/deals/the-altair-hotel.png",

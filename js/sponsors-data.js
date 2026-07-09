@@ -223,7 +223,7 @@ window.SPONSORS_DATA = [
     name: "The Altair Hotel",
     logoUrl: "/images/sponsors/the-altair-hotel.png",
     link: "https://www.thealtairhotel.com",
-    blurb: "The Altair Hotel in Bay Harbor Islands, FL is the only Miami-area luxury hotel fully designed with kosher travel and Shabbos in mind — featuring manual hard keys, a Shabbos elevator, daily minyanim, and in-room hot plates and urns. It's also home to OVO, the premier kosher restaurant. The official conference hotel of Dental Wisdom 2027.",
+    blurb: "The Altair Hotel in Bay Harbor Islands, FL is the only Miami-area luxury hotel fully designed with kosher travel and Shabbos in mind — featuring manual hard keys, a Shabbos elevator, daily minyanim, and in-room hot plates and urns. It's also home to OVO, the premier kosher restaurant. The official partner of the Dental Wisdom Conference in March 2027.",
     tier: "silver",
     attending: true,
     videoUrl: "https://www.youtube.com/embed/W2e83n_MNGI"

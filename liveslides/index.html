@@ -116,7 +116,7 @@
 
   /* ---- 5 spotlight ---- */
   #s-spot .sphead{display:flex;justify-content:space-between;align-items:center;gap:24px;}
-  #s-spot .splogo{max-height:78px;max-width:320px;object-fit:contain;}
+  #s-spot .splogo{max-height:112px;max-width:420px;object-fit:contain;}
   #s-spot .tagline{flex:1;display:flex;align-items:center;}
   #s-spot .spot-content{flex:1;display:flex;flex-direction:column;justify-content:center;}
   #s-spot .spot-head{font-family:var(--font-head);font-size:54px;line-height:1.1;font-style:italic;color:var(--ink);}
@@ -131,7 +131,7 @@
   #s-spot .spfoot .name{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:4px;}
   #s-spot .spfoot .co{font-style:italic;color:var(--muted);font-size:15px;margin-top:2px;}
   #s-spot .spfoot .phone{font-family:var(--font-head);font-weight:700;font-size:32px;color:var(--ink);margin-top:4px;}
-  #s-spot .spfoot .web{color:var(--gold-text);font-size:15px;text-align:right;margin-top:3px;font-weight:500;}
+  #s-spot .spfoot .web{font-family:var(--font-head);font-style:italic;color:var(--gold-text);font-size:24px;text-align:right;margin-top:5px;font-weight:500;}
   #s-spot .spfoot .right{text-align:right;}
 
   /* ---- 6 lecture ---- */
@@ -139,11 +139,11 @@
   #s-lect .subt{font-family:var(--font-head);font-style:italic;font-size:25px;color:var(--gold-text);margin-top:4px;}
   #s-lect .cols{margin-top:18px;gap:52px;padding-top:22px;}
   #s-lect .col-l{flex:.82;}
-  #s-lect .logobox{background:#fff;border:1px solid var(--hair);border-radius:8px;padding:22px;display:flex;align-items:center;justify-content:center;height:140px;box-shadow:0 4px 14px rgba(30,42,56,.06);}
-  #s-lect .logobox img{max-height:92px;max-width:100%;object-fit:contain;}
-  #s-lect .doc{font-family:var(--font-head);font-weight:700;font-size:34px;color:var(--ink);margin-top:22px;}
+  #s-lect .logobox{background:#fff;border:1px solid var(--hair);border-radius:8px;padding:24px;display:flex;align-items:center;justify-content:center;height:206px;box-shadow:0 4px 14px rgba(30,42,56,.06);}
+  #s-lect .logobox img{max-height:158px;max-width:100%;object-fit:contain;}
+  #s-lect .doc{font-family:var(--font-head);font-weight:700;font-size:32px;color:var(--ink);margin-top:24px;}
   #s-lect .role{font-style:italic;color:var(--muted);font-size:15px;margin-top:3px;}
-  #s-lect .cepill{display:inline-block;background:var(--navy);color:var(--gold-bright);font-weight:700;letter-spacing:2.5px;font-size:12px;padding:11px 20px;margin-top:20px;text-transform:uppercase;border-radius:4px;}
+  #s-lect .cepill{display:inline-block;background:var(--navy);color:var(--gold-bright);font-weight:700;letter-spacing:2.5px;font-size:12px;padding:10px 20px;margin-top:16px;text-transform:uppercase;border-radius:4px;}
   #s-lect .col-r{border-left:3px solid var(--gold);padding-left:24px;display:flex;flex-direction:column;}
   #s-lect .col-r .k{font-size:12px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
   #s-lect .col-r p{font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin-bottom:11px;}
@@ -173,12 +173,12 @@
   .hub:disabled{opacity:.55;cursor:default;transform:translate(-50%,-50%);}
   #s-give .infocol{flex:1;}
   #s-give .selwrap label{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#a2415c;font-weight:700;}
-  #s-give select{display:block;width:100%;max-width:440px;margin-top:9px;padding:14px 16px;font-family:var(--font-body);font-size:16px;border:2px solid #edc2cd;border-radius:10px;background:#fff;color:var(--ink);cursor:pointer;}
-  #s-give .prizecard{margin-top:20px;max-width:440px;background:#fff;border:1px solid #f2d0d8;border-radius:14px;padding:22px 26px;box-shadow:0 10px 28px rgba(209,90,122,.12);transition:box-shadow .3s,border-color .3s,transform .3s;}
+  #s-give select{display:block;width:100%;max-width:470px;margin-top:9px;padding:14px 16px;font-family:var(--font-body);font-size:16px;border:2px solid #edc2cd;border-radius:10px;background:#fff;color:var(--ink);cursor:pointer;}
+  #s-give .prizecard{margin-top:20px;max-width:470px;background:#fff;border:1px solid #f2d0d8;border-radius:14px;padding:22px 26px;box-shadow:0 10px 28px rgba(209,90,122,.12);transition:box-shadow .3s,border-color .3s,transform .3s;}
   #s-give .prizecard.is-spinning{border-color:var(--pink);box-shadow:0 0 0 4px rgba(209,90,122,.18),0 14px 34px rgba(209,90,122,.28);animation:cardpulse 1s ease-in-out infinite;}
   @keyframes cardpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
-  #s-give .sponsorlogo{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #f0e7ea;border-radius:10px;height:88px;padding:12px 16px;margin-bottom:16px;box-shadow:inset 0 0 0 1px rgba(209,90,122,.06);}
-  #s-give .sponsorlogo img{max-height:64px;max-width:100%;object-fit:contain;}
+  #s-give .sponsorlogo{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #f0e7ea;border-radius:10px;height:136px;padding:14px 18px;margin-bottom:16px;box-shadow:inset 0 0 0 1px rgba(209,90,122,.06);}
+  #s-give .sponsorlogo img{max-height:110px;max-width:100%;object-fit:contain;}
   #s-give .prizecard .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c0507a;font-weight:600;}
   #s-give .prizecard .prize{font-family:var(--font-head);font-style:italic;font-size:34px;color:var(--ink);margin:6px 0 12px;line-height:1.05;}
   #s-give .prizecard .comp{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;}
@@ -212,19 +212,26 @@
   .btn-ghost{background:#efe9dd;color:var(--ink);} .btn-ghost:hover{background:#e5dfcf;}
   .btn-pink{background:var(--pink);color:#fff;} .btn-pink:hover{background:var(--pink-dark);}
 
-  #winnerSheet .sheet{text-align:center;width:580px;background:linear-gradient(160deg,#fff 0%,#fff5f8 100%);}
-  #winnerSheet .k{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#c0507a;font-weight:700;}
-  #winnerSheet .who{font-family:var(--font-head);font-weight:700;font-size:52px;color:var(--ink);margin:8px 0 4px;line-height:1.04;}
-  #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:23px;color:var(--pink-dark);margin-bottom:18px;}
-  #winnerSheet .sponsorband{background:var(--navy);border-radius:16px;padding:18px;margin-bottom:16px;display:flex;flex-direction:column;align-items:center;gap:10px;}
-  #winnerSheet .sponsorband .th{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
-  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:10px;padding:12px 22px;min-height:66px;}
-  #winnerSheet .w-logowrap img{max-height:50px;max-width:220px;object-fit:contain;}
-  #winnerSheet .sponsorline{font-size:16px;color:#fff;letter-spacing:.4px;font-weight:700;}
-  #winnerSheet .confirm{margin:0 auto;background:#fdeef1;border:1px dashed #e5a9ba;border-radius:12px;padding:14px 18px;font-size:17px;font-weight:700;color:var(--pink-dark);max-width:420px;}
-  #winnerSheet .row{justify-content:center;margin-top:20px;}
-  .confetti-pc{position:fixed;top:-16px;z-index:60;border-radius:2px;pointer-events:none;animation:cfall 2.7s linear forwards;}
-  @keyframes cfall{to{transform:translateY(110vh) rotate(680deg);opacity:.85;}}
+  #winnerSheet .sheet{text-align:center;width:780px;padding:42px 52px;background:linear-gradient(160deg,#fff 0%,#fff5f8 100%);
+    border:1px solid rgba(209,90,122,.28);box-shadow:0 40px 110px rgba(0,0,0,.5),0 0 80px rgba(209,90,122,.16);
+    animation:sheetpop .55s cubic-bezier(.34,1.56,.64,1) both;}
+  @keyframes sheetpop{from{opacity:0;transform:scale(.82);}to{opacity:1;transform:scale(1);}}
+  #winnerSheet .k{font-size:14px;letter-spacing:4px;text-transform:uppercase;color:#c0507a;font-weight:700;}
+  #winnerSheet .who{font-family:var(--font-head);font-weight:700;font-size:76px;color:var(--ink);margin:10px 0 4px;line-height:1.04;word-break:break-word;
+    animation:whopop .6s .15s cubic-bezier(.34,1.56,.64,1) both;}
+  @keyframes whopop{from{opacity:0;transform:scale(.6);}to{opacity:1;transform:scale(1);}}
+  #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:30px;color:var(--pink-dark);margin-bottom:22px;}
+  #winnerSheet .sponsorband{background:var(--navy);border-radius:16px;padding:22px;margin-bottom:18px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+  #winnerSheet .sponsorband .th{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
+  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:18px 32px;min-height:130px;width:100%;max-width:460px;}
+  #winnerSheet .w-logowrap img{max-height:104px;max-width:380px;object-fit:contain;}
+  #winnerSheet .sponsorline{font-size:19px;color:#fff;letter-spacing:.4px;font-weight:700;}
+  #winnerSheet .confirm{margin:0 auto;background:#fdeef1;border:1px dashed #e5a9ba;border-radius:12px;padding:16px 24px;font-size:21px;font-weight:700;color:var(--pink-dark);max-width:520px;}
+  #winnerSheet .row{justify-content:center;margin-top:22px;}
+  /* fireworks + confetti canvas — sits above the winner sheet so the show plays over it */
+  #fw{position:fixed;inset:0;pointer-events:none;z-index:60;}
+  /* wheel glow while spinning */
+  .wheel-wrap.is-spinning #wheel{filter:drop-shadow(0 0 30px rgba(209,90,122,.55)) drop-shadow(0 8px 26px rgba(209,90,122,.35));}
 </style>
 </head>
 <body>
@@ -273,42 +280,13 @@
         <div class="eyebrow">Opening</div>
         <div class="torah">Dvar Torah</div>
         <div class="delivered">Delivered by</div>
-        <div class="speaker" id="t-dvar-speaker">Dr. Stephen Berchin</div>
+        <div class="speaker" id="t-dvar-speaker">Chaim Glazer</div>
       </div>
     </section>
 
-    <!-- 4 CONFERENCE -->
-    <section class="slide conf" id="s-conf1">
-      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
-      <div class="body anim">
-        <div class="eyebrow">Not your typical CE event.</div>
-        <h1 class="big">The 2027 Dental Wisdom Conference</h1>
-        <div class="sub">Created by Jewish Dentists, for Jewish Dentists.</div>
-        <div class="meta baseline" style="padding-top:16px;">March 3 – 6, 2027<span class="dot">·</span>The Altair Hotel<span class="dot">·</span>Bay Harbor Islands, Miami</div>
-        <div class="stats">
-          <div class="stat"><div class="n">20</div><div class="l">CE Credits</div></div>
-          <div class="stat"><div class="n">4</div><div class="l">Nights + Shabbos</div></div>
-          <div class="stat"><div class="n">3rd</div><div class="l">Year Running</div></div>
-          <div class="stat"><div class="n">100%</div><div class="l">Glatt Kosher</div></div>
-        </div>
-        <div class="conf-bottom">
-          <div class="savebox">
-            <div class="l"><div class="k">Save</div><div class="big">$200</div><div class="k">Off</div></div>
-            <div class="r"><div class="k">Use code</div><div class="code">DentalWisdomLive</div><div class="fine">at checkout, valid until <span class="t-valid">May 21<sup>st</sup></span></div></div>
-          </div>
-          <div class="reserve">
-            <div class="k">Reserve your seat</div>
-            <div class="url">DentalWisdom.org</div>
-            <div class="n1">Expected to sell out — register today.</div>
-            <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5 SPOTLIGHT -->
+    <!-- 4 SPOTLIGHT -->
     <section class="slide" id="s-spot">
-      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">5 / 9</div></div>
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
       <div class="body anim">
         <div class="sphead">
           <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
@@ -330,6 +308,35 @@
             <div class="k" id="t-spot-calllabel">Call</div>
             <div class="phone" id="t-spot-phone">(917) 715-2188</div>
             <div class="web" id="t-spot-web">livewealthcapital.com</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 CONFERENCE -->
+    <section class="slide conf" id="s-conf1">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">5 / 9</div></div>
+      <div class="body anim">
+        <div class="eyebrow">Not your typical CE event.</div>
+        <h1 class="big">The 2027 Dental Wisdom Conference</h1>
+        <div class="sub">Created by Jewish Dentists, for Jewish Dentists.</div>
+        <div class="meta baseline" style="padding-top:16px;">March 3 – 6, 2027<span class="dot">·</span>The Altair Hotel<span class="dot">·</span>Bay Harbor Islands, Miami</div>
+        <div class="stats">
+          <div class="stat"><div class="n">20</div><div class="l">CE Credits</div></div>
+          <div class="stat"><div class="n">4</div><div class="l">Nights + Shabbos</div></div>
+          <div class="stat"><div class="n">3rd</div><div class="l">Year Running</div></div>
+          <div class="stat"><div class="n">100%</div><div class="l">Glatt Kosher</div></div>
+        </div>
+        <div class="conf-bottom">
+          <div class="savebox">
+            <div class="l"><div class="k">Save</div><div class="big">$200</div><div class="k">Off</div></div>
+            <div class="r"><div class="k">Use code</div><div class="code">DentalWisdomLive</div><div class="fine">at checkout, valid until <span class="t-valid">May 21<sup>st</sup></span></div></div>
+          </div>
+          <div class="reserve">
+            <div class="k">Reserve your seat</div>
+            <div class="url">DentalWisdom.org</div>
+            <div class="n1">Expected to sell out — register today.</div>
+            <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
           </div>
         </div>
       </div>
@@ -438,6 +445,7 @@
 </div>
 
 <!-- fixed chrome -->
+<canvas id="fw"></canvas>
 <div id="progressbar"></div>
 <button class="navbtn" id="navPrev" aria-label="Previous slide">‹</button>
 <button class="navbtn" id="navNext" aria-label="Next slide">›</button>
@@ -469,7 +477,7 @@
       <div class="w-logowrap" id="w-logowrap"><img id="w-logo" alt=""></div>
       <div class="sponsorline" id="w-sponsor">—</div>
     </div>
-    <div class="confirm">Make sure to text Lisa to confirm.</div>
+    <div class="confirm">📱 Make sure to text Lisa to confirm!</div>
     <div class="row">
       <button class="btn btn-ghost" id="w-close">Close</button>
       <button class="btn btn-pink" id="w-again">Spin again</button>
@@ -485,10 +493,10 @@
 const DECK = {
   title:       { date: "Thursday, July 9", time: "8:00 PM EST" },
   opener:      "Dr. Lisa Sokol",                       // slide 2 (rarely changes)
-  dvarSpeaker: "Dr. Stephen Berchin",                  // slide 3
-  conference:  { validUntil: "May 21<sup>st</sup>" },  // slides 4 & 8 promo-code date
+  dvarSpeaker: "Chaim Glazer",                         // slide 3
+  conference:  { validUntil: "May 21<sup>st</sup>" },  // slides 5 & 8 promo-code date
 
-  spotlight: {                                         // slide 5 — new every month
+  spotlight: {                                         // slide 4 — new every month
     category: "Dental Supplies",
     logo:     "/images/sponsors/crazy-dental.png",
     tagline1: "Guaranteed Lowest Price",               // ink-colored part of headline
@@ -499,7 +507,7 @@ const DECK = {
       "110% Price Match Guarantee",
       "Best-In-Class Logistics"
     ],
-    name:      "Chaim",
+    name:      "Chaim Glazer",
     company:   "Crazy Dental Prices",
     callLabel: "Call or Text",                         // right-side label (default: "Call")
     phone:     "(404) 944-5293",
@@ -671,6 +679,7 @@ function spin(){
   spinning=true;
   document.getElementById('spinBtn').disabled=true;
   document.getElementById('gw-prizecard').classList.add('is-spinning');
+  document.querySelector('.wheel-wrap').classList.add('is-spinning');
   var N=namePool.length, seg=360/N;
   var winner=Math.floor(Math.random()*N);
   var center=winner*seg+seg/2;
@@ -685,6 +694,7 @@ wheelEl.addEventListener('transitionend',function(){
   spinning=false;
   document.getElementById('spinBtn').disabled=false;
   document.getElementById('gw-prizecard').classList.remove('is-spinning');
+  document.querySelector('.wheel-wrap').classList.remove('is-spinning');
   var idx=window._pendingWinner, name=namePool[idx], g=DECK.giveaways[gwIndex];
   document.getElementById('w-name').textContent=name;
   document.getElementById('w-prize').textContent=g.prize;
@@ -693,7 +703,7 @@ wheelEl.addEventListener('transitionend',function(){
   if(g.logo){ wlg.src=imgPath(g.logo); wlg.alt=g.sponsor+' logo'; wwrap.style.display='flex'; }
   else { wwrap.style.display='none'; }
   document.getElementById('winnerSheet').classList.add('show');
-  confettiBurst();
+  celebrate();
 });
 function removePendingWinner(){
   if(window._pendingWinner==null) return;
@@ -702,18 +712,88 @@ function removePendingWinner(){
   updateNameUI();
 }
 function closeWinner(){ document.getElementById('winnerSheet').classList.remove('show'); removePendingWinner(); }
-function confettiBurst(){
-  var colors=['#e76f51','#f4a261','#e9c46a','#d15a7a','#CBA24C','#ffffff'];
-  for(var i=0;i<70;i++){
-    var d=document.createElement('div');
-    d.className='confetti-pc';
-    d.style.left=(Math.random()*100)+'vw';
-    d.style.background=colors[i%colors.length];
-    var sz=(6+Math.random()*7); d.style.width=sz+'px'; d.style.height=sz+'px';
-    d.style.animationDelay=(Math.random()*0.35)+'s';
-    document.body.appendChild(d);
-    (function(el){ setTimeout(function(){ if(el&&el.remove) el.remove(); },3100); })(d);
+
+// ---- fireworks + confetti celebration (canvas, ported from the giveaways page) ----
+var FW_PALETTE=['#ffd700','#e76f51','#f4a261','#e9c46a','#d15a7a','#CBA24C','#ffffff'];
+var fwCanvas=document.getElementById('fw'), fwCtx=fwCanvas.getContext('2d');
+function sizeFw(){
+  var dpr=window.devicePixelRatio||1;
+  fwCanvas.width=window.innerWidth*dpr; fwCanvas.height=window.innerHeight*dpr;
+  fwCanvas.style.width=window.innerWidth+'px'; fwCanvas.style.height=window.innerHeight+'px';
+  fwCtx.setTransform(dpr,0,0,dpr,0,0);
+}
+sizeFw(); window.addEventListener('resize',sizeFw);
+var fwParticles=[], fwRockets=[], fwRunning=false;
+function launchRocket(tx,ty){
+  fwRockets.push({x:window.innerWidth/2+(Math.random()-.5)*200,y:window.innerHeight,tx:tx,ty:ty,
+    color:FW_PALETTE[Math.floor(Math.random()*FW_PALETTE.length)],px:0,py:0});
+}
+function fwExplode(x,y,color){
+  var count=60+Math.floor(Math.random()*30);
+  for(var i=0;i<count;i++){
+    var angle=(Math.PI*2)*(i/count)+Math.random()*0.15, speed=2+Math.random()*4;
+    fwParticles.push({x:x,y:y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,life:1,
+      decay:0.008+Math.random()*0.012,color:color,size:2+Math.random()*2});
   }
+}
+function dropConfetti(count){
+  for(var i=0;i<count;i++){
+    fwParticles.push({x:Math.random()*window.innerWidth,y:-20-Math.random()*80,
+      vx:(Math.random()-.5)*3,vy:1+Math.random()*2,life:1,decay:0.003+Math.random()*0.004,
+      color:FW_PALETTE[Math.floor(Math.random()*FW_PALETTE.length)],size:3+Math.random()*3,
+      confetti:true,angle:Math.random()*Math.PI*2,spin:(Math.random()-.5)*0.25});
+  }
+}
+function fwLoop(){
+  fwCtx.save();
+  fwCtx.globalCompositeOperation='destination-out';
+  fwCtx.fillStyle='rgba(0,0,0,.18)';
+  fwCtx.fillRect(0,0,window.innerWidth,window.innerHeight);
+  fwCtx.restore();
+  var i,r,p;
+  for(i=fwRockets.length-1;i>=0;i--){
+    r=fwRockets[i];
+    var dx=r.tx-r.x, dy=r.ty-r.y;
+    r.px=r.x; r.py=r.y;
+    r.x+=dx*0.06; r.y+=dy*0.06;
+    fwCtx.strokeStyle=r.color+'aa'; fwCtx.lineWidth=2;
+    fwCtx.beginPath(); fwCtx.moveTo(r.px,r.py); fwCtx.lineTo(r.x,r.y); fwCtx.stroke();
+    fwCtx.beginPath(); fwCtx.fillStyle=r.color; fwCtx.arc(r.x,r.y,2.5,0,Math.PI*2); fwCtx.fill();
+    if(Math.abs(dx)<8&&Math.abs(dy)<8){ fwExplode(r.x,r.y,r.color); fwRockets.splice(i,1); }
+  }
+  for(i=fwParticles.length-1;i>=0;i--){
+    p=fwParticles[i];
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.confetti){ p.vy+=0.08; p.vx*=0.985; p.vy=Math.min(p.vy,6); p.angle+=p.spin; }
+    else { p.vy+=0.06; p.vx*=0.99; p.vy*=0.99; }
+    p.life-=p.decay;
+    if(p.life<=0||p.y>window.innerHeight+40){ fwParticles.splice(i,1); continue; }
+    fwCtx.globalAlpha=Math.min(p.life,1);
+    fwCtx.fillStyle=p.color;
+    if(p.confetti){
+      fwCtx.save(); fwCtx.translate(p.x,p.y); fwCtx.rotate(p.angle);
+      fwCtx.fillRect(-p.size,-p.size*.5,p.size*2,p.size);
+      fwCtx.restore();
+    } else {
+      fwCtx.beginPath(); fwCtx.arc(p.x,p.y,p.size,0,Math.PI*2); fwCtx.fill();
+    }
+  }
+  fwCtx.globalAlpha=1;
+  if(fwRockets.length||fwParticles.length){ requestAnimationFrame(fwLoop); }
+  else { fwCtx.clearRect(0,0,window.innerWidth,window.innerHeight); fwRunning=false; }
+}
+function celebrate(){
+  if(!fwRunning){ fwRunning=true; requestAnimationFrame(fwLoop); }
+  for(var i=0;i<12;i++){
+    setTimeout(function(){
+      var tx=window.innerWidth*(0.08+Math.random()*0.84);
+      var ty=window.innerHeight*(0.08+Math.random()*0.45);
+      launchRocket(tx,ty);
+    }, i*280);
+  }
+  dropConfetti(160);
+  setTimeout(function(){ dropConfetti(110); },900);
+  setTimeout(function(){ dropConfetti(90); },1800);
 }
 document.getElementById('spinBtn').addEventListener('click',spin);
 document.getElementById('w-close').addEventListener('click',closeWinner);

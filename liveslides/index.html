@@ -1,0 +1,684 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dental Wisdom Live — Slides</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --navy:#12233f;
+    --navy-soft:#1b2f4e;
+    --ivory:#FBF9F4;
+    --sand:#F1ECE2;
+    --ink:#1E2A38;
+    --muted:#6b7688;
+    --gold:#B8892A;
+    --gold-text:#8C6A1A;
+    --gold-bright:#C9A24A;
+    --hair:rgba(30,42,56,0.14);
+    --font-head:'Playfair Display',Georgia,serif;
+    --font-body:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;height:100%;background:#000;overflow:hidden;font-family:var(--font-body);}
+
+  #stage{position:fixed;inset:0;background:#000;display:flex;align-items:center;justify-content:center;}
+  #deck{width:1280px;height:720px;position:relative;transform-origin:center center;background:var(--ivory);overflow:hidden;box-shadow:0 0 60px rgba(0,0,0,.5);}
+
+  .slide{position:absolute;inset:0;padding:56px 72px;display:none;flex-direction:column;background:var(--ivory);}
+  .slide.active{display:flex;}
+  .slide--dark{background:var(--navy);color:#fff;}
+
+  /* brand line */
+  .brand{font-weight:800;letter-spacing:4px;font-size:15px;text-transform:uppercase;}
+  .brand .b1{color:var(--ink);} .brand .b2{color:var(--gold);}
+  .slide--dark .brand .b1{color:#fff;} .slide--dark .brand .b2{color:var(--gold-bright);}
+  .topbar{display:flex;justify-content:space-between;align-items:flex-start;}
+  .pagenum{font-size:13px;color:var(--muted);letter-spacing:1px;display:flex;align-items:center;gap:10px;}
+  .pagenum::before{content:"";width:16px;height:16px;background:var(--gold);display:inline-block;}
+  .slide--dark .pagenum{color:rgba(255,255,255,.55);}
+
+  .eyebrow{font-weight:700;letter-spacing:5px;font-size:14px;text-transform:uppercase;color:var(--gold-text);}
+  .slide--dark .eyebrow{color:var(--gold-bright);}
+  .goldrule{width:56px;height:5px;background:var(--gold);margin-bottom:14px;}
+
+  h1.big{font-family:var(--font-head);font-weight:700;line-height:1.02;color:var(--ink);}
+  .slide--dark h1.big{color:#fff;}
+  em.gold{font-style:italic;color:var(--gold);font-family:var(--font-head);}
+  .slide--dark em.gold{color:var(--gold-bright);}
+
+  .fill{flex:1;}
+  .baseline{border-top:1px solid var(--hair);}
+  .slide--dark .baseline{border-top:1px solid rgba(255,255,255,.18);}
+
+  /* ---- Slide 1 title ---- */
+  #s-title .center{flex:1;display:flex;flex-direction:column;justify-content:center;}
+  #s-title h1.big{font-size:96px;}
+  #s-title .date{margin-top:34px;font-weight:800;letter-spacing:6px;font-size:20px;text-transform:uppercase;}
+  #s-title .date .dot{color:var(--gold-bright);margin:0 14px;}
+
+  /* ---- Slide 2 about ---- */
+  #s-about h1.big{font-size:52px;margin:6px 0 26px;}
+  .cols{display:flex;gap:56px;flex:1;}
+  .col-l{flex:1.05;} .col-r{flex:1;}
+  #s-about p.lead{font-size:19px;line-height:1.6;color:#3a4453;margin-bottom:26px;}
+  .opener-label{font-size:14px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);}
+  .opener-name{font-family:var(--font-head);font-weight:700;font-size:38px;color:var(--ink);margin-top:6px;}
+  .feat{display:flex;gap:14px;margin-bottom:20px;}
+  .feat .sq{width:15px;height:15px;background:var(--gold);margin-top:5px;flex:none;}
+  .feat h3{font-size:19px;color:var(--ink);font-weight:700;}
+  .feat p{font-size:15.5px;color:var(--muted);margin-top:2px;}
+
+  /* ---- Slide 3 dvar torah ---- */
+  #s-dvar .center{flex:1;display:flex;flex-direction:column;justify-content:center;}
+  #s-dvar em.gold, #s-dvar .torah{font-family:var(--font-head);font-style:italic;font-size:96px;color:var(--ink);font-weight:400;}
+  #s-dvar .delivered{margin-top:40px;font-size:16px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);}
+  #s-dvar .speaker{font-family:var(--font-head);font-weight:700;font-size:46px;color:var(--ink);margin-top:8px;}
+
+  /* ---- Conference promo (slides 4 & 8) ---- */
+  .conf .eyebrow{color:var(--gold-text);}
+  .conf h1.big{font-family:var(--font-head);font-weight:700;font-size:52px;letter-spacing:1px;color:var(--ink);text-transform:uppercase;margin:8px 0 4px;}
+  .conf .sub{font-family:var(--font-head);font-style:italic;font-size:30px;color:var(--gold);margin-bottom:18px;}
+  .conf .meta{font-weight:800;letter-spacing:3px;font-size:16px;color:var(--ink);text-transform:uppercase;padding:14px 0;border-top:1px solid var(--hair);}
+  .conf .meta .dot{color:var(--gold);margin:0 12px;}
+  .stats{display:flex;gap:0;margin:8px 0 20px;}
+  .stat{flex:1;text-align:center;padding:6px 0;border-right:1px solid var(--hair);}
+  .stat:last-child{border-right:none;}
+  .stat .n{font-family:var(--font-head);font-style:italic;font-size:44px;color:var(--ink);}
+  .stat .l{font-size:12px;letter-spacing:2px;color:var(--gold-text);text-transform:uppercase;margin-top:2px;}
+  .conf-bottom{display:flex;gap:40px;align-items:center;}
+  .savebox{background:var(--navy);color:#fff;display:flex;flex:none;border-radius:2px;overflow:hidden;}
+  .savebox .l{padding:20px 26px;}
+  .savebox .r{padding:20px 26px;border-left:2px dashed rgba(255,255,255,.4);}
+  .savebox .k{font-size:12px;letter-spacing:3px;color:var(--gold-bright);text-transform:uppercase;}
+  .savebox .big{font-family:var(--font-head);font-size:40px;line-height:1;margin:4px 0;}
+  .savebox .code{font-weight:700;font-size:20px;}
+  .savebox .fine{font-style:italic;font-size:13px;color:rgba(255,255,255,.75);margin-top:4px;}
+  .reserve .k{font-size:13px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;}
+  .reserve .url{font-family:var(--font-head);font-style:italic;font-size:40px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);}
+  .reserve .n1{font-style:italic;font-size:15px;color:#3a4453;margin-top:6px;}
+  .reserve .n2{font-style:italic;font-size:13.5px;color:var(--muted);}
+
+  /* ---- Slide 5 spotlight ---- */
+  #s-spot .sphead{display:flex;justify-content:space-between;align-items:flex-start;margin-top:6px;}
+  #s-spot .sphead .eyebrow{padding-top:6px;}
+  #s-spot .splogo{max-height:80px;max-width:340px;object-fit:contain;}
+  #s-spot .tagline{flex:1;display:flex;align-items:center;}
+  #s-spot .tagline p{font-family:var(--font-head);font-size:56px;line-height:1.08;font-style:italic;color:var(--ink);}
+  #s-spot .tagline p .g{color:var(--gold);}
+  #s-spot .spfoot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:18px;}
+  #s-spot .spfoot .k{font-size:13px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;}
+  #s-spot .spfoot .name{font-family:var(--font-head);font-weight:700;font-size:32px;color:var(--ink);}
+  #s-spot .spfoot .co{font-style:italic;color:var(--muted);font-size:16px;}
+  #s-spot .spfoot .phone{font-family:var(--font-head);font-weight:700;font-size:34px;color:var(--ink);}
+  #s-spot .spfoot .web{color:var(--gold-text);font-size:16px;text-align:right;}
+  #s-spot .spfoot .right{text-align:right;}
+
+  /* ---- Slide 6 lecture ---- */
+  #s-lect h1.big{font-family:var(--font-head);font-style:italic;font-size:56px;color:var(--ink);margin-top:6px;}
+  #s-lect .subt{font-family:var(--font-head);font-style:italic;font-size:26px;color:var(--ink);margin-bottom:8px;}
+  #s-lect .cols{margin-top:14px;gap:48px;}
+  #s-lect .col-l{flex:.85;}
+  #s-lect .logobox{background:#fff;border:1px solid var(--hair);border-radius:4px;padding:22px;display:flex;align-items:center;justify-content:center;height:150px;}
+  #s-lect .logobox img{max-height:96px;max-width:100%;object-fit:contain;}
+  #s-lect .doc{font-family:var(--font-head);font-weight:700;font-size:38px;color:var(--ink);margin-top:20px;}
+  #s-lect .role{font-style:italic;color:var(--muted);font-size:16px;margin-top:2px;}
+  #s-lect .cepill{display:inline-block;background:var(--navy);color:var(--gold-bright);font-weight:700;letter-spacing:3px;font-size:13px;padding:12px 20px;margin-top:18px;text-transform:uppercase;}
+  #s-lect .col-r{border-left:3px solid var(--gold);padding-left:22px;}
+  #s-lect .col-r .k{font-size:13px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;margin-bottom:8px;}
+  #s-lect .col-r p{font-size:15px;line-height:1.5;color:#3a4453;margin-bottom:10px;}
+  #s-lect .col-r .web{font-family:var(--font-head);font-style:italic;color:var(--gold-text);font-size:22px;text-align:right;}
+
+  /* ---- Slide 9 thanks ---- */
+  #s-thanks .center{flex:1;display:flex;flex-direction:column;justify-content:center;}
+  #s-thanks .big{font-family:var(--font-head);font-style:italic;font-size:88px;color:#fff;}
+  #s-thanks .next{border-left:4px solid var(--gold);padding-left:22px;margin-top:36px;}
+  #s-thanks .next .k{font-size:14px;letter-spacing:4px;color:var(--gold-bright);text-transform:uppercase;}
+  #s-thanks .next .when{font-family:var(--font-head);font-weight:700;font-size:34px;color:#fff;margin-top:6px;}
+  #s-thanks .next .when .dot{color:var(--gold-bright);margin:0 12px;}
+  #s-thanks .next .topic{font-family:var(--font-head);font-style:italic;font-size:22px;color:var(--gold-bright);margin-top:6px;}
+  #s-thanks .next .pres{font-style:italic;font-size:14px;color:rgba(255,255,255,.7);margin-top:4px;}
+
+  /* ---- Slide 7 giveaway ---- */
+  #s-give{background:linear-gradient(160deg,#fff6f4 0%,#fdeef0 55%,#fbe7ec 100%);}
+  #s-give .gwtop{margin-top:4px;}
+  #s-give h1.big{font-size:44px;margin-top:2px;}
+  #s-give h1.big em{color:#d15a7a;font-style:italic;}
+  #s-give .gwbody{flex:1;display:flex;gap:40px;align-items:center;}
+  #s-give .wheelcol{flex:none;width:400px;display:flex;flex-direction:column;align-items:center;}
+  .wheel-wrap{position:relative;width:360px;height:360px;}
+  .wheel-wrap .pointer{position:absolute;top:-6px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:16px solid transparent;border-right:16px solid transparent;border-top:26px solid #d15a7a;z-index:4;filter:drop-shadow(0 2px 3px rgba(0,0,0,.25));}
+  #wheel{width:360px;height:360px;transition:transform 4.6s cubic-bezier(.12,.66,.06,1);}
+  .hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:78px;height:78px;border-radius:50%;background:#d15a7a;color:#fff;border:4px solid #fff;font-family:var(--font-head);font-weight:700;font-size:18px;cursor:pointer;box-shadow:0 4px 14px rgba(209,90,122,.45);z-index:5;}
+  .hub:hover{background:#c14a6b;}
+  .hub:disabled{opacity:.5;cursor:default;}
+  #s-give .infocol{flex:1;}
+  #s-give .selwrap label{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:#a25;font-weight:700;}
+  #s-give select{display:block;width:100%;max-width:440px;margin-top:8px;padding:14px 16px;font-family:var(--font-body);font-size:17px;border:2px solid #eabfca;border-radius:8px;background:#fff;color:var(--ink);cursor:pointer;}
+  #s-give .prizecard{margin-top:22px;max-width:440px;background:#fff;border:1px solid #f0cdd6;border-radius:12px;padding:22px 24px;box-shadow:0 6px 20px rgba(209,90,122,.10);}
+  #s-give .prizecard .k{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:#c07;}
+  #s-give .prizecard .prize{font-family:var(--font-head);font-style:italic;font-size:34px;color:var(--ink);margin:4px 0 8px;}
+  #s-give .prizecard .comp{font-size:13px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);}
+  #s-give .prizecard .sponsor{font-weight:700;font-size:18px;color:var(--ink);margin-top:2px;}
+  #s-give .poolnote{margin-top:16px;font-size:14px;color:#8a5;color:var(--muted);}
+  #s-give .poolnote strong{color:#c14a6b;}
+
+  /* fixed UI */
+  #progressbar{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:30;transition:width .25s ease;}
+  #counter{position:fixed;bottom:16px;right:20px;color:rgba(255,255,255,.6);font-size:14px;letter-spacing:.5px;z-index:30;font-variant-numeric:tabular-nums;}
+  .navbtn{position:fixed;top:50%;transform:translateY(-50%);width:48px;height:48px;border-radius:50%;background:rgba(255,255,255,.12);color:#fff;border:none;font-size:22px;cursor:pointer;z-index:30;display:flex;align-items:center;justify-content:center;transition:background .2s;}
+  .navbtn:hover{background:rgba(255,255,255,.28);}
+  #navPrev{left:16px;} #navNext{right:16px;}
+  #namesBtn{position:fixed;bottom:14px;left:20px;z-index:30;background:rgba(255,255,255,.14);color:#fff;border:1px solid rgba(255,255,255,.25);border-radius:20px;padding:8px 16px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;}
+  #namesBtn:hover{background:rgba(255,255,255,.26);}
+  #namesBtn .cnt{color:var(--gold-bright);font-weight:700;}
+
+  /* overlays */
+  .overlay{position:fixed;inset:0;background:rgba(10,16,30,.7);z-index:50;display:none;align-items:center;justify-content:center;}
+  .overlay.show{display:flex;}
+  .sheet{background:#fff;border-radius:14px;width:520px;max-width:92vw;max-height:88vh;overflow:auto;padding:28px 30px;box-shadow:0 20px 60px rgba(0,0,0,.4);}
+  .sheet h2{font-family:var(--font-head);font-size:26px;color:var(--ink);margin-bottom:6px;}
+  .sheet p.hint{font-size:14px;color:var(--muted);margin-bottom:14px;}
+  .sheet textarea{width:100%;min-height:240px;border:2px solid #e3ddd0;border-radius:10px;padding:14px;font-family:var(--font-body);font-size:15px;line-height:1.5;resize:vertical;}
+  .sheet .row{display:flex;gap:10px;justify-content:flex-end;margin-top:16px;}
+  .btn{border:none;border-radius:8px;padding:11px 20px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--font-body);}
+  .btn-primary{background:var(--navy);color:#fff;} .btn-primary:hover{background:#1b2f4e;}
+  .btn-ghost{background:#efe9dd;color:var(--ink);} .btn-ghost:hover{background:#e6dfcf;}
+  .btn-pink{background:#d15a7a;color:#fff;} .btn-pink:hover{background:#c14a6b;}
+
+  /* winner sheet */
+  #winnerSheet .sheet{text-align:center;width:560px;background:linear-gradient(160deg,#fff 0%,#fff6f8 100%);}
+  #winnerSheet .k{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:#c07;}
+  #winnerSheet .who{font-family:var(--font-head);font-weight:700;font-size:52px;color:var(--ink);margin:10px 0;line-height:1.05;}
+  #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:24px;color:#c14a6b;}
+  #winnerSheet .sponsorline{font-size:14px;color:var(--muted);letter-spacing:1px;margin-top:2px;}
+  #winnerSheet .confirm{margin:20px auto 6px;background:#fdeef0;border:1px dashed #e5a9ba;border-radius:10px;padding:14px 18px;font-size:18px;font-weight:700;color:#c14a6b;max-width:400px;}
+  #winnerSheet .row{justify-content:center;margin-top:18px;}
+
+  .hint-msg{position:fixed;bottom:14px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.5);font-size:12.5px;z-index:29;transition:opacity .5s;}
+</style>
+</head>
+<body>
+
+<div id="stage">
+  <div id="deck">
+
+    <!-- 1 TITLE -->
+    <section class="slide slide--dark active" id="s-title">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div></div>
+      <div class="center">
+        <div class="goldrule"></div>
+        <div class="eyebrow">Monthly Continuing Education</div>
+        <h1 class="big" style="margin-top:18px;">Dental Wisdom<br><em class="gold">Live</em></h1>
+        <div class="date"><span id="t-date">Thursday, June 18</span><span class="dot">·</span><span id="t-time">8:00 PM EST</span></div>
+      </div>
+    </section>
+
+    <!-- 2 ABOUT -->
+    <section class="slide" id="s-about">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">2 / 9</div></div>
+      <div class="eyebrow" style="margin-top:28px;">About</div>
+      <h1 class="big">Dental Wisdom <em class="gold">Live</em></h1>
+      <div class="cols">
+        <div class="col-l">
+          <p class="lead">Dental Wisdom Live delivers free continuing education to the network each month. A focused session where attendees earn CE credits. High-value, interactive education designed to help you stay at the forefront of modern dentistry while strengthening our community.</p>
+          <div class="opener-label">Opening by</div>
+          <div class="opener-name" id="t-opener">Dr. Lisa Sokol</div>
+        </div>
+        <div class="col-r">
+          <div class="feat"><span class="sq"></span><div><h3>Cutting-edge techniques</h3><p>Practical solutions from leading industry experts</p></div></div>
+          <div class="feat"><span class="sq"></span><div><h3>Real-time Q&amp;A</h3><p>Direct dialogue with every speaker</p></div></div>
+          <div class="feat"><span class="sq"></span><div><h3>Valuable CE credits</h3><p>Earn credits with every session</p></div></div>
+          <div class="feat"><span class="sq"></span><div><h3>Exciting giveaways</h3><p>Surprises and prizes throughout</p></div></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 DVAR TORAH -->
+    <section class="slide" id="s-dvar">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">3 / 9</div></div>
+      <div class="center">
+        <div class="goldrule"></div>
+        <div class="eyebrow">Opening</div>
+        <div class="torah" style="margin-top:14px;">Dvar Torah</div>
+        <div class="delivered">Delivered by</div>
+        <div class="speaker" id="t-dvar-speaker">Dr. Stephen Berchin</div>
+      </div>
+    </section>
+
+    <!-- 4 CONFERENCE -->
+    <section class="slide conf" id="s-conf1">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
+      <div class="eyebrow" style="margin-top:22px;">Not your typical CE event.</div>
+      <h1 class="big">The 2027 Dental Wisdom Conference</h1>
+      <div class="sub">Created by Jewish Dentists, for Jewish Dentists.</div>
+      <div class="meta">March 3 – 6, 2027<span class="dot">·</span>The Altair Hotel<span class="dot">·</span>Bay Harbor Islands, Miami</div>
+      <div class="stats">
+        <div class="stat"><div class="n">20</div><div class="l">CE Credits</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">Nights + Shabbos</div></div>
+        <div class="stat"><div class="n">3rd</div><div class="l">Year Running</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">Glatt Kosher</div></div>
+      </div>
+      <div class="conf-bottom">
+        <div class="savebox">
+          <div class="l"><div class="k">Save</div><div class="big">$200</div><div class="k">Off</div></div>
+          <div class="r"><div class="k">Use code</div><div class="code">DentalWisdomLive</div><div class="fine">at checkout, valid until <span class="t-valid">May 21<sup>st</sup></span></div></div>
+        </div>
+        <div class="reserve">
+          <div class="k">Reserve your seat</div>
+          <div class="url">DentalWisdom.org</div>
+          <div class="n1">Expected to sell out — register today.</div>
+          <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 SPOTLIGHT -->
+    <section class="slide" id="s-spot">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">5 / 9</div></div>
+      <div class="sphead">
+        <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
+        <img class="splogo" id="t-spot-logo" src="" alt="Sponsor logo">
+      </div>
+      <div class="tagline"><p><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p></div>
+      <div class="baseline spfoot">
+        <div>
+          <div class="k">Contact</div>
+          <div class="name" id="t-spot-name">Sam Waller</div>
+          <div class="co" id="t-spot-co">Live Well Capital</div>
+        </div>
+        <div class="right">
+          <div class="k">Call</div>
+          <div class="phone" id="t-spot-phone">(917) 715-2188</div>
+          <div class="web" id="t-spot-web">livewealthcapital.com</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 LECTURE -->
+    <section class="slide" id="s-lect">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">6 / 9</div></div>
+      <div class="eyebrow" style="margin-top:14px;">Featured Speaker · <span id="t-lect-ce">1 CE Credit</span></div>
+      <h1 class="big" id="t-lect-title">Straight Forward</h1>
+      <div class="subt" id="t-lect-subt">Building Your Clear Aligner Practice</div>
+      <div class="cols baseline" style="padding-top:14px;">
+        <div class="col-l">
+          <div class="logobox"><img id="t-lect-logo" src="" alt="Sponsor logo"></div>
+          <div class="doc" id="t-lect-doc">Dr. Sam Glick</div>
+          <div class="role" id="t-lect-role">Key Opinion Leader, orthobrain</div>
+          <div class="cepill" id="t-lect-pill">1 CE Credit</div>
+        </div>
+        <div class="col-r">
+          <div class="k">About this session</div>
+          <div id="t-lect-desc"></div>
+          <div class="web" id="t-lect-web">orthobrain.com</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 GIVEAWAY -->
+    <section class="slide" id="s-give">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">7 / 9</div></div>
+      <div class="gwtop">
+        <div class="eyebrow" style="color:#c07;">Intermission</div>
+        <h1 class="big">Dental Wisdom <em>Giveaways</em></h1>
+      </div>
+      <div class="gwbody">
+        <div class="wheelcol">
+          <div class="wheel-wrap">
+            <div class="pointer"></div>
+            <svg id="wheel" viewBox="-110 -110 220 220" aria-label="Prize wheel"></svg>
+            <button class="hub" id="spinBtn">Spin</button>
+          </div>
+        </div>
+        <div class="infocol">
+          <div class="selwrap">
+            <label for="giveSelect">This giveaway</label>
+            <select id="giveSelect"></select>
+          </div>
+          <div class="prizecard">
+            <div class="k">Now giving away</div>
+            <div class="prize" id="gw-prize">Yeti Coffee Mugs</div>
+            <div class="comp">Compliments of</div>
+            <div class="sponsor" id="gw-sponsor">Live Well Capital</div>
+          </div>
+          <div class="poolnote"><strong id="gw-count">0</strong> names in the wheel · tap <em>Add names</em> below to load the list.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8 CONFERENCE (repeat) -->
+    <section class="slide conf" id="s-conf2">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">8 / 9</div></div>
+      <div class="eyebrow" style="margin-top:22px;">Not your typical CE event.</div>
+      <h1 class="big">The 2027 Dental Wisdom Conference</h1>
+      <div class="sub">Created by Jewish Dentists, for Jewish Dentists.</div>
+      <div class="meta">March 3 – 6, 2027<span class="dot">·</span>The Altair Hotel<span class="dot">·</span>Bay Harbor Islands, Miami</div>
+      <div class="stats">
+        <div class="stat"><div class="n">20</div><div class="l">CE Credits</div></div>
+        <div class="stat"><div class="n">4</div><div class="l">Nights + Shabbos</div></div>
+        <div class="stat"><div class="n">3rd</div><div class="l">Year Running</div></div>
+        <div class="stat"><div class="n">100%</div><div class="l">Glatt Kosher</div></div>
+      </div>
+      <div class="conf-bottom">
+        <div class="savebox">
+          <div class="l"><div class="k">Save</div><div class="big">$200</div><div class="k">Off</div></div>
+          <div class="r"><div class="k">Use code</div><div class="code">DentalWisdomLive</div><div class="fine">at checkout, valid until <span class="t-valid">May 21<sup>st</sup></span></div></div>
+        </div>
+        <div class="reserve">
+          <div class="k">Reserve your seat</div>
+          <div class="url">DentalWisdom.org</div>
+          <div class="n1">Expected to sell out — register today.</div>
+          <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 THANKS -->
+    <section class="slide slide--dark" id="s-thanks">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div></div>
+      <div class="center">
+        <div class="goldrule"></div>
+        <div class="eyebrow">Thank you for joining us</div>
+        <div class="big" style="margin-top:14px;">See you next month.</div>
+        <div class="next">
+          <div class="k">Next Session</div>
+          <div class="when"><span id="t-next-date">Thursday, August 9</span><span class="dot">·</span><span id="t-next-time">8:00 PM EST</span></div>
+          <div class="topic" id="t-next-topic">All-on-X Surgery and Restoration: 5 Patient treatments showing everything from planning to restoration</div>
+          <div class="pres" id="t-next-pres">presented by Adin</div>
+        </div>
+      </div>
+    </section>
+
+  </div>
+</div>
+
+<!-- fixed chrome -->
+<div id="progressbar"></div>
+<button class="navbtn" id="navPrev" aria-label="Previous slide">‹</button>
+<button class="navbtn" id="navNext" aria-label="Next slide">›</button>
+<div id="counter">1 / 9</div>
+<button id="namesBtn">＋ Add names <span class="cnt" id="namesCnt">(0)</span></button>
+<div class="hint-msg" id="hintMsg">← → navigate · F fullscreen · N add names</div>
+
+<!-- names overlay -->
+<div class="overlay" id="namesSheet">
+  <div class="sheet">
+    <h2>Attendee names</h2>
+    <p class="hint">Paste the list — one name per line. These feed the giveaway wheel. Winners are removed automatically so nobody wins twice.</p>
+    <textarea id="namesInput" placeholder="Rivky Klein&#10;Dovid Stern&#10;Shaindy Weiss&#10;…"></textarea>
+    <div class="row">
+      <button class="btn btn-ghost" id="namesCancel">Cancel</button>
+      <button class="btn btn-primary" id="namesSave">Save names</button>
+    </div>
+  </div>
+</div>
+
+<!-- winner overlay -->
+<div class="overlay" id="winnerSheet">
+  <div class="sheet">
+    <div class="k">We have a winner</div>
+    <div class="who" id="w-name">—</div>
+    <div class="prizeline" id="w-prize">—</div>
+    <div class="sponsorline" id="w-sponsor">—</div>
+    <div class="confirm">Make sure to text Lisa to confirm.</div>
+    <div class="row">
+      <button class="btn btn-ghost" id="w-close">Close</button>
+      <button class="btn btn-pink" id="w-again">Spin again</button>
+    </div>
+  </div>
+</div>
+
+<script>
+/* ============================================================
+   ▼▼▼  EDIT EACH MONTH HERE — this block is all that changes.  ▼▼▼
+   (Ben: just tell Claude the new values and they'll be updated.)
+   ============================================================ */
+const DECK = {
+  title:       { date: "Thursday, June 18", time: "8:00 PM EST" },
+  opener:      "Dr. Lisa Sokol",                       // slide 2 (rarely changes)
+  dvarSpeaker: "Dr. Stephen Berchin",                  // slide 3
+  conference:  { validUntil: "May 21<sup>st</sup>" },  // slides 4 & 8 promo-code date
+
+  spotlight: {                                         // slide 5 — new every month
+    category: "Wealth Management",
+    logo:     "/images/sponsors/livewell-capital.png",
+    tagline1: "Wealth That Lives Well —",              // ink-colored part
+    tagline2: "Today, Tomorrow, and Beyond.",          // gold part
+    name:     "Sam Waller",
+    company:  "Live Well Capital",
+    phone:    "(917) 715-2188",
+    website:  "livewealthcapital.com"
+  },
+
+  lecture: {                                           // slide 6 — the class
+    ce:       "1 CE Credit",
+    title:    "Straight Forward",
+    subtitle: "Building Your Clear Aligner Practice",
+    doctor:   "Dr. Sam Glick",
+    role:     "Key Opinion Leader, orthobrain",
+    logo:     "/images/sponsors/orthobrain.png",
+    website:  "orthobrain.com",
+    description: [
+      "Straight Forward: Building Your Clear Aligner Practice is a practical, team-focused CE course designed to help dentists confidently grow their clear aligner services. Participants will learn how to empower their entire dental team, streamline workflows, and master smarter case selection to deliver more predictable, successful outcomes with fewer refinements and complications.",
+      "Through real-world strategies and proven clinical tips, this course equips you with the essential “tools” you need — from patient communication and team delegation to treatment planning and troubleshooting — so you can build a thriving, efficient clear aligner practice with greater confidence and consistency."
+    ]
+  },
+
+  giveaways: [                                         // slide 7 — the wheel prizes
+    { sponsor: "Live Well Capital",  prize: "Yeti Coffee Mugs" },
+    { sponsor: "MB Precious Metals", prize: "1 oz Silver Coins" }
+  ],
+
+  nextSession: {                                       // slide 9
+    date: "Thursday, August 9", time: "8:00 PM EST",
+    topic: "All-on-X Surgery and Restoration: 5 Patient treatments showing everything from planning to restoration",
+    presenter: "Adin"
+  }
+};
+/* ============================================================
+   ▲▲▲  END EDIT BLOCK — you don't need to touch anything below.  ▲▲▲
+   ============================================================ */
+
+// ---- resolve image paths (works whether opened from a server or as a file) ----
+function imgPath(p){ return p.replace(/^\//,'../').replace('../images','../images'); }
+
+// ---- populate slides from DECK ----
+function txt(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+function html(id,v){ var el=document.getElementById(id); if(el) el.innerHTML=v; }
+
+function fillDeck(){
+  txt('t-date',DECK.title.date); txt('t-time',DECK.title.time);
+  txt('t-opener',DECK.opener);
+  txt('t-dvar-speaker',DECK.dvarSpeaker);
+  document.querySelectorAll('.t-valid').forEach(function(e){ e.innerHTML=DECK.conference.validUntil; });
+
+  var s=DECK.spotlight;
+  txt('t-spot-cat',s.category);
+  document.getElementById('t-spot-logo').src=imgPath(s.logo);
+  document.getElementById('t-spot-logo').alt=s.company+' logo';
+  txt('t-spot-tag1',s.tagline1); txt('t-spot-tag2',s.tagline2);
+  txt('t-spot-name',s.name); txt('t-spot-co',s.company);
+  txt('t-spot-phone',s.phone); txt('t-spot-web',s.website);
+
+  var l=DECK.lecture;
+  txt('t-lect-ce',l.ce); txt('t-lect-title',l.title); txt('t-lect-subt',l.subtitle);
+  txt('t-lect-doc',l.doctor); txt('t-lect-role',l.role); txt('t-lect-pill',l.ce);
+  txt('t-lect-web',l.website);
+  document.getElementById('t-lect-logo').src=imgPath(l.logo);
+  document.getElementById('t-lect-logo').alt=(l.doctor||'Sponsor')+' logo';
+  document.getElementById('t-lect-desc').innerHTML=l.description.map(function(p){return '<p>'+p+'</p>';}).join('');
+
+  var n=DECK.nextSession;
+  txt('t-next-date',n.date); txt('t-next-time',n.time);
+  txt('t-next-topic',n.topic); txt('t-next-pres','presented by '+n.presenter);
+
+  // giveaway dropdown
+  var sel=document.getElementById('giveSelect');
+  sel.innerHTML=DECK.giveaways.map(function(g,i){return '<option value="'+i+'">'+g.sponsor+' — '+g.prize+'</option>';}).join('');
+  setGiveaway(0);
+}
+
+// ---- navigation ----
+var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
+var total=slides.length, current=0;
+var counter=document.getElementById('counter'), bar=document.getElementById('progressbar');
+function show(i){
+  if(i<0)i=0; if(i>total-1)i=total-1;
+  slides[current].classList.remove('active');
+  current=i;
+  slides[current].classList.add('active');
+  counter.textContent=(current+1)+' / '+total;
+  bar.style.width=((current+1)/total*100)+'%';
+}
+function next(){ show(current+1); }
+function prev(){ show(current-1); }
+document.getElementById('navNext').addEventListener('click',next);
+document.getElementById('navPrev').addEventListener('click',prev);
+
+document.addEventListener('keydown',function(e){
+  if(anyOverlayOpen()){ if(e.key==='Escape') closeOverlays(); return; }
+  if(e.key==='F11'||((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='f')){ e.preventDefault(); toggleFull(); return; }
+  switch(e.key){
+    case 'ArrowRight': case 'PageDown': case ' ': e.preventDefault(); next(); break;
+    case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
+    case 'Home': show(0); break;
+    case 'End': show(total-1); break;
+    case 'n': case 'N': openNames(); break;
+    case 'f': case 'F': toggleFull(); break;
+  }
+});
+function toggleFull(){ if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(function(){}); } else { document.exitFullscreen(); } }
+
+// ---- scale deck to viewport ----
+var deck=document.getElementById('deck');
+function fit(){ var s=Math.min(window.innerWidth/1280, window.innerHeight/720); deck.style.transform='scale('+s+')'; }
+window.addEventListener('resize',fit); fit();
+
+// ---- names ----
+var namePool=[];   // active (winners removed)
+function updateNameUI(){
+  document.getElementById('namesCnt').textContent='('+namePool.length+')';
+  document.getElementById('gw-count').textContent=namePool.length;
+  buildWheel();
+}
+function openNames(){
+  document.getElementById('namesInput').value=namePool.join('\n');
+  document.getElementById('namesSheet').classList.add('show');
+  setTimeout(function(){document.getElementById('namesInput').focus();},50);
+}
+function closeNames(){ document.getElementById('namesSheet').classList.remove('show'); }
+document.getElementById('namesBtn').addEventListener('click',openNames);
+document.getElementById('namesCancel').addEventListener('click',closeNames);
+document.getElementById('namesSave').addEventListener('click',function(){
+  namePool=document.getElementById('namesInput').value.split('\n').map(function(x){return x.trim();}).filter(Boolean);
+  updateNameUI(); closeNames();
+});
+
+// ---- giveaway selection ----
+var gwIndex=0;
+function setGiveaway(i){
+  gwIndex=i;
+  var g=DECK.giveaways[i];
+  document.getElementById('gw-prize').textContent=g.prize;
+  document.getElementById('gw-sponsor').textContent=g.sponsor;
+}
+document.getElementById('giveSelect').addEventListener('change',function(){ setGiveaway(parseInt(this.value,10)); });
+
+// ---- wheel ----
+var WHEEL_COLORS=['#e76f51','#f4a261','#e9c46a','#e07a9a','#c98bb0','#f2b5a0'];
+var wheelEl=document.getElementById('wheel');
+var wheelRot=0, spinning=false;
+function buildWheel(){
+  var N=namePool.length;
+  wheelEl.innerHTML='';
+  if(N===0){
+    wheelEl.innerHTML='<circle r="100" fill="#f6dfe4"/><text x="0" y="4" text-anchor="middle" font-size="12" fill="#c07" font-family="Inter,sans-serif">Add names</text>';
+    return;
+  }
+  var seg=360/N, showText=N<=26;
+  for(var i=0;i<N;i++){
+    var a0=i*seg, a1=(i+1)*seg;
+    var p=arc(a0,a1);
+    var path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',p);
+    path.setAttribute('fill',WHEEL_COLORS[i%WHEEL_COLORS.length]);
+    path.setAttribute('stroke','#fff'); path.setAttribute('stroke-width','0.6');
+    wheelEl.appendChild(path);
+    if(showText){
+      var mid=(a0+a1)/2, rad=(mid-90)*Math.PI/180, r=64;
+      var tx=Math.cos(rad)*r, ty=Math.sin(rad)*r;
+      var t=document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('x',tx); t.setAttribute('y',ty);
+      t.setAttribute('text-anchor','middle'); t.setAttribute('dominant-baseline','middle');
+      t.setAttribute('font-size', N>16?'6':'8'); t.setAttribute('fill','#2a1420');
+      t.setAttribute('font-family','Inter,sans-serif');
+      t.setAttribute('transform','rotate('+mid+' '+tx+' '+ty+')');
+      t.textContent=namePool[i].length>16?namePool[i].slice(0,15)+'…':namePool[i];
+      wheelEl.appendChild(t);
+    }
+  }
+}
+// arc path with 0° at top, clockwise
+function arc(a0,a1){
+  var r=100;
+  var p0=pt(a0), p1=pt(a1);
+  var large=(a1-a0)>180?1:0;
+  return 'M0 0 L'+p0.x+' '+p0.y+' A'+r+' '+r+' 0 '+large+' 1 '+p1.x+' '+p1.y+' Z';
+}
+function pt(deg){ var rad=(deg-90)*Math.PI/180, r=100; return {x:Math.cos(rad)*r, y:Math.sin(rad)*r}; }
+
+function spin(){
+  if(spinning) return;
+  if(namePool.length===0){ openNames(); return; }
+  spinning=true;
+  document.getElementById('spinBtn').disabled=true;
+  var N=namePool.length, seg=360/N;
+  var winner=Math.floor(Math.random()*N);
+  var center=winner*seg+seg/2;                 // clockwise from top
+  var jitter=(Math.random()-0.5)*seg*0.7;
+  var target=360*6 - center - jitter;          // 6 full turns then align to pointer (top)
+  wheelRot = wheelRot - (wheelRot%360) + target; // grow monotonically
+  wheelEl.style.transform='rotate('+wheelRot+'deg)';
+  window._pendingWinner=winner;
+}
+wheelEl.addEventListener('transitionend',function(){
+  if(!spinning) return;
+  spinning=false;
+  document.getElementById('spinBtn').disabled=false;
+  var idx=window._pendingWinner;
+  var name=namePool[idx];
+  var g=DECK.giveaways[gwIndex];
+  document.getElementById('w-name').textContent=name;
+  document.getElementById('w-prize').textContent=g.prize;
+  document.getElementById('w-sponsor').textContent='Compliments of '+g.sponsor;
+  document.getElementById('winnerSheet').classList.add('show');
+  // remove winner so they can't win again
+  namePool.splice(idx,1);
+  updateNameUI();
+});
+document.getElementById('spinBtn').addEventListener('click',spin);
+document.getElementById('w-close').addEventListener('click',function(){ document.getElementById('winnerSheet').classList.remove('show'); });
+document.getElementById('w-again').addEventListener('click',function(){ document.getElementById('winnerSheet').classList.remove('show'); setTimeout(spin,250); });
+
+// ---- overlays ----
+function anyOverlayOpen(){ return document.querySelector('.overlay.show')!==null; }
+function closeOverlays(){ document.querySelectorAll('.overlay.show').forEach(function(o){o.classList.remove('show');}); }
+document.querySelectorAll('.overlay').forEach(function(o){ o.addEventListener('click',function(e){ if(e.target===o) o.classList.remove('show'); }); });
+
+// hint auto-hide
+var hint=document.getElementById('hintMsg');
+var ht=setTimeout(function(){hint.style.opacity=0;},4500);
+document.addEventListener('mousemove',function(){ hint.style.opacity=1; clearTimeout(ht); ht=setTimeout(function(){hint.style.opacity=0;},3000); });
+
+// init
+fillDeck();
+updateNameUI();
+show(0);
+</script>
+</body>
+</html>

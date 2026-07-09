@@ -58,5 +58,18 @@ window.LIVE_DATA = [
     sponsorLink: "https://www.adin-implants.com/",
     sortDate: "2026-07-09",
     status: "upcoming"
+  },
+  {
+    title: "Dental Exit Planning: Building Your Practice's Endgame Before You Need It",
+    date: "October 15, 2026",
+    time: "8:00 PM – 9:30 PM EST",
+    presenter: "Saul Kaplan",
+    description: "Every dentist eventually steps away from the chair, but far too few plan for it until the decision is already upon them. Presented by Crown Catapult, this session demystifies dental exit planning: when to start, how to position your practice for its best possible valuation, and what today's market actually looks like for sellers.\n\nWhether you're years from an exit or actively weighing your options, you'll leave with a clearer picture of the paths available — from traditional sales to DSOs to newer models many practice owners don't yet know exist.\n\nTopics include when to start planning your exit, what you can do now to secure the best valuation, the current state of the market, the pros and cons of selling to a DSO, and new models you may not be aware of. Relevant for all members of the community. 1 CE credit.",
+    registerLink: "https://events.teams.microsoft.com/event/b4c4e835-2de2-4d0b-9146-5d1b8990a429@353aa5d5-fd41-4aae-bc79-6722f1ca6cce",
+    sponsor: "Crown Catapult",
+    sponsorName: "Crown Catapult",
+    sponsorLink: "https://crowncatapult.com/",
+    sortDate: "2026-10-15",
+    status: "upcoming"
   }
 ];

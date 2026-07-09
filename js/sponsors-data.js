@@ -225,7 +225,8 @@ window.SPONSORS_DATA = [
     link: "https://www.thealtairhotel.com",
     blurb: "The Altair Bay Harbor is a boutique Shabbos-friendly luxury hotel in Miami's Bay Harbor Islands — the official conference hotel of Dental Wisdom 2027, offering comfort, community, and exceptional hospitality.",
     tier: "bronze",
-    attending: true
+    attending: true,
+    videoUrl: "https://www.youtube.com/embed/W2e83n_MNGI"
   },
   {
     name: "Pizza Biza",

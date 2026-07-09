@@ -441,6 +441,17 @@ window.DEALS_DATA = [
     keywords: "sugar free candy lollipops xylitol cavity prevention kids dental health patient gift waiting room anxiety"
   },
   {
+    title: "The Altair Hotel",
+    shortDescription: "Official Conference Hotel",
+    category: "Israel & Kosher",
+    description: "The Altair Bay Harbor is a boutique Shabbos-friendly luxury hotel in Miami's Bay Harbor Islands — the official conference hotel of Dental Wisdom 2027, offering comfort, community, and exceptional hospitality.",
+    link: "https://www.thealtairhotel.com",
+    promo: "",
+    imageUrl: "/images/deals/the-altair-hotel.png",
+    videoUrl: "https://www.youtube.com/embed/W2e83n_MNGI",
+    keywords: "hotel lodging Miami Bay Harbor Islands Shabbos kosher luxury boutique conference hotel accommodation stay travel hospitality"
+  },
+  {
     title: "Marcus by Goldman Sachs High-Yield Savings",
     shortDescription: "High-Yield Savings",
     category: "Personal & Miscellaneous",

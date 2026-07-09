@@ -121,8 +121,8 @@
 
   /* ---- 4 spotlight ---- */
   #s-spot .sp-hero{flex:1;display:flex;align-items:center;gap:52px;margin-top:10px;min-height:0;}
-  #s-spot .sp-logocard{flex:none;width:580px;height:340px;padding:18px;}
-  #s-spot .sp-logocard img{width:100%;height:100%;object-fit:cover;}
+  #s-spot .sp-logocard{flex:none;width:460px;height:210px;padding:18px;}
+  #s-spot .sp-logocard img{max-height:174px;max-width:100%;object-fit:contain;}
   #s-spot .spot-content{flex:1;min-width:0;}
   #s-spot .spot-head{font-family:var(--font-head);font-size:50px;line-height:1.12;font-style:italic;color:var(--ink);}
   #s-spot .spot-head .g{color:var(--gold);}
@@ -144,8 +144,8 @@
   #s-lect .subt{font-family:var(--font-head);font-style:italic;font-size:25px;color:var(--gold-text);margin-top:4px;}
   #s-lect .cols{margin-top:18px;gap:52px;padding-top:22px;}
   #s-lect .col-l{flex:.95;}
-  #s-lect .logobox{padding:16px;height:280px;}
-  #s-lect .logobox img{width:100%;height:100%;object-fit:cover;}
+  #s-lect .logobox{padding:16px;height:230px;}
+  #s-lect .logobox img{max-height:198px;max-width:100%;object-fit:contain;}
   #s-lect .doc{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:20px;}
   #s-lect .role{font-style:italic;color:var(--muted);font-size:15px;margin-top:3px;}
   #s-lect .cepill{display:inline-block;background:var(--navy);color:var(--gold-bright);font-weight:700;letter-spacing:2.5px;font-size:12px;padding:10px 20px;margin-top:14px;text-transform:uppercase;border-radius:6px;}
@@ -182,8 +182,8 @@
   #s-give .prizecard{margin-top:16px;background:#fff;border:1px solid #f2d0d8;border-radius:14px;padding:18px 22px;box-shadow:0 10px 28px rgba(209,90,122,.12);transition:box-shadow .3s,border-color .3s,transform .3s;}
   #s-give .prizecard.is-spinning{border-color:var(--pink);box-shadow:0 0 0 4px rgba(209,90,122,.18),0 14px 34px rgba(209,90,122,.28);animation:cardpulse 1s ease-in-out infinite;}
   @keyframes cardpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
-  #s-give .sponsorlogo{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--hair);border-radius:14px;height:256px;padding:14px;margin-bottom:14px;box-shadow:0 4px 14px rgba(30,42,56,.06);overflow:hidden;}
-  #s-give .sponsorlogo img{width:100%;height:100%;object-fit:cover;}
+  #s-give .sponsorlogo{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--hair);border-radius:14px;height:170px;padding:14px;margin-bottom:14px;box-shadow:0 4px 14px rgba(30,42,56,.06);}
+  #s-give .sponsorlogo img{max-height:142px;max-width:100%;object-fit:contain;}
   #s-give .prizecard .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c0507a;font-weight:600;}
   #s-give .prizecard .prize{font-family:var(--font-head);font-style:italic;font-size:30px;color:var(--ink);margin:4px 0 10px;line-height:1.05;}
   #s-give .prizecard .comp{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;}
@@ -502,7 +502,7 @@ const DECK = {
 
   spotlight: {                                         // slide 4 — new every month
     category: "Dental Supplies",
-    logo:     "/images/sponsors/crazy-dental.png",
+    logo:     "logos/crazy-dental.png",
     tagline1: "Guaranteed Lowest Price",               // ink-colored part of headline
     tagline2: "on Our Top-Selling Products",           // gold part of headline
     bullets:  [                                        // optional — 0 or 4 look best; omit for none
@@ -524,7 +524,7 @@ const DECK = {
     subtitle: "Same Day or Staged? Five Patient Cases from Planning to Restoration",
     doctor:   "Dr. Daniel Reich",
     role:     "Presented in partnership with Adin Implants",
-    logo:     "/images/sponsors/adin.png",
+    logo:     "logos/adin.png",
     website:  "adin-implants.com",
     description: [
       "The All-on-X concept has transformed full-arch rehabilitation — but does every case require immediate surgery and restoration on the same day? Dr. Daniel Reich examines the clinical considerations, advantages, and limitations of both immediate and staged treatment approaches.",
@@ -533,8 +533,8 @@ const DECK = {
   },
 
   giveaways: [                                         // slide 7 — the wheel prizes
-    { sponsor: "Live Well Capital",  prize: "Yeti Coffee Mugs",  logo: "/images/sponsors/livewell-capital.png" },
-    { sponsor: "MB Precious Metals", prize: "1 oz Silver Coins", logo: "/images/sponsors/mb-precious-metals.png" }
+    { sponsor: "Live Well Capital",  prize: "Yeti Coffee Mugs",  logo: "logos/livewell-capital.png" },
+    { sponsor: "MB Precious Metals", prize: "1 oz Silver Coins", logo: "logos/mb-precious-metals.png" }
   ]
 };
 /* ============================================================

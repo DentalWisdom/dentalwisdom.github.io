@@ -96,13 +96,13 @@
   .conf .sub{font-family:var(--font-head);font-style:italic;font-size:27px;color:var(--gold);margin-bottom:22px;}
   .conf .meta{font-weight:700;letter-spacing:2.5px;font-size:15px;color:var(--ink);text-transform:uppercase;}
   .conf .meta .dot{color:var(--gold);margin:0 12px;}
-  .stats{display:flex;background:var(--sand-2);border-radius:8px;margin:22px 0 24px;padding:18px 0;}
+  .stats{display:flex;background:var(--sand-2);border-radius:12px;margin:22px 0 24px;padding:18px 0;}
   .stat{flex:1;text-align:center;border-right:1px solid var(--hair);}
   .stat:last-child{border-right:none;}
   .stat .n{font-family:var(--font-head);font-style:italic;font-size:42px;color:var(--ink);line-height:1;}
   .stat .l{font-size:11.5px;letter-spacing:2px;color:var(--gold-text);text-transform:uppercase;margin-top:8px;font-weight:600;}
   .conf-bottom{display:flex;gap:44px;align-items:center;margin-top:2px;}
-  .savebox{background:var(--navy);color:#fff;display:flex;flex:none;border-radius:8px;overflow:hidden;box-shadow:0 8px 22px rgba(18,35,63,.18);}
+  .savebox{background:var(--navy);color:#fff;display:flex;flex:none;border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(18,35,63,.18);}
   .savebox .l{padding:20px 28px;}
   .savebox .r{padding:20px 28px;border-left:2px dashed rgba(255,255,255,.38);}
   .savebox .k{font-size:11px;letter-spacing:3px;color:var(--gold-bright);text-transform:uppercase;font-weight:600;}
@@ -114,15 +114,18 @@
   .reserve .n1{font-style:italic;font-size:14.5px;color:var(--ink-soft);margin-top:8px;}
   .reserve .n2{font-style:italic;font-size:13px;color:var(--muted);margin-top:2px;}
 
-  /* ---- 5 spotlight ---- */
-  #s-spot .sphead{display:flex;justify-content:space-between;align-items:center;gap:24px;}
-  #s-spot .splogo{max-height:112px;max-width:420px;object-fit:contain;}
-  #s-spot .tagline{flex:1;display:flex;align-items:center;}
-  #s-spot .spot-content{flex:1;display:flex;flex-direction:column;justify-content:center;}
-  #s-spot .spot-head{font-family:var(--font-head);font-size:54px;line-height:1.1;font-style:italic;color:var(--ink);}
+  /* ---- shared white logo card (used wherever a sponsor logo appears) ---- */
+  .logocard{background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 6px 20px rgba(30,42,56,.08);display:flex;align-items:center;justify-content:center;}
+
+  /* ---- 4 spotlight ---- */
+  #s-spot .sp-hero{flex:1;display:flex;align-items:center;gap:52px;margin-top:10px;min-height:0;}
+  #s-spot .sp-logocard{flex:none;width:440px;height:230px;padding:26px 34px;}
+  #s-spot .sp-logocard img{max-height:176px;max-width:100%;object-fit:contain;}
+  #s-spot .spot-content{flex:1;min-width:0;}
+  #s-spot .spot-head{font-family:var(--font-head);font-size:50px;line-height:1.12;font-style:italic;color:var(--ink);}
   #s-spot .spot-head .g{color:var(--gold);}
-  #s-spot .spot-content.has-bullets .spot-head{font-size:42px;margin-bottom:26px;}
-  #s-spot .spot-bullets{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 46px;max-width:920px;}
+  #s-spot .spot-content.has-bullets .spot-head{font-size:40px;}
+  #s-spot .spot-bullets{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 46px;margin:28px 0 8px;}
   #s-spot .spot-bullets li{display:flex;gap:13px;align-items:center;font-size:19px;color:var(--ink);font-weight:600;}
   #s-spot .spot-bullets li::before{content:"";width:12px;height:12px;background:var(--gold);border-radius:3px;flex:none;}
   #s-spot .spot-bullets:empty{display:none;}
@@ -130,7 +133,7 @@
   #s-spot .spfoot .k{font-size:12px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;font-weight:600;}
   #s-spot .spfoot .name{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:4px;}
   #s-spot .spfoot .co{font-style:italic;color:var(--muted);font-size:15px;margin-top:2px;}
-  #s-spot .spfoot .phone{font-family:var(--font-head);font-weight:700;font-size:32px;color:var(--ink);margin-top:4px;}
+  #s-spot .spfoot .phone{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:4px;}
   #s-spot .spfoot .web{font-family:var(--font-head);font-style:italic;color:var(--gold-text);font-size:24px;text-align:right;margin-top:5px;font-weight:500;}
   #s-spot .spfoot .right{text-align:right;}
 
@@ -138,12 +141,12 @@
   #s-lect h1.big{font-family:var(--font-head);font-style:italic;font-size:54px;color:var(--ink);margin-top:4px;line-height:1.02;}
   #s-lect .subt{font-family:var(--font-head);font-style:italic;font-size:25px;color:var(--gold-text);margin-top:4px;}
   #s-lect .cols{margin-top:18px;gap:52px;padding-top:22px;}
-  #s-lect .col-l{flex:.82;}
-  #s-lect .logobox{background:#fff;border:1px solid var(--hair);border-radius:8px;padding:24px;display:flex;align-items:center;justify-content:center;height:206px;box-shadow:0 4px 14px rgba(30,42,56,.06);}
-  #s-lect .logobox img{max-height:158px;max-width:100%;object-fit:contain;}
-  #s-lect .doc{font-family:var(--font-head);font-weight:700;font-size:32px;color:var(--ink);margin-top:24px;}
+  #s-lect .col-l{flex:.95;}
+  #s-lect .logobox{padding:26px 30px;height:252px;}
+  #s-lect .logobox img{max-height:200px;max-width:100%;object-fit:contain;}
+  #s-lect .doc{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:20px;}
   #s-lect .role{font-style:italic;color:var(--muted);font-size:15px;margin-top:3px;}
-  #s-lect .cepill{display:inline-block;background:var(--navy);color:var(--gold-bright);font-weight:700;letter-spacing:2.5px;font-size:12px;padding:10px 20px;margin-top:16px;text-transform:uppercase;border-radius:4px;}
+  #s-lect .cepill{display:inline-block;background:var(--navy);color:var(--gold-bright);font-weight:700;letter-spacing:2.5px;font-size:12px;padding:10px 20px;margin-top:14px;text-transform:uppercase;border-radius:6px;}
   #s-lect .col-r{border-left:3px solid var(--gold);padding-left:24px;display:flex;flex-direction:column;}
   #s-lect .col-r .k{font-size:12px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
   #s-lect .col-r p{font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin-bottom:11px;}
@@ -161,9 +164,9 @@
 
   /* ---- 7 giveaway ---- */
   #s-give{background:linear-gradient(155deg,#fff7f5 0%,#fdeef1 52%,#fbe6ec 100%);}
-  #s-give h1.big{font-size:44px;margin-top:4px;}
+  #s-give h1.big{font-size:44px;margin-top:4px;text-align:center;}
   #s-give h1.big em{color:var(--pink);font-style:italic;}
-  #s-give .gwbody{flex:1;display:flex;gap:52px;align-items:center;min-height:0;padding-top:8px;}
+  #s-give .gwbody{flex:1;display:flex;gap:64px;align-items:center;justify-content:center;min-height:0;padding-top:4px;}
   #s-give .wheelcol{flex:none;width:392px;display:flex;flex-direction:column;align-items:center;}
   .wheel-wrap{position:relative;width:360px;height:360px;}
   .wheel-wrap .pointer{position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:26px solid var(--pink);z-index:4;filter:drop-shadow(0 2px 4px rgba(0,0,0,.28));}
@@ -171,21 +174,21 @@
   .hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:var(--pink);color:#fff;border:5px solid #fff;font-family:var(--font-head);font-weight:700;font-size:17px;cursor:pointer;box-shadow:0 5px 16px rgba(209,90,122,.5);z-index:5;transition:background .2s,transform .15s;}
   .hub:hover{background:var(--pink-dark);transform:translate(-50%,-50%) scale(1.05);}
   .hub:disabled{opacity:.55;cursor:default;transform:translate(-50%,-50%);}
-  #s-give .infocol{flex:1;}
+  #s-give .infocol{flex:none;width:470px;}
   #s-give .selwrap label{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#a2415c;font-weight:700;}
-  #s-give select{display:block;width:100%;max-width:470px;margin-top:9px;padding:14px 16px;font-family:var(--font-body);font-size:16px;border:2px solid #edc2cd;border-radius:10px;background:#fff;color:var(--ink);cursor:pointer;}
-  #s-give .prizecard{margin-top:20px;max-width:470px;background:#fff;border:1px solid #f2d0d8;border-radius:14px;padding:22px 26px;box-shadow:0 10px 28px rgba(209,90,122,.12);transition:box-shadow .3s,border-color .3s,transform .3s;}
+  #s-give select{display:block;width:100%;margin-top:8px;padding:12px 16px;font-family:var(--font-body);font-size:16px;border:2px solid #edc2cd;border-radius:10px;background:#fff;color:var(--ink);cursor:pointer;}
+  #s-give .prizecard{margin-top:16px;background:#fff;border:1px solid #f2d0d8;border-radius:14px;padding:18px 22px;box-shadow:0 10px 28px rgba(209,90,122,.12);transition:box-shadow .3s,border-color .3s,transform .3s;}
   #s-give .prizecard.is-spinning{border-color:var(--pink);box-shadow:0 0 0 4px rgba(209,90,122,.18),0 14px 34px rgba(209,90,122,.28);animation:cardpulse 1s ease-in-out infinite;}
   @keyframes cardpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
-  #s-give .sponsorlogo{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid #f0e7ea;border-radius:10px;height:136px;padding:14px 18px;margin-bottom:16px;box-shadow:inset 0 0 0 1px rgba(209,90,122,.06);}
-  #s-give .sponsorlogo img{max-height:110px;max-width:100%;object-fit:contain;}
+  #s-give .sponsorlogo{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--hair);border-radius:14px;height:172px;padding:16px 20px;margin-bottom:14px;box-shadow:0 4px 14px rgba(30,42,56,.06);}
+  #s-give .sponsorlogo img{max-height:138px;max-width:100%;object-fit:contain;}
   #s-give .prizecard .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:#c0507a;font-weight:600;}
-  #s-give .prizecard .prize{font-family:var(--font-head);font-style:italic;font-size:34px;color:var(--ink);margin:6px 0 12px;line-height:1.05;}
+  #s-give .prizecard .prize{font-family:var(--font-head);font-style:italic;font-size:30px;color:var(--ink);margin:4px 0 10px;line-height:1.05;}
   #s-give .prizecard .comp{font-size:12px;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;}
-  #s-give .prizecard .sponsor{font-weight:700;font-size:18px;color:var(--ink);margin-top:3px;}
-  #s-give .poolnote{margin-top:18px;font-size:14px;color:var(--muted);}
+  #s-give .prizecard .sponsor{font-weight:700;font-size:17px;color:var(--ink);margin-top:3px;}
+  #s-give .poolnote{margin-top:14px;font-size:13.5px;color:var(--muted);text-align:center;}
   #s-give .poolnote strong{color:var(--pink-dark);}
-  #s-give .finelegal{flex:none;padding-top:14px;font-size:10.5px;line-height:1.5;color:#9aa1ac;}
+  #s-give .finelegal{flex:none;padding-top:12px;font-size:10.5px;line-height:1.5;color:#9aa1ac;text-align:center;}
 
   /* fixed chrome */
   #progressbar{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:30;transition:width .4s ease;}
@@ -223,7 +226,7 @@
   #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:30px;color:var(--pink-dark);margin-bottom:22px;}
   #winnerSheet .sponsorband{background:var(--navy);border-radius:16px;padding:22px;margin-bottom:18px;display:flex;flex-direction:column;align-items:center;gap:12px;}
   #winnerSheet .sponsorband .th{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
-  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:18px 32px;min-height:130px;width:100%;max-width:460px;}
+  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;padding:18px 32px;min-height:130px;width:100%;max-width:460px;}
   #winnerSheet .w-logowrap img{max-height:104px;max-width:380px;object-fit:contain;}
   #winnerSheet .sponsorline{font-size:19px;color:#fff;letter-spacing:.4px;font-weight:700;}
   #winnerSheet .confirm{margin:0 auto;background:#fdeef1;border:1px dashed #e5a9ba;border-radius:12px;padding:16px 24px;font-size:21px;font-weight:700;color:var(--pink-dark);max-width:520px;}
@@ -288,16 +291,14 @@
     <section class="slide" id="s-spot">
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
       <div class="body anim">
-        <div class="sphead">
-          <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
-          <img class="splogo" id="t-spot-logo" src="" alt="Sponsor logo">
-        </div>
-        <div class="tagline">
+        <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
+        <div class="sp-hero">
+          <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
           <div class="spot-content" id="t-spot-content">
             <p class="spot-head"><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p>
-            <ul class="spot-bullets" id="t-spot-bullets"></ul>
           </div>
         </div>
+        <ul class="spot-bullets" id="t-spot-bullets"></ul>
         <div class="baseline spfoot">
           <div>
             <div class="k">Contact</div>
@@ -351,7 +352,7 @@
         <div class="subt" id="t-lect-subt">Building Your Clear Aligner Practice</div>
         <div class="cols baseline">
           <div class="col-l">
-            <div class="logobox"><img id="t-lect-logo" src="" alt="Sponsor logo"></div>
+            <div class="logocard logobox"><img id="t-lect-logo" src="" alt="Sponsor logo"></div>
             <div class="doc" id="t-lect-doc">Dr. Sam Glick</div>
             <div class="role" id="t-lect-role">Key Opinion Leader, orthobrain</div>
             <div class="cepill" id="t-lect-pill">1 CE Credit</div>
@@ -377,6 +378,7 @@
               <svg id="wheel" viewBox="-110 -110 220 220" aria-label="Prize wheel"></svg>
               <button class="hub" id="spinBtn">Spin</button>
             </div>
+            <div class="poolnote"><strong id="gw-count">0</strong> names in the wheel · tap <em>Add names</em> below to load the list.</div>
           </div>
           <div class="infocol">
             <div class="selwrap">
@@ -390,7 +392,6 @@
               <div class="comp">Compliments of</div>
               <div class="sponsor" id="gw-sponsor">Live Well Capital</div>
             </div>
-            <div class="poolnote"><strong id="gw-count">0</strong> names in the wheel · tap <em>Add names</em> below to load the list.</div>
           </div>
         </div>
         <div class="finelegal">We'll grab the attendee list at the start of the call and add everyone to the spinning wheel for some great prizes. You must be in attendance to win. Winners, please text Lisa right away to confirm and claim your prize. If you've already received that exact prize, please let us know so we can re-spin for someone else and keep things fair for all!</div>

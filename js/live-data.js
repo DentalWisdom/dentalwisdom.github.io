@@ -8,7 +8,8 @@
    Fields per session:
      title        - Session title (required)
      date         - Display date, e.g. "May 14, 2026"
-     time         - Display time, e.g. "8:00 PM – 9:30 PM ET"
+     time         - Display time, e.g. "8:00 PM – 9:30 PM EST"
+                    (always label times "EST" — never "ET" or "EDT")
      presenter    - Presenter name
      description  - Full session description
      registerLink - Registration URL

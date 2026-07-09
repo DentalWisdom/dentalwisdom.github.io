@@ -49,7 +49,7 @@ document.addEventListener('DOMContentLoaded', function () {
         dayNum    = String(parseInt(parts[2], 10));
       }
 
-      // Time: "8:00 PM – 9:30 PM ET" → split on em-dash for two lines
+      // Time: "8:00 PM – 9:30 PM EST" → split on em-dash for two lines
       var timeDisplay = (s.time || '').replace(' – ', '\n');
 
       var modClass = opts.isPast ? ' session-item--past' : '';

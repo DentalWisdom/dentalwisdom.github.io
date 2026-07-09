@@ -77,6 +77,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.
 
 ## Known intentional decisions (do not "fix" these)
+- **Time labels are always "EST"** (Ben's call, July 2026): every Live session time — and any time shown anywhere on the site — displays as "EST", e.g. "8:00 PM – 9:30 PM EST". Never use "ET" or "EDT", even for events during daylight-saving months. Ben understands "EST" is technically standard time; he wants the clock time to read as New York local time with the "EST" label used uniformly. When adding a new session to `js/live-data.js`, always write the `time` field with "EST".
 - **Mobile menu focus target (`js/main.js`, `openMenu`)**: focuses the first link in `.mobile-menu__list` (e.g. "Conference"), NOT the logo link. Focusing the logo link makes the browser's gold focus ring stack on top of the logo's navy border, which looks like two nested boxes. Do not change this back to `mobileMenu.querySelector('a')`.
 - **Pricing label on homepage**: The homepage pricing box and accordion say "Dental Resident" (concise). The FAQ says "Dental Student or Dental Resident" (more complete). Both are correct — this discrepancy is intentional.
 - **CSS cache version**: The stylesheet currently loads as `styles.css?v=9`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):

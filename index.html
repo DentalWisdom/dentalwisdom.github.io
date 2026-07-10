@@ -114,9 +114,8 @@
 
     <!-- ═══ 1. HERO — warm overlay, editorial H1, scroll cue ═══ -->
     <section class="hero">
-      <video class="hero__media" autoplay muted loop playsinline poster="/images/hero-poster.webp">
-        <source src="/images/hero.mp4" type="video/mp4">
-      </video>
+      <video class="hero__media" id="heroVideo" muted loop playsinline poster="/images/hero-poster.webp" style="display:none"></video>
+      <img class="hero__media" id="heroPoster" src="/images/hero-poster.webp" alt="" width="1600" height="900">
       <div class="hero__overlay"></div>
       <div class="container hero__content" data-reveal>
         <h1>
@@ -614,17 +613,23 @@
   <script src="/js/sponsors-data.js?v=2"></script>
   <script src="/js/sponsors.js?v=4"></script>
 
-  <!-- Hero video: pause when user prefers reduced motion -->
+  <!-- Hero video: only load/play on tablets & desktop. Phones (and anyone with reduced-motion set) see the static photo instead, so the 2.4MB video file is never downloaded on mobile. -->
   <script>
     (function() {
-      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
-        var vid = document.querySelector('.hero__media');
-        if (vid) {
-          vid.removeAttribute('autoplay');
-          vid.removeAttribute('loop');
-          vid.pause();
-        }
-      }
+      var isDesktop = window.matchMedia('(min-width: 768px)').matches;
+      var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      if (!isDesktop || reducedMotion) return;
+      var video = document.getElementById('heroVideo');
+      var poster = document.getElementById('heroPoster');
+      if (!video || !poster) return;
+      var source = document.createElement('source');
+      source.src = '/images/hero.mp4';
+      source.type = 'video/mp4';
+      video.appendChild(source);
+      video.autoplay = true;
+      video.load();
+      video.style.display = '';
+      poster.style.display = 'none';
     })();
   </script>
 

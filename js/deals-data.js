@@ -76,7 +76,7 @@ window.DEALS_DATA = [
     description: "PPO and revenue cycle management consulting to increase practice revenue and efficiency.",
     link: "https://apexreimbursement.com/dental-wisdom/",
     promo: "Free Consult",
-    imageUrl: "/images/deals/apex-reimbursement.jpg",
+    imageUrl: "/images/deals/apex-reimbursement.webp",
     keywords: "PPO insurance fee schedule credentialing billing reimbursement revenue cycle management consulting RCM collections"
   },
   {
@@ -368,7 +368,7 @@ window.DEALS_DATA = [
     description: "Upscale kosher catering specializing in artisanal pizzas and full event menus (NY tri-state & South Florida).",
     link: "https://www.pizzabiza.com/",
     promo: "",
-    imageUrl: "/images/deals/pizza-biza.jpg",
+    imageUrl: "/images/deals/pizza-biza.webp",
     keywords: "kosher catering pizza event food New York NJ New Jersey Florida parties office lunch dairy milchig"
   },
   {

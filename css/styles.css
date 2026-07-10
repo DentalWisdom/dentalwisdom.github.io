@@ -16,8 +16,10 @@
   --color-ink: #1E2A38;
   --color-gold: #B8892A;      /* warm gold (was #D9A441) */
   --color-gold-warm: #B8892A; /* canonical warm gold token */
-  --color-gold-dark: #9e7523; /* darkened gold — button hover backgrounds */
+  --color-gold-dark: #9e7523; /* darkened gold — decorative hover backgrounds (borders/icons only) */
   --color-gold-text: #8C6A1A; /* darkened gold for text — passes WCAG AA (4.65:1 on white) */
+  --color-gold-cta: #8F6A21; /* deep gold — .btn-primary background only; passes WCAG AA (4.94:1) with white text */
+  --color-gold-cta-hover: #7B5B1C; /* darker hover state for --color-gold-cta (6.26:1 with white text) */
   --color-parchment: #EDE8DE; /* warm section band */
   --color-slate: #5C6670;
   --color-white: #FFFFFF;
@@ -28,7 +30,7 @@
   --color-text: var(--color-ink);
   --color-text-muted: var(--color-slate);
   --color-accent: var(--color-gold-warm); /* was seaglass — now warm gold */
-  --color-cta: var(--color-gold-warm);    /* was coral — now warm gold */
+  --color-cta: var(--color-gold-cta);     /* deep gold — WCAG-safe with white button text */
   --color-highlight: var(--color-gold-warm);
   --color-border: rgba(30, 42, 56, 0.12);
 
@@ -135,6 +137,7 @@ body {
 
 img, video {
   max-width: 100%;
+  height: auto;
   display: block;
 }
 
@@ -308,7 +311,7 @@ body.has-subnav [id] {
 }
 
 .btn-primary:hover {
-  background-color: var(--color-gold-dark);
+  background-color: var(--color-gold-cta-hover);
   color: var(--color-white);
   box-shadow: var(--shadow-card-hover);
 }
@@ -1457,13 +1460,13 @@ body.menu-open {
   background: var(--color-white);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow-card);
-  border-left: 4px solid transparent;
+  border: 1px solid transparent;
   transition: border-color var(--transition-base), box-shadow var(--transition-base);
   overflow: hidden;
 }
 
 .accordion details[open] {
-  border-left-color: var(--color-ink);
+  border-color: var(--color-border);
   box-shadow: var(--shadow-card-hover);
 }
 
@@ -1842,6 +1845,84 @@ body.menu-open {
   width: 100%;
   height: 100%;
   border: 0;
+}
+
+/* Click-to-play facade — defers YouTube's player until the visitor
+   actually wants to watch, instead of loading it eagerly. */
+.video-embed__facade {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  border: 0;
+  background: var(--color-ink);
+  cursor: pointer;
+  display: block;
+}
+
+.video-embed__facade img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.video-embed__facade::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(30, 42, 56, 0.18);
+  transition: background var(--transition-base);
+}
+
+.video-embed__facade:hover::before,
+.video-embed__facade:focus-visible::before {
+  background: rgba(30, 42, 56, 0.28);
+}
+
+.video-embed__play {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 72px;
+  height: 72px;
+  border-radius: 50%;
+  background-color: var(--color-ink);
+  box-shadow: var(--shadow-card-hover);
+  transition: transform var(--transition-base);
+}
+
+.video-embed__play::after {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 12px 0 12px 20px;
+  border-color: transparent transparent transparent var(--color-white);
+}
+
+.video-embed__facade:hover .video-embed__play,
+.video-embed__facade:focus-visible .video-embed__play {
+  transform: translate(-50%, -50%) scale(1.08);
+}
+
+@media (min-width: 768px) {
+  .video-embed__play {
+    width: 88px;
+    height: 88px;
+  }
+  .video-embed__play::after {
+    border-width: 15px 0 15px 24px;
+  }
 }
 
 .video-caption {
@@ -2251,6 +2332,7 @@ body.menu-open {
   text-align: center;
   color: var(--color-text-muted);
   margin: 0;
+  padding-top: var(--space-lg);
 }
 
 .deals-suggest .btn {
@@ -2838,8 +2920,8 @@ body.menu-open {
 :focus-visible { outline-color: var(--color-gold-warm); }
 
 /* Buttons */
-.btn-primary { background-color: var(--color-gold-warm); color: #fff; border-color: var(--color-gold-warm); }
-.btn-primary:hover, .btn-primary:focus-visible { background-color: var(--color-gold-dark); border-color: var(--color-gold-dark); color: #fff; }
+.btn-primary { background-color: var(--color-gold-cta); color: #fff; border-color: var(--color-gold-cta); }
+.btn-primary:hover, .btn-primary:focus-visible { background-color: var(--color-gold-cta-hover); border-color: var(--color-gold-cta-hover); color: #fff; }
 .btn-secondary { background-color: transparent; border-color: var(--color-ink); color: var(--color-ink); }
 .btn-secondary:hover, .btn-secondary:focus-visible { background-color: var(--color-ink); color: var(--color-ivory); }
 
@@ -3213,8 +3295,8 @@ body.menu-open {
   margin: 0 auto 1rem; line-height: 1.25;
 }
 @media (min-width: 768px) { #section-cta h2 { font-size: 2.75rem; } }
-#section-cta .btn-primary { background-color: var(--color-gold-warm); border-color: var(--color-gold-warm); color: #fff; }
-#section-cta .btn-primary:hover { background-color: var(--color-gold-dark); }
+#section-cta .btn-primary { background-color: var(--color-gold-cta); border-color: var(--color-gold-cta); color: #fff; }
+#section-cta .btn-primary:hover { background-color: var(--color-gold-cta-hover); }
 #section-cta .cta-questions {
   margin-top: 0.5rem;
   font-size: 0.85rem;

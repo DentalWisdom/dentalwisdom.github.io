@@ -127,7 +127,8 @@ window.DEALS_DATA = [
     link: "https://discover.hellopearl.com/dental-wisdom/",
     promo: "",
     imageUrl: "/images/deals/pearl.png",
-    keywords: "AI artificial intelligence radiograph x-ray detection caries cavities pathology second opinion practice analytics"
+    keywords: "AI artificial intelligence radiograph x-ray detection caries cavities pathology second opinion practice analytics",
+    videoUrl: "https://fast.wistia.net/embed/iframe/tw1po9rwgm"
   },
   {
     title: "Dental Intelligence",

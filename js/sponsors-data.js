@@ -116,7 +116,8 @@ window.SPONSORS_DATA = [
     link: "https://discover.hellopearl.com/dental-wisdom/",
     blurb: "Leading dental AI platform for real-time pathology detection, practice analytics, and insurance verification — helping practices deliver better care and grow production.",
     tier: "gold",
-    pastSponsor: true
+    pastSponsor: true,
+    videoUrl: "https://fast.wistia.net/embed/iframe/tw1po9rwgm"
   },
   {
     name: "TheraBreath",

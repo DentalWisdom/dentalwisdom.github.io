@@ -147,8 +147,8 @@ a {
 }
 
 a:hover {
-  color: var(--color-gold-warm);
-  text-decoration-color: var(--color-gold-warm);
+  color: var(--color-gold-text);
+  text-decoration-color: var(--color-gold-text);
 }
 
 h1, h2, h3, h4 {
@@ -929,7 +929,7 @@ body.menu-open {
 .pricing-card__price {
   font-family: var(--font-heading);
   font-size: 1.75rem;
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
   margin-bottom: 0.15rem;
 }
 
@@ -1486,7 +1486,7 @@ body.menu-open {
 .accordion summary::-webkit-details-marker { display: none; }
 
 .accordion details[open] > summary {
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
 }
 
 .accordion summary::after {
@@ -2714,7 +2714,7 @@ body.menu-open {
 .faq-group__title {
   font-family: var(--font-heading);
   font-size: var(--fs-h3);
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
   margin-bottom: var(--space-md);
   padding-bottom: var(--space-xs);
   border-bottom: 2px solid var(--color-border);
@@ -2757,7 +2757,7 @@ body.menu-open {
 
 .faq-item__trigger:hover {
   background: var(--color-sand);
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
 }
 
 .faq-item__trigger:focus-visible {
@@ -2766,7 +2766,7 @@ body.menu-open {
 }
 
 .faq-item__trigger[aria-expanded="true"] {
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
   background: var(--color-sand);
 }
 
@@ -2849,7 +2849,7 @@ body.menu-open {
 .modal__close:hover { background-color: var(--color-gold-warm); color: #fff; }
 
 /* Eyebrows */
-.eyebrow, .conf-overview-eyebrow, .conf-pricing-eyebrow { color: var(--color-gold-warm); }
+.eyebrow, .conf-overview-eyebrow, .conf-pricing-eyebrow { color: var(--color-gold-text); }
 
 /* Texture: gold-only wash */
 .texture {
@@ -2863,7 +2863,7 @@ body.menu-open {
 .site-footer a:hover { color: var(--color-gold-warm); }
 
 /* Pricing inside accordion */
-.pricing-card__price { color: var(--color-gold-warm); }
+.pricing-card__price { color: var(--color-gold-text); }
 .pricing-card { border-color: var(--color-parchment); }
 
 /* ────── NAV GOLD BORDER ON SCROLL ────── */
@@ -3080,7 +3080,7 @@ body.menu-open {
   color: var(--color-ink);
   margin-bottom: 0.15rem;
 }
-.conf-pricing-row strong { color: var(--color-gold-warm); }
+.conf-pricing-row strong { color: var(--color-gold-text); }
 .conf-pricing-note {
   font-size: 0.78rem;
   color: var(--color-slate);
@@ -3127,7 +3127,7 @@ body.menu-open {
 #section-details { background-color: #FFFFFF; }
 .accordion details { border-bottom: 1px solid var(--color-parchment); }
 .accordion summary { padding: 1.25rem 1.25rem; font-size: 1rem; font-weight: 600; color: var(--color-ink); }
-.accordion details[open] > summary { color: var(--color-gold-warm); }
+.accordion details[open] > summary { color: var(--color-gold-text); }
 .accordion__body { padding: 0 1.25rem 1.5rem; }
 
 /* Compact pricing chips */
@@ -3141,7 +3141,7 @@ body.menu-open {
 }
 .pricing-compact__price {
   font-family: var(--font-heading); font-size: 1.25rem;
-  font-weight: 700; color: var(--color-gold-warm); line-height: 1;
+  font-weight: 700; color: var(--color-gold-text); line-height: 1;
 }
 .pricing-compact__label { font-size: 0.82rem; color: var(--color-slate); font-weight: 500; }
 
@@ -3157,7 +3157,7 @@ body.menu-open {
   letter-spacing: 0.04em; text-transform: uppercase; margin-bottom: 0.3rem;
 }
 .room-compact__price {
-  font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-gold-warm);
+  font-family: var(--font-heading); font-size: 1.1rem; font-weight: 700; color: var(--color-gold-text);
 }
 
 /* Compact family chips */
@@ -3168,7 +3168,7 @@ body.menu-open {
   border-radius: 8px; padding: 0.55rem 1.1rem;
 }
 .family-compact__price {
-  font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--color-gold-warm);
+  font-family: var(--font-heading); font-size: 1.25rem; font-weight: 700; color: var(--color-gold-text);
 }
 .family-compact__label { font-size: 0.82rem; color: var(--color-slate); font-weight: 500; }
 

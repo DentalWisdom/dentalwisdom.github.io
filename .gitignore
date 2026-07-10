@@ -1,8 +1,13 @@
 .DS_Store
-Photos for homepage carosel - place photos here/
+# Ben's drop zones for source photos/logos — kept local, never published with the site
+Photos for Homepage Carousel  - Drop Here/
+Logos for Deals Page - Drop Here/
+Logos for Sponsors Page - Drop Here/
 *.webloc
 .fuse_hidden*
 node_modules/
 npm-debug.log*
 package-lock.json
 test_write_check.tmp
+# Local review notes — not for publishing
+WEBSITE_REVIEW_*.md

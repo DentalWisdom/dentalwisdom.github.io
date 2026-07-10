@@ -29,7 +29,7 @@
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="/css/styles.css?v=30">
   <!-- Testimonial carousel styles removed; section hidden until real quotes are available. Restore from _archive/conference-new-sponsor-testimonials.html -->
@@ -247,36 +247,7 @@
   </footer>
 
   <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
-  <div class="join-fab">
-    <button class="join-fab__button" id="joinButton" aria-haspopup="dialog" aria-controls="joinModal">Join WhatsApp Group</button>
-  </div>
-
-  <div class="modal" id="joinModal" role="dialog" aria-modal="true" aria-labelledby="joinModalTitle">
-    <div class="modal__backdrop" data-modal-close></div>
-    <div class="modal__dialog">
-      <button class="modal__close" id="joinModalClose" aria-label="Close">&times;</button>
-      <h2 class="modal__title" id="joinModalTitle">Join the Dental Wisdom Network</h2>
-      <p>This community is for dentists — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates.</p>
-      <div class="modal__iframe-wrap">
-        <iframe
-          id="JotFormIFrame-261626058813055"
-          title="Join Request Form"
-         
-          allowtransparency="true"
-          allow="geolocation; microphone; camera; fullscreen; payment"
-          src="https://form.jotform.com/261626058813055"
-          frameborder="0"
-          style="min-width:100%;max-width:100%;height:539px;border:none;"
-          scrolling="no"
-        ></iframe>
-        <script src="https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js"></script>
-        <script>window.jotformEmbedHandler("iframe[id='JotFormIFrame-261626058813055']", "https://form.jotform.com/")</script>
-      </div>
-      <p class="modal__note">Curious about our WhatsApp community? <a href="/whatsapp">Learn more</a>.</p>
-    </div>
-  </div>
-
-  <script src="/js/main.js"></script>
+  <script src="/js/main.js?v=2"></script>
   <script>
     (function() {
       var header = document.querySelector('.site-header');

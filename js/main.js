@@ -65,6 +65,27 @@ document.addEventListener('DOMContentLoaded', function () {
   if (joinButton && joinModal) {
     var lastFocusedElement = null;
 
+    // Performance: the Jotform iframe ships with data-src instead of src,
+    // so the form (and Jotform's scripts) only download the first time
+    // the modal is actually opened.
+    var joinFormLoaded = false;
+    var loadJoinForm = function () {
+      if (joinFormLoaded) return;
+      joinFormLoaded = true;
+      var iframe = joinModal.querySelector('iframe[data-src]');
+      if (!iframe) return;
+      iframe.src = iframe.getAttribute('data-src');
+      iframe.removeAttribute('data-src');
+      var s = document.createElement('script');
+      s.src = 'https://cdn.jotfor.ms/s/umd/latest/for-form-embed-handler.js';
+      s.onload = function () {
+        if (window.jotformEmbedHandler) {
+          window.jotformEmbedHandler("iframe[id='" + iframe.id + "']", 'https://form.jotform.com/');
+        }
+      };
+      document.body.appendChild(s);
+    };
+
     var getFocusableElements = function () {
       return joinModal.querySelectorAll(
         'a[href], button:not([disabled]), textarea, input, select, iframe, [tabindex]:not([tabindex="-1"])'
@@ -72,6 +93,7 @@ document.addEventListener('DOMContentLoaded', function () {
     };
 
     var openModal = function () {
+      loadJoinForm();
       lastFocusedElement = document.activeElement;
       joinModal.classList.add('is-open');
       document.body.classList.add('menu-open'); // reuses scroll-lock styles

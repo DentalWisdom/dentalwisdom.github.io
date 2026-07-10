@@ -54,7 +54,8 @@ document.addEventListener('DOMContentLoaded', function () {
         promo: (row.promo || '').trim(),
         imageUrl: (row.imageUrl || '').trim(),
         flyerUrl: (row.flyerUrl || '').trim(),
-        keywords: (row.keywords || '').trim()
+        keywords: (row.keywords || '').trim(),
+        videoUrl: (row.videoUrl || '').trim()
       };
     })
     .filter(function (deal) { return deal.title; });

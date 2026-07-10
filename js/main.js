@@ -249,27 +249,6 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* -----------------------------
-     YouTube click-to-play facade
-     Loads the real iframe (and YouTube's player script) only when
-     the visitor clicks play, instead of on page load.
-     ----------------------------- */
-  document.querySelectorAll('.video-embed__facade').forEach(function (facade) {
-    facade.addEventListener('click', function () {
-      var videoId = facade.getAttribute('data-yt-id');
-      var title = facade.getAttribute('data-yt-title') || 'Video';
-      if (!videoId) { return; }
-      var iframe = document.createElement('iframe');
-      iframe.src = 'https://www.youtube.com/embed/' + videoId + '?autoplay=1&rel=0';
-      iframe.title = title;
-      iframe.setAttribute('frameborder', '0');
-      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
-      iframe.setAttribute('allowfullscreen', '');
-      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
-      facade.parentNode.replaceChild(iframe, facade);
-    });
-  });
-
-  /* -----------------------------
      Join button: fade when footer scrolls into view
      ----------------------------- */
   var fab = document.querySelector('.join-fab');

@@ -1,8 +1,8 @@
 .DS_Store
 # Ben's drop zones for source photos/logos — kept local, never published with the site
-Photos for Homepage Carousel  - Drop Here/
-Logos for Deals Page - Drop Here/
-Logos for Sponsors Page - Drop Here/
+_Photos for Homepage Carousel  - Drop Here/
+_Logos for Deals Page - Drop Here/
+_Logos for Sponsors Page - Drop Here/
 *.webloc
 .fuse_hidden*
 node_modules/

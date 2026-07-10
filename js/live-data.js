@@ -57,7 +57,7 @@ window.LIVE_DATA = [
     sponsorName: "Adin",
     sponsorLink: "https://www.adin-implants.com/",
     sortDate: "2026-07-09",
-    status: "upcoming"
+    status: "past"
   },
   {
     title: "Dental Exit Planning: Building Your Practice's Endgame Before You Need It",

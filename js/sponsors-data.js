@@ -34,7 +34,7 @@ window.SPONSORS_DATA = [
   /* ── PLATINUM ─────────────────────────────────────────── */
   {
     name: "orthobrain",
-    logoUrl: "/images/sponsors/orthobrain.png",
+    logoUrl: "/images/sponsors/orthobrain.webp",
     link: "https://orthobrain.com/",
     blurb: "Integrate orthodontics into your practice easily and profitably with orthodontist-led treatment planning and SimplyClear aligners — no orthodontic residency required.",
     tier: "platinum",
@@ -42,7 +42,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Touro College of Dental Medicine",
-    logoUrl: "/images/sponsors/touro.png",
+    logoUrl: "/images/sponsors/touro.webp",
     link: "https://dental.touro.edu/",
     blurb: "Touro College of Dental Medicine trains the next generation of compassionate, community-focused dental professionals with an emphasis on innovation, clinical excellence, and service.",
     tier: "platinum",
@@ -50,7 +50,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "LiveWell Capital",
-    logoUrl: "/images/sponsors/livewell-capital.png",
+    logoUrl: "/images/sponsors/livewell-capital.webp",
     link: "https://www.livewellcapital.com/",
     blurb: "Personalized wealth management and financial planning for dental professionals — helping dentists build, protect, and transfer lasting financial security.",
     tier: "platinum",
@@ -58,7 +58,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Crown Catapult",
-    logoUrl: "/images/sponsors/crown-catapult.png",
+    logoUrl: "/images/sponsors/crown-catapult.webp",
     link: "https://crowncatapult.com/",
     blurb: "The exclusive financial hub for dental professionals — access curated investment opportunities, expert practice valuations, and advisory services built by and for dentists.",
     blurbHtml: "<p><strong>The Financial Hub Built for Dentistry</strong></p><p>Dental professionals face uniquely complex financial decisions. Yet the financial industry has never built anything specifically for them. Crown Catapult changes that, bringing together practice valuations, retirement planning, wealth management, exclusive investment opportunities, and more into one trusted ecosystem, backed by institutional partners like UBS and US Bank.</p><p><em>Founded by dentists, for dentists.</em></p>",
@@ -68,7 +68,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Emerald Dental Lab",
-    logoUrl: "/images/sponsors/emerald-dental-lab.png",
+    logoUrl: "/images/sponsors/emerald-dental-lab.webp",
     link: "https://www.emeralddentallab.com/promo/",
     blurb: "Premium full-service dental laboratory delivering precision-crafted restorations — crowns, bridges, implant prosthetics, and more — with artisan quality and turnaround you can count on.",
     tier: "platinum",
@@ -78,7 +78,7 @@ window.SPONSORS_DATA = [
   /* ── GOLD ─────────────────────────────────────────────── */
   {
     name: "MB Precious Metals",
-    logoUrl: "/images/sponsors/mb-precious-metals.png",
+    logoUrl: "/images/sponsors/mb-precious-metals.webp",
     link: "https://mbpreciousmetals.com/",
     blurb: "Trusted dental refiner with over 50 years of experience — MB Precious Metals comes to your office, assays your scrap on-site, and pays you the highest value for gold, silver, platinum, and palladium.",
     tier: "gold",
@@ -86,16 +86,16 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Crazy Dental",
-    logoUrl: "/images/sponsors/crazy-dental.png",
+    logoUrl: "/images/sponsors/crazy-dental.webp",
     link: "https://www.crazydentalprices.com/dentalwisdom",
     blurb: "Members-only dental supply marketplace with over 40,000 products at guaranteed lowest prices — free to join, with AI-powered pricing so your practice never overpays for supplies.",
     tier: "gold",
     attending: true,
-    photoUrl: "/images/deals/crazy-dental-flyer.png"
+    photoUrl: "/images/deals/crazy-dental-flyer.webp"
   },
   {
     name: "Lasso MD",
-    logoUrl: "/images/sponsors/lasso-md.png",
+    logoUrl: "/images/sponsors/lasso-md.webp",
     link: "https://www.lassomd.com/work-with-us/partners/dental-wisdom",
     blurb: "AI-powered digital marketing, website design, and practice growth platform built exclusively for dentists — helping practices attract more ideal patients and grow revenue with less effort.",
     tier: "gold",
@@ -103,7 +103,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Reach",
-    logoUrl: "/images/sponsors/reach.png",
+    logoUrl: "/images/sponsors/reach.webp",
     link: "https://lp.getreach.co/dentalwisdom",
     blurb: "Reach provides dedicated Virtual Assistants for dental practices across the United States, helping solve major challenges like staffing reliability, rising labor costs, and missed patient opportunities. Unlike traditional outsourcing, Reach offers fully dedicated team members who work directly within a practice's systems, supporting tasks like phone call handling, insurance verification, revenue cycle management, patient billing, and other administrative work.",
     tier: "gold",
@@ -112,7 +112,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Pearl",
-    logoUrl: "/images/sponsors/pearl.png",
+    logoUrl: "/images/sponsors/pearl.webp",
     link: "https://discover.hellopearl.com/dental-wisdom/",
     blurb: "Leading dental AI platform for real-time pathology detection, practice analytics, and insurance verification — helping practices deliver better care and grow production.",
     tier: "gold",
@@ -121,7 +121,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "TheraBreath",
-    logoUrl: "/images/sponsors/therabreath.png",
+    logoUrl: "/images/sponsors/therabreath.webp",
     link: "https://www.therabreath.com/",
     blurb: "Dentist-formulated oral health products trusted by millions — TheraBreath's clinically tested rinses, toothpastes, and sprays target the root causes of bad breath and gum issues.",
     tier: "gold",
@@ -129,7 +129,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "APEX",
-    logoUrl: "/images/sponsors/apex.png",
+    logoUrl: "/images/sponsors/apex.webp",
     link: "https://apexreimbursement.com/dental-wisdom/",
     blurb: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
     tier: "gold",
@@ -139,7 +139,7 @@ window.SPONSORS_DATA = [
   /* ── SILVER ───────────────────────────────────────────── */
   {
     name: "Ultradent",
-    logoUrl: "/images/sponsors/ultradent.png",
+    logoUrl: "/images/sponsors/ultradent.webp",
     link: "https://www.ultradent.com/",
     blurb: "Global leader in professional dental products — from whitening and bonding to endodontics and hygiene, Ultradent's clinician-developed innovations set the standard for simplicity and quality.",
     tier: "silver",
@@ -147,7 +147,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Nobel Biocare",
-    logoUrl: "/images/sponsors/nobel-biocare.png",
+    logoUrl: "/images/sponsors/nobel-biocare.webp",
     link: "https://www.nobelbiocare.com/",
     blurb: "Pioneer and global leader in implant dentistry — Nobel Biocare's evidence-based solutions for full-arch and single-tooth restoration are trusted by clinicians in over 80 countries.",
     tier: "silver",
@@ -155,7 +155,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Zolli Candy",
-    logoUrl: "/images/sponsors/zolli-candy.png",
+    logoUrl: "/images/sponsors/zolli-candy.webp",
     link: "https://www.zollicandy.com/",
     blurb: "The world's first clinically proven cavity-fighting candy — sugar-free, kid-loved, and dentist-approved, Zolli Candy makes it easy to promote healthy habits without sacrificing joy.",
     tier: "silver",
@@ -163,7 +163,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Blue Sky Bio",
-    logoUrl: "/images/sponsors/blue-sky-bio.png",
+    logoUrl: "/images/sponsors/blue-sky-bio.webp",
     link: "https://blueskybio.com/",
     blurb: "Affordable, powerful implant planning software and surgical guide design tools — Blue Sky Bio gives clinicians everything they need to plan and deliver precise, predictable implant outcomes.",
     tier: "silver",
@@ -171,7 +171,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Adin",
-    logoUrl: "/images/sponsors/adin.png",
+    logoUrl: "/images/sponsors/adin.webp",
     link: "https://www.adin-implants.com/",
     blurb: "Israeli-engineered implant systems distributed in over 40 countries — Adin delivers high primary stability and proven clinical performance at a price that makes implants more accessible.",
     tier: "silver",
@@ -179,7 +179,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Dental Processing Solutions",
-    logoUrl: "/images/sponsors/dental-processing-solutions.png",
+    logoUrl: "/images/sponsors/dental-processing-solutions.webp",
     link: "https://dentalprocessingsolutions.com/",
     blurb: "Streamlined payment processing and billing solutions built for dental practices — reducing administrative friction, improving cash flow, and simplifying how you collect from patients and insurers.",
     tier: "silver",
@@ -188,7 +188,7 @@ window.SPONSORS_DATA = [
 
   {
     name: "NuSmile",
-    logoUrl: "/images/sponsors/nusmile.png",
+    logoUrl: "/images/sponsors/nusmile.webp",
     link: "https://www.nusmile.com/",
     blurb: "Founded in Houston in 1991, NuSmile pioneered prefabricated esthetic pediatric crowns — introducing one of the world's first pre-veneered crowns and, in 2012, the NuSmile ZR full-coverage zirconia system with exclusive Try-In crowns that eliminate contamination and ensure reliable retention. Their line also includes bioactive luting cements, MTA pulp therapy materials, and posterior stainless steel crowns — all engineered specifically for pediatric dentistry.",
     tier: "silver",
@@ -198,7 +198,7 @@ window.SPONSORS_DATA = [
   /* ── BRONZE / SUPPORTING ──────────────────────────────── */
   {
     name: "AAFE",
-    logoUrl: "/images/sponsors/aafe.png",
+    logoUrl: "/images/sponsors/aafe.webp",
     link: "https://facialesthetics.org/",
     blurb: "The American Academy of Facial Esthetics offers hands-on training in Botox, fillers, and facial aesthetics for dental and medical professionals — expanding your clinical scope and practice revenue.",
     tier: "bronze",
@@ -206,7 +206,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "CG Insurance Group",
-    logoUrl: "/images/sponsors/cg-insurance-group.png",
+    logoUrl: "/images/sponsors/cg-insurance-group.webp",
     link: "https://cginsurancegroup.com/dental-wisdom/",
     blurb: "Comprehensive insurance solutions tailored for dental professionals — protecting your practice, team, and livelihood with coverage that understands the unique needs of dentistry.",
     tier: "bronze",
@@ -214,7 +214,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Pul Dental",
-    logoUrl: "/images/sponsors/pul-dental.png",
+    logoUrl: "/images/sponsors/pul-dental.webp",
     link: "https://puldental.com/",
     blurb: "Innovative tools and accessories that make wearing and removing clear aligners and retainers easier for patients — boosting compliance, comfort, and satisfaction throughout treatment.",
     tier: "bronze",
@@ -222,7 +222,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "The Altair Hotel",
-    logoUrl: "/images/sponsors/the-altair-hotel.png",
+    logoUrl: "/images/sponsors/the-altair-hotel.webp",
     link: "https://www.thealtairhotel.com",
     blurb: "The Altair Hotel in Bay Harbor Islands, FL is the only Miami-area luxury hotel fully designed with kosher travel and Shabbos in mind — featuring manual hard keys, a Shabbos elevator, daily minyanim, and in-room hot plates and urns. It's also home to OVO, the premier kosher restaurant. The official partner of the Dental Wisdom Conference in March 2027.",
     tier: "silver",
@@ -231,7 +231,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Pizza Biza",
-    logoUrl: "/images/sponsors/pizza-bizza.png",
+    logoUrl: "/images/sponsors/pizza-bizza.webp",
     link: "https://www.pizzabiza.com/",
     blurb: "Beloved kosher pizza with locations in New York, New Jersey, and Miami — the go-to spot for Dental Wisdom conference-goers looking for a great meal with great company.",
     tier: "bronze",
@@ -239,7 +239,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Citron Films",
-    logoUrl: "/images/sponsors/citron-films.png",
+    logoUrl: "/images/sponsors/citron-films.webp",
     link: "https://hc.citronfilms.com",
     blurb: "Strategy-first video production for practices and businesses. We find your real story, film it cinematically, and tell it in a way that earns trust and moves people to act.",
     tier: "bronze",
@@ -248,7 +248,7 @@ window.SPONSORS_DATA = [
   },
   {
     name: "Wonderful Dental",
-    logoUrl: "/images/sponsors/wonderful-dental.png",
+    logoUrl: "/images/sponsors/wonderful-dental.webp",
     link: "https://wonderfuldental.com/",
     blurb: "Award-winning, dentist-developed prophy paste and fluoride varnish in delicious, kid-approved flavors — made in the USA, dye-free, and rated #1 for taste by patients and hygienists alike.",
     tier: "bronze",

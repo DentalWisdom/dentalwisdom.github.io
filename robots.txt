@@ -1,6 +1,4 @@
 User-agent: *
 Allow: /
-Disallow: /conference-agenda-preview
-Disallow: /conference-speakers-preview
 
 Sitemap: https://dentalwisdom.org/sitemap.xml

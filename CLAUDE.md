@@ -17,6 +17,8 @@ Ben is the sole editor and not a developer. Explain any manual step he must take
 
 **Decisions/questions**: Always ask Ben as multiple-choice questions (using the question tool), never open-ended or technical phrasing. Use plain everyday language, no jargon or code terms. Describe trade-offs in terms of what Ben will see/experience, not how it's built.
 
+**Performance guardrail**: If Ben asks for something that would make the site slower (e.g., a large uncompressed image, an embedded widget, a big uncompressed logo, extra render-blocking scripts, a big new video file), don't just build it — tell him plainly what the slowdown would be (in terms of what a visitor would notice, not technical terms) and suggest a faster alternative that gets him the same result (e.g., a compressed/resized version, a lazy-loaded version, a lighter-weight approach). Let him choose once he knows the trade-off.
+
 ## Stack (locked — do not introduce frameworks, build steps, or npm)
 - GitHub Pages hosting. Plain HTML files, one shared stylesheet `css/styles.css`, vanilla JS in `js/main.js` (nav, modal, scroll reveals).
 - Dynamic content (Deals, Live sessions, Agenda) lives in local data files (`js/deals-data.js`, `js/live-data.js`, `js/agenda-data.js`) that each page's script reads directly — no Google Sheets, no CSV fetching. Ben tells Claude about changes (new/updated/removed entries) in chat, and Claude edits the relevant data file and commits. See SITE_SPEC.md §6 for each file's field format.

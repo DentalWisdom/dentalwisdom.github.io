@@ -150,8 +150,12 @@ document.addEventListener('DOMContentLoaded', function () {
     var stripSponsors = sponsors.filter(function (s) { return !s.pastSponsor && !s.pending; });
     stripEl.innerHTML = stripSponsors.map(function (s) {
       if (s.logoUrl) {
+        // data-src (not src): the strip scrolls continuously via CSS transform,
+        // so native loading="lazy" can't reliably tell when a logo is "near"
+        // the viewport. js/main.js loads these in one go once the whole
+        // strip nears the viewport instead. See main.js for details.
         return '<div class="logo-scroll-item">' +
-          '<img src="' + escapeAttr(s.logoUrl) + '" alt="' + escapeAttr(s.name) + '" loading="lazy">' +
+          '<img data-src="' + escapeAttr(s.logoUrl) + '" alt="' + escapeAttr(s.name) + '">' +
           '</div>';
       }
       return '<div class="logo-scroll-item logo-scroll-item--text">' + escapeHtml(s.name) + '</div>';

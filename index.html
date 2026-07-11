@@ -24,8 +24,10 @@
   <link rel="apple-touch-icon" href="/images/favicon-180.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/css/styles.css?v=33">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+  <link rel="stylesheet" href="/css/styles.css?v=34">
   <style>
     /* Hero text shadow — home page only */
     .hero__content h1,
@@ -200,12 +202,12 @@
           </div>
           <div class="conf-photo-grid" data-reveal>
             <div class="conf-photo-col">
-              <img class="conf-photo--short" src="/images/conf-photos/conf-photo-1.webp" alt="Dental Wisdom Conference CE session" loading="lazy" width="1200" height="800">
-              <img class="conf-photo--tall" src="/images/conf-photos/conf-photo-3.webp" alt="Bay Harbor Islands waterfront balcony view" loading="lazy" style="object-position: center 30%;" width="1200" height="801">
+              <img class="conf-photo--short" src="/images/conf-photos/conf-photo-1.webp" alt="Dental Wisdom Conference CE session" loading="lazy" width="780" height="520">
+              <img class="conf-photo--tall" src="/images/conf-photos/conf-photo-3.webp" alt="Bay Harbor Islands waterfront balcony view" loading="lazy" style="object-position: center 30%;" width="839" height="560">
             </div>
             <div class="conf-photo-col">
               <img class="conf-photo--tall" src="/images/conf-photos/conf-photo-2.webp" alt="The Altair Hotel pool and palm trees" loading="lazy" width="900" height="500">
-              <img class="conf-photo--short" src="/images/conf-photos/conf-photo-4.webp" alt="Glatt kosher dinner at the conference" loading="lazy" width="1200" height="799">
+              <img class="conf-photo--short" src="/images/conf-photos/conf-photo-4.webp" alt="Glatt kosher dinner at the conference" loading="lazy" width="781" height="520">
             </div>
           </div>
         </div>
@@ -216,7 +218,18 @@
     <section id="section-video" class="section">
       <div class="container">
         <div class="video-embed" data-reveal>
-          <iframe src="https://www.youtube.com/embed/OQZFNNB9YE0?si=FDCCACoNmqoCC6y4" title="A Glimpse of the Dental Wisdom Conference" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" loading="lazy" allowfullscreen></iframe>
+          <!-- Click-to-load: YouTube's player (500+ KB of JS) only downloads once
+               a visitor actually taps play, instead of loading automatically
+               as soon as this section scrolls into view. -->
+          <button type="button" class="video-facade" id="videoFacade"
+            data-video-src="https://www.youtube.com/embed/OQZFNNB9YE0?si=FDCCACoNmqoCC6y4&amp;autoplay=1"
+            data-video-title="A Glimpse of the Dental Wisdom Conference"
+            aria-label="Play video: A Glimpse of the Dental Wisdom Conference">
+            <img src="https://i.ytimg.com/vi/OQZFNNB9YE0/hqdefault.jpg" alt="" width="480" height="360">
+            <span class="video-facade__play" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="26" height="26" fill="currentColor"><path d="M8 5v14l11-7z"></path></svg>
+            </span>
+          </button>
         </div>
         <div class="video-caption" data-reveal>
           <em>From the 2025 Dental Wisdom Conference &mdash; here&rsquo;s a look at what you can expect.</em>
@@ -235,82 +248,82 @@
       </div>
       <div class="logo-scroll-wrap">
         <div class="logo-scroll-track">
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-1.webp" alt="Speaker presenting a dental CE lecture on secondary plane of reduction to a seated audience" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-2.webp" alt="Conference room set up with rows of white chairs, holographic gift bags, and Dental Wisdom Conference on the main screen" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-3.webp" alt="Two attendees posing at the LiveWell Capital sponsor photo booth at the Dental Wisdom Conference" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-4.webp" alt="Three smiling male attendees wearing Dental Wisdom conference lanyards" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-5.webp" alt="A couple smiling together at a conference dinner" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-6.webp" alt="Attendee reaching for items at the LiveWell Capital sponsor table with scotch bottles and promotional items" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-7.webp" alt="Presenter at the podium welcoming attendees with the Dental Wisdom Conference logo on the screen behind her" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-8.webp" alt="Three attendees posing and smiling at a conference social event" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-9.webp" alt="Speaker presenting at a microphone in front of a wealth management presentation slide" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-10.webp" alt="Group of five attendees and family members smiling together at a conference social event" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-11.webp" alt="Crowded conference social event with attendees mingling over food and drinks" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-12.webp" alt="Two women laughing during a hands-on dental workshop with dental models and instruments on the table" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-13.webp" alt="Couple posing at the LiveWell Capital sponsor photo booth at the Dental Wisdom Conference" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-14.webp" alt="Havdalah ceremony at the conference with a guitarist, Havdalah candle, and wine bottle" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-15.webp" alt="Speaker smiling at the microphone presenting in front of a financial due diligence slide" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-16.webp" alt="Breakout CE session with an instructor presenting to a small group of attendees in a bright hotel room" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-17.webp" alt="Two attendees chatting at an outdoor evening social event with a wood-fired pizza oven in the background" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-18.webp" alt="Group of four adults and a young child posing and smiling at a conference social event" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-19.webp" alt="Attendee serving himself at a glatt kosher conference lunch buffet with salads and hot dishes" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-20.webp" alt="Three attendees posing in front of the Emerald Dental Lab sponsor booth" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-21.webp" alt="Two women smiling together at the conference with the Dental Wisdom Conference banner visible in the background" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-22.webp" alt="Attendees greeting each other outside the conference venue surrounded by palm trees and sunshine" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-23.webp" alt="Conference speaker in a bow tie gesturing expressively at the podium during a CE lecture" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-24.webp" alt="Elaborate sushi and appetizer spread at a conference kosher reception" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-25.webp" alt="Speaker presenting on dental irrigating solutions to an engaged audience at the conference" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-26.webp" alt="Attendee smiling and holding a framed sponsor appreciation gift in front of a Thank You slide" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-27.webp" alt="Pizza Biza catering tables with freshly made kosher pizzas at the conference" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-28.webp" alt="Large audience of dental professionals attentively watching a CE lecture at the conference" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-29.webp" alt="Conference organizer speaking at the podium in front of the Dental Wisdom logo" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-30.webp" alt="Attendees enjoying a glatt kosher lunch together at a restaurant-style dining table" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-31.webp" alt="Two attendees laughing together at an evening social event with Pizza Biza branding visible in the background" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-32.webp" alt="Four smiling conference attendees posing together wearing Dental Wisdom lanyards" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-33.webp" alt="Rows of white chairs with holographic Lasso MD gift bags and Dental Wisdom notebooks set out for attendees" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-34.webp" alt="Speaker presenting on immediate implant placement and esthetic zone restoration at the conference" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-35.webp" alt="Small group of conference attendees networking outdoors near palm trees" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-36.webp" alt="Three attendees in animated conversation at a conference social event" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-37.webp" alt="Dental professionals attentively watching a CE lecture at the Dental Wisdom Conference" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo"><img src="/images/gallery/gallery-38.webp" alt="Table displaying conference gift bag contents including dental products, notebooks, and branded sponsor giveaways" loading="lazy" width="640" height="650"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-1.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-2.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-3.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-4.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-5.webp" alt="" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-6.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-7.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-8.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-9.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-10.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-11.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-12.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-13.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-14.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-15.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-16.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-17.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-18.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-19.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-20.webp" alt="" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-21.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-22.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-23.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-24.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-25.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-26.webp" alt="" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-27.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-28.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-29.webp" alt="" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-30.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-31.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-32.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-33.webp" alt="" loading="lazy" width="640" height="960"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-34.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-35.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-36.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-37.webp" alt="" loading="lazy" width="720" height="480"></div>
-          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img src="/images/gallery/gallery-38.webp" alt="" loading="lazy" width="640" height="650"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-1.webp" alt="Speaker presenting a dental CE lecture on secondary plane of reduction to a seated audience" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-2.webp" alt="Conference room set up with rows of white chairs, holographic gift bags, and Dental Wisdom Conference on the main screen" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-3.webp" alt="Two attendees posing at the LiveWell Capital sponsor photo booth at the Dental Wisdom Conference" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-4.webp" alt="Three smiling male attendees wearing Dental Wisdom conference lanyards" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-5.webp" alt="A couple smiling together at a conference dinner" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-6.webp" alt="Attendee reaching for items at the LiveWell Capital sponsor table with scotch bottles and promotional items" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-7.webp" alt="Presenter at the podium welcoming attendees with the Dental Wisdom Conference logo on the screen behind her" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-8.webp" alt="Three attendees posing and smiling at a conference social event" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-9.webp" alt="Speaker presenting at a microphone in front of a wealth management presentation slide" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-10.webp" alt="Group of five attendees and family members smiling together at a conference social event" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-11.webp" alt="Crowded conference social event with attendees mingling over food and drinks" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-12.webp" alt="Two women laughing during a hands-on dental workshop with dental models and instruments on the table" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-13.webp" alt="Couple posing at the LiveWell Capital sponsor photo booth at the Dental Wisdom Conference" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-14.webp" alt="Havdalah ceremony at the conference with a guitarist, Havdalah candle, and wine bottle" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-15.webp" alt="Speaker smiling at the microphone presenting in front of a financial due diligence slide" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-16.webp" alt="Breakout CE session with an instructor presenting to a small group of attendees in a bright hotel room" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-17.webp" alt="Two attendees chatting at an outdoor evening social event with a wood-fired pizza oven in the background" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-18.webp" alt="Group of four adults and a young child posing and smiling at a conference social event" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-19.webp" alt="Attendee serving himself at a glatt kosher conference lunch buffet with salads and hot dishes" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-20.webp" alt="Three attendees posing in front of the Emerald Dental Lab sponsor booth" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-21.webp" alt="Two women smiling together at the conference with the Dental Wisdom Conference banner visible in the background" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-22.webp" alt="Attendees greeting each other outside the conference venue surrounded by palm trees and sunshine" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-23.webp" alt="Conference speaker in a bow tie gesturing expressively at the podium during a CE lecture" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-24.webp" alt="Elaborate sushi and appetizer spread at a conference kosher reception" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-25.webp" alt="Speaker presenting on dental irrigating solutions to an engaged audience at the conference" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-26.webp" alt="Attendee smiling and holding a framed sponsor appreciation gift in front of a Thank You slide" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-27.webp" alt="Pizza Biza catering tables with freshly made kosher pizzas at the conference" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-28.webp" alt="Large audience of dental professionals attentively watching a CE lecture at the conference" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-29.webp" alt="Conference organizer speaking at the podium in front of the Dental Wisdom logo" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-30.webp" alt="Attendees enjoying a glatt kosher lunch together at a restaurant-style dining table" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-31.webp" alt="Two attendees laughing together at an evening social event with Pizza Biza branding visible in the background" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-32.webp" alt="Four smiling conference attendees posing together wearing Dental Wisdom lanyards" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-33.webp" alt="Rows of white chairs with holographic Lasso MD gift bags and Dental Wisdom notebooks set out for attendees" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-34.webp" alt="Speaker presenting on immediate implant placement and esthetic zone restoration at the conference" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-35.webp" alt="Small group of conference attendees networking outdoors near palm trees" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-36.webp" alt="Three attendees in animated conversation at a conference social event" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-37.webp" alt="Dental professionals attentively watching a CE lecture at the Dental Wisdom Conference" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo"><img data-src="/images/gallery/gallery-38.webp" alt="Table displaying conference gift bag contents including dental products, notebooks, and branded sponsor giveaways" width="640" height="650"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-1.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-2.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-3.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-4.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-5.webp" alt="" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-6.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-7.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-8.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-9.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-10.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-11.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-12.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-13.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-14.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-15.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-16.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-17.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-18.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-19.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-20.webp" alt="" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-21.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-22.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-23.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-24.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-25.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-26.webp" alt="" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-27.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-28.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-29.webp" alt="" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-30.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-31.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-32.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-33.webp" alt="" width="640" height="960"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-34.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-35.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-36.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-37.webp" alt="" width="720" height="480"></div>
+          <div class="logo-scroll-item gallery-photo" aria-hidden="true"><img data-src="/images/gallery/gallery-38.webp" alt="" width="640" height="650"></div>
         </div>
       </div>
     </section>
@@ -609,9 +622,9 @@
   </footer>
 
   <!-- FLOATING JOIN BUTTON + MODAL -->
-  <script src="/js/main.js?v=2"></script>
+  <script src="/js/main.js?v=3"></script>
   <script src="/js/sponsors-data.js?v=2"></script>
-  <script src="/js/sponsors.js?v=4"></script>
+  <script src="/js/sponsors.js?v=5"></script>
 
   <!-- Hero video: only load/play on tablets & desktop. Phones (and anyone with reduced-motion set) see the static photo instead, so the 2.4MB video file is never downloaded on mobile. -->
   <script>

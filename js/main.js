@@ -249,6 +249,43 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 
   /* -----------------------------
+     Logo scroll strips — reliable image loading
+     These strips (sponsor logos, homepage gallery) move continuously via
+     a CSS transform animation. Native loading="lazy" on the individual
+     <img> tags is unreliable inside a transform-animated, overflow:hidden
+     track — the browser's lazy-load distance check is based on layout
+     position, not the animated visual position, so images far along the
+     track can fail to ever load (reported as photos "not loading at all"
+     on mobile). Instead: images ship with data-src, and this observer
+     loads every image in a strip in one go as soon as the strip nears
+     the viewport, well before the animation would visually reach them.
+     ----------------------------- */
+  if ('IntersectionObserver' in window) {
+    var stripObserver = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (!entry.isIntersecting) return;
+        entry.target.querySelectorAll('img[data-src]').forEach(function (img) {
+          img.src = img.getAttribute('data-src');
+          img.removeAttribute('data-src');
+        });
+        stripObserver.unobserve(entry.target);
+      });
+    }, { rootMargin: '600px 0px' });
+
+    logoScrollWraps.forEach(function (wrap) {
+      stripObserver.observe(wrap);
+    });
+  } else {
+    // No IntersectionObserver support: load everything immediately
+    logoScrollWraps.forEach(function (wrap) {
+      wrap.querySelectorAll('img[data-src]').forEach(function (img) {
+        img.src = img.getAttribute('data-src');
+        img.removeAttribute('data-src');
+      });
+    });
+  }
+
+  /* -----------------------------
      Join button: fade when footer scrolls into view
      ----------------------------- */
   var fab = document.querySelector('.join-fab');
@@ -261,5 +298,27 @@ document.addEventListener('DOMContentLoaded', function () {
     }, { threshold: 0 });
     footerObserver.observe(siteFooter);
   }
+
+  /* -----------------------------
+     Click-to-load video facades
+     Swaps a thumbnail + play button for the real YouTube iframe only
+     once tapped, so the video player's JS/CSS never downloads unless
+     a visitor actually wants to watch.
+     ----------------------------- */
+  document.querySelectorAll('.video-facade').forEach(function (facade) {
+    facade.addEventListener('click', function () {
+      var src = facade.getAttribute('data-video-src');
+      if (!src) return;
+      var title = facade.getAttribute('data-video-title') || 'Video';
+      var iframe = document.createElement('iframe');
+      iframe.src = src;
+      iframe.title = title;
+      iframe.setAttribute('frameborder', '0');
+      iframe.setAttribute('allow', 'accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
+      iframe.setAttribute('referrerpolicy', 'strict-origin-when-cross-origin');
+      iframe.setAttribute('allowfullscreen', '');
+      facade.parentNode.replaceChild(iframe, facade);
+    });
+  });
 
 });

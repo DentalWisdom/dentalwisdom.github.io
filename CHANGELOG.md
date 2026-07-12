@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 11, 2026
 
+- Archived unused tooth-icon.svg from images folder — only the old, already-archived giving page used it
 - Tidied up: moved the old "giveaways" prize-wheel page and the unused "content" folder (source copy docs) into the archive — neither was linked from any live page anymore
 - "Join the Network" popup: now also starts loading the moment a visitor's mouse/finger reaches the button (not just after the click), so it appears even faster
 - Live Slides tool: made it readable on a phone (was a tiny shrunk-down TV-style slide before) — text resizes, columns stack, controls move out of the way

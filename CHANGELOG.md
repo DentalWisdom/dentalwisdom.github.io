@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 11, 2026
 
+- Archived 10 more unused image files (old logo versions, old flyer, 2 old deal-partner logos, old favicon size) — none were used anywhere on the site
 - Archived unused tooth-icon.svg from images folder — only the old, already-archived giving page used it
 - Tidied up: moved the old "giveaways" prize-wheel page and the unused "content" folder (source copy docs) into the archive — neither was linked from any live page anymore
 - "Join the Network" popup: now also starts loading the moment a visitor's mouse/finger reaches the button (not just after the click), so it appears even faster

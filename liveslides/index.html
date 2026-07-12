@@ -239,6 +239,114 @@
   #fw{position:fixed;inset:0;pointer-events:none;z-index:60;}
   /* wheel glow while spinning */
   .wheel-wrap.is-spinning #wheel{filter:drop-shadow(0 0 30px rgba(209,90,122,.55)) drop-shadow(0 8px 26px rgba(209,90,122,.35));}
+
+  /* ============================================================
+     MOBILE (phones, portrait) — read-friendly layout
+     Below 700px wide, drop the fixed 1280×720 "TV slide" canvas
+     and let each slide flow down the screen instead, with smaller
+     type and single-column stacking, so the content is actually
+     readable without pinch-zooming. Landscape/tablet still gets
+     the scaled TV-style view above, which already looks fine.
+     ============================================================ */
+  @media (max-width:700px){
+    :root{--pad-x:20px;--pad-y:26px;--content-gap:18px;}
+    html,body{height:auto;overflow-y:auto;overflow-x:hidden;}
+    #stage{position:static;display:block;min-height:100vh;}
+    #deck{width:100%;height:auto;min-height:100vh;transform:none !important;box-shadow:none;overflow:visible;}
+    .slide{position:relative;inset:auto;display:none;opacity:1;visibility:visible;pointer-events:auto;min-height:100vh;padding:var(--pad-y) var(--pad-x) 84px;}
+    .slide.active{display:flex;}
+    .cols,.sp-hero,.conf-bottom,.gwbody{flex-direction:column;gap:26px;}
+    .conf-bottom{align-items:stretch;}
+    #s-spot .sp-hero{gap:18px;}
+    #s-lect .cols{gap:22px;padding-top:16px;}
+    .topbar{height:auto;}
+    .brand{font-size:12px;letter-spacing:2.5px;}
+
+    #s-title h1.big{font-size:40px;}
+    #s-title .date{font-size:14px;letter-spacing:3px;margin-top:24px;padding-top:16px;}
+    #s-title .learnmore{font-size:14px;}
+    #s-title .learnmore .site{font-size:16px;}
+
+    #s-about h1.big{font-size:28px;margin-bottom:18px;}
+    #s-about p.lead{font-size:16px;margin-bottom:20px;}
+    .opener-name{font-size:24px;}
+    .feat h3{font-size:16px;}
+    .feat p{font-size:14px;}
+
+    #s-dvar .torah{font-size:46px;}
+    #s-dvar .delivered{margin-top:28px;font-size:13px;}
+    #s-dvar .speaker{font-size:28px;}
+
+    #s-spot .sp-logocard{width:100%;max-width:280px;height:130px;margin:0 auto;}
+    #s-spot .spot-head{font-size:26px;text-align:center;}
+    #s-spot .spot-content.has-bullets .spot-head{font-size:22px;}
+    #s-spot .spot-bullets{grid-template-columns:1fr;gap:12px;margin:20px 0 4px;}
+    #s-spot .spot-bullets li{font-size:16px;}
+    #s-spot .spfoot{flex-direction:column;align-items:flex-start;gap:14px;padding-top:18px;}
+    #s-spot .spfoot .right{text-align:left;}
+    #s-spot .spfoot .name,#s-spot .spfoot .phone{font-size:22px;}
+    #s-spot .spfoot .web{text-align:left;font-size:17px;}
+
+    .conf h1.big{font-size:26px;}
+    .conf .sub{font-size:17px;margin-bottom:16px;}
+    .conf .meta{font-size:12px;letter-spacing:1.5px;line-height:1.7;}
+    .stats{display:grid;grid-template-columns:1fr 1fr;margin:18px 0 20px;}
+    .stat{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:14px 0;}
+    .stat:nth-child(2n){border-right:none;}
+    .stat:nth-child(n+3){border-bottom:none;}
+    .stat .n{font-size:28px;}
+    .stat .l{font-size:10px;}
+    .savebox .l{padding:14px 16px;}
+    .savebox .r{padding:14px 16px;}
+    .savebox .big{font-size:26px;}
+    .savebox .code{font-size:15px;}
+    .savebox .fine{font-size:11px;}
+    .reserve .url{font-size:24px;}
+    .reserve .n1,.reserve .n2{font-size:13px;}
+
+    #s-lect h1.big{font-size:28px;}
+    #s-lect .subt{font-size:16px;}
+    #s-lect .logobox{height:130px;max-width:280px;margin:0 auto;}
+    #s-lect .doc{font-size:22px;}
+    #s-lect .col-r{border-left:none;border-top:3px solid var(--gold);padding-left:0;padding-top:18px;}
+    #s-lect .col-r p{font-size:14px;}
+    #s-lect .col-r .web{text-align:left;margin-top:10px;font-size:17px;}
+
+    #s-give h1.big{font-size:24px;}
+    #s-give .wheelcol{width:100%;}
+    .wheel-wrap{width:220px;height:220px;}
+    #wheel{width:220px;height:220px;}
+    .hub{width:56px;height:56px;font-size:14px;}
+    .wheel-wrap .pointer{border-left-width:10px;border-right-width:10px;border-top-width:18px;}
+    #s-give .infocol{width:100%;}
+    #s-give .sponsorlogo{height:110px;}
+    #s-give .prizecard .prize{font-size:22px;}
+    #s-give .finelegal{font-size:11px;}
+
+    #s-thanks .big{font-size:38px;}
+    #s-thanks .cta .url{font-size:30px;}
+    #s-thanks .cta .under{animation-name:growMobile;}
+    #s-thanks .cadence{font-size:14px;letter-spacing:2.5px;}
+
+    /* fixed chrome — clear the middle of the screen, tuck controls into a bottom bar */
+    .hint-msg{display:none;}
+    .navbtn{top:auto;bottom:14px;transform:none;width:40px;height:40px;font-size:17px;}
+    #navPrev{left:auto;right:60px;}
+    #navNext{right:14px;}
+    #counter{left:50%;right:auto;transform:translateX(-50%);bottom:16px;}
+    #namesBtn{padding:8px 14px;font-size:12px;}
+
+    /* modals */
+    .sheet{padding:22px 18px;}
+    .sheet textarea{font-size:16px;min-height:180px;}
+    #winnerSheet .sheet{padding:26px 20px;}
+    #winnerSheet .who{font-size:40px;}
+    #winnerSheet .prizeline{font-size:19px;}
+    #winnerSheet .w-logowrap{padding:14px 18px;min-height:90px;}
+    #winnerSheet .w-logowrap img{max-height:70px;}
+    #winnerSheet .confirm{font-size:15px;padding:12px 16px;}
+  }
+  @keyframes growMobile{to{width:200px;}}
 </style>
 </head>
 <body>
@@ -608,8 +716,14 @@ document.addEventListener('keydown',function(e){
 function toggleFull(){ if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(function(){}); } else { document.exitFullscreen(); } }
 
 // ---- scale ----
+// On phones (portrait, <=700px wide) the CSS above switches the deck to a
+// natural-flow, single-column reading layout instead of the fixed 1280x720
+// "TV slide" — so skip the scale-transform there, it would fight the CSS.
 var deck=document.getElementById('deck');
-function fit(){ var s=Math.min(window.innerWidth/1280, window.innerHeight/720); deck.style.transform='scale('+s+')'; }
+function fit(){
+  if (window.matchMedia('(max-width:700px)').matches) { deck.style.transform='none'; return; }
+  var s=Math.min(window.innerWidth/1280, window.innerHeight/720); deck.style.transform='scale('+s+')';
+}
 window.addEventListener('resize',fit); fit();
 
 // ---- names ----

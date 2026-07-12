@@ -453,6 +453,29 @@ body.has-subnav [id] {
   height: 26px;
 }
 
+.menu-toggle__line {
+  transform-origin: center;
+  transition: transform 250ms ease, opacity 200ms ease;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--top {
+  transform: translateY(6px) rotate(45deg);
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--mid {
+  opacity: 0;
+}
+
+.menu-toggle[aria-expanded="true"] .menu-toggle__line--bottom {
+  transform: translateY(-6px) rotate(-45deg);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .menu-toggle__line {
+    transition: none;
+  }
+}
+
 /* Full-screen mobile overlay menu */
 .mobile-menu {
   position: fixed;

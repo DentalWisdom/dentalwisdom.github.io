@@ -35,7 +35,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
 
-  <link rel="stylesheet" href="/css/styles.css?v=35">
+  <link rel="stylesheet" href="/css/styles.css?v=36">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -69,6 +69,12 @@
 
   <!-- Mobile full-screen overlay menu -->
   <div class="mobile-menu" id="mobileMenu" tabindex="-1">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="5" y1="5" x2="19" y2="19"></line>
+        <line x1="19" y1="5" x2="5" y2="19"></line>
+      </svg>
+    </button>
     <a class="mobile-menu__logo" href="/" aria-label="Dental Wisdom home">
       <img src="/images/header-logo-blue.webp" alt="Dental Wisdom" width="392" height="120">
     </a>
@@ -205,7 +211,7 @@
     </div>
   </div>
 
-  <script src="/js/main.js?v=3"></script>
+  <script src="/js/main.js?v=4"></script>
   <script>
     (function() {
       var header = document.querySelector('.site-header');

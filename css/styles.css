@@ -492,6 +492,27 @@ body.has-subnav [id] {
   visibility: hidden;
 }
 
+.mobile-menu__close {
+  position: absolute;
+  top: var(--space-md);
+  right: var(--space-md);
+  width: 44px;
+  height: 44px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background: transparent;
+  border: 2px solid var(--color-ink);
+  border-radius: 6px;
+  cursor: pointer;
+  color: var(--color-ink);
+}
+
+.mobile-menu__close svg {
+  width: 22px;
+  height: 22px;
+}
+
 .mobile-menu.is-open {
   transform: translateY(0);
   visibility: visible;

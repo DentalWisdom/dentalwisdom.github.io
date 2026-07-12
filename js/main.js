@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', function () {
      ----------------------------- */
   var menuToggle = document.getElementById('menuToggle');
   var mobileMenu = document.getElementById('mobileMenu');
+  var mobileMenuClose = document.getElementById('mobileMenuClose');
 
   if (menuToggle && mobileMenu) {
     var closeMenu = function () {
@@ -41,6 +42,14 @@ document.addEventListener('DOMContentLoaded', function () {
     mobileMenu.querySelectorAll('a').forEach(function (link) {
       link.addEventListener('click', closeMenu);
     });
+
+    // Close mobile menu via the visible X button inside the overlay
+    if (mobileMenuClose) {
+      mobileMenuClose.addEventListener('click', function () {
+        closeMenu();
+        menuToggle.focus();
+      });
+    }
 
     // Close on Escape
     document.addEventListener('keydown', function (e) {

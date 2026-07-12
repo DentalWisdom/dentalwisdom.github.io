@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 11, 2026
+
+- Add plain-English CHANGELOG.md; document changelog upkeep in CLAUDE.md
+
 ## July 10, 2026
 
 - Mobile performance fixes: resize oversized photos, reliable strip lazy-load, click-to-load video, non-blocking fonts

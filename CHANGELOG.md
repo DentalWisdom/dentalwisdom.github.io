@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 11, 2026
 
+- Homepage hero photo: phones now download a smaller version (33KB instead of 85KB), and the browser is told to fetch it first so it appears sooner
 - Speed up the "Join the Network" popup: pages with the Join button now quietly warm up the connection to Jotform in the background, so the form appears faster the first time someone taps the pill
 - Shrink + recompress homepage grid photos (conf-photo-1 through 4) and hero poster per PageSpeed audit; archive originals
 - Add plain-English CHANGELOG.md; document changelog upkeep in CLAUDE.md

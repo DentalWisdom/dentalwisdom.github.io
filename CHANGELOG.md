@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 12, 2026
+
+- Mobile menu button: the three-line icon in the top-right now turns into an X while the menu is open, and back into three lines when closed, so it's clear how to get out of the menu (this was missing before — tapping it worked, but nothing showed it)
+
 ## July 11, 2026
 
 - Swapped the order of two homepage gallery photos (gallery-9 and gallery-36) per Ben's request, and updated their photo descriptions so screen readers still describe the right picture

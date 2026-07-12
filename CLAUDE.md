@@ -113,6 +113,7 @@ All gold values are tokenized. Never use hardcoded hex for gold colors anywhere:
 - One page per session, in the spec's build order. Start each session by proposing a short plan; wait for approval before writing code.
 - Session 1 also builds the scaffold: folder structure, styles.css with tokens, shared header/footer/modal, and index.html.
 - Commit after each approved page: `git add -A && git commit -m "Build <page>"`. Never leave a session uncommitted.
+- **Change log**: `CHANGELOG.md` in the site root is a plain-English, most-recent-first list of every commit, grouped by date, so Ben can see what changed without touching git directly. After every commit (or batch of commits) in a session, append the new entries to the top of `CHANGELOG.md` before ending the session.
 - Local preview: from the site folder: `cd ~/Desktop/Dental\ Wisdom\ Site && python3 -m http.server 8000`, then http://localhost:8000.
 - **Terminal commands**: Always include the `cd` step so Ben can copy-paste the whole thing. Format: `cd ~/Desktop/Dental\ Wisdom\ Site && <command>`.
 - Do not touch DNS, CNAME, or Squarespace until Ben explicitly starts the launch step.

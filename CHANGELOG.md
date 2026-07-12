@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 11, 2026
 
+- "Join the Network" popup: now also starts loading the moment a visitor's mouse/finger reaches the button (not just after the click), so it appears even faster
 - Live Slides tool: made it readable on a phone (was a tiny shrunk-down TV-style slide before) — text resizes, columns stack, controls move out of the way
 - Set up an archive file for old Live Slides vendor spotlights/lectures/giveaways, plus notes in CLAUDE.md so future content swaps get saved instead of lost
 - Homepage hero photo: phones now download a smaller version (33KB instead of 85KB), and the browser is told to fetch it first so it appears sooner

@@ -136,6 +136,18 @@ document.addEventListener('DOMContentLoaded', function () {
       trigger.addEventListener('click', openModal);
     });
 
+    // Performance: start loading the Jotform iframe a beat early —
+    // the instant a visitor's mouse arrives on the button (desktop) or
+    // their finger touches it (mobile), not just after the full click.
+    // loadJoinForm() is guarded by joinFormLoaded, so calling it here
+    // and again in openModal() is safe — it only ever runs once.
+    var warmupTriggers = [joinButton].concat(Array.prototype.slice.call(joinTriggers));
+    warmupTriggers.forEach(function (trigger) {
+      trigger.addEventListener('mouseenter', loadJoinForm);
+      trigger.addEventListener('touchstart', loadJoinForm, { passive: true });
+      trigger.addEventListener('focus', loadJoinForm);
+    });
+
     if (joinModalClose) {
       joinModalClose.addEventListener('click', closeModal);
     }

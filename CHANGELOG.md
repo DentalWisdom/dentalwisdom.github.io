@@ -5,7 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 12, 2026
 
-- Mobile menu button: the three-line icon in the top-right now turns into an X while the menu is open, and back into three lines when closed, so it's clear how to get out of the menu (this was missing before — tapping it worked, but nothing showed it)
+- Found and fixed the real cause of the missing "X": the top-right menu button was getting visually covered by the full-screen menu once it opened, so nothing was there to see or tap. Added a proper, always-visible X button inside the open menu itself (top-right) that closes it
+- Mobile menu button: the three-line icon in the top-right now turns into an X while the menu is open, and back into three lines when closed (kept as a nice-to-have, though the new X above is the one people will actually see and use)
 
 ## July 11, 2026
 

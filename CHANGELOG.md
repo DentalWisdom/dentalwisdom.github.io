@@ -3,6 +3,13 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 13, 2026
+
+- Updated Dr. Ariel Steinberger's session title to "The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance" — saved in the draft agenda file, not on the live agenda/speakers pages yet since those still show "coming soon" placeholders
+- Replaced Dr. Gabe Hershman with new speaker Dr. Tzvi Krupka in the Thursday 2–4pm slot (topic: sleep apnea and treating patients) — his session title is still a placeholder until Ben sends the exact wording, and his bio text is still needed (only his photo came through so far)
+- Resized and optimized Dr. Krupka's headshot to match the other speaker photos (790×800, ~15KB) so the eventual speakers page loads fast
+- Archived Dr. Hershman's old headshot and an outdated speaker-bios reference document instead of deleting them, since their content is already captured elsewhere
+
 ## July 12, 2026
 
 - Found and fixed the real cause of the missing "X": the top-right menu button was getting visually covered by the full-screen menu once it opened, so nothing was there to see or tap. Added a proper, always-visible X button inside the open menu itself (top-right) that closes it

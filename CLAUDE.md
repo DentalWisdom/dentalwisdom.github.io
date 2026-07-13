@@ -68,7 +68,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 3 | Dr. Sean Ference | `speaker-sean-ference` | 'Hopeless' to Heroic… | Fri 10:30am–12pm | — |
 | 4 | Sam Waller, CFP® | `speaker-sam-waller` | Life Insurance: Bitachon or Hishtadlus? | Shabbos 5–6pm | LiveWell Capital |
 | 5 | Rabbi Dr. David J. Katz | `speaker-rabbi-david-katz` | Dental Halacha Shiur (Shalosh Seudos) | Shabbos 6:30pm | Touro College of Dental Medicine |
-| 6 | Dr. Tzvi Krupka | `speaker-tzvi-krupka` | Lecture Title TBD (sleep apnea / treating patients) | Thu 2–4pm | — |
+| 6 | Dr. Tzvi Krupka | `speaker-tzvi-krupka` | Restoring the Airway: A Surgeon's Approach to Diagnosing and Treating Sleep Apnea (draft title — Ben to confirm) | Thu 2–4pm | — |
 | 7 | Dr. Ariel Steinberger | `speaker-ariel-steinberger` | The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance | Thu 4–6pm | — |
 | 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 (Lecture Titles TBD) | Thu 6:30–8pm & Fri 3–5pm | — |
 | 9 | Dr. Dan German | `speaker-dan-german` | Straight Talk: Game-Changing Tips and Tricks Every GP Should Know in Orthodontics | Fri 1:30–3pm | orthobrain |
@@ -77,7 +77,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 12 | Yaakov Citron | `speaker-yaakov-citron` | Videography Meets AI: DIY Workshop | Fri 4–5pm | Citron Films |
 | 13 | Gobbie Cohn | `speaker-gobbie-cohn` | Mincha, Kabbalas Shabbos & Maariv | Fri 6:15pm | APEX Reimbursement Specialists & CG Insurance Group |
 
-Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `_Speaker Bios & Pictures - Drop Here/`. Dr. Samuel Schuster's photo is still TODO — no headshot provided yet (see placeholder note in conference-speakers/index.html). Dr. Tzvi Krupka's photo is resized and saved as `images/speaker-tzvi-krupka.webp` (790×800, ~15KB); his bio text is still TODO — only the photo came through so far. Dr. Gabe Hershman's old headshot was moved to `_archive/superseded-images/speakers/` (not deleted) since Krupka is replacing his Thu 2–4pm slot.
+Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `_Speaker Bios & Pictures - Drop Here/`. Dr. Samuel Schuster's photo is still TODO — no headshot provided yet (see placeholder note in conference-speakers/index.html). Dr. Tzvi Krupka's photo is resized and saved as `images/speaker-tzvi-krupka.webp` (790×800, ~15KB). His bio is in (source in `_archive/conference-speakers-full.html`, the master reference for the eventual speaker cards); his session title above is a draft — Claude wrote it based on Ben's "sleep apnea and treating patients" topic and it still needs Ben's sign-off before it's final. Dr. Gabe Hershman's old headshot was moved to `_archive/superseded-images/speakers/` (not deleted) since Krupka is replacing his Thu 2–4pm slot.
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link. Logo scroll strips have a keyboard pause/play button (WCAG 2.2.2) injected by `js/main.js` — skip injection when `prefers-reduced-motion` is set (CSS already stops the animation). Hero video autoplay is suppressed by JS when `prefers-reduced-motion` is set.
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.

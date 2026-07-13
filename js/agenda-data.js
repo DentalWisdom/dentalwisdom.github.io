@@ -63,10 +63,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "2:00 – 4:00 PM", title: "Restoring the Airway: A Surgeon's Approach to Diagnosing and Treating Sleep Apnea", speaker: "Dr. Tzvi Krupka", speakerUrl: "/conference-speakers#speaker-tzvi-krupka", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "4:00 – 6:00 PM", title: "The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance", speaker: "Dr. Ariel Steinberger (Cosmetic Dentist)", speakerUrl: "/conference-speakers#speaker-ariel-steinberger", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "6:00 – 6:30 PM", title: "Break (Mincha & Maariv)", speaker: "", location: "Shul" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "To Be Announced Soon", speaker: "To Be Announced Soon", location: "301A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Build Your Clear Aligner Skill Set: A Hands-On Workshop for GPs", speaker: "To Be Announced Soon", location: "310A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout", sponsor: "orthobrain", sponsorUrl: "/conference-sponsors" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "All-on-X & Photogrammetry: A Hands-On Full-Arch Implant Workshop", speaker: "To Be Announced Soon", location: "311A1", ce: true, ceCredits: 1.5, concurrent: "thu-630-breakout" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Brush & Unwind: Dental Anatomy Through Art — A Hands-On Paint Workshop", speaker: "To Be Announced Soon", location: "320A1", concurrent: "thu-630-breakout" },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "Concurrent Classes — Topics to Be Announced", speaker: "", location: "" },
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors", event: true },
 
   // ---------------- Friday ----------------
@@ -80,8 +77,7 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "12:30 – 1:30 PM", title: "Lunch", speaker: "", location: "OVO at The Altair", event: true, sponsor: "Sponsor TBD" },
   { day: "Friday", time: "1:30 – 3:00 PM", title: "To Be Announced Soon", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Hands-On Zirconia Crown Mastery: Anterior Esthetics & Posterior Strength Workshop", speaker: "Dr. Sara Werb (Pediatric Dentist)", speakerUrl: "/conference-speakers#speaker-sara-werb", location: "301A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "NuSmile", sponsorUrl: "/conference-sponsors" },
-  { day: "Friday", time: "3:00 – 5:00 PM", title: "The GP's Guide to Using Surgical Guides for Implant Placement", speaker: "To Be Announced Soon", location: "310A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "Adin", sponsorUrl: "/conference-sponsors" },
-  { day: "Friday", time: "3:00 – 5:00 PM", title: "Rotary Endo Mastery: A Hands-On Workshop in NiTi Instrumentation & Obturation", speaker: "To Be Announced Soon", location: "311A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
+  { day: "Friday", time: "3:00 – 5:00 PM", title: "Additional Concurrent Classes — Topics to Be Announced", speaker: "", location: "", concurrent: "fri-300-breakout" },
   { day: "Friday", time: "3:00 – 5:00 PM", title: "The 5-Step AI Video Playbook: A Hands-On Workshop for Building Usable Digital Assets for Your Practice", speaker: "Yaakov Citron", speakerUrl: "/conference-speakers#speaker-yaakov-citron", location: "320A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "Citron Films", sponsorUrl: "/conference-sponsors" },
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
   { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul",

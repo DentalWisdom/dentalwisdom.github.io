@@ -80,6 +80,17 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `_Speaker Bios & Pictures - Drop Here/`. Dr. Samuel Schuster's photo is still TODO — no headshot provided yet (see placeholder note in conference-speakers/index.html). Dr. Tzvi Krupka's photo is resized and saved as `images/speaker-tzvi-krupka.webp` (790×800, ~15KB); his bio is in `_archive/conference-speakers-full.html`, the master reference for the eventual speaker cards. Dr. Gabe Hershman's old headshot was moved to `_archive/superseded-images/speakers/` (not deleted) since Krupka is replacing his Thu 2–4pm slot.
 
 **Confirmed (session titles + speakers locked, per Ben, July 13, 2026):** Dr. Harold Katz, Dr. Daniel Greenbaum, Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Sara Werb, Sam Waller.
+
+**Still-pending slots (as of July 13, 2026)** — for reference, not urgent, not blocking publish:
+- Thursday 6:30–8:00 PM: collapsed to one line, "Concurrent Classes — Topics to Be Announced" (per Ben's call — was 4 separate named workshops, all speaker-TBD; simplified rather than spend more time on it, sponsor mentions dropped too)
+- Friday 3:00–5:00 PM: 2 of 4 concurrent slots are confirmed (Dr. Sara Werb's Zirconia Crown Mastery workshop, Yaakov Citron's AI Video Playbook) and unchanged; the other 2 (previously "Surgical Guides," sponsored by Adin, and "Rotary Endo Mastery") were collapsed into one line, "Additional Concurrent Classes — Topics to Be Announced," same reasoning as above
+- Friday 9:00–10:00 AM: "Practice Management Lecture" — speaker TBD
+- Friday 12:30–1:30 PM: Lunch — sponsor TBD
+- Friday 1:30–3:00 PM: title and speaker both TBD
+- Friday 10:30 PM: "Shiur & Oneg" — speaker TBD
+- Shabbos 11:00 AM: "Kiddush & Dvar Torah" — speaker TBD
+- Shabbos 2:45 PM: "Dental Volunteers for Israel (DVI)" — speaker TBD
+- Shabbos 3:45 PM: "Making Aliyah and Practicing Dentistry in Israel" — speaker TBD
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link. Logo scroll strips have a keyboard pause/play button (WCAG 2.2.2) injected by `js/main.js` — skip injection when `prefers-reduced-motion` is set (CSS already stops the animation). Hero video autoplay is suppressed by JS when `prefers-reduced-motion` is set.
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.

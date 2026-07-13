@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 13, 2026
 
+- Marked Dr. Harold Katz, Dr. Daniel Greenbaum, Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Sara Werb, and Sam Waller as confirmed (speaker + session title locked in) in the site notes
+- Caught and fixed a mismatch on Dr. Harold Katz's session title — three different versions existed across files; synced everything to the one currently on the live schedule: "Getting on the Bathroom Shelf: How Clinical Dentistry Inspires Consumer Products"
+
 - Updated Dr. Ariel Steinberger's session title to "The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance" — saved in the draft agenda file and the master speaker-page reference file, not on the live agenda/speakers pages yet since those still show "coming soon" placeholders
 - Replaced Dr. Gabe Hershman with new speaker Dr. Tzvi Krupka in the Thursday 2–4pm slot — added his bio (from The Hershman Group) and gave his sleep-apnea session a draft title, "Restoring the Airway: A Surgeon's Approach to Diagnosing and Treating Sleep Apnea" (still needs Ben's sign-off before it's final)
 - Resized and optimized Dr. Krupka's headshot to match the other speaker photos (790×800, ~15KB) so the eventual speakers page loads fast

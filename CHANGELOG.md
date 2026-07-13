@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 13, 2026
 
+- Simplified the still-open concurrent class slots per Ben's call: Thursday 6:30–8pm's four separate placeholder workshops (and Friday 3–5pm's two remaining open ones) are now each one plain line — "Concurrent Classes — Topics to Be Announced" — instead of specific-sounding names and sponsor credits that weren't locked in yet. The confirmed Friday 3–5pm sessions (Dr. Sara Werb, Yaakov Citron) are untouched
+- Saved a running list of every still-pending agenda slot in the site notes for easy reference later
+
 - Marked Dr. Harold Katz, Dr. Daniel Greenbaum, Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Sara Werb, and Sam Waller as confirmed (speaker + session title locked in) in the site notes
 - Caught and fixed a mismatch on Dr. Harold Katz's session title — three different versions existed across files; synced everything to the one currently on the live schedule: "Getting on the Bathroom Shelf: How Clinical Dentistry Inspires Consumer Products"
 

@@ -5,8 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 13, 2026
 
-- Updated Dr. Ariel Steinberger's session title to "The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance" — saved in the draft agenda file, not on the live agenda/speakers pages yet since those still show "coming soon" placeholders
-- Replaced Dr. Gabe Hershman with new speaker Dr. Tzvi Krupka in the Thursday 2–4pm slot (topic: sleep apnea and treating patients) — his session title is still a placeholder until Ben sends the exact wording, and his bio text is still needed (only his photo came through so far)
+- Updated Dr. Ariel Steinberger's session title to "The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance" — saved in the draft agenda file and the master speaker-page reference file, not on the live agenda/speakers pages yet since those still show "coming soon" placeholders
+- Replaced Dr. Gabe Hershman with new speaker Dr. Tzvi Krupka in the Thursday 2–4pm slot — added his bio (from The Hershman Group) and gave his sleep-apnea session a draft title, "Restoring the Airway: A Surgeon's Approach to Diagnosing and Treating Sleep Apnea" (still needs Ben's sign-off before it's final)
 - Resized and optimized Dr. Krupka's headshot to match the other speaker photos (790×800, ~15KB) so the eventual speakers page loads fast
 - Archived Dr. Hershman's old headshot and an outdated speaker-bios reference document instead of deleting them, since their content is already captured elsewhere
 

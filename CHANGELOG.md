@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 13, 2026
 
+- Updated Dr. Tzvi Krupka's session title to "Opening the Airway: Diagnosis and Management of Obstructive Sleep Apnea" and refreshed his bio with new details (Lakewood Oral Maxillofacial Surgery, Lenox Hill Hospital, St. Joseph's University Medical Center, Westchester Medical Center Cleft Lip and Palate team). Saved in the agenda file and the master speaker-page reference file — his card isn't built on the live speakers page yet
+
 - Simplified the still-open concurrent class slots per Ben's call: Thursday 6:30–8pm's four separate placeholder workshops (and Friday 3–5pm's two remaining open ones) are now each one plain line — "Concurrent Classes — Topics to Be Announced" — instead of specific-sounding names and sponsor credits that weren't locked in yet. The confirmed Friday 3–5pm sessions (Dr. Sara Werb, Yaakov Citron) are untouched
 - Saved a running list of every still-pending agenda slot in the site notes for easy reference later
 

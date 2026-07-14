@@ -68,7 +68,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 3 | Dr. Sean Ference | `speaker-sean-ference` | 'Hopeless' to Heroic… | Fri 10:30am–12pm | — |
 | 4 | Sam Waller, CFP® | `speaker-sam-waller` | Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources | Shabbos 4:45pm | — |
 | 5 | Rabbi Dr. David J. Katz | `speaker-rabbi-david-katz` | Dental Halacha Shiur (Shalosh Seudos) | Shabbos 6:30pm | Touro College of Dental Medicine |
-| 6 | Dr. Tzvi Krupka | `speaker-tzvi-krupka` | Restoring the Airway: A Surgeon's Approach to Diagnosing and Treating Sleep Apnea | Thu 2–4pm | — |
+| 6 | Dr. Tzvi Krupka | `speaker-tzvi-krupka` | Opening the Airway: Diagnosis and Management of Obstructive Sleep Apnea | Thu 2–4pm | — |
 | 7 | Dr. Ariel Steinberger | `speaker-ariel-steinberger` | The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance | Thu 4–6pm | — |
 | 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 — Intraosseous Anesthesia: Advanced Techniques for Predictable & Profound Pain Control; Hands-On Zirconia Crown Mastery: Anterior Esthetics & Posterior Strength Workshop | Fri 10–11am & Fri 3–5pm | NuSmile |
 | 9 | Dr. Dan German | `speaker-dan-german` | Straight Talk: Game-Changing Tips and Tricks Every GP Should Know in Orthodontics | Fri 1:30–3pm | orthobrain |

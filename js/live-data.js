@@ -65,7 +65,7 @@ window.LIVE_DATA = [
     time: "8:00 PM – 9:30 PM EST",
     presenter: "Dr. Josh Solomon",
     description: "Internationally recognized pediatric dentist and educator Dr. Josh Solomon shares how artificial intelligence can be seamlessly integrated into pediatric workflows to create a more natural, efficient, and engaging patient experience. Drawing on over two decades of clinical expertise, Dr. Solomon demonstrates how AI enhances diagnostics, simplifies communication, and supports stronger case acceptance—without disrupting the rhythm of a busy practice. Viewers will learn how to use AI to clearly explain findings to parents in real time, build trust through visual communication, and create a smoother, more efficient workflow for their team—while elevating the overall patient experience.\n\nAll attendees receive a FREE MONTH of Pearl. You must register to receive CE credits and the free month.",
-    registerLink: "", // TODO: Ben to add registration link
+    registerLink: "https://events.teams.microsoft.com/event/5128a874-68bc-4008-9c38-b9a71b9b20cc@353aa5d5-fd41-4aae-bc79-6722f1ca6cce",
     sponsor: "Pearl",
     sponsorName: "Pearl",
     sponsorLink: "https://discover.hellopearl.com/dental-wisdom/",

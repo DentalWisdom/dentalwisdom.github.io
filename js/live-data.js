@@ -12,9 +12,15 @@
                     (always label times "EST" — never "ET" or "EDT")
      presenter    - Presenter name
      description  - Full session description
-     perk         - Optional italic highlight line (e.g. a free-month
-                    offer or giveaway) shown under the description, in
-                    that session's card only. Omit if there's no perk.
+     perk         - UPCOMING sessions: italic gold highlight line under
+                    the description. If omitted, upcoming sessions default
+                    to "Register and attend to earn CE credit." Set this
+                    only to override that (e.g. the Pearl free-month line).
+     pastPerk     - PAST sessions show NO perk line by default. Set this
+                    to show one on a specific past session (e.g. Pearl once
+                    it's over: "Request the recording to earn CE credit.").
+     pastPerkLink - Optional URL that makes the pastPerk line a link
+                    (e.g. the recording-request form). Only used with pastPerk.
      registerLink - Registration URL
      sponsor      - Sponsor display name
      sponsorLink  - Sponsor website URL

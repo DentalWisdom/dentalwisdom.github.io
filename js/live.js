@@ -86,9 +86,23 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '<p class="session-item__desc">' + escHtml(firstPara) + '</p>';
       }
 
-      // Optional perk/offer line — italic highlight (e.g. free month, giveaway)
-      if (s.perk) {
-        html += '<p class="session-item__perk">' + escHtml(s.perk) + '</p>';
+      // Perk / offer line — italic gold highlight under the description.
+      //  • Upcoming: defaults to the CE-credit line below; a session's own
+      //    `perk` field overrides it (e.g. the Pearl free-month wording).
+      //  • Past: shows nothing unless that session has a `pastPerk` field,
+      //    which can be made a link via an optional `pastPerkLink` (e.g. a
+      //    "request the recording" form that still earns CE credit).
+      var perkText = opts.isPast
+        ? s.pastPerk
+        : (s.perk || 'Register and attend to earn CE credit.');
+      if (perkText) {
+        var perkLink = opts.isPast ? s.pastPerkLink : null;
+        if (perkLink) {
+          html += '<p class="session-item__perk"><a href="' + escAttr(perkLink)
+            + '" target="_blank" rel="noopener">' + escHtml(perkText) + '</a></p>';
+        } else {
+          html += '<p class="session-item__perk">' + escHtml(perkText) + '</p>';
+        }
       }
 
       // Footer: "Sponsored by" text only when no logo column

@@ -60,6 +60,19 @@ window.LIVE_DATA = [
     status: "past"
   },
   {
+    title: "Effortless AI in Pediatric Dentistry: Creating Smoother Visits, Clearer Conversations, and Stronger Trust",
+    date: "August 27, 2026",
+    time: "8:00 PM – 9:30 PM EST",
+    presenter: "Dr. Josh Solomon",
+    description: "Internationally recognized pediatric dentist and educator Dr. Josh Solomon shares how artificial intelligence can be seamlessly integrated into pediatric workflows to create a more natural, efficient, and engaging patient experience. Drawing on over two decades of clinical expertise, Dr. Solomon demonstrates how AI enhances diagnostics, simplifies communication, and supports stronger case acceptance—without disrupting the rhythm of a busy practice. Viewers will learn how to use AI to clearly explain findings to parents in real time, build trust through visual communication, and create a smoother, more efficient workflow for their team—while elevating the overall patient experience.\n\nAll attendees receive a FREE MONTH of Pearl. You must register to receive CE credits and the free month.",
+    registerLink: "", // TODO: Ben to add registration link
+    sponsor: "Pearl",
+    sponsorName: "Pearl",
+    sponsorLink: "https://discover.hellopearl.com/dental-wisdom/",
+    sortDate: "2026-08-27",
+    status: "upcoming"
+  },
+  {
     title: "Dental Exit Planning: Building Your Practice's Endgame Before You Need It",
     date: "October 15, 2026",
     time: "8:00 PM – 9:30 PM EST",

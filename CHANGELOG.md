@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 17, 2026
 
+- Added a new Dental Wisdom Live session: "Effortless AI in Pediatric Dentistry" with Dr. Josh Solomon, August 27, 2026 at 8:00 PM EST, sponsored by Pearl. The description notes that all attendees get a free month of Pearl and must register to receive the CE credits and free month. The Sign Up button will appear automatically once you send me the registration link (it's hidden until then)
 - Reordered the Deals page "Key Dental Solutions" section: moved Dental Equipment, Jim the OSHA & HIPAA Man, and Credit Card Processing to the end of the list (in that order). All other listings in the section stayed in place
 
 ## July 13, 2026

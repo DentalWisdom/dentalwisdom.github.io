@@ -30,16 +30,6 @@ window.DEALS_DATA = [
     keywords: "supplies consumables burs handpieces gloves composite anesthetic disposables infection control PPE materials resin bonding adhesive glass ionomer amalgam cavity liner matrix bands wedges polishing discs alginate PVS impression bite registration temporary crown dental stone local anesthetic cartridges lidocaine articaine topical anesthetic syringe needles nitrile masks N95 respirators face shields surface disinfectant sterilization pouches autoclave ultrasonic cleaner carbide diamond prophy angles cups paste scaler curettes explorer probe spoon excavator dental mirror cotton forceps fluoride varnish sealant endodontic files gutta-percha root canal sealer sodium hypochlorite EDTA elastic separators brackets cotton rolls gauze saliva ejectors HVE tips dental bibs"
   },
   {
-    title: "Dental Equipment",
-    shortDescription: "All Practice Solutions",
-    category: "Key Dental Solutions",
-    description: "High-quality dental equipment including chairs, imaging, surgical tools, and more. In-house financing available.",
-    link: "https://allpracticesolutions.com/dental-wisdom/",
-    promo: "Exclusive Deals for Dental Wisdom – Call Rod!",
-    imageUrl: "/images/deals/dental-equipment.webp",
-    keywords: "chairs units x-ray cone beam CBCT panoramic digital imaging surgical instruments compressors sterilizers autoclaves"
-  },
-  {
     title: "orthobrain",
     shortDescription: "Clear Aligners",
     category: "Key Dental Solutions",
@@ -90,14 +80,24 @@ window.DEALS_DATA = [
     keywords: "marketing SEO Google Ads social media website design online reviews reputation branding content digital advertising"
   },
   {
-    title: "Credit Card Processing",
-    shortDescription: "Payment Processing",
+    title: "AAFE (American Academy of Facial Esthetics)",
+    shortDescription: "Botox & Filler Training",
     category: "Key Dental Solutions",
-    description: "Secure, efficient payment processing solutions with preferred pricing for Dental Wisdom members.",
-    link: "https://dentalprocessingsolutions.com/",
-    promo: "Free Onboarding Call",
-    imageUrl: "/images/deals/credit-card-processing.webp",
-    keywords: "payments credit card merchant processing terminals swipe tap POS point of sale interchange rates fees"
+    description: "#1 Botox, Filler, and TMJ training for dental professionals. Integrate new services and increase production.",
+    link: "https://facialesthetics.org/",
+    promo: "Use code DW100 for $100 discount",
+    imageUrl: "/images/deals/aafe.webp",
+    keywords: "Botox filler injectables aesthetics esthetics facial cosmetic TMJ jaw pain neurotoxin dermal CE training course"
+  },
+  {
+    title: "Dental Equipment",
+    shortDescription: "All Practice Solutions",
+    category: "Key Dental Solutions",
+    description: "High-quality dental equipment including chairs, imaging, surgical tools, and more. In-house financing available.",
+    link: "https://allpracticesolutions.com/dental-wisdom/",
+    promo: "Exclusive Deals for Dental Wisdom – Call Rod!",
+    imageUrl: "/images/deals/dental-equipment.webp",
+    keywords: "chairs units x-ray cone beam CBCT panoramic digital imaging surgical instruments compressors sterilizers autoclaves"
   },
   {
     title: "Jim the OSHA & HIPAA Man",
@@ -110,14 +110,14 @@ window.DEALS_DATA = [
     keywords: "OSHA HIPAA compliance training safety binders regulations infection control bloodborne pathogens hazcom audit"
   },
   {
-    title: "AAFE (American Academy of Facial Esthetics)",
-    shortDescription: "Botox & Filler Training",
+    title: "Credit Card Processing",
+    shortDescription: "Payment Processing",
     category: "Key Dental Solutions",
-    description: "#1 Botox, Filler, and TMJ training for dental professionals. Integrate new services and increase production.",
-    link: "https://facialesthetics.org/",
-    promo: "Use code DW100 for $100 discount",
-    imageUrl: "/images/deals/aafe.webp",
-    keywords: "Botox filler injectables aesthetics esthetics facial cosmetic TMJ jaw pain neurotoxin dermal CE training course"
+    description: "Secure, efficient payment processing solutions with preferred pricing for Dental Wisdom members.",
+    link: "https://dentalprocessingsolutions.com/",
+    promo: "Free Onboarding Call",
+    imageUrl: "/images/deals/credit-card-processing.webp",
+    keywords: "payments credit card merchant processing terminals swipe tap POS point of sale interchange rates fees"
   },
   {
     title: "Pearl",

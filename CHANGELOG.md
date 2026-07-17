@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 17, 2026
 
+- On the August 27 Pearl session card, added a short italic gold line under the description that reads "Register and attend to earn CE credit and a free month of Pearl." so attendees clearly see they're getting something. It shows on that session only — other session cards are unaffected
 - Added a new Dental Wisdom Live session: "AI in Dentistry: Enhancing Patient Communication and Clinical Outcomes" with Dr. Mitchell Rubinstein, August 27, 2026 at 8:00 PM EST, sponsored by Pearl. The description notes that all attendees get a free month of Pearl and must register to receive the CE credits and free month. Registration link added, so the Sign Up button is now live
 - Reordered the Deals page "Key Dental Solutions" section: moved Dental Equipment, Jim the OSHA & HIPAA Man, and Credit Card Processing to the end of the list (in that order). All other listings in the section stayed in place
 

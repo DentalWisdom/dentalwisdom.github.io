@@ -12,6 +12,9 @@
                     (always label times "EST" — never "ET" or "EDT")
      presenter    - Presenter name
      description  - Full session description
+     perk         - Optional italic highlight line (e.g. a free-month
+                    offer or giveaway) shown under the description, in
+                    that session's card only. Omit if there's no perk.
      registerLink - Registration URL
      sponsor      - Sponsor display name
      sponsorLink  - Sponsor website URL
@@ -64,7 +67,8 @@ window.LIVE_DATA = [
     date: "August 27, 2026",
     time: "8:00 PM – 9:30 PM EST",
     presenter: "Dr. Mitchell Rubinstein",
-    description: "This program explores the evolving role of artificial intelligence in modern dental practices, with a focus on clinical communication and operational efficiency. Participants will examine how AI-enhanced workflows improve case presentation accuracy, elevate chairside education, and support informed decision-making through real-time data insights. By incorporating AI into everyday practice, dental teams can strengthen patient trust, optimize team performance, and drive measurable improvements in both clinical outcomes and practice growth.\n\nAll attendees receive a FREE MONTH of Pearl. You must register to receive CE credits and the free month.",
+    description: "This program explores the evolving role of artificial intelligence in modern dental practices, with a focus on clinical communication and operational efficiency. Participants will examine how AI-enhanced workflows improve case presentation accuracy, elevate chairside education, and support informed decision-making through real-time data insights. By incorporating AI into everyday practice, dental teams can strengthen patient trust, optimize team performance, and drive measurable improvements in both clinical outcomes and practice growth.",
+    perk: "Register and attend to earn CE credit and a free month of Pearl.",
     registerLink: "https://events.teams.microsoft.com/event/5128a874-68bc-4008-9c38-b9a71b9b20cc@353aa5d5-fd41-4aae-bc79-6722f1ca6cce",
     sponsor: "Pearl",
     sponsorName: "Pearl",

@@ -1095,6 +1095,14 @@ body.menu-open {
   margin: 0 0 var(--space-sm);
 }
 
+.session-item__perk {
+  font-style: italic;
+  font-size: calc(var(--fs-small) - 0.05rem);
+  color: var(--color-gold-text);
+  line-height: 1.5;
+  margin: 0 0 var(--space-sm);
+}
+
 .session-item__footer {
   display: flex;
   align-items: center;

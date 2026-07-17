@@ -86,6 +86,11 @@ document.addEventListener('DOMContentLoaded', function () {
         html += '<p class="session-item__desc">' + escHtml(firstPara) + '</p>';
       }
 
+      // Optional perk/offer line — italic highlight (e.g. free month, giveaway)
+      if (s.perk) {
+        html += '<p class="session-item__perk">' + escHtml(s.perk) + '</p>';
+      }
+
       // Footer: "Sponsored by" text only when no logo column
       if (!showLogoCol && s.sponsor) {
         html += '<div class="session-item__footer">';

@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 17, 2026
+
+- Reordered the Deals page "Key Dental Solutions" section: moved Dental Equipment, Jim the OSHA & HIPAA Man, and Credit Card Processing to the end of the list (in that order). All other listings in the section stayed in place
+
 ## July 13, 2026
 
 - Updated Dr. Tzvi Krupka's session title to "Opening the Airway: Diagnosis and Management of Obstructive Sleep Apnea" and refreshed his bio with new details (Lakewood Oral Maxillofacial Surgery, Lenox Hill Hospital, St. Joseph's University Medical Center, Westchester Medical Center Cleft Lip and Palate team). Saved in the agenda file and the master speaker-page reference file — his card isn't built on the live speakers page yet

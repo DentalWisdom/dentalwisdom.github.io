@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 19, 2026
+
+- Fixed a typo on the homepage: the line under the gallery now reads "From the 2026 Dental Wisdom Conference — here's a look at what you can expect." (was "2025")
+
 ## July 17, 2026
 
 - Made the CE-credit note show on every upcoming Live session card, not just Pearl's. All upcoming sessions now show an italic gold line reading "Register and attend to earn CE credit." The August 27 Pearl session keeps its own version, "Register and attend to earn CE credit and a free month of Pearl." Past sessions show no such line unless specifically set later

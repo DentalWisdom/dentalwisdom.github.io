@@ -5,6 +5,21 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 20, 2026
 
+- Ran a full site review (report shared in chat) and applied a batch of approved fixes:
+- Member count now says "over 950 Jewish dentists" in both places it appears — the WhatsApp page hero (was "over 1,000 Jewish dental professionals") and the Want to Lecture page (was "approximately 800"), so the two pages no longer contradict each other
+- The WhatsApp page now says "dentists" instead of "dental professionals" everywhere (headline, member-benefits card, and the page's search/social descriptions), matching the group's dentists-only rule
+- Standardized the community's name to "Dental Wisdom WhatsApp Community": the Group Policies page no longer says "Dental Wisdom Chat" (6 spots), and the WhatsApp page's browser-tab title now reads "Join the WhatsApp Community." The floating "Join WhatsApp Group" button is unchanged
+- Two section headings now match the site's Title Case style: "What Every Session Includes" (Live page) and "What You'll Receive as a Member" (WhatsApp page)
+- Fixed a grammar slip in the homepage "Class Options & CE Credits" accordion: "credits, that will be accredited" → "credits, which will be accredited"
+- Fixed a homepage testimonial credential: "Prosthodontics" → "Prosthodontist" (matches how the other testimonials are labeled)
+- The small gold weekday tag ("THU") on Live session date badges now uses the darker gold used for all other gold text, so it's easier to read on the white card
+- Two one-off colors (the light gold in the homepage testimonial carousel, the navy hover on the Live page Sign Up button) are now named colors in the shared stylesheet, so future palette changes reach them automatically
+- The Live and Deals data files now load with version numbers (like the stylesheet already does), so returning visitors always get the newest sessions and deals after an update
+- The two giveaway-sponsor logo buttons on the Live page now find their pop-up by sponsor name instead of list position — adding or reordering sponsors in the data file can no longer make them open the wrong pop-up
+- Privacy Policy dates updated to January 1, 2026 (was 2025), matching the Terms pages
+- Updated the internal project-notes file (CLAUDE.md) to match reality: teaser Agenda/Speakers pages noted, sponsor modal photo support marked as built, floating-button label corrected, stylesheet version corrected
+- Stylesheet version bumped to v=41 on all pages so visitors get the updated styles
+
 - On the Dental Wisdom Live page, reworked that confirmation-email heads-up into a single centered note beneath all three steps (instead of tucked inside "Claim Your Spot"), so the three columns stay even. It now also reminds people that registration is required to receive CE credit for a session
 - On the Dental Wisdom Live page, added a short heads-up under the "Claim Your Spot" step letting people know their sign-up confirmation email comes from noreply@dentalwisdom.s09.usa1.teams-events.com and may land in their spam or junk folder
 - On the Dental Wisdom Live page, each session card's date badge now shows the day of the week (e.g. "THU") at the top, above the month and day. It's worked out automatically from the date, so you never have to enter it and it can't be wrong even if a future session lands on a different day

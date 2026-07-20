@@ -721,11 +721,12 @@ body.menu-open {
 }
 
 /* Phones / very narrow windows: keep the hero paragraph from running
-   too close to the screen edges (Ben, July 2026) */
+   too close to the screen edges (Ben, July 2026 — widened from 0.5rem
+   after a second look) */
 @media (max-width: 767px) {
   .hero__lede {
-    padding-left: 0.5rem;
-    padding-right: 0.5rem;
+    padding-left: 0.85rem;
+    padding-right: 0.85rem;
   }
 }
 

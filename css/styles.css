@@ -1265,6 +1265,15 @@ body.menu-open {
   margin: 0;
 }
 
+.step-note {
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  line-height: 1.6;
+  text-align: center;
+  max-width: 900px;
+  margin: 2rem auto 0;
+}
+
 /* Desktop: horizontal layout with connecting line */
 @media (min-width: 768px) {
   .steps-row {

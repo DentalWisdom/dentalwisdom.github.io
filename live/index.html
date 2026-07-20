@@ -36,7 +36,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
 
-  <link rel="stylesheet" href="/css/styles.css?v=40">
+  <link rel="stylesheet" href="/css/styles.css?v=41">
   <style>
     .live-cta-buttons {
       display: grid;
@@ -118,8 +118,8 @@
   }
   .btn-live:hover,
   .btn-live:focus-visible {
-    background-color: #2e3f52;
-    border-color: #2e3f52;
+    background-color: var(--color-ink-light);
+    border-color: var(--color-ink-light);
     color: var(--color-ivory);
     box-shadow: var(--shadow-card-hover);
   }
@@ -231,7 +231,7 @@
     <section class="section section--ivory">
       <div class="container">
         <div class="section-heading" data-reveal>
-          <h2>What every session includes</h2>
+          <h2>What Every Session Includes</h2>
         </div>
 
         <div class="card-grid card-grid--4 live-delivers-grid" data-reveal>
@@ -339,10 +339,10 @@
           <p>Exclusive prizes every session, generously provided by</p>
         </div>
         <div style="display: flex; align-items: center; justify-content: center; gap: 2rem; flex-wrap: wrap;">
-          <button type="button" class="sponsor-card live-sponsor-logo-card" data-sponsor-index="2" aria-haspopup="dialog" aria-label="View LiveWell Capital details">
+          <button type="button" class="sponsor-card live-sponsor-logo-card" data-sponsor-name="LiveWell Capital" aria-haspopup="dialog" aria-label="View LiveWell Capital details">
             <img src="/images/sponsors/livewell-capital.webp" alt="LiveWell Capital" loading="lazy" width="500" height="376">
           </button>
-          <button type="button" class="sponsor-card live-sponsor-logo-card" data-sponsor-index="5" aria-haspopup="dialog" aria-label="View MB Precious Metals details">
+          <button type="button" class="sponsor-card live-sponsor-logo-card" data-sponsor-name="MB Precious Metals" aria-haspopup="dialog" aria-label="View MB Precious Metals details">
             <img src="/images/sponsors/mb-precious-metals.webp" alt="MB Precious Metals" loading="lazy" width="500" height="377">
           </button>
         </div>
@@ -499,10 +499,10 @@
   </div>
 
   <script src="/js/main.js?v=4"></script>
-  <script src="/js/live-data.js"></script>
-  <script src="/js/live.js"></script>
+  <script src="/js/live-data.js?v=1"></script>
+  <script src="/js/live.js?v=1"></script>
   <script src="/js/sponsors-data.js?v=2"></script>
-  <script src="/js/sponsors.js?v=5"></script>
+  <script src="/js/sponsors.js?v=6"></script>
   <script>
     (function() {
       var header = document.querySelector('.site-header');

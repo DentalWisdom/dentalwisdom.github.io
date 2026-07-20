@@ -20,6 +20,8 @@
   --color-gold-text: #8C6A1A; /* darkened gold for text — passes WCAG AA (4.65:1 on white) */
   --color-parchment: #EDE8DE; /* warm section band */
   --color-slate: #5C6670;
+  --color-gold-soft: #d4c4a0; /* light gold — decorative accents only (never text) */
+  --color-ink-light: #2e3f52; /* lightened ink — hover state on navy buttons */
   --color-white: #FFFFFF;
 
   /* Semantic aliases */
@@ -1042,7 +1044,7 @@ body.menu-open {
   text-transform: uppercase;
   letter-spacing: 0.16em;
   font-weight: 700;
-  color: var(--color-gold-warm);
+  color: var(--color-gold-text);
   line-height: 1;
   margin-bottom: 0.3rem;
 }

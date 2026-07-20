@@ -27,7 +27,7 @@
   <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
-  <link rel="stylesheet" href="/css/styles.css?v=40">
+  <link rel="stylesheet" href="/css/styles.css?v=41">
   <style>
     /* Hero text shadow — home page only */
     .hero__content h1,
@@ -43,17 +43,17 @@
     .tc__heading { font-family: 'Playfair Display', serif; font-size: 1.75rem; font-weight: 700; color: var(--color-ink); margin: 0 0 2rem; }
     @media (min-width: 768px) { .tc__heading { font-size: 2.25rem; } }
     @media (min-width: 1280px) { .tc__heading { font-size: 2.75rem; } }
-    .tc__qmark { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 0.5; color: #d4c4a0; display: block; margin-bottom: 1.25rem; }
+    .tc__qmark { font-family: 'Playfair Display', serif; font-size: 4rem; line-height: 0.5; color: var(--color-gold-soft); display: block; margin-bottom: 1.25rem; }
     .tc__stars { color: var(--color-gold-warm); font-size: 1rem; letter-spacing: 3px; margin-bottom: 1rem; }
     .tc__quote { font-family: 'Playfair Display', serif; font-style: italic; font-size: 1.075rem; line-height: 1.75; color: var(--color-ink); max-width: 640px; margin: 0 auto 1.25rem; min-height: 5rem; display: flex; align-items: center; justify-content: center; }
-    .tc__divider { width: 100px; height: 1px; background: #d4c4a0; margin: 0 auto 1.25rem; }
+    .tc__divider { width: 100px; height: 1px; background: var(--color-gold-soft); margin: 0 auto 1.25rem; }
     .tc__name { font-size: 0.6875rem; font-weight: 600; letter-spacing: 0.1em; text-transform: uppercase; color: var(--color-ink); margin: 0 0 0.2rem; }
     .tc__cred { font-size: 0.6875rem; color: var(--color-gold-text); margin: 0; letter-spacing: 0.04em; }
     .tc__nav { display: flex; align-items: center; justify-content: center; gap: 1.25rem; margin-top: 1.75rem; }
     .tc__arrow { width: 40px; height: 40px; border-radius: 50%; border: 1.5px solid var(--color-gold-warm); background: none; color: var(--color-gold-warm); cursor: pointer; font-size: 1rem; display: flex; align-items: center; justify-content: center; transition: background 0.15s; }
     .tc__arrow:hover { background: #faf3e4; }
     .tc__dots { display: flex; align-items: center; gap: 6px; }
-    .tc__dot { height: 2px; width: 14px; border-radius: 2px; background: #d4c4a0; transition: all 0.25s; cursor: pointer; border: none; padding: 0; }
+    .tc__dot { height: 2px; width: 14px; border-radius: 2px; background: var(--color-gold-soft); transition: all 0.25s; cursor: pointer; border: none; padding: 0; }
     .tc__dot--active { background: var(--color-gold-text); width: 28px; }
   </style>
 
@@ -352,7 +352,7 @@
           <details>
             <summary>Class Options &amp; CE Credits</summary>
             <div class="accordion__body">
-              <p>The 2027 Dental Wisdom Conference will offer an estimated 20 CE credits, that will be accredited through the Academy of General Dentistry (AGD). Lectures will be cross-specialty, include lecture and hands-on options, with multiple simultaneous class options when scheduling permits.</p>
+              <p>The 2027 Dental Wisdom Conference will offer an estimated 20 CE credits, which will be accredited through the Academy of General Dentistry (AGD). Lectures will be cross-specialty, include lecture and hands-on options, with multiple simultaneous class options when scheduling permits.</p>
               <p>Lecture topics, speakers and schedule will be published closer to the event.</p>
             </div>
           </details>
@@ -505,7 +505,7 @@
         (function() {
           var testimonials = [
             { quote: "I’d been in the WhatsApp group for over a year answering each other’s case questions, but flying in from Jerusalem and finally putting a face to all those names made it real. Those are genuine friends now, not just numbers on WhatsApp.", name: "Dr. E.P.", cred: "General Dentist · Jerusalem, IL" },
-            { quote: "What got me was that I didn’t have to choose between davening and the schedule — there were minyanim and shiurim built in throughout, and kosher food every single meal. Felt like someone actually thought about who’d be in the room.", name: "Dr. D.B.", cred: "Prosthodontics · Manhattan, NY" },
+            { quote: "What got me was that I didn’t have to choose between davening and the schedule — there were minyanim and shiurim built in throughout, and kosher food every single meal. Felt like someone actually thought about who’d be in the room.", name: "Dr. D.B.", cred: "Prosthodontist · Manhattan, NY" },
             { quote: "Didn’t expect much beyond the usual conference small talk, but the party with the fresh pizza turned into a two-hour conversation with three other GPs — I consider them real friends now, and we’ve kept that relationship going since.", name: "Dr. D.G.", cred: "General Dentist · Woodmere, NY" },
             { quote: "Still can’t believe I walked away with a quarter ounce of gold from the raffle. My office manager thought I was joking when I told her.", name: "Dr. E.B.", cred: "General Dentist · Miami, FL" },
             { quote: "The hands-on workshop on surgical extractions was worth the trip by itself — small group, real instruments, real feedback, not just slides. And the kosher food was genuinely good, which I wasn’t expecting.", name: "Dr. A.S.", cred: "Oral Surgeon · Baltimore, MD" },
@@ -630,7 +630,7 @@
   <!-- FLOATING JOIN BUTTON + MODAL -->
   <script src="/js/main.js?v=4"></script>
   <script src="/js/sponsors-data.js?v=2"></script>
-  <script src="/js/sponsors.js?v=5"></script>
+  <script src="/js/sponsors.js?v=6"></script>
 
   <!-- Hero video: only load/play on tablets & desktop. Phones (and anyone with reduced-motion set) see the static photo instead, so the 2.4MB video file is never downloaded on mobile. -->
   <script>

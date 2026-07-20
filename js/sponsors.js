@@ -351,6 +351,14 @@ document.addEventListener('DOMContentLoaded', function () {
   /* ----- Wire up every card + close controls ----- */
   document.querySelectorAll('.sponsor-card').forEach(function (card) {
     card.addEventListener('click', function () {
+      // Prefer matching by sponsor name (stable even if the data file is
+      // reordered); fall back to list position for cards built by this script.
+      var name = card.getAttribute('data-sponsor-name');
+      if (name) {
+        for (var n = 0; n < sponsors.length; n++) {
+          if (sponsors[n].name === name) { openModal(sponsors[n]); return; }
+        }
+      }
       var idx = parseInt(card.getAttribute('data-sponsor-index'), 10);
       if (sponsors[idx]) openModal(sponsors[idx]);
     });

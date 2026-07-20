@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 20, 2026
+
+- Removed Mango Voice from the Deals page (their deal link wasn't working). Their full entry is saved in the archive folder (`_archive/removed-deals.md`) so it can be pasted right back if they return
+
 ## July 19, 2026
 
 - Fixed a typo on the homepage: the line under the gallery now reads "From the 2026 Dental Wisdom Conference — here's a look at what you can expect." (was "2025")

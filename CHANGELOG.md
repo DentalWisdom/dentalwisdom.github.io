@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 20, 2026
 
+- On the Dental Wisdom Live page, reworked that confirmation-email heads-up into a single centered note beneath all three steps (instead of tucked inside "Claim Your Spot"), so the three columns stay even. It now also reminds people that registration is required to receive CE credit for a session
 - On the Dental Wisdom Live page, added a short heads-up under the "Claim Your Spot" step letting people know their sign-up confirmation email comes from noreply@dentalwisdom.s09.usa1.teams-events.com and may land in their spam or junk folder
 - On the Dental Wisdom Live page, each session card's date badge now shows the day of the week (e.g. "THU") at the top, above the month and day. It's worked out automatically from the date, so you never have to enter it and it can't be wrong even if a future session lands on a different day
 - Removed Mango Voice from the Deals page (their deal link wasn't working). Their full entry is saved in the archive folder (`_archive/removed-deals.md`) so it can be pasted right back if they return

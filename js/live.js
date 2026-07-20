@@ -41,12 +41,17 @@ document.addEventListener('DOMContentLoaded', function () {
       var hidden = overflow && i >= SESSIONS_LIMIT ? ' session-item--hidden' : '';
       // Parse sortDate for the date badge: "2026-06-18" → month abbr + day
       var parts = (s.sortDate || '').split('-');
-      var monthAbbr = '';
-      var dayNum    = '';
+      var monthAbbr   = '';
+      var dayNum      = '';
+      var weekdayAbbr = '';
       if (parts.length === 3) {
         var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
         monthAbbr = months[parseInt(parts[1], 10) - 1] || '';
         dayNum    = String(parseInt(parts[2], 10));
+        // Weekday computed from the date (e.g. "Thu") — no data entry needed.
+        var weekdays = ['Sun','Mon','Tue','Wed','Thu','Fri','Sat'];
+        var wdDate = new Date(parseInt(parts[0], 10), parseInt(parts[1], 10) - 1, parseInt(parts[2], 10));
+        if (!isNaN(wdDate.getTime())) weekdayAbbr = weekdays[wdDate.getDay()] || '';
       }
 
       // Time: "8:00 PM – 9:30 PM EST" → split on em-dash for two lines
@@ -63,6 +68,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Date badge
       html += '<div class="session-item__date" aria-label="' + escAttr(s.date) + '">';
+      if (weekdayAbbr) html += '<span class="session-item__weekday">' + escHtml(weekdayAbbr) + '</span>';
       if (monthAbbr) html += '<span class="session-item__month">' + escHtml(monthAbbr) + '</span>';
       if (dayNum)    html += '<span class="session-item__day">'   + escHtml(dayNum)    + '</span>';
       if (timeDisplay) {

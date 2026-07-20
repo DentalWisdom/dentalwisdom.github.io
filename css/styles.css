@@ -1037,6 +1037,16 @@ body.menu-open {
   color: #fff;
 }
 
+.session-item__weekday {
+  font-size: 0.62rem;
+  text-transform: uppercase;
+  letter-spacing: 0.16em;
+  font-weight: 700;
+  color: var(--color-gold-warm);
+  line-height: 1;
+  margin-bottom: 0.3rem;
+}
+
 .session-item__month {
   font-size: 0.7rem;
   text-transform: uppercase;
@@ -1156,6 +1166,10 @@ body.menu-open {
     gap: 0.75rem;
     padding: 0.5rem var(--space-sm);
     border-radius: var(--radius-sm);
+  }
+
+  .session-item__weekday {
+    margin-bottom: 0;
   }
 
   .session-item__month {

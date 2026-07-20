@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 20, 2026
 
+- On phones and very narrow windows, the big paragraph in the homepage hero ("You'll engage with high-quality...") now sits a little narrower, with more breathing room from the screen edges (about 2% extra space per side). Desktop is unchanged. Stylesheet bumped to v=42
+
 - Ran a full site review (report shared in chat) and applied a batch of approved fixes:
 - Member count now says "over 950 Jewish dentists" in both places it appears — the WhatsApp page hero (was "over 1,000 Jewish dental professionals") and the Want to Lecture page (was "approximately 800"), so the two pages no longer contradict each other
 - The WhatsApp page now says "dentists" instead of "dental professionals" everywhere (headline, member-benefits card, and the page's search/social descriptions), matching the group's dentists-only rule

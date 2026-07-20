@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 20, 2026
 
+- On the Dental Wisdom Live page, each session card's date badge now shows the day of the week (e.g. "THU") at the top, above the month and day. It's worked out automatically from the date, so you never have to enter it and it can't be wrong even if a future session lands on a different day
 - Removed Mango Voice from the Deals page (their deal link wasn't working). Their full entry is saved in the archive folder (`_archive/removed-deals.md`) so it can be pasted right back if they return
 
 ## July 19, 2026

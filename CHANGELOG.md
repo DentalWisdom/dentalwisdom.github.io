@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Agenda page fix (draft/not-yet-public page): the "Include Davening Times" button now works while "CE Only" is selected — it adds the davening times to the CE list. Before, the button was greyed out and did nothing in that combination.
 - Image tune-up: converted the last five JPG headshots (Harold Katz, Greenbaum, Citron, Rabbi Katz, German) to the site's standard WebP format, and shrank the browser-tab icon from 26 KB to 3 KB (it loads on every page). Originals kept in images/_archive_originals_2026-07-24/.
 - Speaker pop-ups: sponsor logos are now larger (single logo up from 140px to 180px tall; the two-logo row from 90px to 120px).
 

@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Added the "Dental Volunteers for Israel (DVI)" class back to the Shabbos schedule at 2:45 PM, with Dr. Nathaniel Dancykier speaking (CE, 1) — replacing the "Dental Related Shiur to Be Announced" placeholder in that slot. Note: the agenda page is still the "coming soon" teaser, so this isn't public yet.
 - Gold level: Adin, APEX, and TheraBreath are now marked as attending. Gold now reads MB Precious Metals, Crazy Dental, Reach, Adin, APEX, TheraBreath (all attending), then Pearl and Lasso MD (past sponsors).
 - On the Sponsors page, each level (Platinum, Gold, Silver, Bronze) now shows the sponsors attending the conference first, then the rest. This happens automatically from now on, so newly added attending sponsors will always rise to the top of their level.
 - Set the Bronze level order to Citron Films, then Pizza Biza, then CG Insurance Group (the attending ones), followed by the past sponsors.

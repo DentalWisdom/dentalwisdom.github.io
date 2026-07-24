@@ -99,7 +99,7 @@ window.AGENDA_DATA = [
   { day: "Shabbos", time: "9:00 AM", title: "Davening", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "11:00 AM", title: "Kiddush & Dvar Torah", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "12:00 PM", title: "Shabbos Lunch", speaker: "", location: "OVO at The Altair" },
-  { day: "Shabbos", time: "2:45 PM", title: "Dental Related Shiur to Be Announced Soon", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
+  { day: "Shabbos", time: "2:45 PM", title: "Dental Volunteers for Israel (DVI)", speaker: "Dr. Nathaniel Dancykier (Prosthodontist)", speakerUrl: "/conference-speakers#speaker-nathaniel-dancykier", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "3:45 PM", title: "Dental Related Shiur to Be Announced Soon", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "4:45 PM", title: "Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources", speaker: "Sam Waller, CFP®", speakerUrl: "/conference-speakers#speaker-sam-waller", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "5:45 PM", title: "Mincha", speaker: "", location: "Shul" },

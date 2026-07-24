@@ -91,7 +91,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - Friday 1:30–3:00 PM: title and speaker both TBD
 - Friday 10:30 PM: "Shiur & Oneg" — speaker TBD
 - Shabbos 11:00 AM: "Kiddush & Dvar Torah" — speaker TBD
-- Shabbos 2:45 PM: "Dental Volunteers for Israel (DVI)" — speaker TBD
+- Shabbos 2:45 PM: FILLED (July 24, 2026) — "Dental Volunteers for Israel (DVI)," Dr. Nathaniel Dancykier (CE, 1). Was previously a "Dental Related Shiur to Be Announced Soon" placeholder.
 - Shabbos 3:45 PM: "Making Aliyah and Practicing Dentistry in Israel" — speaker TBD
 - Accessibility: semantic landmarks, alt text on every image, visible focus states, body-text contrast ≥ 4.5:1, skip-to-content link. Logo scroll strips have a keyboard pause/play button (WCAG 2.2.2) injected by `js/main.js` — skip injection when `prefers-reduced-motion` is set (CSS already stops the animation). Hero video autoplay is suppressed by JS when `prefers-reduced-motion` is set.
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.

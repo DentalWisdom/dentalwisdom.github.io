@@ -92,7 +92,7 @@ window.AGENDA_DATA = [
       { name: "CG Insurance Group", url: "/conference-sponsors" }
     ], sponsorLabel: "Chazanus sponsored by" },
   { day: "Friday", time: "8:00 PM", title: "Shabbos Dinner", speaker: "", location: "OVO at The Altair" },
-  { day: "Friday", time: "10:30 PM", title: "From Isolation to Achdus: Strengthening the Jewish Dental Community", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
+  { day: "Friday", time: "10:30 PM", title: "Oneg & Shiur: From Isolation to Achdus - Strengthening the Jewish Dental Community", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
 
   // ---------------- Shabbos ----------------
   { day: "Shabbos", time: "8:15 AM", title: "Pre-Davening Shiur", speaker: "Dr. Samuel Schuster (General Dentist)", location: "Library", ce: true, ceCredits: 1 },

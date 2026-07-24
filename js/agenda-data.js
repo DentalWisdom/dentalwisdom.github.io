@@ -97,6 +97,7 @@ window.AGENDA_DATA = [
   // ---------------- Shabbos ----------------
   // ARCHIVED 2026-07-24 (Schuster removed as speaker by Ben; card already off the speakers page): { day: "Shabbos", time: "8:15 AM", title: "Pre-Davening Shiur", speaker: "Dr. Samuel Schuster (General Dentist)", location: "Library", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "8:15 AM", title: "Pre-Davening Shiur", speaker: "To Be Announced Soon", location: "Library", ce: true, ceCredits: 1 },
+  { day: "Shabbos", time: "8:30 AM", title: "Breakfast", speaker: "", location: "OVO at The Altair" },
   { day: "Shabbos", time: "9:00 AM", title: "Davening", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "11:00 AM", title: "Kiddush & Dvar Torah", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "12:00 PM", title: "Shabbos Lunch", speaker: "", location: "OVO at The Altair" },

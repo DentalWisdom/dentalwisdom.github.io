@@ -95,7 +95,7 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "10:30 PM", title: "Shiur & Oneg", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
 
   // ---------------- Shabbos ----------------
-  { day: "Shabbos", time: "8:15 AM", title: "Pre-Davening Shiur", speaker: "Dr. Samuel Schuster (General Dentist)", speakerUrl: "/conference-speakers#speaker-samuel-schuster", location: "Library", ce: true, ceCredits: 1 },
+  { day: "Shabbos", time: "8:15 AM", title: "Pre-Davening Shiur", speaker: "Dr. Samuel Schuster (General Dentist)", location: "Library", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "9:00 AM", title: "Davening", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "11:00 AM", title: "Kiddush & Dvar Torah", speaker: "To Be Announced Soon", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "12:00 PM", title: "Shabbos Lunch", speaker: "", location: "OVO at The Altair" },

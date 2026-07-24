@@ -5,6 +5,13 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Reorganized the speakers page (still the "coming soon" teaser publicly — none of this is live yet):
+  - Removed Dr. Craig Berry, Dr. Samuel Schuster, and Yaakov Citron from the page (all kept on file, not deleted, in case they return). Dr. Schuster still appears on the agenda; his name just no longer links to a profile.
+  - Restored Dr. Marc Faber's card (Thursday 6:30 PM session).
+  - All cards are now ordered by speaking time within each day.
+  - Dr. Nathaniel Dancykier's card moved to the top of Friday and now lists both his sessions (Friday morning lecture + Shabbos DVI talk).
+  - Updated Dr. Sara Werb's card to her current single session (Friday 10:30 AM–12:30 PM) and removed the old NuSmile sponsorship from it.
+  - Gobbie Cohn's session now reads "Kabbalas Shabbos."
 - Added TruAbutment as a Gold sponsor (marked attending), with their logo, website link (truabutment.com), and company description. Their card appears in the Gold row on the Sponsors page and on the homepage logo strip.
 - Dr. Daniel Greenbaum's Thursday lecture is now sponsored by TruAbutment.
 - Added Dr. Sam Glick's headshot (replacing the initials placeholder on his speaker card).

@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Tooth Memory extras: (1) a player's Best score now sticks between visits, saved privately on their own device; (2) a small speaker button lets them mute/unmute the tones (the game still plays fine silently); (3) three speed choices before starting — Easy, Normal, or Hard — and it remembers which they last picked.
 - Tooth Memory tune-up: now 9 teeth (a full 3×3 grid, mapped to number keys 1–9 like a keypad), each with its own color and a note from a pleasant musical scale so any sequence sounds nice. Added a "3 of 5" progress counter so you don't lose your place mid-round, plus a little celebratory chime cascade each time you clear a round.
 - Replaced the 404-page game with "Tooth Memory," a Simon-style memory game (more skill, less luck): six teeth light up in a growing sequence with a musical tone each, and you repeat it back — one extra tooth every round, one wrong tap ends it. Tracks your best round. Still emoji-based with no extra load time; the old whack-a-cavity version is saved in _archive in case you ever want it back. The "Return to Homepage" button and links stay right above it.
 - Agenda page fix (draft/not-yet-public page): the "Include Davening Times" button now works while "CE Only" is selected — it adds the davening times to the CE list. Before, the button was greyed out and did nothing in that combination.

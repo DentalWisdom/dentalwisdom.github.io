@@ -135,8 +135,9 @@
     <!-- ===================== TOOTH MEMORY MINI-GAME (404 page only) =====================
          Simon-style memory game: teeth light up in a sequence, player repeats it.
          Skill = memory. Self-contained scoped .tm- styles + inline script, emoji + Web Audio
-         tones (no downloads). 9 teeth, Easy/Normal/Hard speeds, sound toggle, best score saved
-         to the visitor's own browser. Keyboard (1-9) + touch playable, respects reduced-motion. -->
+         tones (no downloads). 9 teeth, Easy/Normal/Hard speeds, sound toggle, reset button,
+         best score saved to the visitor's own browser, and a share-my-score button.
+         Keyboard (1-9) + touch playable, respects reduced-motion. -->
     <section class="section section--compact tm" aria-labelledby="tmHeading">
       <div class="container">
         <div class="tm__intro text-center">
@@ -149,7 +150,8 @@
           <div class="tm__hud">
             <div class="tm__stat"><span class="tm__stat-label">Round</span><span class="tm__stat-val" id="tmRound">0</span></div>
             <div class="tm__stat"><span class="tm__stat-label">Best</span><span class="tm__stat-val" id="tmBest">0</span></div>
-            <button class="tm__sound" id="tmSound" type="button" aria-pressed="true" aria-label="Sound on" title="Sound on/off">🔊</button>
+            <button class="tm__iconbtn" id="tmSound" type="button" aria-pressed="true" aria-label="Sound on" title="Sound on/off">🔊</button>
+            <button class="tm__iconbtn" id="tmReset" type="button" aria-label="New game (change speed)" title="New game / change speed">↺</button>
           </div>
 
           <p class="tm__status" id="tmStatus" role="status" aria-live="polite">Press start to play</p>
@@ -163,6 +165,17 @@
               <p class="tm__panel-emoji" id="tmPanelEmoji">🦷</p>
               <h3 class="tm__panel-title" id="tmPanelTitle">Ready to test your memory?</h3>
               <p class="tm__panel-text" id="tmPanelText">Watch the sequence, then repeat it. One wrong tooth ends the game!</p>
+
+              <div class="tm__share is-hidden" id="tmShare">
+                <button class="tm__sharebtn" id="tmShareBtn" type="button">📣 Share my score</button>
+                <div class="tm__share-fallback is-hidden" id="tmShareFallback">
+                  <a class="tm__share-link" id="tmShareEmail" href="#">✉️ Email</a>
+                  <button class="tm__share-link" id="tmShareCopy" type="button">📋 Copy</button>
+                  <span class="tm__copied is-hidden" id="tmCopied">Copied!</span>
+                </div>
+              </div>
+
+              <p class="tm__modes-label">Speed</p>
               <div class="tm__modes" id="tmModes" role="group" aria-label="Choose speed">
                 <button class="tm__mode" type="button" data-mode="easy">Easy</button>
                 <button class="tm__mode is-selected" type="button" data-mode="normal" aria-pressed="true">Normal</button>
@@ -173,7 +186,7 @@
           </div>
         </div>
 
-        <p class="tm__hint text-center">Tip: on a computer you can also use number keys <strong>1&ndash;9</strong> (laid out like a keypad).</p>
+        <p class="tm__hint text-center">Tip: on a computer you can also use number keys <strong>1&ndash;9</strong> (laid out like a keypad). The ↺ button starts a new game so you can change the speed.</p>
       </div>
     </section>
 
@@ -197,9 +210,9 @@
         box-shadow: 0 14px 40px rgba(20, 60, 90, 0.28);
       }
 
-      .tm__hud { display: flex; justify-content: center; align-items: stretch; gap: 0.6rem; margin-bottom: 0.6rem; }
+      .tm__hud { display: flex; justify-content: center; align-items: stretch; gap: 0.5rem; margin-bottom: 0.6rem; }
       .tm__stat {
-        min-width: 92px; text-align: center;
+        min-width: 88px; text-align: center;
         background: rgba(255,255,255,0.9);
         border-radius: 14px; padding: 0.45rem 0.6rem;
         box-shadow: 0 3px 0 rgba(0,0,0,0.06);
@@ -209,26 +222,22 @@
         text-transform: uppercase; color: #6a7b86; font-weight: 700;
       }
       .tm__stat-val { display: block; font-size: 1.15rem; font-weight: 700; color: #123; line-height: 1.3; }
-      .tm__sound {
+      .tm__iconbtn {
         border: none; cursor: pointer;
         background: rgba(255,255,255,0.9);
         border-radius: 14px; padding: 0 0.7rem; font-size: 1.2rem; line-height: 1;
         box-shadow: 0 3px 0 rgba(0,0,0,0.06);
         -webkit-tap-highlight-color: transparent;
       }
-      .tm__sound:focus-visible { outline: 3px solid var(--color-gold-warm, #B8892A); outline-offset: 2px; }
-      .tm__sound.is-off { opacity: 0.55; }
+      .tm__iconbtn:focus-visible { outline: 3px solid var(--color-gold-warm, #B8892A); outline-offset: 2px; }
+      .tm__iconbtn.is-off { opacity: 0.55; }
 
       .tm__status {
         text-align: center; margin: 0 0 0.9rem; min-height: 1.4em;
         font-weight: 600; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.18);
       }
 
-      .tm__board {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        gap: 0.6rem;
-      }
+      .tm__board { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0.6rem; }
       .tm__tooth {
         position: relative;
         aspect-ratio: 1 / 1;
@@ -252,7 +261,6 @@
       .tm__tooth.is-lit .tm__face { transform: scale(1.15); }
       .tm__face { transition: transform 0.12s ease; }
 
-      /* each tooth lights up in its own bright colour */
       .tm__tooth[data-index="0"].is-lit { background: radial-gradient(circle at 50% 40%, #ff9d9d, #ff6b6b); }
       .tm__tooth[data-index="1"].is-lit { background: radial-gradient(circle at 50% 40%, #ffe680, #ffd93d); }
       .tm__tooth[data-index="2"].is-lit { background: radial-gradient(circle at 50% 40%, #9fe4a8, #6bcb77); }
@@ -284,6 +292,28 @@
       .tm__panel-title { margin: 0 0 0.4rem; font-size: 1.3rem; }
       .tm__panel-text { margin: 0 0 1rem; color: #4a5560; font-size: 0.95rem; }
 
+      .tm__share { margin: 0 0 1.1rem; }
+      .tm__sharebtn {
+        border: none; cursor: pointer;
+        background: #25a35a; color: #fff; font-weight: 700; font-size: 0.95rem;
+        border-radius: 12px; padding: 0.55rem 1rem; width: 100%;
+        box-shadow: 0 3px 0 #1c7d45;
+      }
+      .tm__sharebtn:active { transform: translateY(1px); box-shadow: 0 2px 0 #1c7d45; }
+      .tm__sharebtn:focus-visible { outline: 3px solid var(--color-gold-warm, #B8892A); outline-offset: 2px; }
+      .tm__share-fallback { display: flex; gap: 0.5rem; justify-content: center; align-items: center; margin-top: 0.6rem; flex-wrap: wrap; }
+      .tm__share-link {
+        border: 2px solid #25a35a; background: #fff; color: #1c7d45;
+        font-weight: 700; font-size: 0.85rem; border-radius: 10px;
+        padding: 0.35rem 0.7rem; cursor: pointer; text-decoration: none;
+      }
+      .tm__share-link:focus-visible { outline: 3px solid var(--color-gold-warm, #B8892A); outline-offset: 2px; }
+      .tm__copied { font-size: 0.8rem; color: #1c7d45; font-weight: 700; }
+
+      .tm__modes-label {
+        font-size: 0.65rem; letter-spacing: 0.1em; text-transform: uppercase;
+        color: #8a97a1; font-weight: 700; margin: 0 0 0.35rem;
+      }
       .tm__modes { display: flex; gap: 0; justify-content: center; margin: 0 0 1rem; }
       .tm__mode {
         border: 2px solid var(--color-gold-warm, #B8892A);
@@ -298,10 +328,12 @@
       .tm__btn { margin: 0; }
 
       .tm__hint { margin: var(--space-sm) auto 0; font-size: 0.85rem; color: #6a7b86; max-width: 520px; }
+      .is-hidden { display: none !important; }
 
       @media (max-width: 400px) {
         .tm__game { padding: 0.8rem; }
         .tm__board { gap: 0.45rem; }
+        .tm__stat { min-width: 74px; }
       }
       @media (prefers-reduced-motion: reduce) {
         .tm__tooth, .tm__face, .tm__overlay { transition: none; }
@@ -312,37 +344,45 @@
 
     <script>
       (function () {
-        var board   = document.getElementById('tmBoard');
-        var roundEl = document.getElementById('tmRound');
-        var bestEl  = document.getElementById('tmBest');
+        var board    = document.getElementById('tmBoard');
+        var roundEl  = document.getElementById('tmRound');
+        var bestEl   = document.getElementById('tmBest');
         var statusEl = document.getElementById('tmStatus');
-        var overlay = document.getElementById('tmOverlay');
+        var overlay  = document.getElementById('tmOverlay');
         var startBtn = document.getElementById('tmStart');
         var soundBtn = document.getElementById('tmSound');
+        var resetBtn = document.getElementById('tmReset');
         var modesWrap = document.getElementById('tmModes');
-        var pEmoji  = document.getElementById('tmPanelEmoji');
-        var pTitle  = document.getElementById('tmPanelTitle');
-        var pText   = document.getElementById('tmPanelText');
+        var pEmoji   = document.getElementById('tmPanelEmoji');
+        var pTitle   = document.getElementById('tmPanelTitle');
+        var pText    = document.getElementById('tmPanelText');
+        var shareWrap = document.getElementById('tmShare');
+        var shareBtn = document.getElementById('tmShareBtn');
+        var shareFallback = document.getElementById('tmShareFallback');
+        var shareEmail = document.getElementById('tmShareEmail');
+        var shareCopy = document.getElementById('tmShareCopy');
+        var copied   = document.getElementById('tmCopied');
         if (!board) return;
 
         var TEETH = 9;
-        var TONES = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25, 783.99]; // C-major pentatonic
+        var TONES = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25, 783.99];
         var DIFF = {
           easy:   { base: 720, dec: 14, min: 460, gap: 260 },
           normal: { base: 560, dec: 18, min: 320, gap: 180 },
           hard:   { base: 430, dec: 22, min: 210, gap: 110 }
         };
+        var SHARE_URL = 'https://dentalwisdom.org/404';
 
         var teeth = [];
         var sequence = [];
         var inputIndex = 0;
         var best = 0;
-        var mode = 'idle';        // play state: 'idle' | 'watch' | 'input'
+        var mode = 'idle';        // 'idle' | 'watch' | 'input'
         var difficulty = 'normal';
         var soundOn = true;
         var audioCtx = null;
+        var run = 0;              // generation token; bumps on every start/reset to cancel stale timers
 
-        // ---- persistence (visitor's own browser; safe if storage is blocked) ----
         function store(key, val) { try { localStorage.setItem(key, val); } catch (e) {} }
         function load(key) { try { return localStorage.getItem(key); } catch (e) { return null; } }
 
@@ -353,7 +393,6 @@
         var savedDiff = load('tmDiff');
         if (savedDiff && DIFF[savedDiff]) selectMode(savedDiff);
 
-        // ---- build teeth ----
         for (var i = 0; i < TEETH; i++) {
           var btn = document.createElement('button');
           btn.type = 'button';
@@ -368,7 +407,6 @@
           teeth.push(btn);
         }
 
-        // ---- sound ----
         function setSound(on) {
           soundOn = on;
           soundBtn.textContent = on ? '🔊' : '🔇';
@@ -402,7 +440,6 @@
           } catch (e) {}
         }
 
-        // ---- difficulty selector ----
         function selectMode(m) {
           if (!DIFF[m]) return;
           difficulty = m;
@@ -420,7 +457,6 @@
           store('tmDiff', difficulty);
         });
 
-        // ---- gameplay ----
         function flash(i, dur) {
           var t = teeth[i];
           t.classList.add('is-lit');
@@ -435,6 +471,7 @@
         }
 
         function playSequence() {
+          var myRun = run;
           mode = 'watch';
           board.classList.add('is-watching');
           statusEl.textContent = 'Watch closely…';
@@ -442,9 +479,10 @@
           var litDur = Math.max(d.base - sequence.length * d.dec, d.min);
           var gap = litDur + d.gap;
           sequence.forEach(function (idx, n) {
-            setTimeout(function () { flash(idx, litDur); }, n * gap + 500);
+            setTimeout(function () { if (run === myRun) flash(idx, litDur); }, n * gap + 500);
           });
           setTimeout(function () {
+            if (run !== myRun) return;
             mode = 'input';
             inputIndex = 0;
             board.classList.remove('is-watching');
@@ -469,8 +507,9 @@
               }
               mode = 'watch';
               statusEl.textContent = 'Nice! Next round…';
-              celebrate();
-              setTimeout(nextRound, 1200);
+              if (difficulty === 'hard') celebrate();
+              var myRun = run;
+              setTimeout(function () { if (run === myRun) nextRound(); }, 1200);
             } else {
               statusEl.textContent = 'Your turn — ' + (inputIndex + 1) + ' of ' + sequence.length;
             }
@@ -479,33 +518,91 @@
           }
         }
 
+        function shareText(roundReached) {
+          return 'I reached round ' + roundReached + ' on Dental Wisdom’s “Tooth Memory” game! 🦷 Think you can beat me?';
+        }
+
+        function setupShare(roundReached) {
+          var text = shareText(roundReached);
+          shareFallback.classList.add('is-hidden');
+          copied.classList.add('is-hidden');
+          shareEmail.setAttribute('href',
+            'mailto:?subject=' + encodeURIComponent('Beat my Tooth Memory score!') +
+            '&body=' + encodeURIComponent(text + '\n\nPlay here: ' + SHARE_URL));
+          shareBtn.onclick = function () {
+            if (navigator.share) {
+              navigator.share({ title: 'Tooth Memory', text: text, url: SHARE_URL }).catch(function () {});
+            } else {
+              shareFallback.classList.toggle('is-hidden');
+            }
+          };
+          shareCopy.onclick = function () {
+            var full = text + ' ' + SHARE_URL;
+            if (navigator.clipboard && navigator.clipboard.writeText) {
+              navigator.clipboard.writeText(full).then(showCopied, showCopied);
+            } else {
+              showCopied();
+            }
+          };
+        }
+        function showCopied() {
+          copied.classList.remove('is-hidden');
+          setTimeout(function () { copied.classList.add('is-hidden'); }, 1800);
+        }
+
         function gameOver() {
+          run++;                 // cancel any pending timers
           mode = 'idle';
           board.classList.add('is-wrong');
           statusEl.textContent = 'Oops — wrong tooth!';
+          var reached = sequence.length;
           setTimeout(function () {
             board.classList.remove('is-wrong');
             teeth.forEach(function (t) { t.classList.remove('is-lit'); });
             pEmoji.textContent = '🪥';
             pTitle.textContent = 'Good memory!';
-            pText.textContent = 'You made it to round ' + sequence.length + '. Think you can go further?';
+            pText.textContent = 'You made it to round ' + reached + '. Think you can go further?';
+            setupShare(reached);
+            shareWrap.classList.remove('is-hidden');
             startBtn.textContent = 'Play Again';
             overlay.classList.remove('is-hidden');
           }, 700);
         }
 
+        function showReadyScreen() {
+          run++;                 // cancel any in-progress sequence
+          mode = 'idle';
+          sequence = [];
+          inputIndex = 0;
+          roundEl.textContent = '0';
+          teeth.forEach(function (t) { t.classList.remove('is-lit'); });
+          board.classList.remove('is-wrong', 'is-watching');
+          pEmoji.textContent = '🦷';
+          pTitle.textContent = 'Ready to test your memory?';
+          pText.textContent = 'Watch the sequence, then repeat it. One wrong tooth ends the game!';
+          shareWrap.classList.add('is-hidden');
+          startBtn.textContent = 'Start Game';
+          statusEl.textContent = 'Press start to play';
+          overlay.classList.remove('is-hidden');
+        }
+
         function startGame() {
+          run++;
           if (soundOn && !audioCtx) initAudio();
           if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
           sequence = [];
           inputIndex = 0;
           roundEl.textContent = '0';
           overlay.classList.add('is-hidden');
+          shareWrap.classList.add('is-hidden');
           statusEl.textContent = 'Get ready…';
           teeth.forEach(function (t) { t.classList.remove('is-lit'); });
-          setTimeout(nextRound, 600);
+          var myRun = run;
+          setTimeout(function () { if (run === myRun) nextRound(); }, 600);
         }
+
         startBtn.addEventListener('click', startGame);
+        resetBtn.addEventListener('click', showReadyScreen);
 
         document.addEventListener('keydown', function (e) {
           if (mode !== 'input') return;

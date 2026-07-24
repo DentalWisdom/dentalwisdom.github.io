@@ -5,6 +5,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Added TruAbutment as a Gold sponsor (marked attending), with their logo, website link (truabutment.com), and company description. Their card appears in the Gold row on the Sponsors page and on the homepage logo strip.
+- Dr. Daniel Greenbaum's Thursday lecture is now sponsored by TruAbutment.
+- Added Dr. Sam Glick's headshot (replacing the initials placeholder on his speaker card).
+- Friday 1:30–3:00 PM lecture changed from 2 to 1.5 CE credits.
 - Agenda controls: renamed the "Davening Info" button to "Include Davening Times" and moved it up onto the same row as "Full Schedule" and "CE Only" (it still works as an independent on/off toggle).
 - Friday 3–5 PM Endo/Periodontics track now shows a "To Be Announced Soon" line, matching the format of the Implants workshop.
 - Shabbos 4:45 PM — Sam Waller's "Life Insurance: Bitachon or Hishtadlus?" lecture is now sponsored by LiveWell Capital.

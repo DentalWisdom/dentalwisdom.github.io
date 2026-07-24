@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Added a new speaker, Dr. Nathaniel Dancykier (prosthodontics & cosmetic dentistry), speaking Friday. Saved his lecture title ("The Science and Art of Cosmetic Dentistry: Predictable, Beautiful Restorations"), a full bio, and his headshot (sized and formatted to match the other speaker photos so it won't slow the page). His exact Friday time is still to be confirmed. Note: the speakers page is still the "coming soon" teaser, so this card isn't public yet.
 - Thursday's final session slot (6:30–8:00 PM) is now Dr. Marc Faber, CEO of Edge Dental Management, presenting "I Buy Junk Practices: Turning Distressed Offices Into Thriving Ones" (1.5 CE credits) — previously a placeholder ("Concurrent Classes — Topics to Be Announced").
 - Updated Dr. Faber's saved speaker card to match: new session title and time, his role as CEO of Edge Dental Management, and a new bio describing Edge (a multi-location, technology-forward dental group in the greater New York area). Note: the speakers page is still the "coming soon" teaser, so this card isn't public yet.
 - Removed Nobel Biocare from the sponsor page. Their details are kept on file in the sponsor data so they can be added back later if needed.

@@ -54,28 +54,25 @@ document.addEventListener('DOMContentLoaded', function () {
   var toggleEl = document.createElement('div');
   toggleEl.className = 'agenda-view-toggle';
   toggleEl.setAttribute('aria-label', 'Schedule view');
+  // Three buttons on one row: the two mutually-exclusive view modes
+  // (Full Schedule / CE Only) plus the independent "Include Davening Times"
+  // toggle. The davening button is styled the same but behaves separately.
   toggleEl.innerHTML =
     '<button type="button" class="agenda-view-toggle__btn is-active" data-view="all">Full Schedule</button>' +
-    '<button type="button" class="agenda-view-toggle__btn" data-view="ce">CE Only</button>';
+    '<button type="button" class="agenda-view-toggle__btn" data-view="ce">CE Only</button>' +
+    '<button type="button" class="agenda-view-toggle__btn" data-daven-toggle aria-pressed="false">Include Davening Times</button>';
   filterEl.parentNode.insertBefore(toggleEl, filterEl);
 
-  var viewBtns = Array.prototype.slice.call(toggleEl.querySelectorAll('.agenda-view-toggle__btn'));
+  // Only the two view-mode buttons participate in the Full/CE toggle group.
+  var viewBtns = Array.prototype.slice.call(toggleEl.querySelectorAll('[data-view]'));
   var ceMode = false;
 
-  // ── Build "Davening Info" toggle ────────────────────────
+  // ── "Include Davening Times" toggle (same row as the view toggle) ──
   // By default the schedule shows meals, classes and parties only.
   // This button reveals the davening/tefillah times (Daf Yomi, Shacharis,
   // Mincha, Maariv, Candle Lighting, etc.). Any CE-credit session always
   // stays visible and is never hidden by this toggle.
-  var davenToggleEl = document.createElement('div');
-  davenToggleEl.className = 'agenda-view-toggle agenda-daven-toggle';
-  davenToggleEl.setAttribute('aria-label', 'Davening times');
-  davenToggleEl.style.marginTop = '0.5rem';
-  davenToggleEl.innerHTML =
-    '<button type="button" class="agenda-view-toggle__btn" data-daven-toggle aria-pressed="false">Davening Info</button>';
-  toggleEl.parentNode.insertBefore(davenToggleEl, toggleEl.nextSibling);
-
-  var davenBtn = davenToggleEl.querySelector('[data-daven-toggle]');
+  var davenBtn = toggleEl.querySelector('[data-daven-toggle]');
   var daveningShown = false;
 
   // ── Build filter bar ────────────────────────────────────

@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Agenda controls: renamed the "Davening Info" button to "Include Davening Times" and moved it up onto the same row as "Full Schedule" and "CE Only" (it still works as an independent on/off toggle).
+- Friday 3–5 PM Endo/Periodontics track now shows a "To Be Announced Soon" line, matching the format of the Implants workshop.
+- Shabbos 4:45 PM — Sam Waller's "Life Insurance: Bitachon or Hishtadlus?" lecture is now sponsored by LiveWell Capital.
 - Filled in Friday's 3:00–5:00 PM hands-on breakout. It now has five concurrent workshops: "Straight Forward: Building Your Clear Aligner Practice" with Dr. Sam Glick (sponsored by orthobrain); a Cosmetic Dentistry Hands-On Workshop with Dr. Elaine Bylis; a Hands-On Implants Workshop (speaker to be announced, sponsored by Adin); and a fourth "Hands-On Endodontics or Periodontics Workshop" still to be announced (the separate Endo and Perio tracks are now one combined slot, so the block is four workshops). The three named classes are set to 2 CE credits each for now — tell me if any should be different. Added new speaker profiles for Dr. Elaine Bylis (with her photo) and Dr. Sam Glick (initials placeholder until a photo comes in). Note: the agenda and speakers pages are still the "coming soon" teasers, so none of this is public yet.
 - Added the "Dental Volunteers for Israel (DVI)" class back to the Shabbos schedule at 2:45 PM, with Dr. Nathaniel Dancykier speaking (CE, 1) — replacing the "Dental Related Shiur to Be Announced" placeholder in that slot. Note: the agenda page is still the "coming soon" teaser, so this isn't public yet.
 - Gold level: Adin, APEX, and TheraBreath are now marked as attending. Gold now reads MB Precious Metals, Crazy Dental, Reach, Adin, APEX, TheraBreath (all attending), then Pearl and Lasso MD (past sponsors).

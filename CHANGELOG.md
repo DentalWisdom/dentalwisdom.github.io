@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Image tune-up: converted the last five JPG headshots (Harold Katz, Greenbaum, Citron, Rabbi Katz, German) to the site's standard WebP format, and shrank the browser-tab icon from 26 KB to 3 KB (it loads on every page). Originals kept in images/_archive_originals_2026-07-24/.
+- Speaker pop-ups: sponsor logos are now larger (single logo up from 140px to 180px tall; the two-logo row from 90px to 120px).
+
 - Site review follow-ups (Ben-approved): testimonial byline fixed to "Jerusalem, Israel" (was "Jerusalem, IL" — read as Illinois); hero fact line now reads "20+ Cross-Specialty CE Credits"; FAQ Thursday schedule time format tidied to "2:00–8:00 PM"; speaker application page now says "roughly 15 speakers" (was "10–15"). Full review saved as SITE_REVIEW_2026-07-24.md in the site folder.
 
 - Made web addresses work no matter how they're capitalized: typing dentalwisdom.org/LIVE (or /Live, /Deals, etc.) now takes visitors to the right page instead of showing "Page Not Found." Previously only the exact lowercase spelling worked.

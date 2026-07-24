@@ -145,6 +145,7 @@
 
       .tm__hint { margin: var(--space-sm) auto 0; font-size: 0.85rem; color: #6a7b86; max-width: 520px; }
       .is-hidden { display: none !important; }
+      @media (hover: none) and (pointer: coarse) { .tm__hint-kbd { display: none; } }
       @media (prefers-reduced-motion: reduce) { .tm__joke { transition: none; } }
 
       @media (max-width: 400px) {

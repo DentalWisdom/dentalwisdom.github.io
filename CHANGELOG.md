@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Agenda now hides the davening/tefillah times by default so the schedule leads with meals, classes and parties. A "Davening Info" button reveals them (Daf Yomi, Shacharis, Mincha, Maariv, Candle Lighting, Kabbalas Shabbos, Havdalah). Any session that gives CE credit — including the shiurim that carry CE — always stays visible. (This lives in the agenda; the agenda page is still the "coming soon" teaser, so it isn't public yet.)
+- Renamed the two Shabbos afternoon slots (2:45 PM and 3:45 PM) to "Dental Related Shiur to Be Announced Soon."
 - Reworked Friday's morning and afternoon schedule:
   - 9:00–10:30 AM — Dr. Nathaniel Dancykier (prosthodontics & cosmetic dentistry), "The Science and Art of Cosmetic Dentistry: Predictable, Beautiful Restorations" (CE, 1.5). New speaker; saved his full bio and headshot.
   - 10:30–11:30 AM — Dr. Sara Werb's Intraosseous Anesthesia session moved here (was 10:00–11:00 AM).

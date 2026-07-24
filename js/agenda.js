@@ -62,6 +62,22 @@ document.addEventListener('DOMContentLoaded', function () {
   var viewBtns = Array.prototype.slice.call(toggleEl.querySelectorAll('.agenda-view-toggle__btn'));
   var ceMode = false;
 
+  // ── Build "Davening Info" toggle ────────────────────────
+  // By default the schedule shows meals, classes and parties only.
+  // This button reveals the davening/tefillah times (Daf Yomi, Shacharis,
+  // Mincha, Maariv, Candle Lighting, etc.). Any CE-credit session always
+  // stays visible and is never hidden by this toggle.
+  var davenToggleEl = document.createElement('div');
+  davenToggleEl.className = 'agenda-view-toggle agenda-daven-toggle';
+  davenToggleEl.setAttribute('aria-label', 'Davening times');
+  davenToggleEl.style.marginTop = '0.5rem';
+  davenToggleEl.innerHTML =
+    '<button type="button" class="agenda-view-toggle__btn" data-daven-toggle aria-pressed="false">Davening Info</button>';
+  toggleEl.parentNode.insertBefore(davenToggleEl, toggleEl.nextSibling);
+
+  var davenBtn = davenToggleEl.querySelector('[data-daven-toggle]');
+  var daveningShown = false;
+
   // ── Build filter bar ────────────────────────────────────
   var allBtn = '<button type="button" class="agenda-tabs__btn is-active" data-filter="all">All Days</button>';
   var dayBtns = dayOrder.map(function (day) {
@@ -101,13 +117,14 @@ document.addEventListener('DOMContentLoaded', function () {
       s.hidden = currentFilter !== 'all' && s.dataset.day !== currentFilter;
     });
 
-    // 2. CE: show/hide individual items within visible sections
+    // 2. CE / Davening: show/hide individual items within visible sections
     var allItems = Array.prototype.slice.call(panelsEl.querySelectorAll('.agenda-item'));
     allItems.forEach(function (item) {
       if (ceMode) {
         item.hidden = !item.dataset.ceView;
       } else {
-        item.hidden = false;
+        // Full schedule: davening items stay hidden unless "Davening Info" is on.
+        item.hidden = (item.dataset.daven === '1' && !daveningShown);
       }
     });
 
@@ -146,8 +163,19 @@ document.addEventListener('DOMContentLoaded', function () {
       viewBtns.forEach(function (b) {
         b.classList.toggle('is-active', b === btn);
       });
+      // In CE-only mode davening items are already hidden, so the
+      // Davening Info toggle has no effect — dim it to make that clear.
+      davenBtn.disabled = ceMode;
       applyFilters();
     });
+  });
+
+  // Wire Davening Info toggle
+  davenBtn.addEventListener('click', function () {
+    daveningShown = !daveningShown;
+    davenBtn.classList.toggle('is-active', daveningShown);
+    davenBtn.setAttribute('aria-pressed', daveningShown ? 'true' : 'false');
+    applyFilters();
   });
 
   // Wire day filter buttons
@@ -288,6 +316,19 @@ document.addEventListener('DOMContentLoaded', function () {
     return html;
   }
 
+  // A "davening" item is a tefillah/prayer time hidden by default and
+  // revealed by the "Davening Info" toggle. Any CE-credit session (e.g. the
+  // Pre-Davening Shiur or the Shabbos Dental Halacha Shiur) is treated as a
+  // class and always stays visible, so CE sessions are never marked here.
+  function isDavenItem(item) {
+    if (item.ce) return false;    // CE sessions always shown
+    if (item.event) return false; // parties / receptions / welcomes always shown
+    var t = (item.title || '').toLowerCase();
+    var keywords = ['daf yomi', 'shacharis', 'davening', 'mincha', 'maariv',
+                    'candle lighting', 'kabbalas shabbos', 'havdalah'];
+    return keywords.some(function (k) { return t.indexOf(k) !== -1; });
+  }
+
   function renderAgendaItem(item) {
     var title      = (item.title      || '').trim();
     var time       = (item.time || '').trim();
@@ -311,7 +352,8 @@ document.addEventListener('DOMContentLoaded', function () {
 
     var classes = 'agenda-item' + (isCE ? ' agenda-item--ce' : '') + (isEvent ? ' agenda-item--event' : '');
     var ceViewAttr = isCEView ? ' data-ce-view="1"' : '';
-    var html = '<div class="' + classes + '"' + ceViewAttr + '>';
+    var davenAttr = isDavenItem(item) ? ' data-daven="1"' : '';
+    var html = '<div class="' + classes + '"' + ceViewAttr + davenAttr + '>';
 
     html += '<div class="agenda-item__time-col">';
     if (time) {

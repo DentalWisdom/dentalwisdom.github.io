@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Added a Pizza Biza video (YouTube). It now plays at the bottom of the Pizza Biza popup on both the Deals page and the conference Sponsors page.
+
 - Agenda now hides the davening/tefillah times by default so the schedule leads with meals, classes and parties. A "Davening Info" button reveals them (Daf Yomi, Shacharis, Mincha, Maariv, Candle Lighting, Kabbalas Shabbos, Havdalah). Any session that gives CE credit — including the shiurim that carry CE — always stays visible. (This lives in the agenda; the agenda page is still the "coming soon" teaser, so it isn't public yet.)
 - Renamed the two Shabbos afternoon slots (2:45 PM and 3:45 PM) to "Dental Related Shiur to Be Announced Soon."
 - Reworked Friday's morning and afternoon schedule:

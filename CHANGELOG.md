@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Gold level: Adin, APEX, and TheraBreath are now marked as attending. Gold now reads MB Precious Metals, Crazy Dental, Reach, Adin, APEX, TheraBreath (all attending), then Pearl and Lasso MD (past sponsors).
 - On the Sponsors page, each level (Platinum, Gold, Silver, Bronze) now shows the sponsors attending the conference first, then the rest. This happens automatically from now on, so newly added attending sponsors will always rise to the top of their level.
 - Set the Bronze level order to Citron Films, then Pizza Biza, then CG Insurance Group (the attending ones), followed by the past sponsors.
 - Emerald Dental Lab is now marked as a "Past Sponsor" (muted gray pill) instead of "Attending." It stays on the Sponsors page but no longer appears on the homepage sponsor logo strip, which only shows confirmed 2027 sponsors.

@@ -103,12 +103,12 @@ window.SPONSORS_DATA = [
     videoUrl: "https://www.youtube.com/embed/wKfRq7IJdtI"
   },
   {
-    name: "Lasso MD",
-    logoUrl: "/images/sponsors/lasso-md.webp",
-    link: "https://www.lassomd.com/work-with-us/partners/dental-wisdom",
-    blurb: "AI-powered digital marketing, website design, and practice growth platform built exclusively for dentists — helping practices attract more ideal patients and grow revenue with less effort.",
+    name: "Adin",
+    logoUrl: "/images/sponsors/adin.webp",
+    link: "https://www.adin-implants.com/",
+    blurb: "Israeli-engineered implant systems distributed in over 40 countries — Adin delivers high primary stability and proven clinical performance at a price that makes implants more accessible.",
     tier: "gold",
-    pastSponsor: true
+    attending: true
   },
   {
     name: "APEX",
@@ -116,7 +116,15 @@ window.SPONSORS_DATA = [
     link: "https://apexreimbursement.com/dental-wisdom/",
     blurb: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
     tier: "gold",
-    pastSponsor: true
+    attending: true
+  },
+  {
+    name: "TheraBreath",
+    logoUrl: "/images/sponsors/therabreath.webp",
+    link: "https://www.therabreath.com/",
+    blurb: "Dentist-formulated oral health products trusted by millions — TheraBreath's clinically tested rinses, toothpastes, and sprays target the root causes of bad breath and gum issues.",
+    tier: "gold",
+    attending: true
   },
   {
     name: "Pearl",
@@ -128,18 +136,10 @@ window.SPONSORS_DATA = [
     videoUrl: "https://fast.wistia.net/embed/iframe/tw1po9rwgm"
   },
   {
-    name: "TheraBreath",
-    logoUrl: "/images/sponsors/therabreath.webp",
-    link: "https://www.therabreath.com/",
-    blurb: "Dentist-formulated oral health products trusted by millions — TheraBreath's clinically tested rinses, toothpastes, and sprays target the root causes of bad breath and gum issues.",
-    tier: "gold",
-    pastSponsor: true
-  },
-  {
-    name: "Adin",
-    logoUrl: "/images/sponsors/adin.webp",
-    link: "https://www.adin-implants.com/",
-    blurb: "Israeli-engineered implant systems distributed in over 40 countries — Adin delivers high primary stability and proven clinical performance at a price that makes implants more accessible.",
+    name: "Lasso MD",
+    logoUrl: "/images/sponsors/lasso-md.webp",
+    link: "https://www.lassomd.com/work-with-us/partners/dental-wisdom",
+    blurb: "AI-powered digital marketing, website design, and practice growth platform built exclusively for dentists — helping practices attract more ideal patients and grow revenue with less effort.",
     tier: "gold",
     pastSponsor: true
   },

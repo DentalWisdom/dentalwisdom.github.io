@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Emerald Dental Lab is now marked as a "Past Sponsor" (muted gray pill) instead of "Attending." It stays on the Sponsors page but no longer appears on the homepage sponsor logo strip, which only shows confirmed 2027 sponsors.
 - Added a Pizza Biza video (YouTube). It now plays at the bottom of the Pizza Biza popup on both the Deals page and the conference Sponsors page.
 
 - Agenda now hides the davening/tefillah times by default so the schedule leads with meals, classes and parties. A "Davening Info" button reveals them (Daf Yomi, Shacharis, Mincha, Maariv, Candle Lighting, Kabbalas Shabbos, Havdalah). Any session that gives CE credit — including the shiurim that carry CE — always stays visible. (This lives in the agenda; the agenda page is still the "coming soon" teaser, so it isn't public yet.)

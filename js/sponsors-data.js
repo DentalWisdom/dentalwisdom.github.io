@@ -72,7 +72,7 @@ window.SPONSORS_DATA = [
     link: "https://www.emeralddentallab.com/promo/",
     blurb: "Premium full-service dental laboratory delivering precision-crafted restorations — crowns, bridges, implant prosthetics, and more — with artisan quality and turnaround you can count on.",
     tier: "platinum",
-    attending: true
+    pastSponsor: true
   },
 
   /* ── GOLD ─────────────────────────────────────────────── */

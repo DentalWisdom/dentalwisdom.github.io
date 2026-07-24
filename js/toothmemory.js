@@ -8,6 +8,7 @@
         var startBtn = document.getElementById('tmStart');
         var soundBtn = document.getElementById('tmSound');
         var resetBtn = document.getElementById('tmReset');
+        var numbersBtn = document.getElementById('tmNumbers');
         var modesWrap = document.getElementById('tmModes');
         var pEmoji   = document.getElementById('tmPanelEmoji');
         var pTitle   = document.getElementById('tmPanelTitle');
@@ -154,6 +155,7 @@
         var mode = 'idle';        // 'idle' | 'watch' | 'input'
         var difficulty = 'normal';
         var soundOn = true;
+        var numbersOn = false;
         var audioCtx = null;
         var run = 0;              // generation token; bumps on every start/reset to cancel stale timers
 
@@ -166,6 +168,8 @@
         if (savedSound === 'off') setSound(false);
         var savedDiff = load('tmDiff');
         if (savedDiff && DIFF[savedDiff]) selectMode(savedDiff);
+        var savedNumbers = load('tmNumbers');
+        if (savedNumbers === 'on') setNumbers(true);
 
         for (var i = 0; i < TEETH; i++) {
           var btn = document.createElement('button');
@@ -173,7 +177,7 @@
           btn.className = 'tm__tooth';
           btn.setAttribute('data-index', i);
           btn.setAttribute('aria-label', 'Tooth ' + (i + 1));
-          btn.innerHTML = '<span class="tm__face" aria-hidden="true">🦷</span>';
+          btn.innerHTML = '<span class="tm__num" aria-hidden="true">' + (i + 1) + '</span><span class="tm__face" aria-hidden="true">🦷</span>';
           btn.addEventListener('click', function (e) {
             onTooth(parseInt(e.currentTarget.getAttribute('data-index'), 10));
           });
@@ -193,6 +197,17 @@
           store('tmSound', soundOn ? 'on' : 'off');
           if (soundOn && !audioCtx) initAudio();
           if (soundOn && audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+        });
+
+        function setNumbers(on) {
+          numbersOn = on;
+          board.classList.toggle('is-numbers', on);
+          numbersBtn.setAttribute('aria-pressed', on ? 'true' : 'false');
+          numbersBtn.classList.toggle('is-off', !on);
+        }
+        numbersBtn.addEventListener('click', function () {
+          setNumbers(!numbersOn);
+          store('tmNumbers', numbersOn ? 'on' : 'off');
         });
 
         function initAudio() {

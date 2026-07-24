@@ -52,7 +52,7 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="/css/styles.css?v=43">
-  <link rel="stylesheet" href="/css/toothmemory.css?v=3">
+  <link rel="stylesheet" href="/css/toothmemory.css?v=4">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -143,7 +143,7 @@
       <div class="container">
         <div class="tm__intro text-center">
           <p class="tm__eyebrow">While you&rsquo;re here&hellip;</p>
-          <h2 id="tmHeading" class="tm__title">Tooth Memory</h2>
+          <h2 id="tmHeading" class="tm__title">Dental Wisdom Tooth Memory Game</h2>
           <p class="tm__sub">Watch the teeth light up, then tap them back in the same order. Each round adds one more &mdash; how far can your memory stretch? 🦷</p>
         </div>
 
@@ -153,6 +153,7 @@
             <div class="tm__stat"><span class="tm__stat-label">Best</span><span class="tm__stat-val" id="tmBest">0</span></div>
             <button class="tm__iconbtn" id="tmSound" type="button" aria-pressed="true" aria-label="Sound on" title="Sound on/off">🔊</button>
             <button class="tm__iconbtn" id="tmReset" type="button" aria-label="New game (change speed)" title="New game / change speed">↺</button>
+            <button class="tm__iconbtn is-off" id="tmNumbers" type="button" aria-pressed="false" aria-label="Show numbers on teeth (colorblind-friendly)" title="Show numbers on teeth">🔢</button>
           </div>
 
           <p class="tm__status" id="tmStatus" role="status" aria-live="polite">Press start to play</p>
@@ -289,7 +290,7 @@
   </div>
 
   <script src="/js/main.js?v=4"></script>
-  <script src="/js/toothmemory.js?v=1"></script>
+  <script src="/js/toothmemory.js?v=2"></script>
   <script>
     (function() {
       var header = document.querySelector('.site-header');

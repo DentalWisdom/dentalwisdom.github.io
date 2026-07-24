@@ -68,6 +68,13 @@
       }
       .tm__tooth.is-lit .tm__face { transform: scale(1.15); }
       .tm__face { transition: transform 0.12s ease; }
+      .tm__num {
+        display: none;
+        position: absolute; top: 5px; left: 7px;
+        font-size: 0.6rem; font-weight: 700; line-height: 1;
+        color: rgba(18, 30, 40, 0.45); pointer-events: none;
+      }
+      .tm__board.is-numbers .tm__num { display: block; }
 
       .tm__tooth[data-index="0"].is-lit { background: radial-gradient(circle at 50% 40%, #ff9d9d, #ff6b6b); }
       .tm__tooth[data-index="1"].is-lit { background: radial-gradient(circle at 50% 40%, #ffe680, #ffd93d); }

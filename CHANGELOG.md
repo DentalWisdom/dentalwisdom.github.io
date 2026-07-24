@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Tooth Memory: the heading at the top of the game now reads "Dental Wisdom Tooth Memory Game." Also added a colorblind-friendly button (🔢) that puts faint 1–9 numbers on the teeth, so players who can't easily tell the colors apart can follow the sequence by number; it remembers the setting on that person's device.
 - Tooth Memory now has its own page too: dentalwisdom.org/toothmemorygame (and the capitalized dentalwisdom.org/ToothMemoryGame works as well) — great for sharing directly. It's still on the Page Not Found screen. Both share one copy of the game, so any future tweak updates both places at once.
 - Tooth Memory: every time you clear a round you now get a random cheesy dentist joke (112 of them, shuffled so they don't repeat until you've seen them all). Also added a "🏆 New personal best!" moment with a little triumphant chime when you beat your own record.
 - Tooth Memory: added a ↺ reset button (start a fresh game any time, e.g. to switch speed mid-play) and a "Share my score" button on the game-over screen — on phones it opens the normal share menu (WhatsApp, Messages, Mail…), and on a computer it offers an email draft and a copy button. Also, the colorful round-clear "ripple" now only shows on Hard, so Easy and Normal feel calmer.

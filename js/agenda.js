@@ -117,11 +117,15 @@ document.addEventListener('DOMContentLoaded', function () {
     // 2. CE / Davening: show/hide individual items within visible sections
     var allItems = Array.prototype.slice.call(panelsEl.querySelectorAll('.agenda-item'));
     allItems.forEach(function (item) {
+      var isDaven = item.dataset.daven === '1';
       if (ceMode) {
-        item.hidden = !item.dataset.ceView;
+        // CE Only: show CE-view items, plus davening times when the
+        // "Include Davening Times" toggle is on.
+        var isCEView = !!item.dataset.ceView;
+        item.hidden = !(isCEView || (isDaven && daveningShown));
       } else {
-        // Full schedule: davening items stay hidden unless "Davening Info" is on.
-        item.hidden = (item.dataset.daven === '1' && !daveningShown);
+        // Full schedule: davening items stay hidden unless the toggle is on.
+        item.hidden = (isDaven && !daveningShown);
       }
     });
 
@@ -160,9 +164,8 @@ document.addEventListener('DOMContentLoaded', function () {
       viewBtns.forEach(function (b) {
         b.classList.toggle('is-active', b === btn);
       });
-      // In CE-only mode davening items are already hidden, so the
-      // Davening Info toggle has no effect — dim it to make that clear.
-      davenBtn.disabled = ceMode;
+      // The "Include Davening Times" toggle works in both views now, so it
+      // stays enabled in CE-only mode (adds davening times to the CE list).
       applyFilters();
     });
   });

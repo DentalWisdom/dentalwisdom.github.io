@@ -145,6 +145,7 @@ window.SPONSORS_DATA = [
     tier: "silver",
     pastSponsor: true
   },
+  /* ARCHIVED 2026-07-24 (Nobel Biocare removed from sponsor page — kept for future if needed):
   {
     name: "Nobel Biocare",
     logoUrl: "/images/sponsors/nobel-biocare.webp",
@@ -153,6 +154,7 @@ window.SPONSORS_DATA = [
     tier: "silver",
     pastSponsor: true
   },
+  */
   {
     name: "Zolli Candy",
     logoUrl: "/images/sponsors/zolli-candy.webp",
@@ -186,6 +188,7 @@ window.SPONSORS_DATA = [
     pastSponsor: true
   },
 
+  /* ARCHIVED 2026-07-21 (NuSmile dropped as sponsor):
   {
     name: "NuSmile",
     logoUrl: "/images/sponsors/nusmile.webp",
@@ -194,6 +197,7 @@ window.SPONSORS_DATA = [
     tier: "silver",
     pending: true
   },
+  */
 
   /* ── BRONZE / SUPPORTING ──────────────────────────────── */
   {

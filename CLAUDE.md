@@ -75,7 +75,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 — Intraosseous Anesthesia: Advanced Techniques for Predictable & Profound Pain Control; Hands-On Zirconia Crown Mastery: Anterior Esthetics & Posterior Strength Workshop | Fri 10–11am & Fri 3–5pm | NuSmile |
 | 9 | Dr. Dan German | `speaker-dan-german` | Straight Talk: Game-Changing Tips and Tricks Every GP Should Know in Orthodontics | Fri 1:30–3pm | orthobrain |
 | 10 | Dr. Samuel Schuster | `speaker-samuel-schuster` | Pre-Davening Shiur | Shabbos 8:15–9:15am | — |
-| 11 | Dr. Marc Faber | `speaker-marc-faber` | Built to Scale: 1 to 3+ Locations | Fri 3–4pm | — |
+| 11 | Dr. Marc Faber | `speaker-marc-faber` | I Buy Junk Practices (CEO, Edge Dental Management) | Thu 6:30–8pm | — |
 | 12 | Yaakov Citron | `speaker-yaakov-citron` | Videography Meets AI: DIY Workshop | Fri 4–5pm | Citron Films |
 | 13 | Gobbie Cohn | `speaker-gobbie-cohn` | Mincha, Kabbalas Shabbos & Maariv | Fri 6:15pm | APEX Reimbursement Specialists & CG Insurance Group |
 
@@ -84,7 +84,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 **Confirmed (session titles + speakers locked, per Ben, July 13, 2026):** Dr. Harold Katz, Dr. Daniel Greenbaum, Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Sara Werb, Sam Waller.
 
 **Still-pending slots (as of July 13, 2026)** — for reference, not urgent, not blocking publish:
-- Thursday 6:30–8:00 PM: collapsed to one line, "Concurrent Classes — Topics to Be Announced" (per Ben's call — was 4 separate named workshops, all speaker-TBD; simplified rather than spend more time on it, sponsor mentions dropped too)
+- Thursday 6:30–8:00 PM: FILLED (July 24, 2026) — Dr. Marc Faber, CEO of Edge Dental Management, "I Buy Junk Practices" (CE, 1.5 credits). Was previously "Concurrent Classes — Topics to Be Announced."
 - Friday 3:00–5:00 PM: 2 of 4 concurrent slots are confirmed (Dr. Sara Werb's Zirconia Crown Mastery workshop, Yaakov Citron's AI Video Playbook) and unchanged; the other 2 (previously "Surgical Guides," sponsored by Adin, and "Rotary Endo Mastery") were collapsed into one line, "Additional Concurrent Classes — Topics to Be Announced," same reasoning as above
 - Friday 9:00–10:00 AM: "Practice Management Lecture" — speaker TBD
 - Friday 12:30–1:30 PM: Lunch — sponsor TBD

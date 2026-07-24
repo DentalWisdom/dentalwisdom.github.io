@@ -18,7 +18,7 @@
         box-shadow: 0 14px 40px rgba(20, 60, 90, 0.28);
       }
 
-      .tm__hud { display: flex; justify-content: center; align-items: stretch; gap: 0.5rem; margin-bottom: 0.6rem; }
+      .tm__hud { display: flex; flex-wrap: wrap; justify-content: center; align-items: stretch; gap: 0.5rem; margin-bottom: 0.6rem; }
       .tm__stat {
         min-width: 88px; text-align: center;
         background: rgba(255,255,255,0.9);
@@ -150,7 +150,9 @@
       @media (max-width: 400px) {
         .tm__game { padding: 0.8rem; }
         .tm__board { gap: 0.45rem; }
-        .tm__stat { min-width: 74px; }
+        .tm__stat { min-width: 68px; }
+        .tm__mode { padding: 0.4rem 0.7rem; font-size: 0.85rem; }
+        .tm__panel { padding: 1.2rem 1rem; }
       }
       @media (prefers-reduced-motion: reduce) {
         .tm__tooth, .tm__face, .tm__overlay { transition: none; }

@@ -10,7 +10,7 @@ A plain-English record of every update made to the site, most recent first. This
   - 10:30–11:30 AM — Dr. Sara Werb's Intraosseous Anesthesia session moved here (was 10:00–11:00 AM).
   - Removed Dr. Sean Ference's 11:00 AM session from Friday. His session listing and speaker card are kept on file (archived, not deleted) in case he returns.
   - 1:30–3:00 PM — new endodontics class by Dr. Craig Berry, "The Comfortable Root Canal: Cutting-Edge Endodontics for Predictable, Pain-Free Outcomes" (CE, 2). Saved his full bio and headshot.
-  - Heads up: this leaves an open slot Friday 11:30 AM–12:30 PM (before lunch). Let me know if you want to fill or shift things.
+  - 11:30 AM–12:30 PM — added a "To Be Announced Soon" placeholder session (CE, 1) so the slot isn't empty.
   - All new speaker photos are sized and formatted (WebP) to match the others so they won't slow the page. Note: the speakers page is still the "coming soon" teaser, so these cards aren't public yet.
 - Thursday's final session slot (6:30–8:00 PM) is now Dr. Marc Faber, CEO of Edge Dental Management, presenting "I Buy Junk Practices: Turning Distressed Offices Into Thriving Ones" (1.5 CE credits) — previously a placeholder ("Concurrent Classes — Topics to Be Announced").
 - Updated Dr. Faber's saved speaker card to match: new session title and time, his role as CEO of Edge Dental Management, and a new bio describing Edge (a multi-location, technology-forward dental group in the greater New York area). Note: the speakers page is still the "coming soon" teaser, so this card isn't public yet.

@@ -79,11 +79,22 @@ document.addEventListener('DOMContentLoaded', function () {
       '</button>';
   }
 
+  /* ----- Attending-first ordering (stable) -----
+     Within any group, sponsors marked attending:true float to the top;
+     everyone else keeps their data-file order. Used by both the flat grid
+     and each tier. `.i` (the original index into `sponsors`) is the tiebreak,
+     so the sort is stable regardless of engine. */
+  function attendingFirst(a, b) {
+    var av = a.s.attending ? 0 : 1, bv = b.s.attending ? 0 : 1;
+    return av !== bv ? av - bv : a.i - b.i;
+  }
+
   /* ----- Flat grid (Agenda page) ----- */
   if (gridEl) {
-    gridEl.innerHTML = sponsors.map(function (s, i) {
-      return cardHtml(s, i);
-    }).join('');
+    gridEl.innerHTML = sponsors
+      .map(function (s, i) { return { s: s, i: i }; })
+      .sort(attendingFirst)
+      .map(function (o) { return cardHtml(o.s, o.i); }).join('');
   }
 
   /* ----- Tiered layout (Sponsors page) ----- */
@@ -110,7 +121,8 @@ document.addEventListener('DOMContentLoaded', function () {
     TIER_ORDER.forEach(function (tier) {
       var inTier = sponsors
         .map(function (s, i) { return { s: s, i: i }; })
-        .filter(function (o) { return o.s.tier === tier; });
+        .filter(function (o) { return o.s.tier === tier; })
+        .sort(attendingFirst);
       if (!inTier.length) return;
       inTier.forEach(function (o) { used[o.i] = true; });
 

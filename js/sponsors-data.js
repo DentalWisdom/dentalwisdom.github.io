@@ -146,6 +146,15 @@ window.SPONSORS_DATA = [
 
   /* ── SILVER ───────────────────────────────────────────── */
   {
+    name: "The Altair Hotel",
+    logoUrl: "/images/sponsors/the-altair-hotel.webp",
+    link: "https://www.thealtairhotel.com",
+    blurb: "The Altair Hotel in Bay Harbor Islands, FL is the only Miami-area luxury hotel fully designed with kosher travel and Shabbos in mind — featuring manual hard keys, a Shabbos elevator, daily minyanim, and in-room hot plates and urns. It's also home to OVO, the premier kosher restaurant. The official partner of the Dental Wisdom Conference in March 2027.",
+    tier: "silver",
+    attending: true,
+    videoUrl: "https://www.youtube.com/embed/W2e83n_MNGI"
+  },
+  {
     name: "Ultradent",
     logoUrl: "/images/sponsors/ultradent.webp",
     link: "https://www.ultradent.com/",
@@ -200,38 +209,16 @@ window.SPONSORS_DATA = [
   */
 
   /* ── BRONZE / SUPPORTING ──────────────────────────────── */
+  /* Attending sponsors are floated to the top of each tier automatically
+     by js/sponsors.js (attendingFirst sort); order below is the tiebreak. */
   {
-    name: "AAFE",
-    logoUrl: "/images/sponsors/aafe.webp",
-    link: "https://facialesthetics.org/",
-    blurb: "The American Academy of Facial Esthetics offers hands-on training in Botox, fillers, and facial aesthetics for dental and medical professionals — expanding your clinical scope and practice revenue.",
+    name: "Citron Films",
+    logoUrl: "/images/sponsors/citron-films.webp",
+    link: "https://hc.citronfilms.com",
+    blurb: "Strategy-first video production for practices and businesses. We find your real story, film it cinematically, and tell it in a way that earns trust and moves people to act.",
     tier: "bronze",
-    pastSponsor: true
-  },
-  {
-    name: "CG Insurance Group",
-    logoUrl: "/images/sponsors/cg-insurance-group.webp",
-    link: "https://cginsurancegroup.com/dental-wisdom/",
-    blurb: "Comprehensive insurance solutions tailored for dental professionals — protecting your practice, team, and livelihood with coverage that understands the unique needs of dentistry.",
-    tier: "bronze",
-    attending: true
-  },
-  {
-    name: "Pul Dental",
-    logoUrl: "/images/sponsors/pul-dental.webp",
-    link: "https://puldental.com/",
-    blurb: "Innovative tools and accessories that make wearing and removing clear aligners and retainers easier for patients — boosting compliance, comfort, and satisfaction throughout treatment.",
-    tier: "bronze",
-    pastSponsor: true
-  },
-  {
-    name: "The Altair Hotel",
-    logoUrl: "/images/sponsors/the-altair-hotel.webp",
-    link: "https://www.thealtairhotel.com",
-    blurb: "The Altair Hotel in Bay Harbor Islands, FL is the only Miami-area luxury hotel fully designed with kosher travel and Shabbos in mind — featuring manual hard keys, a Shabbos elevator, daily minyanim, and in-room hot plates and urns. It's also home to OVO, the premier kosher restaurant. The official partner of the Dental Wisdom Conference in March 2027.",
-    tier: "silver",
     attending: true,
-    videoUrl: "https://www.youtube.com/embed/W2e83n_MNGI"
+    videoUrl: "https://www.youtube.com/embed/z019852_Zmk"
   },
   {
     name: "Pizza Biza",
@@ -243,13 +230,28 @@ window.SPONSORS_DATA = [
     videoUrl: "https://www.youtube.com/embed/f6UcDstN6Zg"
   },
   {
-    name: "Citron Films",
-    logoUrl: "/images/sponsors/citron-films.webp",
-    link: "https://hc.citronfilms.com",
-    blurb: "Strategy-first video production for practices and businesses. We find your real story, film it cinematically, and tell it in a way that earns trust and moves people to act.",
+    name: "CG Insurance Group",
+    logoUrl: "/images/sponsors/cg-insurance-group.webp",
+    link: "https://cginsurancegroup.com/dental-wisdom/",
+    blurb: "Comprehensive insurance solutions tailored for dental professionals — protecting your practice, team, and livelihood with coverage that understands the unique needs of dentistry.",
     tier: "bronze",
-    attending: true,
-    videoUrl: "https://www.youtube.com/embed/z019852_Zmk"
+    attending: true
+  },
+  {
+    name: "AAFE",
+    logoUrl: "/images/sponsors/aafe.webp",
+    link: "https://facialesthetics.org/",
+    blurb: "The American Academy of Facial Esthetics offers hands-on training in Botox, fillers, and facial aesthetics for dental and medical professionals — expanding your clinical scope and practice revenue.",
+    tier: "bronze",
+    pastSponsor: true
+  },
+  {
+    name: "Pul Dental",
+    logoUrl: "/images/sponsors/pul-dental.webp",
+    link: "https://puldental.com/",
+    blurb: "Innovative tools and accessories that make wearing and removing clear aligners and retainers easier for patients — boosting compliance, comfort, and satisfaction throughout treatment.",
+    tier: "bronze",
+    pastSponsor: true
   },
   {
     name: "Wonderful Dental",

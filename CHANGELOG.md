@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Friday 10:30 PM session now has its title: "From Isolation to Achdus: Strengthening the Jewish Dental Community" (was "Shiur & Oneg"; speaker still to be announced, Crown Catapult sponsorship unchanged).
+- The 6:15 PM Kabbalas Shabbos line now reads "Chazanus sponsored by APEX Reimbursement Specialists & CG Insurance Group" (was "Compliments of..."), on both the agenda and Gobbie Cohn's speaker card.
 - Reorganized the speakers page (still the "coming soon" teaser publicly — none of this is live yet):
   - Removed Dr. Craig Berry, Dr. Samuel Schuster, and Yaakov Citron from the page (all kept on file, not deleted, in case they return). Dr. Schuster still appears on the agenda; his name just no longer links to a profile.
   - Restored Dr. Marc Faber's card (Thursday 6:30 PM session).

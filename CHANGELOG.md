@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Added a schedule-change disclaimer ("The event organizers reserve the right to make changes to the speaker lineup, agenda, or event schedule at any time...") to the bottom of both the full Agenda and full Speakers pages, and removed the "Additional speakers to be announced." line from the speakers page. (Both pages are still the "coming soon" teasers publicly.)
 - Site-wide copy refresh (approved list): homepage accordion and FAQ now say "over 20 CE credits" (was "estimated 20" / "20"); FAQ speaker answer updated from "actively curating" to "We've assembled an outstanding lineup..."; FAQ Friday schedule bullet now says lectures run to 12:30 PM; both the Agenda and Speakers teaser pages now say "coming soon" instead of "coming in the next few weeks"; added Shabbos Breakfast (8:30 AM, OVO at The Altair) to the agenda.
 - Friday 10:30 PM session now has its title: "From Isolation to Achdus: Strengthening the Jewish Dental Community" (was "Shiur & Oneg"; speaker still to be announced, Crown Catapult sponsorship unchanged).
 - The 6:15 PM Kabbalas Shabbos line now reads "Chazanus sponsored by APEX Reimbursement Specialists & CG Insurance Group" (was "Compliments of..."), on both the agenda and Gobbie Cohn's speaker card.

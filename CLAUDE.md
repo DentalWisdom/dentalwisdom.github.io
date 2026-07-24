@@ -85,7 +85,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 
 **Still-pending slots (as of July 13, 2026)** — for reference, not urgent, not blocking publish:
 - Thursday 6:30–8:00 PM: FILLED (July 24, 2026) — Dr. Marc Faber, CEO of Edge Dental Management, "I Buy Junk Practices" (CE, 1.5 credits). Was previously "Concurrent Classes — Topics to Be Announced."
-- Friday 3:00–5:00 PM: 2 of 4 concurrent slots are confirmed (Dr. Sara Werb's Zirconia Crown Mastery workshop, Yaakov Citron's AI Video Playbook) and unchanged; the other 2 (previously "Surgical Guides," sponsored by Adin, and "Rotary Endo Mastery") were collapsed into one line, "Additional Concurrent Classes — Topics to Be Announced," same reasoning as above
+- Friday 3:00–5:00 PM concurrent hands-on block (updated July 24, 2026 — now 5 tracks): (1) "Straight Forward: Building Your Clear Aligner Practice" — Dr. Sam Glick, sponsored by orthobrain; (2) "Cosmetic Dentistry Hands-On Workshop" — Dr. Elaine Bylis; (3) "Hands-On Implants Workshop" — speaker TBD, sponsored by Adin; (4) Endo track — topic & speaker TBD; (5) Perio track — topic & speaker TBD. All three confirmed classes are provisionally set to CE 2 (2-hour block) pending Ben's confirmation of exact credits. New speaker cards for Dr. Bylis (photo saved: images/speaker-elaine-bylis.webp) and Dr. Sam Glick (no photo yet — "SG" initials placeholder) added to _archive/conference-speakers-full.html.
 - Friday 9:00–10:00 AM: "Practice Management Lecture" — speaker TBD
 - Friday 12:30–1:30 PM: Lunch — sponsor TBD
 - Friday 1:30–3:00 PM: title and speaker both TBD

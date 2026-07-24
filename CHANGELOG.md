@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Made web addresses work no matter how they're capitalized: typing dentalwisdom.org/LIVE (or /Live, /Deals, etc.) now takes visitors to the right page instead of showing "Page Not Found." Previously only the exact lowercase spelling worked.
 - Brought the draft (not-yet-public) Agenda and Speakers pages up to date with the rest of the site: fixed the broken header/footer logos, switched to the current stylesheet and faster font loading, and removed the floating "Join WhatsApp Group" button (conference pages dropped it in July so it doesn't compete with the Register button).
 - Every sponsored lecture's speaker card now shows the sponsor's logo linking to their website: added TruAbutment to Dr. Greenbaum's card and orthobrain to Dr. Glick's card. Also fixed broken sponsor logos in the speaker pop-ups — all six cards with sponsors (Katz/TheraBreath, Greenbaum/TruAbutment, Glick/orthobrain, Cohn/APEX & CG, Waller/LiveWell, Rabbi Katz/Touro) were pointing at image files that didn't exist; they now use the correct files.
 - Added a schedule-change disclaimer ("The event organizers reserve the right to make changes to the speaker lineup, agenda, or event schedule at any time...") to the bottom of both the full Agenda and full Speakers pages, and removed the "Additional speakers to be announced." line from the speakers page. (Both pages are still the "coming soon" teasers publicly.)

@@ -3,6 +3,22 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Case-insensitive URL rescue: GitHub Pages is case-sensitive, so /LIVE, /Live,
+       /Deals, etc. would land here as 404s. If the address is just a case variation of
+       a real page, send the visitor to the correct lowercase version instead of showing
+       the 404. Only the path is lowercased; any ?query or #anchor is preserved. Runs
+       before the page renders, so visitors don't see a flash of the 404 content. -->
+  <script>
+    (function () {
+      var path = location.pathname;
+      var lower = path.toLowerCase();
+      if (lower !== path) {
+        location.replace(lower + location.search + location.hash);
+      }
+    })();
+  </script>
+
   <title>Page Not Found | Dental Wisdom</title>
   <meta name="description" content="Page not found. Return to the Dental Wisdom homepage.">
 

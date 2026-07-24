@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Site review follow-ups (Ben-approved): testimonial byline fixed to "Jerusalem, Israel" (was "Jerusalem, IL" — read as Illinois); hero fact line now reads "20+ Cross-Specialty CE Credits"; FAQ Thursday schedule time format tidied to "2:00–8:00 PM"; speaker application page now says "roughly 15 speakers" (was "10–15"). Full review saved as SITE_REVIEW_2026-07-24.md in the site folder.
+
 - Made web addresses work no matter how they're capitalized: typing dentalwisdom.org/LIVE (or /Live, /Deals, etc.) now takes visitors to the right page instead of showing "Page Not Found." Previously only the exact lowercase spelling worked.
 - Brought the draft (not-yet-public) Agenda and Speakers pages up to date with the rest of the site: fixed the broken header/footer logos, switched to the current stylesheet and faster font loading, and removed the floating "Join WhatsApp Group" button (conference pages dropped it in July so it doesn't compete with the Register button).
 - Every sponsored lecture's speaker card now shows the sponsor's logo linking to their website: added TruAbutment to Dr. Greenbaum's card and orthobrain to Dr. Glick's card. Also fixed broken sponsor logos in the speaker pop-ups — all six cards with sponsors (Katz/TheraBreath, Greenbaum/TruAbutment, Glick/orthobrain, Cohn/APEX & CG, Waller/LiveWell, Rabbi Katz/Touro) were pointing at image files that didn't exist; they now use the correct files.

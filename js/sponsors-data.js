@@ -94,6 +94,15 @@ window.SPONSORS_DATA = [
     photoUrl: "/images/deals/crazy-dental-flyer.webp"
   },
   {
+    name: "Reach",
+    logoUrl: "/images/sponsors/reach.webp",
+    link: "https://lp.getreach.co/dentalwisdom",
+    blurb: "Reach provides dedicated Virtual Assistants for dental practices across the United States, helping solve major challenges like staffing reliability, rising labor costs, and missed patient opportunities. Unlike traditional outsourcing, Reach offers fully dedicated team members who work directly within a practice's systems, supporting tasks like phone call handling, insurance verification, revenue cycle management, patient billing, and other administrative work.",
+    tier: "gold",
+    attending: true,
+    videoUrl: "https://www.youtube.com/embed/wKfRq7IJdtI"
+  },
+  {
     name: "Lasso MD",
     logoUrl: "/images/sponsors/lasso-md.webp",
     link: "https://www.lassomd.com/work-with-us/partners/dental-wisdom",
@@ -102,13 +111,12 @@ window.SPONSORS_DATA = [
     pastSponsor: true
   },
   {
-    name: "Reach",
-    logoUrl: "/images/sponsors/reach.webp",
-    link: "https://lp.getreach.co/dentalwisdom",
-    blurb: "Reach provides dedicated Virtual Assistants for dental practices across the United States, helping solve major challenges like staffing reliability, rising labor costs, and missed patient opportunities. Unlike traditional outsourcing, Reach offers fully dedicated team members who work directly within a practice's systems, supporting tasks like phone call handling, insurance verification, revenue cycle management, patient billing, and other administrative work.",
+    name: "APEX",
+    logoUrl: "/images/sponsors/apex.webp",
+    link: "https://apexreimbursement.com/dental-wisdom/",
+    blurb: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
     tier: "gold",
-    pastSponsor: true,
-    videoUrl: "https://www.youtube.com/embed/wKfRq7IJdtI"
+    pastSponsor: true
   },
   {
     name: "Pearl",
@@ -128,10 +136,10 @@ window.SPONSORS_DATA = [
     pastSponsor: true
   },
   {
-    name: "APEX",
-    logoUrl: "/images/sponsors/apex.webp",
-    link: "https://apexreimbursement.com/dental-wisdom/",
-    blurb: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
+    name: "Adin",
+    logoUrl: "/images/sponsors/adin.webp",
+    link: "https://www.adin-implants.com/",
+    blurb: "Israeli-engineered implant systems distributed in over 40 countries — Adin delivers high primary stability and proven clinical performance at a price that makes implants more accessible.",
     tier: "gold",
     pastSponsor: true
   },
@@ -172,14 +180,6 @@ window.SPONSORS_DATA = [
     pastSponsor: true
   },
   {
-    name: "Adin",
-    logoUrl: "/images/sponsors/adin.webp",
-    link: "https://www.adin-implants.com/",
-    blurb: "Israeli-engineered implant systems distributed in over 40 countries — Adin delivers high primary stability and proven clinical performance at a price that makes implants more accessible.",
-    tier: "silver",
-    pastSponsor: true
-  },
-  {
     name: "Dental Processing Solutions",
     logoUrl: "/images/sponsors/dental-processing-solutions.webp",
     link: "https://dentalprocessingsolutions.com/",
@@ -214,7 +214,7 @@ window.SPONSORS_DATA = [
     link: "https://cginsurancegroup.com/dental-wisdom/",
     blurb: "Comprehensive insurance solutions tailored for dental professionals — protecting your practice, team, and livelihood with coverage that understands the unique needs of dentistry.",
     tier: "bronze",
-    pastSponsor: true
+    attending: true
   },
   {
     name: "Pul Dental",

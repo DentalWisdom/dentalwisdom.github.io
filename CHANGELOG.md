@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
+- Tooth Memory tune-up: now 9 teeth (a full 3×3 grid, mapped to number keys 1–9 like a keypad), each with its own color and a note from a pleasant musical scale so any sequence sounds nice. Added a "3 of 5" progress counter so you don't lose your place mid-round, plus a little celebratory chime cascade each time you clear a round.
 - Replaced the 404-page game with "Tooth Memory," a Simon-style memory game (more skill, less luck): six teeth light up in a growing sequence with a musical tone each, and you repeat it back — one extra tooth every round, one wrong tap ends it. Tracks your best round. Still emoji-based with no extra load time; the old whack-a-cavity version is saved in _archive in case you ever want it back. The "Return to Homepage" button and links stay right above it.
 - Agenda page fix (draft/not-yet-public page): the "Include Davening Times" button now works while "CE Only" is selected — it adds the davening times to the CE list. Before, the button was greyed out and did nothing in that combination.
 - Image tune-up: converted the last five JPG headshots (Harold Katz, Greenbaum, Citron, Rabbi Katz, German) to the site's standard WebP format, and shrank the browser-tab icon from 26 KB to 3 KB (it loads on every page). Originals kept in images/_archive_originals_2026-07-24/.

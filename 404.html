@@ -166,7 +166,7 @@
           </div>
         </div>
 
-        <p class="tm__hint text-center">Tip: on a computer you can also use number keys <strong>1&ndash;6</strong>.</p>
+        <p class="tm__hint text-center">Tip: on a computer you can also use number keys <strong>1&ndash;9</strong> (laid out like a keypad).</p>
       </div>
     </section>
 
@@ -243,6 +243,9 @@
       .tm__tooth[data-index="3"].is-lit { background: radial-gradient(circle at 50% 40%, #9dc2ff, #4d96ff); }
       .tm__tooth[data-index="4"].is-lit { background: radial-gradient(circle at 50% 40%, #d3b3ff, #b983ff); }
       .tm__tooth[data-index="5"].is-lit { background: radial-gradient(circle at 50% 40%, #ffbfd0, #ff8fab); }
+      .tm__tooth[data-index="6"].is-lit { background: radial-gradient(circle at 50% 40%, #7fe8dc, #34d6c4); }
+      .tm__tooth[data-index="7"].is-lit { background: radial-gradient(circle at 50% 40%, #ffc182, #ff9f43); }
+      .tm__tooth[data-index="8"].is-lit { background: radial-gradient(circle at 50% 40%, #dcee6b, #c0e218); }
 
       .tm__board.is-watching .tm__tooth { cursor: default; }
       .tm__board.is-wrong .tm__tooth.is-lit { background: radial-gradient(circle at 50% 40%, #ff8a8a, #e24b4a) !important; }
@@ -292,8 +295,8 @@
         var pText   = document.getElementById('tmPanelText');
         if (!board) return;
 
-        var TEETH = 6;
-        var TONES = [261.63, 329.63, 392.00, 440.00, 523.25, 659.25]; // C E G A C E
+        var TEETH = 9;
+        var TONES = [261.63, 293.66, 329.63, 392.00, 440.00, 523.25, 587.33, 659.25, 783.99]; // C-major pentatonic
         var teeth = [];
         var sequence = [];
         var inputIndex = 0;
@@ -350,8 +353,14 @@
             mode = 'input';
             inputIndex = 0;
             board.classList.remove('is-watching');
-            statusEl.textContent = 'Your turn — repeat it!';
+            statusEl.textContent = 'Your turn — 1 of ' + sequence.length;
           }, sequence.length * gap + 500);
+        }
+
+        function celebrate() {
+          for (var k = 0; k < TEETH; k++) {
+            (function (k) { setTimeout(function () { flash(k, 150); }, k * 65); })(k);
+          }
         }
 
         function nextRound() {
@@ -369,7 +378,10 @@
               if (sequence.length > best) { best = sequence.length; bestEl.textContent = best; }
               mode = 'watch';
               statusEl.textContent = 'Nice! Next round…';
-              setTimeout(nextRound, 900);
+              celebrate();
+              setTimeout(nextRound, 1200);
+            } else {
+              statusEl.textContent = 'Your turn — ' + (inputIndex + 1) + ' of ' + sequence.length;
             }
           } else {
             gameOver();

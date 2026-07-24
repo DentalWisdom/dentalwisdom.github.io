@@ -239,7 +239,8 @@ window.SPONSORS_DATA = [
     link: "https://www.pizzabiza.com/",
     blurb: "Beloved kosher pizza with locations in New York, New Jersey, and Miami — the go-to spot for Dental Wisdom conference-goers looking for a great meal with great company.",
     tier: "bronze",
-    attending: true
+    attending: true,
+    videoUrl: "https://www.youtube.com/embed/f6UcDstN6Zg"
   },
   {
     name: "Citron Films",

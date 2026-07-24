@@ -359,6 +359,7 @@ window.DEALS_DATA = [
     link: "https://www.pizzabiza.com/",
     promo: "",
     imageUrl: "/images/deals/pizza-biza.webp",
+    videoUrl: "https://www.youtube.com/embed/f6UcDstN6Zg",
     keywords: "kosher catering pizza event food New York NJ New Jersey Florida parties office lunch dairy milchig"
   },
   {

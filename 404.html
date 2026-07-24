@@ -132,86 +132,88 @@
       </div>
     </section>
 
-    <!-- ===================== WHACK-A-CAVITY MINI-GAME (404 page only) =====================
-         Self-contained: scoped .wac- styles + inline script, emoji-based (no image downloads).
-         Progressive levels, 3 lives, keyboard + touch playable, respects reduced-motion. -->
-    <section class="section section--compact wac" aria-labelledby="wacHeading">
+    <!-- ===================== TOOTH MEMORY MINI-GAME (404 page only) =====================
+         Simon-style memory game: teeth light up in a sequence, player repeats it.
+         Skill = memory. Self-contained scoped .tm- styles + inline script, emoji + Web Audio
+         tones (no downloads). Keyboard (1-6) + touch playable, respects reduced-motion. -->
+    <section class="section section--compact tm" aria-labelledby="tmHeading">
       <div class="container">
-        <div class="wac__intro text-center">
-          <p class="wac__eyebrow">While you&rsquo;re here&hellip;</p>
-          <h2 id="wacHeading" class="wac__title">Whack-a-Cavity!</h2>
-          <p class="wac__sub">Cavities are popping up! Tap or click each one to fill it before it spreads. It gets faster every level. 🦷✨</p>
+        <div class="tm__intro text-center">
+          <p class="tm__eyebrow">While you&rsquo;re here&hellip;</p>
+          <h2 id="tmHeading" class="tm__title">Tooth Memory</h2>
+          <p class="tm__sub">Watch the teeth light up, then tap them back in the same order. Each round adds one more &mdash; how far can your memory stretch? 🦷</p>
         </div>
 
-        <div class="wac__game" id="wacGame">
-          <div class="wac__hud" role="status" aria-live="polite">
-            <div class="wac__stat"><span class="wac__stat-label">Score</span><span class="wac__stat-val" id="wacScore">0</span></div>
-            <div class="wac__stat"><span class="wac__stat-label">Level</span><span class="wac__stat-val" id="wacLevel">1</span></div>
-            <div class="wac__stat"><span class="wac__stat-label">Lives</span><span class="wac__stat-val" id="wacLives">❤️❤️❤️</span></div>
+        <div class="tm__game" id="tmGame">
+          <div class="tm__hud">
+            <div class="tm__stat"><span class="tm__stat-label">Round</span><span class="tm__stat-val" id="tmRound">0</span></div>
+            <div class="tm__stat"><span class="tm__stat-label">Best</span><span class="tm__stat-val" id="tmBest">0</span></div>
           </div>
 
-          <div class="wac__board" id="wacBoard" aria-label="Game board of teeth">
-            <!-- tooth cells injected by JS -->
+          <p class="tm__status" id="tmStatus" role="status" aria-live="polite">Press start to play</p>
+
+          <div class="tm__board" id="tmBoard" aria-label="Row of teeth">
+            <!-- tooth buttons injected by JS -->
           </div>
 
-          <div class="wac__overlay" id="wacOverlay">
-            <div class="wac__panel">
-              <p class="wac__panel-emoji" id="wacPanelEmoji">🦷</p>
-              <h3 class="wac__panel-title" id="wacPanelTitle">Ready to fight some cavities?</h3>
-              <p class="wac__panel-text" id="wacPanelText">Fill the cavities as they pop up. Miss three and it&rsquo;s game over!</p>
-              <button class="btn btn-primary wac__btn" id="wacStart" type="button">Start Game</button>
+          <div class="tm__overlay" id="tmOverlay">
+            <div class="tm__panel">
+              <p class="tm__panel-emoji" id="tmPanelEmoji">🦷</p>
+              <h3 class="tm__panel-title" id="tmPanelTitle">Ready to test your memory?</h3>
+              <p class="tm__panel-text" id="tmPanelText">Watch the sequence, then repeat it. One wrong tooth ends the game!</p>
+              <button class="btn btn-primary tm__btn" id="tmStart" type="button">Start Game</button>
             </div>
           </div>
         </div>
 
-        <p class="wac__hint text-center">Tip: on a computer you can also press the number keys <strong>1&ndash;9</strong> to whack.</p>
+        <p class="tm__hint text-center">Tip: on a computer you can also use number keys <strong>1&ndash;6</strong>.</p>
       </div>
     </section>
 
     <style>
-      /* ---- Whack-a-Cavity (scoped to .wac, 404 page only) ---- */
-      .wac__intro { max-width: 640px; margin: 0 auto var(--space-md); }
-      .wac__eyebrow {
+      /* ---- Tooth Memory (scoped to .tm, 404 page only) ---- */
+      .tm__intro { max-width: 640px; margin: 0 auto var(--space-md); }
+      .tm__eyebrow {
         font-size: 0.8rem; letter-spacing: 0.12em; text-transform: uppercase;
         color: var(--color-gold-text); font-weight: 700; margin: 0 0 0.25rem;
       }
-      .wac__title { margin: 0 0 0.5rem; }
-      .wac__sub { color: var(--color-ink, #333); margin: 0; }
+      .tm__title { margin: 0 0 0.5rem; }
+      .tm__sub { color: var(--color-ink, #333); margin: 0; }
 
-      .wac__game {
+      .tm__game {
         position: relative;
-        max-width: 480px;
+        max-width: 520px;
         margin: 0 auto;
         background: linear-gradient(160deg, #7ec8e3 0%, #63b8dc 55%, #4aa3d0 100%);
         border-radius: 22px;
-        padding: 1rem;
+        padding: 1.1rem;
         box-shadow: 0 14px 40px rgba(20, 60, 90, 0.28);
       }
 
-      .wac__hud {
-        display: flex; justify-content: space-around; gap: 0.5rem;
-        margin-bottom: 0.9rem;
-      }
-      .wac__stat {
-        flex: 1; text-align: center;
+      .tm__hud { display: flex; justify-content: center; gap: 0.6rem; margin-bottom: 0.6rem; }
+      .tm__stat {
+        min-width: 92px; text-align: center;
         background: rgba(255,255,255,0.9);
-        border-radius: 14px; padding: 0.45rem 0.3rem;
+        border-radius: 14px; padding: 0.45rem 0.6rem;
         box-shadow: 0 3px 0 rgba(0,0,0,0.06);
       }
-      .wac__stat-label {
+      .tm__stat-label {
         display: block; font-size: 0.62rem; letter-spacing: 0.1em;
         text-transform: uppercase; color: #6a7b86; font-weight: 700;
       }
-      .wac__stat-val {
-        display: block; font-size: 1.15rem; font-weight: 700; color: #123; line-height: 1.3;
+      .tm__stat-val { display: block; font-size: 1.15rem; font-weight: 700; color: #123; line-height: 1.3; }
+
+      .tm__status {
+        text-align: center; margin: 0 0 0.9rem; min-height: 1.4em;
+        font-weight: 600; color: #fff; text-shadow: 0 1px 2px rgba(0,0,0,0.18);
       }
 
-      .wac__board {
+      .tm__board {
         display: grid;
         grid-template-columns: repeat(3, 1fr);
         gap: 0.6rem;
       }
-      .wac__cell {
+      .tm__tooth {
         position: relative;
         aspect-ratio: 1 / 1;
         border: none;
@@ -222,32 +224,30 @@
         line-height: 1;
         cursor: pointer;
         display: flex; align-items: center; justify-content: center;
-        transition: transform 0.08s ease, box-shadow 0.12s ease;
+        transition: transform 0.1s ease, box-shadow 0.15s ease, background 0.1s ease;
         -webkit-tap-highlight-color: transparent;
         user-select: none;
       }
-      .wac__cell:focus-visible {
-        outline: 3px solid var(--color-gold-warm, #B8892A);
-        outline-offset: 2px;
+      .tm__tooth:focus-visible { outline: 3px solid var(--color-gold-warm, #B8892A); outline-offset: 2px; }
+      .tm__tooth.is-lit {
+        transform: scale(1.06);
+        box-shadow: inset 0 -6px 0 rgba(0,0,0,0.12), 0 0 0 4px rgba(255,255,255,0.85), 0 8px 20px rgba(0,0,0,0.25);
       }
-      .wac__cell:active { transform: scale(0.94); }
-      .wac__cell .wac__face { transition: transform 0.15s ease; }
+      .tm__tooth.is-lit .tm__face { transform: scale(1.15); }
+      .tm__face { transition: transform 0.12s ease; }
 
-      /* active cavity state */
-      .wac__cell.is-cavity {
-        background: radial-gradient(circle at 50% 40%, #ffe08a 0%, #f4c04e 65%, #e0a52f 100%);
-        box-shadow: inset 0 -6px 0 rgba(0,0,0,0.14), 0 0 0 3px #c98b1f, 0 6px 14px rgba(0,0,0,0.2);
-        animation: wacPop 0.18s ease;
-      }
-      .wac__cell.is-hit {
-        background: radial-gradient(circle at 50% 40%, #b8f5c8 0%, #6fe08f 70%, #34c46a 100%);
-      }
-      @keyframes wacPop {
-        from { transform: scale(0.6); }
-        to   { transform: scale(1); }
-      }
+      /* each tooth lights up in its own bright colour */
+      .tm__tooth[data-index="0"].is-lit { background: radial-gradient(circle at 50% 40%, #ff9d9d, #ff6b6b); }
+      .tm__tooth[data-index="1"].is-lit { background: radial-gradient(circle at 50% 40%, #ffe680, #ffd93d); }
+      .tm__tooth[data-index="2"].is-lit { background: radial-gradient(circle at 50% 40%, #9fe4a8, #6bcb77); }
+      .tm__tooth[data-index="3"].is-lit { background: radial-gradient(circle at 50% 40%, #9dc2ff, #4d96ff); }
+      .tm__tooth[data-index="4"].is-lit { background: radial-gradient(circle at 50% 40%, #d3b3ff, #b983ff); }
+      .tm__tooth[data-index="5"].is-lit { background: radial-gradient(circle at 50% 40%, #ffbfd0, #ff8fab); }
 
-      .wac__overlay {
+      .tm__board.is-watching .tm__tooth { cursor: default; }
+      .tm__board.is-wrong .tm__tooth.is-lit { background: radial-gradient(circle at 50% 40%, #ff8a8a, #e24b4a) !important; }
+
+      .tm__overlay {
         position: absolute; inset: 0;
         background: rgba(15, 45, 70, 0.72);
         backdrop-filter: blur(2px);
@@ -256,183 +256,164 @@
         text-align: center; padding: 1.2rem;
         transition: opacity 0.25s ease;
       }
-      .wac__overlay.is-hidden { opacity: 0; pointer-events: none; }
-      .wac__panel {
+      .tm__overlay.is-hidden { opacity: 0; pointer-events: none; }
+      .tm__panel {
         background: #fff; border-radius: 18px; padding: 1.4rem 1.2rem;
-        max-width: 320px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+        max-width: 330px; box-shadow: 0 10px 30px rgba(0,0,0,0.3);
       }
-      .wac__panel-emoji { font-size: 2.6rem; margin: 0 0 0.3rem; }
-      .wac__panel-title { margin: 0 0 0.4rem; font-size: 1.3rem; }
-      .wac__panel-text { margin: 0 0 1rem; color: #4a5560; font-size: 0.95rem; }
-      .wac__btn { margin: 0; }
+      .tm__panel-emoji { font-size: 2.6rem; margin: 0 0 0.3rem; }
+      .tm__panel-title { margin: 0 0 0.4rem; font-size: 1.3rem; }
+      .tm__panel-text { margin: 0 0 1rem; color: #4a5560; font-size: 0.95rem; }
+      .tm__btn { margin: 0; }
 
-      .wac__hint { margin: var(--space-sm) auto 0; font-size: 0.85rem; color: #6a7b86; max-width: 480px; }
+      .tm__hint { margin: var(--space-sm) auto 0; font-size: 0.85rem; color: #6a7b86; max-width: 520px; }
 
       @media (max-width: 400px) {
-        .wac__game { padding: 0.75rem; }
-        .wac__board { gap: 0.45rem; }
+        .tm__game { padding: 0.8rem; }
+        .tm__board { gap: 0.45rem; }
       }
-
       @media (prefers-reduced-motion: reduce) {
-        .wac__cell, .wac__cell .wac__face, .wac__overlay { transition: none; }
-        .wac__cell.is-cavity { animation: none; }
+        .tm__tooth, .tm__face, .tm__overlay { transition: none; }
+        .tm__tooth.is-lit { transform: none; }
+        .tm__tooth.is-lit .tm__face { transform: none; }
       }
     </style>
 
     <script>
       (function () {
-        var board   = document.getElementById('wacBoard');
-        var scoreEl = document.getElementById('wacScore');
-        var levelEl = document.getElementById('wacLevel');
-        var livesEl = document.getElementById('wacLives');
-        var overlay = document.getElementById('wacOverlay');
-        var startBtn = document.getElementById('wacStart');
-        var pEmoji  = document.getElementById('wacPanelEmoji');
-        var pTitle  = document.getElementById('wacPanelTitle');
-        var pText   = document.getElementById('wacPanelText');
+        var board   = document.getElementById('tmBoard');
+        var roundEl = document.getElementById('tmRound');
+        var bestEl  = document.getElementById('tmBest');
+        var statusEl = document.getElementById('tmStatus');
+        var overlay = document.getElementById('tmOverlay');
+        var startBtn = document.getElementById('tmStart');
+        var pEmoji  = document.getElementById('tmPanelEmoji');
+        var pTitle  = document.getElementById('tmPanelTitle');
+        var pText   = document.getElementById('tmPanelText');
         if (!board) return;
 
-        var CELLS = 9;
-        var HITS_PER_LEVEL = 6;     // fills needed to advance a level
-        var MAX_LEVEL = 8;
-        var START_LIVES = 3;
+        var TEETH = 6;
+        var TONES = [261.63, 329.63, 392.00, 440.00, 523.25, 659.25]; // C E G A C E
+        var teeth = [];
+        var sequence = [];
+        var inputIndex = 0;
+        var best = 0;
+        var mode = 'idle';   // 'idle' | 'watch' | 'input'
+        var audioCtx = null;
 
-        var cells = [];
-        var state = null;           // holds active game state, null when idle
-
-        // Build the 9 tooth cells once
-        for (var i = 0; i < CELLS; i++) {
+        for (var i = 0; i < TEETH; i++) {
           var btn = document.createElement('button');
           btn.type = 'button';
-          btn.className = 'wac__cell';
+          btn.className = 'tm__tooth';
           btn.setAttribute('data-index', i);
           btn.setAttribute('aria-label', 'Tooth ' + (i + 1));
-          btn.innerHTML = '<span class="wac__face" aria-hidden="true">🦷</span>';
-          btn.addEventListener('click', onCellClick);
+          btn.innerHTML = '<span class="tm__face" aria-hidden="true">🦷</span>';
+          btn.addEventListener('click', function (e) {
+            onTooth(parseInt(e.currentTarget.getAttribute('data-index'), 10));
+          });
           board.appendChild(btn);
-          cells.push(btn);
+          teeth.push(btn);
         }
 
-        function levelSettings(level) {
-          // As level rises: cavities appear more often and stay for less time.
-          return {
-            interval: Math.max(1300 - (level - 1) * 130, 520),   // ms between spawns
-            visible:  Math.max(1500 - (level - 1) * 150, 650),   // ms a cavity stays up
-            maxActive: Math.min(1 + Math.floor((level - 1) / 2), 3) // up to 3 at once
-          };
+        function tone(freq, dur) {
+          if (!audioCtx) return;
+          try {
+            var osc = audioCtx.createOscillator();
+            var gain = audioCtx.createGain();
+            osc.type = 'sine';
+            osc.frequency.value = freq;
+            gain.gain.setValueAtTime(0.0001, audioCtx.currentTime);
+            gain.gain.exponentialRampToValueAtTime(0.18, audioCtx.currentTime + 0.02);
+            gain.gain.exponentialRampToValueAtTime(0.0001, audioCtx.currentTime + dur / 1000);
+            osc.connect(gain); gain.connect(audioCtx.destination);
+            osc.start(); osc.stop(audioCtx.currentTime + dur / 1000);
+          } catch (e) {}
         }
 
-        function setFace(cell, emoji) {
-          cell.querySelector('.wac__face').textContent = emoji;
+        function flash(i, dur) {
+          var t = teeth[i];
+          t.classList.add('is-lit');
+          tone(TONES[i], dur);
+          setTimeout(function () { t.classList.remove('is-lit'); }, dur);
         }
 
-        function clearCell(cell) {
-          cell.classList.remove('is-cavity', 'is-hit');
-          setFace(cell, '🦷');
-          if (cell._timer) { clearTimeout(cell._timer); cell._timer = null; }
+        function playSequence() {
+          mode = 'watch';
+          board.classList.add('is-watching');
+          statusEl.textContent = 'Watch closely…';
+          var litDur = Math.max(560 - sequence.length * 18, 320);
+          var gap = litDur + 180;
+          sequence.forEach(function (idx, n) {
+            setTimeout(function () { flash(idx, litDur); }, n * gap + 500);
+          });
+          setTimeout(function () {
+            mode = 'input';
+            inputIndex = 0;
+            board.classList.remove('is-watching');
+            statusEl.textContent = 'Your turn — repeat it!';
+          }, sequence.length * gap + 500);
         }
 
-        function spawn() {
-          if (!state) return;
-          var cfg = levelSettings(state.level);
-          var active = cells.filter(function (c) { return c.classList.contains('is-cavity'); });
-          if (active.length < cfg.maxActive) {
-            var free = cells.filter(function (c) {
-              return !c.classList.contains('is-cavity') && !c.classList.contains('is-hit');
-            });
-            if (free.length) {
-              var cell = free[Math.floor(Math.random() * free.length)];
-              cell.classList.add('is-cavity');
-              setFace(cell, '🦠');
-              cell._timer = setTimeout(function () {
-                // cavity spread — missed it, lose a life
-                if (!cell.classList.contains('is-cavity')) return;
-                clearCell(cell);
-                loseLife();
-              }, cfg.visible);
+        function nextRound() {
+          sequence.push(Math.floor(Math.random() * TEETH));
+          roundEl.textContent = sequence.length;
+          playSequence();
+        }
+
+        function onTooth(i) {
+          if (mode !== 'input') return;
+          flash(i, 300);
+          if (i === sequence[inputIndex]) {
+            inputIndex++;
+            if (inputIndex === sequence.length) {
+              if (sequence.length > best) { best = sequence.length; bestEl.textContent = best; }
+              mode = 'watch';
+              statusEl.textContent = 'Nice! Next round…';
+              setTimeout(nextRound, 900);
             }
+          } else {
+            gameOver();
           }
-          state.spawnTimer = setTimeout(spawn, cfg.interval);
-        }
-
-        function onCellClick(e) {
-          var cell = e.currentTarget;
-          if (!state || !cell.classList.contains('is-cavity')) return;
-          if (cell._timer) { clearTimeout(cell._timer); cell._timer = null; }
-          cell.classList.remove('is-cavity');
-          cell.classList.add('is-hit');
-          setFace(cell, '✨');
-          state.score += 10;
-          scoreEl.textContent = state.score;
-          setTimeout(function () { clearCell(cell); }, 220);
-
-          state.levelHits++;
-          if (state.levelHits >= HITS_PER_LEVEL) {
-            if (state.level >= MAX_LEVEL) { win(); return; }
-            state.level++;
-            state.levelHits = 0;
-            levelEl.textContent = state.level;
-          }
-        }
-
-        function renderLives() {
-          livesEl.textContent = state.lives > 0
-            ? '❤️'.repeat(state.lives) : '💔';
-        }
-
-        function loseLife() {
-          if (!state) return;
-          state.lives--;
-          renderLives();
-          if (state.lives <= 0) gameOver();
-        }
-
-        function stopTimers() {
-          if (state && state.spawnTimer) clearTimeout(state.spawnTimer);
-          cells.forEach(clearCell);
-        }
-
-        function startGame() {
-          stopTimers();
-          state = { score: 0, level: 1, levelHits: 0, lives: START_LIVES, spawnTimer: null };
-          scoreEl.textContent = '0';
-          levelEl.textContent = '1';
-          renderLives();
-          overlay.classList.add('is-hidden');
-          spawn();
-        }
-
-        function endScreen(emoji, title, text, btnLabel) {
-          stopTimers();
-          state = null;
-          pEmoji.textContent = emoji;
-          pTitle.textContent = title;
-          pText.textContent = text;
-          startBtn.textContent = btnLabel;
-          overlay.classList.remove('is-hidden');
         }
 
         function gameOver() {
-          endScreen('🪥', 'Game Over!',
-            'You filled ' + scoreEl.textContent + ' points of cavities. Grab your toothbrush and try again!',
-            'Play Again');
+          mode = 'idle';
+          var reached = sequence.length - 1 < 0 ? 0 : sequence.length; // rounds attempted
+          var cleared = best;
+          board.classList.add('is-wrong');
+          statusEl.textContent = 'Oops — wrong tooth!';
+          setTimeout(function () {
+            board.classList.remove('is-wrong');
+            teeth.forEach(function (t) { t.classList.remove('is-lit'); });
+            pEmoji.textContent = '🪥';
+            pTitle.textContent = 'Good memory!';
+            pText.textContent = 'You made it to round ' + sequence.length + '. Think you can go further?';
+            startBtn.textContent = 'Play Again';
+            overlay.classList.remove('is-hidden');
+          }, 700);
         }
 
-        function win() {
-          endScreen('🏆', 'Cavity-Fighting Champion!',
-            'You cleared all ' + MAX_LEVEL + ' levels with ' + (state ? state.score : scoreEl.textContent) + ' points. Your dentist would be proud!',
-            'Play Again');
+        function startGame() {
+          if (!audioCtx) {
+            try { audioCtx = new (window.AudioContext || window.webkitAudioContext)(); }
+            catch (e) { audioCtx = null; }
+          }
+          if (audioCtx && audioCtx.state === 'suspended') audioCtx.resume();
+          sequence = [];
+          inputIndex = 0;
+          roundEl.textContent = '0';
+          overlay.classList.add('is-hidden');
+          statusEl.textContent = 'Get ready…';
+          teeth.forEach(function (t) { t.classList.remove('is-lit'); });
+          setTimeout(nextRound, 600);
         }
 
         startBtn.addEventListener('click', startGame);
 
-        // Number keys 1–9 whack the matching tooth
         document.addEventListener('keydown', function (e) {
-          if (!state) return;
+          if (mode !== 'input') return;
           var n = parseInt(e.key, 10);
-          if (n >= 1 && n <= 9 && cells[n - 1]) {
-            cells[n - 1].click();
-          }
+          if (n >= 1 && n <= TEETH && teeth[n - 1]) onTooth(n - 1);
         });
       })();
     </script>

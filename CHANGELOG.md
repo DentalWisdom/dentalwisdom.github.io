@@ -5,8 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 24, 2026
 
-- Thursday's final session slot (6:30–8:00 PM) is now Dr. Marc Faber, CEO of Edge Dental Management, presenting "I Buy Junk Practices" (1.5 CE credits) — previously a placeholder ("Concurrent Classes — Topics to Be Announced"). Faber's saved speaker card was updated to match this new session and time.
-- Removed Nobel Biocare from the sponsor page. Their details are kept on file in the sponsor data so they can be added back later if needed.
+- Thursday's final session slot (6:30–8:00 PM) is now Dr. Marc Faber, CEO of Edge Dental Management, presenting "I Buy Junk Practices: Turning Distressed Offices Into Thriving Ones" (1.5 CE credits) — previously a placeholder ("Concurrent Classes — Topics to Be Announced").
+- Updated Dr. Faber's saved speaker card to match: new session title and time, his role as CEO of Edge Dental Management, and a new bio describing Edge (a multi-location, technology-forward dental group in the greater New York area). Note: the speakers page is still the "coming soon" teaser, so this card isn't public yet.
+- Removed Nobel Biocare from the sponsor page. Their details are kept on file in the sponsor data so they can be added back later if needed. The sponsor list's version number was bumped (v2 → v3) so returning visitors see the updated list.
 
 ---
 

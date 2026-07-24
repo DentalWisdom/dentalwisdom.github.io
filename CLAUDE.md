@@ -75,7 +75,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 8 | Dr. Sara Werb | `speaker-sara-werb` | Pediatric Dentistry Pt. 1 & 2 — Intraosseous Anesthesia: Advanced Techniques for Predictable & Profound Pain Control; Hands-On Zirconia Crown Mastery: Anterior Esthetics & Posterior Strength Workshop | Fri 10–11am & Fri 3–5pm | NuSmile |
 | 9 | Dr. Dan German | `speaker-dan-german` | Straight Talk: Game-Changing Tips and Tricks Every GP Should Know in Orthodontics | Fri 1:30–3pm | orthobrain |
 | 10 | Dr. Samuel Schuster | `speaker-samuel-schuster` | Pre-Davening Shiur | Shabbos 8:15–9:15am | — |
-| 11 | Dr. Marc Faber | `speaker-marc-faber` | I Buy Junk Practices (CEO, Edge Dental Management) | Thu 6:30–8pm | — |
+| 11 | Dr. Marc Faber | `speaker-marc-faber` | I Buy Junk Practices: Turning Distressed Offices Into Thriving Ones (CEO, Edge Dental Management) | Thu 6:30–8pm | — |
 | 12 | Yaakov Citron | `speaker-yaakov-citron` | Videography Meets AI: DIY Workshop | Fri 4–5pm | Citron Films |
 | 13 | Gobbie Cohn | `speaker-gobbie-cohn` | Mincha, Kabbalas Shabbos & Maariv | Fri 6:15pm | APEX Reimbursement Specialists & CG Insurance Group |
 

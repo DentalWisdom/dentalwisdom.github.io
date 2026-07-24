@@ -63,7 +63,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "2:00 – 4:00 PM", title: "Opening the Airway: Diagnosis and Management of Obstructive Sleep Apnea", speaker: "Dr. Tzvi Krupka", speakerUrl: "/conference-speakers#speaker-tzvi-krupka", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "4:00 – 6:00 PM", title: "The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance", speaker: "Dr. Ariel Steinberger (Cosmetic Dentist)", speakerUrl: "/conference-speakers#speaker-ariel-steinberger", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "6:00 – 6:30 PM", title: "Break (Mincha & Maariv)", speaker: "", location: "Shul" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "I Buy Junk Practices", speaker: "Dr. Marc Faber, CEO of Edge Dental Management", speakerUrl: "/conference-speakers#speaker-marc-faber", location: "Shul", ce: true, ceCredits: 1.5 },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "I Buy Junk Practices: Turning Distressed Offices Into Thriving Ones", speaker: "Dr. Marc Faber, CEO of Edge Dental Management", speakerUrl: "/conference-speakers#speaker-marc-faber", location: "Shul", ce: true, ceCredits: 1.5 },
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors", event: true },
 
   // ---------------- Friday ----------------

@@ -4,37 +4,22 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <!-- Case-insensitive URL rescue: GitHub Pages is case-sensitive, so /LIVE, /Live,
-       /Deals, etc. would land here as 404s. If the address is just a case variation of
-       a real page, send the visitor to the correct lowercase version instead of showing
-       the 404. Only the path is lowercased; any ?query or #anchor is preserved. Runs
-       before the page renders, so visitors don't see a flash of the 404 content. -->
-  <script>
-    (function () {
-      var path = location.pathname;
-      var lower = path.toLowerCase();
-      if (lower !== path) {
-        location.replace(lower + location.search + location.hash);
-      }
-    })();
-  </script>
-
-  <title>Page Not Found | Dental Wisdom</title>
-  <meta name="description" content="Page not found. Return to the Dental Wisdom homepage.">
+  <title>Tooth Memory — A Game from Dental Wisdom</title>
+  <meta name="description" content="Take a brain break with Tooth Memory — a quick dental memory game with a cheesy dentist joke after every round.">
 
   <!-- Open Graph -->
-  <meta property="og:title" content="Page Not Found | Dental Wisdom">
-  <meta property="og:description" content="Page not found. Return to the Dental Wisdom homepage.">
+  <meta property="og:title" content="Tooth Memory — A Game from Dental Wisdom">
+  <meta property="og:description" content="Take a brain break with Tooth Memory — a quick dental memory game with a cheesy dentist joke after every round.">
   <meta property="og:type" content="website">
-  <meta property="og:url" content="https://dentalwisdom.org/404.html">
+  <meta property="og:url" content="https://dentalwisdom.org/toothmemorygame">
   <meta property="og:image" content="https://dentalwisdom.org/images/social-general.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Dental Wisdom — a warm community of Jewish dentists">
   <meta property="og:site_name" content="Dental Wisdom">
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Page Not Found | Dental Wisdom">
-  <meta name="twitter:description" content="Page not found. Return to the Dental Wisdom homepage.">
+  <meta name="twitter:title" content="Tooth Memory — A Game from Dental Wisdom">
+  <meta name="twitter:description" content="Take a brain break with Tooth Memory — a quick dental memory game with a cheesy dentist joke after every round.">
   <meta name="twitter:image" content="https://dentalwisdom.org/images/social-general.jpg">
 
   <!-- Favicon -->
@@ -110,29 +95,6 @@
 
   <main id="main">
 
-    <section class="section section--sand texture">
-      <div class="container">
-        <div class="section-heading text-center" data-reveal>
-          <h1>Page Not Found</h1>
-        </div>
-        <div class="lede text-center" data-reveal>
-          <p>We&rsquo;re sorry, but the page you&rsquo;re looking for doesn&rsquo;t exist or may have been moved.</p>
-          <p>It&rsquo;s possible the link is outdated or the page has been removed.</p>
-          <p>Please return to the homepage or contact us if you need assistance.</p>
-          <p><a class="btn btn-primary" href="/">Return to Homepage</a></p>
-          <nav aria-label="Main sections" style="margin-top: var(--space-md); font-size: 0.95rem;">
-            <a href="/">Conference</a>
-            <span aria-hidden="true"> &bull; </span>
-            <a href="/live">Live</a>
-            <span aria-hidden="true"> &bull; </span>
-            <a href="/deals">Deals</a>
-            <span aria-hidden="true"> &bull; </span>
-            <a href="/whatsapp">WhatsApp</a>
-          </nav>
-        </div>
-      </div>
-    </section>
-
     <!-- ===================== TOOTH MEMORY MINI-GAME =====================
          Shared game used on this page and on /toothmemorygame.
          Styles: /css/toothmemory.css   Logic + jokes: /js/toothmemory.js
@@ -142,8 +104,8 @@
 <section class="section section--compact tm" aria-labelledby="tmHeading">
       <div class="container">
         <div class="tm__intro text-center">
-          <p class="tm__eyebrow">While you&rsquo;re here&hellip;</p>
-          <h2 id="tmHeading" class="tm__title">Tooth Memory</h2>
+          <p class="tm__eyebrow">A game from Dental Wisdom</p>
+          <h1 id="tmHeading" class="tm__title">Tooth Memory</h1>
           <p class="tm__sub">Watch the teeth light up, then tap them back in the same order. Each round adds one more &mdash; how far can your memory stretch? 🦷</p>
         </div>
 

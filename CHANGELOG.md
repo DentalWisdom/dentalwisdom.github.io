@@ -3,6 +3,13 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 25, 2026
+
+- FAQ page: every question is now a tidy expand/collapse. The page opens showing just the category headings and questions, so it's much shorter and easier to scan — tap any question to reveal its answer. The two long Shabbos meal menus are tucked away the same way, so they no longer flood the page (open "What's on the menu for Shabbos meals?" to see them). Nothing was reworded; only the layout changed.
+- Housekeeping: confirmed the site's ignore list already keeps stray system junk files (.DS_Store, .fuse_hidden…) out of GitHub, while the archived full Agenda and Speakers pages stay saved and viewable at their long web addresses.
+
+---
+
 ## July 24, 2026
 
 - Tooth Memory: the heading at the top of the game now reads "Dental Wisdom Tooth Memory Game." Also added a colorblind-friendly button (🔢) that puts faint 1–9 numbers on the teeth, so players who can't easily tell the colors apart can follow the sequence by number; it remembers the setting on that person's device.

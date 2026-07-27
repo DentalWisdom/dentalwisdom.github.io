@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 27, 2026
 
+- Agenda: Dr. Craig Berry is back on the Friday schedule at 1:30–3:00 PM with his session "The Comfortable Root Canal: Cutting-Edge Endodontics for Predictable, Pain-Free Outcomes" (CE, 2 credits), replacing the "to be announced" placeholder that was in that slot. His speaker profile has also been restored to the (archived) full Speakers page.
+- Agenda: the fourth Friday 3:00–5:00 PM hands-on track now reads "Hands-On Periodontal Surgery Workshop (Tentative) — Speaker to Be Announced" (it previously said "Endodontics or Periodontics"). The other three tracks stay ortho (Dr. Sam Glick), cosmetic (Dr. Elaine Bylis), and implants.
 - Sponsor pop-ups now show each sponsor's special offer, the same way the Deals page does. Added the offer line to six sponsors whose pop-ups were missing it: Reach ("$500 Off First Month"), Crazy Dental ("10% off First Order (WISDOM10) + Free Ground Shipping (WISDOMSHIP)"), APEX ("Free Consult"), Lasso MD ("10-20% Off + Free Photo & Video Shoot"), Dental Processing Solutions ("Free Onboarding Call"), and AAFE ("Use code DW100 for $100 discount"). The offer appears as a bold gold line just below the sponsor's description in the pop-up. To add or change an offer for any sponsor in the future, it's the new "promo" line in the sponsor list.
 
 ---

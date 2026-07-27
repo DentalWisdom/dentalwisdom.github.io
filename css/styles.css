@@ -2296,24 +2296,27 @@ body.menu-open {
 }
 
 .agenda-concurrent-block__list {
-  border-left: 1px solid var(--color-border);
-  padding-left: 1rem;
+  display: grid;
+  gap: 0.85rem;
 }
 
+/* Each concurrent class sits in its own boxed card so the parallel
+   tracks read as distinct choices (July 2026, Ben's request). White
+   card on the block's faint gold CE wash — kept restrained to match
+   the editorial style. */
 .agenda-concurrent-card {
-  margin-bottom: 0.85rem;
-}
-
-.agenda-concurrent-card:last-child {
-  margin-bottom: 0;
+  background: var(--color-white);
+  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  padding: 1rem 1.15rem;
 }
 
 .agenda-concurrent-card h3 {
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   line-height: 1.3;
-  margin: 0 0 0.2rem;
+  margin: 0 0 0.35rem;
 }
 
 .agenda-concurrent-card .agenda-item__meta {
@@ -2327,7 +2330,7 @@ body.menu-open {
   margin: 0;
   font-family: var(--font-heading);
   font-weight: 400;
-  font-size: 1.05rem;
+  font-size: 1.35rem;
   line-height: 1.3;
   color: var(--color-text);
 }

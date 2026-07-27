@@ -2483,6 +2483,13 @@ body.menu-open {
   margin-bottom: var(--space-sm);
 }
 
+.sponsor-modal__promo {
+  font-weight: 700;
+  font-style: italic;
+  color: var(--color-gold-text);
+  margin: var(--space-sm) 0 0;
+}
+
 .deal-card__tagline {
   font-family: var(--font-heading);
   font-weight: 600;

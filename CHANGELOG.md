@@ -3,6 +3,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 27, 2026
+
+- Sponsor pop-ups now show each sponsor's special offer, the same way the Deals page does. Added the offer line to six sponsors whose pop-ups were missing it: Reach ("$500 Off First Month"), Crazy Dental ("10% off First Order (WISDOM10) + Free Ground Shipping (WISDOMSHIP)"), APEX ("Free Consult"), Lasso MD ("10-20% Off + Free Photo & Video Shoot"), Dental Processing Solutions ("Free Onboarding Call"), and AAFE ("Use code DW100 for $100 discount"). The offer appears as a bold gold line just below the sponsor's description in the pop-up. To add or change an offer for any sponsor in the future, it's the new "promo" line in the sponsor list.
+
+---
+
 ## July 25, 2026
 
 - FAQ page: every question is now a tidy expand/collapse. The page opens showing just the category headings and questions, so it's much shorter and easier to scan — tap any question to reveal its answer. The two long Shabbos meal menus are tucked away the same way, so they no longer flood the page (open "What's on the menu for Shabbos meals?" to see them). Nothing was reworded; only the layout changed.

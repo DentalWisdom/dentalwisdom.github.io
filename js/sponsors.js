@@ -44,6 +44,7 @@ document.addEventListener('DOMContentLoaded', function () {
         link: (row.link || '').trim(),
         blurb: (row.blurb || '').trim(),
         blurbHtml: (row.blurbHtml || '').trim(),
+        promo: (row.promo || '').trim(),
         tier: (row.tier || '').trim().toLowerCase(),
         attending: !!row.attending,
         pastSponsor: !!row.pastSponsor && !row.attending,
@@ -204,6 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '</div>' +
         '<h2 class="modal__title" id="sponsorModalName"></h2>' +
         '<div id="sponsorModalBlurb"></div>' +
+        '<p class="sponsor-modal__promo" id="sponsorModalPromo" style="display:none"></p>' +
         '<div class="link-row" id="sponsorModalLinkRow">' +
           '<a class="btn btn-primary" id="sponsorModalLink" href="#" target="_blank" rel="noopener">Visit website &rarr;</a>' +
         '</div>' +
@@ -218,6 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var tierEl = modal.querySelector('#sponsorModalTier');
   var nameEl = modal.querySelector('#sponsorModalName');
   var blurbEl = modal.querySelector('#sponsorModalBlurb');
+  var promoEl = modal.querySelector('#sponsorModalPromo');
   var linkRow = modal.querySelector('#sponsorModalLinkRow');
   var linkEl = modal.querySelector('#sponsorModalLink');
   var attendingEl = modal.querySelector('#sponsorModalAttending');
@@ -266,6 +269,11 @@ document.addEventListener('DOMContentLoaded', function () {
     } else {
       blurbEl.textContent = sponsor.blurb || '';
       blurbEl.style.display = sponsor.blurb ? '' : 'none';
+    }
+
+    if (promoEl) {
+      promoEl.textContent = sponsor.promo || '';
+      promoEl.style.display = sponsor.promo ? '' : 'none';
     }
 
     if (sponsor.link) {

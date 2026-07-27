@@ -15,6 +15,9 @@
      link    - Optional website URL (adds a "Visit website"
                button inside the pop-up; leave "" to hide it)
      blurb   - 1-2 sentence description shown inside the pop-up
+     promo   - Optional promo/offer line (e.g. discount code)
+               shown as a bold gold line inside the pop-up, below
+               the blurb. Mirrors the deals-page offer text.
      tier    - Sponsorship level, one of: "platinum", "gold",
                "silver", "bronze". Controls which tier the sponsor
                appears under on the Sponsors page (higher tiers are
@@ -91,6 +94,7 @@ window.SPONSORS_DATA = [
     blurb: "Members-only dental supply marketplace with over 40,000 products at guaranteed lowest prices — free to join, with AI-powered pricing so your practice never overpays for supplies.",
     tier: "gold",
     attending: true,
+    promo: "10% off First Order (WISDOM10) + Free Ground Shipping (WISDOMSHIP)",
     photoUrl: "/images/deals/crazy-dental-flyer.webp"
   },
   {
@@ -100,6 +104,7 @@ window.SPONSORS_DATA = [
     blurb: "Reach provides dedicated Virtual Assistants for dental practices across the United States, helping solve major challenges like staffing reliability, rising labor costs, and missed patient opportunities. Unlike traditional outsourcing, Reach offers fully dedicated team members who work directly within a practice's systems, supporting tasks like phone call handling, insurance verification, revenue cycle management, patient billing, and other administrative work.",
     tier: "gold",
     attending: true,
+    promo: "$500 Off First Month",
     videoUrl: "https://www.youtube.com/embed/wKfRq7IJdtI"
   },
   {
@@ -116,7 +121,8 @@ window.SPONSORS_DATA = [
     link: "https://apexreimbursement.com/dental-wisdom/",
     blurb: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
     tier: "gold",
-    attending: true
+    attending: true,
+    promo: "Free Consult"
   },
   {
     name: "TheraBreath",
@@ -149,7 +155,8 @@ window.SPONSORS_DATA = [
     link: "https://www.lassomd.com/work-with-us/partners/dental-wisdom",
     blurb: "AI-powered digital marketing, website design, and practice growth platform built exclusively for dentists — helping practices attract more ideal patients and grow revenue with less effort.",
     tier: "gold",
-    pastSponsor: true
+    pastSponsor: true,
+    promo: "10-20% Off + Free Photo & Video Shoot (Limited Time)"
   },
 
   /* ── SILVER ───────────────────────────────────────────── */
@@ -202,7 +209,8 @@ window.SPONSORS_DATA = [
     link: "https://dentalprocessingsolutions.com/",
     blurb: "Streamlined payment processing and billing solutions built for dental practices — reducing administrative friction, improving cash flow, and simplifying how you collect from patients and insurers.",
     tier: "silver",
-    pastSponsor: true
+    pastSponsor: true,
+    promo: "Free Onboarding Call"
   },
 
   /* ARCHIVED 2026-07-21 (NuSmile dropped as sponsor):
@@ -251,7 +259,8 @@ window.SPONSORS_DATA = [
     link: "https://facialesthetics.org/",
     blurb: "The American Academy of Facial Esthetics offers hands-on training in Botox, fillers, and facial aesthetics for dental and medical professionals — expanding your clinical scope and practice revenue.",
     tier: "bronze",
-    pastSponsor: true
+    pastSponsor: true,
+    promo: "Use code DW100 for $100 discount"
   },
   {
     name: "Pul Dental",

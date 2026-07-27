@@ -49,7 +49,7 @@
 
 window.AGENDA_DATA = [
   // ---------------- Wednesday ----------------
-  { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Opening Night: Casino, Cigars & Scotch", desc: "Registration & check-in — an evening of games and good company to kick off the conference.", speaker: "", location: "Atrium", sponsor: "MB Precious Metals", sponsorUrl: "/conference-sponsors", event: true },
+  { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Opening Night: Casino, Cigars & Scotch", desc: "Registration & check-in open. Try your luck at the tables, light up a cigar, pour a scotch, and kick off the weekend in style.", speaker: "", location: "Atrium", sponsor: "MB Precious Metals", sponsorUrl: "/conference-sponsors", event: true },
 
   // ---------------- Thursday ----------------
   { day: "Thursday", time: "6:00 – 7:00 AM", title: "MDY Daf Yomi Shiur", speaker: "", location: "Library" },

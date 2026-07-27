@@ -2269,6 +2269,13 @@ body.menu-open {
   margin: 0;
 }
 
+.agenda-item__desc {
+  color: var(--color-text-muted);
+  font-size: var(--fs-small);
+  margin: 0.15rem 0 0.35rem;
+  max-width: 46ch;
+}
+
 .agenda-item__sponsor-label {
   font-style: italic;
   font-weight: 400;

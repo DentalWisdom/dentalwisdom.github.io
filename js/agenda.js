@@ -366,6 +366,10 @@ document.addEventListener('DOMContentLoaded', function () {
 
     html += '<div class="agenda-item__details">';
     html += '<h3>' + escapeHtml(title || 'Untitled session') + '</h3>';
+    var desc = (item.desc || '').trim();
+    if (desc) {
+      html += '<p class="agenda-item__desc">' + escapeHtml(desc) + '</p>';
+    }
     if (metaParts.length) {
       html += '<p class="agenda-item__meta">' + metaParts.join(' &middot; ') + '</p>';
     }

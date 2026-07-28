@@ -52,6 +52,15 @@ window.SPONSORS_DATA = [
     attending: true
   },
   {
+    name: "Emerald Dental Lab",
+    logoUrl: "/images/sponsors/emerald-dental-lab.webp",
+    link: "https://www.emeralddentallab.com/promo/",
+    blurb: "Full-service digital dental laboratory in Port Washington, NY, crafting fixed, removable, implant, and sleep appliances — from precision crowns and bridges to implant prosthetics — with artisan quality and a turnaround you can count on.",
+    tier: "platinum",
+    attending: true,
+    promo: "50% off Crowns & Free Scanner Promo"
+  },
+  {
     name: "LiveWell Capital",
     logoUrl: "/images/sponsors/livewell-capital.webp",
     link: "https://www.livewellcapital.com/",
@@ -68,15 +77,6 @@ window.SPONSORS_DATA = [
     tier: "platinum",
     attending: true,
     videoUrl: "https://fast.wistia.net/embed/iframe/pww8p6dyz8?web_component=true&seo=true"
-  },
-  {
-    name: "Emerald Dental Lab",
-    logoUrl: "/images/sponsors/emerald-dental-lab.webp",
-    link: "https://www.emeralddentallab.com/promo/",
-    blurb: "Full-service digital dental laboratory in Port Washington, NY, crafting fixed, removable, implant, and sleep appliances — from precision crowns and bridges to implant prosthetics — with artisan quality and a turnaround you can count on.",
-    tier: "platinum",
-    pastSponsor: true,
-    promo: "50% off Crowns & Free Scanner Promo"
   },
 
   /* ── GOLD ─────────────────────────────────────────────── */

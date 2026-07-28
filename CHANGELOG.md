@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- Updated TheraBreath's sponsor card details with their new three-paragraph write-up (how the products fight bad-breath bacteria, the full oral-care line, and their research focus). Live on the Sponsors page pop-up and on their private review page.
 - Added a TheraBreath video to the bottom of their sponsor card details — it now shows on the live Sponsors page pop-up and on their private review page.
 - TheraBreath moved from a Gold Sponsor to a Silver Sponsor. Updated on the live Sponsors page (it now shows in the Silver group) and on its private review page (label, card size, and the "Silver Sponsor" pill).
 - New private "review your sponsorship" page for TheraBreath at dentalwisdom.org/sponsor-review/therabreath. It mirrors the speaker review pages: a warm thank-you note, then two parts — Part 1 shows TheraBreath's Gold Sponsor card and its pop-up details exactly as visitors will see them; Part 2 shows Dr. Harold Katz's sponsored agenda slot, his speaker card, and his full bio. Hidden from search engines and not linked anywhere on the site.

@@ -129,6 +129,7 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/therabreath.webp",
     link: "https://www.therabreath.com/",
     blurb: "Dentist-formulated oral health products trusted by millions — TheraBreath's clinically tested rinses, toothpastes, and sprays target the root causes of bad breath and gum issues.",
+    blurbHtml: "<p>TheraBreath products are revolutionary because they attack the germs that cause bad breath. TheraBreath doesn't mask bad breath with heavy flavors, it fights bad breath bacteria. TheraBreath has been effective at helping to kill bad breath bacteria and the embarrassing odor they can cause.</p><p>TheraBreath has grown to have an extensive line of oral care products that include addressing issues such as gum health, teeth whitening, cavity prevention, and dry mouth symptoms.</p><p>The ongoing news and research on this site is dedicated to educating and explaining the real causes behind dry mouth, taste (which include metallic, sour and bitter) and bad breath and how to alleviate these oral care issues by using TheraBreath products that best suit your personal oral health needs.</p>",
     tier: "silver",
     attending: true,
     videoUrl: "https://www.youtube.com/embed/pghluzNlhK0"

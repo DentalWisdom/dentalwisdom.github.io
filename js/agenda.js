@@ -370,7 +370,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var descStrong = (item.descStrong || '').trim();
     if (desc || descStrong) {
       html += '<p class="agenda-item__desc">';
-      if (desc) { html += escapeHtml(desc); }
+      if (desc) { html += escapeHtml(desc).replace(/\n/g, '<br>'); }
       if (descStrong) { html += (desc ? ' ' : '') + '<strong>' + escapeHtml(descStrong) + '</strong>'; }
       html += '</p>';
     }

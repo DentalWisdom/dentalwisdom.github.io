@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- Agenda: added specialties after two speaker names — Dr. Tzvi Krupka now reads "(Oral Surgeon)" and Dr. Ariel Steinberger "(Cosmetic Dentist)," matching the style of the other listings.
 - Dr. Craig Berry's Friday 1:30 PM lecture is renamed to "Your Root Canal Failed, Now What? Managing Endodontic Failures and Current Out-of-the-Box Treatment Options" — updated on the draft Agenda and on his profile card on the draft Speakers page.
 - Gobbie Cohn's name is temporarily hidden until you confirm he can attend. On the (draft) Agenda, the Friday 6:15 PM "Mincha, Kabbalas Shabbos & Maariv" line stays exactly as-is — including the APEX & CG Insurance sponsor credit — but no longer names him. On the (draft) Speakers page, his profile card is hidden. Nothing was deleted; just tell me when he's confirmed and I'll bring both back instantly. (Both pages are the draft/full versions, not yet live to visitors.)
 

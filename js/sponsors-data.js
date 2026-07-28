@@ -73,7 +73,7 @@ window.SPONSORS_DATA = [
     name: "Emerald Dental Lab",
     logoUrl: "/images/sponsors/emerald-dental-lab.webp",
     link: "https://www.emeralddentallab.com/promo/",
-    blurb: "Full-service digital dental laboratory in Port Washington, NY, delivering precision-crafted restorations — crowns, bridges, implant prosthetics, fixed, removable, and sleep appliances — with artisan quality and turnaround you can count on.",
+    blurb: "Full-service digital dental laboratory in Port Washington, NY, crafting fixed, removable, implant, and sleep appliances — from precision crowns and bridges to implant prosthetics — with artisan quality and a turnaround you can count on.",
     tier: "platinum",
     pastSponsor: true
   },
@@ -155,7 +155,7 @@ window.SPONSORS_DATA = [
     name: "Lasso MD",
     logoUrl: "/images/sponsors/lasso-md.webp",
     link: "https://www.lassomd.com/work-with-us/partners/dental-wisdom",
-    blurb: "AI-powered digital marketing, website design, and practice growth platform built exclusively for dentists — helping practices attract more ideal patients and grow revenue with less effort.",
+    blurb: "A dentist-only growth platform that pairs AI-powered digital marketing with professional website design to help practices attract more ideal patients and grow revenue with less effort.",
     tier: "gold",
     pastSponsor: true,
     promo: "10-20% Off + Free Photo & Video Shoot (Limited Time)"

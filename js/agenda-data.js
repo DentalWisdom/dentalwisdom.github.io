@@ -49,7 +49,7 @@
 
 window.AGENDA_DATA = [
   // ---------------- Wednesday ----------------
-  { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Opening Night: Casino, Cigars & Scotch", desc: "Grab your ID badge, a drink, and a stack of chips — then hit the tables, light up a cigar, and kick off the weekend in style.", descStrong: "The night's biggest winner takes home a grand prize worth $2,000+.", speaker: "", location: "Atrium", sponsor: "MB Precious Metals", sponsorUrl: "/conference-sponsors", event: true },
+  { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Opening Night: Casino, Cigars & Scotch", desc: "Grab your ID badge, a drink, and a stack of chips — then hit the tables and light up a hand-rolled cigar, freshly rolled on-site and generously sponsored by Emerald Labs. Ante up and kick off the weekend in style.", descStrong: "The night's biggest winner takes home a grand prize worth $2,000+.", speaker: "", location: "Atrium", sponsor: "MB Precious Metals", sponsorUrl: "/conference-sponsors", event: true },
 
   // ---------------- Thursday ----------------
   { day: "Thursday", time: "6:00 – 7:00 AM", title: "MDY Daf Yomi Shiur", speaker: "", location: "Library" },

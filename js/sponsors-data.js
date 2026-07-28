@@ -195,7 +195,8 @@ window.SPONSORS_DATA = [
     link: "https://www.zollicandy.com/",
     blurb: "The world's first clinically proven cavity-fighting candy — sugar-free, kid-loved, and dentist-approved, Zolli Candy makes it easy to promote healthy habits without sacrificing joy.",
     tier: "silver",
-    pastSponsor: true
+    pastSponsor: true,
+    promo: "Subscribe and Save 30%"
   },
   {
     name: "Blue Sky Bio",

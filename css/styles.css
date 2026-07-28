@@ -2036,13 +2036,19 @@ body.menu-open {
   flex-direction: column;
   gap: var(--space-md);
   margin-bottom: var(--space-md);
-  /* Stays in reach while scrolling the long directory, tucked under the header */
-  position: sticky;
-  top: var(--header-height);
-  z-index: 80;
-  background-color: var(--color-ivory);
-  padding: var(--space-sm) 0;
-  border-bottom: 1px solid var(--color-border);
+}
+
+/* Sticky filter bar on desktop only — on phones it would eat too much of the
+   screen, so below 768px the bar just scrolls with the page. */
+@media (min-width: 768px) {
+  .deals-toolbar {
+    position: sticky;
+    top: var(--header-height);
+    z-index: 80;
+    background-color: var(--color-ivory);
+    padding: var(--space-sm) 0;
+    border-bottom: 1px solid var(--color-border);
+  }
 }
 
 /* "Showing N deals" count under the filter bar */

@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- Zolli Candy's offer ("Subscribe and Save 30%") now also shows on its conference sponsor pop-up, so it matches the Deals page.
+- Deals filter bar now stays pinned while scrolling on desktop only; on phones it scrolls normally so it doesn't crowd the smaller screen.
 - Removed AAFE as a conference sponsor. Its deal stays on the Deals page (in Clinical & Chairside) but no longer shows a tier pill. Archived in the file, not deleted — can be restored anytime.
 - Deals page improvements: (1) each category now has a one-line description under its heading; (2) a "Showing N deals" count appears under the filter bar; (3) the search + filter bar now stays pinned as you scroll the long list; (4) filter selections update the web address, so you can link straight to a filtered view (e.g. dentalwisdom.org/deals#sponsors or #clinical-chairside); (5) deal pop-ups with a promo code now show a "Copy code" button.
 - Deals page: added a "Conference Sponsors" filter button (styled in gold, right after "All") that narrows the page to just the conference-sponsor deals, still grouped by category with their tier pills.

@@ -2035,7 +2035,22 @@ body.menu-open {
   display: flex;
   flex-direction: column;
   gap: var(--space-md);
-  margin-bottom: var(--space-lg);
+  margin-bottom: var(--space-md);
+  /* Stays in reach while scrolling the long directory, tucked under the header */
+  position: sticky;
+  top: var(--header-height);
+  z-index: 80;
+  background-color: var(--color-ivory);
+  padding: var(--space-sm) 0;
+  border-bottom: 1px solid var(--color-border);
+}
+
+/* "Showing N deals" count under the filter bar */
+.deals-count {
+  margin: 0 0 var(--space-md);
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+  text-align: center;
 }
 
 .deals-search {
@@ -2842,6 +2857,35 @@ body.menu-open {
 .deal-tier--bronze   { background: #f0e8e0; color: #6a4a38; }
 .deal-card__tier { position: absolute; top: 8px; left: 8px; z-index: 1; }
 .deal-modal__meta { margin: 0 0 0.75rem; }
+
+/* One-line subhead under each Deals category heading */
+.deals-group__sub {
+  margin: 0.15rem 0 0;
+  font-size: var(--fs-small);
+  color: var(--color-text-muted);
+}
+
+/* Copy-code button in the deal pop-up */
+.deal-modal__copy {
+  display: inline-block;
+  margin: 0 0 var(--space-sm);
+  font-family: var(--font-body);
+  font-size: var(--fs-small);
+  font-weight: 600;
+  color: var(--color-gold-text);
+  background: transparent;
+  border: 1px solid var(--color-gold-warm);
+  border-radius: 999px;
+  padding: 0.3rem 0.9rem;
+  cursor: pointer;
+  transition: background-color var(--transition-base), color var(--transition-base);
+}
+.deal-modal__copy:hover { background-color: var(--color-sand); }
+.deal-modal__copy.is-copied {
+  background-color: var(--color-gold-warm);
+  color: var(--color-white);
+  border-color: var(--color-gold-warm);
+}
 
 /* Card: attending badge pinned top-left */
 .sponsor-card {

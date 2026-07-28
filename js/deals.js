@@ -75,6 +75,56 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   var TIER_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze' };
 
+  // One-line subhead shown under each category heading.
+  var CATEGORY_SUBHEAD = {
+    'Clinical & Chairside': 'Everything you use to treat patients.',
+    'Grow Your Practice': 'Attract new patients and lift revenue.',
+    'Run Your Practice': 'Back-office, admin, and everything that keeps the doors open.',
+    'Staffing & Recruiting': 'Find, hire, and support your team.',
+    'Money & Insurance': 'Protect and grow your practice and personal finances.',
+    'Israel, Kosher & Community': 'Judaica, kosher food, Israel, and the conference hotel.',
+    'Extras': 'A few extra perks worth a look.'
+  };
+
+  /* ── Shareable filter links (deals#sponsors, deals#clinical-chairside …) ── */
+  function slugify(str) {
+    return String(str).toLowerCase()
+      .replace(/&/g, ' ').replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '');
+  }
+  function slugForFilter(cat) {
+    if (cat === 'All') return 'all';
+    if (cat === SPONSORS_FILTER) return 'sponsors';
+    return slugify(cat);
+  }
+  function filterForSlug(slug) {
+    if (!slug) return null;
+    slug = slug.toLowerCase();
+    if (slug === 'all') return 'All';
+    if (slug === 'sponsors') return SPONSORS_FILTER;
+    var found = null;
+    CATEGORY_ORDER.forEach(function (c) { if (slugify(c) === slug) found = c; });
+    return found;
+  }
+
+  /* ── Pull a promo code out of an offer line, if there is one ── */
+  function extractCode(promo) {
+    if (!promo) return '';
+    var m = promo.match(/\bcode[:\s]+([A-Za-z0-9%!$-]{3,})/i); // "code WISDOM10", "Code dental10"
+    if (m) return m[1].replace(/[.,;]$/, '');
+    m = promo.match(/\(([A-Za-z0-9]{3,})\)/);                  // "(WISDOM10)"
+    if (m && (/[0-9]/.test(m[1]) || m[1] === m[1].toUpperCase())) return m[1];
+    return '';
+  }
+  function fallbackCopy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+    } catch (e) { /* no-op */ }
+  }
+
   var allDeals = (window.DEALS_DATA || [])
     .map(function (row) {
       return {
@@ -100,11 +150,40 @@ document.addEventListener('DOMContentLoaded', function () {
   }
 
   buildCategoryButtons(allDeals);
-  renderDeals(allDeals);
   injectModal();
+
+  // Apply a filter from the URL (e.g. deals#sponsors) on first load, else "All".
+  var initialFilter = filterForSlug((location.hash || '').replace(/^#/, '')) || 'All';
+  activateFilter(initialFilter, false);
+
+  // Respond to the address bar changing (shared links, back/forward).
+  window.addEventListener('hashchange', function () {
+    var c = filterForSlug((location.hash || '').replace(/^#/, ''));
+    if (c) activateFilter(c, false);
+  });
 
   if (searchEl) {
     searchEl.addEventListener('input', function () { applyFilters(); });
+  }
+
+  /* ── Activate a filter (button state + URL + render) ── */
+  function activateFilter(category, updateHash) {
+    if (!category) return;
+    activeCategory = category;
+    if (categoriesEl) {
+      categoriesEl.querySelectorAll('.deals-categories__btn').forEach(function (b) {
+        b.setAttribute('aria-pressed',
+          b.getAttribute('data-category') === category ? 'true' : 'false');
+      });
+    }
+    if (updateHash && window.history && window.history.replaceState) {
+      var slug = slugForFilter(category);
+      var newUrl = slug === 'all'
+        ? (location.pathname + location.search)
+        : ('#' + slug);
+      window.history.replaceState(null, '', newUrl);
+    }
+    applyFilters();
   }
 
   /* ── Category filter buttons ── */
@@ -136,11 +215,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var buttons = categoriesEl.querySelectorAll('.deals-categories__btn');
     buttons.forEach(function (button) {
       button.addEventListener('click', function () {
-        activeCategory = button.getAttribute('data-category');
-        buttons.forEach(function (b) {
-          b.setAttribute('aria-pressed', b === button ? 'true' : 'false');
-        });
-        applyFilters();
+        activateFilter(button.getAttribute('data-category'), true);
       });
     });
   }
@@ -169,9 +244,12 @@ document.addEventListener('DOMContentLoaded', function () {
 
   /* ── Render grouped grid ── */
   function renderDeals(deals) {
+    var countEl = document.getElementById('dealsCount');
+
     if (!deals.length) {
       gridEl.innerHTML = '';
       gridEl.hidden = true;
+      if (countEl) { countEl.textContent = ''; countEl.hidden = true; }
       var hasQuery = searchEl && searchEl.value.trim().length > 0;
       if (noResultsEl) noResultsEl.hidden = !hasQuery;
       return;
@@ -179,6 +257,13 @@ document.addEventListener('DOMContentLoaded', function () {
 
     if (noResultsEl) noResultsEl.hidden = true;
     gridEl.hidden = false;
+
+    if (countEl) {
+      countEl.textContent = deals.length === allDeals.length
+        ? 'Showing all ' + deals.length + ' deals'
+        : 'Showing ' + deals.length + (deals.length === 1 ? ' deal' : ' deals');
+      countEl.hidden = false;
+    }
 
     var groupOrder = [];
     var groups = {};
@@ -198,8 +283,12 @@ document.addEventListener('DOMContentLoaded', function () {
       var cardsHtml = groups[category].map(function (deal) {
         return renderDealCard(deal, allDeals.indexOf(deal));
       }).join('');
+      var sub = CATEGORY_SUBHEAD[category];
       var headingHtml = category
-        ? '<h2 class="deals-group__heading">' + escapeHtml(category) + '</h2>'
+        ? '<div class="deals-group__head"><h2 class="deals-group__heading">' +
+          escapeHtml(category) + '</h2>' +
+          (sub ? '<p class="deals-group__sub">' + escapeHtml(sub) + '</p>' : '') +
+          '</div>'
         : '';
       return '<div class="deals-group">' + headingHtml +
         '<div class="card-grid card-grid--3">' + cardsHtml + '</div></div>';
@@ -228,7 +317,8 @@ document.addEventListener('DOMContentLoaded', function () {
       : '<div class="placeholder">Image coming soon</div>';
 
     var tierPill = deal.tier && TIER_LABEL[deal.tier]
-      ? '<span class="deal-tier deal-card__tier deal-tier--' + escapeAttr(deal.tier) + '">' +
+      ? '<span class="deal-tier deal-card__tier deal-tier--' + escapeAttr(deal.tier) +
+        '" aria-label="' + escapeAttr(TIER_LABEL[deal.tier] + ' conference sponsor') + '">' +
         escapeHtml(TIER_LABEL[deal.tier]) + '</span>'
       : '';
 
@@ -267,6 +357,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<p class="deal-modal__tagline" id="dealModalTagline"></p>' +
         '<p id="dealModalDescription"></p>' +
         '<p class="deal-card__promo" id="dealModalPromo"></p>' +
+        '<button type="button" class="deal-modal__copy" id="dealModalCopy" hidden></button>' +
         '<div class="deal-modal__video" id="dealModalVideo" style="display:none;margin:1rem 0"></div>' +
         '<div class="link-row" id="dealModalLinkRow">' +
           '<a class="btn btn-primary" id="dealModalLink" href="#" target="_blank" rel="noopener">View Deal &rarr;</a>' +
@@ -278,6 +369,31 @@ document.addEventListener('DOMContentLoaded', function () {
     modal.querySelectorAll('[data-deal-close]').forEach(function (el) {
       el.addEventListener('click', closeModal);
     });
+
+    // Copy-code button (shown only when the offer contains a code)
+    var copyBtn = modal.querySelector('#dealModalCopy');
+    if (copyBtn) {
+      copyBtn.addEventListener('click', function () {
+        var code = copyBtn.getAttribute('data-code');
+        if (!code) return;
+        var original = 'Copy code: ' + code;
+        var confirm = function () {
+          copyBtn.textContent = 'Copied ✓';
+          copyBtn.classList.add('is-copied');
+          setTimeout(function () {
+            copyBtn.textContent = original;
+            copyBtn.classList.remove('is-copied');
+          }, 1600);
+        };
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          navigator.clipboard.writeText(code).then(confirm, function () {
+            fallbackCopy(code); confirm();
+          });
+        } else {
+          fallbackCopy(code); confirm();
+        }
+      });
+    }
     document.addEventListener('keydown', function (e) {
       if (e.key === 'Escape' && modal.classList.contains('is-open')) closeModal();
     });
@@ -329,6 +445,20 @@ document.addEventListener('DOMContentLoaded', function () {
 
     promoEl.textContent = deal.promo || '';
     promoEl.style.display = deal.promo ? '' : 'none';
+
+    var copyBtn = modal.querySelector('#dealModalCopy');
+    if (copyBtn) {
+      var code = extractCode(deal.promo);
+      if (code) {
+        copyBtn.textContent = 'Copy code: ' + code;
+        copyBtn.setAttribute('data-code', code);
+        copyBtn.classList.remove('is-copied');
+        copyBtn.hidden = false;
+      } else {
+        copyBtn.removeAttribute('data-code');
+        copyBtn.hidden = true;
+      }
+    }
 
     if (deal.link) {
       linkEl.href = deal.link;

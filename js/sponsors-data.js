@@ -260,6 +260,10 @@ window.SPONSORS_DATA = [
     tier: "bronze",
     attending: true
   },
+  /* ARCHIVED 2026-07-28 (Ben: remove AAFE as a conference sponsor). Its Deals-page
+     entry ("AAFE (American Academy of Facial Esthetics)") stays in Clinical &
+     Chairside but now shows no tier pill and sorts among non-sponsors. Restore
+     by uncommenting.
   {
     name: "AAFE",
     logoUrl: "/images/sponsors/aafe.webp",
@@ -269,6 +273,7 @@ window.SPONSORS_DATA = [
     pastSponsor: true,
     promo: "Use code DW100 for $100 discount"
   },
+  */
   {
     name: "Pul Dental",
     logoUrl: "/images/sponsors/pul-dental.webp",

@@ -2532,6 +2532,10 @@ body.menu-open {
   margin: var(--space-sm) 0 0;
 }
 
+/* Offer block on the Sponsors pop-up — top margin gives the same paragraph
+   break between the description and the offer that the Deals pop-up has. */
+.sponsor-modal__offers { margin: var(--space-md) 0 0; }
+
 .deal-card__tagline {
   font-family: var(--font-heading);
   font-weight: 600;

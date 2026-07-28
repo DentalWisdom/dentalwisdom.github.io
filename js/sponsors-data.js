@@ -73,7 +73,7 @@ window.SPONSORS_DATA = [
     name: "Emerald Dental Lab",
     logoUrl: "/images/sponsors/emerald-dental-lab.webp",
     link: "https://www.emeralddentallab.com/promo/",
-    blurb: "Premium full-service dental laboratory delivering precision-crafted restorations — crowns, bridges, implant prosthetics, and more — with artisan quality and turnaround you can count on.",
+    blurb: "Full-service digital dental laboratory in Port Washington, NY, delivering precision-crafted restorations — crowns, bridges, implant prosthetics, fixed, removable, and sleep appliances — with artisan quality and turnaround you can count on.",
     tier: "platinum",
     pastSponsor: true
   },

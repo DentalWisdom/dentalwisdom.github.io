@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- Synced five sponsor descriptions so the Deals page and the conference Sponsors page tell the same story: Crown Catapult and Pearl now use their Sponsors-page wording on the Deals page; Zolli Candy uses its nicer Sponsors-page wording on both; Emerald Dental Lab and Lasso MD were merged into one description used on both pages.
 - Zolli Candy's offer ("Subscribe and Save 30%") now also shows on its conference sponsor pop-up, so it matches the Deals page.
 - Deals filter bar now stays pinned while scrolling on desktop only; on phones it scrolls normally so it doesn't crowd the smaller screen.
 - Removed AAFE as a conference sponsor. Its deal stays on the Deals page (in Clinical & Chairside) but no longer shows a tier pill. Archived in the file, not deleted — can be restored anytime.

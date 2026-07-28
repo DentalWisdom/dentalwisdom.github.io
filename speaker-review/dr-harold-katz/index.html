@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- Private review page — do not index -->
+  <meta name="robots" content="noindex, nofollow">
+  <title>Review Your Details — Dr. Harold Katz | Dental Wisdom Conference</title>
+  <meta name="description" content="Private preview of Dr. Harold Katz's speaker details for the Dental Wisdom Conference.">
+
+  <link rel="icon" href="/images/favicon.ico">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+
+  <link rel="stylesheet" href="/css/styles.css?v=46">
+
+  <style>
+    /* ===== Review page shell ===== */
+    .review-page { background: var(--color-ivory); }
+    .review-header {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md) var(--space-lg);
+      border-bottom: 1px solid var(--color-border);
+      background: var(--color-white);
+    }
+    .review-header img { width: 200px; max-width: 60%; height: auto; }
+    .review-intro {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: var(--space-xl) var(--space-md) var(--space-lg);
+      text-align: center;
+    }
+    .review-intro h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 4vw, 2.4rem);
+      color: var(--color-ink);
+      margin: 0 0 var(--space-md);
+    }
+    .review-intro p {
+      font-size: var(--fs-body);
+      color: var(--color-text);
+      line-height: 1.75;
+      margin: 0 0 1rem;
+    }
+    .review-intro .review-eyebrow {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--color-gold-text);
+      margin-bottom: var(--space-sm);
+    }
+    .review-section {
+      max-width: 820px;
+      margin: 0 auto;
+      padding: var(--space-lg) var(--space-md);
+    }
+    .review-section__label {
+      font-family: var(--font-heading);
+      font-size: 1.4rem;
+      color: var(--color-ink);
+      text-align: center;
+      margin: 0 0 0.4rem;
+    }
+    .review-section__hint {
+      text-align: center;
+      font-size: var(--fs-small);
+      color: var(--color-slate);
+      margin: 0 auto var(--space-lg);
+      max-width: 46ch;
+    }
+    .review-section__hint::after {
+      content: '';
+      display: block;
+      width: 48px;
+      height: 2px;
+      background: var(--color-gold-warm);
+      margin: var(--space-md) auto 0;
+    }
+    /* Center a single card at card width so it reads like it will on the site */
+    .review-card-wrap { max-width: 300px; margin: 0 auto; }
+    /* Show the agenda item on its own, styled like the real agenda */
+    .review-agenda { max-width: 640px; margin: 0 auto; }
+    .review-agenda .agenda-item { border-bottom: none; }
+    .review-footer {
+      text-align: center;
+      padding: var(--space-xl) var(--space-md) var(--space-2xl);
+      color: var(--color-text);
+    }
+    .review-footer a { color: var(--color-gold-text); font-weight: 600; }
+
+    /* ===== Speaker grid & cards (from the live Speakers page) ===== */
+    .speaker-card {
+      background: var(--color-white);
+      border-radius: var(--radius-md);
+      box-shadow: var(--shadow-card);
+      overflow: hidden;
+    }
+    .speaker-card__trigger {
+      display: block;
+      width: 100%;
+      background: none;
+      border: none;
+      padding: 0;
+      text-align: left;
+    }
+    .speaker-avatar-wrap {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-lg) var(--space-md) var(--space-sm);
+    }
+    .speaker-avatar {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 3px solid var(--color-sand);
+      box-shadow: 0 4px 16px rgba(30,42,56,0.12);
+    }
+    .speaker-card__body {
+      padding: var(--space-sm) var(--space-md) var(--space-md);
+      text-align: center;
+    }
+    .speaker-card__name {
+      font-family: var(--font-heading);
+      font-size: 1.1rem;
+      color: var(--color-ink);
+      margin: 0 0 0.2rem;
+    }
+    .speaker-card__specialty {
+      font-size: var(--fs-small);
+      font-weight: 600;
+      color: var(--color-ink);
+      margin: 0 0 var(--space-sm);
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+    }
+    .speaker-card__bio-snippet {
+      font-size: var(--fs-small);
+      color: var(--color-slate);
+      line-height: 1.5;
+      margin: 0 0 var(--space-sm);
+      text-align: left;
+    }
+    .speaker-card__course-label {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      margin: 0 0 0.25rem;
+      text-align: left;
+    }
+    .speaker-card__course-title {
+      font-size: var(--fs-small);
+      color: var(--color-ink);
+      font-weight: 500;
+      line-height: 1.4;
+      margin: 0 0 0.25rem;
+      text-align: left;
+    }
+    .speaker-card__time {
+      font-size: 0.78rem;
+      color: var(--color-gold-warm);
+      font-weight: 600;
+      text-align: left;
+      display: block;
+    }
+    .speaker-card__cta {
+      display: inline-block;
+      margin-top: var(--space-sm);
+      font-size: 0.8rem;
+      font-weight: 600;
+      color: var(--color-ink);
+      text-decoration: none;
+    }
+
+    /* ===== Card detail (the pop-up, shown open inline here) ===== */
+    .detail-panel {
+      background: var(--color-white);
+      border-radius: var(--radius-lg);
+      box-shadow: 0 24px 80px rgba(30, 42, 56, 0.12);
+      max-width: 760px;
+      margin: 0 auto;
+      overflow: hidden;
+    }
+    .detail-panel__avatar-wrap {
+      display: flex;
+      justify-content: center;
+      padding: var(--space-xl) var(--space-md) var(--space-sm);
+      background: var(--color-sand);
+    }
+    .detail-panel__avatar {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      object-fit: cover;
+      object-position: top center;
+      border: 4px solid var(--color-white);
+      box-shadow: 0 6px 20px rgba(30,42,56,0.15);
+    }
+    .detail-panel__body { padding: var(--space-lg); }
+    .detail-panel__name {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 3vw, 2rem);
+      color: var(--color-ink);
+      margin: 0 0 0.25rem;
+    }
+    .detail-panel__specialty {
+      font-size: var(--fs-small);
+      font-weight: 700;
+      color: var(--color-ink);
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 0 0 var(--space-md);
+    }
+    .detail-panel__bio {
+      font-size: var(--fs-body);
+      color: var(--color-text);
+      line-height: 1.7;
+      margin: 0 0 var(--space-md);
+    }
+    .detail-panel__session-box {
+      background: var(--color-sand);
+      border-radius: var(--radius-sm);
+      padding: var(--space-md);
+    }
+    .detail-panel__session-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-slate);
+      margin: 0 0 0.4rem;
+    }
+    .detail-panel__session-title {
+      font-family: var(--font-heading);
+      font-size: 1.05rem;
+      color: var(--color-ink);
+      margin: 0 0 0.4rem;
+    }
+    .detail-panel__session-time {
+      font-size: var(--fs-small);
+      color: var(--color-gold-warm);
+      font-weight: 600;
+      margin: 0;
+    }
+    .detail-panel__sponsor-box {
+      margin-top: var(--space-md);
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-border);
+      text-align: center;
+    }
+    .detail-panel__sponsor-label {
+      font-size: 0.72rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-slate);
+      margin: 0 0 0.6rem;
+    }
+    .detail-panel__sponsor-logo {
+      max-height: 120px;
+      max-width: 100%;
+      width: auto;
+      object-fit: contain;
+    }
+  </style>
+</head>
+<body class="review-page">
+
+  <!-- Brand header -->
+  <header class="review-header">
+    <img src="/images/header-logo-blue.webp" alt="Dental Wisdom" width="392" height="120">
+  </header>
+
+  <!-- Intro -->
+  <section class="review-intro">
+    <p class="review-eyebrow">A note for our speaker</p>
+    <h1>Thank you, Dr. Katz</h1>
+    <p>We're thrilled and grateful that you'll be speaking at the Dental Wisdom Conference. We're about to publish the agenda, and we wanted to give you the chance to review your information first.</p>
+    <p>At any point, if you'd like to change any of your information &mdash; your course title, your photo, or anything else &mdash; just let us know and we'll update it the same day.</p>
+    <p>And please let us know if you have any other questions.</p>
+  </section>
+
+  <!-- 1. Agenda slot -->
+  <section class="review-section">
+    <h2 class="review-section__label">1. Your Agenda Slot</h2>
+    <p class="review-section__hint">This is how your session will appear on the published conference agenda.</p>
+    <div class="review-agenda">
+      <div class="agenda-item agenda-item--ce">
+        <div class="agenda-item__time-col">
+          <div class="agenda-item__time">Thursday · 9:00 – 10:00 AM</div>
+          <span class="agenda-item__ce-badge">1 CE Credit</span>
+        </div>
+        <div class="agenda-item__details">
+          <h3>Getting on the Bathroom Shelf: How Clinical Dentistry Inspires Consumer Products</h3>
+          <p class="agenda-item__meta">Dr. Harold Katz (General Dentist) &middot; Shul</p>
+          <p class="agenda-item__sponsor-label">Sponsored by TheraBreath</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2. Speaker card -->
+  <section class="review-section">
+    <h2 class="review-section__label">2. Your Speaker Card</h2>
+    <p class="review-section__hint">This is the card visitors will see in the speaker lineup. Tapping it opens the full detail below.</p>
+    <div class="review-card-wrap">
+      <article class="speaker-card">
+        <div class="speaker-card__trigger">
+          <div class="speaker-avatar-wrap">
+            <img class="speaker-avatar" src="/images/speaker-harold-katz.webp" alt="Dr. Harold Katz">
+          </div>
+          <div class="speaker-card__body">
+            <h2 class="speaker-card__name">Dr. Harold Katz</h2>
+            <p class="speaker-card__specialty">Oral Health &amp; Product Development</p>
+            <p class="speaker-card__bio-snippet">Founder of TheraBreath and The California Breath Clinics. UCLA-trained dentist and bacteriologist recognized worldwide as the foremost expert on bad breath, taste disorders, and dry mouth.</p>
+            <p class="speaker-card__course-label">Session</p>
+            <p class="speaker-card__course-title">Getting on the Bathroom Shelf: How Clinical Dentistry Inspires Consumer Products</p>
+            <p class="speaker-card__time">Thu 9:00 – 10:00 AM</p>
+            <span class="speaker-card__cta">View bio →</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <!-- 3. Card detail -->
+  <section class="review-section">
+    <h2 class="review-section__label">3. Your Full Bio &amp; Detail</h2>
+    <p class="review-section__hint">This is the expanded view that opens when someone taps your card.</p>
+    <div class="detail-panel">
+      <div class="detail-panel__avatar-wrap">
+        <img class="detail-panel__avatar" src="/images/speaker-harold-katz.webp" alt="Dr. Harold Katz">
+      </div>
+      <div class="detail-panel__body">
+        <h2 class="detail-panel__name">Dr. Harold Katz</h2>
+        <p class="detail-panel__specialty">Oral Health &amp; Product Development</p>
+        <div class="detail-panel__bio">
+          <p>Dr. Harold Katz is the founder of The California Breath Clinics and the developer of the TheraBreath line of oral care products. He is the internationally recognized expert in the fields of bad breath, taste disorders, tonsil stones, and dry mouth &mdash; known as the "Bad Breath Guru" through appearances on The View, the CBS Early Show, and more. A graduate of the UCLA School of Dentistry with a separate degree in Bacteriology, Dr. Katz began his breakthrough research in the early 1990s after struggling to help his teenage daughter with her bad breath. His discovery that bad breath is caused by sulfur-producing bacteria &mdash; not the digestive system &mdash; led to the founding of TheraBreath in 1993.</p>
+        </div>
+        <div class="detail-panel__session-box">
+          <p class="detail-panel__session-label">Session</p>
+          <p class="detail-panel__session-title">Getting on the Bathroom Shelf: How Clinical Dentistry Inspires Consumer Products</p>
+          <p class="detail-panel__session-time">Thursday, 9:00 – 10:00 AM</p>
+        </div>
+        <div class="detail-panel__sponsor-box">
+          <p class="detail-panel__sponsor-label">Sponsored by</p>
+          <img src="/images/sponsors/therabreath.webp" alt="TheraBreath" class="detail-panel__sponsor-logo">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer note -->
+  <footer class="review-footer">
+    <p>Questions or changes? Email us at <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a></p>
+  </footer>
+
+</body>
+</html>

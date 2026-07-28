@@ -130,7 +130,8 @@ window.SPONSORS_DATA = [
     link: "https://www.therabreath.com/",
     blurb: "Dentist-formulated oral health products trusted by millions — TheraBreath's clinically tested rinses, toothpastes, and sprays target the root causes of bad breath and gum issues.",
     tier: "silver",
-    attending: true
+    attending: true,
+    videoUrl: "https://www.youtube.com/embed/pghluzNlhK0"
   },
   {
     name: "TruAbutment",

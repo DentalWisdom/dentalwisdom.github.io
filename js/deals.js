@@ -134,7 +134,7 @@ document.addEventListener('DOMContentLoaded', function () {
       var code = extractCode(seg);
       var btn = code
         ? '<button type="button" class="deal-modal__copy" data-code="' +
-          escapeAttr(code) + '">Copy code: ' + escapeHtml(code) + '</button>'
+          escapeAttr(code) + '">Copy code</button>'
         : '';
       return '<div class="deal-offer">' +
         '<span class="deal-offer__text">' + escapeHtml(seg) + '</span>' + btn +
@@ -398,7 +398,7 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.textContent = 'Copied ✓';
           btn.classList.add('is-copied');
           setTimeout(function () {
-            btn.textContent = 'Copy code: ' + code;
+            btn.textContent = 'Copy code';
             btn.classList.remove('is-copied');
           }, 1600);
         };

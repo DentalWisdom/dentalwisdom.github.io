@@ -2875,41 +2875,54 @@ body.menu-open {
   color: var(--color-text-muted);
 }
 
-/* Copy-code button in the deal pop-up */
+/* Copy-code button in the deal / sponsor pop-up */
 .deal-modal__copy {
-  display: inline-block;
-  margin: 0 0 var(--space-sm);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  flex-shrink: 0;
+  margin: 0;
   font-family: var(--font-body);
   font-size: var(--fs-small);
   font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
   color: var(--color-gold-text);
-  background: transparent;
+  background: var(--color-white);
   border: 1px solid var(--color-gold-warm);
   border-radius: 999px;
-  padding: 0.3rem 0.9rem;
+  padding: 0.4rem 1rem;
   cursor: pointer;
-  transition: background-color var(--transition-base), color var(--transition-base);
+  transition: background-color var(--transition-base), color var(--transition-base), border-color var(--transition-base);
 }
-.deal-modal__copy:hover { background-color: var(--color-sand); }
+.deal-modal__copy:hover {
+  background-color: var(--color-gold-warm);
+  color: var(--color-white);
+}
 .deal-modal__copy.is-copied {
   background-color: var(--color-gold-warm);
   color: var(--color-white);
   border-color: var(--color-gold-warm);
 }
 
-/* Offer lines in the deal pop-up. Each offer sits on its own line (a promo
-   with " + " splits into multiple), bold + gold to match the Sponsors page,
-   with its own Copy button when the line has a code. */
+/* Offer lines in the pop-up. Each offer sits in its own soft row: bold-gold
+   label on the left, a compact "Copy code" button on the right. A promo with
+   " + " splits into multiple rows. Shared by the Deals and Sponsors pop-ups. */
 .deal-modal__offers { margin: var(--space-sm) 0 0; }
 .deal-offer {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.4rem 0.75rem;
+  justify-content: space-between;
+  gap: 0.5rem 1rem;
+  padding: 0.7rem 0.95rem;
+  background: var(--color-sand);
+  border-radius: var(--radius-md);
   margin-bottom: 0.5rem;
 }
 .deal-offer:last-child { margin-bottom: 0; }
 .deal-offer__text {
+  flex: 1 1 auto;
   font-weight: 700;
   font-style: italic;
   font-size: var(--fs-small);

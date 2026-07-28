@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- Wednesday night's Opening Night party (Casino, Cigars & Scotch) now mentions that the hand-rolled cigars are freshly rolled on-site and sponsored by Emerald Labs.
 - Tidied up how offers/promo codes look in the deal and sponsor pop-ups (both pages). Each offer now sits in its own soft rounded row with the offer on the left and a compact button on the right that simply reads "Copy code" (instead of the longer "Copy code: WISDOM10", since the code already shows in the offer text). Crazy Dental's two offers now read cleanly as two neat rows.
 - The conference Sponsors page pop-ups now split two-part offers onto separate lines with per-code Copy buttons too, matching the Deals page — so Crazy Dental's sponsor pop-up shows Copy buttons for WISDOM10 and WISDOMSHIP.
 - Deal pop-up offers are now bold and gold, matching the conference Sponsors page — and that's now the standard for every offer on both pages, current and future.

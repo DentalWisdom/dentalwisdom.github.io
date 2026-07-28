@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 28, 2026
+
+- Gobbie Cohn's name is temporarily hidden until you confirm he can attend. On the (draft) Agenda, the Friday 6:15 PM "Mincha, Kabbalas Shabbos & Maariv" line stays exactly as-is — including the APEX & CG Insurance sponsor credit — but no longer names him. On the (draft) Speakers page, his profile card is hidden. Nothing was deleted; just tell me when he's confirmed and I'll bring both back instantly. (Both pages are the draft/full versions, not yet live to visitors.)
+
 ## July 27, 2026
 
 - Agenda: the Wednesday opening event is renamed "Opening Night: Casino, Cigars & Scotch," with a fun line beneath it — "Grab your ID badge, a drink, and a stack of chips — then hit the tables, light up a cigar, and kick off the weekend in style." The grand-prize sentence — "The night's biggest winner takes home a grand prize worth $2,000+." — is shown in bold. It's now credited as sponsored by MB Precious Metals. (This is on the draft/full Agenda page, which isn't live to visitors yet.)

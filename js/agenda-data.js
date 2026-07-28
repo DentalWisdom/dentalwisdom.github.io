@@ -86,7 +86,8 @@ window.AGENDA_DATA = [
   { day: "Friday", time: "3:00 – 5:00 PM", title: "Topic to Be Announced Soon", speaker: "To Be Announced Soon", location: "", ce: true, ceCredits: 2, concurrent: "fri-300-breakout" },
   // ARCHIVED 2026-07-21 (replaced by 4 hands-on tracks): { day: "Friday", time: "3:00 – 5:00 PM", title: "The 5-Step AI Video Playbook: A Hands-On Workshop for Building Usable Digital Assets for Your Practice", speaker: "Yaakov Citron", speakerUrl: "/conference-speakers#speaker-yaakov-citron", location: "320A1", ce: true, ceCredits: 2, concurrent: "fri-300-breakout", sponsor: "Citron Films", sponsorUrl: "/conference-sponsors" },
   { day: "Friday", time: "6:09 PM", title: "Candle Lighting", speaker: "", location: "" },
-  { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn", location: "Shul",
+  // NAME HIDDEN 2026-07-28 (Ben's call — Gobbie Cohn attendance unconfirmed; restore when he tells us). To bring back: speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn"
+  { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "", location: "Shul",
     sponsors: [
       { name: "APEX Reimbursement Specialists", url: "/conference-sponsors" },
       { name: "CG Insurance Group", url: "/conference-sponsors" }

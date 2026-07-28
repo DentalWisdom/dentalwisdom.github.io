@@ -49,7 +49,7 @@
 
 window.AGENDA_DATA = [
   // ---------------- Wednesday ----------------
-  { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Opening Night: Casino, Cigars & Scotch", desc: "The chips are stacked, the scotch is poured, and the tables are calling. Grab your ID badge, place your bets, and roll into the weekend in style — this is the night the whole conference kicks off.", speaker: "", location: "Atrium", event: true, sponsorLines: [ { label: "The night's biggest winner takes home a grand prize worth $2,000+ — sponsored by", name: "MB Precious Metals", url: "/conference-sponsors" }, { label: "Hand-rolled cigars, rolled fresh on-site — sponsored by", name: "Emerald Dental Lab", url: "/conference-sponsors" } ] },
+  { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Opening Night: Casino, Cigars & Scotch", desc: "The chips are stacked, the scotch is poured, and the tables are calling. Grab your ID badge, place your bets, and roll into the weekend in style — this is the night the whole conference kicks off.", speaker: "", location: "Atrium", event: true, sponsorLines: [ { label: "Biggest winner takes home a $2,000+ prize — sponsored by", name: "MB Precious Metals", url: "/conference-sponsors" }, { label: "Hand-rolled cigars, fresh on-site — sponsored by", name: "Emerald Dental Lab", url: "/conference-sponsors" } ] },
 
   // ---------------- Thursday ----------------
   { day: "Thursday", time: "6:00 – 7:00 AM", title: "MDY Daf Yomi Shiur", speaker: "", location: "Library" },

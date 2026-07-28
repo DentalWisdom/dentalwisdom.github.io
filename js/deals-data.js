@@ -62,7 +62,7 @@ window.DEALS_DATA = [
     category: "Clinical & Chairside",
     description: "Full-service digital dental laboratory in Port Washington, NY, crafting fixed, removable, implant, and sleep appliances — from precision crowns and bridges to implant prosthetics — with artisan quality and a turnaround you can count on.",
     link: "https://www.emeralddentallab.com/promo/",
-    promo: "",
+    promo: "50% off Crowns & Free Scanner Promo",
     imageUrl: "/images/deals/emerald-dental-lab.webp",
     keywords: "lab crowns bridges veneers implants dentures partials nightguards sleep appliances zirconia porcelain milling digital"
   },

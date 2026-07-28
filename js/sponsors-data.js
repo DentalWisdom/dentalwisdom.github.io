@@ -75,7 +75,8 @@ window.SPONSORS_DATA = [
     link: "https://www.emeralddentallab.com/promo/",
     blurb: "Full-service digital dental laboratory in Port Washington, NY, crafting fixed, removable, implant, and sleep appliances — from precision crowns and bridges to implant prosthetics — with artisan quality and a turnaround you can count on.",
     tier: "platinum",
-    pastSponsor: true
+    pastSponsor: true,
+    promo: "50% off Crowns & Free Scanner Promo"
   },
 
   /* ── GOLD ─────────────────────────────────────────────── */

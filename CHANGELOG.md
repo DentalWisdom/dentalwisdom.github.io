@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- Deal pop-up offers are now bold and gold, matching the conference Sponsors page — and that's now the standard for every offer on both pages, current and future.
+- Deal pop-ups now split a two-part offer onto two lines, each with its own "Copy code" button. Crazy Dental now shows "10% off First Order" with a Copy button for WISDOM10, and "Free Ground Shipping" with a Copy button for WISDOMSHIP.
+- Deal pop-up videos now always appear under the "View Deal" button (consistent with how Reach shows on the Sponsors page), so video placement is uniform.
 - Synced five sponsor descriptions so the Deals page and the conference Sponsors page tell the same story: Crown Catapult and Pearl now use their Sponsors-page wording on the Deals page; Zolli Candy uses its nicer Sponsors-page wording on both; Emerald Dental Lab and Lasso MD were merged into one description used on both pages.
 - Zolli Candy's offer ("Subscribe and Save 30%") now also shows on its conference sponsor pop-up, so it matches the Deals page.
 - Deals filter bar now stays pinned while scrolling on desktop only; on phones it scrolls normally so it doesn't crowd the smaller screen.

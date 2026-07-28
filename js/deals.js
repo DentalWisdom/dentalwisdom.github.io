@@ -124,6 +124,23 @@ document.addEventListener('DOMContentLoaded', function () {
       document.execCommand('copy'); document.body.removeChild(ta);
     } catch (e) { /* no-op */ }
   }
+  /* Render an offer as one or more lines (split on " + "), each with its own
+     Copy button when that line contains a promo code. */
+  function buildOffers(promo) {
+    if (!promo) return '';
+    return promo.split(/\s*\+\s*/).map(function (seg) {
+      seg = seg.trim();
+      if (!seg) return '';
+      var code = extractCode(seg);
+      var btn = code
+        ? '<button type="button" class="deal-modal__copy" data-code="' +
+          escapeAttr(code) + '">Copy code: ' + escapeHtml(code) + '</button>'
+        : '';
+      return '<div class="deal-offer">' +
+        '<span class="deal-offer__text">' + escapeHtml(seg) + '</span>' + btn +
+        '</div>';
+    }).join('');
+  }
 
   var allDeals = (window.DEALS_DATA || [])
     .map(function (row) {
@@ -356,12 +373,11 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="deal-modal__meta" id="dealModalMeta" style="display:none"></div>' +
         '<p class="deal-modal__tagline" id="dealModalTagline"></p>' +
         '<p id="dealModalDescription"></p>' +
-        '<p class="deal-card__promo" id="dealModalPromo"></p>' +
-        '<button type="button" class="deal-modal__copy" id="dealModalCopy" hidden></button>' +
-        '<div class="deal-modal__video" id="dealModalVideo" style="display:none;margin:1rem 0"></div>' +
+        '<div class="deal-modal__offers" id="dealModalOffers" style="display:none"></div>' +
         '<div class="link-row" id="dealModalLinkRow">' +
           '<a class="btn btn-primary" id="dealModalLink" href="#" target="_blank" rel="noopener">View Deal &rarr;</a>' +
         '</div>' +
+        '<div class="deal-modal__video" id="dealModalVideo" style="display:none;margin:1rem 0"></div>' +
         '<div class="deal-modal__photo" id="dealModalPhoto" style="display:none"></div>' +
       '</div>';
     document.body.appendChild(modal);
@@ -370,19 +386,20 @@ document.addEventListener('DOMContentLoaded', function () {
       el.addEventListener('click', closeModal);
     });
 
-    // Copy-code button (shown only when the offer contains a code)
-    var copyBtn = modal.querySelector('#dealModalCopy');
-    if (copyBtn) {
-      copyBtn.addEventListener('click', function () {
-        var code = copyBtn.getAttribute('data-code');
+    // Copy-code buttons — one per offer line that has a code (event delegation)
+    var offersEl = modal.querySelector('#dealModalOffers');
+    if (offersEl) {
+      offersEl.addEventListener('click', function (e) {
+        var btn = e.target.closest ? e.target.closest('.deal-modal__copy') : null;
+        if (!btn || !offersEl.contains(btn)) return;
+        var code = btn.getAttribute('data-code');
         if (!code) return;
-        var original = 'Copy code: ' + code;
         var confirm = function () {
-          copyBtn.textContent = 'Copied ✓';
-          copyBtn.classList.add('is-copied');
+          btn.textContent = 'Copied ✓';
+          btn.classList.add('is-copied');
           setTimeout(function () {
-            copyBtn.textContent = original;
-            copyBtn.classList.remove('is-copied');
+            btn.textContent = 'Copy code: ' + code;
+            btn.classList.remove('is-copied');
           }, 1600);
         };
         if (navigator.clipboard && navigator.clipboard.writeText) {
@@ -411,7 +428,6 @@ document.addEventListener('DOMContentLoaded', function () {
     var titleEl = modal.querySelector('#dealModalTitle');
     var taglineEl = modal.querySelector('#dealModalTagline');
     var descEl = modal.querySelector('#dealModalDescription');
-    var promoEl = modal.querySelector('#dealModalPromo');
     var linkRow = modal.querySelector('#dealModalLinkRow');
     var linkEl = modal.querySelector('#dealModalLink');
 
@@ -443,21 +459,10 @@ document.addEventListener('DOMContentLoaded', function () {
     descEl.textContent = deal.description || '';
     descEl.style.display = deal.description ? '' : 'none';
 
-    promoEl.textContent = deal.promo || '';
-    promoEl.style.display = deal.promo ? '' : 'none';
-
-    var copyBtn = modal.querySelector('#dealModalCopy');
-    if (copyBtn) {
-      var code = extractCode(deal.promo);
-      if (code) {
-        copyBtn.textContent = 'Copy code: ' + code;
-        copyBtn.setAttribute('data-code', code);
-        copyBtn.classList.remove('is-copied');
-        copyBtn.hidden = false;
-      } else {
-        copyBtn.removeAttribute('data-code');
-        copyBtn.hidden = true;
-      }
+    var offersEl = modal.querySelector('#dealModalOffers');
+    if (offersEl) {
+      offersEl.innerHTML = buildOffers(deal.promo);
+      offersEl.style.display = deal.promo ? '' : 'none';
     }
 
     if (deal.link) {

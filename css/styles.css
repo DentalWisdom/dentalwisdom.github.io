@@ -2893,6 +2893,27 @@ body.menu-open {
   border-color: var(--color-gold-warm);
 }
 
+/* Offer lines in the deal pop-up. Each offer sits on its own line (a promo
+   with " + " splits into multiple), bold + gold to match the Sponsors page,
+   with its own Copy button when the line has a code. */
+.deal-modal__offers { margin: var(--space-sm) 0 0; }
+.deal-offer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.4rem 0.75rem;
+  margin-bottom: 0.5rem;
+}
+.deal-offer:last-child { margin-bottom: 0; }
+.deal-offer__text {
+  font-weight: 700;
+  font-style: italic;
+  font-size: var(--fs-small);
+  color: var(--color-gold-text);
+  margin: 0;
+}
+.deal-offer .deal-modal__copy { margin: 0; }
+
 /* Card: attending badge pinned top-left */
 .sponsor-card {
   position: relative;

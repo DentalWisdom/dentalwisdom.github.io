@@ -44,6 +44,41 @@ Ben is the sole editor and not a developer. Explain any manual step he must take
 - Media: optimized images in `/images` (resize to max 1600px wide, WebP ~80 quality, `loading="lazy"` below the fold). Long videos = YouTube embeds — **(July 2026)** use a click-to-load facade (thumbnail + play button; see `.video-facade` in styles.css and index.html) rather than a live `<iframe>`, so YouTube's player JS/CSS only downloads once a visitor taps play, not just from scrolling past the section. Hero = muted looping mp4 under ~8MB in `/images` with `autoplay muted loop playsinline` and a poster image; source clip per spec §4.
 - **Scrolling photo/logo strips** (`.logo-scroll-wrap` / `.logo-scroll-track`, e.g. homepage Gallery and Sponsors strip): images ship with `data-src` (never `src`, never `loading="lazy"`) — `js/main.js` loads every image in a strip in one go via IntersectionObserver once the strip nears the viewport. Native `loading="lazy"` on individual images inside a continuously CSS-transform-animated strip is unreliable (the browser's lazy-load distance check uses layout position, not the animated visual position), and was the cause of photos silently failing to load on mobile. When adding a new scrolling strip or new items to one, always use `data-src`.
 
+## Deals page — categories, ordering & sponsor sync (locked logic, July 28 2026)
+This is the standing logic for the Deals page (`deals/index.html` + `js/deals-data.js`). Apply it automatically on every Deals change — Ben should never have to re-explain it. When he says "add a deal," "remove a deal," "change this description," "add a video," or "this vendor is now a sponsor / a different tier," follow these rules without asking him to restate them.
+
+**Category order (top → bottom on the page):**
+1. **Clinical & Chairside** — supplies, implants, abutments, labs, aligners, chairside/clinical AI, oral-care products dispensed to patients, clinical CE/training, scrap-metal refining.
+2. **Grow Your Practice** — marketing, video, design, patient financing, revenue-cycle/collections consulting, growth analytics, case-acceptance/warranty.
+3. **Run Your Practice** — back-office & practice-management software, insurance verification, payroll/HR, accounting, IT, compliance (OSHA/HIPAA), practice build-out/design, office/patient supplies, payment processing.
+4. **Staffing & Recruiting** — recruiters, virtual assistants, temp/permanent placement.
+5. **Money & Insurance** — practice + personal wealth management, retirement/401(k), insurance, student-loan help.
+6. **Israel, Kosher & Community** — Judaica, kosher food/catering, Israel-support products, the conference hotel, kosher/dental candy.
+7. **Extras** — lifestyle/personal referrals that fit nowhere above (Marcus, Wealthfront, Tesla).
+
+Place any new deal by *what the dentist is shopping for*, using the definitions above. Do not invent new categories without Ben's OK.
+
+**Order WITHIN each category (always):**
+1. Conference sponsors first, ranked by tier: **Platinum → Gold → Silver → Bronze**.
+2. Within the same tier, follow the order the sponsor appears in `js/sponsors-data.js` (that file's array order = the conference sponsors page order).
+3. Non-sponsors follow, after all sponsors in that category.
+Re-sort the affected category by this rule after any add/remove/tier change.
+
+**Manual order overrides (Ben's explicit call — keep as-is, do NOT auto-sort back to the tier rule):**
+- **Clinical & Chairside** (set July 28 2026): orthobrain, Crazy Dental, Emerald Dental Lab, Pearl, MB Precious Metals, Adin, TruAbutment, TheraBreath, AAFE. (This intentionally deviates from strict tier order — e.g. Crazy Dental above Emerald.) When a new sponsor is added to this category, place it and ask Ben where it should sit rather than auto-sorting.
+
+**`js/sponsors-data.js` is the single source of truth for sponsor-level facts.** A deal is a "sponsor" iff its company has an entry there. Tier, and any sponsor video (`videoUrl`) / blurb, live in sponsors-data.js — the Deals card reads from it. Consequences to rely on (so Ben never re-explains):
+- Add a company to sponsors-data.js → its deal automatically gets the tier pill and jumps to the sponsor block of its category. Remove it → pill disappears and it drops to the non-sponsor block. (e.g. Dental Processing Solutions was removed from sponsors-data.js July 28 2026 — "Credit Card Processing" stays on Deals with no pill, sorted among non-sponsors in Run Your Practice.)
+- Change a sponsor's `tier` → its pill and its position re-sort automatically.
+- Change a sponsor's video or description in sponsors-data.js → it updates everywhere that sponsor's detail shows (sponsor page + any Deals-card sync). Keep sponsor-level copy in sponsors-data.js, not duplicated in deals-data.js.
+
+**Name matching** (deal title ≠ sponsor `name` in several cases — match by company):
+"Dental Supplies" = "Crazy Dental" · "Credit Card Processing" = "Dental Processing Solutions" · "Apex Reimbursement Specialists" = "APEX". (The LiveWell Capital deal was renamed from "Sam Waller - LiveWell Capital" to "LiveWell Capital" on July 28 2026, so its title now matches the sponsor name directly — no alias needed.) Add new aliases here when they arise.
+
+**Tier pill:** every deal whose company is a conference sponsor shows a small tier pill (Platinum/Gold/Silver/Bronze) on the card and in its detail modal, styled to the tier. Non-sponsors show no pill.
+
+**Migration status (DONE July 28 2026):** the 7-category structure + tier pills are now live in the code. `deals-data.js` is re-categorized/re-ordered per this logic (Clinical & Chairside manual order); `deals.js` renders the tier pill on each sponsor deal card + modal by looking the company up in `js/sponsors-data.js` (via `SPONSOR_TIER` + `DEAL_SPONSOR_ALIAS`, parenthetical-stripping match); `deals/index.html` now loads `sponsors-data.js` before `deals.js`. The "Dental Equipment / All Practice Solutions" deal is archived as an in-file comment at the bottom of `deals-data.js` (it was never in sponsors-data.js). "Dental Processing Solutions" is archived (commented) in `sponsors-data.js`, so "Credit Card Processing" stays on Deals with no pill. Pill CSS: `.deal-tier` / `.deal-tier--{platinum,gold,silver,bronze}` in styles.css. To add a new sponsor deal: add the company to sponsors-data.js (pill appears automatically) and place the deal in deals-data.js per the ordering rules above.
+
 ## Design system
 Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, premium but approachable. Generous whitespace, large Playfair headlines, soft sand/ivory section bands, sea-glass and coral accents used sparingly. Motion: subtle only — IntersectionObserver fade-up on scroll, gentle card lifts, smooth modal entrance. Respect `prefers-reduced-motion`. Never flashy, never salesy.
 
@@ -107,7 +142,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - **Time labels are always "EST"** (Ben's call, July 2026): every Live session time — and any time shown anywhere on the site — displays as "EST", e.g. "8:00 PM – 9:30 PM EST". Never use "ET" or "EDT", even for events during daylight-saving months. Ben understands "EST" is technically standard time; he wants the clock time to read as New York local time with the "EST" label used uniformly. When adding a new session to `js/live-data.js`, always write the `time` field with "EST".
 - **Mobile menu focus target (`js/main.js`, `openMenu`)**: focuses the first link in `.mobile-menu__list` (e.g. "Conference"), NOT the logo link. Focusing the logo link makes the browser's gold focus ring stack on top of the logo's navy border, which looks like two nested boxes. Do not change this back to `mobileMenu.querySelector('a')`.
 - **Pricing label on homepage**: The homepage pricing box and accordion say "Dental Resident" (concise). The FAQ says "Dental Student or Dental Resident" (more complete). Both are correct — this discrepancy is intentional.
-- **CSS cache version**: The stylesheet currently loads as `styles.css?v=41`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):
+- **CSS cache version**: The stylesheet currently loads as `styles.css?v=47`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):
   ```python
   import os, re
   root = "/sessions/.../mnt/Dental Wisdom Site"  # use correct sandbox path

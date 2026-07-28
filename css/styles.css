@@ -2809,6 +2809,29 @@ body.menu-open {
 /* Soft blue-gray — signals pending/provisional status */
 .sponsor-pending-badge         { background: #e0e7ef; color: #3a4f6a; }
 
+/* Deals page — tier pill on sponsor deal cards + modal.
+   Colors mirror the sponsor tier badges above; the tier itself is looked up
+   from js/sponsors-data.js by js/deals.js (single source of truth). */
+.deal-card { position: relative; }
+.deal-tier {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 3px 10px;
+  border-radius: 20px;
+  line-height: 1.4;
+  vertical-align: middle;
+}
+.deal-tier--platinum { background: #e8e0d0; color: #5a4a2a; }
+.deal-tier--gold     { background: #f5e9c8; color: #7a5a10; }
+.deal-tier--silver   { background: #e8ecf0; color: #3a4a5a; }
+.deal-tier--bronze   { background: #f0e8e0; color: #6a4a38; }
+.deal-card__tier { position: absolute; top: 8px; left: 8px; z-index: 1; }
+.deal-modal__meta { margin: 0 0 0.75rem; }
+
 /* Card: attending badge pinned top-left */
 .sponsor-card {
   position: relative;

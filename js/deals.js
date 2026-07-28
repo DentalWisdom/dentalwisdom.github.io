@@ -30,18 +30,49 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Display order for category sections and filter buttons
   var CATEGORY_ORDER = [
-    'Key Dental Solutions',
-    'Practice Services & Support',
+    'Clinical & Chairside',
+    'Grow Your Practice',
+    'Run Your Practice',
     'Staffing & Recruiting',
-    'Financial Management & Insurance',
-    'Israel & Kosher',
-    'Personal & Miscellaneous'
+    'Money & Insurance',
+    'Israel, Kosher & Community',
+    'Extras'
   ];
 
   function categoryRank(category) {
     var index = CATEGORY_ORDER.indexOf(category);
     return index === -1 ? CATEGORY_ORDER.length : index;
   }
+
+  /* ── Sponsor tier lookup (single source of truth = js/sponsors-data.js) ──
+     A deal shows a tier pill iff its company is a current conference sponsor.
+     Match by normalized name (lowercased, parentheticals stripped). A few
+     deal titles differ from the sponsor `name` — those are mapped in
+     DEAL_SPONSOR_ALIAS. See CLAUDE.md "Deals page — categories, ordering &
+     sponsor sync". */
+  function normalizeName(str) {
+    return String(str || '')
+      .toLowerCase()
+      .replace(/\(.*?\)/g, '')   // drop "(Dental Refining)", "(Virtual...)" etc.
+      .replace(/\s+/g, ' ')
+      .trim();
+  }
+  var DEAL_SPONSOR_ALIAS = {
+    'dental supplies': 'crazy dental',
+    'credit card processing': 'dental processing solutions',
+    'apex reimbursement specialists': 'apex'
+  };
+  var SPONSOR_TIER = {};
+  (window.SPONSORS_DATA || []).forEach(function (s) {
+    var key = normalizeName(s.name);
+    if (key && s.tier) SPONSOR_TIER[key] = String(s.tier).trim().toLowerCase();
+  });
+  function tierForDeal(title) {
+    var key = normalizeName(title);
+    key = DEAL_SPONSOR_ALIAS[key] || key;
+    return SPONSOR_TIER[key] || '';
+  }
+  var TIER_LABEL = { platinum: 'Platinum', gold: 'Gold', silver: 'Silver', bronze: 'Bronze' };
 
   var allDeals = (window.DEALS_DATA || [])
     .map(function (row) {
@@ -55,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function () {
         imageUrl: (row.imageUrl || '').trim(),
         flyerUrl: (row.flyerUrl || '').trim(),
         keywords: (row.keywords || '').trim(),
-        videoUrl: (row.videoUrl || '').trim()
+        videoUrl: (row.videoUrl || '').trim(),
+        tier: tierForDeal(row.title || '')
       };
     })
     .filter(function (deal) { return deal.title; });
@@ -186,8 +218,14 @@ document.addEventListener('DOMContentLoaded', function () {
         '<div class="placeholder" style="display:none;">Image coming soon</div>'
       : '<div class="placeholder">Image coming soon</div>';
 
+    var tierPill = deal.tier && TIER_LABEL[deal.tier]
+      ? '<span class="deal-tier deal-card__tier deal-tier--' + escapeAttr(deal.tier) + '">' +
+        escapeHtml(TIER_LABEL[deal.tier]) + '</span>'
+      : '';
+
     return '<button type="button" class="card deal-card" ' +
       'data-deal-index="' + index + '" aria-haspopup="dialog">' +
+      tierPill +
       '<div class="deal-card__image-wrap">' + imageInner + '</div>' +
       '<h3>' + escapeHtml(deal.title) + '</h3>' +
       (deal.shortDescription
@@ -216,6 +254,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '<button class="modal__close" id="dealModalClose" aria-label="Close" data-deal-close>&times;</button>' +
         '<div class="deal-modal__logo"><img id="dealModalLogo" src="" alt=""></div>' +
         '<h2 class="modal__title" id="dealModalTitle"></h2>' +
+        '<div class="deal-modal__meta" id="dealModalMeta" style="display:none"></div>' +
         '<p class="deal-modal__tagline" id="dealModalTagline"></p>' +
         '<p id="dealModalDescription"></p>' +
         '<p class="deal-card__promo" id="dealModalPromo"></p>' +
@@ -260,6 +299,18 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     titleEl.textContent = deal.title;
+
+    var metaEl = modal.querySelector('#dealModalMeta');
+    if (metaEl) {
+      if (deal.tier && TIER_LABEL[deal.tier]) {
+        metaEl.innerHTML = '<span class="deal-tier deal-tier--' + escapeAttr(deal.tier) +
+          '">' + escapeHtml(TIER_LABEL[deal.tier]) + ' Sponsor</span>';
+        metaEl.style.display = '';
+      } else {
+        metaEl.innerHTML = '';
+        metaEl.style.display = 'none';
+      }
+    }
 
     taglineEl.textContent = deal.shortDescription || '';
     taglineEl.style.display = deal.shortDescription ? '' : 'none';

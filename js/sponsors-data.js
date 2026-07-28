@@ -205,6 +205,10 @@ window.SPONSORS_DATA = [
     tier: "silver",
     pastSponsor: true
   },
+  /* ARCHIVED 2026-07-28 (Ben: remove Dental Processing Solutions from the
+     sponsor page — the "Credit Card Processing" deal stays on the Deals page
+     but, with no sponsors-data entry, now shows no tier pill and sorts among
+     non-sponsors in Run Your Practice). Restore by uncommenting.
   {
     name: "Dental Processing Solutions",
     logoUrl: "/images/sponsors/dental-processing-solutions.webp",
@@ -214,6 +218,7 @@ window.SPONSORS_DATA = [
     pastSponsor: true,
     promo: "Free Onboarding Call"
   },
+  */
 
   /* ARCHIVED 2026-07-21 (NuSmile dropped as sponsor):
   {

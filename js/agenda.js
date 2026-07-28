@@ -394,6 +394,23 @@ document.addEventListener('DOMContentLoaded', function () {
     var sponsorLabel = (item.sponsorLabel || 'Sponsored by').trim();
     var sponsorsList = Array.isArray(item.sponsors) ? item.sponsors : null;
 
+    // `sponsorLines`: multiple SEPARATE credit lines, each its own italic-gold
+    // paragraph with its own wording + linked sponsor name. Use when one card
+    // has two distinct sponsored things (e.g. the prize vs. the cigars).
+    var sponsorLines = Array.isArray(item.sponsorLines) ? item.sponsorLines : null;
+    if (sponsorLines && sponsorLines.length) {
+      return sponsorLines.map(function (ln) {
+        var label = (ln.label || 'Sponsored by').trim();
+        var name  = (ln.name  || '').trim();
+        var url   = (ln.url   || '').trim();
+        if (!name) { return ''; }
+        var link = url
+          ? '<a href="' + escapeHtml(url) + '" class="agenda-item__sponsor-link">' + escapeHtml(name) + '</a>'
+          : escapeHtml(name);
+        return '<p class="agenda-item__sponsor-label">' + escapeHtml(label) + ' ' + link + '</p>';
+      }).filter(Boolean).join('');
+    }
+
     if (sponsorsList && sponsorsList.length) {
       var links = sponsorsList.map(function (s) {
         var name = (s.name || '').trim();

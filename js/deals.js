@@ -27,6 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var activeCategory = 'All';
   var PREVIEW_LENGTH = 100; // chars shown on card before "…"
+  var SPONSORS_FILTER = 'Conference Sponsors'; // pseudo-category: only sponsor deals
 
   // Display order for category sections and filter buttons
   var CATEGORY_ORDER = [
@@ -118,10 +119,16 @@ document.addEventListener('DOMContentLoaded', function () {
     });
     categories.sort(function (a, b) { return categoryRank(a) - categoryRank(b); });
     categories.unshift('All');
+    // Add a "Conference Sponsors" filter (shows only sponsor deals) right after
+    // "All", but only if at least one deal is a conference sponsor.
+    var hasSponsors = deals.some(function (d) { return d.tier; });
+    if (hasSponsors) categories.splice(1, 0, SPONSORS_FILTER);
 
     categoriesEl.innerHTML = categories.map(function (category) {
       var pressed = category === activeCategory ? 'true' : 'false';
-      return '<button type="button" class="deals-categories__btn" data-category="' +
+      var extraClass = category === SPONSORS_FILTER
+        ? ' deals-categories__btn--sponsors' : '';
+      return '<button type="button" class="deals-categories__btn' + extraClass + '" data-category="' +
         escapeAttr(category) + '" aria-pressed="' + pressed + '">' +
         escapeHtml(category) + '</button>';
     }).join('');
@@ -143,7 +150,9 @@ document.addEventListener('DOMContentLoaded', function () {
     var query = searchEl ? searchEl.value.trim().toLowerCase() : '';
 
     var filtered = allDeals.filter(function (deal) {
-      var matchesCategory = activeCategory === 'All' || deal.category === activeCategory;
+      var matchesCategory =
+        activeCategory === 'All' ||
+        (activeCategory === SPONSORS_FILTER ? !!deal.tier : deal.category === activeCategory);
       var matchesQuery = !query ||
         deal.title.toLowerCase().indexOf(query) !== -1 ||
         deal.description.toLowerCase().indexOf(query) !== -1 ||

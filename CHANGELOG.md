@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- Deals page: added a "Conference Sponsors" filter button (styled in gold, right after "All") that narrows the page to just the conference-sponsor deals, still grouped by category with their tier pills.
 - Deals page reorganized into seven clearer categories — Clinical & Chairside, Grow Your Practice, Run Your Practice, Staffing & Recruiting, Money & Insurance, Israel Kosher & Community, and Extras — replacing the old grab-bag categories. Within every category, conference sponsors now sort to the top (Platinum, then Gold, Silver, Bronze), followed by non-sponsors. The Clinical & Chairside order is hand-set: orthobrain, Crazy Dental, Emerald Dental Lab, Pearl, MB Precious Metals, Adin, TruAbutment, TheraBreath, AAFE.
 - Every deal whose company is a conference sponsor now shows a small tier pill (Platinum/Gold/Silver/Bronze) on its card and in its pop-up. The pill is pulled straight from the conference sponsor list, so it stays correct on its own: add a sponsor there and the pill appears; change their level and it updates; remove them and it disappears.
 - Removed "Dental Processing Solutions" from the conference Sponsors page. The "Credit Card Processing" deal stays on the Deals page but now shows no tier pill and sits lower down (among the non-sponsors) in Run Your Practice. Nothing deleted — it's archived in the file and can be restored anytime.

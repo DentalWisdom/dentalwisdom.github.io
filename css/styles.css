@@ -2106,6 +2106,17 @@ body.menu-open {
   color: var(--color-white);
 }
 
+/* "Conference Sponsors" filter — gold accent so it stands apart from the
+   neutral category buttons; still turns solid gold when active. */
+.deals-categories__btn--sponsors {
+  color: var(--color-gold-text);
+  border-color: var(--color-gold-warm);
+  font-weight: 700;
+}
+.deals-categories__btn--sponsors[aria-pressed="true"] {
+  color: var(--color-white);
+}
+
 /* Agenda filter bar (Agenda page) — quiet text tabs, underline on the
    active day, matching the editorial program style below it */
 .agenda-tabs {

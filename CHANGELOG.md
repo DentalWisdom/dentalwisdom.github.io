@@ -5,7 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
-- Reworded Wednesday night's Opening Night party (Casino, Cigars & Scotch) with a livelier description, and added two gold sponsor-credit lines beneath it: the $2,000+ grand prize is sponsored by MB Precious Metals, and the hand-rolled cigars are sponsored by Emerald Dental Lab (both names link to the Sponsors page).
+- Finalized Wednesday night's Opening Night party (Casino, Cigars & Scotch) copy: a punchy multi-line description ("The chips are stacked. The scotch is poured…" through "See you at the tables.") plus two gold sponsor-credit lines beneath it — the $2,000+ grand prize for the biggest chip winner sponsored by MB Precious Metals, and the hand-rolled cigars sponsored by Emerald Dental Lab (both names link to the Sponsors page).
 - Emerald Dental Lab is now marked as attending the conference (gold "✓ Attending" pill; the old "Past Sponsor" pill is gone, and their logo now appears on the homepage sponsor strip).
 - Reordered the Platinum sponsors on the conference Sponsors page: Emerald Dental Lab now sits at the top-right of the top row, with LiveWell Capital and Crown Catapult on the second row.
 - Tidied up how offers/promo codes look in the deal and sponsor pop-ups (both pages). Each offer now sits in its own soft rounded row with the offer on the left and a compact button on the right that simply reads "Copy code" (instead of the longer "Copy code: WISDOM10", since the code already shows in the offer text). Crazy Dental's two offers now read cleanly as two neat rows.

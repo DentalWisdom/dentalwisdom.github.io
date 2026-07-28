@@ -120,6 +120,17 @@ window.DEALS_DATA = [
     keywords: "payments credit card merchant processing terminals swipe tap POS point of sale interchange rates fees"
   },
   {
+    title: "TheraBreath",
+    shortDescription: "Oral Care Products",
+    category: "Key Dental Solutions",
+    description: "TheraBreath products are revolutionary because they attack the germs that cause bad breath. TheraBreath doesn't mask bad breath with heavy flavors, it fights bad breath bacteria. TheraBreath has been effective at helping to kill bad breath bacteria and the embarrassing odor they can cause. TheraBreath has grown to have an extensive line of oral care products that include addressing issues such as gum health, teeth whitening, cavity prevention, and dry mouth symptoms. The ongoing news and research on this site is dedicated to educating and explaining the real causes behind dry mouth, taste (which include metallic, sour and bitter) and bad breath and how to alleviate these oral care issues by using TheraBreath products that best suit your personal oral health needs.",
+    link: "https://www.therabreath.com/",
+    promo: "",
+    imageUrl: "/images/deals/therabreath.webp",
+    videoUrl: "https://www.youtube.com/embed/pghluzNlhK0",
+    keywords: "therabreath oral care mouthwash rinse toothpaste bad breath halitosis bacteria dry mouth gum health teeth whitening cavity prevention Dr Harold Katz fresh breath"
+  },
+  {
     title: "Pearl",
     shortDescription: "Dental AI",
     category: "Practice Services & Support",

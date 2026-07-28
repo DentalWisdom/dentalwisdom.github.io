@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- Deals-page consistency pass for the attending sponsors: added Deals slots for Adin, TruAbutment, and Citron Films (not Touro, which stays sponsor-only); and made each attending sponsor's Deals description match its conference Sponsors-page write-up. Crown Catapult's Deals slot now uses the conference text and includes its video; LiveWell Capital (Sam Waller), orthobrain, MB Precious Metals, Crazy Dental, APEX, Pizza Biza, and CG Insurance were all synced to their conference wording.
+- Reworded TheraBreath's third paragraph so it no longer says "on this site" (which read as referring to our site) — it now clearly refers to TheraBreath's own news and research. Updated on the Sponsors page, the Deals page, and their private review page.
 - Added TheraBreath to the Deals page under "Key Dental Solutions," with their full write-up, a link to therabreath.com, and their video in the pop-up. (Logo reused from the sponsor logo; no promo code.) Note: the deals pop-up shows the description as one continuous block, since it can't display separate paragraphs.
 - Updated TheraBreath's sponsor card details with their new three-paragraph write-up (how the products fight bad-breath bacteria, the full oral-care line, and their research focus). Live on the Sponsors page pop-up and on their private review page.
 - Added a TheraBreath video to the bottom of their sponsor card details — it now shows on the live Sponsors page pop-up and on their private review page.

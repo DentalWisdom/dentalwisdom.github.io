@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 28, 2026
 
+- The conference Sponsors page pop-ups now split two-part offers onto separate lines with per-code Copy buttons too, matching the Deals page — so Crazy Dental's sponsor pop-up shows Copy buttons for WISDOM10 and WISDOMSHIP.
 - Deal pop-up offers are now bold and gold, matching the conference Sponsors page — and that's now the standard for every offer on both pages, current and future.
 - Deal pop-ups now split a two-part offer onto two lines, each with its own "Copy code" button. Crazy Dental now shows "10% off First Order" with a Copy button for WISDOM10, and "Free Ground Shipping" with a Copy button for WISDOMSHIP.
 - Deal pop-up videos now always appear under the "View Deal" button (consistent with how Reach shows on the Sponsors page), so video placement is uniform.

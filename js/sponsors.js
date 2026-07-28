@@ -205,7 +205,7 @@ document.addEventListener('DOMContentLoaded', function () {
         '</div>' +
         '<h2 class="modal__title" id="sponsorModalName"></h2>' +
         '<div id="sponsorModalBlurb"></div>' +
-        '<p class="sponsor-modal__promo" id="sponsorModalPromo" style="display:none"></p>' +
+        '<div class="sponsor-modal__offers" id="sponsorModalPromo" style="display:none"></div>' +
         '<div class="link-row" id="sponsorModalLinkRow">' +
           '<a class="btn btn-primary" id="sponsorModalLink" href="#" target="_blank" rel="noopener">Visit website &rarr;</a>' +
         '</div>' +
@@ -229,6 +229,64 @@ document.addEventListener('DOMContentLoaded', function () {
   var videoEl = modal.querySelector('#sponsorModalVideo');
   var photoEl = modal.querySelector('#sponsorModalPhoto');
   var lastFocused = null;
+
+  /* Offer rendering — mirrors the Deals page: split an offer on " + " into
+     separate bold-gold lines, each with a Copy button when it has a code. */
+  function extractCode(promo) {
+    if (!promo) return '';
+    var m = promo.match(/\bcode[:\s]+([A-Za-z0-9%!$-]{3,})/i);
+    if (m) return m[1].replace(/[.,;]$/, '');
+    m = promo.match(/\(([A-Za-z0-9]{3,})\)/);
+    if (m && (/[0-9]/.test(m[1]) || m[1] === m[1].toUpperCase())) return m[1];
+    return '';
+  }
+  function fallbackCopy(text) {
+    try {
+      var ta = document.createElement('textarea');
+      ta.value = text; ta.setAttribute('readonly', '');
+      ta.style.position = 'absolute'; ta.style.left = '-9999px';
+      document.body.appendChild(ta); ta.select();
+      document.execCommand('copy'); document.body.removeChild(ta);
+    } catch (e) { /* no-op */ }
+  }
+  function buildOffers(promo) {
+    if (!promo) return '';
+    return promo.split(/\s*\+\s*/).map(function (seg) {
+      seg = seg.trim();
+      if (!seg) return '';
+      var code = extractCode(seg);
+      var btn = code
+        ? '<button type="button" class="deal-modal__copy" data-code="' +
+          escapeAttr(code) + '">Copy code: ' + escapeHtml(code) + '</button>'
+        : '';
+      return '<div class="deal-offer">' +
+        '<span class="deal-offer__text">' + escapeHtml(seg) + '</span>' +
+        btn + '</div>';
+    }).join('');
+  }
+  if (promoEl) {
+    promoEl.addEventListener('click', function (e) {
+      var btn = e.target.closest ? e.target.closest('.deal-modal__copy') : null;
+      if (!btn || !promoEl.contains(btn)) return;
+      var code = btn.getAttribute('data-code');
+      if (!code) return;
+      var confirm = function () {
+        btn.textContent = 'Copied ✓';
+        btn.classList.add('is-copied');
+        setTimeout(function () {
+          btn.textContent = 'Copy code: ' + code;
+          btn.classList.remove('is-copied');
+        }, 1600);
+      };
+      if (navigator.clipboard && navigator.clipboard.writeText) {
+        navigator.clipboard.writeText(code).then(confirm, function () {
+          fallbackCopy(code); confirm();
+        });
+      } else {
+        fallbackCopy(code); confirm();
+      }
+    });
+  }
 
   function getFocusable() {
     return Array.prototype.slice.call(modal.querySelectorAll(
@@ -272,7 +330,7 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     if (promoEl) {
-      promoEl.textContent = sponsor.promo || '';
+      promoEl.innerHTML = buildOffers(sponsor.promo);
       promoEl.style.display = sponsor.promo ? '' : 'none';
     }
 

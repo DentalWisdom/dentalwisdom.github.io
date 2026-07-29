@@ -124,6 +124,13 @@ document.addEventListener('DOMContentLoaded', function () {
       document.execCommand('copy'); document.body.removeChild(ta);
     } catch (e) { /* no-op */ }
   }
+  /* Turn any phone number in already-escaped offer text into a tel: link. */
+  function linkifyPhone(html) {
+    return html.replace(/(\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4})/g, function (m) {
+      return '<a href="tel:' + m.replace(/[^\d]/g, '') +
+        '" style="color:inherit;text-decoration:underline">' + m + '</a>';
+    });
+  }
   /* Render an offer as one or more lines (split on " + "), each with its own
      Copy button when that line contains a promo code. */
   function buildOffers(promo) {
@@ -137,7 +144,7 @@ document.addEventListener('DOMContentLoaded', function () {
           escapeAttr(code) + '">Copy code</button>'
         : '';
       return '<div class="deal-offer">' +
-        '<span class="deal-offer__text">' + escapeHtml(seg) + '</span>' + btn +
+        '<span class="deal-offer__text">' + linkifyPhone(escapeHtml(seg)) + '</span>' + btn +
         '</div>';
     }).join('');
   }

@@ -249,6 +249,12 @@ document.addEventListener('DOMContentLoaded', function () {
       document.execCommand('copy'); document.body.removeChild(ta);
     } catch (e) { /* no-op */ }
   }
+  function linkifyPhone(html) {
+    return html.replace(/(\(?\d{3}\)?[\s.-]?\d{3}[\s.-]?\d{4})/g, function (m) {
+      return '<a href="tel:' + m.replace(/[^\d]/g, '') +
+        '" style="color:inherit;text-decoration:underline">' + m + '</a>';
+    });
+  }
   function buildOffers(promo) {
     if (!promo) return '';
     return promo.split(/\s*\+\s*/).map(function (seg) {
@@ -260,7 +266,7 @@ document.addEventListener('DOMContentLoaded', function () {
           escapeAttr(code) + '">Copy code</button>'
         : '';
       return '<div class="deal-offer">' +
-        '<span class="deal-offer__text">' + escapeHtml(seg) + '</span>' +
+        '<span class="deal-offer__text">' + linkifyPhone(escapeHtml(seg)) + '</span>' +
         btn + '</div>';
     }).join('');
   }

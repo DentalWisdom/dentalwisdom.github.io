@@ -83,7 +83,7 @@ window.DEALS_DATA = [
     category: "Clinical & Chairside",
     description: "Trusted dental refiner with over 50 years of experience — MB Precious Metals comes to your office, assays your scrap on-site, and pays you the highest value for gold, silver, platinum, and palladium.",
     link: "https://mbpreciousmetals.com/",
-    promo: "",
+    promo: "Call Adam for more info: 443-253-4143",
     imageUrl: "/images/deals/mb-precious-metals.webp",
     keywords: "scrap gold silver palladium platinum refining recycling crowns amalgam fillings PFM metal"
   },

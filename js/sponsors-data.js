@@ -85,6 +85,7 @@ window.SPONSORS_DATA = [
     logoUrl: "/images/sponsors/mb-precious-metals.webp",
     link: "https://mbpreciousmetals.com/",
     blurb: "Trusted dental refiner with over 50 years of experience — MB Precious Metals comes to your office, assays your scrap on-site, and pays you the highest value for gold, silver, platinum, and palladium.",
+    promo: "Call Adam for more info: 443-253-4143",
     tier: "gold",
     attending: true
   },

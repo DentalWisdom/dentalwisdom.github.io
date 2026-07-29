@@ -2839,6 +2839,14 @@ body.menu-open {
 .sponsor-modal__tier--gold     { background: #f5e9c8; color: #7a5a10; }
 .sponsor-modal__tier--silver   { background: #e8ecf0; color: #3a4a5a; }
 .sponsor-modal__tier--bronze   { background: #f0e8e0; color: #6a4a38; }
+/* Status badges share a min width + centered text so Attending, Past Sponsor,
+   and Pending all render the same size regardless of label length. */
+.sponsor-attending-badge,
+.sponsor-past-badge,
+.sponsor-pending-badge {
+  min-width: 120px;
+  text-align: center;
+}
 .sponsor-attending-badge       { background: #f5e9c8; color: #7a5a10; }
 /* Muted gray — visually quieter than the gold Attending pill */
 .sponsor-past-badge            { background: #e4e2dd; color: #5a5650; }

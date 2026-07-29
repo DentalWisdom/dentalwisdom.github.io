@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var ATTENDING_BADGE_TEXT = '&#10003; Attending';
   var PAST_BADGE_TEXT = 'Past Sponsor';
-  var PENDING_BADGE_TEXT = 'Sponsorship Pending';
+  var PENDING_BADGE_TEXT = 'Pending';
 
   var sponsors = (window.SPONSORS_DATA || [])
     .map(function (row) {
@@ -75,7 +75,7 @@ document.addEventListener('DOMContentLoaded', function () {
       '<span class="sponsor-card__name">' + escapeHtml(s.name) + '</span>' +
       (s.attending ? '<span class="sponsor-attending-badge sponsor-card__attending" aria-label="In attendance at conference">' + ATTENDING_BADGE_TEXT + '</span>' : '') +
       (s.pastSponsor ? '<span class="sponsor-past-badge sponsor-card__attending" aria-label="Sponsored a past conference">' + PAST_BADGE_TEXT + '</span>' : '') +
-      (s.pending ? '<span class="sponsor-pending-badge sponsor-card__attending" aria-label="Sponsorship pending">' + PENDING_BADGE_TEXT + '</span>' : '') +
+      (s.pending ? '<span class="sponsor-pending-badge sponsor-card__attending" aria-label="Pending">' + PENDING_BADGE_TEXT + '</span>' : '') +
       '<span class="sponsor-card__cta">View details &rarr;</span>' +
       '</button>';
   }
@@ -201,7 +201,7 @@ document.addEventListener('DOMContentLoaded', function () {
           '<span class="sponsor-modal__tier" id="sponsorModalTier"></span>' +
           '<span class="sponsor-attending-badge" id="sponsorModalAttending" style="display:none" aria-label="In attendance at conference">' + ATTENDING_BADGE_TEXT + '</span>' +
           '<span class="sponsor-past-badge" id="sponsorModalPast" style="display:none" aria-label="Sponsored a past conference">' + PAST_BADGE_TEXT + '</span>' +
-          '<span class="sponsor-pending-badge" id="sponsorModalPending" style="display:none" aria-label="Sponsorship pending">' + PENDING_BADGE_TEXT + '</span>' +
+          '<span class="sponsor-pending-badge" id="sponsorModalPending" style="display:none" aria-label="Pending">' + PENDING_BADGE_TEXT + '</span>' +
         '</div>' +
         '<h2 class="modal__title" id="sponsorModalName"></h2>' +
         '<div id="sponsorModalBlurb"></div>' +

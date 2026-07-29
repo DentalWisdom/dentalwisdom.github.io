@@ -136,14 +136,6 @@ window.SPONSORS_DATA = [
     videoUrl: "https://www.youtube.com/embed/pghluzNlhK0"
   },
   {
-    name: "TruAbutment",
-    logoUrl: "/images/sponsors/tru-abutment.webp",
-    link: "https://truabutment.com",
-    blurb: "Irvine, California-based medical device manufacturer specializing in CAD/CAM titanium abutments. TruAbutment mills its abutments 'head-to-toe' on Swiss-type turning CNC machines — among the less than 1% of milling centers that do so without relying on third-party pre-milled interfaces — with tools for guided surgery, photogrammetry, and digital workflows that give technicians and clinicians greater precision and flexibility.",
-    tier: "gold",
-    attending: true
-  },
-  {
     name: "Pearl",
     logoUrl: "/images/sponsors/pearl.webp",
     link: "https://discover.hellopearl.com/dental-wisdom/",
@@ -160,6 +152,14 @@ window.SPONSORS_DATA = [
     tier: "gold",
     pastSponsor: true,
     promo: "10-20% Off + Free Photo & Video Shoot (Limited Time)"
+  },
+  {
+    name: "TruAbutment",
+    logoUrl: "/images/sponsors/tru-abutment.webp",
+    link: "https://truabutment.com",
+    blurb: "Irvine, California-based medical device manufacturer specializing in CAD/CAM titanium abutments. TruAbutment mills its abutments 'head-to-toe' on Swiss-type turning CNC machines — among the less than 1% of milling centers that do so without relying on third-party pre-milled interfaces — with tools for guided surgery, photogrammetry, and digital workflows that give technicians and clinicians greater precision and flexibility.",
+    tier: "gold",
+    pending: true
   },
 
   /* ── SILVER ───────────────────────────────────────────── */
@@ -180,6 +180,14 @@ window.SPONSORS_DATA = [
     tier: "silver",
     pastSponsor: true
   },
+  {
+    name: "Straumann",
+    logoUrl: "/images/sponsors/straumann.webp",
+    link: "https://www.straumann.com/us/en/dental-professionals.html",
+    blurb: "Straumann® is the flagship brand of the world's largest implant manufacturer group – the Straumann Group. Renowned as one of the most iconic brands in dentistry, we have a long-standing legacy of pioneering significant advancements in the field. We are at the forefront of expanding the scope of dental care by relentlessly and consistently providing excellence and transformational innovation to a global community of forward-thinking dental professionals.",
+    tier: "silver",
+    pending: true
+  },
   /* ARCHIVED 2026-07-24 (Nobel Biocare removed from sponsor page — kept for future if needed):
   {
     name: "Nobel Biocare",
@@ -190,15 +198,6 @@ window.SPONSORS_DATA = [
     pastSponsor: true
   },
   */
-  {
-    name: "Zolli Candy",
-    logoUrl: "/images/sponsors/zolli-candy.webp",
-    link: "https://www.zollicandy.com/",
-    blurb: "The world's first clinically proven cavity-fighting candy — sugar-free, kid-loved, and dentist-approved, Zolli Candy makes it easy to promote healthy habits without sacrificing joy.",
-    tier: "silver",
-    pastSponsor: true,
-    promo: "Subscribe and Save 30%"
-  },
   {
     name: "Blue Sky Bio",
     logoUrl: "/images/sponsors/blue-sky-bio.webp",
@@ -291,5 +290,14 @@ window.SPONSORS_DATA = [
     blurb: "Award-winning, dentist-developed prophy paste and fluoride varnish in delicious, kid-approved flavors — made in the USA, dye-free, and rated #1 for taste by patients and hygienists alike.",
     tier: "bronze",
     pastSponsor: true
+  },
+  {
+    name: "Zolli Candy",
+    logoUrl: "/images/sponsors/zolli-candy.webp",
+    link: "https://www.zollicandy.com/",
+    blurb: "The world's first clinically proven cavity-fighting candy — sugar-free, kid-loved, and dentist-approved, Zolli Candy makes it easy to promote healthy habits without sacrificing joy.",
+    tier: "bronze",
+    pastSponsor: true,
+    promo: "Subscribe and Save 30%"
   }
 ];

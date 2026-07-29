@@ -3,6 +3,14 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 29, 2026
+
+- Added Straumann to the conference Sponsors page (Silver tier, next to where Nobel Biocare sat). Their logo was converted and added, plus the description you provided. Since they haven't confirmed yet, the card shows a "Pending" badge and is kept off the homepage sponsor logo strip — the moment they confirm, remove the pending flag and they become a full sponsor.
+- Shortened the pending badge wording from "Sponsorship Pending" to just "Pending" (applies to any pending sponsor).
+- Moved Zolli Candy from Silver down to the Bronze group (now the last card in the bottom row).
+- Set TruAbutment to "Pending" and moved its card to sit right after Lasso MD.
+- Made the "Pending" pill the same width as the "Attending" and "Past Sponsor" pills, so all three status badges line up at a consistent size.
+
 ## July 28, 2026
 
 - Finalized Wednesday night's Opening Night party (Casino, Cigars & Scotch) copy: a punchy multi-line description ("The chips are stacked. The scotch is poured…" through "See you at the tables.") plus two gold sponsor-credit lines beneath it — the $2,000+ grand prize for the biggest chip winner sponsored by MB Precious Metals, and the hand-rolled cigars sponsored by Emerald Dental Lab (both names link to the Sponsors page).

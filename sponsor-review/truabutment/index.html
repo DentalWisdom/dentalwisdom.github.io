@@ -157,6 +157,11 @@
     }
     .sponsor-detail__blurb p { margin: 0 0 var(--space-sm); }
     .sponsor-detail__blurb p:last-child { margin-bottom: 0; }
+    .sponsor-detail__video {
+      margin-top: var(--space-md);
+      border-radius: 6px;
+      overflow: hidden;
+    }
 
     /* A soft divider between the sponsor block and the speaker block */
     .review-divider {
@@ -424,7 +429,7 @@
 
   <section class="review-section">
     <h2 class="review-section__label">2. Your Sponsor Details</h2>
-    <p class="review-section__hint">This is the pop-up that opens when someone taps your card. Once you become an official sponsor, we're happy to adjust the wording however you'd like &mdash; or even embed a video right here in your sponsor details.</p>
+    <p class="review-section__hint">This is the pop-up that opens when someone taps your card &mdash; including the video below. Once you become an official sponsor, we're happy to adjust the wording however you'd like, or swap in a different video.</p>
     <div class="sponsor-detail">
       <div class="sponsor-detail__logo-wrap">
         <img class="sponsor-detail__logo" src="/images/sponsors/tru-abutment.webp" alt="TruAbutment logo">
@@ -440,6 +445,9 @@
         </div>
         <div class="link-row">
           <a class="btn btn-primary" href="https://truabutment.com" target="_blank" rel="noopener">Visit website &rarr;</a>
+        </div>
+        <div class="sponsor-detail__video">
+          <iframe src="https://www.youtube.com/embed/B1mbtUZxyeo?rel=0" title="TruAbutment video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen style="width:100%;aspect-ratio:16/9;border-radius:6px;display:block"></iframe>
         </div>
       </div>
     </div>

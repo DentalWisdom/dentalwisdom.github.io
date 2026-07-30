@@ -187,7 +187,8 @@ window.SPONSORS_DATA = [
     link: "https://truabutment.com",
     blurb: "Irvine, California-based medical device manufacturer specializing in CAD/CAM titanium abutments. TruAbutment mills its abutments 'head-to-toe' on Swiss-type turning CNC machines — among the less than 1% of milling centers that do so without relying on third-party pre-milled interfaces — with tools for guided surgery, photogrammetry, and digital workflows that give technicians and clinicians greater precision and flexibility.",
     tier: "silver",
-    pending: true
+    pending: true,
+    videoUrl: "https://www.youtube.com/embed/B1mbtUZxyeo"
   },
   /* ARCHIVED 2026-07-24 (Nobel Biocare removed from sponsor page — kept for future if needed):
   {

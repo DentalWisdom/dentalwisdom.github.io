@@ -95,6 +95,7 @@ window.DEALS_DATA = [
     link: "https://www.adin-implants.com/",
     promo: "",
     imageUrl: "/images/deals/adin.webp",
+    videoUrl: "https://www.youtube.com/embed/x81llmU97Vw",
     keywords: "implants dental implants Israeli implant system abutments guided surgery bone osseointegration primary stability affordable"
   },
   {

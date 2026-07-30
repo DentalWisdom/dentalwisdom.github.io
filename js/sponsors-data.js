@@ -115,7 +115,8 @@ window.SPONSORS_DATA = [
     link: "https://www.adin-implants.com/",
     blurb: "Israeli-engineered implant systems distributed in over 40 countries — Adin delivers high primary stability and proven clinical performance at a price that makes implants more accessible.",
     tier: "gold",
-    attending: true
+    attending: true,
+    videoUrl: "https://www.youtube.com/embed/x81llmU97Vw"
   },
   {
     name: "APEX",

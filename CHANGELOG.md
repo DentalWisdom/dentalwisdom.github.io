@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Created a private orthobrain preview page (dentalwisdom.org/sponsor-review/orthobrain) so you can send them a link showing exactly how their sponsorship appears — their sponsor card with the new "Turnkey Orthodontics" headline and gold "✓ Attending" pill, and the details pop-up (logo, Platinum Sponsor tier, the new five-paragraph write-up, the demo offer in gold, Visit website button, and video). Marked "no-index" so it won't show in search or anywhere public.
 - Changed the header shown on orthobrain's sponsor card and pop-up from "orthobrain" to "Turnkey Orthodontics" (the logo still shows the brand name). This is display-only — the Deals page still recognizes orthobrain as a sponsor behind the scenes.
 - Rewrote orthobrain's write-up (the description in their details pop-up on both the Sponsors page and the Deals page): tightened and reordered your text, added the "nation's most disruptive companies" closing line, and added a demo promo — "Sign up for a demo and learn about the exclusive pricing available only to Dental Wisdom Group Members" (shows in bold gold).
 - Added an orthobrain video (youtube.com/watch?v=1nvBLwGQPRk) to every place orthobrain's details appear: the conference Sponsors-page pop-up and the Deals-page pop-up (added once in the sponsor data, so it shows in both automatically).

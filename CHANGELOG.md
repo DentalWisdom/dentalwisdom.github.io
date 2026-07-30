@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Changed Dr. Daniel Greenbaum's lecture title from "Designing Smiles That Last: Modern Prosthodontic Strategies for Predictable, Aesthetic & Functional Excellence" to "Beyond “Savable”: Redefining Restorability Through a Full-Arch Lens – A Modern Approach to Full Mouth Diagnosis and Treatment" everywhere it appears — the Agenda, the Speakers page (card and pop-up), his private preview page, and the TruAbutment sponsor preview page.
 - Updated Dr. Ariel Steinberger's bio (the write-up in his speaker pop-up) to the new two-paragraph version covering his psychology degree, DDS from Touro, the American Academy of Esthetic Dentistry Award of Merit, his NYU Langone residency, and his focus on cosmetic/restorative dentistry and case acceptance. Updated on the live Speakers page, his private preview page, and the archived master copy.
 - Changed Dr. Marc Faber's lecture title from "I Buy Junk Practices" to "How to Buy Junk Practices: Turning Distressed Offices Into Thriving Ones" everywhere it appears — the Agenda, the Speakers page (card and pop-up), his private preview page, and the archived master copy.
 - Renamed the Wednesday night event from "Opening Night: Casino, Cigars & Scotch" to "Kickoff Reception: Casino Tables, Hand-rolled Cigars, Scotch & Passed Hors d'oeuvres." (Only the title changed — the description and both sponsor-credit lines are unchanged.)

@@ -41,7 +41,8 @@ window.SPONSORS_DATA = [
     link: "https://orthobrain.com/",
     blurb: "Integrate orthodontics into your practice easily and profitably with orthodontist-led treatment planning and SimplyClear aligners — no orthodontic residency required.",
     tier: "platinum",
-    attending: true
+    attending: true,
+    videoUrl: "https://www.youtube.com/embed/1nvBLwGQPRk"
   },
   {
     name: "Touro College of Dental Medicine",

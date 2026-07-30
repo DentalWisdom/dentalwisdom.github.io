@@ -49,7 +49,7 @@
 
 window.AGENDA_DATA = [
   // ---------------- Wednesday ----------------
-  { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Opening Night: Casino, Cigars & Scotch", desc: "The chips are stacked. The scotch is poured. Fresh cigars are rolled right in front of you — and the tables are calling your name.\n\nGrab your ID badge, place your bets, and roll into the weekend in style. This is the official kickoff night of the conference, and we're going all in.\n\nGrand prize: over $2,000 in gold or cash.\nSee you at the tables.\n\nAdults-only evening — 21 and over.", speaker: "", location: "Atrium", event: true, sponsorLines: [ { label: "Grand prize — sponsored by", name: "MB Precious Metals", url: "/conference-sponsors" }, { label: "Hand-rolled cigars, fresh on-site — sponsored by", name: "Emerald Dental Lab", url: "/conference-sponsors" } ] },
+  { day: "Wednesday", time: "8:30 – 10:30 PM", title: "Kickoff Reception: Casino Tables, Hand-rolled Cigars, Scotch & Passed Hors d'oeuvres", desc: "The chips are stacked. The scotch is poured. Fresh cigars are rolled right in front of you — and the tables are calling your name.\n\nGrab your ID badge, place your bets, and roll into the weekend in style. This is the official kickoff night of the conference, and we're going all in.\n\nGrand prize: over $2,000 in gold or cash.\nSee you at the tables.\n\nAdults-only evening — 21 and over.", speaker: "", location: "Atrium", event: true, sponsorLines: [ { label: "Grand prize — sponsored by", name: "MB Precious Metals", url: "/conference-sponsors" }, { label: "Hand-rolled cigars, fresh on-site — sponsored by", name: "Emerald Dental Lab", url: "/conference-sponsors" } ] },
 
   // ---------------- Thursday ----------------
   { day: "Thursday", time: "6:00 – 7:00 AM", title: "MDY Daf Yomi Shiur", speaker: "", location: "Library" },
@@ -63,7 +63,7 @@ window.AGENDA_DATA = [
   { day: "Thursday", time: "2:00 – 4:00 PM", title: "Opening the Airway: Diagnosis and Management of Obstructive Sleep Apnea", speaker: "Dr. Tzvi Krupka (Oral Surgeon)", speakerUrl: "/conference-speakers#speaker-tzvi-krupka", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "4:00 – 6:00 PM", title: "The Yes Blueprint: A Step by Step Approach to Case Presentation and Case Acceptance", speaker: "Dr. Ariel Steinberger (Cosmetic Dentist)", speakerUrl: "/conference-speakers#speaker-ariel-steinberger", location: "Shul", ce: true, ceCredits: 2 },
   { day: "Thursday", time: "6:00 – 6:30 PM", title: "Break (Mincha & Maariv)", speaker: "", location: "Shul" },
-  { day: "Thursday", time: "6:30 – 8:00 PM", title: "I Buy Junk Practices: Turning Distressed Offices Into Thriving Ones", speaker: "Dr. Marc Faber, CEO of Edge Dental Management", speakerUrl: "/conference-speakers#speaker-marc-faber", location: "Shul", ce: true, ceCredits: 1.5 },
+  { day: "Thursday", time: "6:30 – 8:00 PM", title: "How to Buy Junk Practices: Turning Distressed Offices Into Thriving Ones", speaker: "Dr. Marc Faber, CEO of Edge Dental Management", speakerUrl: "/conference-speakers#speaker-marc-faber", location: "Shul", ce: true, ceCredits: 1.5 },
   { day: "Thursday", time: "8:00 PM", title: "Welcome Party — Music, Food & Drinks", speaker: "", location: "Atrium", sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors", event: true },
 
   // ---------------- Friday ----------------

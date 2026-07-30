@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Removed the 4th (fully "To Be Announced") concurrent class from the Friday 3:00 PM hands-on block, so it now shows three tracks. (Hidden, not deleted — easy to bring back if a topic/speaker is confirmed.)
 - Published the full **Agenda** and **Speakers** pages. Both previously showed short "coming soon" teasers; they now display the real, built pages — the full day-by-day agenda and the 12 speaker cards with bios. (The teaser versions were saved to the archive folder, not deleted.)
 - Cleaned up placeholder labels on the agenda so nothing reads as unfinished: removed the "To Be Announced Soon" speaker line from the Friday 10:30 PM Oneg & Shiur, the Shabbos 8:15 AM Pre-Davening Shiur, the Shabbos 11:00 AM Kiddush & Dvar Torah, and the Shabbos 3:45 PM shiur; and removed the "Sponsor TBD" credit from the Friday lunch. Those sessions still show with their times and titles — just without the placeholder text.
 - Refreshed the "published closer to the event" wording now that the Agenda and Speakers pages are live: the homepage "Class Options & CE Credits" box now simply points visitors to the Agenda and Speakers pages, and two FAQ answers ("What is the daily schedule?" and "Who is lecturing…") now link to those pages instead of saying the details will come later (the FAQ keeps a light "schedule may still be adjusted" note).

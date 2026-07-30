@@ -98,6 +98,16 @@ window.DEALS_DATA = [
     keywords: "implants dental implants Israeli implant system abutments guided surgery bone osseointegration primary stability affordable"
   },
   {
+    title: "Straumann",
+    shortDescription: "Dental Implants",
+    category: "Clinical & Chairside",
+    description: "Straumann® is the flagship brand of the world's largest implant manufacturer group – the Straumann Group. Renowned as one of the most iconic brands in dentistry, we have a long-standing legacy of pioneering significant advancements in the field. We are at the forefront of expanding the scope of dental care by relentlessly and consistently providing excellence and transformational innovation to a global community of forward-thinking dental professionals.",
+    link: "https://www.straumann.com/us/en/dental-professionals.html",
+    promo: "",
+    imageUrl: "/images/deals/straumann.webp",
+    keywords: "implants dental implants Straumann Group implant system abutments guided surgery bone osseointegration BLX Roxolid SLActive premium implant brand"
+  },
+  {
     title: "TruAbutment",
     shortDescription: "Custom Abutments",
     category: "Clinical & Chairside",

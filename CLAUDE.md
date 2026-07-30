@@ -131,7 +131,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | # | Name | id anchor | Session | Time | Sponsor |
 |---|------|-----------|---------|------|---------|
 | 1 | Dr. Harold Katz | `speaker-harold-katz` | Getting on the Bathroom Shelf: How Clinical Dentistry Inspires Consumer Products | Thu 9–10am | TheraBreath |
-| 2 | Dr. Daniel Greenbaum | `speaker-daniel-greenbaum` | Designing Smiles That Last… | Thu 10am–12pm | — |
+| 2 | Dr. Daniel Greenbaum | `speaker-daniel-greenbaum` | Beyond "Savable": Redefining Restorability Through a Full-Arch Lens – A Modern Approach to Full Mouth Diagnosis and Treatment | Thu 10am–12pm | TruAbutment |
 | 3 | Dr. Sean Ference | `speaker-sean-ference` | 'Hopeless' to Heroic… | Fri 10:30am–12pm | — |
 | 4 | Sam Waller, CFP® | `speaker-sam-waller` | Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources | Shabbos 4:45pm | — |
 | 5 | Rabbi Dr. David J. Katz | `speaker-rabbi-david-katz` | Dental Halacha Shiur (Shalosh Seudos) | Shabbos 6:30pm | Touro College of Dental Medicine |

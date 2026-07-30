@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## July 30, 2026
+
+- Created a private Straumann preview page (dentalwisdom.org/sponsor-review/straumann) so you can send Straumann a link showing exactly how their sponsorship will appear on the site. The top of the page thanks them for being a Gold Sponsor. It shows their sponsor card (gold "✓ Attending" pill) and the details pop-up (logo, Gold Sponsor tier, their write-up, and a Visit website button). No speaker section, since no session is tied to Straumann, and no video (they don't have one yet — easy to add later). The page is marked "no-index" so it won't show up in search or anywhere public.
+
 ## July 29, 2026
 
 - Embedded a TruAbutment video (youtu.be/B1mbtUZxyeo) at the bottom of TruAbutment's sponsor detail pop-up in two places: the live conference Sponsors page and the TruAbutment preview page. (Heads up: this now shows on the real Sponsors page too, even though TruAbutment is still marked Silver/Pending there — let me know if you'd rather it only appear on the preview for now.)

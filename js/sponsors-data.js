@@ -68,7 +68,8 @@ window.SPONSORS_DATA = [
     name: "LiveWell Capital",
     logoUrl: "/images/sponsors/livewell-capital.webp",
     link: "https://www.livewellcapital.com/",
-    blurb: "Personalized wealth management and financial planning for dental professionals — helping dentists build, protect, and transfer lasting financial security.",
+    blurb: "Integrated wealth management, tax strategy, and financial planning — helping professionals and their families build, protect, and enjoy lasting wealth.",
+    blurbHtml: "<p>At LiveWell Capital, we believe wealth is about more than growing investments &mdash; it&rsquo;s about creating the freedom to Live What Matters. We partner with entrepreneurs, executives, physicians, retirees, and multi-generational families to help them build, protect, and enjoy their wealth with confidence and purpose.</p><p>Our integrated team brings together expertise in Investment Management, Tax Strategy, Financial Planning, Executive Compensation (RSUs, PSUs, Options), Business Owner Planning (Pre-Exit), Risk Management, and Estate Planning.</p><p>Whether you&rsquo;re building a business, preparing for retirement, navigating a major life transition, or creating a lasting legacy, we&rsquo;re committed to helping you live well &mdash; today, tomorrow, and for generations to come.</p>",
     tier: "platinum",
     attending: true
   },

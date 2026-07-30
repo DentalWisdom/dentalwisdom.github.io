@@ -39,7 +39,8 @@ window.SPONSORS_DATA = [
     name: "orthobrain",
     logoUrl: "/images/sponsors/orthobrain.webp",
     link: "https://orthobrain.com/",
-    blurb: "Integrate orthodontics into your practice easily and profitably with orthodontist-led treatment planning and SimplyClear aligners — no orthodontic residency required.",
+    blurb: "A comprehensive support system designed to help general dentists successfully integrate orthodontics into their practices. It provides 360 assistance through the entire treatment process, combining technology, expert guidance, and operational tools with best in class products.",
+    blurbHtml: "<p>A comprehensive support system designed to help general dentists successfully integrate orthodontics into their practices. It provides 360 assistance through the entire treatment process, combining technology, expert guidance, and operational tools with best in class products.</p><p>At orthobrain, we empower OrthoDentists&trade; with the tools and knowledge needed to provide outstanding orthodontic care. Our comprehensive approach ensures that every patient receives personalized attention and a tailored treatment plan.</p>",
     tier: "platinum",
     attending: true,
     videoUrl: "https://www.youtube.com/embed/1nvBLwGQPRk"

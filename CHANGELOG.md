@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Updated orthobrain's write-up (the description shown in their details pop-up on both the Sponsors page and the Deals page) to the new two-paragraph text you provided.
 - Added an orthobrain video (youtube.com/watch?v=1nvBLwGQPRk) to every place orthobrain's details appear: the conference Sponsors-page pop-up and the Deals-page pop-up (added once in the sponsor data, so it shows in both automatically).
 - Added an Adin video (youtu.be/x81llmU97Vw) to every place Adin's details appear: the conference Sponsors-page pop-up and the Deals-page pop-up (and the new Adin preview page below).
 - Created a private Adin preview page (dentalwisdom.org/sponsor-review/adin) so you can send Adin's contact, Jeremy Danzer, a link showing exactly how their sponsorship will appear on the site. Same format as the Straumann one: thanks them for being a Gold Sponsor, shows their sponsor card (gold "✓ Attending" pill) and the details pop-up (logo, Gold Sponsor tier, their write-up, Visit website button, and the new video). Marked "no-index" so it won't show up in search or anywhere public.

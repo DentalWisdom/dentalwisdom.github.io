@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Created a private speaker preview page for Dr. Nathaniel Dancykier (dentalwisdom.org/speaker-review/dr-nathaniel-dancykier) so you can send him a link showing exactly how his information will appear: both of his agenda slots (Friday 9:00–10:30 AM "The Science and Art of Cosmetic Dentistry," 1.5 CE; and Shabbos 2:45 PM "Dental Volunteers for Israel — DVI," 1 CE), his speaker card, and his full bio pop-up. Marked "no-index" so it won't show in search or anywhere public.
 - Updated LiveWell Capital's write-up with their new copy. The details pop-up on the Sponsors page now shows the full three-paragraph message (the "Live What Matters" intro, the list of what their team handles — investments, tax, planning, executive comp, business-owner planning, risk, estate — and the closing line). The Deals-page pop-up shows the same text. All emoji icons from the source were removed. The short one-line summary on the card face was also refreshed to match.
 - Removed orthobrain as the sponsor of the Saturday-night Closing Night Celebration on the Agenda (they no longer hold that sponsorship). The celebration line now shows with no sponsor credit.
 - Expanded the orthobrain preview page: added their sponsored Friday session (Dr. Sam Glick's "Straight Forward: Building Your Clear Aligner Practice," 3–5 PM, CE 2) as it appears on the Agenda, plus Dr. Glick's speaker card and full bio pop-up with the orthobrain logo credited as session sponsor.

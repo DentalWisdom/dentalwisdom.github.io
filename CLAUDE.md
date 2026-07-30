@@ -7,9 +7,31 @@ Static marketing site for Dental Wisdom (dentalwisdom.org): the 2027 conference 
 
 **Tooth Memory game (July 2026):** A Simon-style dental memory mini-game lives on TWO pages — the bottom of `404.html` and its own page `toothmemorygame/index.html` (URL `dentalwisdom.org/toothmemorygame`; the CamelCase `/ToothMemoryGame` also works because the 404 case-insensitive redirect lowercases it). The game's code is SHARED in `css/toothmemory.css` and `js/toothmemory.js` (loaded by both pages) — edit those files, not one page, and the change applies to both. Each page only holds the `.tm` section markup inline. The 112 dentist jokes and all game logic are in `js/toothmemory.js`. Share button points at `dentalwisdom.org/toothmemorygame`. Best score is saved to the visitor's own browser (localStorage). HUD has sound (🔊), new-game/reset (↺), and a colorblind-friendly numbers toggle (🔢, faint 1–9 on the teeth) — the HUD buttons are per-page markup, so add new ones to BOTH pages. Bump `?v=` on the two asset links in both pages when editing them (currently css `?v=4`, js `?v=2`).
 
-**Teaser pages (July 2026):** `conference-agenda/index.html` and `conference-speakers/index.html` currently serve short "coming soon" teaser pages. The full built versions are archived in `_archive/conference-agenda-full.html` and `_archive/conference-speakers-full.html`; `js/agenda-data.js` + `js/agenda.js` are ready but not loaded by any live page. Restore the full pages when Ben says the lineup is ready to publish.
+**Agenda & Speakers pages are LIVE, full versions (as of July 30, 2026):** the earlier "coming soon" teaser note is obsolete. `conference-agenda/index.html` loads `js/agenda-data.js` + `js/agenda.js` and renders the full day-by-day schedule; `conference-speakers/index.html` renders the full speaker grid inline. Edit the live files directly — agenda content in `js/agenda-data.js`, speaker cards inline in `conference-speakers/index.html`. The `_archive/conference-agenda-full.html` / `_archive/conference-speakers-full.html` copies are now just historical backups, NOT the source of truth.
 
 **Gobbie Cohn temporarily hidden (July 28, 2026):** Ben asked to hide Gobbie Cohn's name because his attendance is unconfirmed — restore when Ben says he's coming. Two spots, both marked with dated "HIDDEN"/"restore when he tells us" comments: (1) `js/agenda-data.js` Friday 6:15 PM line — `speaker` set to `""`, session line + APEX/CG sponsor credit kept (Ben's call); to restore, put back `speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn"`. (2) `_archive/conference-speakers-full.html` — his whole speaker card is wrapped in an HTML comment (`CARD HIDDEN 2026-07-28` … `END HIDDEN 2026-07-28 (Gobbie Cohn)`); to restore, delete those two comment lines. Nothing was deleted.
+
+## Current live state (snapshot — updated July 30, 2026)
+Quick reference for what's actually published on the live pages right now. Update this whenever speakers/sponsors/agenda change.
+
+**Speakers live on `conference-speakers/index.html` (12 active cards, chronological):**
+- Thursday: Dr. Harold Katz (TheraBreath), Dr. Daniel Greenbaum (TruAbutment), Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Marc Faber.
+- Friday: Dr. Nathaniel Dancykier (2 sessions — Fri 9:00 AM + Shabbos 2:45 PM DVI), Dr. Sara Werb, Dr. Craig Berry, Dr. Sam Glick (orthobrain), Dr. Elaine Bylis.
+- Shabbos: Sam Waller (LiveWell Capital), Rabbi Dr. David J. Katz (Touro).
+- Hidden (unconfirmed, restore when Ben says): Gobbie Cohn. Archived in-file (commented, not deleted): Dr. Sean Ference, Yaakov Citron, Dr. Samuel Schuster.
+
+**Agenda slots still marked TBD / "To Be Announced Soon" (in `js/agenda-data.js`):**
+- Friday 3:00–5:00 PM concurrent block: "Complications in Perio Anterior Cases" — speaker TBD (Adin-sponsored). The other 3 tracks (Glick/orthobrain, Bylis, Werb) are filled.
+- Friday 6:15 PM Mincha/Kabbalas Shabbos — Gobbie Cohn's name hidden (unconfirmed); APEX + CG Insurance sponsor credit kept.
+- Shabbos 8:15 AM Pre-Davening Shiur — no speaker. Shabbos 11:00 AM Kiddush & Dvar Torah — no speaker. Shabbos 3:45 PM "Dental Related Shiur to Be Announced Soon."
+
+**Sponsors live on `conference-sponsors` + the agenda strip (`js/sponsors-data.js`):**
+- Platinum: orthobrain (shown as "Turnkey Orthodontics"), Touro College of Dental Medicine, Emerald Dental Lab, LiveWell Capital, Crown Catapult.
+- Gold: MB Precious Metals, Crazy Dental, Reach, Adin, APEX, Straumann — plus Pearl and Lasso MD (both "Past Sponsor").
+- Silver: The Altair Hotel, TheraBreath — plus Ultradent, Blue Sky Bio (both "Past Sponsor") and TruAbutment (pending).
+- Bronze: Citron Films, Pizza Biza, CG Insurance Group — plus Pul Dental, Wonderful Dental, Zolli Candy (all "Past Sponsor").
+- Removed / archived (commented in-file, not deleted): Nobel Biocare, Dental Processing Solutions, NuSmile, AAFE.
+- `attending: true` sponsors get the gold "✓ Attending" pill; `pastSponsor: true` get a gray "Past Sponsor" pill and stay off the homepage logo strip.
 
 ## Open follow-ups
 - **Once the full agenda is finalized AND all speaker cards are done** (all "Speaker TBD" / "Lecture Title TBD" slots in `js/agenda-data.js` filled in, all ~16 speaker cards added to `conference-speakers/index.html`), revisit every line on the site that still reads as "lineup pending" — they'll be stale once the roster is final:
@@ -126,7 +148,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 
 **Confirmed (session titles + speakers locked, per Ben, July 13, 2026):** Dr. Harold Katz, Dr. Daniel Greenbaum, Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Sara Werb, Sam Waller.
 
-**Speaker page reorganized (July 24, 2026)** — the table above is partially stale; _archive/conference-speakers-full.html is the source of truth. Current state: 12 active cards, ordered chronologically by speaking time within each day. Removed (archived in-file as comments, not deleted): Dr. Craig Berry, Dr. Samuel Schuster (his agenda entry stays but no longer links to a card), Yaakov Citron (session replaced by hands-on tracks; Citron Films still a sponsor), plus Dr. Sean Ference (archived earlier). Restored: Dr. Marc Faber (Thu 6:30 PM). Dr. Nathaniel Dancykier's card is first in Friday and lists both his sessions (Fri 9:00 AM lecture + Shabbos 2:45 PM DVI). Dr. Sara Werb's card is single-session (Fri 10:30 AM–12:30 PM, NuSmile sponsor removed). Gobbie Cohn's card session reads "Kabbalas Shabbos" (Ben's wording) and sits last in Friday.
+**Speaker page reorganized (July 24, 2026)** — the table above is partially stale; the LIVE `conference-speakers/index.html` is now the source of truth (it's the full published page, not `_archive/...-full.html`). See "Current live state" below for the up-to-date roster. Current state: 12 active cards, ordered chronologically by speaking time within each day. Removed (archived in-file as comments, not deleted): Dr. Craig Berry, Dr. Samuel Schuster (his agenda entry stays but no longer links to a card), Yaakov Citron (session replaced by hands-on tracks; Citron Films still a sponsor), plus Dr. Sean Ference (archived earlier). Restored: Dr. Marc Faber (Thu 6:30 PM). Dr. Nathaniel Dancykier's card is first in Friday and lists both his sessions (Fri 9:00 AM lecture + Shabbos 2:45 PM DVI). Dr. Sara Werb's card is single-session (Fri 10:30 AM–12:30 PM, NuSmile sponsor removed). Gobbie Cohn's card session reads "Kabbalas Shabbos" (Ben's wording) and sits last in Friday.
 
 **Still-pending slots (as of July 13, 2026)** — for reference, not urgent, not blocking publish:
 - Thursday 6:30–8:00 PM: FILLED (July 24, 2026) — Dr. Marc Faber, CEO of Edge Dental Management, "I Buy Junk Practices" (CE, 1.5 credits). Was previously "Concurrent Classes — Topics to Be Announced."

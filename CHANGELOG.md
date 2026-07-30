@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Published the full **Agenda** and **Speakers** pages. Both previously showed short "coming soon" teasers; they now display the real, built pages — the full day-by-day agenda and the 12 speaker cards with bios. (The teaser versions were saved to the archive folder, not deleted.)
+- Cleaned up placeholder labels on the agenda so nothing reads as unfinished: removed the "To Be Announced Soon" speaker line from the Friday 10:30 PM Oneg & Shiur, the Shabbos 8:15 AM Pre-Davening Shiur, the Shabbos 11:00 AM Kiddush & Dvar Torah, and the Shabbos 3:45 PM shiur; and removed the "Sponsor TBD" credit from the Friday lunch. Those sessions still show with their times and titles — just without the placeholder text.
+- Moved the early bird deadline from **August 15** to **August 31** everywhere it appears on the site (homepage hero line, homepage pricing box, homepage fees section, and the FAQ).
 - Created a private Straumann preview page (dentalwisdom.org/sponsor-review/straumann) so you can send Straumann a link showing exactly how their sponsorship will appear on the site. The top of the page thanks them for being a Gold Sponsor. It shows their sponsor card (gold "✓ Attending" pill) and the details pop-up (logo, Gold Sponsor tier, their write-up, and a Visit website button). No speaker section, since no session is tied to Straumann, and no video (they don't have one yet — easy to add later). The page is marked "no-index" so it won't show up in search or anywhere public.
 
 ## July 29, 2026

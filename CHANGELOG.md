@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Added a Straumann video (youtu.be/_7-3kV_2KYk) to every place Straumann's details appear: the conference Sponsors-page pop-up, the Deals-page pop-up, and the Straumann preview page. (Added once in the sponsor data, so it shows in all three automatically.)
+- Removed the "Straumann is now live on the Sponsors/Deals page" links line from the Straumann preview note, per your request.
 - Removed the 4th (fully "To Be Announced") concurrent class from the Friday 3:00 PM hands-on block, so it now shows three tracks. (Hidden, not deleted — easy to bring back if a topic/speaker is confirmed.)
 - Published the full **Agenda** and **Speakers** pages. Both previously showed short "coming soon" teasers; they now display the real, built pages — the full day-by-day agenda and the 12 speaker cards with bios. (The teaser versions were saved to the archive folder, not deleted.)
 - Cleaned up placeholder labels on the agenda so nothing reads as unfinished: removed the "To Be Announced Soon" speaker line from the Friday 10:30 PM Oneg & Shiur, the Shabbos 8:15 AM Pre-Davening Shiur, the Shabbos 11:00 AM Kiddush & Dvar Torah, and the Shabbos 3:45 PM shiur; and removed the "Sponsor TBD" credit from the Friday lunch. Those sessions still show with their times and titles — just without the placeholder text.

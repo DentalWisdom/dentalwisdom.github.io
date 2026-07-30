@@ -4,14 +4,14 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Agenda | Dental Wisdom Conference 2027</title>
-  <meta name="description" content="The day-by-day schedule for the 2027 Dental Wisdom Conference — lectures, hands-on sessions, davening, meals, and Shabbos programming. March 3–6, 2027, Miami, FL.">
+  <meta name="description" content="The 2027 Dental Wisdom Conference agenda — lectures, sessions & Shabbos programming. Miami, March 3–6.">
 
   <!-- Open Graph -->
   <meta property="og:title" content="Agenda | Dental Wisdom Conference 2027">
-  <meta property="og:description" content="The day-by-day schedule for the 2027 Dental Wisdom Conference — lectures, hands-on sessions, davening, meals, and Shabbos programming. March 3–6, 2027, Miami, FL.">
+  <meta property="og:description" content="The 2027 Dental Wisdom Conference agenda — lectures, sessions & Shabbos programming. Miami, March 3–6.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://dentalwisdom.org/conference-agenda">
-<link rel="canonical" href="https://dentalwisdom.org/conference-agenda">
+  <link rel="canonical" href="https://dentalwisdom.org/conference-agenda">
   <meta property="og:image" content="https://dentalwisdom.org/images/social-conference.jpg">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
@@ -19,7 +19,7 @@
   <meta property="og:site_name" content="Dental Wisdom">
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:title" content="Agenda | Dental Wisdom Conference 2027">
-  <meta name="twitter:description" content="The day-by-day schedule for the 2027 Dental Wisdom Conference — lectures, hands-on sessions, davening, meals, and Shabbos programming. March 3–6, 2027, Miami, FL.">
+  <meta name="twitter:description" content="The 2027 Dental Wisdom Conference agenda — lectures, sessions & Shabbos programming. Miami, March 3–6.">
   <meta name="twitter:image" content="https://dentalwisdom.org/images/social-conference.jpg">
 
   <!-- Favicon -->
@@ -34,38 +34,6 @@
   <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="/css/styles.css?v=54">
-
-  <style>
-    /* CE / Full Schedule toggle — quiet text toggle, underline on the
-       active option, matching the agenda filter tabs below it */
-    .agenda-view-toggle {
-      display: flex;
-      justify-content: center;
-      gap: var(--space-md);
-      margin: 0 auto var(--space-md);
-      width: fit-content;
-    }
-    .agenda-view-toggle__btn {
-      background: none;
-      border: none;
-      border-bottom: 2px solid transparent;
-      padding: 0.4rem 0.1rem;
-      font-size: var(--fs-small);
-      font-weight: 600;
-      color: var(--color-slate);
-      cursor: pointer;
-      transition: color var(--transition-base), border-color var(--transition-base);
-      white-space: nowrap;
-    }
-    .agenda-view-toggle__btn.is-active {
-      color: var(--color-ink);
-      border-bottom-color: var(--color-gold-warm);
-    }
-    .agenda-view-toggle__btn:focus-visible {
-      outline: 3px solid var(--color-ink);
-      outline-offset: 2px;
-    }
-  </style>
 </head>
 <body class="has-subnav">
   <a class="skip-link" href="#main">Skip to content</a>
@@ -89,9 +57,9 @@
 
       <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
         <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
-          <line x1="3" y1="6" x2="21" y2="6"></line>
-          <line x1="3" y1="12" x2="21" y2="12"></line>
-          <line x1="3" y1="18" x2="21" y2="18"></line>
+          <line class="menu-toggle__line menu-toggle__line--top" x1="3" y1="6" x2="21" y2="6"></line>
+          <line class="menu-toggle__line menu-toggle__line--mid" x1="3" y1="12" x2="21" y2="12"></line>
+          <line class="menu-toggle__line menu-toggle__line--bottom" x1="3" y1="18" x2="21" y2="18"></line>
         </svg>
         <span class="visually-hidden">Menu</span>
       </button>
@@ -99,7 +67,13 @@
   </header>
 
   <!-- Mobile full-screen overlay menu -->
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="mobile-menu" id="mobileMenu" tabindex="-1">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="5" y1="5" x2="19" y2="19"></line>
+        <line x1="19" y1="5" x2="5" y2="19"></line>
+      </svg>
+    </button>
     <a class="mobile-menu__logo" href="/" aria-label="Dental Wisdom home">
       <img src="/images/header-logo-blue.webp" alt="Dental Wisdom" width="392" height="120">
     </a>
@@ -113,7 +87,7 @@
     </nav>
   </div>
 
-  <!-- Conference sub-navigation (index, agenda, speakers, conference-faq only) -->
+  <!-- Conference sub-navigation -->
   <div class="sub-nav">
     <div class="container sub-nav__bar">
       <a href="/">Overview</a>
@@ -127,50 +101,27 @@
 
   <main id="main">
 
-    <section class="section section--compact section--sand texture">
-      <div class="container">
-        <div class="section-heading" data-reveal>
+    <section class="section section--sand texture">
+      <div class="container" style="text-align:center; padding-top: var(--space-2xl); padding-bottom: var(--space-md);">
+        <div data-reveal>
+          <p class="eyebrow">Dental Wisdom Conference 2027</p>
           <h1>Agenda</h1>
-          <p>The full Dental Wisdom Conference 2027 schedule</p>
+          <p style="font-size: var(--fs-lg); color: var(--color-slate); margin: var(--space-md) auto 0; max-width: 560px;">We're finalizing an incredible agenda to make this the best Dental Wisdom Conference yet — full schedule coming soon. Here's a first look at the days&nbsp;ahead.</p>
         </div>
       </div>
     </section>
 
-    <section class="section section--ivory" id="agenda-schedule">
+    <section class="section section--ivory">
       <div class="container">
-        <!-- Schedule data lives in js/agenda-data.js per SITE_SPEC §6.
-             Lecture sessions without a confirmed speaker show "Speaker TBD". -->
-        <div class="agenda-tabs" id="agendaTabs" role="tablist" aria-label="Conference day" data-reveal>
-          <!-- Tab buttons populated by js/agenda.js -->
-        </div>
-
-        <div id="agendaPanels" data-reveal>
-          <!-- Tab panels populated by js/agenda.js -->
-        </div>
-
-        <p style="text-align:center; margin-top: var(--space-lg); color: var(--color-text-muted); font-size: var(--fs-small); max-width: 720px; margin-left:auto; margin-right:auto;" data-reveal>The event organizers reserve the right to make changes to the speaker lineup, agenda, or event schedule at any time. While every effort will be made to ensure the participation of all advertised speakers, circumstances beyond our control may necessitate substitutions, rescheduling, or cancellations. We appreciate your understanding and continued support.</p>
-      </div>
-    </section>
-
-    <section class="section section--sand texture sponsor-strip-section" aria-labelledby="sponsors-heading">
-      <div class="container">
-        <div class="section-heading" data-reveal>
-          <h2 id="sponsors-heading">Our Sponsors</h2>
-          <p>Thank you to the partners who make the Dental Wisdom Conference possible.</p>
-        </div>
-      </div>
-
-      <!-- Full-bleed scroll strip (no side padding) -->
-      <div class="logo-scroll-wrap" data-reveal>
-        <div class="logo-scroll-track" id="logoScrollStrip">
-          <!-- Populated by js/sponsors.js?v=3 -->
-        </div>
-      </div>
-
-      <div class="container">
-        <div class="link-row" data-reveal>
-          <a class="btn btn-secondary" href="/conference-sponsors">Meet All Our Sponsors</a>
-          <a class="btn btn-secondary" href="/conference-new-sponsor">Want to Sponsor?</a>
+        <div class="legal" data-reveal>
+          <ul>
+            <li><strong>Wednesday:</strong> Opening night reception</li>
+            <li><strong>Thursday:</strong> Davening, cross-specialty CE lectures and hands-on workshops, kosher lunch, more sessions, evening party</li>
+            <li><strong>Friday:</strong> Davening, more CE sessions and workshops, kosher lunch, into Shabbos</li>
+            <li><strong>Shabbos:</strong> Shiurim, davening, kiddush, afternoon sessions, Shalosh Seudos, closing night celebration</li>
+          </ul>
+          <p style="text-align:center; margin-top: var(--space-md);">Check back soon for the full lineup of speakers and sessions.</p>
+          <p style="text-align:center;"><a class="btn btn-primary" href="/">Back to Conference Overview</a></p>
         </div>
       </div>
     </section>
@@ -242,12 +193,8 @@
     </div>
   </footer>
 
-
+  <!-- ===================== FLOATING JOIN BUTTON + MODAL (shared on every page) ===================== -->
   <script src="/js/main.js?v=4"></script>
-  <script src="/js/agenda-data.js"></script>
-  <script src="/js/agenda.js"></script>
-  <script src="/js/sponsors-data.js?v=4"></script>
-  <script src="/js/sponsors.js?v=6"></script>
   <script>
     (function() {
       var header = document.querySelector('.site-header');

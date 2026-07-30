@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Added an Adin video (youtu.be/x81llmU97Vw) to every place Adin's details appear: the conference Sponsors-page pop-up and the Deals-page pop-up (and the new Adin preview page below).
+- Created a private Adin preview page (dentalwisdom.org/sponsor-review/adin) so you can send Adin's contact, Jeremy Danzer, a link showing exactly how their sponsorship will appear on the site. Same format as the Straumann one: thanks them for being a Gold Sponsor, shows their sponsor card (gold "✓ Attending" pill) and the details pop-up (logo, Gold Sponsor tier, their write-up, Visit website button, and the new video). Marked "no-index" so it won't show up in search or anywhere public.
+- Also committed a small pending change left over from an earlier session: an "Thank you orthobrain for being the CE sponsor" line at the bottom of the Agenda page (and its archived full version). It was already sitting in the folder unsaved; it's now saved.
 - Added a Straumann video (youtu.be/_7-3kV_2KYk) to every place Straumann's details appear: the conference Sponsors-page pop-up, the Deals-page pop-up, and the Straumann preview page. (Added once in the sponsor data, so it shows in all three automatically.)
 - Removed the "Straumann is now live on the Sponsors/Deals page" links line from the Straumann preview note, per your request.
 - Removed the 4th (fully "To Be Announced") concurrent class from the Friday 3:00 PM hands-on block, so it now shows three tracks. (Hidden, not deleted — easy to bring back if a topic/speaker is confirmed.)

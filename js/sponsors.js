@@ -40,6 +40,7 @@ document.addEventListener('DOMContentLoaded', function () {
     .map(function (row) {
       return {
         name: (row.name || '').trim(),
+        displayName: (row.displayName || '').trim(),
         logoUrl: (row.logoUrl || '').trim(),
         link: (row.link || '').trim(),
         blurb: (row.blurb || '').trim(),
@@ -72,7 +73,7 @@ document.addEventListener('DOMContentLoaded', function () {
     return '<button type="button" class="sponsor-card" data-sponsor-index="' + i +
       '" aria-haspopup="dialog">' +
       inner +
-      '<span class="sponsor-card__name">' + escapeHtml(s.name) + '</span>' +
+      '<span class="sponsor-card__name">' + escapeHtml(s.displayName || s.name) + '</span>' +
       (s.attending ? '<span class="sponsor-attending-badge sponsor-card__attending" aria-label="In attendance at conference">' + ATTENDING_BADGE_TEXT + '</span>' : '') +
       (s.pastSponsor ? '<span class="sponsor-past-badge sponsor-card__attending" aria-label="Sponsored a past conference">' + PAST_BADGE_TEXT + '</span>' : '') +
       (s.pending ? '<span class="sponsor-pending-badge sponsor-card__attending" aria-label="Pending">' + PENDING_BADGE_TEXT + '</span>' : '') +
@@ -326,7 +327,7 @@ document.addEventListener('DOMContentLoaded', function () {
       tierEl.className = 'sponsor-modal__tier sponsor-modal__tier--' + (sponsor.tier || '');
       tierEl.style.display = sponsor.tier ? '' : 'none';
     }
-    nameEl.textContent = sponsor.name;
+    nameEl.textContent = sponsor.displayName || sponsor.name;
     if (sponsor.blurbHtml) {
       blurbEl.innerHTML = sponsor.blurbHtml;
       blurbEl.style.display = '';

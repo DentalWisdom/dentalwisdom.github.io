@@ -37,6 +37,7 @@ window.SPONSORS_DATA = [
   /* ── PLATINUM ─────────────────────────────────────────── */
   {
     name: "orthobrain",
+    displayName: "Turnkey Orthodontics",
     logoUrl: "/images/sponsors/orthobrain.webp",
     link: "https://orthobrain.com/",
     blurb: "We transform general dentists into OrthoDentists™ — giving them the support, expert guidance, and proven systems to deliver exceptional orthodontic care.",

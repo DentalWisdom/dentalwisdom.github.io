@@ -157,6 +157,36 @@
     }
     .sponsor-detail__blurb p { margin: 0 0 var(--space-sm); }
     .sponsor-detail__blurb p:last-child { margin-bottom: 0; }
+
+    /* ===== Before / after card comparison ===== */
+    .review-compare {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: flex-start;
+      gap: var(--space-xl);
+    }
+    .review-compare__col { text-align: center; }
+    .review-compare__caption {
+      font-size: 0.8rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--color-slate);
+      margin: 0 0 var(--space-sm);
+    }
+    .review-compare__col--after .review-compare__caption { color: var(--color-gold-text); }
+    .review-compare .sponsor-tier { padding: 0; }
+    .review-compare__arrow {
+      display: flex;
+      align-items: center;
+      font-size: 1.6rem;
+      color: var(--color-gold-warm);
+      align-self: center;
+    }
+    @media (max-width: 560px) {
+      .review-compare__arrow { transform: rotate(90deg); }
+    }
   </style>
 </head>
 <body class="review-page">
@@ -167,11 +197,11 @@
 
   <section class="review-intro">
     <p class="review-eyebrow">A note for our sponsor</p>
-    <h1>Thank you, TruAbutment</h1>
-    <p>We're grateful to have TruAbutment sponsoring the Dental Wisdom Conference. We're about to publish the conference agenda and sponsor lineup &mdash; it goes live any day now &mdash; and we wanted to show you how your sponsorship will appear before it does.</p>
-    <p>There's nothing you need to do. If anything needs updating &mdash; the logo, the write-up, or any other detail &mdash; just let us know and we'll change it the same day, even after everything is live.</p>
-    <p>This page was created just for your review, so you can see exactly how your information will look on the website. This link isn't posted anywhere or shared with anyone else.</p>
-    <p>And please reach out if you have any other questions.</p>
+    <h1>Let's finalize your sponsorship</h1>
+    <p>We'd love to have TruAbutment on board as a Gold Sponsor of the Dental Wisdom Conference. To lock it in, we just need to finalize the sponsorship on your end &mdash; once that's done, we'll upgrade your placement right away.</p>
+    <p>To make the decision easy, we put together the preview below so you can see exactly how TruAbutment will appear on our website as a Gold Sponsor &mdash; your card, and the details pop-up that opens when someone taps it.</p>
+    <p>At the very bottom, you'll also see a side-by-side of how your listing looks now versus how it'll look the moment you lock in the sponsorship.</p>
+    <p>This page was created just for your review. It isn't posted anywhere or shared with anyone else, and none of this is live on the site yet. If anything needs updating &mdash; the logo, the write-up, or any other detail &mdash; just let us know and we'll take care of it.</p>
   </section>
 
   <div class="review-block-heading">
@@ -214,6 +244,40 @@
         <div class="link-row">
           <a class="btn btn-primary" href="https://truabutment.com" target="_blank" rel="noopener">Visit website &rarr;</a>
         </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="review-section">
+    <h2 class="review-section__label">3. Before &amp; After</h2>
+    <p class="review-section__hint">Here's your listing as it stands today, next to how it'll look the moment you lock in the sponsorship. We'll make the switch for you as soon as it's finalized.</p>
+    <div class="review-compare">
+      <div class="review-compare__col review-compare__col--before">
+        <p class="review-compare__caption">Now</p>
+        <section class="sponsor-tier">
+          <div class="sponsor-tier__grid sponsor-tier__grid--silver" style="max-width:165px">
+            <div class="sponsor-card">
+              <span class="sponsor-card__logo"><img src="/images/sponsors/tru-abutment.webp" alt="TruAbutment logo"></span>
+              <span class="sponsor-card__name">TruAbutment</span>
+              <span class="sponsor-pending-badge sponsor-card__attending" aria-label="Pending">Pending</span>
+              <span class="sponsor-card__cta">View details &rarr;</span>
+            </div>
+          </div>
+        </section>
+      </div>
+      <div class="review-compare__arrow" aria-hidden="true">&rarr;</div>
+      <div class="review-compare__col review-compare__col--after">
+        <p class="review-compare__caption">Once you lock it in</p>
+        <section class="sponsor-tier">
+          <div class="sponsor-tier__grid sponsor-tier__grid--gold" style="max-width:195px">
+            <div class="sponsor-card">
+              <span class="sponsor-card__logo"><img src="/images/sponsors/tru-abutment.webp" alt="TruAbutment logo"></span>
+              <span class="sponsor-card__name">TruAbutment</span>
+              <span class="sponsor-attending-badge sponsor-card__attending" aria-label="In attendance at conference">&#10003; Attending</span>
+              <span class="sponsor-card__cta">View details &rarr;</span>
+            </div>
+          </div>
+        </section>
       </div>
     </div>
   </section>

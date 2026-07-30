@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 29, 2026
 
+- Reworked the TruAbutment preview page copy: the intro now frames it as "let's finalize your sponsorship" (rather than a thank-you), explains we need them to lock in the sponsorship to become a Gold Sponsor, and points them to the preview below. Added a "Before & After" section at the bottom showing both cards side by side — their current "Pending" card next to the "Gold + ✓ Attending" card — with a note that we'll make the switch as soon as they confirm.
 - Created a private preview page for TruAbutment at dentalwisdom.org/sponsor-review/truabutment (same style as the TheraBreath one). It shows them how their sponsor card and details pop-up will look — presented as a Gold Sponsor with the "✓ Attending" pill. This is preview-only: it does NOT change how TruAbutment appears on the live site (still Silver/Pending there). The page is hidden from search engines and not linked anywhere; you share the link directly.
 - Straumann is now confirmed attending and moved up to the Gold sponsor group (gold "✓ Attending" pill; the "Pending" badge is gone and their logo now appears on the homepage sponsor strip). It sits at the end of the Gold row.
 - TruAbutment moved down to the Silver sponsor group (still "Pending"). On the Deals page its tier badge updates to Silver automatically; its position in the Clinical & Chairside list is unchanged.

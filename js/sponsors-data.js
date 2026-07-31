@@ -301,7 +301,8 @@ window.SPONSORS_DATA = [
     link: "https://wonderfuldental.com/",
     blurb: "Award-winning, dentist-developed prophy paste and fluoride varnish in delicious, kid-approved flavors — made in the USA, dye-free, and rated #1 for taste by patients and hygienists alike.",
     tier: "bronze",
-    pastSponsor: true
+    pastSponsor: true,
+    videoUrl: "https://www.youtube.com/embed/j5pUB-3O768"
   },
   {
     name: "Zolli Candy",

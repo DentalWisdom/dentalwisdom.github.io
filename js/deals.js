@@ -156,6 +156,7 @@ document.addEventListener('DOMContentLoaded', function () {
         category: (row.category || '').trim(),
         shortDescription: (row.shortDescription || '').trim(),
         description: (row.description || '').trim(),
+        descriptionHtml: (row.descriptionHtml || '').trim(),
         link: (row.link || '').trim(),
         promo: (row.promo || '').trim(),
         imageUrl: (row.imageUrl || '').trim(),
@@ -463,8 +464,13 @@ document.addEventListener('DOMContentLoaded', function () {
     taglineEl.textContent = deal.shortDescription || '';
     taglineEl.style.display = deal.shortDescription ? '' : 'none';
 
-    descEl.textContent = deal.description || '';
-    descEl.style.display = deal.description ? '' : 'none';
+    if (deal.descriptionHtml) {
+      descEl.innerHTML = deal.descriptionHtml;
+      descEl.style.display = '';
+    } else {
+      descEl.textContent = deal.description || '';
+      descEl.style.display = deal.description ? '' : 'none';
+    }
 
     var offersEl = modal.querySelector('#dealModalOffers');
     if (offersEl) {

@@ -1,0 +1,798 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>The Dental Wisdom Sefer Torah | Dedication Opportunities</title>
+  <meta name="description" content="Be part of the Dental Wisdom Sefer Torah — a community Torah written for the Dental Wisdom network. Dedication opportunities from a single letter to the Crown.">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="The Dental Wisdom Sefer Torah">
+  <meta property="og:description" content="Be part of the Dental Wisdom Sefer Torah — a community Torah written for the Dental Wisdom network. Dedication opportunities from a single letter to the Crown.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://dentalwisdom.org/torah">
+  <link rel="canonical" href="https://dentalwisdom.org/torah">
+  <!-- TODO: create images/social-torah.jpg (1200x630) — falls back to the site default until then -->
+  <meta property="og:image" content="https://dentalwisdom.org/images/social-general.jpg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="The Dental Wisdom Sefer Torah">
+  <meta property="og:site_name" content="Dental Wisdom">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="The Dental Wisdom Sefer Torah">
+  <meta name="twitter:description" content="Be part of the Dental Wisdom Sefer Torah — dedication opportunities from a single letter to the Crown.">
+  <meta name="twitter:image" content="https://dentalwisdom.org/images/social-general.jpg">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="/images/favicon.png">
+  <link rel="apple-touch-icon" href="/images/favicon-180.png">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+
+  <link rel="stylesheet" href="/css/styles.css?v=54">
+
+  <style>
+    /* =====================================================================
+       TORAH PAGE — page-scoped styles (kept out of the shared stylesheet
+       because nothing here is reused elsewhere)
+       ===================================================================== */
+
+    /* ---------- Hero ---------- */
+    .torah-hero {
+      position: relative;
+      overflow: hidden;
+      background: var(--color-ink);
+      color: var(--color-white);
+      padding: calc(var(--space-2xl) + 1.5rem) 0 var(--space-2xl);
+      text-align: center;
+      isolation: isolate;
+    }
+    /* Very slow, very soft gold glow — the only ambient motion in the hero */
+    .torah-hero::before {
+      content: "";
+      position: absolute;
+      inset: -30%;
+      z-index: -1;
+      background:
+        radial-gradient(closest-side, rgba(184, 137, 42, 0.30), transparent 70%);
+      width: 70%;
+      height: 130%;
+      left: 15%;
+      top: -15%;
+      inset: auto;
+      filter: blur(10px);
+      animation: torahGlow 14s ease-in-out infinite alternate;
+    }
+    @keyframes torahGlow {
+      from { opacity: 0.55; transform: scale(0.92) translateY(0); }
+      to   { opacity: 0.9;  transform: scale(1.06) translateY(-14px); }
+    }
+
+    .torah-hero__inner {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 0 var(--container-pad);
+      position: relative;
+    }
+    .torah-hero__eyebrow {
+      font-size: 0.75rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--color-gold-soft);
+      margin: 0 0 var(--space-md);
+    }
+    .torah-hero h1 {
+      font-family: var(--font-heading);
+      font-size: clamp(2.1rem, 6vw, 3.5rem);
+      line-height: 1.12;
+      color: var(--color-white);
+      margin: 0;
+    }
+    /* Thin gold rule that draws itself in beneath the title */
+    .torah-hero__rule {
+      width: 1px;
+      height: 64px;
+      margin: var(--space-lg) auto var(--space-md);
+      background: linear-gradient(to bottom, var(--color-gold-warm), rgba(184, 137, 42, 0));
+      transform-origin: top;
+      animation: torahDraw 1400ms cubic-bezier(0.22, 1, 0.36, 1) 500ms both;
+    }
+    @keyframes torahDraw {
+      from { transform: scaleY(0); opacity: 0; }
+      to   { transform: scaleY(1); opacity: 1; }
+    }
+    .torah-hero__sub {
+      color: rgba(255, 255, 255, 0.82);
+      font-size: var(--fs-lg);
+      line-height: 1.65;
+      margin: 0;
+      max-width: 46ch;
+      margin-inline: auto;
+    }
+
+    /* Staggered entrance for the hero text */
+    .torah-fade {
+      opacity: 0;
+      transform: translateY(18px);
+      animation: torahFadeUp 900ms cubic-bezier(0.22, 1, 0.36, 1) both;
+    }
+    .torah-fade--1 { animation-delay: 120ms; }
+    .torah-fade--2 { animation-delay: 260ms; }
+    .torah-fade--3 { animation-delay: 900ms; }
+    @keyframes torahFadeUp {
+      to { opacity: 1; transform: none; }
+    }
+
+    /* ---------- Story ---------- */
+    .torah-story {
+      max-width: 720px;
+      margin: 0 auto;
+    }
+    .torah-story h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3.6vw, 2.25rem);
+      text-align: center;
+      margin: 0 0 var(--space-lg);
+    }
+    .torah-story p {
+      font-size: 1.06rem;
+      line-height: 1.85;
+      color: var(--color-text);
+      margin: 0 0 var(--space-md);
+    }
+    .torah-story p:last-child { margin-bottom: 0; }
+    .torah-story .torah-story__close {
+      font-family: var(--font-heading);
+      font-style: italic;
+      font-size: 1.2rem;
+      line-height: 1.7;
+      text-align: center;
+      color: var(--color-ink);
+      margin-top: var(--space-lg);
+      padding-top: var(--space-lg);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* The letter count, set as a quiet figure inside the prose */
+    .torah-count {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--color-gold-text);
+      white-space: nowrap;
+      font-variant-numeric: tabular-nums;
+    }
+
+    /* ---------- Dedications ---------- */
+    .torah-ded-head { text-align: center; margin-bottom: var(--space-xl); }
+    .torah-ded-head__eyebrow {
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      color: var(--color-gold-text);
+      margin: 0 0 var(--space-sm);
+      font-weight: 600;
+    }
+    .torah-ded-head h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.6rem, 3.6vw, 2.25rem);
+      margin: 0 0 var(--space-xs);
+    }
+    .torah-ded-head p { color: var(--color-text-muted); margin: 0; }
+
+    /* Cornerstone feature panel */
+    .torah-cornerstone {
+      background: var(--color-ink);
+      color: var(--color-white);
+      border-radius: var(--radius-md);
+      padding: var(--space-lg);
+      text-align: center;
+      max-width: 860px;
+      margin: 0 auto var(--space-xl);
+      position: relative;
+      overflow: hidden;
+      border: 1px solid rgba(184, 137, 42, 0.45);
+    }
+    .torah-cornerstone::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: radial-gradient(120% 100% at 50% 0%, rgba(184, 137, 42, 0.18), transparent 60%);
+    }
+    .torah-cornerstone > * { position: relative; z-index: 1; }
+    .torah-cornerstone__tier {
+      font-size: 0.68rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--color-gold-soft);
+      font-weight: 600;
+      margin: 0 0 var(--space-sm);
+    }
+    .torah-cornerstone h3 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.5rem, 3.4vw, 2rem);
+      color: var(--color-white);
+      margin: 0 0 0.25rem;
+    }
+    .torah-cornerstone__heb {
+      font-family: var(--font-heading);
+      font-style: italic;
+      color: var(--color-gold-soft);
+      margin: 0 0 var(--space-md);
+      font-size: 1.05rem;
+    }
+    .torah-cornerstone p.torah-cornerstone__desc {
+      color: rgba(255, 255, 255, 0.82);
+      line-height: 1.75;
+      max-width: 52ch;
+      margin: 0 auto var(--space-sm);
+    }
+    .torah-cornerstone__name {
+      font-family: var(--font-heading);
+      font-style: italic;
+      color: rgba(255, 255, 255, 0.72);
+      margin: 0 0 var(--space-md);
+    }
+    .torah-taken {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      border: 1px solid var(--color-gold-warm);
+      color: var(--color-gold-soft);
+      border-radius: 999px;
+      padding: 0.5rem 1.1rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 600;
+    }
+    .torah-taken svg { width: 14px; height: 14px; flex: none; }
+
+    /* Tier groups */
+    .torah-tier { margin-bottom: var(--space-xl); }
+    .torah-tier:last-of-type { margin-bottom: 0; }
+    .torah-tier__label {
+      display: flex;
+      align-items: center;
+      gap: var(--space-sm);
+      margin: 0 0 var(--space-md);
+      font-size: 0.72rem;
+      letter-spacing: 0.24em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-gold-text);
+    }
+    .torah-tier__label::after {
+      content: "";
+      flex: 1;
+      height: 1px;
+      background: var(--color-border);
+    }
+
+    .torah-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(270px, 1fr));
+      gap: var(--space-md);
+    }
+
+    /* Card */
+    .torah-card {
+      display: flex;
+      flex-direction: column;
+      background: var(--color-white);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: var(--space-md);
+      transition: transform var(--transition-base), box-shadow var(--transition-base), border-color var(--transition-base);
+      position: relative;
+      overflow: hidden;
+    }
+    /* Gold hairline that sweeps across the top edge on hover */
+    .torah-card::before {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0;
+      height: 2px;
+      background: linear-gradient(to right, var(--color-gold-warm), var(--color-gold-soft));
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 420ms cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .torah-card:hover,
+    .torah-card:focus-within {
+      transform: translateY(-4px);
+      box-shadow: var(--shadow-card);
+      border-color: rgba(184, 137, 42, 0.4);
+    }
+    .torah-card:hover::before,
+    .torah-card:focus-within::before { transform: scaleX(1); }
+
+    .torah-card h3 {
+      font-family: var(--font-heading);
+      font-size: 1.35rem;
+      margin: 0 0 0.15rem;
+      color: var(--color-ink);
+    }
+    .torah-card__heb {
+      font-family: var(--font-heading);
+      font-style: italic;
+      color: var(--color-gold-text);
+      font-size: 0.98rem;
+      margin: 0 0 var(--space-sm);
+    }
+    .torah-card__desc {
+      color: var(--color-text-muted);
+      font-size: 0.95rem;
+      line-height: 1.7;
+      margin: 0 0 var(--space-md);
+      flex: 1;
+    }
+    .torah-card__price {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      font-size: 1.6rem;
+      color: var(--color-ink);
+      margin: 0 0 var(--space-md);
+      line-height: 1;
+    }
+    .torah-card__price span {
+      font-family: var(--font-body);
+      font-weight: 400;
+      font-size: 0.85rem;
+      color: var(--color-text-muted);
+      margin-left: 0.35rem;
+    }
+
+    /* Dedicate link — quiet until hovered */
+    .torah-dedicate {
+      align-self: flex-start;
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      font-size: 0.78rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      font-weight: 600;
+      color: var(--color-gold-text);
+      text-decoration: none;
+      padding: 0.6rem 1.05rem;
+      border: 1px solid var(--color-gold-warm);
+      border-radius: 999px;
+      transition: background-color var(--transition-base), color var(--transition-base);
+    }
+    .torah-dedicate__arrow { transition: transform var(--transition-base); }
+    .torah-dedicate:hover,
+    .torah-dedicate:focus-visible {
+      background: var(--color-gold-warm);
+      color: var(--color-white);
+    }
+    .torah-dedicate:hover .torah-dedicate__arrow { transform: translateX(4px); }
+
+    /* ---------- Closing ---------- */
+    .torah-close {
+      max-width: 640px;
+      margin: 0 auto;
+      text-align: center;
+    }
+    .torah-close h2 {
+      font-family: var(--font-heading);
+      font-size: clamp(1.4rem, 3vw, 1.9rem);
+      margin: 0 0 var(--space-sm);
+    }
+    .torah-close__mail {
+      font-size: 1.05rem;
+      margin: 0 0 var(--space-lg);
+    }
+    .torah-close__note {
+      font-size: 0.85rem;
+      line-height: 1.75;
+      color: var(--color-text-muted);
+      font-style: italic;
+      margin: 0;
+      padding-top: var(--space-md);
+      border-top: 1px solid var(--color-border);
+    }
+
+    /* ---------- Reduced motion ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      .torah-hero::before,
+      .torah-hero__rule,
+      .torah-fade { animation: none; }
+      .torah-fade { opacity: 1; transform: none; }
+      .torah-hero__rule { transform: none; opacity: 1; }
+      .torah-card,
+      .torah-card::before,
+      .torah-dedicate,
+      .torah-dedicate__arrow { transition: none; }
+      .torah-card:hover, .torah-card:focus-within { transform: none; }
+    }
+
+    @media (max-width: 640px) {
+      .torah-hero { padding: var(--space-2xl) 0 var(--space-xl); }
+      .torah-cornerstone { padding: var(--space-md); }
+      .torah-dedicate { align-self: stretch; justify-content: center; }
+    }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- ===================== HEADER (shared on every page) ===================== -->
+  <header class="site-header">
+    <div class="container site-header__bar">
+      <a class="site-logo" href="/">
+        <span class="site-logo__section">Sefer Torah</span>
+        <img class="site-logo__mark" src="/images/header-logo-blue.webp" alt="Dental Wisdom" width="392" height="120">
+      </a>
+
+      <nav class="site-nav" aria-label="Primary">
+        <ul class="site-nav__list">
+          <li><a href="/">Conference</a></li>
+          <li><a href="/live">Live</a></li>
+          <li><a href="/deals">Deals</a></li>
+          <li><a href="/whatsapp">WhatsApp</a></li>
+        </ul>
+      </nav>
+
+      <button class="menu-toggle" id="menuToggle" aria-expanded="false" aria-controls="mobileMenu">
+        <svg class="menu-toggle__icon" id="menuToggleIcon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+          <line class="menu-toggle__line menu-toggle__line--top" x1="3" y1="6" x2="21" y2="6"></line>
+          <line class="menu-toggle__line menu-toggle__line--mid" x1="3" y1="12" x2="21" y2="12"></line>
+          <line class="menu-toggle__line menu-toggle__line--bottom" x1="3" y1="18" x2="21" y2="18"></line>
+        </svg>
+        <span class="visually-hidden">Menu</span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Mobile full-screen overlay menu -->
+  <div class="mobile-menu" id="mobileMenu" tabindex="-1">
+    <button class="mobile-menu__close" id="mobileMenuClose" aria-label="Close menu">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true">
+        <line x1="5" y1="5" x2="19" y2="19"></line>
+        <line x1="19" y1="5" x2="5" y2="19"></line>
+      </svg>
+    </button>
+    <a class="mobile-menu__logo" href="/" aria-label="Dental Wisdom home">
+      <img src="/images/header-logo-blue.webp" alt="Dental Wisdom" width="392" height="120">
+    </a>
+    <nav aria-label="Mobile">
+      <ul class="mobile-menu__list">
+        <li><a href="/">Conference</a></li>
+        <li><a href="/live">Live</a></li>
+        <li><a href="/deals">Deals</a></li>
+        <li><a href="/whatsapp">WhatsApp</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <main id="main">
+
+    <!-- ===================== HERO ===================== -->
+    <section class="torah-hero">
+      <div class="torah-hero__inner">
+        <p class="torah-hero__eyebrow torah-fade torah-fade--1">A Community Project</p>
+        <h1 class="torah-fade torah-fade--2">The Dental Wisdom Sefer&nbsp;Torah</h1>
+        <div class="torah-hero__rule" aria-hidden="true"></div>
+        <p class="torah-hero__sub torah-fade torah-fade--3">Every letter written is a name inscribed in our community&rsquo;s story.</p>
+      </div>
+    </section>
+
+    <!-- ===================== OUR STORY ===================== -->
+    <section class="section section--ivory">
+      <div class="container">
+        <div class="torah-story" data-reveal>
+          <h2>Why We Are Writing This Torah</h2>
+
+          <p>A Sefer Torah is the holiest and most sacred object in Jewish life &mdash; every one of the <span class="torah-count" data-count="304805">304,805</span> letters handwritten by a specially trained scribe, using the same traditions passed down from Mount Sinai thousands of years ago.</p>
+
+          <p>The writing of a community Sefer Torah is a rare and deeply meaningful milestone. It becomes a lasting symbol of Jewish continuity, unity, and spiritual connection &mdash; one that will be cherished and used for generations to come.</p>
+
+          <p>This Torah will be shared with a growing local shul and carried with us wherever the Dental Wisdom community gathers &mdash; read from at every conference, event, and communal celebration. It even opens the door to destination Dental Wisdom events, giving us the freedom to bring our community together anywhere in the world with our own Sefer Torah at its heart.</p>
+
+          <p class="torah-story__close">Through every letter written, and every future reading from this Torah, your name and your family become a permanent part of that legacy.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===================== DEDICATION OPPORTUNITIES ===================== -->
+    <section class="section section--sand texture" id="dedications">
+      <div class="container">
+
+        <div class="torah-ded-head" data-reveal>
+          <p class="torah-ded-head__eyebrow">Be Part of It</p>
+          <h2>Dedication Opportunities</h2>
+          <p>Choose your portion in the Torah.</p>
+        </div>
+
+        <!-- ---------- Cornerstone ---------- -->
+        <div class="torah-cornerstone" data-reveal>
+          <p class="torah-cornerstone__tier">Cornerstone Dedication</p>
+          <h3>Torah Dedication</h3>
+          <p class="torah-cornerstone__heb">Hakdashas HaTorah</p>
+          <p class="torah-cornerstone__desc">The foundational dedication of the entire Sefer Torah &mdash; the principal gift through which this holy project comes to life.</p>
+          <p class="torah-cornerstone__name">The Dental Wisdom Sefer Torah</p>
+          <p class="torah-taken">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <polyline points="20 6 9 17 4 12"></polyline>
+            </svg>
+            Taken &middot; Anonymous
+          </p>
+        </div>
+
+        <!-- ---------- Premier ---------- -->
+        <div class="torah-tier" data-reveal>
+          <h3 class="torah-tier__label">Premier</h3>
+          <div class="torah-grid">
+
+            <article class="torah-card">
+              <h3>Crown</h3>
+              <p class="torah-card__heb">Keter</p>
+              <p class="torah-card__desc">The beautiful crown, with your family name engraved, will be prominently displayed above the Torah.</p>
+              <p class="torah-card__price">$18,000</p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20Crown%20(Keter)%20%2418%2C000">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">the Crown</span>
+              </a>
+            </article>
+
+            <article class="torah-card">
+              <h3>Eitz Chayim</h3>
+              <p class="torah-card__heb">Trees of Life</p>
+              <p class="torah-card__desc">The Torah&rsquo;s decorative handles. A dedication of your choice will be engraved on them.</p>
+              <p class="torah-card__price">$10,000</p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20Eitz%20Chayim%20%2410%2C000">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">the Eitz Chayim</span>
+              </a>
+            </article>
+
+            <article class="torah-card">
+              <h3>The Yad</h3>
+              <p class="torah-card__heb">Torah&rsquo;s Silver Hand</p>
+              <p class="torah-card__desc">The silver pointer used for reading Torah. A dedication of your choice will be engraved on it.</p>
+              <p class="torah-card__price">$5,400</p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20The%20Yad%20%245%2C400">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">the Yad</span>
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ---------- Major ---------- -->
+        <div class="torah-tier" data-reveal>
+          <h3 class="torah-tier__label">Major</h3>
+          <div class="torah-grid">
+
+            <article class="torah-card">
+              <h3>Book of Torah</h3>
+              <p class="torah-card__heb">Chumash</p>
+              <p class="torah-card__desc">One complete book of the Five Books of the Torah.</p>
+              <p class="torah-card__price">$3,600 <span>each</span></p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20Book%20of%20Torah%20(Chumash)%20%243%2C600">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">a Book of the Torah</span>
+              </a>
+            </article>
+
+            <article class="torah-card">
+              <h3>Weekly Parsha</h3>
+              <p class="torah-card__heb">Torah Portion</p>
+              <p class="torah-card__desc">Dedicate an entire weekly Torah portion that corresponds to a special date &mdash; a birthday, Bar/Bat Mitzvah, Yahrtzeit, or other meaningful occasion.</p>
+              <p class="torah-card__price">$1,800 <span>each</span></p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20Weekly%20Parsha%20%241%2C800">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">a Weekly Parsha</span>
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ---------- Honor ---------- -->
+        <div class="torah-tier" data-reveal>
+          <h3 class="torah-tier__label">Honor</h3>
+          <div class="torah-grid">
+
+            <article class="torah-card">
+              <h3>Aliya</h3>
+              <p class="torah-card__heb">Going Up</p>
+              <p class="torah-card__desc">A complete Aliya &mdash; one of the seven segments of each Torah portion.</p>
+              <p class="torah-card__price">$720 <span>each</span></p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20Aliya%20%24720">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">an Aliya</span>
+              </a>
+            </article>
+
+            <article class="torah-card">
+              <h3>A Verse</h3>
+              <p class="torah-card__heb">Pasuk</p>
+              <p class="torah-card__desc">Dedicate a Torah verse that has special meaning to you, a friend, or a loved one.</p>
+              <p class="torah-card__price">$360 <span>each</span></p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20A%20Verse%20(Pasuk)%20%24360">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">a Verse</span>
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+        <!-- ---------- Family ---------- -->
+        <div class="torah-tier" data-reveal>
+          <h3 class="torah-tier__label">Family</h3>
+          <div class="torah-grid">
+
+            <article class="torah-card">
+              <h3>A Word</h3>
+              <p class="torah-card__heb">Milah</p>
+              <p class="torah-card__desc">Each word in the Torah bears tremendous meaning and timeless lessons.</p>
+              <p class="torah-card__price">$180 <span>each</span></p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20A%20Word%20(Milah)%20%24180">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">a Word</span>
+              </a>
+            </article>
+
+            <article class="torah-card">
+              <h3>A Letter</h3>
+              <p class="torah-card__heb">Os</p>
+              <p class="torah-card__desc">Every letter is vital for a Torah to be complete.</p>
+              <p class="torah-card__price">$54 <span>each</span></p>
+              <!-- TODO: swap href for the Jotform dedication link once Ben provides it -->
+              <a class="torah-dedicate" href="mailto:info@dentalwisdom.org?subject=Torah%20Dedication%20%E2%80%94%20A%20Letter%20(Os)%20%2454">
+                Dedicate <span class="torah-dedicate__arrow" aria-hidden="true">&rarr;</span>
+                <span class="visually-hidden">a Letter</span>
+              </a>
+            </article>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===================== CLOSING ===================== -->
+    <section class="section section--compact section--ivory">
+      <div class="container">
+        <div class="torah-close" data-reveal>
+          <h2>Questions?</h2>
+          <p class="torah-close__mail">Contact us at <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a></p>
+          <p class="torah-close__note">Please note: dedications are made to the Dental Wisdom Network, and you will receive a receipt for your sponsorship. These contributions are not tax-deductible. A separate fundraising effort is collecting funds for the Sefer Torah through a 501(c)(3) organization &mdash; please reach out to us to learn more.</p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===================== FOOTER (shared on every page) ===================== -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+
+        <!-- Column 1: Brand -->
+        <div class="footer-brand">
+          <a class="footer-logo" href="#top" aria-label="Back to top of page" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">
+            <img src="/images/footer-logo-white-trimmed.webp" alt="Dental Wisdom" width="200" height="77" loading="lazy">
+          </a>
+          <p>A thriving, close-knit community for dental professionals — connected year-round through our WhatsApp network, monthly live CE sessions, exclusive partner deals, and our flagship 4-day annual conference.</p>
+          <p>Questions? <a href="mailto:info@dentalwisdom.org">info@dentalwisdom.org</a></p>
+        </div>
+
+        <!-- Column 2: three stacked groups -->
+        <div class="footer-stack">
+          <div>
+            <h3>Dental Wisdom WhatsApp</h3>
+            <ul class="footer-links">
+              <li><a href="/whatsapp">Join the Group</a></li>
+              <li><a href="/whatsapp-policies">Group Policies</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Live</h3>
+            <ul class="footer-links">
+              <li><a href="/live">CE Sessions</a></li>
+              <li><a href="/live-present">Want to Present?</a></li>
+            </ul>
+          </div>
+          <div>
+            <h3>Dental Wisdom Deals</h3>
+            <ul class="footer-links">
+              <li><a href="/deals">Browse Deals</a></li>
+              <li><a href="/deals-partner">Become a Deals Partner</a></li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Column 3: Conference -->
+        <div>
+          <h3>Dental Wisdom Conference</h3>
+          <ul class="footer-links">
+            <li><a href="/">Overview</a></li>
+            <li><a href="/conference-agenda">Agenda</a></li>
+            <li><a href="/conference-speakers">Speakers</a></li>
+            <li><a href="/conference-sponsors">Sponsors</a></li>
+            <li><a href="/conference-faq">FAQs</a></li>
+            <li><a href="/conference-new-sponsor">Want to Sponsor?</a></li>
+            <li><a href="/conference-new-speaker">Want to Lecture?</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 Dental Wisdom. All rights reserved.</span>
+        <nav class="footer-legal" aria-label="Legal">
+          <a href="/terms">Terms &amp; Conditions</a>
+          <span aria-hidden="true">•</span>
+          <a href="/privacy">Privacy Policy</a>
+        </nav>
+      </div>
+    </div>
+  </footer>
+
+  <!-- No floating Join button on this page — the Dedicate buttons are the
+       primary call to action and a second floating CTA would compete with them. -->
+
+  <script src="/js/main.js?v=4"></script>
+  <script>
+    (function() {
+      var header = document.querySelector('.site-header');
+      if (!header) return;
+      var onScroll = function() { header.classList.toggle('is-scrolled', window.scrollY > 60); };
+      window.addEventListener('scroll', onScroll, { passive: true });
+      onScroll();
+    })();
+  </script>
+  <script>
+    /* Count up to 304,805 the first time the sentence scrolls into view.
+       Purely decorative — the real number is already in the HTML, so it
+       still reads correctly with JS off or reduced motion on. */
+    (function () {
+      var el = document.querySelector('.torah-count');
+      if (!el || !('IntersectionObserver' in window)) return;
+      if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+
+      var target = parseInt(el.getAttribute('data-count'), 10);
+      var done = false;
+
+      var io = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (!entry.isIntersecting || done) return;
+          done = true;
+          io.disconnect();
+
+          var start = null;
+          var duration = 1600;
+          var step = function (ts) {
+            if (start === null) start = ts;
+            var p = Math.min((ts - start) / duration, 1);
+            var eased = 1 - Math.pow(1 - p, 3); /* ease-out cubic */
+            el.textContent = Math.floor(eased * target).toLocaleString('en-US');
+            if (p < 1) requestAnimationFrame(step);
+            else el.textContent = target.toLocaleString('en-US');
+          };
+          requestAnimationFrame(step);
+        });
+      }, { threshold: 0.6 });
+
+      io.observe(el);
+    })();
+  </script>
+</body>
+</html>

@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## July 30, 2026
 
+- Added a video to Pul Dental's pop-up on the Sponsors page (it plays at the bottom of the details pop-up). Note: Pul Dental isn't listed on the Deals page, so there's no Deals card to add it to.
 - Marked Lasso MD as attending the conference — their card on the Sponsors page now shows the gold "✓ Attending" pill (instead of "Past Sponsor") and they're back on the homepage logo strip.
 - Added a video to Lasso MD's pop-up on both the Sponsors page and the Deals page (it plays at the bottom of the details pop-up in both places).
 - Changed Lasso MD's offer to "Up to 10% off for Dental Wisdom members" (was "10-20% Off + Free Photo & Video Shoot") on both the Sponsors page and the Deals page pop-ups.

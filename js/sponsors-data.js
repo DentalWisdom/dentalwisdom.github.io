@@ -292,7 +292,8 @@ window.SPONSORS_DATA = [
     link: "https://puldental.com/",
     blurb: "Innovative tools and accessories that make wearing and removing clear aligners and retainers easier for patients — boosting compliance, comfort, and satisfaction throughout treatment.",
     tier: "bronze",
-    pastSponsor: true
+    pastSponsor: true,
+    videoUrl: "https://www.youtube.com/embed/YnXpmI5DA20"
   },
   {
     name: "Wonderful Dental",

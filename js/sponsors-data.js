@@ -157,8 +157,9 @@ window.SPONSORS_DATA = [
     link: "https://www.lassomd.com/work-with-us/partners/dental-wisdom",
     blurb: "A dentist-only growth platform that pairs AI-powered digital marketing with professional website design to help practices attract more ideal patients and grow revenue with less effort.",
     tier: "gold",
-    pastSponsor: true,
-    promo: "10-20% Off + Free Photo & Video Shoot (Limited Time)"
+    attending: true,
+    promo: "10-20% Off + Free Photo & Video Shoot (Limited Time)",
+    videoUrl: "https://www.youtube.com/embed/dqjz7olnMBI"
   },
   {
     name: "Straumann",

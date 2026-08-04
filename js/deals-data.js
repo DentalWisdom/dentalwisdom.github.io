@@ -40,7 +40,7 @@ window.DEALS_DATA = [
     shortDescription: "Clear Aligners",
     category: "Clinical & Chairside",
     description: "Integrate orthodontics into your practice easily and profitably with orthodontist-led treatment planning and SimplyClear aligners — no orthodontic residency required.",
-    link: "https://orthobrain.com/",
+    link: "https://partners.orthobrain.com/dentalwisdom",
     promo: "",
     imageUrl: "/images/deals/orthobrain.webp",
     keywords: "orthodontics aligners Invisalign braces ortho treatment planning clear trays straightening teeth"

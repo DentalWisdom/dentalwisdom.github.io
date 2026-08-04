@@ -51,7 +51,7 @@ window.LIVE_DATA = [
     registerLink: "https://events.teams.microsoft.com/event/d5759ca1-a9cd-46bb-be51-6649809a740d@353aa5d5-fd41-4aae-bc79-6722f1ca6cce",
     sponsor: "orthobrain",
     sponsorName: "orthobrain",
-    sponsorLink: "https://orthobrain.com/",
+    sponsorLink: "https://partners.orthobrain.com/dentalwisdom",
     sortDate: "2026-06-18",
     status: "past"
   },

@@ -39,7 +39,7 @@ window.SPONSORS_DATA = [
     name: "orthobrain",
     displayName: "Turnkey Orthodontics",
     logoUrl: "/images/sponsors/orthobrain.webp",
-    link: "https://orthobrain.com/",
+    link: "https://partners.orthobrain.com/dentalwisdom",
     blurb: "We transform general dentists into OrthoDentists™ — giving them the support, expert guidance, and proven systems to deliver exceptional orthodontic care.",
     blurbHtml: "<p>We transform general dentists into OrthoDentists&trade; &mdash; giving them the support, expert guidance, and proven systems to deliver exceptional orthodontic care.</p><p>orthobrain is a comprehensive support system that helps general dentists successfully integrate orthodontics into their practices. It provides 360&deg; assistance across the entire treatment process, combining technology, expert guidance, operational tools, and best-in-class products.</p><p>The result is confident, orthodontist-led care in which every patient receives personalized attention and a tailored treatment plan.</p><p>Founded in 2016 by Dr. Dan German, orthobrain set out to revolutionize dental care by making elite orthodontic expertise accessible to all. His clinical experience and commitment to education empower dentists to confidently treat a wide range of malocclusions, ensuring exceptional outcomes for their patients.</p><p>Recognized among the nation&rsquo;s most disruptive healthcare and technology companies for redefining orthodontic care delivery.</p>",
     promo: "Sign up for a demo and learn about the exclusive pricing available only to Dental Wisdom Group Members.",

@@ -3,6 +3,13 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## August 4, 2026
+
+- **New orthobrain logo everywhere.** Swapped in the new single-line orthobrain logo (the black wordmark with the brain icon) on the Sponsors page and the Deals page. It's been cleaned up and set on the same size canvas with the same margins as every other sponsor logo, so it lines up with the rest of the grid and the scrolling logo strips. The old logo wasn't deleted — it's saved in `_archive/superseded-images/`.
+- **orthobrain now links to their Dental Wisdom partner page** (partners.orthobrain.com/dentalwisdom) instead of their main site. Updated in all five places orthobrain is linked: the Sponsors page, the Deals page, Dr. Sam Glick's speaker bio pop-up, the Dental Wisdom Live session listing, and the orthobrain sponsor review page.
+
+---
+
 ## July 30, 2026
 
 - **New page: the Dental Wisdom Sefer Torah (dentalwisdom.org/torah).** A standalone page for the Torah fundraising campaign. Opens with a dark navy hero ("The Dental Wisdom Sefer Torah") where the text fades up and a thin gold line draws itself in beneath the title, over a very slow, soft gold glow. Below that is the "Why We Are Writing This Torah" story — including the new paragraph about the Torah being shared with a growing local shul, carried to every Dental Wisdom gathering, and opening the door to destination events. The 304,805 letter count quietly counts up the first time you scroll to it. Then the dedication opportunities: the Cornerstone (Hakdashas HaTorah) sits at the top as a dark feature panel marked "Taken · Anonymous" with no price and no button, followed by the Premier, Major, Honor, and Family levels as cards that lift gently and reveal a gold hairline when you hover. Closes with the contact line and the note explaining that dedications go to the Dental Wisdom Network, are not tax-deductible, and that a separate 501(c)(3) effort is collecting funds for the Sefer Torah. Note: the DEDICATE buttons currently open a pre-addressed email to info@dentalwisdom.org with the chosen level filled in — send over the Jotform link and they'll be switched to open the form instead. The page is not yet linked from the menu or footer; tell me if you'd like it added.

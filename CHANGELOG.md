@@ -3,6 +3,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## August 5, 2026
+
+- **Shortened Dr. Elaine Bylis's session title.** "From Blob to Beautiful: Cosmetic Dentistry Hands-On Workshop" is now just "From Blob to Beautiful: Cosmetic Dentistry" — updated on the agenda, her speaker card and bio pop-up, and her speaker review page.
+
+---
+
 ## August 4, 2026
 
 - **New orthobrain logo everywhere.** Swapped in the new single-line orthobrain logo (the black wordmark with the brain icon) on the Sponsors page and the Deals page. It's been cleaned up and set on the same size canvas with the same margins as every other sponsor logo, so it lines up with the rest of the grid and the scrolling logo strips. The old logo wasn't deleted — it's saved in `_archive/superseded-images/`.

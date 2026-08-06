@@ -35,15 +35,25 @@ window.DEALS_DATA = [
      Manual order (Ben, July 28 2026 — do NOT auto-sort to tier order):
      orthobrain, Crazy Dental, Emerald, Pearl, MB Precious, Adin,
      TruAbutment, TheraBreath, AAFE. */
+  /* orthobrain — Platinum conference sponsor. Write-up, offer and video below
+     are kept in sync with its entry in js/sponsors-data.js (Ben, Aug 6 2026):
+     description = sponsor `blurb`, descriptionHtml = sponsor `blurbHtml`,
+     promo = sponsor `promo`, videoUrl = sponsor `videoUrl`. If the sponsor
+     entry changes, update both.
+     PRIOR description (archived Aug 6 2026): "Integrate orthodontics into your
+     practice easily and profitably with orthodontist-led treatment planning and
+     SimplyClear aligners — no orthodontic residency required." */
   {
     title: "orthobrain",
     shortDescription: "Clear Aligners",
     category: "Clinical & Chairside",
-    description: "Integrate orthodontics into your practice easily and profitably with orthodontist-led treatment planning and SimplyClear aligners — no orthodontic residency required.",
+    description: "We transform general dentists into OrthoDentists™ — giving them the support, expert guidance, and proven systems to deliver exceptional orthodontic care.",
+    descriptionHtml: "<p>We transform general dentists into OrthoDentists&trade; &mdash; giving them the support, expert guidance, and proven systems to deliver exceptional orthodontic care.</p><p>orthobrain is a comprehensive support system that helps general dentists successfully integrate orthodontics into their practices. It provides 360&deg; assistance across the entire treatment process, combining technology, expert guidance, operational tools, and best-in-class products.</p><p>The result is confident, orthodontist-led care in which every patient receives personalized attention and a tailored treatment plan.</p><p>Founded in 2016 by Dr. Dan German, orthobrain set out to revolutionize dental care by making elite orthodontic expertise accessible to all. His clinical experience and commitment to education empower dentists to confidently treat a wide range of malocclusions, ensuring exceptional outcomes for their patients.</p><p>Recognized among the nation&rsquo;s most disruptive healthcare and technology companies for redefining orthodontic care delivery.</p>",
     link: "https://partners.orthobrain.com/dentalwisdom",
-    promo: "",
+    promo: "Sign up for a demo and learn about the exclusive pricing available only to Dental Wisdom Group Members.",
     imageUrl: "/images/deals/orthobrain.webp",
-    keywords: "orthodontics aligners Invisalign braces ortho treatment planning clear trays straightening teeth"
+    videoUrl: "https://www.youtube.com/embed/1nvBLwGQPRk",
+    keywords: "orthodontics aligners Invisalign braces ortho treatment planning clear trays straightening teeth OrthoDentists SimplyClear Dan German malocclusion"
   },
   {
     title: "Dental Supplies",

@@ -3,6 +3,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## August 6, 2026
+
+- **orthobrain's Deals page listing now matches their Sponsors page listing.** Their pop-up on the Deals page was showing a short two-line description with no offer and no video, while the Sponsors page showed the full write-up. The Deals pop-up now has the same five-paragraph write-up, the same offer in gold ("Sign up for a demo and learn about the exclusive pricing available only to Dental Wisdom Group Members"), and the same video — so a visitor sees identical information wherever they find orthobrain. The Platinum pill was already showing and is unchanged. The old shorter description was kept as a note in the file rather than deleted.
+
+---
+
 ## August 5, 2026
 
 - **Shortened Dr. Elaine Bylis's session title.** "From Blob to Beautiful: Cosmetic Dentistry Hands-On Workshop" is now just "From Blob to Beautiful: Cosmetic Dentistry" — updated on the agenda, her speaker card and bio pop-up, and her speaker review page.

@@ -34,7 +34,7 @@ window.DEALS_DATA = [
   /* ══════════════ 1. CLINICAL & CHAIRSIDE ══════════════
      Manual order (Ben, July 28 2026 — do NOT auto-sort to tier order):
      orthobrain, Crazy Dental, Emerald, Pearl, MB Precious, Adin,
-     TruAbutment, TheraBreath, AAFE. */
+     TheraBreath, AAFE. (TruAbutment removed Aug 6 2026.) */
   /* orthobrain — Platinum conference sponsor. Write-up, offer and video below
      are kept in sync with its entry in js/sponsors-data.js (Ben, Aug 6 2026):
      description = sponsor `blurb`, descriptionHtml = sponsor `blurbHtml`,
@@ -118,16 +118,9 @@ window.DEALS_DATA = [
     imageUrl: "/images/deals/straumann.webp",
     keywords: "implants dental implants Straumann Group implant system abutments guided surgery bone osseointegration BLX Roxolid SLActive premium implant brand"
   },
-  {
-    title: "TruAbutment",
-    shortDescription: "Custom Abutments",
-    category: "Clinical & Chairside",
-    description: "Irvine, California-based medical device manufacturer specializing in CAD/CAM titanium abutments. TruAbutment mills its abutments 'head-to-toe' on Swiss-type turning CNC machines — among the less than 1% of milling centers that do so without relying on third-party pre-milled interfaces — with tools for guided surgery, photogrammetry, and digital workflows that give technicians and clinicians greater precision and flexibility.",
-    link: "https://truabutment.com",
-    promo: "",
-    imageUrl: "/images/deals/tru-abutment.webp",
-    keywords: "abutment custom abutment titanium CAD CAM milling implant restoration guided surgery photogrammetry digital workflow"
-  },
+  /* TruAbutment removed from the Deals page at Ben's request Aug 6 2026 —
+     archived at the bottom of this file, not deleted. Its sponsor entry in
+     js/sponsors-data.js is untouched. */
   {
     title: "TheraBreath",
     shortDescription: "Oral Care Products",
@@ -570,6 +563,22 @@ window.DEALS_DATA = [
     promo: "Exclusive Deals for Dental Wisdom – Call Rod!",
     imageUrl: "/images/deals/dental-equipment.webp",
     keywords: "chairs units x-ray cone beam CBCT panoramic digital imaging surgical instruments compressors sterilizers autoclaves"
+  }
+  */
+
+  /* TruAbutment — removed from the Deals page at Ben's request Aug 6 2026.
+     Still a conference sponsor (entry remains in js/sponsors-data.js).
+     Restore by uncommenting and placing back in Clinical & Chairside,
+     between Straumann and TheraBreath.
+  ,{
+    title: "TruAbutment",
+    shortDescription: "Custom Abutments",
+    category: "Clinical & Chairside",
+    description: "Irvine, California-based medical device manufacturer specializing in CAD/CAM titanium abutments. TruAbutment mills its abutments 'head-to-toe' on Swiss-type turning CNC machines — among the less than 1% of milling centers that do so without relying on third-party pre-milled interfaces — with tools for guided surgery, photogrammetry, and digital workflows that give technicians and clinicians greater precision and flexibility.",
+    link: "https://truabutment.com",
+    promo: "",
+    imageUrl: "/images/deals/tru-abutment.webp",
+    keywords: "abutment custom abutment titanium CAD CAM milling implant restoration guided surgery photogrammetry digital workflow"
   }
   */
 ];

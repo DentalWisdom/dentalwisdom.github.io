@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 6, 2026
 
+- **Removed TruAbutment from the Deals page.** Their listing (under Clinical & Chairside) no longer appears on the Deals page. They are still listed as a conference sponsor on the Sponsors page, and still credited on Dr. Daniel Greenbaum's speaker card — only the Deals listing was taken down. Nothing was deleted; the listing is saved as a note at the bottom of the deals file so it can be put back at any time.
+
 - **orthobrain's Deals page listing now matches their Sponsors page listing.** Their pop-up on the Deals page was showing a short two-line description with no offer and no video, while the Sponsors page showed the full write-up. The Deals pop-up now has the same five-paragraph write-up, the same offer in gold ("Sign up for a demo and learn about the exclusive pricing available only to Dental Wisdom Group Members"), and the same video — so a visitor sees identical information wherever they find orthobrain. The Platinum pill was already showing and is unchanged. The old shorter description was kept as a note in the file rather than deleted.
 
 ---

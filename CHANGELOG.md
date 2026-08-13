@@ -3,6 +3,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## August 12, 2026
+
+- **New Crazy Dental August flyer is up on both pages.** The "August Crazy Deals!" flyer you dropped in now shows at the bottom of Crazy Dental's pop-up on the Sponsors page and at the bottom of their "Dental Supplies" pop-up on the Deals page — same spot, same size, same sharpness as the July one it replaces. The July flyer wasn't deleted; it's saved in `_archive/superseded-images/deals/crazy-dental-flyer-july-2026.webp` in case you ever need it back. The promo codes shown on the site (WISDOM10 for 10% off a first order, WISDOMSHIP for free shipping) still match the new flyer, so no wording changed. Note: one line on the flyer itself — the date under "Carbon Nitrile Gloves" — has two lines of text printed on top of each other and can't be read; that's how it came from Crazy Dental. Send a corrected version whenever you have one and it'll be swapped in.
+
+---
+
 ## August 6, 2026
 
 - **Removed TruAbutment from the Deals page.** Their listing (under Clinical & Chairside) no longer appears on the Deals page. They are still listed as a conference sponsor on the Sponsors page, and still credited on Dr. Daniel Greenbaum's speaker card — only the Deals listing was taken down. Nothing was deleted; the listing is saved as a note at the bottom of the deals file so it can be put back at any time.

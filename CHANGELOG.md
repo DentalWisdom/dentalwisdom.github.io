@@ -3,6 +3,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## August 14, 2026
+
+- **New deal added: KosherWine.com.** It appears in the "Israel, Kosher & Community" section of the Deals page, at the bottom of that group (they're not a conference sponsor, so no tier pill and they sit after the sponsors). The card reads "KosherWine.com / Kosher Wine Delivered," and the pop-up describes them as the largest kosher wine retailer in the country, online since 1997, with exclusive imports and private labels — plus the 50,000-customers line. No promo code or offer is shown, per your instruction; the "View Deal" button uses your referral link. The logo you dropped in `_Logos for Deals Page - Drop Here` was put on a white background and saved as a small, fast-loading file (about 16 KB) so it doesn't slow the page down. The original PNG was left in the drop folder untouched.
+
+---
+
 ## August 12, 2026
 
 - **New Crazy Dental August flyer is up on both pages.** The "August Crazy Deals!" flyer you dropped in now shows at the bottom of Crazy Dental's pop-up on the Sponsors page and at the bottom of their "Dental Supplies" pop-up on the Deals page — same spot, same size, same sharpness as the July one it replaces. The July flyer wasn't deleted; it's saved in `_archive/superseded-images/deals/crazy-dental-flyer-july-2026.webp` in case you ever need it back. The promo codes shown on the site (WISDOM10 for 10% off a first order, WISDOMSHIP for free shipping) still match the new flyer, so no wording changed. Note: one line on the flyer itself — the date under "Carbon Nitrile Gloves" — has two lines of text printed on top of each other and can't be read; that's how it came from Crazy Dental. Send a corrected version whenever you have one and it'll be swapped in.

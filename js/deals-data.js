@@ -518,6 +518,20 @@ window.DEALS_DATA = [
     imageUrl: "/images/deals/holy-oasis.webp",
     keywords: "olive oil Israel soldiers Purim Mishloach Manot support IDF food gift kosher Holy Land"
   },
+  /* KosherWine.com — added Aug 14 2026. Not a conference sponsor, so it sits in
+     the non-sponsor block of this category. No offer/promo per Ben.
+     Logo: source PNG in "_Logos for Deals Page - Drop Here/KosherWineLogo.png",
+     flattened onto white and saved as images/deals/kosherwine.webp (1200×906, ~16KB). */
+  {
+    title: "KosherWine.com",
+    shortDescription: "Kosher Wine Delivered",
+    category: "Israel, Kosher & Community",
+    description: "The largest kosher wine retailer in the country, online since 1997 — with a line of exclusive imports and private labels you can't buy anywhere else. More than 50,000 customers ordered last year alone.",
+    link: "https://www.kosherwine.com/?rfsn=8731664.f1c7f0",
+    promo: "",
+    imageUrl: "/images/deals/kosherwine.webp",
+    keywords: "kosher wine red white rose Israeli wine Bordeaux cabernet moscato Shabbos kiddush Yom Tov Pesach seder four cups gift basket office gift bottle delivery online wine shop mevushal"
+  },
 
   /* ══════════════ 7. EXTRAS ══════════════ */
   {

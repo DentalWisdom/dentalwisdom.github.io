@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 26, 2026
 
+- **Giveaway prize names changed to singular.** "Yeti Coffee Mugs" is now **Yeti Coffee Mug** and "1 oz Silver Coins" is now **1 oz Silver Coin**, since each winner receives one. This updates all three places the prize name appears — the dropdown you pick from, the prize card on the slide, and the winner pop-up.
+
 - **The giveaway pop-ups now grow with the screen.** On a big monitor or a TV the winner pop-up (and the "Add names" box) looked small and stranded in the middle of the screen, while the slide behind it filled the display. The reason: the slides were being enlarged to fit your screen, but the pop-ups were stuck at one fixed size no matter how big the window was. They now enlarge by exactly the same amount as the slides, so everything inside them — the winner's name, the sponsor logo, the contact line, the buttons — grows in proportion. On the screen you sent, the pop-up is now a bit over twice as wide and tall as before (roughly five times the area). It looks the same as it always did on a laptop; it just no longer shrinks away on a large display, and it re-fits instantly if you resize the window or go fullscreen mid-call.
 
 - **Sponsor contact details added to the giveaway wheel slide (slide 7) and the winner pop-up.** Each giveaway sponsor can now show a website and a phone number, so the prize is a real introduction rather than just a name-check. Live Well Capital shows **LiveWellCapital.com** and **Call Sam at (917) 715-2118**; MB Precious Metals shows **MBPreciousMetals.com** and **Call Adam at (443) 253-4143**.

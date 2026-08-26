@@ -187,6 +187,18 @@ window.DEALS_DATA = [
     keywords: "analytics dashboard KPI production collections scheduling hygiene reappointment patient engagement recall metrics"
   },
   {
+    title: "Alphaeon",
+    shortDescription: "Patient Financing",
+    category: "Grow Your Practice",
+    description: "We say yes more. It's kind of our thing. The provider-first financing platform behind more “yes” moments in the chair — higher approvals, broader credit profiles, and a 24/7 team that supports your dental practice every step of the way.",
+    descriptionHtml: "<p><strong>We say yes more. It&rsquo;s kind of our thing.</strong></p><p>The provider-first financing platform behind more &ldquo;yes&rdquo; moments in the chair. Higher approvals, broader credit profiles, and a 24/7 team that supports your dental practice every step of the way.</p><p>Alphaeon serves dentists and healthcare providers in the self-pay segment, helping patients move forward with the treatment they want through financing that fits their budget.</p><p>Dental Wisdom members receive preferred pricing!</p>",
+    link: "https://www.myalphaeoncredit.com/getstarted-dentalwisdom",
+    promo: "Free to Enroll + 40% off Merchant Fees",
+    imageUrl: "/images/deals/alphaeon.webp",
+    videoUrl: "https://www.youtube.com/embed/mibRV5lTxyM",
+    keywords: "financing patient financing payment plans monthly installments self-pay elective treatment approvals approval rate credit profiles subprime Sunbit CareCredit care credit Cherry CareCredit alternative Sunbit alternative Cherry alternative merchant fees case acceptance treatment affordability third-party lending Alphaeon Credit"
+  },
+  {
     title: "Cherry",
     shortDescription: "Patient Financing",
     category: "Grow Your Practice",

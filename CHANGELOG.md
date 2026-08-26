@@ -3,6 +3,13 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## August 26, 2026
+
+- **New deal added: Alphaeon (patient financing).** It sits in **Grow Your Practice**, directly above Cherry, with the subtitle "Patient Financing." The card headline is *"We say yes more. It's kind of our thing."* and the write-up describes Alphaeon as the provider-first financing platform behind more "yes" moments in the chair — higher approvals, broader credit profiles, and a 24/7 team supporting the practice, serving dentists and healthcare providers in the self-pay segment, with preferred pricing for Dental Wisdom members. The offer shows as two separate lines, **Free to Enroll** and **40% off Merchant Fees**, and the "View Deal" button goes to myalphaeoncredit.com/getstarted-dentalwisdom. The **How Alphaeon Works** video plays inside the card's detail popup. The logo from your drop folder was resized to the standard deals-card size and saved at about 8 KB so it loads instantly. Hidden search terms were added too, so the card comes up for searches like "financing," "payment plans," "self-pay" and "CareCredit."
+  - Note: there is no CareCredit deal on the site, so "before CareCredit" was read as *before Cherry*, the existing patient-financing card. Say the word if it belongs somewhere else.
+
+---
+
 ## August 25, 2026
 
 - **Dental Wisdom Live slides updated for Thursday, August 27.** The title slide now reads "Thursday, August 27 · 8:00 PM EST," and the featured-speaker slide has been rebuilt for this month's session: **AI in Dentistry — Enhancing Patient Communication and Clinical Outcomes**, presented by Dr. Mitchell Rubinstein in partnership with Pearl. The Pearl logo was added to the deck's logo folder (trimmed of its extra white border so it fills the logo card properly, and saved at about half its original file size). The session write-up on that slide is a shortened version of the description from the Live page, and it ends with a bold line noting that attending live earns a CE credit plus a free month of Pearl.

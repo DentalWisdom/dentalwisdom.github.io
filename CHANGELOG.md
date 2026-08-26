@@ -3,6 +3,38 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## August 25, 2026
+
+- **Dental Wisdom Live slides updated for Thursday, August 27.** The title slide now reads "Thursday, August 27 · 8:00 PM EST," and the featured-speaker slide has been rebuilt for this month's session: **AI in Dentistry — Enhancing Patient Communication and Clinical Outcomes**, presented by Dr. Mitchell Rubinstein in partnership with Pearl. The Pearl logo was added to the deck's logo folder (trimmed of its extra white border so it fills the logo card properly, and saved at about half its original file size). The session write-up on that slide is a shortened version of the description from the Live page, and it ends with a bold line noting that attending live earns a CE credit plus a free month of Pearl.
+
+- **Both conference slides (5 and 8) now push the hotel deadline.** A pink "Heads up" bar sits directly under the March 3–6, 2027 / Altair Hotel line on both slides and reads: *"Hotel rates go up next week — book now to lock in current pricing."* The navy promo box below it was changed from **$200 off with code DentalWisdomLive** to **$175 off with code LOCKINHOTELRATE**, and its fine print now reads "at checkout — before hotel rates go up" instead of naming an expiration date.
+
+- **The promo box is now editable in one place.** Previously the "$200" and the code "DentalWisdomLive" were typed directly into both conference slides, so changing them meant editing four separate spots. The savings amount, the code, the fine print and the "Heads up" message all now live in the edit block at the bottom of the slides file, alongside the date and speaker settings — change them once and both slides update. Setting the alert message to empty hides the pink bar entirely.
+
+- **Spacing reworked on the conference slides.** The promo box and "Reserve your seat" block were sitting mid-slide with an empty band beneath them. They're now anchored to the bottom margin, and the air between the tagline, the date line, the pink bar and the stats strip has been evened out so the slide fills the frame.
+
+- **About slide (slide 2) no longer stops two-thirds down.** The text is a little larger and easier to read on a shared screen, the four feature lines have real breathing room, and "Opening by Dr. Lisa Sokol" is pinned to the bottom of its column so the slide reads full top to bottom. Phone view was kept tight — the extra air is desktop only.
+
+- **Giveaway wheel looks intentional before names are loaded.** It used to show a blank pink disc with the words "Add names" hidden behind the Spin button. It now shows a dashed outline with "No names loaded yet / Tap Add names below to fill the wheel," clear of the button. Once you load names it behaves exactly as before.
+
+- **Crazy Dental logo cleaned up.** The logo file had a stray vertical line baked into it, running the full height near the right edge, which showed on the spotlight slide. That's cropped out and the logo now fills its card properly. The untouched original is saved at `liveslides/_archive/original-logos/crazy-dental-original.png`.
+
+- **Slide numbers count themselves now.** The "2 / 9", "3 / 9" labels in the corner of each slide were typed in by hand, so they'd have gone wrong the first time a slide was added or removed. They're generated automatically from here on.
+
+- **The two halves of the promo box now mirror each other.** In the right half, "USE CODE" was jammed against the code while the line beneath it had more room, and the whole block sat high in its cell. The three lines are now evenly spaced, "USE CODE" lines up exactly with "SAVE" across the dashed divider, and the italic line ends level with "OFF" — so both sides measure the same. The code itself got a touch of letter spacing, which makes it easier to read off a screen and type correctly.
+
+- **Slide 8 is now a completely different slide.** It used to be an exact copy of slide 5, which meant the audience read the same words twice. It's now the "what it's actually like" slide: the line from your homepage — *"This is not simply a dental conference — it's a full Shabbos experience, designed for Jewish dental professionals"* — over three photo panels from your own gallery, with the same $175 promo box and Reserve Your Seat block underneath, unchanged. The photos fade to a new image one panel at a time, just under every two seconds, so only one thing ever changes at once. **28 photos are in the rotation**, drawn from your gallery and conference folders, and all three panels pull from the same shuffled pool at random: every photo gets a turn before any of them repeats, no photo is ever in two panels at once, and the order is different every time you open the deck. A full pass takes about 50 seconds. Fourteen gallery photos were left out on purpose — ones shot against a single sponsor's backdrop (so no one vendor gets featured), ones showing another company's branding on screen, and a few weak shots of the backs of people's heads. They're listed by number in a comment right above the photo list; say the word and any of them can come back in. To swap or add photos, that same list is in the edit block at the bottom of the slides file under `photos`. On a phone, only the first panel shows so the slide doesn't turn into a long scroll.
+
+- **The closing slide now names the next session.** It used to read "Thursdays · 8:00 PM EST," which implied weekly when Live is monthly, and it didn't tell anyone what was coming. It now reads "Next session — Dental Exit Planning: Building Your Practice's Endgame Before You Need It, October 15, 2026 · 8:00 PM EST." You don't have to maintain this: the slide reads your website's own session list (`js/live-data.js`) and picks the first upcoming session after tonight, so it updates itself whenever you add a session. If you ever want to override it by hand, there's a `nextSession` line in the edit block.
+
+- **The gold underline on the closing slide now spans the whole web address.** It was a fixed length that stopped partway through, just before "/LIVE," so it looked like it had run out rather than finished.
+
+- **Press 1 through 9 to jump straight to a slide.** If someone asks "what was that code again?" you press 5 and you're there, instead of arrowing backward. The hint line at the bottom of the screen mentions it.
+
+- **A note about the wording:** "next week" only reads correctly during the week before the increase. Once the exact date is known, swap the line for something like "Hotel rates go up September 1st" — there's a reminder to that effect written into the edit block.
+
+---
+
 ## August 14, 2026
 
 - **New deal added: KosherWine.com.** It appears in the "Israel, Kosher & Community" section of the Deals page, at the bottom of that group (they're not a conference sponsor, so no tier pill and they sit after the sponsors). The card reads "KosherWine.com / Kosher Wine Delivered," and the pop-up describes them as the largest kosher wine retailer in the country, online since 1997, with exclusive imports and private labels — plus the 50,000-customers line. No promo code or offer is shown, per your instruction; the "View Deal" button uses your referral link. The logo you dropped in `_Logos for Deals Page - Drop Here` was put on a white background and saved as a small, fast-loading file (about 16 KB) so it doesn't slow the page down. The original PNG was left in the drop folder untouched.

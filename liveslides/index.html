@@ -622,34 +622,7 @@
       </div>
     </section>
 
-    <!-- 4 SPOTLIGHT -->
-    <section class="slide" id="s-spot">
-      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
-      <div class="body anim">
-        <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
-        <div class="sp-hero">
-          <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
-          <div class="spot-content" id="t-spot-content">
-            <p class="spot-head"><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p>
-          </div>
-        </div>
-        <ul class="spot-bullets" id="t-spot-bullets"></ul>
-        <div class="baseline spfoot">
-          <div>
-            <div class="k">Contact</div>
-            <div class="name" id="t-spot-name">Sam Waller</div>
-            <div class="co" id="t-spot-co">Live Well Capital</div>
-          </div>
-          <div class="right">
-            <div class="k" id="t-spot-calllabel">Call</div>
-            <div class="phone" id="t-spot-phone">(917) 715-2188</div>
-            <div class="web" id="t-spot-web">livewealthcapital.com</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5 CONFERENCE -->
+    <!-- 4 CONFERENCE -->
     <section class="slide conf" id="s-conf1">
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">5 / 9</div></div>
       <div class="body anim">
@@ -674,6 +647,33 @@
             <div class="url">DentalWisdom.org</div>
             <div class="n1">Expected to sell out — register today.</div>
             <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 SPOTLIGHT — replaced at load by DECK.spotlightSlides when that list has entries -->
+    <section class="slide" id="s-spot">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
+      <div class="body anim">
+        <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
+        <div class="sp-hero">
+          <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
+          <div class="spot-content" id="t-spot-content">
+            <p class="spot-head"><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p>
+          </div>
+        </div>
+        <ul class="spot-bullets" id="t-spot-bullets"></ul>
+        <div class="baseline spfoot">
+          <div>
+            <div class="k">Contact</div>
+            <div class="name" id="t-spot-name">Sam Waller</div>
+            <div class="co" id="t-spot-co">Live Well Capital</div>
+          </div>
+          <div class="right">
+            <div class="k" id="t-spot-calllabel">Call</div>
+            <div class="phone" id="t-spot-phone">(917) 715-2188</div>
+            <div class="web" id="t-spot-web">livewealthcapital.com</div>
           </div>
         </div>
       </div>
@@ -856,7 +856,7 @@ const DECK = {
   nextSession: null,                                   // slide 9 pulls this from the website automatically.
                                                        // To override: { title:"…", date:"…", time:"8:00 PM EST" }
   opener:      "Dr. Lisa Sokol",                       // slide 2 (rarely changes)
-  dvarSpeaker: "",                                     // slide 3 — leave "" until the speaker is known and both the "Delivered by" label and the name stay hidden
+  dvarSpeaker: "Dr. David (Dovy) Abramowitz",           // slide 3 — leave "" until known and both the "Delivered by" label and the name stay hidden
   conference:  {                                       // slides 5 & 8 — the promo box
     save: "$175",
     code: "DentalWisdomLive",

@@ -5,6 +5,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Dvar Torah speaker filled in: Dr. David (Dovy) Abramowitz.** Slide 3 now reads "Opening — Dvar Torah / Delivered by / Dr. David (Dovy) Abramowitz." Both lines came back on their own once the name was set.
+
+- **The conference slide now comes before the Alphaeon vendor slides.** New running order: title, about, Dvar Torah, **conference**, then the three Alphaeon slides, the featured lecture, the giveaway wheel, the second conference slide and the closing. Still 11 slides, and every page number recounted itself — the numbered slides now read 4/11 for the conference and pick up again at 8/11 after the three full-bleed Alphaeon ones, which carry no topbar by design.
+
 - **Deals panel headline is now "Deals on What Dental Wisdom Members Already Buy"** (was "Deals on What You Already Buy"). Naming the members makes the panel say who the pricing is for, while keeping the "already buy" point that gives a dentist a reason to look. "Already Buy" stays in gold italic. Fits on one line at full size.
 
 - **Conference fine print changed to "Use at checkout when registering"** (was "at checkout — before hotel rates go up"). It updates in all three places at once: the countdown billboard and both conference slides.

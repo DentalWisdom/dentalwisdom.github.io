@@ -5,6 +5,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Crown Catapult credited on the closing slide.** "CE PROVIDED BY" in small gold caps with their logo on a white card, top-right of the final slide — clear of the "See You Next Time!" headline and the next-session block, and it reflows below the text on a phone.
+  - The logo sits on a white card because the mark is dark navy on white and that slide is navy; that's the same treatment sponsor logos already get elsewhere in the deck.
+  - The source file needed cleaning first: it had a **1px black line along its bottom edge**, which would have shown as a hairline under the logo — and it was also anchoring the automatic whitespace crop, so the surrounding white margin couldn't be trimmed. Removed the line, then trimmed to the artwork, so the logo now fills its card properly.
+
 - **The billboard's rules are now written into `CLAUDE.md`,** so they don't have to be explained again next month. Recorded there: that a vendor-spotlight sponsor is never also listed as a giveaway sponsor on the billboard (one panel, headed "Tonight's Vendor Spotlight") and that the de-duplication works by matching the sponsor's **name**, so the spelling must be identical in both places; that the timer is set by a fixed 2:00 total with the panels dividing what's left, rather than a per-panel length; where the "what this sponsor does" lines live; the two traps in the panel build-in that caused today's bugs; and that audio files stay off the website. The `prizePlural` field is documented too — singular on the slide and winner pop-up, plural on the billboard.
 
 - **Alphaeon added as a third giveaway.** The dropdown on the giveaway slide now reads Live Well Capital — Yeti Coffee Mug, MB Precious Metals — 1 oz Silver Coin, and **Alphaeon — Yeti Coffee Mug**. Their card shows the logo and myalphaeoncredit.com/getstarted-dentalwisdom; they have no named contact on file, so that line is simply left off and the card sits slightly shorter. The winner pop-up picks all of it up automatically.

@@ -3,6 +3,15 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## August 27, 2026
+
+- **Slide 4 is now three Alphaeon slides instead of the built-in Vendor Spotlight.** You dropped three finished Alphaeon slides in the "To add to Dentl Wisdom Live Slides" folder, and they now run as slides 4, 5 and 6 in this order: the title slide ("Helping Doctors Help More Patients"), then the benefits slide ("Higher Approvals. Better Offers. 24/7 Support."), then the rate tables ("The Modern Growth Partner for Dentists"). Say the word if you want them in a different order — it's a one-line change. The deck is now 11 slides and every page number re-counted itself automatically.
+  - Each one is inserted as a full-screen image at the deck's existing size, edge to edge, with no borders or cropping — nothing about the slide dimensions changed. They were converted to WebP and are 58–90 KB each, so they load instantly.
+  - **One thing worth knowing:** the files you supplied are 960×540, which is half of full HD. They've been enlarged as cleanly as possible, but no process can invent detail that isn't in the original, so the small print in the rate tables will look slightly soft on a large monitor. If you can re-export those three from the original Alphaeon deck at 1920×1080 or larger, drop them in the same folder and they'll swap straight in — same file names, no other changes needed.
+  - The old Crazy Dental spotlight has **not** been thrown away. Its details are saved in `liveslides/_archive/spotlight-lecture-giveaway-history.md`, and the layout itself is still in the deck, just dormant. If a future month goes back to a single built-in spotlight slide, emptying the new `spotlightSlides` list brings it back exactly as it was.
+
+- **"Delivered by Chaim Glazer" removed from the Dvar Torah slide (slide 3).** The slide now reads just "Opening — Dvar Torah" until you know who's speaking. Both the name *and* the "Delivered by" label above it disappear together, so there's no orphaned label sitting over an empty space. When you have the speaker, put the name back in `dvarSpeaker` and both lines return on their own.
+
 ## August 26, 2026
 
 - **Giveaway prize names changed to singular.** "Yeti Coffee Mugs" is now **Yeti Coffee Mug** and "1 oz Silver Coins" is now **1 oz Silver Coin**, since each winner receives one. This updates all three places the prize name appears — the dropdown you pick from, the prize card on the slide, and the winner pop-up.

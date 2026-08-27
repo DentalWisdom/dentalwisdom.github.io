@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Alphaeon added as a third giveaway.** The dropdown on the giveaway slide now reads Live Well Capital — Yeti Coffee Mug, MB Precious Metals — 1 oz Silver Coin, and **Alphaeon — Yeti Coffee Mug**. Their card shows the logo and myalphaeoncredit.com/getstarted-dentalwisdom; they have no named contact on file, so that line is simply left off and the card sits slightly shorter. The winner pop-up picks all of it up automatically.
+  - **One knock-on handled:** the countdown billboard builds its sponsor panels from this same giveaway list, so adding Alphaeon there would have given them two panels — one as a giveaway sponsor and another as the Vendor Spotlight. The billboard now skips any giveaway sponsor who is already the spotlight, so Alphaeon appears once, on their spotlight panel, and the billboard stays at seven panels and a clean 2:00. If a future month's spotlight vendor isn't also a giveaway sponsor, nothing changes.
+
 - **Removed the heavy pink rule down the left edge of the "Heads up" box** on the conference slide. It was a 5px dark pink bar — the stock "callout box" look that turns up in every template — and it sat oddly against the rest of the deck, which uses thin hairlines and quiet colour everywhere else. The box now has the same 1px border on all four sides, so it reads as part of the design rather than a widget dropped into it. Same pale pink fill and "HEADS UP" pill, just calmer.
 
 - **Dvar Torah speaker filled in: Dr. David Abramowitz.** Slide 3 now reads "Opening — Dvar Torah / Delivered by / Dr. David Abramowitz." Both lines came back on their own once the name was set.

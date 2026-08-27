@@ -1003,7 +1003,10 @@ const DECK = {
       website: "LiveWellCapital.com",  contact: "Sam",  phone: "(917) 715-2118" },
     { sponsor: "MB Precious Metals", prize: "1 oz Silver Coin",  prizePlural: "1 oz Silver Coins",
       logo: "logos/mb-precious-metals.png",
-      website: "MBPreciousMetals.com", contact: "Adam", phone: "(443) 253-4143" }
+      website: "MBPreciousMetals.com", contact: "Adam", phone: "(443) 253-4143" },
+    { sponsor: "Alphaeon",           prize: "Yeti Coffee Mug",   prizePlural: "Yeti Coffee Mugs",
+      logo: "logos/alphaeon.webp",
+      website: "myalphaeoncredit.com/getstarted-dentalwisdom" }
   ]
 };
 /* ============================================================
@@ -1170,7 +1173,11 @@ function wrSponsors(){
                                      note:'Tonight’s CE partner' }] : [];
   }
   var ok=function(x){ return x && x.logo; };
-  return { lead:lead.filter(ok), sub:sub.filter(ok) };
+  // A sponsor can be both a giveaway sponsor and the vendor spotlight (Alphaeon is
+  // both this month). Show them once, on their spotlight panel, rather than twice.
+  var spotName=(w.spotlight&&w.spotlight.name||'').toLowerCase();
+  var notSpot=function(x){ return (x.name||'').toLowerCase()!==spotName; };
+  return { lead:lead.filter(ok).filter(notSpot), sub:sub.filter(ok) };
 }
 
 // The conference date line is read off slide 5 rather than retyped, so the two

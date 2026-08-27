@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Fixed two things in the panel build-in.** The first panel (Live Well Capital) was appearing fully formed while every later panel built in properly — the panels were created and the first one revealed in the same instant, so the browser never drew their hidden starting state and had nothing to animate from. And on the sponsor panels the **phone number was appearing first**, before the logo, because those panels have eight rows and only seven had been given a delay — the eighth had none, so it went first. Both fixed: the reveal now runs strictly top to bottom, ending on the phone number.
+- **The build is also slower now** — about 3.2 seconds instead of 2, with a longer fade on each row. It was reading as a flicker rather than an unfold.
+
 - **Each sponsor panel now says what the sponsor actually does.** The panels showed *who* — a logo, a name, a phone number — but not *what*, and "Live Well Capital" next to a logo doesn't tell a dentist whether that number is worth writing down. A plain-English line now sits under each sponsor's name, above the offer and contact details, because it's context you need before a phone number means anything:
   - **Live Well Capital** — "Financial planning and wealth management / For dentists and small business owners"
   - **MB Precious Metals** — "**Don't throw out old crowns, bridges or restorations** / They hold gold, silver, platinum and palladium — MB assays on-site and pays top value"
@@ -12,7 +15,7 @@ A plain-English record of every update made to the site, most recent first. This
   - **Pearl** — "**AI that reads the x-ray, charts the perio and writes the note** / Real-time pathology detection, periodontal charting, AI-generated clinical notes and insurance verification"
   - All four live together in one `about` list at the top of the file, keyed by sponsor name, so the wording is easy to change and a sponsor left off the list simply doesn't get a line.
 
-- **The panels now build instead of appearing all at once.** Over roughly the first two seconds each panel fades in from the top down — logo, name, what they do, then the contact details — which walks the eye in the right order and uses the opening beat of a fifteen-second panel. After that everything holds completely still, which is what you want while someone is copying down a phone number.
+- **The panels now build instead of appearing all at once.** Over roughly the first three seconds each panel fades in from the top down — logo, name, what they do, then the contact details — which walks the eye in the right order and uses the opening beat of a fifteen-second panel. After that everything holds completely still, which is what you want while someone is copying down a phone number.
 
 - **Conference promo code changed back to `DentalWisdomLive`** (from `LOCKINHOTELRATE`). It updates in all three places at once — both conference slides and the countdown billboard — because they all read the same value. It renders with its capital letters intact, so it stays readable on screen rather than becoming one long block of capitals.
   - The amount stays at **$175**. This was worth checking, because `DentalWisdomLive` was the code on the deck until August 25 — when it was swapped for `LOCKINHOTELRATE` *and* the amount changed from $200 to $175 at the same time, so the old code could have carried the old value. Ben confirmed on August 27 that he updated the booking system and **$175 with `DentalWisdomLive` is correct and live**.

@@ -121,16 +121,21 @@
   /* Each panel unfolds over its first ~2s instead of landing all at once: the eye is
      walked from logo to name to what-they-do to the phone number, then everything holds
      completely still so it's easy to copy down. */
-  .wr-pane > *{opacity:0;transform:translateY(10px);}
+  .wr-pane > *{opacity:0;transform:translateY(14px);}
   .wr-pane.on > *{opacity:1;transform:none;
-                  transition:opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1);}
-  .wr-pane.on > *:nth-child(1){transition-delay:.05s;}
-  .wr-pane.on > *:nth-child(2){transition-delay:.30s;}
-  .wr-pane.on > *:nth-child(3){transition-delay:.60s;}
-  .wr-pane.on > *:nth-child(4){transition-delay:.90s;}
-  .wr-pane.on > *:nth-child(5){transition-delay:1.15s;}
-  .wr-pane.on > *:nth-child(6){transition-delay:1.40s;}
-  .wr-pane.on > *:nth-child(7){transition-delay:1.60s;}
+                  transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1);}
+  .wr-pane.on > *:nth-child(1){transition-delay:.20s;}
+  .wr-pane.on > *:nth-child(2){transition-delay:.70s;}
+  .wr-pane.on > *:nth-child(3){transition-delay:1.20s;}
+  .wr-pane.on > *:nth-child(4){transition-delay:1.65s;}
+  .wr-pane.on > *:nth-child(5){transition-delay:2.05s;}
+  .wr-pane.on > *:nth-child(6){transition-delay:2.40s;}
+  .wr-pane.on > *:nth-child(7){transition-delay:2.70s;}
+  /* sponsor panels run to 8 rows (eyebrow, logo, name, what, detail, prize, web, phone)
+     — anything without its own delay would animate first, so cover a few spare rows */
+  .wr-pane.on > *:nth-child(8){transition-delay:2.95s;}
+  .wr-pane.on > *:nth-child(9){transition-delay:3.15s;}
+  .wr-pane.on > *:nth-child(10){transition-delay:3.35s;}
   .wr-pane .eye{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
   .wr-pane .hd{font-family:var(--font-head);font-weight:700;font-size:46px;line-height:1.1;
                margin-top:12px;text-align:center;}
@@ -1300,6 +1305,11 @@ function wrOpen(){
       }
     }
   }
+  // The panels are created and the first one revealed in the same tick, so the browser
+  // never painted their hidden starting state — which meant panel 1 (Live Well Capital)
+  // simply appeared while every later panel built in properly. Reading offsetHeight
+  // forces that starting state to be flushed first, so the transition actually runs.
+  void document.getElementById('wr-panes').offsetHeight;
   paint();
   if(wrTimer) clearInterval(wrTimer);
   wrTimer=setInterval(function(){

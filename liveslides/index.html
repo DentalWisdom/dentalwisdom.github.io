@@ -219,13 +219,6 @@
   .wr-bar{height:100%;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));
           transition:width 1s linear;}
   #waitroom.warn .wr-bar{background:linear-gradient(90deg,var(--pink-dark),var(--pink));}
-  .wr-mute{position:absolute;left:88px;bottom:32px;z-index:3;width:38px;height:38px;
-           border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);
-           color:rgba(255,255,255,.6);border-radius:50%;font-size:15px;cursor:pointer;
-           transition:.2s;display:none;}
-  .wr-mute.shown{display:block;}
-  .wr-mute:hover{color:var(--gold-bright);border-color:rgba(203,162,76,.45);}
-  .wr-mute.off{color:rgba(255,255,255,.28);text-decoration:line-through;}
   .wr-skip{position:absolute;right:88px;bottom:34px;z-index:3;border:none;background:none;
            color:rgba(255,255,255,.45);font-family:var(--font-body);font-size:12.5px;font-weight:600;
            letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.2s;}
@@ -800,7 +793,6 @@
       </div>
       <div class="wr-dots" id="wr-dots"></div>
       <div class="wr-prog"><div class="wr-bar" id="wr-bar"></div></div>
-      <button class="wr-mute" id="wrMute" title="Mute music" aria-label="Mute music">♪</button>
       <button class="wr-skip" id="wrSkip">Start now &rarr;</button>
       <audio id="wrAudio" loop preload="auto"></audio>
     </div>
@@ -1358,16 +1350,13 @@ var wrFade=null;
 function wrAudioEl(){ return document.getElementById('wrAudio'); }
 
 function wrMusicStart(){
-  var w=DECK.waitingRoom||{}, a=wrAudioEl(), btn=document.getElementById('wrMute');
-  if(!a) return;
-  if(!w.music){ if(btn) btn.classList.remove('shown'); return; }
+  var w=DECK.waitingRoom||{}, a=wrAudioEl();
+  if(!a || !w.music) return;
   var target=(typeof w.musicVolume==='number')?w.musicVolume:0.35;
   a.src=imgPath(w.music);
-  a.muted=false; a.volume=0;
-  a._target=target;
+  a.volume=0;
   var play=a.play();
   if(play && play.catch) play.catch(function(){ /* blocked or missing — stay silent */ });
-  if(btn){ btn.classList.add('shown'); btn.classList.remove('off'); btn.textContent='♪'; }
   wrFadeTo(target,2000);
 }
 function wrFadeTo(to,ms){
@@ -1385,15 +1374,7 @@ function wrMusicStop(){
   var a=wrAudioEl(); if(!a) return;
   if(wrFade){ clearInterval(wrFade); wrFade=null; }
   try{ a.pause(); a.currentTime=0; }catch(e){}
-  var btn=document.getElementById('wrMute'); if(btn) btn.classList.remove('shown');
 }
-document.getElementById('wrMute').addEventListener('click',function(){
-  var a=wrAudioEl(); if(!a) return;
-  a.muted=!a.muted;
-  this.classList.toggle('off',a.muted);
-  this.title=a.muted?'Unmute music':'Mute music';
-});
-
 function wrFmt(s){ var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
 
 function wrClose(){

@@ -14,6 +14,7 @@ test_write_check.tmp
 WEBSITE_REVIEW_*.md
 
 # Audio: keep full-size original drops local, publish only the web-sized copy
+# Nothing in here is published: music files stay on Ben's Mac only, so the deck can
+# play them locally without the site distributing a track we may not have rights to.
 liveslides/audio/*
-!liveslides/audio/waiting-room.mp3
 !liveslides/audio/README.txt

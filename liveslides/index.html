@@ -905,11 +905,20 @@ const DECK = {
   // line and the lecture partner underneath — so it stays right on its own each month.
   // To override: primary: [{ name:"…", logo:"logos/….png" }], same shape for secondary.
   waitingRoom: {
-    secondsPerPanel: 18,     // each panel's turn on screen
-    finaleSeconds:   12,     // then the big "getting started in 10, 9, 8…" countdown.
-                             // It counts from 10, so the 10 simply holds a few beats —
-                             // that's what makes 6 x 18 + 12 land on a clean 2:00.
-    countFrom:       10,     // biggest number the finale shows
+    totalSeconds:  120,      // the whole thing, Start button to "Let's begin".
+                             // The panels split whatever is left after the finale, so
+                             // adding or removing one changes each panel's turn, NOT the
+                             // total — it always lands on a clean 2:00.
+    finaleSeconds: 12,       // the big "getting started in 10, 9, 8…" countdown at the end
+    countFrom:     10,       // biggest number the finale shows; it holds there for the slack
+
+    // Tonight's featured sponsor — the one whose own slides are in the deck.
+    // Set to null when nobody has the spotlight that month.
+    spotlight: { name:    "Alphaeon",
+                 logo:    "logos/alphaeon.webp",
+                 line:    "Free to Enroll + 40% off Merchant Fees",
+                 website: "myalphaeoncredit.com/getstarted-dentalwisdom" },
+
     primary:   null,
     secondary: null
   },
@@ -1107,6 +1116,7 @@ function wrConfLine(){
 function wrSponsorPane(x,eyebrow){
   var bits='';
   if(x.prize)   bits+='<div class="wr-line"><span class="k">Giving away tonight</span> '+x.prize+'</div>';
+  if(x.line)    bits+='<div class="wr-line">'+x.line+'</div>';
   if(x.website) bits+='<div class="wr-web">'+x.website+'</div>';
   if(x.phone)   bits+='<div class="wr-call">'+(x.contact?'Call '+x.contact+' at ':'Call ')+x.phone+'</div>';
   return '<div class="wr-pane wr-pane--sponsor">'+
@@ -1119,8 +1129,12 @@ function wrSponsorPane(x,eyebrow){
 function wrBuild(){
   var sp=wrSponsors(), c=DECK.conference||{}, panes=[];
 
-  // 1..n — each giveaway sponsor gets its own screen
+  // each giveaway sponsor gets its own screen
   sp.lead.forEach(function(x){ panes.push(wrSponsorPane(x,'Tonight’s giveaway sponsor')); });
+
+  // then tonight's featured sponsor, if there is one
+  var spot=(DECK.waitingRoom||{}).spotlight;
+  if(spot && spot.logo) panes.push(wrSponsorPane(spot,'Tonight’s featured sponsor'));
 
   // the conference, in between
   panes.push('<div class="wr-pane"><div class="eye">Save the Date</div>'+
@@ -1186,12 +1200,12 @@ function wrShowPane(i){
 }
 
 function wrOpen(){
-  // Build first, then size the countdown to the panels: secondsPerPanel each, so
-  // every panel gets its full turn and the clock lands exactly as the last one ends.
+  // Build first, then divide the available time by however many panels there are,
+  // so adding or removing one changes each panel's turn rather than the total.
   var n=wrBuild(), box=document.getElementById('waitroom');
   var wcfg=DECK.waitingRoom||{};
-  var per=wcfg.secondsPerPanel||18, fin=wcfg.finaleSeconds||12, cfrom=wcfg.countFrom||10;
-  var panelTime=n*per, total=panelTime+fin;
+  var total=wcfg.totalSeconds||120, fin=wcfg.finaleSeconds||12, cfrom=wcfg.countFrom||10;
+  var panelTime=Math.max(0,total-fin), per=panelTime/n;
   wrPane=-1;
   box.classList.remove('warn','finale','go');
   box.classList.add('show');
@@ -1208,17 +1222,21 @@ function wrOpen(){
       // still cycling the panels
       box.classList.remove('finale');
       box.classList.toggle('warn',left<=fin+5);
-      wrShowPane(Math.min(n-1,Math.floor((panelTime-(left-fin))/per)));
+      var idx=Math.floor((panelTime-(left-fin))/per);
+      if(!isFinite(idx)||idx<0) idx=0;
+      wrShowPane(Math.min(n-1,idx));
     } else {
       // last stretch: everything gives way to one big number
       box.classList.add('finale','warn');
       wrShowPane(-1);
       // never show a number bigger than countFrom — any slack is absorbed by
       // holding that first number, so the pop only fires when it actually changes
-      var el=document.getElementById('wr-fnum'), n=Math.min(cfrom,left);
-      if(n!==lastNum){
-        lastNum=n;
-        el.textContent=n;
+      // NB: must NOT be called `n` — that would shadow the panel count above and
+      // make the panel index NaN, which silently blanks every panel.
+      var el=document.getElementById('wr-fnum'), bigNum=Math.min(cfrom,left);
+      if(bigNum!==lastNum){
+        lastNum=bigNum;
+        el.textContent=bigNum;
         el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick');
       }
     }
@@ -1259,9 +1277,9 @@ document.getElementById('wrSkip').addEventListener('click',wrClose);
 // label the button with whatever length is configured
 // label the button with the real length, whatever the panel count works out to
 (function(){
-  var w=DECK.waitingRoom||{}, per=w.secondsPerPanel||18, fin=w.finaleSeconds||12;
-  var probe=wrBuild();
-  document.getElementById('wrStart').textContent='Start '+wrFmt(probe*per+fin);
+  var w=DECK.waitingRoom||{};
+  wrBuild();
+  document.getElementById('wrStart').textContent='Start '+wrFmt(w.totalSeconds||120);
 })();
 
 // ---- navigation (crossfade) ----

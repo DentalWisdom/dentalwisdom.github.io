@@ -5,6 +5,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Fixed: the countdown billboard was showing a blank screen.** The version pushed a few minutes ago ran the clock, the dots and the progress bar correctly but never displayed any of the six panels — just empty navy. Cause was a one-word naming clash: the big end-of-countdown number was stored in a variable called `n`, the same name already used for the panel count, so the code that works out "which panel should be on screen right now" was reading the wrong value and matching nothing. Renamed, and the panel index is now also guarded so a bad number can't blank the screen again. Verified by watching a real timed run rather than stepping the panels by hand — which is how the bug slipped through the first time.
+
+- **Alphaeon added to the billboard, which is now seven panels.** Order: Live Well Capital → MB Precious Metals → **Alphaeon** → Conference → Pearl → Deals → next Live session. Alphaeon's panel shows their logo, "Free to Enroll + 40% off Merchant Fees" and myalphaeoncredit.com/getstarted-dentalwisdom, taken from their deals-page entry.
+  - **The billboard is now pinned to a fixed 2:00 total** rather than a fixed time per panel. The panels divide up whatever is left after the closing countdown, so each of the seven now gets about 15.4 seconds — and adding or removing a sponsor next month changes each panel's turn instead of changing the length. It will always land on a clean 2:00.
+  - Tonight's featured sponsor lives in `waitingRoom.spotlight` at the top of the file. Set it to `null` in a month when nobody has the spotlight and the billboard simply drops back to six panels, still 2:00.
+
 - **New: a "we'll start in a couple of minutes" billboard on the title slide.** There's now a small gold **Start 2:00** button in the bottom-right of the title slide. Click it when attendance is light and you want to give people a few minutes to join — instead of a bare clock, those two minutes go to work. Six full-screen panels take 18 seconds each, in this order:
   1. **Live Well Capital** — logo, "Giving away tonight: Yeti Coffee Mugs", LiveWellCapital.com, Call Sam at (917) 715-2118
   2. **MB Precious Metals** — same treatment, 1 oz Silver Coins, Call Adam at (443) 253-4143

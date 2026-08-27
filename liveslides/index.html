@@ -917,7 +917,8 @@ const DECK = {
     spotlight: { name:    "Alphaeon",
                  logo:    "logos/alphaeon.webp",
                  line:    "Free to Enroll + 40% off Merchant Fees",
-                 website: "myalphaeoncredit.com/getstarted-dentalwisdom" },
+                 website: "myalphaeoncredit.com/getstarted-dentalwisdom",
+                 eyebrow: "Tonight’s Vendor Spotlight" },   // the line above the logo
 
     primary:   null,
     secondary: null
@@ -1134,7 +1135,7 @@ function wrBuild(){
 
   // then tonight's featured sponsor, if there is one
   var spot=(DECK.waitingRoom||{}).spotlight;
-  if(spot && spot.logo) panes.push(wrSponsorPane(spot,'Tonight’s featured sponsor'));
+  if(spot && spot.logo) panes.push(wrSponsorPane(spot,spot.eyebrow||'Tonight’s Vendor Spotlight'));
 
   // the conference, in between
   panes.push('<div class="wr-pane"><div class="eye">Save the Date</div>'+

@@ -6,10 +6,10 @@ A plain-English record of every update made to the site, most recent first. This
 ## August 27, 2026
 
 - **Each sponsor panel now says what the sponsor actually does.** The panels showed *who* — a logo, a name, a phone number — but not *what*, and "Live Well Capital" next to a logo doesn't tell a dentist whether that number is worth writing down. A plain-English line now sits under each sponsor's name, above the offer and contact details, because it's context you need before a phone number means anything:
-  - **Live Well Capital** — "Financial planning and wealth management / For dentists, practice owners and their families"
+  - **Live Well Capital** — "Financial planning and wealth management / For dentists and small business owners"
   - **MB Precious Metals** — "**Don't throw out old crowns, bridges or restorations** / They hold gold, silver, platinum and palladium — MB assays on-site and pays top value"
   - **Alphaeon** — "Patient financing that says yes more often / Higher approvals, broader credit profiles, 24/7 provider support"
-  - **Pearl** — "Dental AI / Real-time pathology detection, practice analytics and insurance verification"
+  - **Pearl** — "**AI that reads the x-ray and writes the note** / Real-time pathology detection, AI-generated clinical notes, practice analytics and insurance verification"
   - All four live together in one `about` list at the top of the file, keyed by sponsor name, so the wording is easy to change and a sponsor left off the list simply doesn't get a line.
 
 - **The panels now build instead of appearing all at once.** Over roughly the first two seconds each panel fades in from the top down — logo, name, what they do, then the contact details — which walks the eye in the right order and uses the opening beat of a fifteen-second panel. After that everything holds completely still, which is what you want while someone is copying down a phone number.

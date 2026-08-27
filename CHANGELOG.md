@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Removed the heavy pink rule down the left edge of the "Heads up" box** on the conference slide. It was a 5px dark pink bar — the stock "callout box" look that turns up in every template — and it sat oddly against the rest of the deck, which uses thin hairlines and quiet colour everywhere else. The box now has the same 1px border on all four sides, so it reads as part of the design rather than a widget dropped into it. Same pale pink fill and "HEADS UP" pill, just calmer.
+
 - **Dvar Torah speaker filled in: Dr. David (Dovy) Abramowitz.** Slide 3 now reads "Opening — Dvar Torah / Delivered by / Dr. David (Dovy) Abramowitz." Both lines came back on their own once the name was set.
 
 - **The conference slide now comes before the Alphaeon vendor slides.** New running order: title, about, Dvar Torah, **conference**, then the three Alphaeon slides, the featured lecture, the giveaway wheel, the second conference slide and the closing. Still 11 slides, and every page number recounted itself — the numbered slides now read 4/11 for the conference and pick up again at 8/11 after the three full-bleed Alphaeon ones, which carry no topbar by design.

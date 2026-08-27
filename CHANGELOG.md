@@ -5,6 +5,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **The countdown billboard can now play its own background music** — no second app, no separate player. Everything is wired; it just needs a file.
+  - **To turn it on:** drop an `.mp3` (or `.m4a`) into the new `liveslides/audio/` folder, then set `music: "audio/your-file.mp3"` in the `waitingRoom` block at the top of `liveslides/index.html`. There's a `README.txt` in that folder with the same instructions. Leave `music: ""` and everything stays silent, exactly as it is now.
+  - It starts when you click Start, **fades up over 2 seconds**, sits at background level (adjustable via `musicVolume`), and **fades out across the closing countdown** so it isn't competing with "Let's begin." It loops, so the track doesn't need to be exactly two minutes. A small note icon appears bottom-left while it plays — click to mute mid-run.
+  - **The one thing to remember:** on Zoom or Teams, browser sound does **not** reach attendees unless you tick **"Share sound"** when you start the screen share. Without that, you'll hear it and nobody else will. Worth a dry run before using it live.
+  - If the file is missing or the browser blocks it, the music is simply skipped — the timer itself is never interrupted.
+
 - **Fixed two things in the panel build-in.** The first panel (Live Well Capital) was appearing fully formed while every later panel built in properly — the panels were created and the first one revealed in the same instant, so the browser never drew their hidden starting state and had nothing to animate from. And on the sponsor panels the **phone number was appearing first**, before the logo, because those panels have eight rows and only seven had been given a delay — the eighth had none, so it went first. Both fixed: the reveal now runs strictly top to bottom, ending on the phone number.
 - **The build is also slower now** — about 3.2 seconds instead of 2, with a longer fade on each row. It was reading as a flicker rather than an unfold.
 

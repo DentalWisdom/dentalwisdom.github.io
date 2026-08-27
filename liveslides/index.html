@@ -219,6 +219,13 @@
   .wr-bar{height:100%;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));
           transition:width 1s linear;}
   #waitroom.warn .wr-bar{background:linear-gradient(90deg,var(--pink-dark),var(--pink));}
+  .wr-mute{position:absolute;left:88px;bottom:32px;z-index:3;width:38px;height:38px;
+           border:1px solid rgba(255,255,255,.2);background:rgba(255,255,255,.07);
+           color:rgba(255,255,255,.6);border-radius:50%;font-size:15px;cursor:pointer;
+           transition:.2s;display:none;}
+  .wr-mute.shown{display:block;}
+  .wr-mute:hover{color:var(--gold-bright);border-color:rgba(203,162,76,.45);}
+  .wr-mute.off{color:rgba(255,255,255,.28);text-decoration:line-through;}
   .wr-skip{position:absolute;right:88px;bottom:34px;z-index:3;border:none;background:none;
            color:rgba(255,255,255,.45);font-family:var(--font-body);font-size:12.5px;font-weight:600;
            letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.2s;}
@@ -793,7 +800,9 @@
       </div>
       <div class="wr-dots" id="wr-dots"></div>
       <div class="wr-prog"><div class="wr-bar" id="wr-bar"></div></div>
+      <button class="wr-mute" id="wrMute" title="Mute music" aria-label="Mute music">♪</button>
       <button class="wr-skip" id="wrSkip">Start now &rarr;</button>
+      <audio id="wrAudio" loop preload="auto"></audio>
     </div>
   
   </div>
@@ -952,6 +961,15 @@ const DECK = {
                  line:    "Free to Enroll + 40% off Merchant Fees",
                  website: "myalphaeoncredit.com/getstarted-dentalwisdom",
                  eyebrow: "Tonight’s Vendor Spotlight" },   // the line above the logo
+
+    // Background music while the billboard runs. Drop an .mp3 (or .m4a) into
+    // liveslides/audio/ and put its file name here. Leave music:"" for silence.
+    // It fades in over 2s, sits quietly under your voice, and fades out during the
+    // final countdown so it isn't competing with "Let's begin".
+    // NOTE: on a Zoom/Teams screen share, browser sound only reaches attendees if you
+    // tick "Share sound" when you start sharing — otherwise only you hear it.
+    music:       "",          // e.g. "audio/waiting-room.mp3"
+    musicVolume: 0.35,        // 0 to 1. 0.35 is background level, easy to talk over
 
     // A plain-English line under each sponsor's name, so a dentist knows what they
     // DO before deciding whether the phone number is worth writing down. Keyed by the
@@ -1274,6 +1292,7 @@ function wrOpen(){
   var panelTime=Math.max(0,total-fin), per=panelTime/n;
   wrPane=-1;
   box.classList.remove('warn','finale','go');
+  box._faded=false;
   box.classList.add('show');
   document.body.classList.add('wr-on');
   box.setAttribute('aria-hidden','false');
@@ -1294,6 +1313,7 @@ function wrOpen(){
     } else {
       // last stretch: everything gives way to one big number
       box.classList.add('finale','warn');
+      if(!box._faded){ box._faded=true; wrFadeTo(0,Math.max(1000,fin*1000-600)); }
       wrShowPane(-1);
       // NB: must NOT be called `n` — that would shadow the panel count above and
       // make the panel index NaN, which silently blanks every panel.
@@ -1309,6 +1329,7 @@ function wrOpen(){
   // never painted their hidden starting state — which meant panel 1 (Live Well Capital)
   // simply appeared while every later panel built in properly. Reading offsetHeight
   // forces that starting state to be flushed first, so the transition actually runs.
+  wrMusicStart();
   void document.getElementById('wr-panes').offsetHeight;
   paint();
   if(wrTimer) clearInterval(wrTimer);
@@ -1329,10 +1350,55 @@ function wrOpen(){
   },1000);
 }
 
+// ---- billboard music ----
+// Starts on the Start click (which is a real user gesture, so browsers allow it),
+// fades up, then fades away during the closing countdown. Silent and harmless if no
+// file is configured, and a failure to load never interrupts the timer.
+var wrFade=null;
+function wrAudioEl(){ return document.getElementById('wrAudio'); }
+
+function wrMusicStart(){
+  var w=DECK.waitingRoom||{}, a=wrAudioEl(), btn=document.getElementById('wrMute');
+  if(!a) return;
+  if(!w.music){ if(btn) btn.classList.remove('shown'); return; }
+  var target=(typeof w.musicVolume==='number')?w.musicVolume:0.35;
+  a.src=imgPath(w.music);
+  a.muted=false; a.volume=0;
+  a._target=target;
+  var play=a.play();
+  if(play && play.catch) play.catch(function(){ /* blocked or missing — stay silent */ });
+  if(btn){ btn.classList.add('shown'); btn.classList.remove('off'); btn.textContent='♪'; }
+  wrFadeTo(target,2000);
+}
+function wrFadeTo(to,ms){
+  var a=wrAudioEl(); if(!a) return;
+  if(wrFade) clearInterval(wrFade);
+  var from=a.volume, steps=Math.max(1,Math.round(ms/60)), i=0;
+  wrFade=setInterval(function(){
+    i++;
+    var v=from+(to-from)*(i/steps);
+    a.volume=Math.min(1,Math.max(0,v));
+    if(i>=steps){ clearInterval(wrFade); wrFade=null; }
+  },60);
+}
+function wrMusicStop(){
+  var a=wrAudioEl(); if(!a) return;
+  if(wrFade){ clearInterval(wrFade); wrFade=null; }
+  try{ a.pause(); a.currentTime=0; }catch(e){}
+  var btn=document.getElementById('wrMute'); if(btn) btn.classList.remove('shown');
+}
+document.getElementById('wrMute').addEventListener('click',function(){
+  var a=wrAudioEl(); if(!a) return;
+  a.muted=!a.muted;
+  this.classList.toggle('off',a.muted);
+  this.title=a.muted?'Unmute music':'Mute music';
+});
+
 function wrFmt(s){ var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
 
 function wrClose(){
   if(wrTimer){ clearInterval(wrTimer); wrTimer=null; }
+  wrMusicStop();
   var box=document.getElementById('waitroom');
   box.classList.remove('show','warn','finale','go');
   document.body.classList.remove('wr-on');

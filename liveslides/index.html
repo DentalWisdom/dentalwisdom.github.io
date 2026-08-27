@@ -428,8 +428,17 @@
     #deck{width:100%;height:auto;min-height:100vh;transform:none !important;box-shadow:none;overflow:visible;}
     .wr-start{display:none;}   /* presenter-only control */
     #waitroom{position:fixed;}
-    .slide--full img{height:auto;}
-    .slide{position:relative;inset:auto;display:none;opacity:1;visibility:visible;pointer-events:auto;min-height:100vh;padding:var(--pad-y) var(--pad-x) 84px;}
+    /* Sponsor slides are 16:9 artwork — on a tall phone screen that's a short strip,
+       so centre it instead of pinning it to the top with a void underneath. */
+    .slide--full{padding:0 !important;justify-content:center;}
+    .slide--full img{height:auto;width:100%;}
+    /* 108px of bottom padding keeps the last line clear of the floating
+       Add-names button and the arrows, which sit over the slide. */
+    .slide{position:relative;inset:auto;display:none;opacity:1;visibility:visible;pointer-events:auto;min-height:100vh;padding:var(--pad-y) var(--pad-x) 108px;}
+    /* comfortable thumb targets */
+    #namesBtn{padding:12px 20px;font-size:14px;}
+    .navbtn{width:46px;height:46px;font-size:26px;background:rgba(18,35,63,.62);color:#fff;}
+    #counter{bottom:auto;}
     .slide.active{display:flex;}
     .cols,.sp-hero,.conf-bottom,.gwbody{flex-direction:column;gap:26px;}
     .conf-bottom{align-items:stretch;}
@@ -1322,8 +1331,11 @@ function show(i){
   counter.textContent=(current+1)+' / '+total;
   bar.style.width=((current+1)/total*100)+'%';
 }
-function next(){ show(current+1); }
-function prev(){ show(current-1); }
+function next(){ show(current+1); scrollTop(); }
+function prev(){ show(current-1); scrollTop(); }
+// phones scroll the page itself, so a new slide must start at its top rather than
+// wherever the previous one was left
+function scrollTop(){ if(window.matchMedia('(max-width:700px)').matches) window.scrollTo(0,0); }
 document.getElementById('navNext').addEventListener('click',next);
 document.getElementById('navPrev').addEventListener('click',prev);
 
@@ -1341,6 +1353,29 @@ document.addEventListener('keydown',function(e){
     case 'f': case 'F': toggleFull(); break;
   }
 });
+// ---- swipe between slides on a touch screen ----
+// Only acts on a clear horizontal flick, so scrolling down a long slide (the giveaway
+// and lecture slides are taller than a phone screen) is never mistaken for navigation.
+(function(){
+  var x0=null,y0=null,t0=0;
+  var deck=document.getElementById('deck');
+  if(!deck) return;
+  deck.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1) { x0=null; return; }
+    x0=e.touches[0].clientX; y0=e.touches[0].clientY; t0=Date.now();
+  },{passive:true});
+  deck.addEventListener('touchend',function(e){
+    if(x0===null || anyOverlayOpen()) return;
+    var t=e.changedTouches[0], dx=t.clientX-x0, dy=t.clientY-y0;
+    x0=null;
+    if(Date.now()-t0>600) return;               // a slow drag is a scroll, not a flick
+    if(Math.abs(dx)<55) return;                 // too small to be deliberate
+    if(Math.abs(dx)<Math.abs(dy)*1.6) return;   // mostly vertical — that's scrolling
+    if(dx<0) next(); else prev();
+    window.scrollTo(0,0);
+  },{passive:true});
+})();
+
 function toggleFull(){ if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(function(){}); } else { document.exitFullscreen(); } }
 
 // ---- scale ----

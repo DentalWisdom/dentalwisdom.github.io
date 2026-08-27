@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Conference fine print changed to "Use at checkout when registering"** (was "at checkout — before hotel rates go up"). It updates in all three places at once: the countdown billboard and both conference slides.
+  - This also clears up an ambiguity worth noting. The panel says "Register Now" and "Save $175," but the old fine print talked about *hotel rates* — so a reader could reasonably have thought the $175 was off a room, or off a conference ticket, and couldn't tell which. The new wording ties the code plainly to registering.
+
 - **Music support is built and ready, but no track is set.** The billboard can play background music — it fades up over 2 seconds, sits at a level you can talk over, and fades out across the closing countdown. It's currently set to `music: ""`, so the deck is silent and nothing extra loads.
   - **Why no track:** the file first tried was a commercial recording, and publishing it to dentalwisdom.org would have made it downloadable by anyone with the URL — distribution rather than just playing it on a call. Ben removed it. To use music on the live site you need a track you hold the rights to (royalty-free or licensed for broadcast).
   - **Nothing in `liveslides/audio/` is published.** `.gitignore` covers that whole folder apart from its README, so any music file dropped there stays on this Mac. That means a track works when the deck is run locally and the live site stays silent — with the timer, panels and countdown behaving identically either way. The README in that folder explains the whole setup.

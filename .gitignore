@@ -12,3 +12,8 @@ package-lock.json
 test_write_check.tmp
 # Local review notes — not for publishing
 WEBSITE_REVIEW_*.md
+
+# Audio: keep full-size original drops local, publish only the web-sized copy
+liveslides/audio/*
+!liveslides/audio/waiting-room.mp3
+!liveslides/audio/README.txt

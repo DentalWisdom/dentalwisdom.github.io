@@ -905,12 +905,13 @@ const DECK = {
   // line and the lecture partner underneath — so it stays right on its own each month.
   // To override: primary: [{ name:"…", logo:"logos/….png" }], same shape for secondary.
   waitingRoom: {
-    totalSeconds:  120,      // the whole thing, Start button to "Let's begin".
-                             // The panels split whatever is left after the finale, so
-                             // adding or removing one changes each panel's turn, NOT the
-                             // total — it always lands on a clean 2:00.
-    finaleSeconds: 12,       // the big "getting started in 10, 9, 8…" countdown at the end
-    countFrom:     10,       // biggest number the finale shows; it holds there for the slack
+    totalSeconds: 120,       // the whole thing, Start button to "Let's begin".
+                             // The panels split whatever is left after the closing
+                             // countdown, so adding or removing one changes each panel's
+                             // turn, NOT the total — it always lands on a clean 2:00.
+    countFrom:    10,        // the big countdown at the end runs from here to 1, one second
+                             // each — so it takes exactly this long and never pauses on a
+                             // number. All remaining time is split evenly across the panels.
 
     // Tonight's featured sponsor — the one whose own slides are in the deck.
     // Set to null when nobody has the spotlight that month.
@@ -1205,7 +1206,8 @@ function wrOpen(){
   // so adding or removing one changes each panel's turn rather than the total.
   var n=wrBuild(), box=document.getElementById('waitroom');
   var wcfg=DECK.waitingRoom||{};
-  var total=wcfg.totalSeconds||120, fin=wcfg.finaleSeconds||12, cfrom=wcfg.countFrom||10;
+  // the finale lasts exactly as long as it counts, so no number is ever held
+  var total=wcfg.totalSeconds||120, cfrom=wcfg.countFrom||10, fin=cfrom;
   var panelTime=Math.max(0,total-fin), per=panelTime/n;
   wrPane=-1;
   box.classList.remove('warn','finale','go');
@@ -1230,8 +1232,6 @@ function wrOpen(){
       // last stretch: everything gives way to one big number
       box.classList.add('finale','warn');
       wrShowPane(-1);
-      // never show a number bigger than countFrom — any slack is absorbed by
-      // holding that first number, so the pop only fires when it actually changes
       // NB: must NOT be called `n` — that would shadow the panel count above and
       // make the panel index NaN, which silently blanks every panel.
       var el=document.getElementById('wr-fnum'), bigNum=Math.min(cfrom,left);

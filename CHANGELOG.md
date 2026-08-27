@@ -5,6 +5,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Deals panel headline is now "Deals on What Dental Wisdom Members Already Buy"** (was "Deals on What You Already Buy"). Naming the members makes the panel say who the pricing is for, while keeping the "already buy" point that gives a dentist a reason to look. "Already Buy" stays in gold italic. Fits on one line at full size.
+
 - **Conference fine print changed to "Use at checkout when registering"** (was "at checkout — before hotel rates go up"). It updates in all three places at once: the countdown billboard and both conference slides.
   - This also clears up an ambiguity worth noting. The panel says "Register Now" and "Save $175," but the old fine print talked about *hotel rates* — so a reader could reasonably have thought the $175 was off a room, or off a conference ticket, and couldn't tell which. The new wording ties the code plainly to registering.
 

@@ -6,7 +6,7 @@ A plain-English record of every update made to the site, most recent first. This
 ## August 27, 2026
 
 - **Three wording/detail additions to the countdown billboard.**
-  - The **conference** panel now ends with **DentalWisdom.org/conference**, so people have somewhere to go rather than just a date and a code.
+  - The **conference** panel now ends with **DentalWisdom.org/conference**, so people have somewhere to go rather than just a date and a code. Its heading also changed from "Save the Date" to **"Register Now for Best Rates"** — the old wording read as though the date were still far off, when the panel underneath is actively pushing a discount code before rates rise.
   - The **Pearl** panel now names the class and who's giving it — *AI in Dentistry*, "Presented by Dr. Mitchell Rubinstein" — above the hellopearl.com link. Both are read from the lecture slide's own entry, so next month's class and speaker follow automatically.
   - During the final 10-second countdown the line above "Dental Wisdom Live" now reads **"Tonight's Session"** instead of "Every Month." It reads better at the moment you're about to begin. The "Every Month" panel earlier in the rotation keeps its wording, where it's still correct.
 

@@ -116,9 +116,21 @@
 
   .wr-panes{flex:1;position:relative;margin:0 88px;min-height:0;}
   .wr-pane{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
-           justify-content:center;opacity:0;transform:translateY(16px);pointer-events:none;
-           transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);}
-  .wr-pane.on{opacity:1;transform:none;}
+           justify-content:center;opacity:0;pointer-events:none;transition:opacity .45s ease;}
+  .wr-pane.on{opacity:1;}
+  /* Each panel unfolds over its first ~2s instead of landing all at once: the eye is
+     walked from logo to name to what-they-do to the phone number, then everything holds
+     completely still so it's easy to copy down. */
+  .wr-pane > *{opacity:0;transform:translateY(10px);}
+  .wr-pane.on > *{opacity:1;transform:none;
+                  transition:opacity .5s ease, transform .5s cubic-bezier(.2,.7,.2,1);}
+  .wr-pane.on > *:nth-child(1){transition-delay:.05s;}
+  .wr-pane.on > *:nth-child(2){transition-delay:.30s;}
+  .wr-pane.on > *:nth-child(3){transition-delay:.60s;}
+  .wr-pane.on > *:nth-child(4){transition-delay:.90s;}
+  .wr-pane.on > *:nth-child(5){transition-delay:1.15s;}
+  .wr-pane.on > *:nth-child(6){transition-delay:1.40s;}
+  .wr-pane.on > *:nth-child(7){transition-delay:1.60s;}
   .wr-pane .eye{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
   .wr-pane .hd{font-family:var(--font-head);font-weight:700;font-size:46px;line-height:1.1;
                margin-top:12px;text-align:center;}
@@ -143,6 +155,10 @@
   .wr-line{margin-top:10px;font-size:17px;color:rgba(255,255,255,.82);}
   .wr-line .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);
               font-weight:700;margin-right:9px;}
+  .wr-what{font-size:21px;font-weight:600;color:#fff;margin-top:9px;line-height:1.3;
+           text-align:center;max-width:880px;}
+  .wr-detail{font-size:15px;color:rgba(255,255,255,.66);margin-top:5px;line-height:1.4;
+             text-align:center;max-width:820px;}
   .wr-class{font-family:var(--font-head);font-style:italic;font-size:28px;color:#fff;
             margin-top:12px;line-height:1.2;text-align:center;max-width:820px;}
   .wr-web{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:27px;
@@ -932,6 +948,29 @@ const DECK = {
                  website: "myalphaeoncredit.com/getstarted-dentalwisdom",
                  eyebrow: "Tonight’s Vendor Spotlight" },   // the line above the logo
 
+    // A plain-English line under each sponsor's name, so a dentist knows what they
+    // DO before deciding whether the phone number is worth writing down. Keyed by the
+    // sponsor name exactly as it appears above. `detail` is the smaller second line and
+    // is optional. Drop a sponsor from this list and their panel simply omits it.
+    about: {
+      "Live Well Capital": {
+        what:   "Financial planning and wealth management",
+        detail: "For dentists, practice owners and their families"
+      },
+      "MB Precious Metals": {
+        what:   "Don’t throw out old crowns, bridges or restorations",
+        detail: "They hold gold, silver, platinum and palladium — MB assays on-site and pays top value"
+      },
+      "Alphaeon": {
+        what:   "Patient financing that says yes more often",
+        detail: "Higher approvals, broader credit profiles, 24/7 provider support"
+      },
+      "Pearl": {
+        what:   "Dental AI",
+        detail: "Real-time pathology detection, practice analytics and insurance verification"
+      }
+    },
+
     primary:   null,
     secondary: null
   },
@@ -1135,10 +1174,14 @@ function wrSponsorPane(x,eyebrow){
   if(x.speaker) bits+='<div class="wr-line"><span class="k">Presented by</span> '+x.speaker+'</div>';
   if(x.website) bits+='<div class="wr-web">'+x.website+'</div>';
   if(x.phone)   bits+='<div class="wr-call">'+(x.contact?'Call '+x.contact+' at ':'Call ')+x.phone+'</div>';
+  // what they do, straight under the name — context first, contact details after
+  var ab=((DECK.waitingRoom||{}).about||{})[x.name]||{}, about='';
+  if(ab.what)   about+='<div class="wr-what">'+ab.what+'</div>';
+  if(ab.detail) about+='<div class="wr-detail">'+ab.detail+'</div>';
   return '<div class="wr-pane wr-pane--sponsor">'+
            '<div class="eye">'+eyebrow+'</div>'+
            '<div class="wr-logocard"><img src="'+imgPath(x.logo)+'" alt="'+(x.name||'')+' logo"></div>'+
-           '<div class="wr-name">'+(x.name||'')+'</div>'+ bits +
+           '<div class="wr-name">'+(x.name||'')+'</div>'+ about + bits +
          '</div>';
 }
 

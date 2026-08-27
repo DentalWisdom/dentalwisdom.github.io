@@ -79,6 +79,128 @@
   #s-title .learnmore{margin-top:26px;font-size:16px;letter-spacing:.3px;color:rgba(255,255,255,.78);}
   #s-title .learnmore .site{font-family:var(--font-head);font-style:italic;font-weight:700;color:var(--gold-bright);font-size:19px;letter-spacing:.3px;}
 
+  /* ---- 1 title: the "starting soon" billboard ----
+     Lives INSIDE #deck, so it inherits the deck's scale and fills the screen at any
+     size without any extra maths. z-index sits above the slides but below the
+     names / winner overlays, which are document-level. */
+  .wr-start{position:absolute;right:88px;bottom:52px;z-index:6;border:1px solid rgba(203,162,76,.5);
+            background:rgba(203,162,76,.12);color:var(--gold-bright);font-family:var(--font-body);
+            font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;
+            padding:14px 26px;border-radius:999px;cursor:pointer;transition:.2s;}
+  .wr-start:hover{background:rgba(203,162,76,.24);}
+
+  /* while the billboard runs, the deck's own chrome gets out of the way — the arrows,
+     page counter, hint line, Add-names button and top progress bar would all sit on top
+     of it otherwise. They come straight back when it closes. */
+  body.wr-on #navPrev, body.wr-on #navNext, body.wr-on #counter,
+  body.wr-on #namesBtn, body.wr-on #hintMsg, body.wr-on #progressbar{
+    opacity:0 !important;pointer-events:none;transition:opacity .35s;}
+
+  #waitroom{position:absolute;inset:0;z-index:40;display:none;flex-direction:column;
+            background:linear-gradient(150deg,#0e1c33 0%,#12233f 58%,#1a2f52 100%);color:#fff;}
+  #waitroom.show{display:flex;animation:wrIn .45s ease both;}
+  @keyframes wrIn{from{opacity:0;}to{opacity:1;}}
+  .wr-top{display:flex;justify-content:space-between;align-items:center;padding:46px 88px 0;flex:none;}
+  .wr-brand{font-weight:700;letter-spacing:4px;font-size:14px;text-transform:uppercase;}
+  .wr-brand span{color:var(--gold-bright);}
+  .wr-clock{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.09);
+            border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:12px 28px;}
+  .wr-clock .d{width:9px;height:9px;border-radius:50%;background:var(--gold-bright);animation:wrBlink 2s infinite;}
+  @keyframes wrBlink{0%,100%{opacity:1;}50%{opacity:.25;}}
+  .wr-clock .lab{font-size:11.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700;}
+  .wr-clock .t{font-family:var(--font-head);font-weight:700;font-size:38px;line-height:1;color:#fff;
+               font-variant-numeric:tabular-nums;min-width:96px;text-align:right;}
+  #waitroom.warn .wr-clock{border-color:rgba(209,90,122,.5);background:rgba(209,90,122,.16);}
+  #waitroom.warn .wr-clock .t{color:var(--gold-bright);}
+  #waitroom.warn .wr-clock .d{background:var(--pink);}
+
+  .wr-panes{flex:1;position:relative;margin:0 88px;min-height:0;}
+  .wr-pane{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+           justify-content:center;opacity:0;transform:translateY(16px);pointer-events:none;
+           transition:opacity .7s ease, transform .7s cubic-bezier(.2,.7,.2,1);}
+  .wr-pane.on{opacity:1;transform:none;}
+  .wr-pane .eye{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
+  .wr-pane .hd{font-family:var(--font-head);font-weight:700;font-size:46px;line-height:1.1;
+               margin-top:12px;text-align:center;}
+  .wr-pane .hd em{font-style:italic;color:var(--gold-bright);}
+
+  /* sponsors — top line big, supporting line smaller */
+  .wr-row{display:flex;gap:22px;justify-content:center;align-items:stretch;margin-top:30px;}
+  .wr-row .cell{background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;
+                padding:18px 26px;box-shadow:0 10px 30px rgba(0,0,0,.26);}
+  .wr-row .cell img{max-width:100%;max-height:100%;object-fit:contain;}
+  .wr-row--lead .cell{width:330px;height:132px;}
+  .wr-row--sub{margin-top:18px;}
+  .wr-row--sub .cell{width:210px;height:84px;padding:12px 18px;}
+  .wr-sublab{margin-top:20px;font-size:11px;letter-spacing:3.5px;text-transform:uppercase;
+             color:rgba(255,255,255,.5);font-weight:700;}
+
+  /* one sponsor per screen */
+  .wr-logocard{background:#fff;border-radius:16px;width:520px;height:210px;display:flex;align-items:center;
+               justify-content:center;padding:26px 34px;margin-top:22px;box-shadow:0 16px 44px rgba(0,0,0,.3);}
+  .wr-logocard img{max-width:100%;max-height:100%;object-fit:contain;}
+  .wr-name{font-family:var(--font-head);font-weight:700;font-size:36px;margin-top:22px;}
+  .wr-line{margin-top:10px;font-size:17px;color:rgba(255,255,255,.82);}
+  .wr-line .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);
+              font-weight:700;margin-right:9px;}
+  .wr-web{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:27px;
+          color:var(--gold-bright);margin-top:14px;}
+  .wr-call{font-size:17px;font-weight:600;color:rgba(255,255,255,.9);margin-top:5px;letter-spacing:.3px;}
+  .wr-nextt{font-family:var(--font-head);font-style:italic;font-size:29px;color:rgba(255,255,255,.9);
+            margin-top:16px;text-align:center;}
+
+  /* deals */
+  .wr-url{font-family:var(--font-head);font-weight:700;font-size:64px;margin-top:14px;letter-spacing:.5px;}
+  .wr-url span{color:var(--gold-bright);}
+  .wr-sub{font-size:17px;color:rgba(255,255,255,.72);margin-top:14px;text-align:center;}
+
+  /* conference */
+  .wr-meta{display:flex;align-items:center;gap:16px;margin-top:16px;font-weight:700;
+           letter-spacing:3px;text-transform:uppercase;font-size:15px;color:rgba(255,255,255,.9);}
+  .wr-meta .dot{color:var(--gold-bright);}
+  .wr-promo{display:flex;margin-top:28px;border-radius:14px;overflow:hidden;box-shadow:0 16px 42px rgba(0,0,0,.34);}
+  .wr-promo .l{background:var(--gold);padding:20px 32px;text-align:center;}
+  .wr-promo .l .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:.88;font-weight:700;}
+  .wr-promo .l .v{font-family:var(--font-head);font-weight:700;font-size:42px;line-height:1;margin-top:3px;}
+  .wr-promo .r{background:#fff;color:var(--ink);padding:20px 36px;text-align:center;}
+  .wr-promo .r .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700;}
+  .wr-promo .r .v{font-family:var(--font-head);font-weight:700;font-size:34px;line-height:1;margin-top:3px;letter-spacing:1px;}
+  .wr-promo .r .f{font-size:11.5px;color:var(--muted);margin-top:5px;}
+
+  /* the last ten seconds — one enormous number, nothing else competing with it */
+  .wr-finale{position:absolute;inset:0;z-index:2;display:none;flex-direction:column;
+             align-items:center;justify-content:center;
+             background:radial-gradient(ellipse at 50% 46%,rgba(203,162,76,.18),transparent 62%);}
+  #waitroom.finale .wr-finale{display:flex;}
+  #waitroom.finale .wr-panes,#waitroom.finale .wr-dots,#waitroom.finale .wr-clock{opacity:0;
+             transition:opacity .5s;pointer-events:none;}
+  .wr-finale .feye{font-size:12px;letter-spacing:5px;text-transform:uppercase;
+                   color:var(--gold-bright);font-weight:700;}
+  .wr-finale .fhd{font-family:var(--font-head);font-weight:700;font-size:54px;line-height:1.06;
+                  color:#fff;margin-top:10px;}
+  .wr-finale .fhd em{font-style:italic;color:var(--gold-bright);}
+  .wr-finale .lab{font-size:13px;letter-spacing:5px;text-transform:uppercase;
+                  color:rgba(255,255,255,.55);font-weight:700;margin-top:26px;}
+  .wr-finale .num{font-family:var(--font-head);font-weight:700;font-size:168px;line-height:1;
+                  color:#fff;margin-top:2px;font-variant-numeric:tabular-nums;
+                  text-shadow:0 10px 60px rgba(203,162,76,.42);}
+  .wr-finale .num.tick{animation:wrTick .5s cubic-bezier(.34,1.5,.64,1);}
+  @keyframes wrTick{0%{transform:scale(.72);opacity:.35;}60%{transform:scale(1.06);opacity:1;}100%{transform:scale(1);}}
+  #waitroom.finale.go .wr-finale .num{font-size:82px;}
+  #waitroom.finale.go .wr-finale .lab{opacity:0;}
+
+  .wr-dots{display:flex;gap:8px;justify-content:center;padding:16px 0 14px;flex:none;}
+  .wr-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.24);transition:.35s;}
+  .wr-dots i.on{background:var(--gold-bright);width:22px;border-radius:4px;}
+  .wr-prog{height:6px;background:rgba(255,255,255,.1);flex:none;}
+  .wr-bar{height:100%;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+          transition:width 1s linear;}
+  #waitroom.warn .wr-bar{background:linear-gradient(90deg,var(--pink-dark),var(--pink));}
+  .wr-skip{position:absolute;right:88px;bottom:34px;z-index:3;border:none;background:none;
+           color:rgba(255,255,255,.45);font-family:var(--font-body);font-size:12.5px;font-weight:600;
+           letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.2s;}
+  .wr-skip:hover{color:var(--gold-bright);}
+
   /* ---- 2 about ---- */
   #s-about h1.big{font-size:50px;margin:2px 0 30px;}
   .cols{display:flex;gap:60px;flex:1;min-height:0;}
@@ -304,6 +426,8 @@
     html,body{height:auto;overflow-y:auto;overflow-x:hidden;}
     #stage{position:static;display:block;min-height:100vh;}
     #deck{width:100%;height:auto;min-height:100vh;transform:none !important;box-shadow:none;overflow:visible;}
+    .wr-start{display:none;}   /* presenter-only control */
+    #waitroom{position:fixed;}
     .slide--full img{height:auto;}
     .slide{position:relative;inset:auto;display:none;opacity:1;visibility:visible;pointer-events:auto;min-height:100vh;padding:var(--pad-y) var(--pad-x) 84px;}
     .slide.active{display:flex;}
@@ -429,6 +553,7 @@
         <div class="date"><span id="t-date">Thursday, June 18</span><span class="dot">·</span><span id="t-time">8:00 PM EST</span></div>
         <div class="learnmore">Visit <span class="site">DentalWisdom.org</span> to learn more about Dental Wisdom</div>
       </div>
+      <button class="wr-start" id="wrStart">Start 2:00</button>
     </section>
 
     <!-- 2 ABOUT -->
@@ -621,13 +746,31 @@
         </div>
       </div>
     </section>
-
+    <!-- title-slide billboard: "we'll start in 2 minutes" -->
+    <div id="waitroom" aria-hidden="true">
+      <div class="wr-top">
+        <div class="wr-brand">Dental Wisdom <span>Live</span></div>
+        <div class="wr-clock"><span class="d"></span><span class="lab" id="wr-lab">Starting in</span><span class="t" id="wr-time">2:00</span></div>
+      </div>
+      <div class="wr-panes" id="wr-panes"></div>
+      <div class="wr-finale" id="wr-finale">
+        <div class="feye">Every Month</div>
+        <div class="fhd">Dental Wisdom <em>Live</em></div>
+        <div class="lab">Getting started in</div>
+        <div class="num" id="wr-fnum">10</div>
+      </div>
+      <div class="wr-dots" id="wr-dots"></div>
+      <div class="wr-prog"><div class="wr-bar" id="wr-bar"></div></div>
+      <button class="wr-skip" id="wrSkip">Start now &rarr;</button>
+    </div>
+  
   </div>
 </div>
 
 <!-- fixed chrome -->
 <canvas id="fw"></canvas>
-<div id="progressbar"></div>
+<div id="progressbar">
+</div>
 <button class="navbtn" id="navPrev" aria-label="Previous slide">‹</button>
 <button class="navbtn" id="navNext" aria-label="Next slide">›</button>
 <div id="counter">1 / 9</div>
@@ -726,6 +869,7 @@ const DECK = {
     subtitle: "Enhancing Patient Communication and Clinical Outcomes",
     doctor:   "Dr. Mitchell Rubinstein",
     role:     "Presented in partnership with Pearl",
+    partner:  "Pearl",                                 // also named on the title-slide billboard
     logo:     "logos/pearl.png",
     website:  "hellopearl.com/dental-wisdom",
     description: [
@@ -754,14 +898,35 @@ const DECK = {
     "/images/gallery/gallery-34.webp", "/images/gallery/gallery-35.webp", "/images/gallery/gallery-37.webp"
   ],
 
+  // slide 1 — the "we'll start in a couple of minutes" billboard, behind the Start button
+  // on the title slide. While it counts down it rotates through three panels:
+  //   1. tonight's Live sponsors   2. DentalWisdom.org/deals   3. the conference
+  // Leave primary/secondary as null and it names tonight's giveaway sponsors on the top
+  // line and the lecture partner underneath — so it stays right on its own each month.
+  // To override: primary: [{ name:"…", logo:"logos/….png" }], same shape for secondary.
+  waitingRoom: {
+    secondsPerPanel: 18,     // each panel's turn on screen
+    finaleSeconds:   12,     // then the big "getting started in 10, 9, 8…" countdown.
+                             // It counts from 10, so the 10 simply holds a few beats —
+                             // that's what makes 6 x 18 + 12 land on a clean 2:00.
+    countFrom:       10,     // biggest number the finale shows
+    primary:   null,
+    secondary: null
+  },
+
   // slide 7 — the wheel prizes. website / contact / phone are OPTIONAL: leave any of
   // them off and that line simply doesn't appear, on the slide or in the winner pop-up.
   // They show on the slide the whole time this giveaway is selected, and again as one
   // small gold line inside the winner pop-up's navy sponsor band.
   giveaways: [
-    { sponsor: "Live Well Capital",  prize: "Yeti Coffee Mug",   logo: "logos/livewell-capital.png",
+    // prize stays singular — one per winner on the slide and in the winner pop-up.
+    // prizePlural is used ONLY on the title-slide billboard, where the sponsor is being
+    // thanked for the whole set. Leave it off and the billboard just uses `prize`.
+    { sponsor: "Live Well Capital",  prize: "Yeti Coffee Mug",   prizePlural: "Yeti Coffee Mugs",
+      logo: "logos/livewell-capital.png",
       website: "LiveWellCapital.com",  contact: "Sam",  phone: "(917) 715-2118" },
-    { sponsor: "MB Precious Metals", prize: "1 oz Silver Coin",  logo: "logos/mb-precious-metals.png",
+    { sponsor: "MB Precious Metals", prize: "1 oz Silver Coin",  prizePlural: "1 oz Silver Coins",
+      logo: "logos/mb-precious-metals.png",
       website: "MBPreciousMetals.com", contact: "Adam", phone: "(443) 253-4143" }
   ]
 };
@@ -905,6 +1070,199 @@ function fillNextSession(){
   var start=(n.time||'').split(/[–-]/)[0].trim();
   dEl.textContent=(n.date||'')+(start?' · '+start+' EST':'');
 }
+
+// ---- title-slide billboard: "we'll start in about 2 minutes" ----
+// Buys time when attendance is light, and spends it on the sponsors, the deals page
+// and the conference instead of a bare clock. Lives inside #deck so it scales with
+// the slides. Esc or "Start now" closes it early; at zero it clears itself.
+var wrTimer=null, wrPane=-1;
+
+// Tonight's Live sponsors only — never the full conference roster. Defaults to
+// whoever is actually sponsoring this session, so it stays right on its own:
+// the giveaway sponsors, then the lecture partner.
+function wrSponsors(){
+  var w=DECK.waitingRoom||{};
+  var lead=w.primary || (DECK.giveaways||[]).map(function(g){
+    return { name:g.sponsor, logo:g.logo, prize:g.prizePlural||g.prize,
+             website:g.website, contact:g.contact, phone:g.phone };
+  });
+  var sub=w.secondary;
+  if(!sub){
+    var l=DECK.lecture||{};
+    sub = (l.partner && l.logo) ? [{ name:l.partner, logo:l.logo, website:l.website,
+                                     note:'Tonight’s CE partner' }] : [];
+  }
+  var ok=function(x){ return x && x.logo; };
+  return { lead:lead.filter(ok), sub:sub.filter(ok) };
+}
+
+// The conference date line is read off slide 5 rather than retyped, so the two
+// can never drift apart when the venue or dates change.
+function wrConfLine(){
+  var el=document.querySelector('#s-conf1 .meta');
+  return el ? el.innerHTML : 'March 3 &ndash; 6, 2027<span class="dot">&middot;</span>The Altair Hotel<span class="dot">&middot;</span>Bay Harbor Islands, Miami';
+}
+
+// One sponsor per screen — a full-width logo card, then whatever we know about them.
+function wrSponsorPane(x,eyebrow){
+  var bits='';
+  if(x.prize)   bits+='<div class="wr-line"><span class="k">Giving away tonight</span> '+x.prize+'</div>';
+  if(x.website) bits+='<div class="wr-web">'+x.website+'</div>';
+  if(x.phone)   bits+='<div class="wr-call">'+(x.contact?'Call '+x.contact+' at ':'Call ')+x.phone+'</div>';
+  return '<div class="wr-pane wr-pane--sponsor">'+
+           '<div class="eye">'+eyebrow+'</div>'+
+           '<div class="wr-logocard"><img src="'+imgPath(x.logo)+'" alt="'+(x.name||'')+' logo"></div>'+
+           '<div class="wr-name">'+(x.name||'')+'</div>'+ bits +
+         '</div>';
+}
+
+function wrBuild(){
+  var sp=wrSponsors(), c=DECK.conference||{}, panes=[];
+
+  // 1..n — each giveaway sponsor gets its own screen
+  sp.lead.forEach(function(x){ panes.push(wrSponsorPane(x,'Tonight’s giveaway sponsor')); });
+
+  // the conference, in between
+  panes.push('<div class="wr-pane"><div class="eye">Save the Date</div>'+
+    '<div class="hd">The Dental Wisdom <em>Conference</em></div>'+
+    '<div class="wr-meta">'+wrConfLine()+'</div>'+
+    '<div class="wr-promo"><div class="l"><div class="k">Save</div><div class="v">'+(c.save||'')+'</div></div>'+
+    '<div class="r"><div class="k">Use code</div><div class="v">'+(c.code||'')+'</div>'+
+    '<div class="f">'+(c.fine||'')+'</div></div></div>'+
+    '</div>');
+
+  // then the CE partner
+  sp.sub.forEach(function(x){ panes.push(wrSponsorPane(x,x.note||'In partnership with')); });
+
+  // the deals page
+  panes.push('<div class="wr-pane"><div class="eye">Member Pricing</div>'+
+    '<div class="hd">Deals on What You <em>Already Buy</em></div>'+
+    '<div class="wr-url">DentalWisdom.org<span>/deals</span></div>'+
+    '<div class="wr-sub">Exclusive pricing for the Dental Wisdom community &mdash; supplies, labs, financing and more.</div>'+
+    '</div>');
+
+  // and finally: come back next month. Reuses the same session list slide 9 reads,
+  // so it names the real next session instead of a generic line.
+  var nx=wrNextSession();
+  panes.push('<div class="wr-pane"><div class="eye">Every Month</div>'+
+    '<div class="hd">Dental Wisdom <em>Live</em></div>'+
+    (nx?'<div class="wr-nextt">'+nx.title+'</div><div class="wr-meta">'+nx.when+'</div>'
+       :'<div class="wr-sub">Free monthly CE for the Dental Wisdom community.</div>')+
+    '<div class="wr-url" style="font-size:46px;margin-top:22px;">DentalWisdom.org<span>/live</span></div>'+
+    '<div class="wr-sub">Register free for the next session.</div>'+
+    '</div>');
+
+  document.getElementById('wr-panes').innerHTML=panes.join('');
+  document.getElementById('wr-dots').innerHTML=panes.map(function(_,i){
+    return '<i'+(i===0?' class="on"':'')+'></i>';
+  }).join('');
+  return panes.length;
+}
+
+// same source slide 9 uses — the website's own session list
+function wrNextSession(){
+  var n=DECK.nextSession;
+  if(!n && window.LIVE_DATA){
+    var after=DECK.sessionDate||'';
+    var list=window.LIVE_DATA.filter(function(x){ return x.status==='upcoming' && x.sortDate>after; })
+                             .sort(function(a,b){ return a.sortDate<b.sortDate?-1:1; });
+    if(list.length) n=list[0];
+  }
+  if(!n) return null;
+  var start=(n.time||'').split(/[–-]/)[0].trim();
+  return { title:(n.title||'').replace(/'/g,'’'),
+           when:(n.date||'')+(start?'<span class="dot">·</span>'+start+' EST':'') };
+}
+
+function wrShowPane(i){
+  if(i===wrPane) return;
+  wrPane=i;
+  var panes=document.querySelectorAll('#wr-panes .wr-pane'),
+      dots=document.querySelectorAll('#wr-dots i');
+  for(var k=0;k<panes.length;k++){
+    panes[k].classList.toggle('on',k===i);
+    if(dots[k]) dots[k].classList.toggle('on',k===i);
+  }
+}
+
+function wrOpen(){
+  // Build first, then size the countdown to the panels: secondsPerPanel each, so
+  // every panel gets its full turn and the clock lands exactly as the last one ends.
+  var n=wrBuild(), box=document.getElementById('waitroom');
+  var wcfg=DECK.waitingRoom||{};
+  var per=wcfg.secondsPerPanel||18, fin=wcfg.finaleSeconds||12, cfrom=wcfg.countFrom||10;
+  var panelTime=n*per, total=panelTime+fin;
+  wrPane=-1;
+  box.classList.remove('warn','finale','go');
+  box.classList.add('show');
+  document.body.classList.add('wr-on');
+  box.setAttribute('aria-hidden','false');
+  document.getElementById('wr-lab').textContent='Starting in';
+
+  var left=total;
+  var lastNum=null;
+  function paint(){
+    document.getElementById('wr-time').textContent=wrFmt(left);
+    document.getElementById('wr-bar').style.width=(left/total*100)+'%';
+    if(left>fin){
+      // still cycling the panels
+      box.classList.remove('finale');
+      box.classList.toggle('warn',left<=fin+5);
+      wrShowPane(Math.min(n-1,Math.floor((panelTime-(left-fin))/per)));
+    } else {
+      // last stretch: everything gives way to one big number
+      box.classList.add('finale','warn');
+      wrShowPane(-1);
+      // never show a number bigger than countFrom — any slack is absorbed by
+      // holding that first number, so the pop only fires when it actually changes
+      var el=document.getElementById('wr-fnum'), n=Math.min(cfrom,left);
+      if(n!==lastNum){
+        lastNum=n;
+        el.textContent=n;
+        el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick');
+      }
+    }
+  }
+  paint();
+  if(wrTimer) clearInterval(wrTimer);
+  wrTimer=setInterval(function(){
+    left--;
+    if(left<=0){
+      clearInterval(wrTimer); wrTimer=null;
+      box.classList.add('finale','go');
+      document.getElementById('wr-fnum').textContent='Let’s begin.';
+      document.getElementById('wr-time').textContent='';
+      document.getElementById('wr-lab').textContent='';
+      document.getElementById('wr-bar').style.width='0%';
+      wrShowPane(-1);
+      setTimeout(wrClose,2600);
+      return;
+    }
+    paint();
+  },1000);
+}
+
+function wrFmt(s){ var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
+
+function wrClose(){
+  if(wrTimer){ clearInterval(wrTimer); wrTimer=null; }
+  var box=document.getElementById('waitroom');
+  box.classList.remove('show','warn','finale','go');
+  document.body.classList.remove('wr-on');
+  box.setAttribute('aria-hidden','true');
+  wrPane=-1;
+}
+function wrOpen_isOpen(){ return document.getElementById('waitroom').classList.contains('show'); }
+
+document.getElementById('wrStart').addEventListener('click',wrOpen);
+document.getElementById('wrSkip').addEventListener('click',wrClose);
+// label the button with whatever length is configured
+// label the button with the real length, whatever the panel count works out to
+(function(){
+  var w=DECK.waitingRoom||{}, per=w.secondsPerPanel||18, fin=w.finaleSeconds||12;
+  var probe=wrBuild();
+  document.getElementById('wrStart').textContent='Start '+wrFmt(probe*per+fin);
+})();
 
 // ---- navigation (crossfade) ----
 // ---- slide 4: the sponsor's own slides ----
@@ -1202,8 +1560,8 @@ document.getElementById('w-close').addEventListener('click',closeWinner);
 document.getElementById('w-again').addEventListener('click',function(){ closeWinner(); setTimeout(spin,280); });
 
 // ---- overlays ----
-function anyOverlayOpen(){ return document.querySelector('.overlay.show')!==null; }
-function closeOverlays(){ document.querySelectorAll('.overlay.show').forEach(function(o){o.classList.remove('show');}); }
+function anyOverlayOpen(){ return document.querySelector('.overlay.show')!==null || wrOpen_isOpen(); }
+function closeOverlays(){ document.querySelectorAll('.overlay.show').forEach(function(o){o.classList.remove('show');}); wrClose(); }
 document.querySelectorAll('.overlay').forEach(function(o){ o.addEventListener('click',function(e){ if(e.target===o) o.classList.remove('show'); }); });
 
 // hint auto-hide

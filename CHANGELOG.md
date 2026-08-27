@@ -5,6 +5,20 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **New: a "we'll start in a couple of minutes" billboard on the title slide.** There's now a small gold **Start 2:00** button in the bottom-right of the title slide. Click it when attendance is light and you want to give people a few minutes to join — instead of a bare clock, those two minutes go to work. Six full-screen panels take 18 seconds each, in this order:
+  1. **Live Well Capital** — logo, "Giving away tonight: Yeti Coffee Mugs", LiveWellCapital.com, Call Sam at (917) 715-2118
+  2. **MB Precious Metals** — same treatment, 1 oz Silver Coins, Call Adam at (443) 253-4143
+  3. **The conference** — March 3–6, 2027, The Altair Hotel, Miami, with the $175 / LOCKINHOTELRATE promo
+  4. **Pearl** — tonight's CE partner, with hellopearl.com/dental-wisdom
+  5. **DentalWisdom.org/deals**
+  6. **Dental Wisdom Live** — names the *actual* next session (currently "Dental Exit Planning," October 15) and points to DentalWisdom.org/live to register
+  - Then the last stretch clears the panels away and the **Dental Wisdom Live** lockup stays on screen while an enormous countdown runs beneath it — 10, 9, 8… — landing on "Let's begin." It closes itself and leaves you back on a clean title slide. Press **Esc** or click **Start now** to cut it short at any point.
+  - Six panels at 18 seconds is 1:48, and the finale runs 12 — so the countdown starts at 10 and simply **holds on "10" for three beats** before ticking down. That's what makes the whole thing land on a clean **2:00** rather than an odd 1:58, and it isn't something anyone watching will notice.
+  - A live countdown sits top-right the whole time and a gold progress bar drains along the bottom, so people always know how long is left. Both turn pink for the final stretch. The deck's own arrows, page counter and buttons hide while it runs so nothing sits on top of it, and come straight back afterwards.
+  - **It keeps itself current.** The sponsors shown are read from tonight's giveaway and lecture entries, not a separate list — change the giveaway sponsor next month and this changes with it. The conference dates are read off slide 5, and the next-session panel reads the website's own session list, so none of it can quietly go stale.
+  - On the billboard the prizes read **plural** ("Yeti Coffee Mugs"), since the sponsor is being thanked for the whole set; the giveaway slide and winner pop-up stay **singular**, since each winner gets one. Timings live in `waitingRoom` at the top of the file: `secondsPerPanel: 18`, `finaleSeconds: 12` and `countFrom: 10`.
+  - The button doesn't appear on phones — it's a presenter control and the deck is a reading layout there.
+
 - **Slide 4 is now three Alphaeon slides instead of the built-in Vendor Spotlight.** You dropped three finished Alphaeon slides in the "To add to Dentl Wisdom Live Slides" folder, and they now run as slides 4, 5 and 6 in this order: the title slide ("Helping Doctors Help More Patients"), then the benefits slide ("Higher Approvals. Better Offers. 24/7 Support."), then the rate tables ("The Modern Growth Partner for Dentists"). Say the word if you want them in a different order — it's a one-line change. The deck is now 11 slides and every page number re-counted itself automatically.
   - Each one is inserted as a full-screen image at the deck's existing size, edge to edge, with no borders or cropping — nothing about the slide dimensions changed. They were converted to WebP and are 58–90 KB each, so they load instantly.
   - **One thing worth knowing:** the files you supplied are 960×540, which is half of full HD. They've been enlarged as cleanly as possible, but no process can invent detail that isn't in the original, so the small print in the rate tables will look slightly soft on a large monitor. If you can re-export those three from the original Alphaeon deck at 1920×1080 or larger, drop them in the same folder and they'll swap straight in — same file names, no other changes needed.

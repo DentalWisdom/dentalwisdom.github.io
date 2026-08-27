@@ -143,6 +143,8 @@
   .wr-line{margin-top:10px;font-size:17px;color:rgba(255,255,255,.82);}
   .wr-line .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);
               font-weight:700;margin-right:9px;}
+  .wr-class{font-family:var(--font-head);font-style:italic;font-size:28px;color:#fff;
+            margin-top:12px;line-height:1.2;text-align:center;max-width:820px;}
   .wr-web{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:27px;
           color:var(--gold-bright);margin-top:14px;}
   .wr-call{font-size:17px;font-weight:600;color:rgba(255,255,255,.9);margin-top:5px;letter-spacing:.3px;}
@@ -763,7 +765,7 @@
       </div>
       <div class="wr-panes" id="wr-panes"></div>
       <div class="wr-finale" id="wr-finale">
-        <div class="feye">Every Month</div>
+        <div class="feye">Tonight’s Session</div>
         <div class="fhd">Dental Wisdom <em>Live</em></div>
         <div class="lab">Getting started in</div>
         <div class="num" id="wr-fnum">10</div>
@@ -1110,6 +1112,7 @@ function wrSponsors(){
   if(!sub){
     var l=DECK.lecture||{};
     sub = (l.partner && l.logo) ? [{ name:l.partner, logo:l.logo, website:l.website,
+                                     title:l.title, speaker:l.doctor,
                                      note:'Tonight’s CE partner' }] : [];
   }
   var ok=function(x){ return x && x.logo; };
@@ -1128,6 +1131,8 @@ function wrSponsorPane(x,eyebrow){
   var bits='';
   if(x.prize)   bits+='<div class="wr-line"><span class="k">Giving away tonight</span> '+x.prize+'</div>';
   if(x.line)    bits+='<div class="wr-line">'+x.line+'</div>';
+  if(x.title)   bits+='<div class="wr-class">'+x.title+'</div>';
+  if(x.speaker) bits+='<div class="wr-line"><span class="k">Presented by</span> '+x.speaker+'</div>';
   if(x.website) bits+='<div class="wr-web">'+x.website+'</div>';
   if(x.phone)   bits+='<div class="wr-call">'+(x.contact?'Call '+x.contact+' at ':'Call ')+x.phone+'</div>';
   return '<div class="wr-pane wr-pane--sponsor">'+
@@ -1154,6 +1159,7 @@ function wrBuild(){
     '<div class="wr-promo"><div class="l"><div class="k">Save</div><div class="v">'+(c.save||'')+'</div></div>'+
     '<div class="r"><div class="k">Use code</div><div class="v">'+(c.code||'')+'</div>'+
     '<div class="f">'+(c.fine||'')+'</div></div></div>'+
+    '<div class="wr-web" style="margin-top:22px;">DentalWisdom.org/conference</div>'+
     '</div>');
 
   // then the CE partner

@@ -5,6 +5,11 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Three wording/detail additions to the countdown billboard.**
+  - The **conference** panel now ends with **DentalWisdom.org/conference**, so people have somewhere to go rather than just a date and a code.
+  - The **Pearl** panel now names the class and who's giving it — *AI in Dentistry*, "Presented by Dr. Mitchell Rubinstein" — above the hellopearl.com link. Both are read from the lecture slide's own entry, so next month's class and speaker follow automatically.
+  - During the final 10-second countdown the line above "Dental Wisdom Live" now reads **"Tonight's Session"** instead of "Every Month." It reads better at the moment you're about to begin. The "Every Month" panel earlier in the rotation keeps its wording, where it's still correct.
+
 - **The Live slides now work properly on a phone.** They already reflowed into a single readable column, but three things were getting in the way:
   - **The three Alphaeon slides looked broken.** Because they're 16:9 artwork on a tall phone screen, the image sat squashed at the top of the screen with a large blank area beneath it. They're now full width and centred, so the space above and below reads as deliberate framing rather than something that failed to load.
   - **The floating buttons sat on top of the text.** On the giveaway and conference slides the "Add names" button and the arrows covered the last couple of lines — including the sponsor's phone number. Every slide now leaves room underneath for them, and the arrows and button are bigger and easier to hit with a thumb.

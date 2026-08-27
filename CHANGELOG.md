@@ -6,7 +6,7 @@ A plain-English record of every update made to the site, most recent first. This
 ## August 27, 2026
 
 - **Conference promo code changed back to `DentalWisdomLive`** (from `LOCKINHOTELRATE`). It updates in all three places at once — both conference slides and the countdown billboard — because they all read the same value. It renders with its capital letters intact, so it stays readable on screen rather than becoming one long block of capitals.
-  - **Worth double-checking before it's used:** `DentalWisdomLive` was the code on the deck until August 25, when it was swapped for `LOCKINHOTELRATE` **and the amount changed from $200 to $175 at the same time**. The slides still say **$175**. If `DentalWisdomLive` is actually a $200 code — or has since been switched off at the hotel's end — the slides would be telling people the wrong thing. Confirming the code is live and worth $175 is a quick call worth making before showing it.
+  - The amount stays at **$175**. This was worth checking, because `DentalWisdomLive` was the code on the deck until August 25 — when it was swapped for `LOCKINHOTELRATE` *and* the amount changed from $200 to $175 at the same time, so the old code could have carried the old value. Ben confirmed on August 27 that he updated the booking system and **$175 with `DentalWisdomLive` is correct and live**.
 
 - **Three wording/detail additions to the countdown billboard.**
   - The **conference** panel now ends with **DentalWisdom.org/conference**, so people have somewhere to go rather than just a date and a code. Its heading also changed from "Save the Date" to **"Register Now for Best Rates"** — the old wording read as though the date were still far off, when the panel underneath is actively pushing a discount code before rates rise.

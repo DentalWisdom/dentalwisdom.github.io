@@ -412,7 +412,7 @@
   .overlay.show{display:flex;}
   /* caps are % of the overlay (which is itself sized+scaled to exactly cover the window),
      so these still mean "92% / 88% of the screen" at every zoom level */
-  .sheet{background:#fff;border-radius:16px;width:520px;max-width:92%;max-height:88%;overflow:auto;padding:30px 32px;box-shadow:0 24px 70px rgba(0,0,0,.42);}
+  .sheet{background:#fff;border-radius:16px;width:520px;max-width:92%;max-height:84%;overflow:auto;padding:30px 32px;box-shadow:0 24px 70px rgba(0,0,0,.42);}
   .sheet h2{font-family:var(--font-head);font-size:26px;color:var(--ink);margin-bottom:6px;}
   .sheet p.hint{font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.45;}
   .sheet textarea{width:100%;min-height:240px;border:2px solid #e5dfd2;border-radius:10px;padding:14px;font-family:var(--font-body);font-size:15px;line-height:1.5;resize:vertical;}
@@ -423,24 +423,24 @@
   .btn-ghost{background:#efe9dd;color:var(--ink);} .btn-ghost:hover{background:#e5dfcf;}
   .btn-pink{background:var(--pink);color:#fff;} .btn-pink:hover{background:var(--pink-dark);}
 
-  #winnerSheet .sheet{text-align:center;width:780px;padding:42px 52px;background:linear-gradient(160deg,#fff 0%,#fff5f8 100%);
+  #winnerSheet .sheet{text-align:center;width:780px;padding:30px 52px;background:linear-gradient(160deg,#fff 0%,#fff5f8 100%);
     border:1px solid rgba(209,90,122,.28);box-shadow:0 40px 110px rgba(0,0,0,.5),0 0 80px rgba(209,90,122,.16);
     animation:sheetpop .55s cubic-bezier(.34,1.56,.64,1) both;}
   @keyframes sheetpop{from{opacity:0;transform:scale(.82);}to{opacity:1;transform:scale(1);}}
   #winnerSheet .k{font-size:14px;letter-spacing:4px;text-transform:uppercase;color:#c0507a;font-weight:700;}
-  #winnerSheet .who{font-family:var(--font-head);font-weight:700;font-size:76px;color:var(--ink);margin:10px 0 4px;line-height:1.04;word-break:break-word;
+  #winnerSheet .who{font-family:var(--font-head);font-weight:700;font-size:62px;color:var(--ink);margin:6px 0 2px;line-height:1.04;word-break:break-word;
     animation:whopop .6s .15s cubic-bezier(.34,1.56,.64,1) both;}
   @keyframes whopop{from{opacity:0;transform:scale(.6);}to{opacity:1;transform:scale(1);}}
-  #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:30px;color:var(--pink-dark);margin-bottom:22px;}
-  #winnerSheet .sponsorband{background:var(--navy);border-radius:16px;padding:22px;margin-bottom:18px;display:flex;flex-direction:column;align-items:center;gap:12px;}
+  #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:26px;color:var(--pink-dark);margin-bottom:14px;}
+  #winnerSheet .sponsorband{background:var(--navy);border-radius:16px;padding:15px;margin-bottom:14px;display:flex;flex-direction:column;align-items:center;gap:9px;}
   #winnerSheet .sponsorband .th{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
-  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:14px;padding:18px 32px;min-height:130px;width:100%;max-width:460px;}
-  #winnerSheet .w-logowrap img{max-height:104px;max-width:380px;object-fit:contain;}
-  #winnerSheet .sponsorline{font-size:19px;color:#fff;letter-spacing:.4px;font-weight:700;}
+  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:12px 28px;min-height:92px;width:100%;max-width:420px;}
+  #winnerSheet .w-logowrap img{max-height:68px;max-width:340px;object-fit:contain;}
+  #winnerSheet .sponsorline{font-size:17px;color:#fff;letter-spacing:.4px;font-weight:700;}
   /* one compact gold line — deliberately small so it never competes with the winner's name */
   #winnerSheet .sponsorcontact{font-size:14px;line-height:1.35;color:var(--gold-bright);letter-spacing:.3px;font-weight:600;margin-top:-4px;}
-  #winnerSheet .confirm{margin:0 auto;background:#fdeef1;border:1px dashed #e5a9ba;border-radius:12px;padding:16px 24px;font-size:21px;font-weight:700;color:var(--pink-dark);max-width:520px;}
-  #winnerSheet .row{justify-content:center;margin-top:22px;}
+  #winnerSheet .confirm{margin:0 auto;background:#fdeef1;border:1px dashed #e5a9ba;border-radius:12px;padding:11px 22px;font-size:18px;font-weight:700;color:var(--pink-dark);max-width:520px;}
+  #winnerSheet .row{justify-content:center;margin-top:15px;}
   /* fireworks + confetti canvas — sits above the winner sheet so the show plays over it */
   #fw{position:fixed;inset:0;pointer-events:none;z-index:60;}
   /* wheel glow while spinning */

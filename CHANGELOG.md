@@ -5,6 +5,11 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## August 27, 2026
 
+- **Fixed: the giveaway winner pop-up was running off the screen.** Its content was 660px tall inside a 632px box, so the box scrolled internally and the **Close / Spin again buttons ended up below the fold** — which is what you hit live. Cause was the sponsor contact line added on Aug 26: it made the pop-up taller and nothing was trimmed to pay for it, and it was only ever checked at one window size, where it happened to just fit.
+  - Trimmed throughout — smaller sponsor logo card (the single biggest saving), tighter band padding, slightly smaller winner name, prize line, confirm box and outer padding. Content is now **507px with zero overflow**, and the pop-up sits at 53–71% of screen height with **at least 100px of clear margin** above and below.
+  - Checked at nine window shapes — your monitor, full HD, three laptop sizes, deck-native, a tall 4:3 window, an ultrawide and a deliberately short window — plus a long two-line winner name. No scrollbar and no clipping in any of them.
+  - **Written into `CLAUDE.md` so it can't happen again:** the height budget for that pop-up, the rule that anything added must be paid for by removing height elsewhere, and the exact check (compare the sheet's content height to its visible height, at all nine window shapes, including a long name).
+
 - **Crown Catapult credited on the closing slide.** "CE PROVIDED BY" in small gold caps with their logo on a white card, top-right of the final slide — clear of the "See You Next Time!" headline and the next-session block, and it reflows below the text on a phone.
   - The logo sits on a white card because the mark is dark navy on white and that slide is navy; that's the same treatment sponsor logos already get elsewhere in the deck.
   - The source file needed cleaning first: it had a **1px black line along its bottom edge**, which would have shown as a hairline under the logo — and it was also anchoring the automatic whitespace crop, so the surrounding white margin couldn't be trimmed. Removed the line, then trimmed to the artwork, so the logo now fills its card properly.

@@ -3,6 +3,14 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## September 3, 2026
+
+- **Rabbi Dr. Ephraim Rudolph added to the conference — agenda and speakers page.**
+  - **Agenda:** he's now named on the Friday 10:30 PM slot, "Oneg & Shiur: From Isolation to Achdus — Strengthening the Jewish Dental Community" (Shul, 1.5 CE, sponsored by Crown Catapult). That slot already existed with an empty speaker field; only the name was filled in.
+  - **Speakers page:** a full card at the end of the **Friday** group, headed "Clinical Director & AEGD Program Director", with a one-line snippet on the card and the complete bio in the pop-up. The pop-up also shows the session, the Friday 10:30 PM time, and a Crown Catapult sponsor credit with their logo — matching how Rabbi Dr. David Katz's Shalosh Seudos shiur is credited to Touro.
+  - **Photo:** the file dropped in the speaker folder was `rudolph_edward.webp` (250x375) — Ben confirmed it's the right person, the filename was just how the source saved it. Saved as `images/speaker-ephraim-rudolph.webp` at 400x600, in line with the other speaker photos, with a light sharpening pass after the enlargement. Worth noting the concern about it being low-resolution turned out not to matter: the page never displays a speaker photo larger than **140x140**, so the original would have been more than enough.
+
+
 ## August 27, 2026
 
 - **Fixed: the giveaway winner pop-up was running off the screen.** Its content was 660px tall inside a 632px box, so the box scrolled internally and the **Close / Spin again buttons ended up below the fold** — which is what you hit live. Cause was the sponsor contact line added on Aug 26: it made the pop-up taller and nothing was trimmed to pay for it, and it was only ever checked at one window size, where it happened to just fit.

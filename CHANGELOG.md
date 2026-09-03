@@ -5,6 +5,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## September 3, 2026
 
+- **Dr. Ruth Abramowitz's review page: headshot added and the whole opening rewritten.** Her photo (`Ruth-Abramowitz-DMD.jpg`, 414x402) is now saved as `images/speaker-ruth-abramowitz.webp` and shows in both the card and the bio panel, replacing the "photo to come" placeholders.
+  - **The page now reads as an invitation, not a thank-you.** It had been copied from a template written for confirmed speakers, so it opened "Thank you, Dr. ..." and said the agenda was about to go live — both wrong here. It now opens "Hello," explains that the agenda is already published, and lays out the actual proposal: a fourth concurrent track Friday 3:00–5:00 PM, deliberately capped at roughly 8–12 people so it can be genuinely hands-on.
+  - It also mentions, warmly and without overselling it, that there may be one or two other moments over the weekend where a hand would help — the Welcome Party, that sort of thing — with the reassurance that she's there as a guest, not to work the weekend.
+  - All three sections now carry a **Draft** badge and use conditional wording ("how your session *would* appear"), so nothing on the page can be mistaken for something already published. The closing asks her directly what she thinks.
+  - Still nothing published: she is not in the agenda and not on the speakers page, and the hidden fourth Friday track remains hidden.
+
 - **The Friday night Oneg shiur has a new title: "The Machatzis Hashekel — Our Currency to Geula."** It replaces "From Isolation to Achdus — Strengthening the Jewish Dental Community" in all three places it appeared: the agenda, Rabbi Dr. Rudolph's speaker card, and his bio pop-up.
   - The "Oneg & Shiur:" prefix was kept on the agenda and in the pop-up, since that's what tells people what the event actually is — the same way the Shabbos slot reads "Shalosh Seudos & Dental Halacha Shiur." On the speaker card, where space is tight and the line has to share room with the sponsor credit, it reads just "The Machatzis Hashekel — sponsored by Crown Catapult." Say the word if you'd rather drop the prefix everywhere and let the title stand alone.
 

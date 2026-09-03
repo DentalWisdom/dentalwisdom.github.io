@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## September 3, 2026
 
+- **The Friday night Oneg shiur has a new title: "The Machatzis Hashekel — Our Currency to Geula."** It replaces "From Isolation to Achdus — Strengthening the Jewish Dental Community" in all three places it appeared: the agenda, Rabbi Dr. Rudolph's speaker card, and his bio pop-up.
+  - The "Oneg & Shiur:" prefix was kept on the agenda and in the pop-up, since that's what tells people what the event actually is — the same way the Shabbos slot reads "Shalosh Seudos & Dental Halacha Shiur." On the speaker card, where space is tight and the line has to share room with the sponsor credit, it reads just "The Machatzis Hashekel — sponsored by Crown Catapult." Say the word if you'd rather drop the prefix everywhere and let the title stand alone.
+
 - **Speaker photo drop folder is no longer published.** `_Speaker Bios & Pictures - Drop Here` held 20 original headshots that were being uploaded to the live site and were downloadable by anyone who guessed the URL — the only drop folder not already kept private. It now matches the others in `.gitignore`, so the originals stay on this Mac.
   - **Nothing on the site breaks:** no page ever linked to that folder. Every speaker photo the site displays comes from `images/speaker-*.webp` (22 files), which are untouched and still published.
   - Note the removed files still exist in the repository's past history — this stops them being served going forward rather than erasing them from the record. Scrubbing history entirely would mean rewriting it, which isn't worth it for headshots that were meant to be public-facing anyway.

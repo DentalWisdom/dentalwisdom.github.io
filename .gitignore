@@ -19,3 +19,6 @@ WEBSITE_REVIEW_*.md
 # play them locally without the site distributing a track we may not have rights to.
 liveslides/audio/*
 !liveslides/audio/README.txt
+
+# Preview/comparison images Claude generates for you in chat — local only, never published
+Claude outputs/

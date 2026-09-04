@@ -5,6 +5,13 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## September 4, 2026
 
+- **Dr. Harold Katz's photo swapped again — the branded TheraBreath portrait you dropped in this afternoon.** It replaces the suit photo from this morning everywhere he appears: his card and bio pop-up on the Speakers page, his private review page, and the TheraBreath sponsor review page.
+  - The photo arrived as a blue circle sitting on a light grey square. I trimmed the grey ring away so the blue disc lines up exactly with the round frame the site draws — otherwise you'd have seen a thin grey ring inside the border, which reads as a double outline.
+  - Saved as `images/speaker-harold-katz-sept2026.webp` at 414x414, 19 KB. That's about three times the size it's ever displayed at, so it stays sharp on phones and retina screens without weighing the page down.
+  - Under a new file name again, for the same reason as this morning: anyone who already loaded the previous photo would otherwise keep seeing it.
+  - This morning's suit photo is not deleted — it's in `_archive/superseded-images/speakers/speaker-harold-katz-2026-suit.webp`, alongside the original white-coat shot.
+  - Worth knowing: his is now the only bright blue photo on the Speakers page, so it stands out from the neutral backgrounds around it. Looks deliberate rather than out of place, but say the word if you'd rather go back to the suit photo.
+
 - **Dr. Harold Katz has a new headshot.** The new photo you dropped in (suit, arms folded, cut out on a plain background) replaces the older TheraBreath white-coat shot everywhere he appears: his card and bio pop-up on the Speakers page, plus his private review page and the TheraBreath sponsor review page.
   - It was cropped to a head-and-shoulders square so his face fills the round photo frame the way the other speakers' do, resized to 600x600 and saved as `images/speaker-harold-katz-2026.webp` (13 KB — slightly smaller than the old one, so nothing gets slower).
   - It's saved under a new file name on purpose: anyone who has visited before has the old photo sitting in their browser's cache, and a new name guarantees they see the new one immediately instead of the old one lingering.

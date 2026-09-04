@@ -3,6 +3,15 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## September 4, 2026
+
+- **Dr. Harold Katz has a new headshot.** The new photo you dropped in (suit, arms folded, cut out on a plain background) replaces the older TheraBreath white-coat shot everywhere he appears: his card and bio pop-up on the Speakers page, plus his private review page and the TheraBreath sponsor review page.
+  - It was cropped to a head-and-shoulders square so his face fills the round photo frame the way the other speakers' do, resized to 600x600 and saved as `images/speaker-harold-katz-2026.webp` (13 KB — slightly smaller than the old one, so nothing gets slower).
+  - It's saved under a new file name on purpose: anyone who has visited before has the old photo sitting in their browser's cache, and a new name guarantees they see the new one immediately instead of the old one lingering.
+  - The old photo was not deleted — it's parked in `_archive/superseded-images/speakers/speaker-harold-katz.webp` if you ever want it back.
+
+---
+
 ## September 3, 2026
 
 - **Dr. Ruth Abramowitz's review page: headshot added and the whole opening rewritten.** Her photo (`Ruth-Abramowitz-DMD.jpg`, 414x402) is now saved as `images/speaker-ruth-abramowitz.webp` and shows in both the card and the bio panel, replacing the "photo to come" placeholders.

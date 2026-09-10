@@ -5,6 +5,16 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## September 10, 2026
 
+- **The top of Dr. Ruth Abramowitz's preview page now reads as a confirmed speaker, not an invitation.** She's said yes, so the page no longer pitches her.
+  - Eyebrow line "An invitation" is now "A note for our speaker", and the heading "Hello, Dr. Ruth Abramowitz" is now "Thank you, Dr. Abramowitz" — both matching Dr. Bylis's and Dr. Berry's pages. Her first name was dropped from the heading on purpose: "Thank you, Dr. Ruth Abramowitz" wraps onto a second line at 375, 390 and 414px, which covers most iPhones. The shorter version fits on one line everywhere the old heading did.
+  - The opening paragraph now says she'll be joining as a speaker, thanks her for sending her bio and background, and tells her it's all been added — "Here's your updated preview."
+  - "What we'd like to do is add your session as a fourth concurrent track" is now "your session goes in as a fourth concurrent track" — it's settled, so it shouldn't read as a proposal.
+  - "Everything below is a mock-up showing how you and your session *would* appear" is now "Everything below shows how you and your session will appear on the website once we add them."
+  - Closing line "What do you think? Just reply and let us know." is now "Anything you'd like changed? Just reply." The obvious version kept "and let us know", but that wraps to two lines at 390, 414 and 430px. The shorter one is actually better than what was there — one line at 360 and 375px, where the old line was two.
+  - **The pink box was removed at Ben's request.** For the record, the wording that came out was: *"The session title is our suggestion, not a decision. Tell us what you'd like it called and we'll use that. And if the format, the timing, or the size of the group doesn't suit you, say so — we'd rather build it around what works for you than hand you something fixed."*
+  - Three pink "Draft" badges removed from the section headings, "1. Your Proposed Slot" is now "1. Your Agenda Slot", and two "would appear"/"would see" hints are now "will appear"/"will see" — all of which contradicted a confirmed speaker.
+  - Checked in a real browser at twelve widths from 320 to 1920px: nothing overflows, nothing is clipped, and the heading and closing line both hold on one line.
+
 - **Dr. Ruth Abramowitz's preview page rewritten with the details she sent back.** Both the short card text and the full bio on `speaker-review/dr-ruth-abramowitz` now describe her accurately.
   - **Card text:** she's a general dentist in Central New Jersey attending the Robert Wood Johnson GPR program, certified in Public Health Dentistry through A.T. Still University with an AEGD certificate from NYU Langone, focused on comprehensive and cosmetic care. The old version had her based in Brooklyn serving an underserved community, and credited the Public Health certification to the wrong school.
   - **Bio, two corrections:** the Public Health Dentistry certification is credited to A.T. Still University, and "NYU" is now "NYU Langone."

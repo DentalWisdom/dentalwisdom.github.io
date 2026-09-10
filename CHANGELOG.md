@@ -3,6 +3,19 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## September 10, 2026
+
+- **Dr. Ruth Abramowitz's preview page rewritten with the details she sent back.** Both the short card text and the full bio on `speaker-review/dr-ruth-abramowitz` now describe her accurately.
+  - **Card text:** she's a general dentist in Central New Jersey attending the Robert Wood Johnson GPR program, certified in Public Health Dentistry through A.T. Still University with an AEGD certificate from NYU Langone, focused on comprehensive and cosmetic care. The old version had her based in Brooklyn serving an underserved community, and credited the Public Health certification to the wrong school.
+  - **Bio, two corrections:** the Public Health Dentistry certification is credited to A.T. Still University, and "NYU" is now "NYU Langone."
+  - **Bio, two new paragraphs.** One on her art background — painting lessons from age six, becoming an instructor in acrylic and oil, teaching art at a Jewish elementary school in Arizona. This matters because the session being proposed to her is the painting/hand-skills workshop, and nothing in the old bio explained why she'd be the one teaching it. The second covers her memberships (AGD, AAFE, Raritan Valley Study Club) and the Dental Wisdom WhatsApp group.
+  - **Her practice paragraph rewritten:** working alongside her father in Brooklyn, then moving to Highland Park, NJ, where she and her husband own Park Dental Group, with a focus on general dentistry and TMJ pain.
+  - **Free-time line:** local cookbook club replaces listening to music.
+  - **Closing line removed** — "Dr. Abramowitz looks forward to helping you achieve your oral health and dental goals!" read like a patient greeting on a dental office website rather than a conference speaker bio, and wasn't in the text she sent.
+  - **Checked in a real browser at twelve screen widths.** The card is the same height as before on every phone, tablet and laptop; only on the narrowest old phones (320px) does it gain one line. Nothing is cut off or clipped anywhere, and her name, session title and time are untouched.
+
+---
+
 ## September 8, 2026 (docs)
 
 - **Your standing preferences are written down now, so you don't have to keep repeating them.** Three documents updated; no visitor sees any difference — this is all so a future chat starts from the truth instead of asking you again.

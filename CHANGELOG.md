@@ -3,6 +3,14 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## September 11, 2026
+
+- **Dr. Ruth Abramowitz's preview page: the intro cut down to two short paragraphs.** It now leads with "We're so excited to have you speak! We'll order all the supplies for the session — you just show up and teach. Thank you so much!" The second paragraph keeps only what isn't said anywhere else on the page: that it's a hands-on workshop, Friday 3:00–5:00 PM, and that the page is private. Measured at twelve widths: 16 lines down to 5 on a laptop, 27 down to 9 on an iPhone.
+- **Group size is now "15 people maximum"** (Ben's call), replacing "somewhere around 8–12 people." That number appears in exactly one place on the site, so nothing else needed changing.
+- **Two paragraphs came out.** For the record: the one about helping at the Welcome Party ("There may also be one or two other moments over the weekend where we'd love a hand… we want you there as a guest who's having a great time, not as someone working the weekend"), and the "the agenda is already published / your session goes in as a fourth concurrent track" framing. The Welcome Party heads-up is now unsaid anywhere — worth raising with her by email closer to the conference so it isn't a surprise.
+
+---
+
 ## September 10, 2026
 
 - **The top of Dr. Ruth Abramowitz's preview page now reads as a confirmed speaker, not an invitation.** She's said yes, so the page no longer pitches her.

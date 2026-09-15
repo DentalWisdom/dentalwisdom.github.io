@@ -536,7 +536,7 @@ window.DEALS_DATA = [
   },
   /* Yom Tov Settings — added Sept 15 2026. Not a conference sponsor, so it sits
      in the non-sponsor block of this category. Two promo codes per Ben; written
-     as "150 or more" rather than "150+" on purpose — buildOffers() in js/deals.js
+     as "$150 or more" rather than "150+" on purpose — buildOffers() in js/deals.js
      splits the offer on "+", so a bare "+" in the text would break the second
      Copy-code line. Logo: source PNG in "_Logos for Deals Page - Drop Here/
      YomTovSettings.png", flattened onto white and saved as
@@ -547,7 +547,7 @@ window.DEALS_DATA = [
     category: "Israel, Kosher & Community",
     description: "Upscale disposable dinnerware that dresses a Yom Tov or simcha table like fine china — elegant plates, matching cutlery, barware and napkins — with none of the cleanup. Customers consistently praise the classy designs, the quality, and how quickly it ships.",
     link: "https://yomtovsettings.com/",
-    promo: "12% off any order, no minimum (DENTIST12) + 15% off orders of 150 or more (DENTIST15)",
+    promo: "12% off, no minimum (DENTIST12) + 15% off orders of $150 or more (DENTIST15)",
     imageUrl: "/images/deals/yom-tov-settings.webp",
     keywords: "disposable plates plastic plates fancy elegant upscale tableware dinnerware cutlery silverware flatware cups barware napkins chargers serving Yom Tov Shabbos Pesach seder simcha kiddush party event catering entertaining hosting office party disposables paper goods"
   },

@@ -7,8 +7,8 @@ A plain-English record of every update made to the site, most recent first. This
 
 - **Nuts.com is off the Deals page.** Its referral link was dead, so the whole listing came out rather than leaving a broken link for people to click. The logo file is still in `images/deals/` in case it ever comes back.
 - **Yom Tov Settings added to the Deals page**, in Israel, Kosher & Community, at the bottom of that group (they're not a conference sponsor, so no tier pill). Card tagline: "Disposable Dinnerware." Links to yomtovsettings.com.
-  - **Two coupon codes, two Copy buttons.** The pop-up shows "12% off any order, no minimum (DENTIST12)" and "15% off orders of 150 or more (DENTIST15)" on separate gold lines, each with its own Copy code button — the same format as Crazy Dental's two-code offer.
-  - **One thing to know if you ever edit that offer text:** the page splits an offer into separate lines wherever it finds a "+", so the second code says "150 or more" instead of "150+". Writing "150+" would chop the line in half and lose its Copy button.
+  - **Two coupon codes, two Copy buttons.** The pop-up shows "12% off, no minimum (DENTIST12)" and "15% off orders of $150 or more (DENTIST15)" on separate gold lines, each with its own Copy code button — the same format as Crazy Dental's two-code offer.
+  - **One thing to know if you ever edit that offer text:** the page splits an offer into separate lines wherever it finds a "+", so the second code says "$150 or more" instead of "150+". Writing "150+" would chop the line in half and lose its Copy button.
   - **Logo:** your `YomTovSettings.png` from the drop folder, flattened onto white and saved as `images/deals/yom-tov-settings.webp` (1200×903, 14KB) — in line with the other deal logos.
   - Checked in a real browser at phone and laptop width: the card and logo render, the pop-up opens, both Copy buttons carry the right codes, the View Deal button goes to the right site, and nothing overflows.
 

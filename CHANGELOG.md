@@ -5,6 +5,17 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## September 15, 2026
 
+- **Promo codes moved onto the button, across the whole site.** Every coded offer used to print its code twice — once in the sentence, once hidden behind a button that just said "Copy code". Now the button *is* the code: a dashed gold chip reading e.g. `DENTIST15`, which copies when tapped and flashes "Copied ✓". The sentence keeps only the offer.
+  - **All 9 coded offers were rewritten to one house style.** They were previously in two formats — some as `(WISDOM10)`, others as sentences like "Use code DW100 for $100 discount". They now all end with the code in parentheses, and the page strips it out for display. Affects Crazy Dental, AAFE, Hazorfim, Rockets into Roses, Mulami, Aufschnitt and Yom Tov Settings, on both the Deals and Sponsors pop-ups.
+  - **Offers with a lowercase aside were left alone on purpose** — "30% off for 6 months (exclusive)" and "~4% APY (fluctuates)" stay plain text, because only a parenthetical with a capital or a digit counts as a code. Worth remembering when writing a new offer: a lowercase aside stays text, `(Like This)` would turn into a code chip.
+  - **Yom Tov Settings wording tightened** to "15% off $150 or more", which now holds one line at every width from a small phone to a wide desktop. It was two lines on every phone before.
+  - **On phones the chip sits under the offer text rather than beside it.** There isn't room for both — at iPhone width the offer row has about 217px to work with and the chip alone takes 115px. From tablet width up they sit side by side.
+  - Checked in a browser across twelve widths: all 9 codes copy correctly, every chip shows the right code, no offer lost its meaning, the Sponsors pop-up still works, and there are no page errors.
+
+---
+
+## September 15, 2026
+
 - **Nuts.com is off the Deals page.** Its referral link was dead, so the whole listing came out rather than leaving a broken link for people to click. The logo file is still in `images/deals/` in case it ever comes back.
 - **Yom Tov Settings added to the Deals page**, in Israel, Kosher & Community, at the bottom of that group (they're not a conference sponsor, so no tier pill). Card tagline: "Disposable Dinnerware." Links to yomtovsettings.com.
   - **Two coupon codes, two Copy buttons.** The pop-up shows "12% off, no minimum (DENTIST12)" and "15% off orders of $150 or more (DENTIST15)" on separate gold lines, each with its own Copy code button — the same format as Crazy Dental's two-code offer.

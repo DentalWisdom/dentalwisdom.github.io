@@ -138,7 +138,7 @@ window.DEALS_DATA = [
     category: "Clinical & Chairside",
     description: "#1 Botox, Filler, and TMJ training for dental professionals. Integrate new services and increase production.",
     link: "https://facialesthetics.org/",
-    promo: "Use code DW100 for $100 discount",
+    promo: "$100 discount (DW100)",
     imageUrl: "/images/deals/aafe.webp",
     keywords: "Botox filler injectables aesthetics esthetics facial cosmetic TMJ jaw pain neurotoxin dermal CE training course"
   },
@@ -456,7 +456,7 @@ window.DEALS_DATA = [
     category: "Israel, Kosher & Community",
     description: "Handcrafted sterling silver Judaica including Shabbat candlesticks, menorahs, and kiddush cups.",
     link: "https://hazorfim.com/",
-    promo: "Use Code DentalWisdom for Free Gift",
+    promo: "Free gift (DentalWisdom)",
     imageUrl: "/images/deals/hazorfim.webp",
     keywords: "silver Judaica Shabbat candlesticks menorah chanukah kiddush cup havdalah seder plate Jewish gift Israel"
   },
@@ -466,7 +466,7 @@ window.DEALS_DATA = [
     category: "Israel, Kosher & Community",
     description: "Beautiful art and jewelry created from actual rockets that landed in Israel — symbols of resilience and hope.",
     link: "https://theisraelboutique.com/category/rocket-art/all-rocket-art/?a=dental",
-    promo: "Code dental10 for 10% off",
+    promo: "10% off (dental10)",
     imageUrl: "/images/deals/rockets-into-roses.webp",
     keywords: "Israel support art jewelry rockets Kassam resilience hope solidarity boutique unique gift Zionist"
   },
@@ -486,7 +486,7 @@ window.DEALS_DATA = [
     category: "Israel, Kosher & Community",
     description: "Premium kosher charcuterie crafted with traditional Italian techniques using grass-fed beef.",
     link: "https://mulami.com/collections",
-    promo: "15% Off with code DentalWisdom15%OFF",
+    promo: "15% off (DentalWisdom15%OFF)",
     imageUrl: "/images/deals/mulami.webp",
     keywords: "kosher meat charcuterie salami prosciutto beef glatt grass-fed Italian cured meats deli gourmet"
   },
@@ -496,7 +496,7 @@ window.DEALS_DATA = [
     category: "Israel, Kosher & Community",
     description: "All-natural, gluten-free kosher beef jerky.",
     link: "https://www.aufschnittmeats.com/",
-    promo: "50% off single packs with code DENTAL50 + Free shipping over $70",
+    promo: "50% off single packs (DENTAL50) + Free shipping over $70",
     imageUrl: "/images/deals/aufschnitt-meats.webp",
     keywords: "kosher beef jerky snack gluten free natural meat protein on-the-go office snack gift"
   },
@@ -537,8 +537,8 @@ window.DEALS_DATA = [
   /* Yom Tov Settings — added Sept 15 2026. Not a conference sponsor, so it sits
      in the non-sponsor block of this category. Two promo codes per Ben; written
      as "$150 or more" rather than "150+" on purpose — buildOffers() in js/deals.js
-     splits the offer on "+", so a bare "+" in the text would break the second
-     Copy-code line. Logo: source PNG in "_Logos for Deals Page - Drop Here/
+     splits the offer on "+", so a bare "+" anywhere in the text would break the
+     second line and its code chip. Logo: source PNG in "_Logos for Deals Page - Drop Here/
      YomTovSettings.png", flattened onto white and saved as
      images/deals/yom-tov-settings.webp (1200×903, ~14KB). */
   {
@@ -547,7 +547,7 @@ window.DEALS_DATA = [
     category: "Israel, Kosher & Community",
     description: "Upscale disposable dinnerware that dresses a Yom Tov or simcha table like fine china — elegant plates, matching cutlery, barware and napkins — with none of the cleanup. Customers consistently praise the classy designs, the quality, and how quickly it ships.",
     link: "https://yomtovsettings.com/",
-    promo: "12% off, no minimum (DENTIST12) + 15% off orders of $150 or more (DENTIST15)",
+    promo: "12% off, no minimum (DENTIST12) + 15% off $150 or more (DENTIST15)",
     imageUrl: "/images/deals/yom-tov-settings.webp",
     keywords: "disposable plates plastic plates fancy elegant upscale tableware dinnerware cutlery silverware flatware cups barware napkins chargers serving Yom Tov Shabbos Pesach seder simcha kiddush party event catering entertaining hosting office party disposables paper goods"
   },

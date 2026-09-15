@@ -2914,8 +2914,10 @@ body.menu-open {
 }
 
 /* Offer lines in the pop-up. Each offer sits in its own soft row: bold-gold
-   label on the left, a compact "Copy code" button on the right. A promo with
-   " + " splits into multiple rows. Shared by the Deals and Sponsors pop-ups. */
+   label on the left, and — when that offer carries a promo code — a dashed
+   code chip on the right showing the code itself (tap to copy). The code is
+   stripped out of the sentence by buildOffers() so it is never printed twice.
+   A promo with " + " splits into multiple rows. Shared by Deals and Sponsors. */
 .deal-modal__offers { margin: var(--space-sm) 0 0; }
 .deal-offer {
   display: flex;
@@ -2938,6 +2940,15 @@ body.menu-open {
   margin: 0;
 }
 .deal-offer .deal-modal__copy { margin: 0; }
+/* Code chip: the promo code itself, shown on the button. Dashed edge + tabular
+   figures read as "coupon code" rather than "label", and make an ambiguous
+   character (0/O, 1/l) easier to read back. Sits right of the offer text. */
+.deal-modal__copy--code {
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.04em;
+  border-style: dashed;
+  padding-inline: 0.85rem;
+}
 
 /* Card: attending badge pinned top-left */
 .sponsor-card {

@@ -124,7 +124,7 @@ window.SPONSORS_DATA = [
     videoUrl: "https://www.youtube.com/embed/x81llmU97Vw"
   },
   {
-    name: "APEX",
+    name: "Apex Reimbursement Specialists",
     logoUrl: "/images/sponsors/apex.webp",
     link: "https://apexreimbursement.com/dental-wisdom/",
     blurb: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
@@ -283,7 +283,7 @@ window.SPONSORS_DATA = [
     blurb: "The American Academy of Facial Esthetics offers hands-on training in Botox, fillers, and facial aesthetics for dental and medical professionals — expanding your clinical scope and practice revenue.",
     tier: "bronze",
     pastSponsor: true,
-    promo: "Use code DW100 for $100 discount"
+    promo: "$100 discount (DW100)"
   },
   */
   {

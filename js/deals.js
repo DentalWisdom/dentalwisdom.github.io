@@ -60,8 +60,7 @@ document.addEventListener('DOMContentLoaded', function () {
   }
   var DEAL_SPONSOR_ALIAS = {
     'dental supplies': 'crazy dental',
-    'credit card processing': 'dental processing solutions',
-    'apex reimbursement specialists': 'apex'
+    'credit card processing': 'dental processing solutions'
   };
   var SPONSOR_TIER = {};
   (window.SPONSORS_DATA || []).forEach(function (s) {
@@ -106,13 +105,18 @@ document.addEventListener('DOMContentLoaded', function () {
     return found;
   }
 
-  /* ── Pull a promo code out of an offer line, if there is one ── */
+  /* ── Pull a promo code out of an offer line, if there is one ──
+     Codes are written as a trailing "(CODE)" in the data files. A parenthetical
+     counts as a code only when it has no spaces AND contains a capital or a
+     digit — so a lowercase aside like "(exclusive)" stays plain text. Write
+     asides in lowercase, or they turn into a Copy chip. The older
+     "... with code XYZ" / "Use code XYZ for ..." phrasings still work. */
   function extractCode(promo) {
     if (!promo) return '';
-    var m = promo.match(/\bcode[:\s]+([A-Za-z0-9%!$-]{3,})/i); // "code WISDOM10", "Code dental10"
+    var m = promo.match(/\(([A-Za-z0-9%!$-]{3,})\)\s*$/);      // "(WISDOM10)"
+    if (m && /[A-Z0-9]/.test(m[1])) return m[1];
+    m = promo.match(/\bcode[:\s]+([A-Za-z0-9%!$-]{3,})/i);      // "code WISDOM10"
     if (m) return m[1].replace(/[.,;]$/, '');
-    m = promo.match(/\(([A-Za-z0-9]{3,})\)/);                  // "(WISDOM10)"
-    if (m && (/[0-9]/.test(m[1]) || m[1] === m[1].toUpperCase())) return m[1];
     return '';
   }
   function fallbackCopy(text) {
@@ -131,21 +135,36 @@ document.addEventListener('DOMContentLoaded', function () {
         '" style="color:inherit;text-decoration:underline">' + m + '</a>';
     });
   }
-  /* Render an offer as one or more lines (split on " + "), each with its own
-     Copy button when that line contains a promo code. */
+  /* Render an offer as one or more lines (split on " + "). A line carrying a
+     promo code gets a code chip on the right showing the code itself, so the
+     code is stripped out of the sentence rather than printed twice. */
   function buildOffers(promo) {
     if (!promo) return '';
     return promo.split(/\s*\+\s*/).map(function (seg) {
       seg = seg.trim();
       if (!seg) return '';
       var code = extractCode(seg);
+      var text = seg;
+      if (code) {
+        text = seg
+          .replace(/\s*\([^()]*\)\s*$/, '')                    // drop trailing "(CODE)"
+          .replace(/\s*\bwith code\b.*$/i, '')                  // "... with code XYZ"
+          .replace(/^\s*use\s+code\s+\S+\s+for\s+/i, '')       // "Use code XYZ for ..."
+          .replace(/^\s*code[:\s]+\S+\s+for\s+/i, '')          // "Code xyz for ..."
+          .replace(/[,;:\s]+$/, '')
+          .trim();
+        if (!text) text = seg;                                  // never render an empty line
+        text = text.charAt(0).toUpperCase() + text.slice(1);
+      }
       var btn = code
-        ? '<button type="button" class="deal-modal__copy" data-code="' +
-          escapeAttr(code) + '">Copy code</button>'
+        ? '<button type="button" class="deal-modal__copy deal-modal__copy--code"' +
+          ' data-code="' + escapeAttr(code) + '"' +
+          ' aria-label="Copy promo code ' + escapeAttr(code) + '">' +
+          escapeHtml(code) + '</button>'
         : '';
       return '<div class="deal-offer">' +
-        '<span class="deal-offer__text">' + linkifyPhone(escapeHtml(seg)) + '</span>' + btn +
-        '</div>';
+        '<span class="deal-offer__text">' + linkifyPhone(escapeHtml(text)) + '</span>' +
+        btn + '</div>';
     }).join('');
   }
 
@@ -406,7 +425,7 @@ document.addEventListener('DOMContentLoaded', function () {
           btn.textContent = 'Copied ✓';
           btn.classList.add('is-copied');
           setTimeout(function () {
-            btn.textContent = 'Copy code';
+            btn.textContent = btn.getAttribute('data-code') || 'Copy code';
             btn.classList.remove('is-copied');
           }, 1600);
         };

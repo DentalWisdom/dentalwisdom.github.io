@@ -481,16 +481,6 @@ window.DEALS_DATA = [
     keywords: "Jewish books Torah Talmud siddur prayer book Chumash Gemara Mishna children learning Mesorah Jewish publishing"
   },
   {
-    title: "Nuts.com",
-    shortDescription: "Nuts & Snacks",
-    category: "Israel, Kosher & Community",
-    description: "Wide variety of nuts, dried fruit, snacks, and kosher products with bulk options.",
-    link: "https://share.nuts.com/Benjamin19!a929aa044a!a",
-    promo: "$20 Off Order",
-    imageUrl: "/images/deals/nuts-com.webp",
-    keywords: "nuts dried fruit snacks kosher bulk almonds cashews trail mix gift healthy office snack food"
-  },
-  {
     title: "Mulami",
     shortDescription: "Kosher Charcuterie",
     category: "Israel, Kosher & Community",
@@ -543,6 +533,23 @@ window.DEALS_DATA = [
     promo: "",
     imageUrl: "/images/deals/kosherwine.webp",
     keywords: "kosher wine red white rose Israeli wine Bordeaux cabernet moscato Shabbos kiddush Yom Tov Pesach seder four cups gift basket office gift bottle delivery online wine shop mevushal"
+  },
+  /* Yom Tov Settings — added Sept 15 2026. Not a conference sponsor, so it sits
+     in the non-sponsor block of this category. Two promo codes per Ben; written
+     as "150 or more" rather than "150+" on purpose — buildOffers() in js/deals.js
+     splits the offer on "+", so a bare "+" in the text would break the second
+     Copy-code line. Logo: source PNG in "_Logos for Deals Page - Drop Here/
+     YomTovSettings.png", flattened onto white and saved as
+     images/deals/yom-tov-settings.webp (1200×903, ~14KB). */
+  {
+    title: "Yom Tov Settings",
+    shortDescription: "Disposable Dinnerware",
+    category: "Israel, Kosher & Community",
+    description: "Upscale disposable dinnerware that dresses a Yom Tov or simcha table like fine china — elegant plates, matching cutlery, barware and napkins — with none of the cleanup. Customers consistently praise the classy designs, the quality, and how quickly it ships.",
+    link: "https://yomtovsettings.com/",
+    promo: "12% off any order, no minimum (DENTIST12) + 15% off orders of 150 or more (DENTIST15)",
+    imageUrl: "/images/deals/yom-tov-settings.webp",
+    keywords: "disposable plates plastic plates fancy elegant upscale tableware dinnerware cutlery silverware flatware cups barware napkins chargers serving Yom Tov Shabbos Pesach seder simcha kiddush party event catering entertaining hosting office party disposables paper goods"
   },
 
   /* ══════════════ 7. EXTRAS ══════════════ */

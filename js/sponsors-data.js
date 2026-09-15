@@ -130,7 +130,8 @@ window.SPONSORS_DATA = [
     blurb: "PPO analysis and revenue cycle management consulting for dental practices — Apex Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
     tier: "gold",
     attending: true,
-    promo: "Free Consult"
+    promo: "Free Consult",
+    videoUrl: "https://www.youtube.com/embed/g5EBpDga-E4"
   },
   {
     name: "TheraBreath",

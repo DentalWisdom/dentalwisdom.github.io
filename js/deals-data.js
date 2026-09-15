@@ -152,6 +152,7 @@ window.DEALS_DATA = [
     link: "https://apexreimbursement.com/dental-wisdom/",
     promo: "Free Consult",
     imageUrl: "/images/deals/apex-reimbursement.webp",
+    videoUrl: "https://www.youtube.com/embed/g5EBpDga-E4",
     keywords: "PPO insurance fee schedule credentialing billing reimbursement revenue cycle management consulting RCM collections"
   },
   {

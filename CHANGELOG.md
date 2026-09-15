@@ -5,6 +5,9 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## September 15, 2026
 
+- **Apex Reimbursement Specialists now has a video** in their pop-up on both the Conference Sponsors page and the Deals page. It plays under the "View Deal" button on the Deals card and at the bottom of the sponsor card, the same as the other sponsor videos.
+  - To be clear about an earlier question: Apex never had a video before this. Checking the full history, twelve separate updates added videos to other sponsors over the past months and Apex was not one of them — so nothing had been lost, this is the first time one has been added for them.
+
 - **The footer year updates itself from now on.** Every page's footer used to have "2026" typed into it by hand, on all 19 pages. It now fills in the real year automatically, so it will say 2027 on January 1 without anyone touching it. If someone has JavaScript switched off they still see 2026 rather than a blank.
 - **Apex is now called "Apex Reimbursement Specialists" everywhere on the site.** Their name was showing up four different ways depending on which page you were on — "APEX" on the Sponsors page, "APEX Reimbursement Specialists" on the agenda, "Apex Reimbursement Specialists" on Deals, and "Apex" on the Live page. Someone browsing from one page to the next could reasonably have thought they were three different companies. All of it now reads the same.
   - **One visible side effect, expected and approved:** the full name is long enough that it takes two lines under their logo on the Sponsors page, so the row of gold logos that Apex sits in is a little taller than the row above it. This was measured at every screen size before the change. If it bothers you once you see it live, say so and it can be made to fit on one line.

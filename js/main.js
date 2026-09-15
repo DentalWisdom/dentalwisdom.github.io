@@ -342,4 +342,12 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
+  /* -----------------------------
+     Footer copyright year
+     Keeps the footer year current without a yearly manual edit.
+     Falls back to the hard-coded 2026 in the HTML if JS is off.
+     ----------------------------- */
+  var footerYear = document.getElementById('footerYear');
+  if (footerYear) footerYear.textContent = new Date().getFullYear();
+
 });

@@ -79,7 +79,7 @@ A slim secondary bar under the main header: Overview • Agenda • Speakers •
 - **Floating “Join the Network” button** (bottom-right, visible on all pages)
   - Simple coral pill, label "Join the Network" (no "For Dentists Only" tag)
   - Opens modal with Jotform (you will build)
-  - Modal intro text: "This community is for dental professionals — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates." The "dentists only" criteria is also covered as a question in the Jotform application itself.
+  - Modal intro text: "This community is for dentists only — connect with the Dental Wisdom community for session invitations, reminders, exclusive deals, and updates." The "dentists only" criteria is also covered as a question in the Jotform application itself.
 - Consistent footer (no Accessibility link needed)
 
 ---

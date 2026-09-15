@@ -148,7 +148,7 @@ window.DEALS_DATA = [
     title: "Apex Reimbursement Specialists",
     shortDescription: "Revenue Cycle",
     category: "Grow Your Practice",
-    description: "PPO analysis and revenue cycle management consulting for dental practices — APEX Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
+    description: "PPO analysis and revenue cycle management consulting for dental practices — Apex Reimbursement Specialists helps practices increase collections, renegotiate fees, and maximize insurance revenue.",
     link: "https://apexreimbursement.com/dental-wisdom/",
     promo: "Free Consult",
     imageUrl: "/images/deals/apex-reimbursement.webp",

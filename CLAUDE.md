@@ -29,12 +29,12 @@ Quick reference for what's actually published on the live pages right now. Updat
 
 **Agenda slots still marked TBD / "To Be Announced Soon" (in `js/agenda-data.js`):**
 - Friday 3:00–5:00 PM concurrent block: 4 tracks, 3 of them filled — Dr. Sam Glick (orthobrain), Dr. Elaine Bylis, Dr. Ruth Abramowitz. Still open: "Complications in Perio Anterior Cases" — speaker TBD (Adin-sponsored). (The old note here said Werb was in this block; she is not — her 3:00 PM entry was archived July 2026.)
-- Friday 6:15 PM Mincha/Kabbalas Shabbos — Gobbie Cohn's name hidden (unconfirmed); APEX + CG Insurance sponsor credit kept.
+- Friday 6:15 PM Mincha/Kabbalas Shabbos — Gobbie Cohn's name hidden (unconfirmed); Apex Reimbursement Specialists + CG Insurance sponsor credit kept.
 - Shabbos 8:15 AM Pre-Davening Shiur — no speaker. Shabbos 11:00 AM Kiddush & Dvar Torah — no speaker. Shabbos 3:45 PM "Dental Related Shiur to Be Announced Soon."
 
 **Sponsors live on `conference-sponsors` + the agenda strip (`js/sponsors-data.js`):**
 - Platinum: orthobrain (shown as "Turnkey Orthodontics"), Touro College of Dental Medicine, Emerald Dental Lab, LiveWell Capital, Crown Catapult.
-- Gold: MB Precious Metals, Crazy Dental, Reach, Adin, APEX, Straumann — plus Pearl and Lasso MD (both "Past Sponsor").
+- Gold: MB Precious Metals, Crazy Dental, Reach, Adin, Apex Reimbursement Specialists, Straumann — plus Pearl and Lasso MD (both "Past Sponsor").
 - Silver: The Altair Hotel, TheraBreath — plus Ultradent, Blue Sky Bio (both "Past Sponsor") and TruAbutment (pending).
 - Bronze: Citron Films, Pizza Biza, CG Insurance Group — plus Pul Dental, Wonderful Dental, Zolli Candy (all "Past Sponsor").
 - Removed / archived (commented in-file, not deleted): Nobel Biocare, Dental Processing Solutions, NuSmile, AAFE.
@@ -139,7 +139,7 @@ Re-sort the affected category by this rule after any add/remove/tier change.
 - Change a sponsor's video or description in sponsors-data.js → it updates everywhere that sponsor's detail shows (sponsor page + any Deals-card sync). Keep sponsor-level copy in sponsors-data.js, not duplicated in deals-data.js.
 
 **Name matching** (deal title ≠ sponsor `name` in several cases — match by company):
-"Dental Supplies" = "Crazy Dental" · "Credit Card Processing" = "Dental Processing Solutions" · "Apex Reimbursement Specialists" = "APEX". (The LiveWell Capital deal was renamed from "Sam Waller - LiveWell Capital" to "LiveWell Capital" on July 28 2026, so its title now matches the sponsor name directly — no alias needed.) Add new aliases here when they arise.
+"Dental Supplies" = "Crazy Dental" · "Credit Card Processing" = "Dental Processing Solutions". (The "Apex Reimbursement Specialists" = "APEX" alias was **removed Sept 15 2026** — the sponsor is now named "Apex Reimbursement Specialists" in `sponsors-data.js`, so the deal title matches directly. Do not re-add it; an alias pointing at "apex" would break the tier pill.) (The LiveWell Capital deal was renamed from "Sam Waller - LiveWell Capital" to "LiveWell Capital" on July 28 2026, so its title now matches the sponsor name directly — no alias needed.) Add new aliases here when they arise.
 
 **Tier pill:** every deal whose company is a conference sponsor shows a small tier pill (Platinum/Gold/Silver/Bronze) on the card and in its detail modal, styled to the tier. Non-sponsors show no pill.
 
@@ -191,7 +191,7 @@ Tokens as CSS variables in `:root`. Vibe: calm luxury, warm Jewish community, pr
 | 10 | Dr. Samuel Schuster | `speaker-samuel-schuster` | Pre-Davening Shiur | Shabbos 8:15–9:15am | — |
 | 11 | Dr. Marc Faber | `speaker-marc-faber` | I Buy Junk Practices: Turning Distressed Offices Into Thriving Ones (CEO, Edge Dental Management) | Thu 6:30–8pm | — |
 | 12 | Yaakov Citron | `speaker-yaakov-citron` | Videography Meets AI: DIY Workshop | Fri 4–5pm | Citron Films |
-| 13 | Gobbie Cohn | `speaker-gobbie-cohn` | Mincha, Kabbalas Shabbos & Maariv | Fri 6:15pm | APEX Reimbursement Specialists & CG Insurance Group |
+| 13 | Gobbie Cohn | `speaker-gobbie-cohn` | Mincha, Kabbalas Shabbos & Maariv | Fri 6:15pm | Apex Reimbursement Specialists & CG Insurance Group |
 
 Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in `_Speaker Bios & Pictures - Drop Here/`. Dr. Samuel Schuster's photo is still TODO — no headshot provided yet (see placeholder note in conference-speakers/index.html). Dr. Tzvi Krupka's photo is resized and saved as `images/speaker-tzvi-krupka.webp` (790×800, ~15KB); his bio is in `_archive/conference-speakers-full.html`, the master reference for the eventual speaker cards. Dr. Gabe Hershman's old headshot was moved to `_archive/superseded-images/speakers/` (not deleted) since Krupka is replacing his Thu 2–4pm slot.
 
@@ -213,6 +213,14 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - Every page: unique `<title>`, meta description, Open Graph tags, favicon, custom 404 per spec §8.
 - External services allowed: Jotform, YouTube, Google Fonts. Nothing else.
 
+## Changes made September 15, 2026 (site review follow-up)
+- **Footer copyright year is now automatic.** Every page's footer holds `&copy; <span id="footerYear">2026</span>`, and `js/main.js` overwrites it with the real year on load. The hard-coded 2026 is the no-JavaScript fallback. Nothing to update each January — do not "fix" it back to a plain year.
+- **Apex is named "Apex Reimbursement Specialists" everywhere.** `sponsors-data.js` `name`, `agenda-data.js`, `live-data.js` (`sponsor` AND `sponsorName` — the latter is the lookup key that pulls their logo onto the May 14 Live session), `deals-data.js`, and the `data-sponsor-name` on Gobbie Cohn's hidden speaker card. The old `'apex reimbursement specialists': 'apex'` alias in `deals.js` was deleted as part of this. **Known and accepted visual effect:** the full name wraps to two lines on the gold sponsor tile, so Apex's row of gold logos sits 20px taller than the row above it. Ben approved this with the measurement in hand on Sept 15 — it is not a bug to fix.
+- **The join pop-up now says "This community is for dentists only".** Ten pages plus `SITE_SPEC.md` §3. The spec's older "dental professionals" wording is superseded.
+- **Rabbi Dr. Ephraim Rudolph's Friday 10:30 PM agenda entry now links to his speaker card** (`speakerUrl: "/conference-speakers#speaker-ephraim-rudolph"`).
+- **The Sefer Torah page is archived.** `torah/` moved to `_archive/torah/`, so `dentalwisdom.org/torah` now 404s. It was live, indexable, orphaned (nothing linked to it, not in the sitemap) and still carried six TODO placeholders — every dedication button was a `mailto:` awaiting a Jotform link, and its social share image was never created. Ben's call to take it down rather than hide it. To bring it back: move the folder out of `_archive/`, then finish the TODOs, add a footer link and a sitemap entry.
+- **Review-page CSS is now shared, not copy-pasted.** `css/review-speaker.css` (39 rules) serves the 10 `speaker-review/` pages; `css/review-sponsor.css` (37 rules) serves the 6 `sponsor-review/` pages. Inline CSS across those 16 pages dropped from ~4,900 lines to ~1,100 — what's left inline is genuinely page-specific (brand colours and per-sponsor tweaks). **Cascade rule: the shared file is linked BEFORE the inline `<style>` block, so page-specific rules still win.** Keep it that way. Verified visually lossless — all 16 pages screenshotted at 375px and 1280px before and after, 32/32 pixel-identical. Bump `?v=` on these two links when editing them (currently `?v=1`).
+
 ## Known intentional decisions (do not "fix" these)
 - **Never let text grow from one line to two. Verify it, don't eyeball it.** Ben's rule, stated Sept 8, 2026: if a piece of text fits on one line today, it must still fit on one line after an edit. Applies to any copy change anywhere — buttons, labels, eyebrows, headings, hero notes, FAQ answers. **Guessing at this has been wrong repeatedly**, so measure it in a real browser before writing to the file, and again after:
   1. Stage the affected page(s) + `css/styles.css` into the container, serve with `python3 -m http.server`, load with Playwright (Chromium is preinstalled at `/opt/pw-browsers`; `PLAYWRIGHT_BROWSERS_PATH` is set — never run `playwright install`).
@@ -227,7 +235,7 @@ Speaker photos live in `images/speaker-*.{jpg,png,webp}`. Source bios/photos in 
 - **Time labels are always "EST"** (Ben's call, July 2026): every Live session time — and any time shown anywhere on the site — displays as "EST", e.g. "8:00 PM – 9:30 PM EST". Never use "ET" or "EDT", even for events during daylight-saving months. Ben understands "EST" is technically standard time; he wants the clock time to read as New York local time with the "EST" label used uniformly. When adding a new session to `js/live-data.js`, always write the `time` field with "EST".
 - **Mobile menu focus target (`js/main.js`, `openMenu`)**: focuses the first link in `.mobile-menu__list` (e.g. "Conference"), NOT the logo link. Focusing the logo link makes the browser's gold focus ring stack on top of the logo's navy border, which looks like two nested boxes. Do not change this back to `mobileMenu.querySelector('a')`.
 - **Pricing label on homepage**: The homepage pricing box and accordion say "Dental Resident" (concise). The FAQ says "Dental Student or Dental Resident" (more complete). Both are correct — this discrepancy is intentional.
-- **CSS cache version**: The stylesheet currently loads as `styles.css?v=54`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):
+- **CSS cache version**: The stylesheet currently loads as `styles.css?v=55`. Bump the version number every time you make CSS changes so returning visitors get the updated file. Use Python `os.walk()` to replace across all HTML files (the folder name has a space — never use `find | xargs sed`):
   ```python
   import os, re
   root = "/sessions/.../mnt/Dental Wisdom Site"  # use correct sandbox path

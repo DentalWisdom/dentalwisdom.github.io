@@ -90,11 +90,11 @@ window.AGENDA_DATA = [
   // NAME HIDDEN 2026-07-28 (Ben's call — Gobbie Cohn attendance unconfirmed; restore when he tells us). To bring back: speaker: "Gobbie Cohn", speakerUrl: "/conference-speakers#speaker-gobbie-cohn"
   { day: "Friday", time: "6:15 PM", title: "Mincha, Kabbalas Shabbos & Maariv", speaker: "", location: "Shul",
     sponsors: [
-      { name: "APEX Reimbursement Specialists", url: "/conference-sponsors" },
+      { name: "Apex Reimbursement Specialists", url: "/conference-sponsors" },
       { name: "CG Insurance Group", url: "/conference-sponsors" }
     ], sponsorLabel: "Chazanus sponsored by" },
   { day: "Friday", time: "8:00 PM", title: "Shabbos Dinner", speaker: "", location: "OVO at The Altair" },
-  { day: "Friday", time: "10:30 PM", title: "Oneg & Shiur: The Machatzis Hashekel — Our Currency to Geula", speaker: "Rabbi Dr. Ephraim Rudolph", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
+  { day: "Friday", time: "10:30 PM", title: "Oneg & Shiur: The Machatzis Hashekel — Our Currency to Geula", speaker: "Rabbi Dr. Ephraim Rudolph", speakerUrl: "/conference-speakers#speaker-ephraim-rudolph", location: "Shul", ce: true, ceCredits: 1.5, sponsor: "Crown Catapult", sponsorUrl: "/conference-sponsors" },
 
   // ---------------- Shabbos ----------------
   // ARCHIVED 2026-07-24 (Schuster removed as speaker by Ben; card already off the speakers page): { day: "Shabbos", time: "8:15 AM", title: "Pre-Davening Shiur", speaker: "Dr. Samuel Schuster (General Dentist)", location: "Library", ce: true, ceCredits: 1 },

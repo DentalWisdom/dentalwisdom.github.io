@@ -47,8 +47,8 @@ window.LIVE_DATA = [
     presenter: "Harold Gornbein",
     description: "Join Harold Gornbein (Apex Reimbursement Specialists) for a session dedicated to the financial health of your practice. We will move beyond the chair to discover practical strategies that streamline your billing and improve cash flow. Learn how to integrate expert reimbursement management into your daily routine, ensuring your practice achieves the operational excellence it deserves.",
     registerLink: "https://events.teams.microsoft.com/event/4973cdac-548c-407a-ba4a-1164cc9336da@353aa5d5-fd41-4aae-bc79-6722f1ca6cce",
-    sponsor: "Apex",
-    sponsorName: "APEX",
+    sponsor: "Apex Reimbursement Specialists",
+    sponsorName: "Apex Reimbursement Specialists",
     sponsorLink: "https://apexreimbursement.com/dental-wisdom/",
     sortDate: "2026-05-14",
     status: "past"

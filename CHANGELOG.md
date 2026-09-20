@@ -16,6 +16,7 @@ A plain-English record of every update made to the site, most recent first. This
   - **The offer wording was shortened before it shipped.** "First Repair Free (up to $225 value)" was measured at twelve screen widths and the word "value" pushed it onto a second line on every common phone. Without it, the line holds on one line everywhere except the very narrowest older phones.
   - **Searching the Deals page finds them eighteen different ways** — "drill", "drills", "drill repair", "repair drill", "fix drill", "broken drill", "handpiece", "hand piece", "high speed", "low speed", "slow speed", "turbine" and more all bring up their card.
   - Their logo was converted to the site's usual format at 12 KB, in line with the other logos already on that page, so it adds nothing noticeable to how fast the page loads.
+  - **Their write-up is now split into three paragraphs** rather than one block of text — the company, then how the box and the flat-rate service work, then the Dental Wisdom offer. Same words, easier to read on a phone.
 
 ---
 

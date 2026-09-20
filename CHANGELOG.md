@@ -5,6 +5,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## September 20, 2026
 
+- **The September Crazy Dental flyer is up on both pages.** The "September Crazy Deals!" flyer you dropped in now shows at the bottom of Crazy Dental's pop-up on the Sponsors page and at the bottom of their "Dental Supplies" pop-up on the Deals page, replacing the August one. It's the same size on screen as before, but saved at the highest quality setting available, so the small print stays sharp — the flash-sale dates and product names are easier to read than last month's. The August flyer wasn't deleted; it's saved in `_archive/superseded-images/deals/crazy-dental-flyer-august-2026.webp` in case you ever need it back.
+  - **The promo codes on the site still match the flyer** — WISDOM10 for 10% off a first order, WISDOMSHIP for free shipping — so no wording changed anywhere on the site.
+  - **The unreadable line on the August flyer is gone.** Last month one of the sale dates had two lines of text printed on top of each other; this version came through clean.
+  - **Worth noting for early October:** the sale dates printed on this flyer are September 14–18, September 21–25 and September 28–October 2. The whole flyer goes out of date once October starts, so it's worth asking Crazy Dental for the October one around then.
+  - The picture file is larger than last month's (about 265 KB instead of 80 KB) because of the higher quality setting. It only downloads when a visitor actually opens the Crazy Dental pop-up, so no page on the site loads any slower.
+
 - **Drillwūrks has been added to the Deals page.** A Jewish-operated handpiece repair company — their own storage-and-shipping box, flat-rate pricing, fast turnaround and a 6-month warranty. Their card sits at the end of the "Clinical & Chairside" section, just after AAFE, with no sponsor pill since they aren't a conference sponsor. The gold offer line in their pop-up reads "First Repair Free (up to $225)" and the button goes to drillwurks.com/dentalwisdom.
   - **Their name is spelled the way they spell it** — Drillwūrks, with the line over the u, matching their own website and logo. Someone typing "drillwurks" the ordinary way still finds them.
   - **The offer wording was shortened before it shipped.** "First Repair Free (up to $225 value)" was measured at twelve screen widths and the word "value" pushed it onto a second line on every common phone. Without it, the line holds on one line everywhere except the very narrowest older phones.

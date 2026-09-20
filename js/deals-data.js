@@ -143,6 +143,17 @@ window.DEALS_DATA = [
     keywords: "Botox filler injectables aesthetics esthetics facial cosmetic TMJ jaw pain neurotoxin dermal CE training course"
   },
 
+  {
+    title: "Drillwūrks",
+    shortDescription: "Handpiece Repair",
+    category: "Clinical & Chairside",
+    description: "Drillwūrks is a Jewish-operated handpiece repair company that has completely rethought and streamlined the handpiece repair process from start to finish. Their custom wūrkbox serves as a dedicated storage and shipping box, eliminating paperwork, back-and-forth communication, and virtually any thought from the repair process. Add simple flat-rate pricing, fast turnaround, automatic expense records, and a 6-month warranty, and they've made handpiece repair about as seamless as it gets. Exclusively for Dental Wisdom members, the first high-speed or low-speed air-driven handpiece you send in for repair is on them. A value of up to $225, backed by their 6-month warranty.",
+    link: "https://www.drillwurks.com/dentalwisdom",
+    promo: "First Repair Free (up to $225)",
+    imageUrl: "/images/deals/drillwurks.webp",
+    keywords: "DrillWurks drillwurks drill wurks drill repair repair drill drill repairs fix drill broken drill drills handpiece handpieces hand piece hand pieces handpiece repair hand piece repair high speed highspeed high-speed low speed lowspeed low-speed slow speed air driven air-driven electric turbine rotor chuck bur contra angle e-type motor attachment rebuild overhaul servicing service maintenance lubrication wurkbox wurk box flat rate warranty prepaid shipping FedEx Kavo Bien Air NSK W&H Midwest StarDental A-dec degunking"
+  },
+
   /* ══════════════ 2. GROW YOUR PRACTICE ══════════════ */
   {
     title: "Apex Reimbursement Specialists",

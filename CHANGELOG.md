@@ -3,6 +3,16 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## September 20, 2026
+
+- **Drillwūrks has been added to the Deals page.** A Jewish-operated handpiece repair company — their own storage-and-shipping box, flat-rate pricing, fast turnaround and a 6-month warranty. Their card sits at the end of the "Clinical & Chairside" section, just after AAFE, with no sponsor pill since they aren't a conference sponsor. The gold offer line in their pop-up reads "First Repair Free (up to $225)" and the button goes to drillwurks.com/dentalwisdom.
+  - **Their name is spelled the way they spell it** — Drillwūrks, with the line over the u, matching their own website and logo. Someone typing "drillwurks" the ordinary way still finds them.
+  - **The offer wording was shortened before it shipped.** "First Repair Free (up to $225 value)" was measured at twelve screen widths and the word "value" pushed it onto a second line on every common phone. Without it, the line holds on one line everywhere except the very narrowest older phones.
+  - **Searching the Deals page finds them eighteen different ways** — "drill", "drills", "drill repair", "repair drill", "fix drill", "broken drill", "handpiece", "hand piece", "high speed", "low speed", "slow speed", "turbine" and more all bring up their card.
+  - Their logo was converted to the site's usual format at 12 KB, in line with the other logos already on that page, so it adds nothing noticeable to how fast the page loads.
+
+---
+
 ## September 15, 2026
 
 - **Apex Reimbursement Specialists now has a video** in their pop-up on both the Conference Sponsors page and the Deals page. It plays under the "View Deal" button on the Deals card and at the bottom of the sponsor card, the same as the other sponsor videos.

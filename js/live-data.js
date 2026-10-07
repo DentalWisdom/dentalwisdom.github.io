@@ -106,5 +106,18 @@ window.LIVE_DATA = [
     sponsorLink: "https://crowncatapult.com/",
     sortDate: "2026-10-15",
     status: "upcoming"
+  },
+  {
+    title: "The Many Faces of Orofacial Pain: The Differences Between Toothaches and Neuropathic Pain",
+    date: "November 19, 2026",
+    time: "8:00 PM – 9:30 PM EST",
+    presenter: "Dr. Asher Mansdorf, D.D.S., M.P.M.",
+    description: "Orofacial pain can present in ways that closely mimic common dental conditions, making accurate diagnosis challenging. This course explores the diverse clinical presentations of orofacial pain, with a focus on distinguishing odontogenic tooth pain from neuropathic and other non-odontogenic pain conditions. Participants will review key differences in pain quality, onset, duration, triggers, distribution, and clinical findings that can help guide an appropriate differential diagnosis. Emphasis will be placed on recognizing common neuropathic pain patterns, avoiding diagnostic pitfalls, and determining when further evaluation or referral is warranted. By improving diagnostic confidence, clinicians can help prevent unnecessary dental treatment and ensure patients receive appropriate, timely care.",
+    registerLink: "https://events.teams.microsoft.com/event/b01dae50-d371-4e9a-a39d-3e280dbd623f@353aa5d5-fd41-4aae-bc79-6722f1ca6cce",
+    sponsor: "Touro College of Dental Medicine",
+    sponsorName: "Touro College of Dental Medicine",
+    sponsorLink: "https://dental.touro.edu/",
+    sortDate: "2026-11-19",
+    status: "upcoming"
   }
 ];

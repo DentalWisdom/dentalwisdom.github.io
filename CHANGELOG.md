@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## October 7, 2026
+
+- **New Dental Wisdom Live class added: November 19, 2026.** Dr. Asher Mansdorf, D.D.S., M.P.M. presents "The Many Faces of Orofacial Pain: The Differences Between Toothaches and Neuropathic Pain," Thursday, 8:00–9:30 PM EST, sponsored by Touro College of Dental Medicine. It shows on the Live page with the Touro logo, the course description, the "Register and attend to earn CE credit." line, and a Sign Up button that goes to the Teams registration page. After the October 15 class, the live slides deck will automatically name this class as the next session.
+
 ## September 20, 2026
 
 - **The monthly flyers now have their own drop folder.** Going forward, drop the Crazy Dental flyer in **`_Flyers for Deals & Sponsors Pages - Drop Here`** rather than one of the logo folders. The flyer shows on both the Deals page and the Sponsors page, so neither logo folder was really its home — and you'd used a different one each of the last two months. The two flyer files you'd already dropped were moved in and renamed `Crazy Dental 2026-08.png` and `Crazy Dental 2026-09.png` so they sort by date; nothing was deleted. Like your other drop folders, nothing in it is ever published to the website. The monthly routine is now written down in CLAUDE.md, so any future chat picks it up from "new flyer for crazy dental saved" without you explaining it again.

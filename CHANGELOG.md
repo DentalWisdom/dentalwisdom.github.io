@@ -5,7 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## October 15, 2026
 
-- **Link preview for DentalWisdom.org/live (temporary, for tonight only).** When the Live page link is shared on WhatsApp or other apps, the preview now shows the Shas raffle design: "Register + Attend = Enter to Win · A Full Set of Shas · $1,500+ value", with the Crown Catapult and Launch Point logos and "Dental Wisdom Live · Tonight 8 PM EST". Because it says "tonight", it needs switching back to the regular preview image after the session. The regular image wasn't touched.
+- **Link preview for DentalWisdom.org/live:** briefly switched to a Shas raffle image for tonight, then switched straight back to the regular preview at your request. Nothing has changed for visitors. The Shas preview image is kept in `images/` in case you want it another time, but nothing points to it.
 
 ## October 14, 2026
 

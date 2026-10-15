@@ -56,7 +56,6 @@ Quick reference for what's actually published on the live pages right now. Updat
 
 
 ## Open follow-ups
-- **REVERT AFTER OCT 15, 2026:** `live/index.html` `og:image` / `twitter:image` point at `images/social-live-shas-2026-10-15.jpg` (the Shas raffle, "Tonight 8 PM EST"). Switch both back to `images/social-live.jpg` and restore the `og:image:alt` ("Dental Wisdom Live — monthly online continuing education for the network"). Marked with a TEMPORARY comment in the file.
 - **Once the full agenda is finalized AND all speaker cards are done** (all "Speaker TBD" / "Lecture Title TBD" slots in `js/agenda-data.js` filled in, all ~16 speaker cards added to `conference-speakers/index.html`), revisit every line on the site that still reads as "lineup pending" — they'll be stale once the roster is final:
   - ~~`conference-speakers/index.html` — the italic line below the speaker grid: "Additional speakers to be announced."~~ DONE July 24, 2026: replaced with a schedule-change disclaimer (same disclaimer also added to the bottom of the agenda in _archive/conference-agenda-full.html).
   - `conference-faq/index.html`, "Who is lecturing and what classes will be offered?" answer — says speakers are "actively curating" and that "a full list of lectures and class topics will be published closer to the event"

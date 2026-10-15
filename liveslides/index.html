@@ -335,7 +335,8 @@
   .ptile img.on{opacity:1;}
 
   /* ---- 9 next session ---- */
-  #s-thanks .nextup{margin-top:32px;display:flex;align-items:center;gap:34px;}
+  #s-thanks .nextup{margin-top:32px;display:flex;align-items:center;gap:34px;align-self:stretch;}
+  #s-thanks .nextup .nx-logo{margin-left:auto;}
   #s-thanks .nextup .nx-text{min-width:0;}
   #s-thanks .nextup .npres{font-size:17px;color:rgba(255,255,255,.78);margin-top:6px;}
   #s-thanks .nextup .nx-logo{flex:none;background:#fff;border-radius:10px;width:250px;height:100px;padding:14px 20px;
@@ -623,6 +624,8 @@
     .ptile:nth-child(2),.ptile:nth-child(3){display:none;}
     .conf--photo .lede{font-size:19px;}
     #s-thanks .nextup .ntitle{font-size:18px;}
+    #s-thanks .nextup{flex-direction:column;align-items:flex-start;gap:16px;}
+    #s-thanks .nextup .nx-logo{margin-left:0;width:200px;height:84px;}
     #s-thanks .nextup .ndate{font-size:12px;letter-spacing:2px;}
     .savebox .l{padding:14px 16px;}
     .savebox .r{padding:14px 16px;}
@@ -1381,7 +1384,14 @@ function fillNextSession(){
   if(!n){ wrap.style.display='none'; return; }
   wrap.style.display='';
   // straight apostrophes look wrong in Playfair — swap them for typographic ones on display only
-  tEl.textContent=(n.title||'').replace(/'/g,'\u2019');
+  // "Main title: subtitle" → main title in bold, subtitle on its own line
+  var tt=(n.title||'').replace(/'/g,'\u2019'), ci=tt.indexOf(': ');
+  tEl.textContent='';
+  if(ci>0){
+    var bEl=document.createElement('strong'); bEl.textContent=tt.slice(0,ci+1);
+    tEl.appendChild(bEl); tEl.appendChild(document.createElement('br'));
+    tEl.appendChild(document.createTextNode(tt.slice(ci+2)));
+  } else tEl.textContent=tt;
   var start=(n.time||'').split(/[–-]/)[0].trim();
   dEl.textContent=(n.date||'')+(start?' · '+start+' EST':'');
   // presenter + sponsor logo, both straight from the website's own data

@@ -31,6 +31,7 @@ A plain-English record of every update made to the site, most recent first. This
 - **Lecture slide** now says "Featured Speakers" when two presenters are listed (as tonight), and "Featured Speaker" when there is one. It switches by itself.
 - **Sharper Crown Catapult logo on the slides.** The new wide version you sent replaces the old stacked one everywhere in the deck. The old file is saved in `liveslides/_archive/original-logos/`.
 - **Last slide:** the "CE Provided By" logo in the top-right corner is hidden (kept in the file, so it can come back).
+- **Last slide, next session:** when the title has a colon, the part before it is now bold and the rest starts its own line. November reads **"The Many Faces of Orofacial Pain:"** / "The Differences Between Toothaches and Neuropathic Pain". The Touro logo sits at the right edge, and on a phone it goes below the text.
 - **Live page:** the October 15 class now lists Darren Sardoff as the presenter, instead of Saul Kaplan.
 
 ## October 7, 2026

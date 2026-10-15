@@ -382,6 +382,14 @@
     transform:rotate(3deg) scale(0);opacity:0;}
   #s-spot.active .sp-pop{animation:invitepop .7s cubic-bezier(.34,1.56,.64,1) 1.6s both,
                                    invitepulse 2.4s ease-in-out 2.5s infinite;}
+  /* scan-to-text QR card, tucked under the phone pop-up (DECK.spotlight.textQr) */
+  #s-spot .sp-qr{position:absolute;right:40px;top:188px;z-index:2;width:192px;background:#fff;border:3px solid var(--gold-bright);
+    border-radius:16px;padding:12px 12px 9px;text-align:center;box-shadow:0 16px 40px rgba(18,35,63,.25);
+    transform:rotate(-2deg) scale(0);opacity:0;}
+  #s-spot.active .sp-qr.on{animation:qrpop .7s cubic-bezier(.34,1.56,.64,1) 2.3s both;}
+  @keyframes qrpop{from{opacity:0;transform:rotate(-2deg) scale(0);}to{opacity:1;transform:rotate(-2deg) scale(1);}}
+  #s-spot .sp-qr img{display:block;width:164px;height:164px;margin:0 auto;}
+  #s-spot .sp-qr__lb{font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:var(--gold-text);margin-top:7px;white-space:nowrap;}
   #s-spot .sp-pop__hd{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold-text);}
   #s-spot .sp-pop__ph{font-family:var(--font-head);font-weight:700;font-size:34px;color:var(--ink);line-height:1.1;margin-top:4px;}
   #s-spot .sp-pop__tx{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:19px;color:var(--pink-dark);margin-top:4px;}
@@ -411,13 +419,13 @@
   #s-lthanks .lt-pres{font-size:19px;color:var(--muted);margin-top:24px;}
   #s-lthanks .lt-pres strong{color:var(--ink);font-family:var(--font-head);font-size:23px;}
   /* takeaway card (DECK.lecture.takeaway) — when it's on, the logos shrink to make room */
-  #s-lthanks.has-take .lt-head{font-size:38px;margin-top:6px;}
-  #s-lthanks.has-take .lt-row{margin-top:20px;gap:32px;}
-  #s-lthanks.has-take .lt-card{width:330px;height:140px;padding:18px 28px;border-radius:14px;}
-  #s-lthanks.has-take .lt-web{font-size:20px;margin-top:10px;}
-  #s-lthanks.has-take .lt-pres{font-size:16px;margin-top:14px;}
+  #s-lthanks.has-take .lt-head{font-size:36px;margin-top:4px;}
+  #s-lthanks.has-take .lt-row{margin-top:16px;gap:36px;}
+  #s-lthanks.has-take .lt-card{width:290px;height:172px;padding:14px 24px;border-radius:14px;}
+  #s-lthanks.has-take .lt-web{font-size:19px;margin-top:8px;}
+  #s-lthanks.has-take .lt-pres{font-size:16px;margin-top:7px;}
   #s-lthanks.has-take .lt-pres strong{font-size:19px;}
-  #s-lthanks .lt-take{display:none;align-items:center;gap:30px;text-align:left;margin-top:22px;background:var(--navy);color:#fff;
+  #s-lthanks .lt-take{display:none;align-items:center;gap:30px;text-align:left;margin-top:16px;background:var(--navy);color:#fff;
     border-radius:20px;padding:22px 34px 22px 22px;box-shadow:0 18px 44px rgba(18,35,63,.28);position:relative;max-width:960px;}
   #s-lthanks.has-take .lt-take{display:flex;}
   #s-lthanks .lt-take::before{content:"";position:absolute;inset:7px;border:1px dashed rgba(203,162,76,.45);border-radius:15px;pointer-events:none;}
@@ -652,7 +660,7 @@
     #s-lthanks .lt-take .tk-rows{align-items:center;}
     #s-lthanks .lt-take .tk-row{font-size:14px;word-break:break-all;}
     #s-lthanks .lt-take .tk-head{font-size:21px;}
-    #s-spot .sp-pop,#s-raffle .rf-pop{display:none !important;}   /* phones: number/URL already on the slide */
+    #s-spot .sp-pop,#s-spot .sp-qr,#s-raffle .rf-pop{display:none !important;}   /* phones: number/URL already on the slide */
     #s-dvar .dvarphoto{position:static;margin:22px 0 0;width:150px;height:150px;}
     #s-dvar .delivered{margin-top:28px;font-size:13px;}
     #s-dvar .speaker{font-size:28px;}
@@ -809,6 +817,7 @@
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
       <div class="body anim">
         <div class="sp-pop" id="t-spot-pop"><div class="sp-pop__hd" id="t-spot-pophd"></div><div class="sp-pop__ph" id="t-spot-popph"></div><div class="sp-pop__tx" id="t-spot-poptx"></div></div>
+        <div class="sp-qr" id="t-spot-qr"><img id="t-spot-qrimg" src="" alt="QR code to text the vendor"><div class="sp-qr__lb" id="t-spot-qrlb"></div></div>
         <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
         <div class="sp-hero">
           <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
@@ -1126,7 +1135,7 @@ const DECK = {
     taglineBreak: true,                                // true = gold part starts its own line
     bullets:  [
       "Over 50 Years of Experience",
-      "They Come to Your Office",
+      "Come to Your Office",
       "Scrap Assayed On-Site",
       "Gold, Silver, Platinum & Palladium"
     ],
@@ -1137,7 +1146,12 @@ const DECK = {
     popupAfter: "and Adam will reach out ASAP!",
     callLabel: "Call",
     phone:     "(443) 253-4143",
-    website:   "MBPreciousMetals.com"
+    website:   "MBPreciousMetals.com",
+    // QR card under the pop-up: scanning it opens a text to Adam with the message already
+    // written. The image is pre-made in liveslides/qr/ - a new number or message needs a
+    // new QR file. Set textQr: "" to hide the card.
+    textQr:      "qr/mb-text-adam.svg",
+    textQrLabel: "Scan to text Adam"
   },
 
   lecture: {                                           // slide 6 — the class
@@ -1354,6 +1368,9 @@ function fillDeck(){
     txt('t-spot-tag1',s.tagline1); txt('t-spot-tag2',s.tagline2||'');
     document.getElementById('t-spot-tag2').classList.toggle('brk',!!s.taglineBreak);
     var sp=document.getElementById('t-spot-pop');
+    var sq=document.getElementById('t-spot-qr');
+    if(sq){ sq.classList.toggle('on',!!s.textQr);
+      if(s.textQr){ document.getElementById('t-spot-qrimg').src=imgPath(s.textQr); txt('t-spot-qrlb',s.textQrLabel||''); } }
     if(sp){ txt('t-spot-pophd',s.popup||''); txt('t-spot-popph',s.phone||''); txt('t-spot-poptx',s.popupAfter||'');
             sp.style.display=s.popup?'':'none'; }
     var bl=document.getElementById('t-spot-bullets');

@@ -724,6 +724,33 @@
       </div>
     </section>
 
+    <!-- 5 SPOTLIGHT — replaced at load by DECK.spotlightSlides when that list has entries -->
+    <section class="slide" id="s-spot">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
+      <div class="body anim">
+        <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
+        <div class="sp-hero">
+          <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
+          <div class="spot-content" id="t-spot-content">
+            <p class="spot-head"><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p>
+          </div>
+        </div>
+        <ul class="spot-bullets" id="t-spot-bullets"></ul>
+        <div class="baseline spfoot">
+          <div>
+            <div class="k">Contact</div>
+            <div class="name" id="t-spot-name">Sam Waller</div>
+            <div class="co" id="t-spot-co">Live Well Capital</div>
+          </div>
+          <div class="right">
+            <div class="k" id="t-spot-calllabel">Call</div>
+            <div class="phone" id="t-spot-phone">(917) 715-2188</div>
+            <div class="web" id="t-spot-web">livewealthcapital.com</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 4 CONFERENCE -->
     <section class="slide conf" id="s-conf1">
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">5 / 9</div></div>
@@ -749,33 +776,6 @@
             <div class="url">DentalWisdom.org</div>
             <div class="n1">Expected to sell out — register today.</div>
             <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- 5 SPOTLIGHT — replaced at load by DECK.spotlightSlides when that list has entries -->
-    <section class="slide" id="s-spot">
-      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
-      <div class="body anim">
-        <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
-        <div class="sp-hero">
-          <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
-          <div class="spot-content" id="t-spot-content">
-            <p class="spot-head"><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p>
-          </div>
-        </div>
-        <ul class="spot-bullets" id="t-spot-bullets"></ul>
-        <div class="baseline spfoot">
-          <div>
-            <div class="k">Contact</div>
-            <div class="name" id="t-spot-name">Sam Waller</div>
-            <div class="co" id="t-spot-co">Live Well Capital</div>
-          </div>
-          <div class="right">
-            <div class="k" id="t-spot-calllabel">Call</div>
-            <div class="phone" id="t-spot-phone">(917) 715-2188</div>
-            <div class="web" id="t-spot-web">livewealthcapital.com</div>
           </div>
         </div>
       </div>
@@ -1020,9 +1020,23 @@ const DECK = {
   // of the deck entirely and the page numbers re-count themselves.
   spotlightSlides: [],
 
-  spotlight: null,                                     // slide 4 — only used when spotlightSlides is empty.
-                                                       // Last used layout (Crazy Dental) is in
-                                                       // liveslides/_archive/spotlight-lecture-giveaway-history.md,
+  spotlight: {                                         // slide 4 — the built-in vendor spotlight (right after the Dvar Torah)
+    category: "Dental Refining",
+    logo:     "logos/mb-precious-metals.png",
+    tagline1: "Turn Your Scrap",                // ink-colored part of headline
+    tagline2: "Into Top Value",                        // gold part of headline
+    bullets:  [
+      "Over 50 Years of Experience",
+      "They Come to Your Office",
+      "Scrap Assayed On-Site",
+      "Gold, Silver, Platinum & Palladium"
+    ],
+    name:      "Adam",
+    company:   "MB Precious Metals",
+    callLabel: "Call",
+    phone:     "(443) 253-4143",
+    website:   "MBPreciousMetals.com"
+  },
 
   lecture: {                                           // slide 6 — the class
     ce:       "1 CE Credit",

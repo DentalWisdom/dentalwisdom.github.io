@@ -389,6 +389,16 @@
   #s-spot .spfoot .right{text-align:right;}
 
   /* ---- 6 lecture ---- */
+  /* ---- thank you to today's class sponsors ---- */
+  #s-lthanks .body{align-items:center;text-align:center;}
+  #s-lthanks .lt-head{font-family:var(--font-head);font-weight:700;font-size:46px;color:var(--ink);margin-top:10px;line-height:1.1;}
+  #s-lthanks .lt-head em{font-style:italic;color:var(--gold-text);}
+  #s-lthanks .lt-row{display:flex;gap:40px;justify-content:center;margin-top:40px;}
+  #s-lthanks .lt-item{display:flex;flex-direction:column;align-items:center;}
+  #s-lthanks .lt-card{background:#fff;border:1px solid var(--hair);border-radius:18px;width:470px;height:280px;padding:30px 40px;
+    display:flex;align-items:center;justify-content:center;box-shadow:0 16px 40px rgba(30,42,56,.12);}
+  #s-lthanks .lt-card img{max-width:100%;max-height:100%;object-fit:contain;}
+  #s-lthanks .lt-web{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:28px;color:var(--gold-text);margin-top:18px;}
   /* ---- raffle: stay through the end to win ---- */
   #s-raffle h1.big{font-family:var(--font-head);font-style:italic;font-size:52px;color:var(--ink);margin-top:6px;line-height:1.05;max-width:800px;}   /* leaves room for the pop-up at top right */
   #s-raffle .body{position:relative;}
@@ -595,6 +605,10 @@
     .feat p{font-size:14px;}
 
     #s-dvar .torah{font-size:46px;}
+    #s-lthanks .lt-head{font-size:28px;}
+    #s-lthanks .lt-row{flex-direction:column;gap:22px;margin-top:24px;}
+    #s-lthanks .lt-card{width:280px;height:160px;padding:18px 24px;}
+    #s-lthanks .lt-web{font-size:19px;margin-top:10px;}
     #s-spot .sp-pop,#s-raffle .rf-pop{display:none !important;}   /* phones: number/URL already on the slide */
     #s-dvar .dvarphoto{position:static;margin:22px 0 0;width:150px;height:150px;}
     #s-dvar .delivered{margin-top:28px;font-size:13px;}
@@ -843,6 +857,18 @@
             <div class="web" id="t-lect-web">orthobrain.com</div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- THANK YOU TO TODAY'S CLASS SPONSORS — built from DECK.lecture.partners (logo + website);
+         left out automatically when there are no partners -->
+    <section class="slide" id="s-lthanks">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum"></div></div>
+      <div class="body vcenter anim">
+        <div class="goldrule" style="margin-left:auto;margin-right:auto;"></div>
+        <div class="eyebrow" style="text-align:center;">With Gratitude</div>
+        <h1 class="lt-head">Thank You to the Sponsors of <em>Today’s Class</em></h1>
+        <div class="lt-row" id="t-lthanks-row"></div>
       </div>
     </section>
 
@@ -1290,6 +1316,11 @@ function fillDeck(){
   txt('t-lect-ce',l.ce); txt('t-lect-title',l.title); txt('t-lect-subt',l.subtitle);
   txt('t-lect-doc',l.doctor); txt('t-lect-role',l.role); txt('t-lect-pill',l.ce);
   txt('t-lect-web',l.website);
+  // thank-you slide for the class sponsors
+  var ltr=document.getElementById('t-lthanks-row');
+  if(ltr) ltr.innerHTML=(l.partners||[]).map(function(x){
+    return '<div class="lt-item"><div class="lt-card">'+logoImg(x.logo,x.name)+'</div>'+
+           (x.website?'<div class="lt-web">'+x.website+'</div>':'')+'</div>'; }).join('');
   var lbox=document.getElementById('t-lect-logobox');
   var lp=(l.partners&&l.partners.length)?l.partners:(l.logo?[{name:l.partner||l.doctor,logo:l.logo}]:[]);
   lbox.innerHTML=lp.map(function(x){ return logoImg(x.logo,x.name); }).join('');
@@ -1751,6 +1782,8 @@ function buildSpotlightSlides(){
 }
 buildSpotlightSlides();
 (function(){ var r=document.getElementById('s-raffle'); if(r && !DECK.raffle) r.parentNode.removeChild(r); })();
+(function(){ var t=document.getElementById('s-lthanks'), lp=(DECK.lecture||{}).partners||[];
+  if(t && !lp.length) t.parentNode.removeChild(t); })();
 
 var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
 var total=slides.length, current=0;

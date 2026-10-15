@@ -32,6 +32,7 @@ A plain-English record of every update made to the site, most recent first. This
 - **Sharper Crown Catapult logo on the slides.** It's a stacked layout (icon, then "Crown", then "Catapult") rebuilt from the high-quality wide logo you sent, so it's crisp at any size, and it's used everywhere in the deck. Both earlier versions (the old stacked one and the wide one) are saved in `liveslides/_archive/original-logos/`.
 - **Last slide:** the "CE Provided By" logo in the top-right corner is hidden (kept in the file, so it can come back).
 - **Last slide, next session:** when the title has a colon, the part before it is now bold and the rest starts its own line. November reads **"The Many Faces of Orofacial Pain:"** / "The Differences Between Toothaches and Neuropathic Pain". The Touro logo sits at the right edge, and on a phone it goes below the text.
+- **New "Thank You to the Sponsors of Today's Class" slide (slide 8, right after the lecture).** It shows the Crown Catapult and Launch Point logos very large, with crowncatapult.com and launchpointdental.com under them. It builds itself from the lecture's sponsor list, and it's left out automatically in a month with no lecture sponsors. The deck is now 11 slides.
 - **Live page:** the October 15 class now lists Darren Sardoff as the presenter, instead of Saul Kaplan.
 
 ## October 7, 2026

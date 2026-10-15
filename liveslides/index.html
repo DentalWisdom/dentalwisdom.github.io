@@ -363,6 +363,17 @@
   #s-spot .spot-content{flex:1;min-width:0;}
   #s-spot .spot-head{font-family:var(--font-head);font-size:50px;line-height:1.12;font-style:italic;color:var(--ink);}
   #s-spot .spot-head .g{color:var(--gold);}
+  #s-spot .spot-head .g.brk{display:block;}
+  /* phone-number pop-up */
+  #s-spot .body{position:relative;}
+  #s-spot .sp-pop{position:absolute;right:0;top:40px;z-index:2;width:322px;background:#fff;border:3px solid var(--gold-bright);
+    border-radius:16px;padding:12px 18px 14px;text-align:center;box-shadow:0 16px 40px rgba(18,35,63,.25);
+    transform:rotate(3deg) scale(0);opacity:0;}
+  #s-spot.active .sp-pop{animation:invitepop .7s cubic-bezier(.34,1.56,.64,1) 1.6s both,
+                                   invitepulse 2.4s ease-in-out 2.5s infinite;}
+  #s-spot .sp-pop__hd{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold-text);}
+  #s-spot .sp-pop__ph{font-family:var(--font-head);font-weight:700;font-size:34px;color:var(--ink);line-height:1.1;margin-top:4px;}
+  #s-spot .sp-pop__tx{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:19px;color:var(--pink-dark);margin-top:4px;}
   #s-spot .spot-content.has-bullets .spot-head{font-size:40px;}
   #s-spot .spot-bullets{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 46px;margin:28px 0 8px;}
   #s-spot .spot-bullets li{display:flex;gap:13px;align-items:center;font-size:19px;color:var(--ink);font-weight:600;}
@@ -583,6 +594,7 @@
     .feat p{font-size:14px;}
 
     #s-dvar .torah{font-size:46px;}
+    #s-spot .sp-pop,#s-raffle .rf-pop{display:none !important;}   /* phones: number/URL already on the slide */
     #s-dvar .dvarphoto{position:static;margin:22px 0 0;width:150px;height:150px;}
     #s-dvar .delivered{margin-top:28px;font-size:13px;}
     #s-dvar .speaker{font-size:28px;}
@@ -728,6 +740,7 @@
     <section class="slide" id="s-spot">
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
       <div class="body anim">
+        <div class="sp-pop" id="t-spot-pop"><div class="sp-pop__hd" id="t-spot-pophd"></div><div class="sp-pop__ph" id="t-spot-popph"></div><div class="sp-pop__tx" id="t-spot-poptx"></div></div>
         <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
         <div class="sp-hero">
           <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
@@ -1025,14 +1038,18 @@ const DECK = {
     logo:     "logos/mb-precious-metals.png",
     tagline1: "Turn Your Scrap",                // ink-colored part of headline
     tagline2: "Into Top Value",                        // gold part of headline
+    taglineBreak: true,                                // true = gold part starts its own line
     bullets:  [
       "Over 50 Years of Experience",
       "They Come to Your Office",
       "Scrap Assayed On-Site",
       "Gold, Silver, Platinum & Palladium"
     ],
-    name:      "Adam",
+    name:      "Adam Baumwald",
     company:   "MB Precious Metals",
+    // pop-up that lands on the slide with the phone number — set popup: "" to hide it
+    popup:     "Send a message here",
+    popupAfter: "and Adam will reach out ASAP!",
     callLabel: "Call",
     phone:     "(443) 253-4143",
     website:   "MBPreciousMetals.com"
@@ -1237,6 +1254,10 @@ function fillDeck(){
     txt('t-spot-cat',s.category);
     slogo.src=imgPath(s.logo); slogo.alt=s.company+' logo';
     txt('t-spot-tag1',s.tagline1); txt('t-spot-tag2',s.tagline2||'');
+    document.getElementById('t-spot-tag2').classList.toggle('brk',!!s.taglineBreak);
+    var sp=document.getElementById('t-spot-pop');
+    if(sp){ txt('t-spot-pophd',s.popup||''); txt('t-spot-popph',s.phone||''); txt('t-spot-poptx',s.popupAfter||'');
+            sp.style.display=s.popup?'':'none'; }
     var bl=document.getElementById('t-spot-bullets');
     var hasB=!!(s.bullets&&s.bullets.length);
     bl.innerHTML=hasB?s.bullets.map(function(b){return '<li>'+b+'</li>';}).join(''):'';

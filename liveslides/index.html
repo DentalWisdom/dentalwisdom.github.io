@@ -190,7 +190,7 @@
     animation:featshine 3.2s linear infinite;}
   @keyframes featshine{from{background-position:200% 0;}to{background-position:0 0;}}
   /* the "invite your friends" pop-up — lands ~3.5s in with a bounce, then gently pulses */
-  .wr-invite{position:absolute;right:58px;top:238px;width:290px;background:#fff;border-radius:16px;
+  .wr-invite{position:absolute;right:36px;top:238px;width:310px;background:#fff;border-radius:16px;
     padding:18px 22px;text-align:center;box-shadow:0 18px 50px rgba(0,0,0,.4);border:3px solid var(--gold-bright);
     transform:rotate(3deg) scale(0);opacity:0;}
   .wr-pane.on .wr-invite{animation:invitepop .7s cubic-bezier(.34,1.56,.64,1) 3.5s both,
@@ -198,6 +198,7 @@
   @keyframes invitepop{from{opacity:0;transform:rotate(3deg) scale(0);}to{opacity:1;transform:rotate(3deg) scale(1);}}
   @keyframes invitepulse{0%,100%{transform:rotate(3deg) scale(1);opacity:1;}50%{transform:rotate(3deg) scale(1.05);opacity:1;}}
   .wr-invite__hd{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:26px;color:var(--pink-dark);line-height:1.1;}
+  .wr-invite__soon{font-size:11.5px;letter-spacing:1.6px;white-space:nowrap;text-transform:uppercase;font-weight:700;color:var(--gold-text);margin-bottom:6px;}
   .wr-invite__tx{font-size:17px;color:var(--ink);margin-top:8px;line-height:1.35;}
   .wr-invite__tx strong{color:var(--gold-text);}
   /* a logo file that isn't there yet shows the name instead */
@@ -374,7 +375,15 @@
 
   /* ---- 6 lecture ---- */
   /* ---- raffle: stay through the end to win ---- */
-  #s-raffle h1.big{font-family:var(--font-head);font-style:italic;font-size:52px;color:var(--ink);margin-top:6px;line-height:1.05;max-width:1000px;}
+  #s-raffle h1.big{font-family:var(--font-head);font-style:italic;font-size:52px;color:var(--ink);margin-top:6px;line-height:1.05;max-width:800px;}   /* leaves room for the pop-up at top right */
+  #s-raffle .body{position:relative;}
+  #s-raffle .rf-pop{position:absolute;right:0;top:44px;z-index:2;width:270px;background:#fff;border:3px solid var(--gold-bright);
+    border-radius:16px;padding:14px 18px;text-align:center;box-shadow:0 16px 40px rgba(18,35,63,.25);
+    transform:rotate(3deg) scale(0);opacity:0;}
+  #s-raffle.active .rf-pop{animation:invitepop .7s cubic-bezier(.34,1.56,.64,1) 1.6s both,
+                                     invitepulse 2.4s ease-in-out 2.5s infinite;}
+  #s-raffle .rf-pop__tx{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:21px;color:var(--pink-dark);line-height:1.15;}
+  #s-raffle .rf-pop__url{font-weight:700;font-size:17px;color:var(--gold-text);margin-top:6px;}
   #s-raffle .rf-detail{font-size:19px;color:var(--muted);margin-top:8px;letter-spacing:.5px;}
   #s-raffle .rf-cols{display:flex;gap:48px;align-items:center;margin-top:26px;flex:1;min-height:0;}
   #s-raffle .rf-left{flex:1;min-width:0;}
@@ -771,6 +780,7 @@
     <section class="slide" id="s-raffle">
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum"></div></div>
       <div class="body anim">
+        <div class="rf-pop" id="t-raf-pop"><div class="rf-pop__tx" id="t-raf-callout"></div><div class="rf-pop__url" id="t-raf-callurl"></div></div>
         <div class="eyebrow" id="t-raf-eye"></div>
         <h1 class="big" id="t-raf-head"></h1>
         <div class="rf-detail" id="t-raf-detail"></div>
@@ -815,6 +825,28 @@
       </div>
     </section>
 
+    <!-- 8 CONFERENCE — second look: what it's actually like, then the ask -->
+    <section class="slide conf conf--photo" id="s-conf2">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum"></div></div>
+      <div class="body anim">
+        <div class="eyebrow">What You Will Experience</div>
+        <h1 class="lede">This is not simply a dental conference &mdash; it&rsquo;s a full Shabbos experience, designed for Jewish dental professionals.</h1>
+        <div class="photoband" id="t-photoband"></div>
+        <div class="conf-bottom">
+          <div class="savebox">
+            <div class="l"><div class="k">Save</div><div class="big t-save">$175</div><div class="k">Off</div></div>
+            <div class="r"><div class="k">Use code</div><div class="code t-code">DentalWisdomLive</div><div class="fine t-fine">Use at checkout when registering</div></div>
+          </div>
+          <div class="reserve">
+            <div class="k">Reserve your seat</div>
+            <div class="url">DentalWisdom.org</div>
+            <div class="n1">Expected to sell out — register today.</div>
+            <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
     <!-- 7 GIVEAWAY -->
     <section class="slide" id="s-give">
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">7 / 9</div></div>
@@ -848,28 +880,6 @@
           </div>
         </div>
         <div class="finelegal">We'll grab the attendee list at the start of the call and add everyone to the spinning wheel for some great prizes. You must be in attendance to win. Winners, please text Lisa right away to confirm and claim your prize. If you've already received that exact prize, please let us know so we can re-spin for someone else and keep things fair for all!</div>
-      </div>
-    </section>
-
-    <!-- 8 CONFERENCE — second look: what it's actually like, then the ask -->
-    <section class="slide conf conf--photo" id="s-conf2">
-      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum"></div></div>
-      <div class="body anim">
-        <div class="eyebrow">What You Will Experience</div>
-        <h1 class="lede">This is not simply a dental conference &mdash; it&rsquo;s a full Shabbos experience, designed for Jewish dental professionals.</h1>
-        <div class="photoband" id="t-photoband"></div>
-        <div class="conf-bottom">
-          <div class="savebox">
-            <div class="l"><div class="k">Save</div><div class="big t-save">$175</div><div class="k">Off</div></div>
-            <div class="r"><div class="k">Use code</div><div class="code t-code">DentalWisdomLive</div><div class="fine t-fine">Use at checkout when registering</div></div>
-          </div>
-          <div class="reserve">
-            <div class="k">Reserve your seat</div>
-            <div class="url">DentalWisdom.org</div>
-            <div class="n1">Expected to sell out — register today.</div>
-            <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
-          </div>
-        </div>
       </div>
     </section>
 
@@ -1039,6 +1049,8 @@ const DECK = {
     photo:    "slides/shas-set.webp",
     stayHead: "Stay through the end to win",
     stayText: "The winner is drawn live after the class \u2014 you must still be on the call to win.",
+    callout:  "Make sure you register to be in the drawing",   // pop-up on the slide
+    calloutUrl: "DentalWisdom.org/live",
     note:     "Already have a set? If you win, your prize can be applied to an alternative raffle prize.",
     sponsors: [ { name: "Crown Catapult", logo: "logos/crown-catapult.webp" },
                 { name: "Launch Point",   logo: "logos/launch-point.png" } ]
@@ -1217,6 +1229,8 @@ function fillDeck(){
     txt('t-raf-eye',rf.eyebrow||''); txt('t-raf-head',rf.headline||''); txt('t-raf-detail',rf.detail||'');
     txt('t-raf-value',rf.value||''); txt('t-raf-stayhd',rf.stayHead||''); txt('t-raf-staytx',rf.stayText||'');
     txt('t-raf-note',rf.note||'');
+    txt('t-raf-callout',rf.callout||''); txt('t-raf-callurl',rf.calloutUrl||'');
+    document.getElementById('t-raf-pop').style.display=rf.callout?'':'none';
     var rph=document.getElementById('t-raf-photo'); rph.src=imgPath(rf.photo||''); rph.alt=rf.headline||'';
     document.getElementById('t-raf-logos').innerHTML=(rf.sponsors||[]).map(function(x){ return '<div class="cell">'+logoImg(x.logo,x.name)+'</div>'; }).join('');
   }
@@ -1420,7 +1434,7 @@ function wrBuild(){
       '<div class="wr-featprize">'+g.prize+'</div>'+
       (g.prizeDetail?'<div class="wr-detail">'+g.prizeDetail+'</div>':'')+
       // pops in a few seconds after the panel opens
-      '<div class="wr-invite"><div class="wr-invite__hd">Invite your friends to join!</div>'+
+      '<div class="wr-invite"><div class="wr-invite__soon">We are getting started soon!</div><div class="wr-invite__hd">Invite your friends to join!</div>'+
       '<div class="wr-invite__tx">Go to <strong>DentalWisdom.org/live</strong> to register ASAP!</div></div>'+
       '</div>');
   });
@@ -1693,6 +1707,8 @@ function show(i){
   slides[current].classList.remove('active');
   current=i;
   slides[current].classList.add('active');
+  // the raffle slide celebrates on arrival
+  if(slides[current].id==='s-raffle' && typeof celebrate==='function') setTimeout(celebrate,500);
   counter.textContent=(current+1)+' / '+total;
   bar.style.width=((current+1)/total*100)+'%';
 }

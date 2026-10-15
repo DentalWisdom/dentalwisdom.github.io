@@ -22,6 +22,9 @@ A plain-English record of every update made to the site, most recent first. This
 - **The 2-minute board now has Back and Next buttons** (bottom left), and the left/right arrow keys do the same thing. Skipping moves the clock to wherever that panel normally starts, and the board carries on from there. Next on the last panel jumps to the final countdown; Back from the countdown returns to the last panel.
 - **Crown Catapult panel:** "Founded by dentists, for dentists." now sits on its own line.
 - **Launch Point details added throughout:** its panel on the board now reads "Unlock Your Practice's Value While Maintaining Control," with "Partner with Launch Point Dental Partners and access immediate liquidity without sacrificing ownership or autonomy" underneath and launchpointdental.com. Both websites (crowncatapult.com · launchpointdental.com) also show on the lecture slide, the Shas giveaway card and the winner pop-up.
+- **Raffle slide (5):** fireworks now go off when the slide opens, and a pop-up lands in the top right: "Make sure you register to be in the drawing — DentalWisdom.org/live".
+- **The Shas pop-up on the 2-minute board** now opens with "We are getting started soon!" above "Invite your friends to join!".
+- **Slides 7 and 8 swapped:** the conference photo slide now comes before the giveaway wheel, so the order is lecture → conference → giveaways → thank you.
 - **Live page:** the October 15 class now lists Darren Sardoff as the presenter, instead of Saul Kaplan.
 
 ## October 7, 2026

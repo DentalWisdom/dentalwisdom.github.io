@@ -1,0 +1,1759 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dental Wisdom Live — Slides</title>
+<meta name="robots" content="noindex, nofollow">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+<noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;1,400&display=swap" rel="stylesheet"></noscript>
+<style>
+  :root{
+    --navy:#12233f;
+    --navy-2:#16294a;
+    --ivory:#FBF9F4;
+    --sand:#F1ECE2;
+    --sand-2:#F6F1E7;
+    --ink:#1E2A38;
+    --ink-soft:#3c4757;
+    --muted:#7a8494;
+    --gold:#B8892A;
+    --gold-text:#8C6A1A;
+    --gold-bright:#CBA24C;
+    --hair:rgba(30,42,56,0.12);
+    --pink:#d15a7a;
+    --pink-dark:#c14a6b;
+    --font-head:'Playfair Display',Georgia,serif;
+    --font-body:'Inter',-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif;
+    --deck-scale:1;   /* set by fit() — keeps the pop-ups the same size relative to the slide */
+    --pad-x:88px;
+    --pad-y:60px;
+    --content-gap:30px;   /* consistent space between topbar and content */
+  }
+  *{margin:0;padding:0;box-sizing:border-box;}
+  html,body{width:100%;height:100%;background:#000;overflow:hidden;font-family:var(--font-body);-webkit-font-smoothing:antialiased;}
+
+  #stage{position:fixed;inset:0;background:#050a14;display:flex;align-items:center;justify-content:center;}
+  #deck{width:1280px;height:720px;position:relative;transform-origin:center center;background:var(--ivory);overflow:hidden;box-shadow:0 10px 70px rgba(0,0,0,.55);}
+
+  /* crossfade between slides */
+  .slide{position:absolute;inset:0;padding:var(--pad-y) var(--pad-x);display:flex;flex-direction:column;background:var(--ivory);
+         opacity:0;visibility:hidden;pointer-events:none;transition:opacity .5s ease, visibility .5s ease;}
+  .slide.active{opacity:1;visibility:visible;pointer-events:auto;z-index:2;}
+  .slide--dark{background:var(--navy);color:#fff;}
+  .slide.active .anim{animation:rise .7s .12s cubic-bezier(.2,.7,.2,1) both;}
+  @keyframes rise{from{opacity:0;transform:translateY(14px);}to{opacity:1;transform:none;}}
+
+  /* topbar */
+  .topbar{display:flex;justify-content:space-between;align-items:center;height:26px;flex:none;}
+  .brand{font-weight:700;letter-spacing:4px;font-size:14px;text-transform:uppercase;}
+  .brand .b1{color:var(--ink);} .brand .b2{color:var(--gold-text);}
+  .slide--dark .brand .b1{color:#fff;} .slide--dark .brand .b2{color:var(--gold-bright);}
+  .pagenum{font-size:12px;color:var(--muted);letter-spacing:2px;display:flex;align-items:center;gap:9px;font-weight:600;}
+  .pagenum::before{content:"";width:13px;height:13px;background:var(--gold);display:inline-block;}
+  .slide--dark .pagenum{color:rgba(255,255,255,.55);}
+
+  .eyebrow{font-weight:700;letter-spacing:4.5px;font-size:13px;text-transform:uppercase;color:var(--gold-text);}
+  .slide--dark .eyebrow{color:var(--gold-bright);}
+  .goldrule{width:52px;height:4px;background:var(--gold);border-radius:2px;margin-bottom:16px;}
+
+  h1.big{font-family:var(--font-head);font-weight:700;line-height:1.03;color:var(--ink);letter-spacing:.2px;}
+  .slide--dark h1.big{color:#fff;}
+  em.gold{font-style:italic;color:var(--gold);font-family:var(--font-head);}
+  .slide--dark em.gold{color:var(--gold-bright);}
+  .baseline{border-top:1px solid var(--hair);}
+  .slide--dark .baseline{border-top:1px solid rgba(255,255,255,.16);}
+
+  /* content wrapper gives every slide the same start rhythm */
+  .body{flex:1;display:flex;flex-direction:column;padding-top:var(--content-gap);min-height:0;}
+  .vcenter{justify-content:center;}
+
+  /* ---- 1 title ---- */
+  #s-title h1.big{font-size:88px;}
+  #s-title .date{margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);display:inline-block;
+                 font-weight:700;letter-spacing:5px;font-size:18px;text-transform:uppercase;color:rgba(255,255,255,.9);}
+  #s-title .date .dot{color:var(--gold-bright);margin:0 14px;}
+  #s-title .learnmore{margin-top:26px;font-size:16px;letter-spacing:.3px;color:rgba(255,255,255,.78);}
+  #s-title .learnmore .site{font-family:var(--font-head);font-style:italic;font-weight:700;color:var(--gold-bright);font-size:19px;letter-spacing:.3px;}
+
+  /* ---- 1 title: the "starting soon" billboard ----
+     Lives INSIDE #deck, so it inherits the deck's scale and fills the screen at any
+     size without any extra maths. z-index sits above the slides but below the
+     names / winner overlays, which are document-level. */
+  .wr-start{position:absolute;right:88px;bottom:52px;z-index:6;border:1px solid rgba(203,162,76,.5);
+            background:rgba(203,162,76,.12);color:var(--gold-bright);font-family:var(--font-body);
+            font-weight:700;letter-spacing:2px;text-transform:uppercase;font-size:13px;
+            padding:14px 26px;border-radius:999px;cursor:pointer;transition:.2s;}
+  .wr-start:hover{background:rgba(203,162,76,.24);}
+
+  /* while the billboard runs, the deck's own chrome gets out of the way — the arrows,
+     page counter, hint line, Add-names button and top progress bar would all sit on top
+     of it otherwise. They come straight back when it closes. */
+  body.wr-on #navPrev, body.wr-on #navNext, body.wr-on #counter,
+  body.wr-on #namesBtn, body.wr-on #hintMsg, body.wr-on #progressbar{
+    opacity:0 !important;pointer-events:none;transition:opacity .35s;}
+
+  #waitroom{position:absolute;inset:0;z-index:40;display:none;flex-direction:column;
+            background:linear-gradient(150deg,#0e1c33 0%,#12233f 58%,#1a2f52 100%);color:#fff;}
+  #waitroom.show{display:flex;animation:wrIn .45s ease both;}
+  @keyframes wrIn{from{opacity:0;}to{opacity:1;}}
+  .wr-top{display:flex;justify-content:space-between;align-items:center;padding:46px 88px 0;flex:none;}
+  .wr-brand{font-weight:700;letter-spacing:4px;font-size:14px;text-transform:uppercase;}
+  .wr-brand span{color:var(--gold-bright);}
+  .wr-clock{display:flex;align-items:center;gap:16px;background:rgba(255,255,255,.09);
+            border:1px solid rgba(255,255,255,.18);border-radius:999px;padding:12px 28px;}
+  .wr-clock .d{width:9px;height:9px;border-radius:50%;background:var(--gold-bright);animation:wrBlink 2s infinite;}
+  @keyframes wrBlink{0%,100%{opacity:1;}50%{opacity:.25;}}
+  .wr-clock .lab{font-size:11.5px;letter-spacing:3px;text-transform:uppercase;color:rgba(255,255,255,.7);font-weight:700;}
+  .wr-clock .t{font-family:var(--font-head);font-weight:700;font-size:38px;line-height:1;color:#fff;
+               font-variant-numeric:tabular-nums;min-width:96px;text-align:right;}
+  #waitroom.warn .wr-clock{border-color:rgba(209,90,122,.5);background:rgba(209,90,122,.16);}
+  #waitroom.warn .wr-clock .t{color:var(--gold-bright);}
+  #waitroom.warn .wr-clock .d{background:var(--pink);}
+
+  .wr-panes{flex:1;position:relative;margin:0 88px;min-height:0;}
+  .wr-pane{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;
+           justify-content:center;opacity:0;pointer-events:none;transition:opacity .45s ease;}
+  .wr-pane.on{opacity:1;}
+  /* Each panel unfolds over its first ~2s instead of landing all at once: the eye is
+     walked from logo to name to what-they-do to the phone number, then everything holds
+     completely still so it's easy to copy down. */
+  .wr-pane > *{opacity:0;transform:translateY(14px);}
+  .wr-pane.on > *{opacity:1;transform:none;
+                  transition:opacity .75s ease, transform .75s cubic-bezier(.2,.7,.2,1);}
+  .wr-pane.on > *:nth-child(1){transition-delay:.20s;}
+  .wr-pane.on > *:nth-child(2){transition-delay:.70s;}
+  .wr-pane.on > *:nth-child(3){transition-delay:1.20s;}
+  .wr-pane.on > *:nth-child(4){transition-delay:1.65s;}
+  .wr-pane.on > *:nth-child(5){transition-delay:2.05s;}
+  .wr-pane.on > *:nth-child(6){transition-delay:2.40s;}
+  .wr-pane.on > *:nth-child(7){transition-delay:2.70s;}
+  /* sponsor panels run to 8 rows (eyebrow, logo, name, what, detail, prize, web, phone)
+     — anything without its own delay would animate first, so cover a few spare rows */
+  .wr-pane.on > *:nth-child(8){transition-delay:2.95s;}
+  .wr-pane.on > *:nth-child(9){transition-delay:3.15s;}
+  .wr-pane.on > *:nth-child(10){transition-delay:3.35s;}
+  .wr-pane .eye{font-size:12px;letter-spacing:5px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
+  .wr-pane .hd{font-family:var(--font-head);font-weight:700;font-size:46px;line-height:1.1;
+               margin-top:12px;text-align:center;}
+  .wr-pane .hd em{font-style:italic;color:var(--gold-bright);}
+
+  /* sponsors — top line big, supporting line smaller */
+  .wr-row{display:flex;gap:22px;justify-content:center;align-items:stretch;margin-top:30px;}
+  .wr-row .cell{background:#fff;border-radius:14px;display:flex;align-items:center;justify-content:center;
+                padding:18px 26px;box-shadow:0 10px 30px rgba(0,0,0,.26);}
+  .wr-row .cell img{max-width:100%;max-height:100%;object-fit:contain;}
+  .wr-row--lead .cell{width:330px;height:132px;}
+  .wr-row--sub{margin-top:18px;}
+  .wr-row--sub .cell{width:210px;height:84px;padding:12px 18px;}
+  .wr-sublab{margin-top:20px;font-size:11px;letter-spacing:3.5px;text-transform:uppercase;
+             color:rgba(255,255,255,.5);font-weight:700;}
+
+  /* one sponsor per screen */
+  .wr-logocard{background:#fff;border-radius:16px;width:520px;height:210px;display:flex;align-items:center;
+               justify-content:center;padding:26px 34px;margin-top:22px;box-shadow:0 16px 44px rgba(0,0,0,.3);}
+  .wr-logocard img{max-width:100%;max-height:100%;object-fit:contain;}
+  .wr-name{font-family:var(--font-head);font-weight:700;font-size:36px;margin-top:22px;}
+  .wr-line{margin-top:10px;font-size:17px;color:rgba(255,255,255,.82);}
+  .wr-line .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);
+              font-weight:700;margin-right:9px;}
+  .wr-what{font-size:21px;font-weight:600;color:#fff;margin-top:9px;line-height:1.3;
+           text-align:center;max-width:880px;}
+  .wr-detail{font-size:15px;color:rgba(255,255,255,.66);margin-top:5px;line-height:1.4;
+             text-align:center;max-width:820px;}
+  .wr-class{font-family:var(--font-head);font-style:italic;font-size:28px;color:#fff;
+            margin-top:12px;line-height:1.2;text-align:center;max-width:820px;}
+  .wr-web{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:27px;
+          color:var(--gold-bright);margin-top:14px;}
+  .wr-call{font-size:17px;font-weight:600;color:rgba(255,255,255,.9);margin-top:5px;letter-spacing:.3px;}
+  .wr-nextt{font-family:var(--font-head);font-style:italic;font-size:29px;color:rgba(255,255,255,.9);
+            margin-top:16px;text-align:center;}
+
+  /* deals */
+  .wr-url{font-family:var(--font-head);font-weight:700;font-size:64px;margin-top:14px;letter-spacing:.5px;}
+  .wr-url span{color:var(--gold-bright);}
+  .wr-sub{font-size:17px;color:rgba(255,255,255,.72);margin-top:14px;text-align:center;}
+
+  /* conference */
+  .wr-meta{display:flex;align-items:center;gap:16px;margin-top:16px;font-weight:700;
+           letter-spacing:3px;text-transform:uppercase;font-size:15px;color:rgba(255,255,255,.9);}
+  .wr-meta .dot{color:var(--gold-bright);}
+  .wr-promo{display:flex;margin-top:28px;border-radius:14px;overflow:hidden;box-shadow:0 16px 42px rgba(0,0,0,.34);}
+  .wr-promo .l{background:var(--gold);padding:20px 32px;text-align:center;}
+  .wr-promo .l .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;opacity:.88;font-weight:700;}
+  .wr-promo .l .v{font-family:var(--font-head);font-weight:700;font-size:42px;line-height:1;margin-top:3px;}
+  .wr-promo .r{background:#fff;color:var(--ink);padding:20px 36px;text-align:center;}
+  .wr-promo .r .k{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:700;}
+  .wr-promo .r .v{font-family:var(--font-head);font-weight:700;font-size:34px;line-height:1;margin-top:3px;letter-spacing:1px;}
+  .wr-promo .r .f{font-size:11.5px;color:var(--muted);margin-top:5px;}
+
+  /* the last ten seconds — one enormous number, nothing else competing with it */
+  .wr-finale{position:absolute;inset:0;z-index:2;display:none;flex-direction:column;
+             align-items:center;justify-content:center;
+             background:radial-gradient(ellipse at 50% 46%,rgba(203,162,76,.18),transparent 62%);}
+  #waitroom.finale .wr-finale{display:flex;}
+  #waitroom.finale .wr-panes,#waitroom.finale .wr-dots,#waitroom.finale .wr-clock{opacity:0;
+             transition:opacity .5s;pointer-events:none;}
+  .wr-finale .feye{font-size:12px;letter-spacing:5px;text-transform:uppercase;
+                   color:var(--gold-bright);font-weight:700;}
+  .wr-finale .fhd{font-family:var(--font-head);font-weight:700;font-size:54px;line-height:1.06;
+                  color:#fff;margin-top:10px;}
+  .wr-finale .fhd em{font-style:italic;color:var(--gold-bright);}
+  .wr-finale .lab{font-size:13px;letter-spacing:5px;text-transform:uppercase;
+                  color:rgba(255,255,255,.55);font-weight:700;margin-top:26px;}
+  .wr-finale .num{font-family:var(--font-head);font-weight:700;font-size:168px;line-height:1;
+                  color:#fff;margin-top:2px;font-variant-numeric:tabular-nums;
+                  text-shadow:0 10px 60px rgba(203,162,76,.42);}
+  .wr-finale .num.tick{animation:wrTick .5s cubic-bezier(.34,1.5,.64,1);}
+  @keyframes wrTick{0%{transform:scale(.72);opacity:.35;}60%{transform:scale(1.06);opacity:1;}100%{transform:scale(1);}}
+  #waitroom.finale.go .wr-finale .num{font-size:82px;}
+  #waitroom.finale.go .wr-finale .lab{opacity:0;}
+
+  .wr-dots{display:flex;gap:8px;justify-content:center;padding:16px 0 14px;flex:none;}
+  .wr-dots i{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.24);transition:.35s;}
+  .wr-dots i.on{background:var(--gold-bright);width:22px;border-radius:4px;}
+  .wr-prog{height:6px;background:rgba(255,255,255,.1);flex:none;}
+  .wr-bar{height:100%;width:100%;background:linear-gradient(90deg,var(--gold),var(--gold-bright));
+          transition:width 1s linear;}
+  #waitroom.warn .wr-bar{background:linear-gradient(90deg,var(--pink-dark),var(--pink));}
+  .wr-skip{position:absolute;right:88px;bottom:34px;z-index:3;border:none;background:none;
+           color:rgba(255,255,255,.45);font-family:var(--font-body);font-size:12.5px;font-weight:600;
+           letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.2s;}
+  .wr-skip:hover{color:var(--gold-bright);}
+
+  /* ---- 2 about ---- */
+  #s-about h1.big{font-size:50px;margin:2px 0 30px;}
+  .cols{display:flex;gap:60px;flex:1;min-height:0;}
+  .col-l{flex:1.05;} .col-r{flex:1;}
+  /* About slide: type sized up for a projected/screen-shared slide, the four features
+     given real air, and "Opening by" pinned to the bottom of its column — together these
+     fill the frame instead of leaving the bottom third empty. */
+  #s-about .col-l{display:flex;flex-direction:column;}
+  #s-about .opener-label{margin-top:auto;}
+  #s-about .feat:last-child{margin-bottom:0;}
+  #s-about p.lead{font-size:19.5px;line-height:1.62;color:var(--ink-soft);margin-bottom:30px;}
+  .opener-label{font-size:13px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  .opener-name{font-family:var(--font-head);font-weight:700;font-size:36px;color:var(--ink);margin-top:8px;}
+  .feat{display:flex;gap:16px;margin-bottom:48px;}
+  .feat .sq{width:14px;height:14px;background:var(--gold);margin-top:6px;flex:none;border-radius:2px;}
+  .feat h3{font-size:21px;color:var(--ink);font-weight:700;}
+  .feat p{font-size:16.5px;color:var(--muted);margin-top:4px;line-height:1.4;}
+
+  /* ---- 3 dvar torah ---- */
+  #s-dvar .torah{font-family:var(--font-head);font-style:italic;font-size:92px;color:var(--ink);font-weight:400;margin-top:6px;line-height:1;}
+  #s-dvar .delivered{margin-top:42px;font-size:15px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  #s-dvar .speaker{font-family:var(--font-head);font-weight:700;font-size:46px;color:var(--ink);margin-top:10px;}
+
+  /* ---- conference (4 & 8) ---- */
+  .conf h1.big{font-family:var(--font-head);font-weight:700;font-size:46px;letter-spacing:.6px;color:var(--ink);text-transform:uppercase;margin:6px 0 6px;line-height:1.05;}
+  .conf .sub{font-family:var(--font-head);font-style:italic;font-size:27px;color:var(--gold);margin-bottom:30px;}
+  .conf .meta{font-weight:700;letter-spacing:2.5px;font-size:15px;color:var(--ink);text-transform:uppercase;}
+  .conf .meta .dot{color:var(--gold);margin:0 12px;}
+  .stats{display:flex;background:var(--sand-2);border-radius:12px;margin:26px 0 32px;padding:21px 0;}
+  .stat{flex:1;text-align:center;border-right:1px solid var(--hair);}
+  .stat:last-child{border-right:none;}
+  .stat .n{font-family:var(--font-head);font-style:italic;font-size:42px;color:var(--ink);line-height:1;}
+  .stat .l{font-size:11.5px;letter-spacing:2px;color:var(--gold-text);text-transform:uppercase;margin-top:8px;font-weight:600;}
+  .conf-bottom{display:flex;gap:44px;align-items:center;margin-top:auto;}
+  .savebox{background:var(--navy);color:#fff;display:flex;flex:none;border-radius:12px;overflow:hidden;box-shadow:0 8px 22px rgba(18,35,63,.18);}
+  .savebox .l{padding:20px 28px;}
+  .savebox .r{padding:20px 28px;border-left:2px dashed rgba(255,255,255,.38);}
+  .savebox .k{font-size:11px;letter-spacing:3px;color:var(--gold-bright);text-transform:uppercase;font-weight:600;}
+  .savebox .big{font-family:var(--font-head);font-size:42px;line-height:1;margin:6px 0;}
+  .savebox .code{font-weight:700;font-size:19px;line-height:1.15;letter-spacing:.6px;margin-top:15px;}
+  .savebox .fine{font-style:italic;font-size:12.5px;color:rgba(255,255,255,.72);margin-top:15px;}
+  .reserve .k{font-size:12px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;font-weight:600;}
+  .reserve .url{font-family:var(--font-head);font-style:italic;font-size:38px;color:var(--ink);text-decoration:underline;text-decoration-color:var(--gold);text-underline-offset:5px;margin-top:2px;}
+  .reserve .n1{font-style:italic;font-size:14.5px;color:var(--ink-soft);margin-top:8px;}
+  .reserve .n2{font-style:italic;font-size:13px;color:var(--muted);margin-top:2px;}
+  /* hotel rate-increase urgency bar (slides 5 & 8) — text comes from DECK.conference.alert */
+  .ratealert{display:flex;align-items:center;gap:14px;margin-top:24px;background:#FCF1F4;
+             border:1px solid rgba(209,90,122,.26);
+             border-radius:10px;padding:11px 18px;}
+  .ratealert .ra-pill{flex:none;background:var(--pink);color:#fff;font-weight:700;letter-spacing:2.5px;
+                      font-size:10.5px;text-transform:uppercase;padding:6px 12px;border-radius:5px;}
+  .ratealert .ra-msg{font-size:15.5px;line-height:1.35;color:var(--ink);}
+  .ratealert .ra-msg strong{color:var(--pink-dark);font-weight:700;}
+
+  /* ---- 8 conference, second look: photo tiles + the ask ---- */
+  .conf--photo .lede{font-family:var(--font-head);font-style:italic;font-size:33px;line-height:1.22;
+                     color:var(--ink);margin-top:10px;max-width:1010px;}
+  .photoband{display:flex;gap:16px;margin-top:24px;height:280px;flex:none;}
+  .ptile{position:relative;flex:1;border-radius:12px;overflow:hidden;background:var(--sand);
+         box-shadow:0 10px 26px rgba(30,42,56,.14);}
+  .ptile img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;
+             opacity:0;transition:opacity 1.1s ease;}
+  .ptile img.on{opacity:1;}
+
+  /* ---- 9 next session ---- */
+  #s-thanks .nextup{margin-top:32px;}
+  #s-thanks .nextup .k{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-bright);font-weight:600;}
+  #s-thanks .nextup .ntitle{font-family:var(--font-head);font-style:italic;font-size:26px;color:#fff;
+                            margin-top:10px;max-width:920px;line-height:1.25;}
+  #s-thanks .nextup .ndate{font-weight:700;letter-spacing:3px;font-size:14px;text-transform:uppercase;
+                           color:rgba(255,255,255,.82);margin-top:11px;}
+
+  /* ---- shared white logo card (used wherever a sponsor logo appears) ---- */
+  .logocard{background:#fff;border:1px solid var(--hair);border-radius:14px;box-shadow:0 6px 20px rgba(30,42,56,.08);display:flex;align-items:center;justify-content:center;overflow:hidden;}
+
+  /* ---- 4 sponsor's own slides (full-bleed) ----
+     Used when DECK.spotlightSlides has entries. object-fit:contain rather than cover so
+     a slide that isn't exactly 16:9 letterboxes instead of having its content cropped off. */
+  .slide--full{padding:0;background:#fff;}
+  .slide--full img{width:100%;height:100%;object-fit:contain;display:block;}
+
+  /* ---- 4 spotlight (built-in layout, used when spotlightSlides is empty) ---- */
+  #s-spot .sp-hero{flex:1;display:flex;align-items:center;gap:52px;margin-top:10px;min-height:0;}
+  #s-spot .sp-logocard{flex:none;width:460px;height:210px;padding:18px;}
+  #s-spot .sp-logocard img{max-height:174px;max-width:100%;object-fit:contain;}
+  #s-spot .spot-content{flex:1;min-width:0;}
+  #s-spot .spot-head{font-family:var(--font-head);font-size:50px;line-height:1.12;font-style:italic;color:var(--ink);}
+  #s-spot .spot-head .g{color:var(--gold);}
+  #s-spot .spot-content.has-bullets .spot-head{font-size:40px;}
+  #s-spot .spot-bullets{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:16px 46px;margin:28px 0 8px;}
+  #s-spot .spot-bullets li{display:flex;gap:13px;align-items:center;font-size:19px;color:var(--ink);font-weight:600;}
+  #s-spot .spot-bullets li::before{content:"";width:12px;height:12px;background:var(--gold);border-radius:3px;flex:none;}
+  #s-spot .spot-bullets:empty{display:none;}
+  #s-spot .spfoot{display:flex;justify-content:space-between;align-items:flex-end;padding-top:24px;}
+  #s-spot .spfoot .k{font-size:12px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;font-weight:600;}
+  #s-spot .spfoot .name{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:4px;}
+  #s-spot .spfoot .co{font-style:italic;color:var(--muted);font-size:15px;margin-top:2px;}
+  #s-spot .spfoot .phone{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:4px;}
+  #s-spot .spfoot .web{font-family:var(--font-head);font-style:italic;color:var(--gold-text);font-size:24px;text-align:right;margin-top:5px;font-weight:500;}
+  #s-spot .spfoot .right{text-align:right;}
+
+  /* ---- 6 lecture ---- */
+  #s-lect h1.big{font-family:var(--font-head);font-style:italic;font-size:54px;color:var(--ink);margin-top:4px;line-height:1.02;}
+  #s-lect .subt{font-family:var(--font-head);font-style:italic;font-size:25px;color:var(--gold-text);margin-top:4px;}
+  #s-lect .cols{margin-top:18px;gap:52px;padding-top:22px;}
+  #s-lect .col-l{flex:.95;}
+  #s-lect .logobox{padding:16px;height:230px;}
+  #s-lect .logobox img{max-height:198px;max-width:100%;object-fit:contain;}
+  #s-lect .doc{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:20px;}
+  #s-lect .role{font-style:italic;color:var(--muted);font-size:15px;margin-top:3px;}
+  #s-lect .cepill{display:inline-block;background:var(--navy);color:var(--gold-bright);font-weight:700;letter-spacing:2.5px;font-size:12px;padding:10px 20px;margin-top:14px;text-transform:uppercase;border-radius:6px;}
+  #s-lect .col-r{border-left:3px solid var(--gold);padding-left:24px;display:flex;flex-direction:column;}
+  #s-lect .col-r .k{font-size:12px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
+  #s-lect .col-r p{font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin-bottom:11px;}
+  #s-lect .col-r .web{font-family:var(--font-head);font-style:italic;color:var(--gold-text);font-size:21px;text-align:right;margin-top:auto;}
+
+  /* ---- 9 thanks / CTA ---- */
+  /* CE provider credit, top-right. White card because the mark is dark on white and
+     this slide is navy — same treatment the sponsor logos get elsewhere in the deck. */
+  #s-thanks .ce-credit{position:absolute;top:52px;right:88px;z-index:3;text-align:right;}
+  #s-thanks .ce-credit .k{font-size:10.5px;letter-spacing:3px;text-transform:uppercase;
+                          color:var(--gold-bright);font-weight:700;margin-bottom:9px;}
+  #s-thanks .ce-credit .card{background:#fff;border-radius:10px;width:150px;height:104px;
+                             display:flex;align-items:center;justify-content:center;padding:12px 16px;
+                             box-shadow:0 8px 24px rgba(0,0,0,.25);}
+  #s-thanks .ce-credit .card img{max-width:100%;max-height:100%;object-fit:contain;}
+
+  #s-thanks .big{font-family:var(--font-head);font-style:italic;font-size:82px;color:#fff;line-height:1;}
+  #s-thanks .cta{margin-top:38px;align-self:flex-start;}
+  #s-thanks .cta .url{font-family:var(--font-head);font-weight:700;font-size:62px;color:#fff;letter-spacing:.5px;line-height:1;}
+  #s-thanks .cta .url .live{color:var(--gold-bright);}
+  #s-thanks .cta .under{width:0;height:3px;background:var(--gold);margin-top:14px;border-radius:2px;animation:grow 1s .5s cubic-bezier(.2,.7,.2,1) both;}
+  @keyframes grow{to{width:100%;}}
+  #s-thanks .cadence{margin-top:26px;font-weight:700;letter-spacing:4px;font-size:17px;text-transform:uppercase;color:rgba(255,255,255,.85);}
+  #s-thanks .cadence .dot{color:var(--gold-bright);margin:0 12px;}
+
+  /* ---- 7 giveaway ---- */
+  #s-give{background:linear-gradient(155deg,#fff7f5 0%,#fdeef1 52%,#fbe6ec 100%);}
+  #s-give h1.big{font-size:44px;margin-top:4px;text-align:center;}
+  #s-give h1.big em{color:var(--pink);font-style:italic;}
+  #s-give .gwbody{flex:1;display:flex;gap:64px;align-items:center;justify-content:center;min-height:0;padding-top:4px;}
+  #s-give .wheelcol{flex:none;width:392px;display:flex;flex-direction:column;align-items:center;}
+  .wheel-wrap{position:relative;width:360px;height:360px;}
+  .wheel-wrap .pointer{position:absolute;top:-4px;left:50%;transform:translateX(-50%);width:0;height:0;border-left:15px solid transparent;border-right:15px solid transparent;border-top:26px solid var(--pink);z-index:4;filter:drop-shadow(0 2px 4px rgba(0,0,0,.28));}
+  #wheel{width:360px;height:360px;transition:transform 4.8s cubic-bezier(.12,.63,.05,1);filter:drop-shadow(0 8px 26px rgba(209,90,122,.28));}
+  .hub{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:76px;height:76px;border-radius:50%;background:var(--pink);color:#fff;border:5px solid #fff;font-family:var(--font-head);font-weight:700;font-size:17px;cursor:pointer;box-shadow:0 5px 16px rgba(209,90,122,.5);z-index:5;transition:background .2s,transform .15s;}
+  .hub:hover{background:var(--pink-dark);transform:translate(-50%,-50%) scale(1.05);}
+  .hub:disabled{opacity:.55;cursor:default;transform:translate(-50%,-50%);}
+  #s-give .infocol{flex:none;width:470px;}
+  #s-give .selwrap label{font-size:12px;letter-spacing:2.5px;text-transform:uppercase;color:#a2415c;font-weight:700;}
+  #s-give select{display:block;width:100%;margin-top:8px;padding:12px 16px;font-family:var(--font-body);font-size:16px;border:2px solid #edc2cd;border-radius:10px;background:#fff;color:var(--ink);cursor:pointer;}
+  #s-give .prizecard{margin-top:16px;background:#fff;border:1px solid #f2d0d8;border-radius:14px;padding:16px 22px;box-shadow:0 10px 28px rgba(209,90,122,.12);transition:box-shadow .3s,border-color .3s,transform .3s;}
+  #s-give .prizecard.is-spinning{border-color:var(--pink);box-shadow:0 0 0 4px rgba(209,90,122,.18),0 14px 34px rgba(209,90,122,.28);animation:cardpulse 1s ease-in-out infinite;}
+  @keyframes cardpulse{0%,100%{transform:scale(1);}50%{transform:scale(1.02);}}
+  /* logo box trimmed 170px -> 140px June->Aug 2026 to make room for the sponsor's
+     contact block below; img max-height is now relative so it follows the box on mobile too */
+  #s-give .sponsorlogo{display:flex;align-items:center;justify-content:center;background:#fff;border:1px solid var(--hair);border-radius:14px;height:132px;padding:14px;margin-bottom:12px;box-shadow:0 4px 14px rgba(30,42,56,.06);}
+  #s-give .sponsorlogo img{max-height:100%;max-width:100%;object-fit:contain;}
+  #s-give .prizecard .k{font-size:11px;line-height:1.3;letter-spacing:3px;text-transform:uppercase;color:#c0507a;font-weight:600;}
+  #s-give .prizecard .prize{font-family:var(--font-head);font-style:italic;font-size:30px;color:var(--ink);margin:4px 0 10px;line-height:1.05;}
+  #s-give .prizecard .comp{font-size:12px;line-height:1.3;letter-spacing:2px;text-transform:uppercase;color:var(--muted);font-weight:600;}
+  #s-give .prizecard .sponsor{font-weight:700;font-size:17px;line-height:1.25;color:var(--ink);margin-top:3px;}
+  /* sponsor's own contact details (optional per giveaway — see DECK.giveaways) */
+  #s-give .prizecard .contact{margin-top:10px;padding-top:9px;border-top:1px solid #f2d0d8;}
+  #s-give .prizecard .contact .web{font-family:var(--font-head);font-style:italic;font-size:20px;line-height:1.15;color:var(--pink-dark);}
+  #s-give .prizecard .contact .call{font-size:14px;line-height:1.3;font-weight:600;letter-spacing:.2px;color:var(--ink);margin-top:3px;}
+  #s-give .poolnote{margin-top:14px;font-size:13.5px;color:var(--muted);text-align:center;}
+  #s-give .poolnote strong{color:var(--pink-dark);}
+  #s-give .finelegal{flex:none;padding-top:12px;font-size:10.5px;line-height:1.5;color:#9aa1ac;text-align:center;}
+
+  /* fixed chrome */
+  #progressbar{position:fixed;top:0;left:0;height:3px;background:var(--gold);z-index:30;transition:width .4s ease;}
+  #counter{position:fixed;bottom:16px;right:20px;color:rgba(255,255,255,.55);font-size:13px;letter-spacing:.5px;z-index:30;font-variant-numeric:tabular-nums;}
+  .navbtn{position:fixed;top:50%;transform:translateY(-50%);width:46px;height:46px;border-radius:50%;background:rgba(12,20,36,.55);color:#fff;border:1px solid rgba(255,255,255,.22);font-size:20px;cursor:pointer;z-index:30;display:flex;align-items:center;justify-content:center;transition:background .2s,opacity .2s;opacity:.65;backdrop-filter:blur(3px);}
+  .navbtn:hover{background:rgba(12,20,36,.85);opacity:1;}
+  #navPrev{left:18px;} #navNext{right:18px;}
+  #namesBtn{position:fixed;bottom:14px;left:20px;z-index:30;background:rgba(12,20,36,.55);color:#fff;border:1px solid rgba(255,255,255,.22);border-radius:22px;padding:9px 17px;font-size:13px;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:6px;backdrop-filter:blur(3px);transition:background .2s;}
+  #namesBtn:hover{background:rgba(12,20,36,.85);}
+  #namesBtn .cnt{color:var(--gold-bright);font-weight:700;}
+  .hint-msg{position:fixed;bottom:15px;left:50%;transform:translateX(-50%);color:rgba(255,255,255,.42);font-size:12px;letter-spacing:.3px;z-index:29;transition:opacity .5s;}
+
+  /* overlays */
+  .overlay{position:fixed;top:0;left:0;width:calc(100vw / var(--deck-scale,1));height:calc(100vh / var(--deck-scale,1));
+           transform:scale(var(--deck-scale,1));transform-origin:top left;
+           background:rgba(8,14,26,.72);z-index:50;display:none;align-items:center;justify-content:center;backdrop-filter:blur(2px);}
+  .overlay.show{display:flex;}
+  /* caps are % of the overlay (which is itself sized+scaled to exactly cover the window),
+     so these still mean "92% / 88% of the screen" at every zoom level */
+  .sheet{background:#fff;border-radius:16px;width:520px;max-width:92%;max-height:84%;overflow:auto;padding:30px 32px;box-shadow:0 24px 70px rgba(0,0,0,.42);}
+  .sheet h2{font-family:var(--font-head);font-size:26px;color:var(--ink);margin-bottom:6px;}
+  .sheet p.hint{font-size:14px;color:var(--muted);margin-bottom:16px;line-height:1.45;}
+  .sheet textarea{width:100%;min-height:240px;border:2px solid #e5dfd2;border-radius:10px;padding:14px;font-family:var(--font-body);font-size:15px;line-height:1.5;resize:vertical;}
+  .sheet textarea:focus{outline:none;border-color:var(--gold);}
+  .sheet .row{display:flex;gap:10px;justify-content:flex-end;margin-top:18px;}
+  .btn{border:none;border-radius:9px;padding:12px 22px;font-size:15px;font-weight:600;cursor:pointer;font-family:var(--font-body);transition:background .18s;}
+  .btn-primary{background:var(--navy);color:#fff;} .btn-primary:hover{background:var(--navy-2);}
+  .btn-ghost{background:#efe9dd;color:var(--ink);} .btn-ghost:hover{background:#e5dfcf;}
+  .btn-pink{background:var(--pink);color:#fff;} .btn-pink:hover{background:var(--pink-dark);}
+
+  #winnerSheet .sheet{text-align:center;width:780px;padding:30px 52px;background:linear-gradient(160deg,#fff 0%,#fff5f8 100%);
+    border:1px solid rgba(209,90,122,.28);box-shadow:0 40px 110px rgba(0,0,0,.5),0 0 80px rgba(209,90,122,.16);
+    animation:sheetpop .55s cubic-bezier(.34,1.56,.64,1) both;}
+  @keyframes sheetpop{from{opacity:0;transform:scale(.82);}to{opacity:1;transform:scale(1);}}
+  #winnerSheet .k{font-size:14px;letter-spacing:4px;text-transform:uppercase;color:#c0507a;font-weight:700;}
+  #winnerSheet .who{font-family:var(--font-head);font-weight:700;font-size:62px;color:var(--ink);margin:6px 0 2px;line-height:1.04;word-break:break-word;
+    animation:whopop .6s .15s cubic-bezier(.34,1.56,.64,1) both;}
+  @keyframes whopop{from{opacity:0;transform:scale(.6);}to{opacity:1;transform:scale(1);}}
+  #winnerSheet .prizeline{font-family:var(--font-head);font-style:italic;font-size:26px;color:var(--pink-dark);margin-bottom:14px;}
+  #winnerSheet .sponsorband{background:var(--navy);border-radius:16px;padding:15px;margin-bottom:14px;display:flex;flex-direction:column;align-items:center;gap:9px;}
+  #winnerSheet .sponsorband .th{font-size:13px;letter-spacing:3px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
+  #winnerSheet .w-logowrap{display:flex;align-items:center;justify-content:center;background:#fff;border-radius:12px;padding:12px 28px;min-height:92px;width:100%;max-width:420px;}
+  #winnerSheet .w-logowrap img{max-height:68px;max-width:340px;object-fit:contain;}
+  #winnerSheet .sponsorline{font-size:17px;color:#fff;letter-spacing:.4px;font-weight:700;}
+  /* one compact gold line — deliberately small so it never competes with the winner's name */
+  #winnerSheet .sponsorcontact{font-size:14px;line-height:1.35;color:var(--gold-bright);letter-spacing:.3px;font-weight:600;margin-top:-4px;}
+  #winnerSheet .confirm{margin:0 auto;background:#fdeef1;border:1px dashed #e5a9ba;border-radius:12px;padding:11px 22px;font-size:18px;font-weight:700;color:var(--pink-dark);max-width:520px;}
+  #winnerSheet .row{justify-content:center;margin-top:15px;}
+  /* fireworks + confetti canvas — sits above the winner sheet so the show plays over it */
+  #fw{position:fixed;inset:0;pointer-events:none;z-index:60;}
+  /* wheel glow while spinning */
+  .wheel-wrap.is-spinning #wheel{filter:drop-shadow(0 0 30px rgba(209,90,122,.55)) drop-shadow(0 8px 26px rgba(209,90,122,.35));}
+
+  /* ============================================================
+     MOBILE (phones, portrait) — read-friendly layout
+     Below 700px wide, drop the fixed 1280×720 "TV slide" canvas
+     and let each slide flow down the screen instead, with smaller
+     type and single-column stacking, so the content is actually
+     readable without pinch-zooming. Landscape/tablet still gets
+     the scaled TV-style view above, which already looks fine.
+     ============================================================ */
+  @media (max-width:700px){
+    :root{--pad-x:20px;--pad-y:26px;--content-gap:18px;}
+    html,body{height:auto;overflow-y:auto;overflow-x:hidden;}
+    #stage{position:static;display:block;min-height:100vh;}
+    #deck{width:100%;height:auto;min-height:100vh;transform:none !important;box-shadow:none;overflow:visible;}
+    #s-thanks .ce-credit{position:static;text-align:left;margin-top:18px;}
+    #s-thanks .ce-credit .card{width:130px;height:88px;}
+    .wr-start{display:none;}   /* presenter-only control */
+    #waitroom{position:fixed;}
+    /* Sponsor slides are 16:9 artwork — on a tall phone screen that's a short strip,
+       so centre it instead of pinning it to the top with a void underneath. */
+    .slide--full{padding:0 !important;justify-content:center;}
+    .slide--full img{height:auto;width:100%;}
+    /* 108px of bottom padding keeps the last line clear of the floating
+       Add-names button and the arrows, which sit over the slide. */
+    .slide{position:relative;inset:auto;display:none;opacity:1;visibility:visible;pointer-events:auto;min-height:100vh;padding:var(--pad-y) var(--pad-x) 108px;}
+    /* comfortable thumb targets */
+    #namesBtn{padding:12px 20px;font-size:14px;}
+    .navbtn{width:46px;height:46px;font-size:26px;background:rgba(18,35,63,.62);color:#fff;}
+    #counter{bottom:auto;}
+    .slide.active{display:flex;}
+    .cols,.sp-hero,.conf-bottom,.gwbody{flex-direction:column;gap:26px;}
+    .conf-bottom{align-items:stretch;}
+    #s-spot .sp-hero{gap:18px;}
+    #s-lect .cols{gap:22px;padding-top:16px;}
+    .topbar{height:auto;}
+    .brand{font-size:12px;letter-spacing:2.5px;}
+
+    #s-title h1.big{font-size:40px;}
+    #s-title .date{font-size:14px;letter-spacing:3px;margin-top:24px;padding-top:16px;}
+    #s-title .learnmore{font-size:14px;}
+    #s-title .learnmore .site{font-size:16px;}
+
+    #s-about h1.big{font-size:28px;margin-bottom:18px;}
+    #s-about p.lead{font-size:16px;margin-bottom:20px;}
+    #s-about .opener-label{margin-top:0;}
+    .opener-name{font-size:24px;}
+    .feat{margin-bottom:18px;}
+    .feat h3{font-size:16px;}
+    .feat p{font-size:14px;}
+
+    #s-dvar .torah{font-size:46px;}
+    #s-dvar .delivered{margin-top:28px;font-size:13px;}
+    #s-dvar .speaker{font-size:28px;}
+
+    #s-spot .sp-logocard{width:100%;max-width:280px;height:130px;margin:0 auto;}
+    #s-spot .spot-head{font-size:26px;text-align:center;}
+    #s-spot .spot-content.has-bullets .spot-head{font-size:22px;}
+    #s-spot .spot-bullets{grid-template-columns:1fr;gap:12px;margin:20px 0 4px;}
+    #s-spot .spot-bullets li{font-size:16px;}
+    #s-spot .spfoot{flex-direction:column;align-items:flex-start;gap:14px;padding-top:18px;}
+    #s-spot .spfoot .right{text-align:left;}
+    #s-spot .spfoot .name,#s-spot .spfoot .phone{font-size:22px;}
+    #s-spot .spfoot .web{text-align:left;font-size:17px;}
+
+    .conf h1.big{font-size:26px;}
+    .conf .sub{font-size:17px;margin-bottom:16px;}
+    .conf .meta{font-size:12px;letter-spacing:1.5px;line-height:1.7;}
+    .stats{display:grid;grid-template-columns:1fr 1fr;margin:18px 0 20px;padding:14px 0;}
+    .conf-bottom{margin-top:20px;}
+    .stat{border-right:1px solid var(--hair);border-bottom:1px solid var(--hair);padding:14px 0;}
+    .stat:nth-child(2n){border-right:none;}
+    .stat:nth-child(n+3){border-bottom:none;}
+    .stat .n{font-size:28px;}
+    .stat .l{font-size:10px;}
+    .photoband{height:190px;margin-top:16px;}
+    .ptile:nth-child(2),.ptile:nth-child(3){display:none;}
+    .conf--photo .lede{font-size:19px;}
+    #s-thanks .nextup .ntitle{font-size:18px;}
+    #s-thanks .nextup .ndate{font-size:12px;letter-spacing:2px;}
+    .savebox .l{padding:14px 16px;}
+    .savebox .r{padding:14px 16px;}
+    .savebox .big{font-size:26px;}
+    .savebox .code{font-size:15px;margin-top:6px;}
+    .savebox .fine{font-size:11px;margin-top:6px;}
+    .reserve .url{font-size:24px;}
+    .reserve .n1,.reserve .n2{font-size:13px;}
+    .ratealert{flex-direction:column;align-items:flex-start;gap:9px;padding:12px 14px;margin-top:12px;}
+    .ratealert .ra-msg{font-size:14px;}
+
+    #s-lect h1.big{font-size:28px;}
+    #s-lect .subt{font-size:16px;}
+    #s-lect .logobox{height:130px;max-width:280px;margin:0 auto;}
+    #s-lect .doc{font-size:22px;}
+    #s-lect .col-r{border-left:none;border-top:3px solid var(--gold);padding-left:0;padding-top:18px;}
+    #s-lect .col-r p{font-size:14px;}
+    #s-lect .col-r .web{text-align:left;margin-top:10px;font-size:17px;}
+
+    #s-give h1.big{font-size:24px;}
+    #s-give .wheelcol{width:100%;}
+    .wheel-wrap{width:220px;height:220px;}
+    #wheel{width:220px;height:220px;}
+    .hub{width:56px;height:56px;font-size:14px;}
+    .wheel-wrap .pointer{border-left-width:10px;border-right-width:10px;border-top-width:18px;}
+    #s-give .infocol{width:100%;}
+    #s-give .sponsorlogo{height:110px;}
+    #s-give .prizecard .prize{font-size:22px;}
+    #s-give .prizecard .contact .web{font-size:17px;}
+    #s-give .prizecard .contact .call{font-size:13.5px;}
+    #s-give .finelegal{font-size:11px;}
+
+    #s-thanks .big{font-size:38px;}
+    #s-thanks .cta .url{font-size:30px;}
+    #s-thanks .cta .under{animation-name:growMobile;}
+    #s-thanks .cadence{font-size:14px;letter-spacing:2.5px;}
+
+    /* fixed chrome — clear the middle of the screen, tuck controls into a bottom bar */
+    .hint-msg{display:none;}
+    .navbtn{top:auto;bottom:14px;transform:none;width:40px;height:40px;font-size:17px;}
+    #navPrev{left:auto;right:60px;}
+    #navNext{right:14px;}
+    #counter{left:50%;right:auto;transform:translateX(-50%);bottom:16px;}
+    #namesBtn{padding:8px 14px;font-size:12px;}
+
+    /* modals */
+    .sheet{padding:22px 18px;}
+    .sheet textarea{font-size:16px;min-height:180px;}
+    #winnerSheet .sheet{padding:26px 20px;}
+    #winnerSheet .who{font-size:40px;}
+    #winnerSheet .prizeline{font-size:19px;}
+    #winnerSheet .w-logowrap{padding:14px 18px;min-height:90px;}
+    #winnerSheet .w-logowrap img{max-height:70px;}
+    #winnerSheet .confirm{font-size:15px;padding:12px 16px;}
+    #winnerSheet .sponsorcontact{font-size:12px;margin-top:-2px;}
+  }
+  @keyframes growMobile{to{width:200px;}}
+</style>
+</head>
+<body>
+
+<div id="stage">
+  <div id="deck">
+
+    <!-- 1 TITLE -->
+    <section class="slide slide--dark active" id="s-title">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div></div>
+      <div class="body vcenter anim">
+        <div class="goldrule"></div>
+        <div class="eyebrow">Monthly Continuing Education</div>
+        <h1 class="big" style="margin-top:20px;">Dental Wisdom<br><em class="gold">Live</em></h1>
+        <div class="date"><span id="t-date">Thursday, June 18</span><span class="dot">·</span><span id="t-time">8:00 PM EST</span></div>
+        <div class="learnmore">Visit <span class="site">DentalWisdom.org</span> to learn more about Dental Wisdom</div>
+      </div>
+      <button class="wr-start" id="wrStart">Start 2:00</button>
+    </section>
+
+    <!-- 2 ABOUT -->
+    <section class="slide" id="s-about">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">2 / 9</div></div>
+      <div class="body anim">
+        <div class="eyebrow">About</div>
+        <h1 class="big">Dental Wisdom <em class="gold">Live</em></h1>
+        <div class="cols">
+          <div class="col-l">
+            <p class="lead">Dental Wisdom Live delivers free continuing education to the network each month. A focused session where attendees earn CE credits — high-value, interactive education designed to help you stay at the forefront of modern dentistry while strengthening our community.</p>
+            <div class="opener-label">Opening by</div>
+            <div class="opener-name" id="t-opener">Dr. Lisa Sokol</div>
+          </div>
+          <div class="col-r">
+            <div class="feat"><span class="sq"></span><div><h3>Cutting-edge techniques</h3><p>Practical solutions from leading industry experts</p></div></div>
+            <div class="feat"><span class="sq"></span><div><h3>Real-time Q&amp;A</h3><p>Direct dialogue with every speaker</p></div></div>
+            <div class="feat"><span class="sq"></span><div><h3>Valuable CE credits</h3><p>Earn credits with every session</p></div></div>
+            <div class="feat"><span class="sq"></span><div><h3>Exciting giveaways</h3><p>Surprises and prizes throughout</p></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 3 DVAR TORAH -->
+    <section class="slide" id="s-dvar">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">3 / 9</div></div>
+      <div class="body vcenter anim">
+        <div class="goldrule"></div>
+        <div class="eyebrow">Opening</div>
+        <div class="torah">Dvar Torah</div>
+        <div class="delivered" id="t-dvar-by">Delivered by</div>
+        <div class="speaker" id="t-dvar-speaker">Chaim Glazer</div>
+      </div>
+    </section>
+
+    <!-- 4 CONFERENCE -->
+    <section class="slide conf" id="s-conf1">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">5 / 9</div></div>
+      <div class="body anim">
+        <div class="eyebrow">Not your typical CE event.</div>
+        <h1 class="big">The 2027 Dental Wisdom Conference</h1>
+        <div class="sub">Created by Jewish Dentists, for Jewish Dentists.</div>
+        <div class="meta baseline" style="padding-top:22px;">March 3 – 6, 2027<span class="dot">·</span>The Altair Hotel<span class="dot">·</span>Bay Harbor Islands, Miami</div>
+        <div class="ratealert"><span class="ra-pill">Heads up</span><span class="ra-msg"></span></div>
+        <div class="stats">
+          <div class="stat"><div class="n">20</div><div class="l">CE Credits</div></div>
+          <div class="stat"><div class="n">4</div><div class="l">Nights + Shabbos</div></div>
+          <div class="stat"><div class="n">3rd</div><div class="l">Year Running</div></div>
+          <div class="stat"><div class="n">100%</div><div class="l">Glatt Kosher</div></div>
+        </div>
+        <div class="conf-bottom">
+          <div class="savebox">
+            <div class="l"><div class="k">Save</div><div class="big t-save">$175</div><div class="k">Off</div></div>
+            <div class="r"><div class="k">Use code</div><div class="code t-code">DentalWisdomLive</div><div class="fine t-fine">Use at checkout when registering</div></div>
+          </div>
+          <div class="reserve">
+            <div class="k">Reserve your seat</div>
+            <div class="url">DentalWisdom.org</div>
+            <div class="n1">Expected to sell out — register today.</div>
+            <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5 SPOTLIGHT — replaced at load by DECK.spotlightSlides when that list has entries -->
+    <section class="slide" id="s-spot">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
+      <div class="body anim">
+        <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
+        <div class="sp-hero">
+          <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
+          <div class="spot-content" id="t-spot-content">
+            <p class="spot-head"><span id="t-spot-tag1">Wealth That Lives Well —</span> <span class="g" id="t-spot-tag2">Today, Tomorrow, and Beyond.</span></p>
+          </div>
+        </div>
+        <ul class="spot-bullets" id="t-spot-bullets"></ul>
+        <div class="baseline spfoot">
+          <div>
+            <div class="k">Contact</div>
+            <div class="name" id="t-spot-name">Sam Waller</div>
+            <div class="co" id="t-spot-co">Live Well Capital</div>
+          </div>
+          <div class="right">
+            <div class="k" id="t-spot-calllabel">Call</div>
+            <div class="phone" id="t-spot-phone">(917) 715-2188</div>
+            <div class="web" id="t-spot-web">livewealthcapital.com</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 6 LECTURE -->
+    <section class="slide" id="s-lect">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">6 / 9</div></div>
+      <div class="body anim">
+        <div class="eyebrow">Featured Speaker · <span id="t-lect-ce">1 CE Credit</span></div>
+        <h1 class="big" id="t-lect-title">Straight Forward</h1>
+        <div class="subt" id="t-lect-subt">Building Your Clear Aligner Practice</div>
+        <div class="cols baseline">
+          <div class="col-l">
+            <div class="logocard logobox"><img id="t-lect-logo" src="" alt="Sponsor logo"></div>
+            <div class="doc" id="t-lect-doc">Dr. Sam Glick</div>
+            <div class="role" id="t-lect-role">Key Opinion Leader, orthobrain</div>
+            <div class="cepill" id="t-lect-pill">1 CE Credit</div>
+          </div>
+          <div class="col-r">
+            <div class="k">About this session</div>
+            <div id="t-lect-desc"></div>
+            <div class="web" id="t-lect-web">orthobrain.com</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7 GIVEAWAY -->
+    <section class="slide" id="s-give">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">7 / 9</div></div>
+      <div class="body anim">
+        <h1 class="big">Dental Wisdom <em>Giveaways</em></h1>
+        <div class="gwbody">
+          <div class="wheelcol">
+            <div class="wheel-wrap">
+              <div class="pointer"></div>
+              <svg id="wheel" viewBox="-110 -110 220 220" aria-label="Prize wheel"></svg>
+              <button class="hub" id="spinBtn">Spin</button>
+            </div>
+            <div class="poolnote"><strong id="gw-count">0</strong> names in the wheel · tap <em>Add names</em> below to load the list.</div>
+          </div>
+          <div class="infocol">
+            <div class="selwrap">
+              <label for="giveSelect">This giveaway</label>
+              <select id="giveSelect"></select>
+            </div>
+            <div class="prizecard" id="gw-prizecard">
+              <div class="sponsorlogo" id="gw-logowrap"><img id="gw-logo" alt=""></div>
+              <div class="k">Now giving away</div>
+              <div class="prize" id="gw-prize">Yeti Coffee Mug</div>
+              <div class="comp">Compliments of</div>
+              <div class="sponsor" id="gw-sponsor">Live Well Capital</div>
+              <div class="contact" id="gw-contact">
+                <div class="web" id="gw-web"></div>
+                <div class="call" id="gw-call"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="finelegal">We'll grab the attendee list at the start of the call and add everyone to the spinning wheel for some great prizes. You must be in attendance to win. Winners, please text Lisa right away to confirm and claim your prize. If you've already received that exact prize, please let us know so we can re-spin for someone else and keep things fair for all!</div>
+      </div>
+    </section>
+
+    <!-- 8 CONFERENCE — second look: what it's actually like, then the ask -->
+    <section class="slide conf conf--photo" id="s-conf2">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum"></div></div>
+      <div class="body anim">
+        <div class="eyebrow">What You Will Experience</div>
+        <h1 class="lede">This is not simply a dental conference &mdash; it&rsquo;s a full Shabbos experience, designed for Jewish dental professionals.</h1>
+        <div class="photoband" id="t-photoband"></div>
+        <div class="conf-bottom">
+          <div class="savebox">
+            <div class="l"><div class="k">Save</div><div class="big t-save">$175</div><div class="k">Off</div></div>
+            <div class="r"><div class="k">Use code</div><div class="code t-code">DentalWisdomLive</div><div class="fine t-fine">Use at checkout when registering</div></div>
+          </div>
+          <div class="reserve">
+            <div class="k">Reserve your seat</div>
+            <div class="url">DentalWisdom.org</div>
+            <div class="n1">Expected to sell out — register today.</div>
+            <div class="n2">Bonus: every Altair guest gets a complimentary bottle of wine for Shabbos.</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 9 THANKS / CTA -->
+    <section class="slide slide--dark" id="s-thanks">
+      <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div></div>
+      <div class="ce-credit">
+        <div class="k">CE Provided By</div>
+        <div class="card"><img src="logos/crown-catapult.webp" alt="Crown Catapult logo"></div>
+      </div>
+      <div class="body vcenter anim">
+        <div class="goldrule"></div>
+        <div class="eyebrow">Thank you for joining us</div>
+        <div class="big" style="margin-top:14px;">See You Next Time!</div>
+        <div class="cta">
+          <div class="url">dentalwisdom.org<span class="live">/LIVE</span></div>
+          <div class="under"></div>
+        </div>
+        <div class="nextup" id="t-nextwrap">
+          <div class="k">Next session</div>
+          <div class="ntitle" id="t-next-title">—</div>
+          <div class="ndate" id="t-next-date">—</div>
+        </div>
+      </div>
+    </section>
+    <!-- title-slide billboard: "we'll start in 2 minutes" -->
+    <div id="waitroom" aria-hidden="true">
+      <div class="wr-top">
+        <div class="wr-brand">Dental Wisdom <span>Live</span></div>
+        <div class="wr-clock"><span class="d"></span><span class="lab" id="wr-lab">Starting in</span><span class="t" id="wr-time">2:00</span></div>
+      </div>
+      <div class="wr-panes" id="wr-panes"></div>
+      <div class="wr-finale" id="wr-finale">
+        <div class="feye">Tonight’s Session</div>
+        <div class="fhd">Dental Wisdom <em>Live</em></div>
+        <div class="lab">Getting started in</div>
+        <div class="num" id="wr-fnum">10</div>
+      </div>
+      <div class="wr-dots" id="wr-dots"></div>
+      <div class="wr-prog"><div class="wr-bar" id="wr-bar"></div></div>
+      <button class="wr-skip" id="wrSkip">Start now &rarr;</button>
+      <audio id="wrAudio" loop preload="auto"></audio>
+    </div>
+  
+  </div>
+</div>
+
+<!-- fixed chrome -->
+<canvas id="fw"></canvas>
+<div id="progressbar">
+</div>
+<button class="navbtn" id="navPrev" aria-label="Previous slide">‹</button>
+<button class="navbtn" id="navNext" aria-label="Next slide">›</button>
+<div id="counter">1 / 9</div>
+<button id="namesBtn">＋ Add names <span class="cnt" id="namesCnt">(0)</span></button>
+<div class="hint-msg" id="hintMsg">← → navigate · 1–9 jump to slide · F fullscreen · N add names</div>
+
+<!-- names overlay -->
+<div class="overlay" id="namesSheet">
+  <div class="sheet">
+    <h2>Attendee names</h2>
+    <p class="hint">Paste the list — one name per line. These feed the giveaway wheel. Winners are removed automatically so nobody wins twice.</p>
+    <textarea id="namesInput" placeholder="Rivky Klein&#10;Dovid Stern&#10;Shaindy Weiss&#10;…"></textarea>
+    <div class="row">
+      <button class="btn btn-ghost" id="namesCancel">Cancel</button>
+      <button class="btn btn-primary" id="namesSave">Save names</button>
+    </div>
+  </div>
+</div>
+
+<!-- winner overlay -->
+<div class="overlay" id="winnerSheet">
+  <div class="sheet">
+    <div class="k">🎉 We have a winner!</div>
+    <div class="who" id="w-name">—</div>
+    <div class="prizeline" id="w-prize">—</div>
+    <div class="sponsorband">
+      <div class="th">Thank you to our sponsor</div>
+      <div class="w-logowrap" id="w-logowrap"><img id="w-logo" alt=""></div>
+      <div class="sponsorline" id="w-sponsor">—</div>
+      <div class="sponsorcontact" id="w-contact"></div>
+    </div>
+    <div class="confirm">📱 Make sure to text Lisa to confirm!</div>
+    <div class="row">
+      <button class="btn btn-ghost" id="w-close">Close</button>
+      <button class="btn btn-pink" id="w-again">Spin again</button>
+    </div>
+  </div>
+</div>
+
+<!-- the website's session list — lets the closing slide name the next session by itself -->
+<script src="../js/live-data.js"></script>
+<script>
+/* ============================================================
+   ▼▼▼  EDIT EACH MONTH HERE — this block is all that changes.  ▼▼▼
+   (Ben: just tell Claude the new values and they'll be updated.)
+   ============================================================ */
+const DECK = {
+  title:       { date: "Thursday, August 27", time: "8:00 PM EST" },
+  sessionDate: "2026-08-27",                           // tonight's date — used to work out what comes NEXT
+  nextSession: null,                                   // slide 9 pulls this from the website automatically.
+                                                       // To override: { title:"…", date:"…", time:"8:00 PM EST" }
+  opener:      "Dr. Lisa Sokol",                       // slide 2 (rarely changes)
+  dvarSpeaker: "Dr. David Abramowitz",           // slide 3 — leave "" until known and both the "Delivered by" label and the name stay hidden
+  conference:  {                                       // slides 5 & 8 — the promo box
+    save: "$175",
+    code: "DentalWisdomLive",
+    fine: "Use at checkout when registering",
+    // Pink urgency bar above the stats. Set alert: "" to hide the bar completely.
+    // NOTE: "next week" only reads correctly the week BEFORE the increase.
+    // Once the date is firm, swap in something like
+    //   "Hotel rates go up <strong>September 1st</strong> \u2014 book now to lock in current pricing."
+    alert: "Hotel rates go up <strong>next week</strong> \u2014 book now to lock in current pricing."
+  },
+
+  // slide 4 — the sponsor's own finished slides, shown full-screen in the order listed.
+  // Drop the images in liveslides/slides/ and name them here; add or remove lines freely.
+  // If this list has ANYTHING in it, it replaces the built-in spotlight layout below.
+  // Empty it (spotlightSlides: []) to go back to the built-in layout.
+  spotlightSlides: [
+    { src: "slides/alphaeon-1.webp", alt: "Alphaeon — Helping Doctors Help More Patients" },
+    { src: "slides/alphaeon-2.webp", alt: "Alphaeon — Higher Approvals. Better Offers. 24/7 Support." },
+    { src: "slides/alphaeon-3.webp", alt: "Alphaeon — The Modern Growth Partner for Dentists" }
+  ],
+
+  spotlight: {                                         // slide 4 — only used when spotlightSlides is empty
+    category: "Dental Supplies",
+    logo:     "logos/crazy-dental.png",
+    tagline1: "Guaranteed Lowest Price",               // ink-colored part of headline
+    tagline2: "on Our Top-Selling Products",           // gold part of headline
+    bullets:  [                                        // optional — 0 or 4 look best; omit for none
+      "Manufacturer Authorized",
+      "Premier Customer Service",
+      "110% Price Match Guarantee",
+      "Best-In-Class Logistics"
+    ],
+    name:      "Chaim Glazer",
+    company:   "Crazy Dental Prices",
+    callLabel: "Call or Text",                         // right-side label (default: "Call")
+    phone:     "(404) 944-5293",
+    website:   "crazydentalprices.com/dentalwisdom"
+  },
+
+  lecture: {                                           // slide 6 — the class
+    ce:       "1 CE Credit",
+    title:    "AI in Dentistry",
+    subtitle: "Enhancing Patient Communication and Clinical Outcomes",
+    doctor:   "Dr. Mitchell Rubinstein",
+    role:     "Presented in partnership with Pearl",
+    partner:  "Pearl",                                 // also named on the title-slide billboard
+    logo:     "logos/pearl.png",
+    website:  "hellopearl.com/dental-wisdom",
+    description: [
+      "This session explores the evolving role of artificial intelligence in modern dental practice, with a focus on clinical communication and operational efficiency. Dr. Rubinstein examines how AI-enhanced workflows improve case presentation accuracy, elevate chairside education, and support informed decision-making through real-time data insights.",
+      "By building AI into everyday practice, dental teams strengthen patient trust, optimize team performance, and drive measurable improvements in both clinical outcomes and practice growth.",
+      "<strong>Attend live to earn your CE credit \u2014 plus a free month of Pearl.</strong>"
+    ]
+  },
+
+  // slide 8 — the three panels all draw at random from this one pool. Every photo shows
+  // once before any repeats, so a full pass takes about 50 seconds and looks different
+  // every time you present. Add or remove lines freely; the panels adapt on their own.
+  // Left out on purpose (sponsor backdrops, screens with other companies' branding, or
+  // weak shots): gallery 3, 6, 13, 16, 18, 20, 22, 23, 26, 27, 31, 33, 36, 38 — say the
+  // word and any of them can come back in.
+  photos: [
+    "/images/conf-photos/conf-photo-1.webp", "/images/conf-photos/conf-photo-2.webp",
+    "/images/conf-photos/conf-photo-3.webp", "/images/conf-photos/conf-photo-4.webp",
+    "/images/gallery/gallery-1.webp",  "/images/gallery/gallery-2.webp",  "/images/gallery/gallery-4.webp",
+    "/images/gallery/gallery-5.webp",  "/images/gallery/gallery-7.webp",  "/images/gallery/gallery-8.webp",
+    "/images/gallery/gallery-9.webp",  "/images/gallery/gallery-10.webp", "/images/gallery/gallery-11.webp",
+    "/images/gallery/gallery-12.webp", "/images/gallery/gallery-14.webp", "/images/gallery/gallery-15.webp",
+    "/images/gallery/gallery-17.webp", "/images/gallery/gallery-19.webp", "/images/gallery/gallery-21.webp",
+    "/images/gallery/gallery-24.webp", "/images/gallery/gallery-25.webp", "/images/gallery/gallery-28.webp",
+    "/images/gallery/gallery-29.webp", "/images/gallery/gallery-30.webp", "/images/gallery/gallery-32.webp",
+    "/images/gallery/gallery-34.webp", "/images/gallery/gallery-35.webp", "/images/gallery/gallery-37.webp"
+  ],
+
+  // slide 1 — the "we'll start in a couple of minutes" billboard, behind the Start button
+  // on the title slide. While it counts down it rotates through three panels:
+  //   1. tonight's Live sponsors   2. DentalWisdom.org/deals   3. the conference
+  // Leave primary/secondary as null and it names tonight's giveaway sponsors on the top
+  // line and the lecture partner underneath — so it stays right on its own each month.
+  // To override: primary: [{ name:"…", logo:"logos/….png" }], same shape for secondary.
+  waitingRoom: {
+    totalSeconds: 120,       // the whole thing, Start button to "Let's begin".
+                             // The panels split whatever is left after the closing
+                             // countdown, so adding or removing one changes each panel's
+                             // turn, NOT the total — it always lands on a clean 2:00.
+    countFrom:    10,        // the big countdown at the end runs from here to 1, one second
+                             // each — so it takes exactly this long and never pauses on a
+                             // number. All remaining time is split evenly across the panels.
+
+    // Tonight's featured sponsor — the one whose own slides are in the deck.
+    // Set to null when nobody has the spotlight that month.
+    spotlight: { name:    "Alphaeon",
+                 logo:    "logos/alphaeon.webp",
+                 line:    "Free to Enroll + 40% off Merchant Fees",
+                 website: "myalphaeoncredit.com/getstarted-dentalwisdom",
+                 eyebrow: "Tonight’s Vendor Spotlight" },   // the line above the logo
+
+    // Background music while the billboard runs. Drop an .mp3 (or .m4a) into
+    // liveslides/audio/ and put its file name here. Leave music:"" for silence.
+    // It fades in over 2s, sits quietly under your voice, and fades out during the
+    // final countdown so it isn't competing with "Let's begin".
+    // NOTE: on a Zoom/Teams screen share, browser sound only reaches attendees if you
+    // tick "Share sound" when you start sharing — otherwise only you hear it.
+    music:       "",          // no track set — see liveslides/audio/README.txt
+    musicVolume: 0.35,        // 0 to 1. 0.35 is background level, easy to talk over
+
+    // A plain-English line under each sponsor's name, so a dentist knows what they
+    // DO before deciding whether the phone number is worth writing down. Keyed by the
+    // sponsor name exactly as it appears above. `detail` is the smaller second line and
+    // is optional. Drop a sponsor from this list and their panel simply omits it.
+    about: {
+      "Live Well Capital": {
+        what:   "Financial planning and wealth management",
+        detail: "For dentists and small business owners"
+      },
+      "MB Precious Metals": {
+        what:   "Don’t throw out old crowns, bridges or restorations",
+        detail: "They hold gold, silver, platinum and palladium — MB assays on-site and pays top value"
+      },
+      "Alphaeon": {
+        what:   "Patient financing that says yes more often",
+        detail: "Higher approvals, broader credit profiles and 24/7 provider support — at preferred Dental Wisdom pricing"
+      },
+      "Pearl": {
+        what:   "AI that reads the x-ray, charts the perio and writes the note",
+        detail: "Real-time pathology detection, periodontal charting, AI-generated clinical notes and insurance verification"
+      }
+    },
+
+    primary:   null,
+    secondary: null
+  },
+
+  // slide 7 — the wheel prizes. website / contact / phone are OPTIONAL: leave any of
+  // them off and that line simply doesn't appear, on the slide or in the winner pop-up.
+  // They show on the slide the whole time this giveaway is selected, and again as one
+  // small gold line inside the winner pop-up's navy sponsor band.
+  giveaways: [
+    // prize stays singular — one per winner on the slide and in the winner pop-up.
+    // prizePlural is used ONLY on the title-slide billboard, where the sponsor is being
+    // thanked for the whole set. Leave it off and the billboard just uses `prize`.
+    { sponsor: "Live Well Capital",  prize: "Yeti Coffee Mug",   prizePlural: "Yeti Coffee Mugs",
+      logo: "logos/livewell-capital.png",
+      website: "LiveWellCapital.com",  contact: "Sam",  phone: "(917) 715-2118" },
+    { sponsor: "MB Precious Metals", prize: "1 oz Silver Coin",  prizePlural: "1 oz Silver Coins",
+      logo: "logos/mb-precious-metals.png",
+      website: "MBPreciousMetals.com", contact: "Adam", phone: "(443) 253-4143" },
+    { sponsor: "Alphaeon",           prize: "Yeti Coffee Mug",   prizePlural: "Yeti Coffee Mugs",
+      logo: "logos/alphaeon.webp",
+      website: "myalphaeoncredit.com/getstarted-dentalwisdom" }
+  ]
+};
+/* ============================================================
+   ▲▲▲  END EDIT BLOCK — you don't need to touch anything below.  ▲▲▲
+   ============================================================ */
+
+function imgPath(p){ return p.replace(/^\//,'../'); }
+function txt(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+
+function fillDeck(){
+  txt('t-date',DECK.title.date); txt('t-time',DECK.title.time);
+  txt('t-opener',DECK.opener);
+  // No speaker yet? Hide the "Delivered by" label as well as the name — a lone
+  // "Delivered by" with nothing under it looks like something failed to load.
+  var dvar=DECK.dvarSpeaker||'';
+  txt('t-dvar-speaker',dvar);
+  ['t-dvar-by','t-dvar-speaker'].forEach(function(id){
+    var el=document.getElementById(id); if(el) el.style.display=dvar?'':'none';
+  });
+  var c=DECK.conference;
+  document.querySelectorAll('.t-save').forEach(function(e){ e.textContent=c.save; });
+  document.querySelectorAll('.t-code').forEach(function(e){ e.textContent=c.code; });
+  document.querySelectorAll('.t-fine').forEach(function(e){ e.innerHTML=c.fine; });
+  document.querySelectorAll('.ratealert').forEach(function(e){
+    if(c.alert){ e.querySelector('.ra-msg').innerHTML=c.alert; e.style.display=''; }
+    else { e.style.display='none'; }
+  });
+
+  // Built-in spotlight layout. Skipped entirely when DECK.spotlightSlides replaced it —
+  // without this guard the missing elements throw and the rest of fillDeck never runs.
+  var s=DECK.spotlight, slogo=document.getElementById('t-spot-logo');
+  if(s && slogo){
+    txt('t-spot-cat',s.category);
+    slogo.src=imgPath(s.logo); slogo.alt=s.company+' logo';
+    txt('t-spot-tag1',s.tagline1); txt('t-spot-tag2',s.tagline2||'');
+    var bl=document.getElementById('t-spot-bullets');
+    var hasB=!!(s.bullets&&s.bullets.length);
+    bl.innerHTML=hasB?s.bullets.map(function(b){return '<li>'+b+'</li>';}).join(''):'';
+    document.getElementById('t-spot-content').classList.toggle('has-bullets',hasB);
+    txt('t-spot-name',s.name); txt('t-spot-co',s.company);
+    txt('t-spot-calllabel',s.callLabel||'Call');
+    txt('t-spot-phone',s.phone); txt('t-spot-web',s.website);
+  }
+
+  var l=DECK.lecture;
+  txt('t-lect-ce',l.ce); txt('t-lect-title',l.title); txt('t-lect-subt',l.subtitle);
+  txt('t-lect-doc',l.doctor); txt('t-lect-role',l.role); txt('t-lect-pill',l.ce);
+  txt('t-lect-web',l.website);
+  var llogo=document.getElementById('t-lect-logo'); llogo.src=imgPath(l.logo); llogo.alt=(l.doctor||'Sponsor')+' logo';
+  document.getElementById('t-lect-desc').innerHTML=l.description.map(function(p){return '<p>'+p+'</p>';}).join('');
+
+  var band=document.getElementById('t-photoband');
+  if(band && DECK.photos && DECK.photos.length){
+    var panels='';
+    for(var pi=0;pi<3;pi++) panels+='<div class="ptile"><img alt=""><img alt=""></div>';
+    band.innerHTML=panels;
+    startPhotoCycle();
+  }
+  fillNextSession();
+
+  var sel=document.getElementById('giveSelect');
+  sel.innerHTML=DECK.giveaways.map(function(g,i){return '<option value="'+i+'">'+g.sponsor+' — '+g.prize+'</option>';}).join('');
+  setGiveaway(0);
+}
+
+// ---- slide 8 photo panels ----
+// All three panels draw from one shared, shuffled pool. A photo is only put back once
+// every other photo has had a turn, and never appears in two panels at the same time,
+// so a full pass shows all of them and the order differs every time the deck is opened.
+// One panel changes at a time — there is always a single quiet change to follow rather
+// than three photos flipping at once behind whoever is speaking.
+var photoTimer=null;
+function startPhotoCycle(){
+  var tiles=Array.prototype.slice.call(document.querySelectorAll('.ptile'));
+  var pool=(DECK.photos||[]).slice();
+  if(!tiles.length || pool.length<=tiles.length) return;
+  var bag=[];
+
+  function shuffled(){
+    var a=pool.slice();
+    for(var i=a.length-1;i>0;i--){ var j=(Math.random()*(i+1))|0, t=a[i]; a[i]=a[j]; a[j]=t; }
+    return a;
+  }
+  function onScreen(){
+    return tiles.map(function(t){ var im=t.querySelector('img.on'); return im?im.getAttribute('data-src'):null; });
+  }
+  // Draw the next photo, skipping anything currently on screen (it goes back in the bag).
+  function draw(){
+    var cur=onScreen();
+    for(var tries=0;tries<pool.length+1;tries++){
+      if(!bag.length) bag=shuffled();
+      var src=bag.shift();
+      if(cur.indexOf(src)===-1) return src;
+      bag.push(src);
+    }
+    return null;
+  }
+  // Two stacked layers per panel: load the new photo underneath, then cross-fade to it,
+  // so a slow-loading image never shows as a blank or half-drawn panel.
+  function advance(i){
+    var tile=tiles[i];
+    var on=tile.querySelector('img.on'), off=tile.querySelector('img:not(.on)');
+    if(!off) return;
+    var src=draw(); if(!src) return;
+    off.onload=function(){ off.classList.add('on'); if(on) on.classList.remove('on'); };
+    off.onerror=function(){ off.onload=null; };
+    off.setAttribute('data-src',src);
+    off.src=imgPath(src);
+  }
+
+  bag=shuffled();
+  tiles.forEach(function(tile){
+    var first=tile.querySelector('img'), src=draw();
+    if(src){ first.setAttribute('data-src',src); first.src=imgPath(src); first.className='on'; }
+  });
+
+  var turn=0;
+  if(photoTimer) clearInterval(photoTimer);
+  photoTimer=setInterval(function(){ advance(turn%tiles.length); turn++; },1950);
+}
+
+// ---- slide 9: name the next session ----
+// Reads the website's own session list (js/live-data.js) and picks the first
+// upcoming one AFTER tonight, so this slide never goes stale on its own.
+function fillNextSession(){
+  var wrap=document.getElementById('t-nextwrap');
+  var tEl=document.getElementById('t-next-title'), dEl=document.getElementById('t-next-date');
+  if(!wrap||!tEl||!dEl) return;
+  var n=DECK.nextSession;
+  if(!n && window.LIVE_DATA){
+    var after=DECK.sessionDate||'';
+    var list=window.LIVE_DATA.filter(function(x){ return x.status==='upcoming' && x.sortDate>after; })
+                             .sort(function(a,b){ return a.sortDate<b.sortDate?-1:1; });
+    if(list.length) n=list[0];
+  }
+  if(!n){ wrap.style.display='none'; return; }
+  wrap.style.display='';
+  // straight apostrophes look wrong in Playfair — swap them for typographic ones on display only
+  tEl.textContent=(n.title||'').replace(/'/g,'\u2019');
+  var start=(n.time||'').split(/[–-]/)[0].trim();
+  dEl.textContent=(n.date||'')+(start?' · '+start+' EST':'');
+}
+
+// ---- title-slide billboard: "we'll start in about 2 minutes" ----
+// Buys time when attendance is light, and spends it on the sponsors, the deals page
+// and the conference instead of a bare clock. Lives inside #deck so it scales with
+// the slides. Esc or "Start now" closes it early; at zero it clears itself.
+var wrTimer=null, wrPane=-1;
+
+// Tonight's Live sponsors only — never the full conference roster. Defaults to
+// whoever is actually sponsoring this session, so it stays right on its own:
+// the giveaway sponsors, then the lecture partner.
+function wrSponsors(){
+  var w=DECK.waitingRoom||{};
+  var lead=w.primary || (DECK.giveaways||[]).map(function(g){
+    return { name:g.sponsor, logo:g.logo, prize:g.prizePlural||g.prize,
+             website:g.website, contact:g.contact, phone:g.phone };
+  });
+  var sub=w.secondary;
+  if(!sub){
+    var l=DECK.lecture||{};
+    sub = (l.partner && l.logo) ? [{ name:l.partner, logo:l.logo, website:l.website,
+                                     title:l.title, speaker:l.doctor,
+                                     note:'Tonight’s CE partner' }] : [];
+  }
+  var ok=function(x){ return x && x.logo; };
+  // A sponsor can be both a giveaway sponsor and the vendor spotlight (Alphaeon is
+  // both this month). Show them once, on their spotlight panel, rather than twice.
+  var spotName=(w.spotlight&&w.spotlight.name||'').toLowerCase();
+  var notSpot=function(x){ return (x.name||'').toLowerCase()!==spotName; };
+  return { lead:lead.filter(ok).filter(notSpot), sub:sub.filter(ok) };
+}
+
+// The conference date line is read off slide 5 rather than retyped, so the two
+// can never drift apart when the venue or dates change.
+function wrConfLine(){
+  var el=document.querySelector('#s-conf1 .meta');
+  return el ? el.innerHTML : 'March 3 &ndash; 6, 2027<span class="dot">&middot;</span>The Altair Hotel<span class="dot">&middot;</span>Bay Harbor Islands, Miami';
+}
+
+// One sponsor per screen — a full-width logo card, then whatever we know about them.
+function wrSponsorPane(x,eyebrow){
+  var bits='';
+  if(x.prize)   bits+='<div class="wr-line"><span class="k">Giving away tonight</span> '+x.prize+'</div>';
+  if(x.line)    bits+='<div class="wr-line">'+x.line+'</div>';
+  if(x.title)   bits+='<div class="wr-class">'+x.title+'</div>';
+  if(x.speaker) bits+='<div class="wr-line"><span class="k">Presented by</span> '+x.speaker+'</div>';
+  if(x.website) bits+='<div class="wr-web">'+x.website+'</div>';
+  if(x.phone)   bits+='<div class="wr-call">'+(x.contact?'Call '+x.contact+' at ':'Call ')+x.phone+'</div>';
+  // what they do, straight under the name — context first, contact details after
+  var ab=((DECK.waitingRoom||{}).about||{})[x.name]||{}, about='';
+  if(ab.what)   about+='<div class="wr-what">'+ab.what+'</div>';
+  if(ab.detail) about+='<div class="wr-detail">'+ab.detail+'</div>';
+  return '<div class="wr-pane wr-pane--sponsor">'+
+           '<div class="eye">'+eyebrow+'</div>'+
+           '<div class="wr-logocard"><img src="'+imgPath(x.logo)+'" alt="'+(x.name||'')+' logo"></div>'+
+           '<div class="wr-name">'+(x.name||'')+'</div>'+ about + bits +
+         '</div>';
+}
+
+function wrBuild(){
+  var sp=wrSponsors(), c=DECK.conference||{}, panes=[];
+
+  // each giveaway sponsor gets its own screen
+  sp.lead.forEach(function(x){ panes.push(wrSponsorPane(x,'Tonight’s giveaway sponsor')); });
+
+  // then tonight's featured sponsor, if there is one
+  var spot=(DECK.waitingRoom||{}).spotlight;
+  if(spot && spot.logo) panes.push(wrSponsorPane(spot,spot.eyebrow||'Tonight’s Vendor Spotlight'));
+
+  // the conference, in between
+  panes.push('<div class="wr-pane"><div class="eye">Register Now for Best Rates</div>'+
+    '<div class="hd">The Dental Wisdom <em>Conference</em></div>'+
+    '<div class="wr-meta">'+wrConfLine()+'</div>'+
+    '<div class="wr-promo"><div class="l"><div class="k">Save</div><div class="v">'+(c.save||'')+'</div></div>'+
+    '<div class="r"><div class="k">Use code</div><div class="v">'+(c.code||'')+'</div>'+
+    '<div class="f">'+(c.fine||'')+'</div></div></div>'+
+    '<div class="wr-web" style="margin-top:22px;">DentalWisdom.org/conference</div>'+
+    '</div>');
+
+  // then the CE partner
+  sp.sub.forEach(function(x){ panes.push(wrSponsorPane(x,x.note||'In partnership with')); });
+
+  // the deals page
+  panes.push('<div class="wr-pane"><div class="eye">Member Pricing</div>'+
+    '<div class="hd">Deals on What Dental Wisdom Members <em>Already Buy</em></div>'+
+    '<div class="wr-url">DentalWisdom.org<span>/deals</span></div>'+
+    '<div class="wr-sub">Exclusive pricing for the Dental Wisdom community &mdash; supplies, labs, financing and more.</div>'+
+    '</div>');
+
+  // and finally: come back next month. Reuses the same session list slide 9 reads,
+  // so it names the real next session instead of a generic line.
+  var nx=wrNextSession();
+  panes.push('<div class="wr-pane"><div class="eye">Every Month</div>'+
+    '<div class="hd">Dental Wisdom <em>Live</em></div>'+
+    (nx?'<div class="wr-nextt">'+nx.title+'</div><div class="wr-meta">'+nx.when+'</div>'
+       :'<div class="wr-sub">Free monthly CE for the Dental Wisdom community.</div>')+
+    '<div class="wr-url" style="font-size:46px;margin-top:22px;">DentalWisdom.org<span>/live</span></div>'+
+    '<div class="wr-sub">Register free for the next session.</div>'+
+    '</div>');
+
+  document.getElementById('wr-panes').innerHTML=panes.join('');
+  document.getElementById('wr-dots').innerHTML=panes.map(function(_,i){
+    return '<i'+(i===0?' class="on"':'')+'></i>';
+  }).join('');
+  return panes.length;
+}
+
+// same source slide 9 uses — the website's own session list
+function wrNextSession(){
+  var n=DECK.nextSession;
+  if(!n && window.LIVE_DATA){
+    var after=DECK.sessionDate||'';
+    var list=window.LIVE_DATA.filter(function(x){ return x.status==='upcoming' && x.sortDate>after; })
+                             .sort(function(a,b){ return a.sortDate<b.sortDate?-1:1; });
+    if(list.length) n=list[0];
+  }
+  if(!n) return null;
+  var start=(n.time||'').split(/[–-]/)[0].trim();
+  return { title:(n.title||'').replace(/'/g,'’'),
+           when:(n.date||'')+(start?'<span class="dot">·</span>'+start+' EST':'') };
+}
+
+function wrShowPane(i){
+  if(i===wrPane) return;
+  wrPane=i;
+  var panes=document.querySelectorAll('#wr-panes .wr-pane'),
+      dots=document.querySelectorAll('#wr-dots i');
+  for(var k=0;k<panes.length;k++){
+    panes[k].classList.toggle('on',k===i);
+    if(dots[k]) dots[k].classList.toggle('on',k===i);
+  }
+}
+
+function wrOpen(){
+  // Build first, then divide the available time by however many panels there are,
+  // so adding or removing one changes each panel's turn rather than the total.
+  var n=wrBuild(), box=document.getElementById('waitroom');
+  var wcfg=DECK.waitingRoom||{};
+  // the finale lasts exactly as long as it counts, so no number is ever held
+  var total=wcfg.totalSeconds||120, cfrom=wcfg.countFrom||10, fin=cfrom;
+  var panelTime=Math.max(0,total-fin), per=panelTime/n;
+  wrPane=-1;
+  box.classList.remove('warn','finale','go');
+  box._faded=false;
+  box.classList.add('show');
+  document.body.classList.add('wr-on');
+  box.setAttribute('aria-hidden','false');
+  document.getElementById('wr-lab').textContent='Starting in';
+
+  var left=total;
+  var lastNum=null;
+  function paint(){
+    document.getElementById('wr-time').textContent=wrFmt(left);
+    document.getElementById('wr-bar').style.width=(left/total*100)+'%';
+    if(left>fin){
+      // still cycling the panels
+      box.classList.remove('finale');
+      box.classList.toggle('warn',left<=fin+5);
+      var idx=Math.floor((panelTime-(left-fin))/per);
+      if(!isFinite(idx)||idx<0) idx=0;
+      wrShowPane(Math.min(n-1,idx));
+    } else {
+      // last stretch: everything gives way to one big number
+      box.classList.add('finale','warn');
+      if(!box._faded){ box._faded=true; wrFadeTo(0,Math.max(1000,fin*1000-600)); }
+      wrShowPane(-1);
+      // NB: must NOT be called `n` — that would shadow the panel count above and
+      // make the panel index NaN, which silently blanks every panel.
+      var el=document.getElementById('wr-fnum'), bigNum=Math.min(cfrom,left);
+      if(bigNum!==lastNum){
+        lastNum=bigNum;
+        el.textContent=bigNum;
+        el.classList.remove('tick'); void el.offsetWidth; el.classList.add('tick');
+      }
+    }
+  }
+  // The panels are created and the first one revealed in the same tick, so the browser
+  // never painted their hidden starting state — which meant panel 1 (Live Well Capital)
+  // simply appeared while every later panel built in properly. Reading offsetHeight
+  // forces that starting state to be flushed first, so the transition actually runs.
+  wrMusicStart();
+  void document.getElementById('wr-panes').offsetHeight;
+  paint();
+  if(wrTimer) clearInterval(wrTimer);
+  wrTimer=setInterval(function(){
+    left--;
+    if(left<=0){
+      clearInterval(wrTimer); wrTimer=null;
+      box.classList.add('finale','go');
+      document.getElementById('wr-fnum').textContent='Let’s begin.';
+      document.getElementById('wr-time').textContent='';
+      document.getElementById('wr-lab').textContent='';
+      document.getElementById('wr-bar').style.width='0%';
+      wrShowPane(-1);
+      setTimeout(wrClose,2600);
+      return;
+    }
+    paint();
+  },1000);
+}
+
+// ---- billboard music ----
+// Starts on the Start click (which is a real user gesture, so browsers allow it),
+// fades up, then fades away during the closing countdown. Silent and harmless if no
+// file is configured, and a failure to load never interrupts the timer.
+var wrFade=null;
+function wrAudioEl(){ return document.getElementById('wrAudio'); }
+
+function wrMusicStart(){
+  var w=DECK.waitingRoom||{}, a=wrAudioEl();
+  if(!a || !w.music) return;
+  var target=(typeof w.musicVolume==='number')?w.musicVolume:0.35;
+  a.src=imgPath(w.music);
+  a.volume=0;
+  var play=a.play();
+  if(play && play.catch) play.catch(function(){ /* blocked or missing — stay silent */ });
+  wrFadeTo(target,2000);
+}
+function wrFadeTo(to,ms){
+  var a=wrAudioEl(); if(!a) return;
+  if(wrFade) clearInterval(wrFade);
+  var from=a.volume, steps=Math.max(1,Math.round(ms/60)), i=0;
+  wrFade=setInterval(function(){
+    i++;
+    var v=from+(to-from)*(i/steps);
+    a.volume=Math.min(1,Math.max(0,v));
+    if(i>=steps){ clearInterval(wrFade); wrFade=null; }
+  },60);
+}
+function wrMusicStop(){
+  var a=wrAudioEl(); if(!a) return;
+  if(wrFade){ clearInterval(wrFade); wrFade=null; }
+  try{ a.pause(); a.currentTime=0; }catch(e){}
+}
+function wrFmt(s){ var m=Math.floor(s/60), r=s%60; return m+':'+(r<10?'0':'')+r; }
+
+function wrClose(){
+  if(wrTimer){ clearInterval(wrTimer); wrTimer=null; }
+  wrMusicStop();
+  var box=document.getElementById('waitroom');
+  box.classList.remove('show','warn','finale','go');
+  document.body.classList.remove('wr-on');
+  box.setAttribute('aria-hidden','true');
+  wrPane=-1;
+}
+function wrOpen_isOpen(){ return document.getElementById('waitroom').classList.contains('show'); }
+
+document.getElementById('wrStart').addEventListener('click',wrOpen);
+document.getElementById('wrSkip').addEventListener('click',wrClose);
+// label the button with whatever length is configured
+// label the button with the real length, whatever the panel count works out to
+(function(){
+  var w=DECK.waitingRoom||{};
+  wrBuild();
+  document.getElementById('wrStart').textContent='Start '+wrFmt(w.totalSeconds||120);
+})();
+
+// ---- navigation (crossfade) ----
+// ---- slide 4: the sponsor's own slides ----
+// Swaps the single built-in spotlight slide for one full-bleed slide per image in
+// DECK.spotlightSlides. Runs BEFORE the navigation list below is captured, so the
+// deck counts, numbers and navigates them like any other slide.
+function buildSpotlightSlides(){
+  var list=DECK.spotlightSlides||[], spot=document.getElementById('s-spot');
+  if(!spot || !list.length) return;
+  var frag=document.createDocumentFragment();
+  list.forEach(function(item,i){
+    var sec=document.createElement('section');
+    sec.className='slide slide--full';
+    sec.id='s-spot-'+(i+1);
+    var img=document.createElement('img');
+    img.src=imgPath(item.src); img.alt=item.alt||('Sponsor slide '+(i+1));
+    sec.appendChild(img);
+    frag.appendChild(sec);
+  });
+  spot.parentNode.insertBefore(frag,spot);
+  spot.parentNode.removeChild(spot);
+}
+buildSpotlightSlides();
+
+var slides=Array.prototype.slice.call(document.querySelectorAll('.slide'));
+var total=slides.length, current=0;
+var counter=document.getElementById('counter'), bar=document.getElementById('progressbar');
+// page numbers in each topbar are generated, never hand-typed — add or remove a slide and they re-count
+slides.forEach(function(s,i){
+  var pn=s.querySelector('.pagenum');
+  if(pn) pn.textContent=(i+1)+' / '+slides.length;
+});
+function show(i){
+  if(i<0)i=0; if(i>total-1)i=total-1;
+  slides[current].classList.remove('active');
+  current=i;
+  slides[current].classList.add('active');
+  counter.textContent=(current+1)+' / '+total;
+  bar.style.width=((current+1)/total*100)+'%';
+}
+function next(){ show(current+1); scrollTop(); }
+function prev(){ show(current-1); scrollTop(); }
+// phones scroll the page itself, so a new slide must start at its top rather than
+// wherever the previous one was left
+function scrollTop(){ if(window.matchMedia('(max-width:700px)').matches) window.scrollTo(0,0); }
+document.getElementById('navNext').addEventListener('click',next);
+document.getElementById('navPrev').addEventListener('click',prev);
+
+document.addEventListener('keydown',function(e){
+  if(anyOverlayOpen()){ if(e.key==='Escape') closeOverlays(); return; }
+  if(e.key==='F11'||((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='f')){ e.preventDefault(); toggleFull(); return; }
+  // 1–9 jumps straight to that slide — handy when someone asks "what was that code again?"
+  if(/^[1-9]$/.test(e.key) && !e.metaKey && !e.ctrlKey && !e.altKey){ e.preventDefault(); show(parseInt(e.key,10)-1); return; }
+  switch(e.key){
+    case 'ArrowRight': case 'PageDown': case ' ': e.preventDefault(); next(); break;
+    case 'ArrowLeft': case 'PageUp': e.preventDefault(); prev(); break;
+    case 'Home': show(0); break;
+    case 'End': show(total-1); break;
+    case 'n': case 'N': openNames(); break;
+    case 'f': case 'F': toggleFull(); break;
+  }
+});
+// ---- swipe between slides on a touch screen ----
+// Only acts on a clear horizontal flick, so scrolling down a long slide (the giveaway
+// and lecture slides are taller than a phone screen) is never mistaken for navigation.
+(function(){
+  var x0=null,y0=null,t0=0;
+  var deck=document.getElementById('deck');
+  if(!deck) return;
+  deck.addEventListener('touchstart',function(e){
+    if(e.touches.length!==1) { x0=null; return; }
+    x0=e.touches[0].clientX; y0=e.touches[0].clientY; t0=Date.now();
+  },{passive:true});
+  deck.addEventListener('touchend',function(e){
+    if(x0===null || anyOverlayOpen()) return;
+    var t=e.changedTouches[0], dx=t.clientX-x0, dy=t.clientY-y0;
+    x0=null;
+    if(Date.now()-t0>600) return;               // a slow drag is a scroll, not a flick
+    if(Math.abs(dx)<55) return;                 // too small to be deliberate
+    if(Math.abs(dx)<Math.abs(dy)*1.6) return;   // mostly vertical — that's scrolling
+    if(dx<0) next(); else prev();
+    window.scrollTo(0,0);
+  },{passive:true});
+})();
+
+function toggleFull(){ if(!document.fullscreenElement){ document.documentElement.requestFullscreen().catch(function(){}); } else { document.exitFullscreen(); } }
+
+// ---- scale ----
+// On phones (portrait, <=700px wide) the CSS above switches the deck to a
+// natural-flow, single-column reading layout instead of the fixed 1280x720
+// "TV slide" — so skip the scale-transform there, it would fight the CSS.
+var deck=document.getElementById('deck');
+function fit(){
+  if (window.matchMedia('(max-width:700px)').matches){
+    deck.style.transform='none';
+    document.documentElement.style.setProperty('--deck-scale','1');   // phone layout sizes itself
+    return;
+  }
+  var s=Math.min(window.innerWidth/1280, window.innerHeight/720);
+  deck.style.transform='scale('+s+')';
+  // The winner / add-names pop-ups sit outside #deck, so hand them the same scale.
+  // Without this they stay at their literal pixel size and look tiny on a big monitor
+  // or a TV while the slide behind them scales up.
+  document.documentElement.style.setProperty('--deck-scale',s);
+}
+window.addEventListener('resize',fit); fit();
+
+// ---- names ----
+var namePool=[];
+function updateNameUI(){
+  document.getElementById('namesCnt').textContent='('+namePool.length+')';
+  document.getElementById('gw-count').textContent=namePool.length;
+  buildWheel();
+}
+function openNames(){
+  document.getElementById('namesInput').value=namePool.join('\n');
+  document.getElementById('namesSheet').classList.add('show');
+  setTimeout(function(){document.getElementById('namesInput').focus();},50);
+}
+function closeNames(){ document.getElementById('namesSheet').classList.remove('show'); }
+document.getElementById('namesBtn').addEventListener('click',openNames);
+document.getElementById('namesCancel').addEventListener('click',closeNames);
+document.getElementById('namesSave').addEventListener('click',function(){
+  namePool=document.getElementById('namesInput').value.split('\n').map(function(x){return x.trim();}).filter(Boolean);
+  updateNameUI(); closeNames();
+});
+
+// ---- giveaway ----
+var gwIndex=0;
+// Build the two contact lines for a giveaway. Any field left out of DECK.giveaways
+// just yields an empty string, and the matching line is hidden rather than shown blank.
+function gwContact(g){
+  var call = g.phone ? (g.contact ? 'Call '+g.contact+' at '+g.phone : 'Call '+g.phone) : '';
+  return { web: g.website||'', call: call };
+}
+function fillLine(id,val){
+  var el=document.getElementById(id); if(!el) return;
+  el.textContent=val; el.style.display=val?'':'none';
+}
+function setGiveaway(i){
+  gwIndex=i; var g=DECK.giveaways[i];
+  document.getElementById('gw-prize').textContent=g.prize;
+  document.getElementById('gw-sponsor').textContent=g.sponsor;
+  var wrap=document.getElementById('gw-logowrap'), lg=document.getElementById('gw-logo');
+  if(g.logo){ lg.src=imgPath(g.logo); lg.alt=g.sponsor+' logo'; wrap.style.display='flex'; }
+  else { wrap.style.display='none'; }
+  var c=gwContact(g);
+  fillLine('gw-web',c.web); fillLine('gw-call',c.call);
+  var cw=document.getElementById('gw-contact');
+  if(cw) cw.style.display=(c.web||c.call)?'':'none';
+}
+document.getElementById('giveSelect').addEventListener('change',function(){ setGiveaway(parseInt(this.value,10)); });
+
+// ---- wheel ----
+var WHEEL_COLORS=['#e76f51','#f4a261','#e9c46a','#e07a9a','#c98bb0','#f2b5a0'];
+var wheelEl=document.getElementById('wheel');
+var wheelRot=0, spinning=false;
+function buildWheel(){
+  var N=namePool.length; wheelEl.innerHTML='';
+  if(N===0){
+    wheelEl.innerHTML='<circle r="100" fill="#FCEEF2" stroke="#E7B4C5" stroke-width="1.6" stroke-dasharray="6 5"/>'
+      +'<circle r="62" fill="none" stroke="#F0D3DC" stroke-width="1"/>'
+      +'<text x="0" y="52" text-anchor="middle" font-size="9.5" font-weight="600" fill="#B8446A" font-family="Inter,sans-serif">No names loaded yet</text>'
+      +'<text x="0" y="66" text-anchor="middle" font-size="7.5" fill="#C98AA0" font-family="Inter,sans-serif">Tap Add names below to fill the wheel</text>';
+    return;
+  }
+  var seg=360/N, showText=N<=26;
+  for(var i=0;i<N;i++){
+    var a0=i*seg, a1=(i+1)*seg;
+    var path=document.createElementNS('http://www.w3.org/2000/svg','path');
+    path.setAttribute('d',arc(a0,a1));
+    path.setAttribute('fill',WHEEL_COLORS[i%WHEEL_COLORS.length]);
+    path.setAttribute('stroke','#fff'); path.setAttribute('stroke-width','0.6');
+    wheelEl.appendChild(path);
+    if(showText){
+      var mid=(a0+a1)/2, rad=(mid-90)*Math.PI/180, r=64;
+      var tx=Math.cos(rad)*r, ty=Math.sin(rad)*r;
+      var t=document.createElementNS('http://www.w3.org/2000/svg','text');
+      t.setAttribute('x',tx); t.setAttribute('y',ty);
+      t.setAttribute('text-anchor','middle'); t.setAttribute('dominant-baseline','middle');
+      t.setAttribute('font-size', N>16?'6':'8'); t.setAttribute('fill','#2a1420');
+      t.setAttribute('font-family','Inter,sans-serif');
+      t.setAttribute('transform','rotate('+mid+' '+tx+' '+ty+')');
+      t.textContent=namePool[i].length>16?namePool[i].slice(0,15)+'…':namePool[i];
+      wheelEl.appendChild(t);
+    }
+  }
+}
+function arc(a0,a1){ var r=100,p0=pt(a0),p1=pt(a1),large=(a1-a0)>180?1:0; return 'M0 0 L'+p0.x+' '+p0.y+' A'+r+' '+r+' 0 '+large+' 1 '+p1.x+' '+p1.y+' Z'; }
+function pt(deg){ var rad=(deg-90)*Math.PI/180,r=100; return {x:Math.cos(rad)*r,y:Math.sin(rad)*r}; }
+
+function spin(){
+  if(spinning) return;
+  if(namePool.length===0){ openNames(); return; }
+  spinning=true;
+  document.getElementById('spinBtn').disabled=true;
+  document.getElementById('gw-prizecard').classList.add('is-spinning');
+  document.querySelector('.wheel-wrap').classList.add('is-spinning');
+  var N=namePool.length, seg=360/N;
+  var winner=Math.floor(Math.random()*N);
+  var center=winner*seg+seg/2;
+  var jitter=(Math.random()-0.5)*seg*0.7;
+  var target=360*6 - center - jitter;
+  wheelRot = wheelRot - (wheelRot%360) + target;
+  wheelEl.style.transform='rotate('+wheelRot+'deg)';
+  window._pendingWinner=winner;
+}
+wheelEl.addEventListener('transitionend',function(){
+  if(!spinning) return;
+  spinning=false;
+  document.getElementById('spinBtn').disabled=false;
+  document.getElementById('gw-prizecard').classList.remove('is-spinning');
+  document.querySelector('.wheel-wrap').classList.remove('is-spinning');
+  var idx=window._pendingWinner, name=namePool[idx], g=DECK.giveaways[gwIndex];
+  document.getElementById('w-name').textContent=name;
+  document.getElementById('w-prize').textContent=g.prize;
+  document.getElementById('w-sponsor').textContent=g.sponsor;
+  var wwrap=document.getElementById('w-logowrap'), wlg=document.getElementById('w-logo');
+  if(g.logo){ wlg.src=imgPath(g.logo); wlg.alt=g.sponsor+' logo'; wwrap.style.display='flex'; }
+  else { wwrap.style.display='none'; }
+  // same contact details as the slide, condensed to one line inside the navy band
+  var wc=gwContact(g), parts=[];
+  if(wc.web) parts.push(wc.web);
+  if(wc.call) parts.push(wc.call);
+  fillLine('w-contact',parts.join(' \u00b7 '));
+  document.getElementById('winnerSheet').classList.add('show');
+  celebrate();
+});
+function removePendingWinner(){
+  if(window._pendingWinner==null) return;
+  namePool.splice(window._pendingWinner,1);
+  window._pendingWinner=null;
+  updateNameUI();
+}
+function closeWinner(){ document.getElementById('winnerSheet').classList.remove('show'); removePendingWinner(); }
+
+// ---- fireworks + confetti celebration (canvas, ported from the giveaways page) ----
+var FW_PALETTE=['#ffd700','#e76f51','#f4a261','#e9c46a','#d15a7a','#CBA24C','#ffffff'];
+var fwCanvas=document.getElementById('fw'), fwCtx=fwCanvas.getContext('2d');
+function sizeFw(){
+  var dpr=window.devicePixelRatio||1;
+  fwCanvas.width=window.innerWidth*dpr; fwCanvas.height=window.innerHeight*dpr;
+  fwCanvas.style.width=window.innerWidth+'px'; fwCanvas.style.height=window.innerHeight+'px';
+  fwCtx.setTransform(dpr,0,0,dpr,0,0);
+}
+sizeFw(); window.addEventListener('resize',sizeFw);
+var fwParticles=[], fwRockets=[], fwRunning=false;
+function launchRocket(tx,ty){
+  fwRockets.push({x:window.innerWidth/2+(Math.random()-.5)*200,y:window.innerHeight,tx:tx,ty:ty,
+    color:FW_PALETTE[Math.floor(Math.random()*FW_PALETTE.length)],px:0,py:0});
+}
+function fwExplode(x,y,color){
+  var count=60+Math.floor(Math.random()*30);
+  for(var i=0;i<count;i++){
+    var angle=(Math.PI*2)*(i/count)+Math.random()*0.15, speed=2+Math.random()*4;
+    fwParticles.push({x:x,y:y,vx:Math.cos(angle)*speed,vy:Math.sin(angle)*speed,life:1,
+      decay:0.008+Math.random()*0.012,color:color,size:2+Math.random()*2});
+  }
+}
+function dropConfetti(count){
+  for(var i=0;i<count;i++){
+    fwParticles.push({x:Math.random()*window.innerWidth,y:-20-Math.random()*80,
+      vx:(Math.random()-.5)*3,vy:1+Math.random()*2,life:1,decay:0.003+Math.random()*0.004,
+      color:FW_PALETTE[Math.floor(Math.random()*FW_PALETTE.length)],size:3+Math.random()*3,
+      confetti:true,angle:Math.random()*Math.PI*2,spin:(Math.random()-.5)*0.25});
+  }
+}
+function fwLoop(){
+  fwCtx.save();
+  fwCtx.globalCompositeOperation='destination-out';
+  fwCtx.fillStyle='rgba(0,0,0,.18)';
+  fwCtx.fillRect(0,0,window.innerWidth,window.innerHeight);
+  fwCtx.restore();
+  var i,r,p;
+  for(i=fwRockets.length-1;i>=0;i--){
+    r=fwRockets[i];
+    var dx=r.tx-r.x, dy=r.ty-r.y;
+    r.px=r.x; r.py=r.y;
+    r.x+=dx*0.06; r.y+=dy*0.06;
+    fwCtx.strokeStyle=r.color+'aa'; fwCtx.lineWidth=2;
+    fwCtx.beginPath(); fwCtx.moveTo(r.px,r.py); fwCtx.lineTo(r.x,r.y); fwCtx.stroke();
+    fwCtx.beginPath(); fwCtx.fillStyle=r.color; fwCtx.arc(r.x,r.y,2.5,0,Math.PI*2); fwCtx.fill();
+    if(Math.abs(dx)<8&&Math.abs(dy)<8){ fwExplode(r.x,r.y,r.color); fwRockets.splice(i,1); }
+  }
+  for(i=fwParticles.length-1;i>=0;i--){
+    p=fwParticles[i];
+    p.x+=p.vx; p.y+=p.vy;
+    if(p.confetti){ p.vy+=0.08; p.vx*=0.985; p.vy=Math.min(p.vy,6); p.angle+=p.spin; }
+    else { p.vy+=0.06; p.vx*=0.99; p.vy*=0.99; }
+    p.life-=p.decay;
+    if(p.life<=0||p.y>window.innerHeight+40){ fwParticles.splice(i,1); continue; }
+    fwCtx.globalAlpha=Math.min(p.life,1);
+    fwCtx.fillStyle=p.color;
+    if(p.confetti){
+      fwCtx.save(); fwCtx.translate(p.x,p.y); fwCtx.rotate(p.angle);
+      fwCtx.fillRect(-p.size,-p.size*.5,p.size*2,p.size);
+      fwCtx.restore();
+    } else {
+      fwCtx.beginPath(); fwCtx.arc(p.x,p.y,p.size,0,Math.PI*2); fwCtx.fill();
+    }
+  }
+  fwCtx.globalAlpha=1;
+  if(fwRockets.length||fwParticles.length){ requestAnimationFrame(fwLoop); }
+  else { fwCtx.clearRect(0,0,window.innerWidth,window.innerHeight); fwRunning=false; }
+}
+function celebrate(){
+  if(!fwRunning){ fwRunning=true; requestAnimationFrame(fwLoop); }
+  for(var i=0;i<12;i++){
+    setTimeout(function(){
+      var tx=window.innerWidth*(0.08+Math.random()*0.84);
+      var ty=window.innerHeight*(0.08+Math.random()*0.45);
+      launchRocket(tx,ty);
+    }, i*280);
+  }
+  dropConfetti(160);
+  setTimeout(function(){ dropConfetti(110); },900);
+  setTimeout(function(){ dropConfetti(90); },1800);
+}
+document.getElementById('spinBtn').addEventListener('click',spin);
+document.getElementById('w-close').addEventListener('click',closeWinner);
+document.getElementById('w-again').addEventListener('click',function(){ closeWinner(); setTimeout(spin,280); });
+
+// ---- overlays ----
+function anyOverlayOpen(){ return document.querySelector('.overlay.show')!==null || wrOpen_isOpen(); }
+function closeOverlays(){ document.querySelectorAll('.overlay.show').forEach(function(o){o.classList.remove('show');}); wrClose(); }
+document.querySelectorAll('.overlay').forEach(function(o){ o.addEventListener('click',function(e){ if(e.target===o) o.classList.remove('show'); }); });
+
+// hint auto-hide
+var hint=document.getElementById('hintMsg');
+var ht=setTimeout(function(){hint.style.opacity=0;},4500);
+document.addEventListener('mousemove',function(){ hint.style.opacity=1; clearTimeout(ht); ht=setTimeout(function(){hint.style.opacity=0;},3000); });
+
+// init
+fillDeck(); updateNameUI(); show(0);
+</script>
+</body>
+</html>

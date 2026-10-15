@@ -3,6 +3,18 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## October 14, 2026
+
+- **The Dental Wisdom Live slides are ready for October 15.** The class is "Dental Exit Planning: Building Your Practice's Endgame Before You Need It" (1 CE credit), presented by Darren Sardoff and Kelly Jastremski and sponsored by Crown Catapult and Launch Point.
+  - **Dvar Torah** (slide 3): Ilan Chasen, with his title under his name (Founder, Head of Group Strategy and Corporate Finance, Crown Catapult).
+  - **Lecture slide:** shows both sponsor logos side by side, plus Darren's introduction and a short description of the session.
+  - **No vendor spotlight this month**, so that slide was taken out and the deck is now 8 slides. Alphaeon's slides and the Pearl lecture were saved in the slide history file before being removed, not deleted.
+  - **The pink "Hotel rates go up next week" bar is hidden**, since it was no longer true. The $175 code (DentalWisdomLive) is still shown.
+  - **The 2-minute intro board** now runs in this order: MB Precious Metals, LiveWell Capital, a large "Thank you to our Lecture Sponsor" panel for Crown Catapult, the same for Launch Point, then a "Thank you to our amazing Giveaway Sponsors" panel with both logos and a photo of the Shas set. After that come the usual conference, Deals and Live panels.
+  - **Prize wheel:** MB Precious Metals (1 oz silver coin) and LiveWell Capital (Yeti mug) as before, plus a new prize: a Full Set of Shas (Travel Size Schottenstein Edition, English, ArtScroll) from Crown Catapult and Launch Point. When someone wins it, both logos pop up.
+  - **Last slide:** the "Next session" section now also shows the presenter's name and the sponsor's logo, both taken from the website. For November that's Dr. Asher Mansdorf and Touro.
+- **Live page:** the October 15 class now lists Darren Sardoff as the presenter, instead of Saul Kaplan.
+
 ## October 7, 2026
 
 - **New Dental Wisdom Live class added: November 19, 2026.** Dr. Asher Mansdorf, D.D.S., M.P.M. presents "The Many Faces of Orofacial Pain: The Differences Between Toothaches and Neuropathic Pain," Thursday, 8:00–9:30 PM EST, sponsored by Touro College of Dental Medicine. It shows on the Live page with the Touro logo, the course description, the "Register and attend to earn CE credit." line, and a Sign Up button that goes to the Teams registration page. After the October 15 class, the live slides deck will automatically name this class as the next session.

@@ -7,7 +7,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 - **The Dental Wisdom Live slides are ready for October 15.** The class is "Dental Exit Planning: Building Your Practice's Endgame Before You Need It" (1 CE credit), presented by Darren Sardoff and Kelly Jastremski and sponsored by Crown Catapult and Launch Point.
   - **Dvar Torah** (slide 3): Ilan Chasen, with his title under his name (Founder, Head of Group Strategy and Corporate Finance, Crown Catapult).
-  - **Lecture slide:** shows both sponsor logos side by side, plus Darren's introduction and a short description of the session.
+  - **Lecture slide:** shows both sponsor logos side by side, an introduction to Darren and to Dr. Kelly Jastremski (President and Chief Clinical Officer of Launch Point Dental Partners), and a short description of the session. The large name line reads "Darren Sardoff & Kelly Jastremski" without the "Dr.", because adding it pushed the names onto a second line.
   - **No vendor spotlight this month**, so that slide was taken out and the deck is now 8 slides. Alphaeon's slides and the Pearl lecture were saved in the slide history file before being removed, not deleted.
   - **The pink "Hotel rates go up next week" bar is hidden**, since it was no longer true. The $175 code (DentalWisdomLive) is still shown.
   - **The 2-minute intro board** now runs in this order: MB Precious Metals, LiveWell Capital, a large "Thank you to our Lecture Sponsor" panel for Crown Catapult, the same for Launch Point, then a "Thank you to our amazing Giveaway Sponsors" panel with both logos and a photo of the Shas set. After that come the usual conference, Deals and Live panels.

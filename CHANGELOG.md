@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## October 15, 2026
 
+- **Live slides: the pre-written texts now greet by name**: "Hi Adam, I got your number from Dental Wisdom Live…" and "Hi Sam, …". Both QR codes were remade and tested.
 - **Live slides: the pre-written texts to Adam and Sam now say "please" and end with "Thank You!"**: "Hi, I got your number from Dental Wisdom Live. Can we please chat about selling dental scrap? Thank You!" (Adam) and "...Can we please chat about Wealth Management? Thank You!" (Sam). Both QR codes were remade and tested.
 - **Project notes updated with today's lessons for future Live sessions:** which vendors get which QR code, the standard text wording, how codes are made and tested, how to make room on a slide without it overflowing, and the extra checks when saving files.
 - **Live slides, vendor spotlight: Adam's QR code is smaller**, the same size as the Launch Point code on slide 8. The pop-up card is shorter as a result.

@@ -236,6 +236,8 @@ This is high-value, interactive education designed to help you stay at the foref
 ---
 
 ### 3. Upcoming Sessions Section
+**Eyebrow label** (small gold caps above the headline, added Oct 15, 2026): Dental Wisdom Live
+
 **Headline**: Upcoming Sessions
 
 **Subheadline**: Live, interactive CE — exclusively for the Dental Wisdom network.

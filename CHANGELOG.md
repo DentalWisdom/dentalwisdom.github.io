@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## October 15, 2026
 
+- **Live slides, slide 8 (sponsor thank-you): added a Launch Point "takeaway" card.** A navy card under the logos reads "Your exit plan starts with one 30-minute chat" and shows David's email, his Calendly booking link, and a scan-to-book code viewers can scan off the screen with their phones. The two sponsor logos were made smaller to make room. To remove the card next month, set `takeaway: null` in the deck settings and the logos go back to full size.
 - **The Live page now opens scrolled to "Upcoming Sessions".** Visitors land straight on the sessions they can register for. It doesn't do this if the link already points to a spot on the page, or when someone reloads or comes back to the page, so their place is kept.
 - **Link preview for DentalWisdom.org/live:** briefly switched to a Shas raffle image for tonight, then switched straight back to the regular preview at your request. Nothing has changed for visitors. The Shas preview image is kept in `images/` in case you want it another time, but nothing points to it.
 

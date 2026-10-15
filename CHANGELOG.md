@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## October 15, 2026
+
+- **Link preview for DentalWisdom.org/live (temporary, for tonight only).** When the Live page link is shared on WhatsApp or other apps, the preview now shows the Shas raffle design: "Register + Attend = Enter to Win · A Full Set of Shas · $1,500+ value", with the Crown Catapult and Launch Point logos and "Dental Wisdom Live · Tonight 8 PM EST". Because it says "tonight", it needs switching back to the regular preview image after the session. The regular image wasn't touched.
+
 ## October 14, 2026
 
 - **The Dental Wisdom Live slides are ready for October 15.** The class is "Dental Exit Planning: Building Your Practice's Endgame Before You Need It" (1 CE credit), presented by Darren Sardoff and Kelly Jastremski and sponsored by Crown Catapult and Launch Point.

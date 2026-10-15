@@ -76,6 +76,16 @@
   #s-title .date{margin-top:36px;padding-top:22px;border-top:1px solid rgba(255,255,255,.16);display:inline-block;
                  font-weight:700;letter-spacing:5px;font-size:18px;text-transform:uppercase;color:rgba(255,255,255,.9);}
   #s-title .date .dot{color:var(--gold-bright);margin:0 14px;}
+  #s-title .t-tonight{position:absolute;right:var(--pad-x);top:50%;transform:translateY(-50%);width:466px;z-index:2;
+    border-left:3px solid var(--gold);padding:6px 0 6px 30px;}
+  #s-title.has-tonight .body{padding-right:490px;}   /* keep the left column (and its divider line) clear of the panel */
+  #s-title .t-tonight .k{font-size:12px;letter-spacing:4px;text-transform:uppercase;color:var(--gold-bright);font-weight:700;}
+  #s-title .t-tonight .k2{margin-top:24px;color:rgba(255,255,255,.55);font-size:11px;letter-spacing:3px;}
+  #s-title .t-tonight .tt{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:38px;color:#fff;margin-top:10px;line-height:1.1;}
+  #s-title .t-tonight .ts{font-family:var(--font-head);font-style:italic;font-size:18px;color:rgba(255,255,255,.78);margin-top:8px;line-height:1.3;}
+  #s-title .t-tonight .tl{display:flex;gap:14px;margin-top:10px;}
+  #s-title .t-tonight .tl .c{background:#fff;border-radius:12px;width:170px;height:96px;padding:10px 16px;display:flex;align-items:center;justify-content:center;}
+  #s-title .t-tonight .tl .c img{max-width:100%;max-height:100%;object-fit:contain;}
   #s-title .learnmore{margin-top:26px;font-size:16px;letter-spacing:.3px;color:rgba(255,255,255,.78);}
   #s-title .learnmore .site{font-family:var(--font-head);font-style:italic;font-weight:700;color:var(--gold-bright);font-size:19px;letter-spacing:.3px;}
 
@@ -393,11 +403,13 @@
   #s-lthanks .body{align-items:center;text-align:center;}
   #s-lthanks .lt-head{font-family:var(--font-head);font-weight:700;font-size:46px;color:var(--ink);margin-top:10px;line-height:1.1;}
   #s-lthanks .lt-head em{font-style:italic;color:var(--gold-text);}
-  #s-lthanks .lt-row{display:flex;gap:40px;justify-content:center;margin-top:40px;}
+  #s-lthanks .lt-row{display:flex;gap:40px;justify-content:center;margin-top:32px;}
   #s-lthanks .lt-item{display:flex;flex-direction:column;align-items:center;}
-  #s-lthanks .lt-card{background:#fff;border:1px solid var(--hair);border-radius:18px;width:470px;height:280px;padding:30px 40px;
+  #s-lthanks .lt-card{background:#fff;border:1px solid var(--hair);border-radius:18px;width:470px;height:256px;padding:28px 40px;
     display:flex;align-items:center;justify-content:center;box-shadow:0 16px 40px rgba(30,42,56,.12);}
   #s-lthanks .lt-card img{max-width:100%;max-height:100%;object-fit:contain;}
+  #s-lthanks .lt-pres{font-size:19px;color:var(--muted);margin-top:24px;}
+  #s-lthanks .lt-pres strong{color:var(--ink);font-family:var(--font-head);font-size:23px;}
   #s-lthanks .lt-web{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:28px;color:var(--gold-text);margin-top:18px;}
   /* ---- raffle: stay through the end to win ---- */
   #s-raffle h1.big{font-family:var(--font-head);font-style:italic;font-size:52px;color:var(--ink);margin-top:6px;line-height:1.05;max-width:800px;}   /* leaves room for the pop-up at top right */
@@ -594,6 +606,10 @@
     #s-title h1.big{font-size:40px;}
     #s-title .date{font-size:14px;letter-spacing:3px;margin-top:24px;padding-top:16px;}
     #s-title .learnmore{font-size:14px;}
+    #s-title.has-tonight .body{padding-right:0;}
+    #s-title .t-tonight{position:static;transform:none;width:auto;margin:26px 0 0;padding-left:18px;}
+    #s-title .t-tonight .tt{font-size:26px;}
+    #s-title .t-tonight .tl .c{width:130px;height:74px;}
     #s-title .learnmore .site{font-size:16px;}
 
     #s-about h1.big{font-size:28px;margin-bottom:18px;}
@@ -609,6 +625,8 @@
     #s-lthanks .lt-row{flex-direction:column;gap:22px;margin-top:24px;}
     #s-lthanks .lt-card{width:280px;height:160px;padding:18px 24px;}
     #s-lthanks .lt-web{font-size:19px;margin-top:10px;}
+    #s-lthanks .lt-pres{font-size:15px;margin-top:18px;}
+    #s-lthanks .lt-pres strong{font-size:17px;}
     #s-spot .sp-pop,#s-raffle .rf-pop{display:none !important;}   /* phones: number/URL already on the slide */
     #s-dvar .dvarphoto{position:static;margin:22px 0 0;width:150px;height:150px;}
     #s-dvar .delivered{margin-top:28px;font-size:13px;}
@@ -713,6 +731,14 @@
         <h1 class="big" style="margin-top:20px;">Dental Wisdom<br><em class="gold">Live</em></h1>
         <div class="date"><span id="t-date">Thursday, June 18</span><span class="dot">·</span><span id="t-time">8:00 PM EST</span></div>
         <div class="learnmore">Visit <span class="site">DentalWisdom.org</span> to learn more about Dental Wisdom</div>
+      </div>
+      <!-- tonight's class + its sponsors — filled from DECK.lecture -->
+      <div class="t-tonight" id="t-tonight">
+        <div class="k">Tonight’s Class</div>
+        <div class="tt" id="t-tonight-title"></div>
+        <div class="ts" id="t-tonight-sub"></div>
+        <div class="k k2">Presented by</div>
+        <div class="tl" id="t-tonight-logos"></div>
       </div>
       <button class="wr-start" id="wrStart">Start 2:00</button>
     </section>
@@ -869,6 +895,7 @@
         <div class="eyebrow" style="text-align:center;">With Gratitude</div>
         <h1 class="lt-head">Thank You to the Sponsors of <em>Today’s Class</em></h1>
         <div class="lt-row" id="t-lthanks-row"></div>
+        <div class="lt-pres" id="t-lthanks-pres"></div>
       </div>
     </section>
 
@@ -1316,11 +1343,26 @@ function fillDeck(){
   txt('t-lect-ce',l.ce); txt('t-lect-title',l.title); txt('t-lect-subt',l.subtitle);
   txt('t-lect-doc',l.doctor); txt('t-lect-role',l.role); txt('t-lect-pill',l.ce);
   txt('t-lect-web',l.website);
+  // title slide: tonight's class and its sponsors
+  var tn=document.getElementById('t-tonight');
+  if(tn){
+    var tp=(l.partners&&l.partners.length)?l.partners:(l.logo?[{name:l.partner,logo:l.logo}]:[]);
+    txt('t-tonight-title',l.title||''); txt('t-tonight-sub',l.subtitle||'');
+    document.getElementById('t-tonight-logos').innerHTML=tp.map(function(x){ return '<div class="c">'+logoImg(x.logo,x.name)+'</div>'; }).join('');
+    tn.style.display=l.title?'':'none';
+    document.getElementById('s-title').classList.toggle('has-tonight',!!l.title);
+  }
   // thank-you slide for the class sponsors
   var ltr=document.getElementById('t-lthanks-row');
   if(ltr) ltr.innerHTML=(l.partners||[]).map(function(x){
     return '<div class="lt-item"><div class="lt-card">'+logoImg(x.logo,x.name)+'</div>'+
            (x.website?'<div class="lt-web">'+x.website+'</div>':'')+'</div>'; }).join('');
+  var lpres=document.getElementById('t-lthanks-pres');
+  if(lpres){
+    var who=(l.doctor||'').replace(/\s*\n\s*/g,' ');
+    lpres.innerHTML=who?'And to tonight\u2019s presenters, <strong>'+who.replace(/&/g,'&amp;')+'</strong>':'';
+    lpres.style.display=who?'':'none';
+  }
   var lbox=document.getElementById('t-lect-logobox');
   var lp=(l.partners&&l.partners.length)?l.partners:(l.logo?[{name:l.partner||l.doctor,logo:l.logo}]:[]);
   lbox.innerHTML=lp.map(function(x){ return logoImg(x.logo,x.name); }).join('');
@@ -1523,7 +1565,7 @@ function wrBuild(){
       '<div class="wr-featprize">'+g.prize+'</div>'+
       (g.prizeDetail?'<div class="wr-detail">'+g.prizeDetail+'</div>':'')+
       // pops in a few seconds after the panel opens
-      '<div class="wr-invite"><div class="wr-invite__soon">We are getting started soon!</div><div class="wr-invite__hd">Invite your friends to join!</div>'+
+      '<div class="wr-invite"><div class="wr-invite__soon">We are getting started soon!</div><div class="wr-invite__hd">Invite your friends<br>to join!</div>'+
       '<div class="wr-invite__tx">Go to <strong>DentalWisdom.org/live</strong> to register ASAP!</div></div>'+
       '</div>');
   });
@@ -1581,7 +1623,9 @@ function wrNextSession(){
   }
   if(!n) return null;
   var start=(n.time||'').split(/[–-]/)[0].trim();
-  return { title:(n.title||'').replace(/'/g,'’'),
+  // same split as slide 11: "Main title:" in bold, the rest on its own line
+  var tt=(n.title||'').replace(/'/g,'’'), ci=tt.indexOf(': ');
+  return { title: ci>0 ? '<strong>'+tt.slice(0,ci+1)+'</strong><br>'+tt.slice(ci+2) : tt,
            when:(n.date||'')+(start?'<span class="dot">·</span>'+start+' EST':'') };
 }
 

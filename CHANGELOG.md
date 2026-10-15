@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## October 15, 2026
 
+- **The Live page now opens scrolled to "Upcoming Sessions".** Visitors land straight on the sessions they can register for. It doesn't do this if the link already points to a spot on the page, or when someone reloads or comes back to the page, so their place is kept.
 - **Link preview for DentalWisdom.org/live:** briefly switched to a Shas raffle image for tonight, then switched straight back to the regular preview at your request. Nothing has changed for visitors. The Shas preview image is kept in `images/` in case you want it another time, but nothing points to it.
 
 ## October 14, 2026

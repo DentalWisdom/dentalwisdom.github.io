@@ -824,7 +824,7 @@
     <section class="slide" id="s-lect">
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">6 / 9</div></div>
       <div class="body anim">
-        <div class="eyebrow">Featured Speaker · <span id="t-lect-ce">1 CE Credit</span></div>
+        <div class="eyebrow"><span id="t-lect-feat">Featured Speaker</span> · <span id="t-lect-ce">1 CE Credit</span></div>
         <h1 class="big" id="t-lect-title">Straight Forward</h1>
         <div class="subt" id="t-lect-subt">Building Your Clear Aligner Practice</div>
         <div class="cols baseline">
@@ -1279,6 +1279,8 @@ function fillDeck(){
   }
 
   var l=DECK.lecture;
+  // two presenters ("A & B" or "A and B") → "Featured Speakers"
+  txt('t-lect-feat',/&| and /.test(l.doctor||'')?'Featured Speakers':'Featured Speaker');
   txt('t-lect-ce',l.ce); txt('t-lect-title',l.title); txt('t-lect-subt',l.subtitle);
   txt('t-lect-doc',l.doctor); txt('t-lect-role',l.role); txt('t-lect-pill',l.ce);
   txt('t-lect-web',l.website);

@@ -30,6 +30,7 @@ A plain-English record of every update made to the site, most recent first. This
 - **MB spotlight touch-ups:** "Into Top Value" now sits on its own line, the contact reads "Adam Baumwald", and a pop-up lands in the top right about 1.5 seconds after the slide opens: "Send a message here — (443) 253-4143 — and Adam will reach out ASAP!" On phones, the pop-ups on this slide and the raffle slide are hidden, because the same details are already on the slide and the pop-up would cover the logo.
 - **Lecture slide** now says "Featured Speakers" when two presenters are listed (as tonight), and "Featured Speaker" when there is one. It switches by itself.
 - **Sharper Crown Catapult logo on the slides.** The new wide version you sent replaces the old stacked one everywhere in the deck. The old file is saved in `liveslides/_archive/original-logos/`.
+- **Last slide:** the "CE Provided By" logo in the top-right corner is hidden (kept in the file, so it can come back).
 - **Live page:** the October 15 class now lists Darren Sardoff as the presenter, instead of Saul Kaplan.
 
 ## October 7, 2026

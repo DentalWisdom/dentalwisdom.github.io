@@ -257,6 +257,13 @@
            color:rgba(255,255,255,.45);font-family:var(--font-body);font-size:12.5px;font-weight:600;
            letter-spacing:1.5px;text-transform:uppercase;cursor:pointer;transition:.2s;}
   .wr-skip:hover{color:var(--gold-bright);}
+  /* back / next — jump between panels; the clock jumps to where that panel starts */
+  .wr-nav{position:absolute;left:88px;bottom:28px;z-index:3;display:flex;gap:8px;}
+  .wr-navbtn{border:1px solid rgba(255,255,255,.22);background:rgba(255,255,255,.06);border-radius:999px;
+             color:rgba(255,255,255,.6);font-family:var(--font-body);font-size:12px;font-weight:600;
+             letter-spacing:1.5px;text-transform:uppercase;padding:7px 14px;cursor:pointer;transition:.2s;}
+  .wr-navbtn:hover{color:var(--gold-bright);border-color:var(--gold-bright);}
+  #waitroom.go .wr-nav{opacity:0;pointer-events:none;}
 
   /* ---- 2 about ---- */
   #s-about h1.big{font-size:50px;margin:2px 0 30px;}
@@ -907,6 +914,10 @@
       </div>
       <div class="wr-dots" id="wr-dots"></div>
       <div class="wr-prog"><div class="wr-bar" id="wr-bar"></div></div>
+      <div class="wr-nav">
+        <button class="wr-navbtn" id="wrBack" title="Previous panel (← key)">&larr; Back</button>
+        <button class="wr-navbtn" id="wrNext" title="Next panel (→ key)">Next &rarr;</button>
+      </div>
       <button class="wr-skip" id="wrSkip">Start now &rarr;</button>
       <audio id="wrAudio" loop preload="auto"></audio>
     </div>
@@ -1008,9 +1019,9 @@ const DECK = {
     // A missing logo file shows the sponsor's name in its place instead of a broken image.
     partners: [
       { name: "Crown Catapult", logo: "logos/crown-catapult.webp", website: "crowncatapult.com" },
-      { name: "Launch Point",   logo: "logos/launch-point.png" }
+      { name: "Launch Point",   logo: "logos/launch-point.png", website: "launchpointdental.com" }
     ],
-    website:  "crowncatapult.com",
+    website:  "crowncatapult.com \u00b7 launchpointdental.com",
     description: [
       "<strong>Darren Sardoff</strong> is Chief Executive Officer of Launch Point Dental Partners, where he invests in dental practices and partners with owners to accelerate growth, strengthen operations, and prepare for institutional exits.",
       "<strong>Dr. Kelly Jastremski</strong> is President and Chief Clinical Officer of Launch Point Dental Partners.",
@@ -1104,11 +1115,11 @@ const DECK = {
       },
       "Crown Catapult": {
         what:   "The financial hub built for dentistry",
-        detail: "Practice valuations, retirement planning, wealth management and exclusive investment opportunities — founded by dentists, for dentists"
+        detail: "Practice valuations, retirement planning, wealth management and exclusive investment opportunities<br><em>Founded by dentists, for dentists.</em>"
       },
       "Launch Point": {
-        what:   "Invests in dental practices and partners with their owners",
-        detail: "To accelerate growth, strengthen operations and prepare for institutional exits"
+        what:   "Unlock Your Practice\u2019s Value While Maintaining Control",
+        detail: "Partner with Launch Point Dental Partners and access immediate liquidity without sacrificing ownership or autonomy"
       }
     },
 
@@ -1137,6 +1148,7 @@ const DECK = {
     { sponsor: "Crown Catapult & Launch Point", prize: "Full Set of Shas",
       logos: ["logos/crown-catapult.webp", "logos/launch-point.png"],
       logoNames: ["Crown Catapult", "Launch Point"],
+      website: "crowncatapult.com \u00b7 launchpointdental.com",
       feature: true,
       photo: "slides/shas-set.webp",
       prizeDetail: "Travel Size Schottenstein Edition Talmud · English · ArtScroll" }
@@ -1470,7 +1482,7 @@ function wrNextSession(){
            when:(n.date||'')+(start?'<span class="dot">·</span>'+start+' EST':'') };
 }
 
-var wrFwTimers=[];
+var wrFwTimers=[], wrJump=function(){};
 function wrShowPane(i){
   if(i===wrPane) return;
   wrPane=i;
@@ -1542,6 +1554,25 @@ function wrOpen(){
   // never painted their hidden starting state — which meant panel 1 (Live Well Capital)
   // simply appeared while every later panel built in properly. Reading offsetHeight
   // forces that starting state to be flushed first, so the transition actually runs.
+  // Back / Next: move to the start of the previous / next panel and set the clock to
+  // match, so the rest of the board carries on from there on its normal schedule.
+  // Next on the last panel goes into the closing countdown; Back from the countdown
+  // returns to the last panel.
+  wrJump=function(dir){
+    if(left<=0) return;
+    var cur = left>fin ? wrPane : n;               // n = "in the countdown"
+    var target=Math.max(0,Math.min(n,cur+dir));
+    if(target===cur && dir<0 && cur===0) target=0; // Back on the first panel restarts it
+    var startAt = target===0 ? 0 : (target>=n ? panelTime : ends[target-1]);
+    left=Math.round(total-startAt);
+    if(target>=n){ left=fin; }
+    else {
+      if(box._faded && wcfg.music) wrFadeTo(wcfg.musicVolume||0.35,800);   // back out of the countdown: music returns
+      box.classList.remove('finale'); box._faded=false; lastNum=null; wrPane=-1;
+    }
+    paint();
+  };
+
   wrMusicStart();
   void document.getElementById('wr-panes').offsetHeight;
   paint();
@@ -1612,6 +1643,8 @@ function wrOpen_isOpen(){ return document.getElementById('waitroom').classList.c
 
 document.getElementById('wrStart').addEventListener('click',wrOpen);
 document.getElementById('wrSkip').addEventListener('click',wrClose);
+document.getElementById('wrBack').addEventListener('click',function(){ wrJump(-1); });
+document.getElementById('wrNext').addEventListener('click',function(){ wrJump(1); });
 // label the button with whatever length is configured
 // label the button with the real length, whatever the panel count works out to
 (function(){
@@ -1672,6 +1705,11 @@ document.getElementById('navNext').addEventListener('click',next);
 document.getElementById('navPrev').addEventListener('click',prev);
 
 document.addEventListener('keydown',function(e){
+  // billboard open: ← / → step between its panels (the clock follows)
+  if(wrOpen_isOpen() && !document.querySelector('.overlay.show')){
+    if(e.key==='ArrowRight'||e.key==='PageDown'){ e.preventDefault(); wrJump(1); return; }
+    if(e.key==='ArrowLeft'||e.key==='PageUp'){ e.preventDefault(); wrJump(-1); return; }
+  }
   if(anyOverlayOpen()){ if(e.key==='Escape') closeOverlays(); return; }
   if(e.key==='F11'||((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='f')){ e.preventDefault(); toggleFull(); return; }
   // 1–9 jumps straight to that slide — handy when someone asks "what was that code again?"

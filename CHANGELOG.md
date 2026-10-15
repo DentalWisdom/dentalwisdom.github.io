@@ -19,6 +19,9 @@ A plain-English record of every update made to the site, most recent first. This
   - **The Shas panel on the 2-minute board is livelier now.** Fireworks go off three times while it's up, the photo floats gently, a gold shine runs across "Full Set of Shas", and about 3 seconds in a pop-up appears: "Invite your friends to join! Go to DentalWisdom.org/live to register ASAP!"
   - **Crown Catapult, Launch Point and the Shas panel each stay up for 20 seconds.** The board is still exactly 2:00, so the other five panels now get 10 seconds each instead of about 14.
   - **Conference photo fix:** the photo of the speaker at the clear podium was cropped to his midsection. It's now framed to show his face and the Dental Wisdom screen behind him.
+- **The 2-minute board now has Back and Next buttons** (bottom left), and the left/right arrow keys do the same thing. Skipping moves the clock to wherever that panel normally starts, and the board carries on from there. Next on the last panel jumps to the final countdown; Back from the countdown returns to the last panel.
+- **Crown Catapult panel:** "Founded by dentists, for dentists." now sits on its own line.
+- **Launch Point details added throughout:** its panel on the board now reads "Unlock Your Practice's Value While Maintaining Control," with "Partner with Launch Point Dental Partners and access immediate liquidity without sacrificing ownership or autonomy" underneath and launchpointdental.com. Both websites (crowncatapult.com · launchpointdental.com) also show on the lecture slide, the Shas giveaway card and the winner pop-up.
 - **Live page:** the October 15 class now lists Darren Sardoff as the presenter, instead of Saul Kaplan.
 
 ## October 7, 2026

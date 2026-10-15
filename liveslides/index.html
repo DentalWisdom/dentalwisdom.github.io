@@ -288,6 +288,9 @@
   #s-dvar .torah{font-family:var(--font-head);font-style:italic;font-size:92px;color:var(--ink);font-weight:400;margin-top:6px;line-height:1;}
   #s-dvar .delivered{margin-top:42px;font-size:15px;letter-spacing:4px;text-transform:uppercase;color:var(--muted);font-weight:600;}
   #s-dvar .speaker{font-family:var(--font-head);font-weight:700;font-size:46px;color:var(--ink);margin-top:10px;}
+  #s-dvar .body{position:relative;}
+  #s-dvar .dvarphoto{position:absolute;right:30px;top:50%;margin-top:-150px;width:300px;height:300px;border-radius:50%;
+    object-fit:cover;object-position:50% 30%;border:6px solid #fff;box-shadow:0 0 0 3px var(--gold),0 18px 44px rgba(30,42,56,.22);}
   #s-dvar .dvarrole{font-style:italic;color:var(--muted);font-size:18px;margin-top:8px;}
 
   /* ---- conference (4 & 8) ---- */
@@ -580,6 +583,7 @@
     .feat p{font-size:14px;}
 
     #s-dvar .torah{font-size:46px;}
+    #s-dvar .dvarphoto{position:static;margin:22px 0 0;width:150px;height:150px;}
     #s-dvar .delivered{margin-top:28px;font-size:13px;}
     #s-dvar .speaker{font-size:28px;}
 
@@ -716,6 +720,7 @@
         <div class="delivered" id="t-dvar-by">Delivered by</div>
         <div class="speaker" id="t-dvar-speaker">Chaim Glazer</div>
         <div class="dvarrole" id="t-dvar-role"></div>
+        <img class="dvarphoto" id="t-dvar-photo" alt="">
       </div>
     </section>
 
@@ -995,6 +1000,7 @@ const DECK = {
   opener:      "Dr. Lisa Sokol",                       // slide 2 (rarely changes)
   dvarSpeaker: "Ilan Chasen",                    // slide 3 — leave "" until known and both the "Delivered by" label and the name stay hidden
   dvarRole:    "Founder, Head of Group Strategy and Corporate Finance, Crown Catapult",  // small line under the name — "" hides it
+  dvarPhoto:   "slides/dvar-ilan-chasen.webp",   // round photo on the right — "" hides it
   conference:  {                                       // slides 5 & 8 — the promo box
     save: "$175",
     code: "DentalWisdomLive",
@@ -1198,6 +1204,8 @@ function fillDeck(){
   ['t-dvar-by','t-dvar-speaker'].forEach(function(id){
     var el=document.getElementById(id); if(el) el.style.display=dvar?'':'none';
   });
+  var dph=document.getElementById('t-dvar-photo');
+  if(dph){ if(DECK.dvarPhoto){ dph.src=imgPath(DECK.dvarPhoto); dph.alt=dvar; dph.style.display=''; } else dph.style.display='none'; }
   var dr=document.getElementById('t-dvar-role'); if(dr) dr.style.display=(dvar&&DECK.dvarRole)?'':'none';
   var c=DECK.conference;
   document.querySelectorAll('.t-save').forEach(function(e){ e.textContent=c.save; });

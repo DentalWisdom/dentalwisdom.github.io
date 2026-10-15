@@ -25,6 +25,7 @@ A plain-English record of every update made to the site, most recent first. This
 - **Raffle slide (5):** fireworks now go off when the slide opens, and a pop-up lands in the top right: "Make sure you register to be in the drawing — DentalWisdom.org/live".
 - **The Shas pop-up on the 2-minute board** now opens with "We are getting started soon!" above "Invite your friends to join!".
 - **Slides 7 and 8 swapped:** the conference photo slide now comes before the giveaway wheel, so the order is lecture → conference → giveaways → thank you.
+- **Dvar Torah slide:** Ilan Chasen's photo now sits on the right in a gold-ringed circle (on a phone it goes below his name). To change or remove it in future months, edit `dvarPhoto` in the deck; leaving it empty hides the circle.
 - **Live page:** the October 15 class now lists Darren Sardoff as the presenter, instead of Saul Kaplan.
 
 ## October 7, 2026

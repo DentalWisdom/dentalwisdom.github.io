@@ -382,14 +382,14 @@
     transform:rotate(3deg) scale(0);opacity:0;}
   #s-spot.active .sp-pop{animation:invitepop .7s cubic-bezier(.34,1.56,.64,1) 1.6s both,
                                    invitepulse 2.4s ease-in-out 2.5s infinite;}
-  /* scan-to-text QR card, tucked under the phone pop-up (DECK.spotlight.textQr) */
-  #s-spot .sp-qr{position:absolute;right:40px;top:188px;z-index:2;width:192px;background:#fff;border:3px solid var(--gold-bright);
-    border-radius:16px;padding:10px 12px 13px;text-align:center;box-shadow:0 16px 40px rgba(18,35,63,.25);
-    transform:rotate(-2deg) scale(0);opacity:0;}
-  #s-spot.active .sp-qr.on{animation:qrpop .7s cubic-bezier(.34,1.56,.64,1) 2.3s both;}
-  @keyframes qrpop{from{opacity:0;transform:rotate(-2deg) scale(0);}to{opacity:1;transform:rotate(-2deg) scale(1);}}
-  #s-spot .sp-qr img{display:block;width:164px;height:164px;margin:0 auto;}
-  #s-spot .sp-qr__lb{font-size:11.5px;letter-spacing:1.6px;text-transform:uppercase;font-weight:700;color:var(--gold-text);margin-bottom:8px;white-space:nowrap;}
+  /* scan-to-text QR, inside the phone pop-up (DECK.spotlight.textQr). With a QR the card
+     sits a little higher, and doesn't pulse, so phones can lock on to the code. */
+  #s-spot .sp-pop__qr{display:none;border-top:1px dashed var(--gold-bright);margin-top:12px;padding-top:11px;}
+  #s-spot .sp-pop__qr.on{display:block;}
+  #s-spot .sp-pop.has-qr{top:22px;width:300px;}
+  #s-spot.active .sp-pop.has-qr{animation:invitepop .7s cubic-bezier(.34,1.56,.64,1) 1.6s both;}
+  #s-spot .sp-pop__qr img{display:block;width:176px;height:176px;margin:0 auto;}
+  #s-spot .sp-qr__lb{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold-text);margin-bottom:9px;white-space:nowrap;}
   #s-spot .sp-pop__hd{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold-text);}
   #s-spot .sp-pop__ph{font-family:var(--font-head);font-weight:700;font-size:34px;color:var(--ink);line-height:1.1;margin-top:4px;}
   #s-spot .sp-pop__tx{font-family:var(--font-head);font-style:italic;font-weight:700;font-size:19px;color:var(--pink-dark);margin-top:4px;}
@@ -660,7 +660,7 @@
     #s-lthanks .lt-take .tk-rows{align-items:center;}
     #s-lthanks .lt-take .tk-row{font-size:14px;word-break:break-all;}
     #s-lthanks .lt-take .tk-head{font-size:21px;}
-    #s-spot .sp-pop,#s-spot .sp-qr,#s-raffle .rf-pop{display:none !important;}   /* phones: number/URL already on the slide */
+    #s-spot .sp-pop,#s-raffle .rf-pop{display:none !important;}   /* phones: number/URL already on the slide */
     #s-dvar .dvarphoto{position:static;margin:22px 0 0;width:150px;height:150px;}
     #s-dvar .delivered{margin-top:28px;font-size:13px;}
     #s-dvar .speaker{font-size:28px;}
@@ -816,8 +816,7 @@
     <section class="slide" id="s-spot">
       <div class="topbar"><div class="brand"><span class="b1">Dental Wisdom</span> <span class="b2">Live</span></div><div class="pagenum">4 / 9</div></div>
       <div class="body anim">
-        <div class="sp-pop" id="t-spot-pop"><div class="sp-pop__hd" id="t-spot-pophd"></div><div class="sp-pop__ph" id="t-spot-popph"></div><div class="sp-pop__tx" id="t-spot-poptx"></div></div>
-        <div class="sp-qr" id="t-spot-qr"><div class="sp-qr__lb" id="t-spot-qrlb"></div><img id="t-spot-qrimg" src="" alt="QR code to text the vendor"></div>
+        <div class="sp-pop" id="t-spot-pop"><div class="sp-pop__hd" id="t-spot-pophd"></div><div class="sp-pop__ph" id="t-spot-popph"></div><div class="sp-pop__tx" id="t-spot-poptx"></div><div class="sp-pop__qr" id="t-spot-qr"><div class="sp-qr__lb" id="t-spot-qrlb"></div><img id="t-spot-qrimg" src="" alt="QR code to text the vendor"></div></div>
         <div class="eyebrow"><span id="t-spot-cat">Wealth Management</span> · 30-Second Spotlight</div>
         <div class="sp-hero">
           <div class="logocard sp-logocard"><img id="t-spot-logo" src="" alt="Sponsor logo"></div>
@@ -1147,11 +1146,11 @@ const DECK = {
     callLabel: "Call",
     phone:     "(443) 253-4143",
     website:   "MBPreciousMetals.com",
-    // QR card under the pop-up: scanning it opens a text to Adam with the message already
+    // QR inside the pop-up: scanning it opens a text to Adam with the message already
     // written. The image is pre-made in liveslides/qr/ - a new number or message needs a
     // new QR file. Set textQr: "" to hide the card.
     textQr:      "qr/mb-text-adam.svg",
-    textQrLabel: "Scan to text Adam"
+    textQrLabel: "Or scan to text Adam"
   },
 
   lecture: {                                           // slide 6 — the class
@@ -1369,7 +1368,7 @@ function fillDeck(){
     document.getElementById('t-spot-tag2').classList.toggle('brk',!!s.taglineBreak);
     var sp=document.getElementById('t-spot-pop');
     var sq=document.getElementById('t-spot-qr');
-    if(sq){ sq.classList.toggle('on',!!s.textQr);
+    if(sq){ sq.classList.toggle('on',!!s.textQr); if(sp) sp.classList.toggle('has-qr',!!s.textQr);
       if(s.textQr){ document.getElementById('t-spot-qrimg').src=imgPath(s.textQr); txt('t-spot-qrlb',s.textQrLabel||''); } }
     if(sp){ txt('t-spot-pophd',s.popup||''); txt('t-spot-popph',s.phone||''); txt('t-spot-poptx',s.popupAfter||'');
             sp.style.display=s.popup?'':'none'; }

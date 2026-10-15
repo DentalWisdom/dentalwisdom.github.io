@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## October 15, 2026
 
+- **Live slides, giveaway slide: every prize card now has a QR code** beside the prize name. MB Precious Metals: "Scan to text Adam", which opens a text with "...Can we chat about selling dental scrap? Thank you!" Live Well Capital: "Scan to text Sam" at (917) 715-2118, with "Hi, I got your number from Dental Wisdom Live. Can we chat about Wealth Management? Thank You!" Shas set (Crown Catapult & Launch Point): "Scan to book time with David", which opens his Calendly. The logo box on the prize card is a little shorter to make room, so the card is no taller than before. The winner pop-up is unchanged.
 - **Live slides, vendor spotlight (MB Precious Metals): added a scan-to-text QR code.** It sits inside the phone-number pop-up, so it's all one card: "Send a message here", the number, "and Adam will reach out ASAP!", then "Or scan to text Adam" with the code. Scanning it opens a text to Adam at (443) 253-4143 with this already typed: "Hi, I got your number from Dental Wisdom Live. Can we chat about selling dental scrap? Thank you!" The card no longer pulses when it has a code, so phones can lock on to it. It's hidden on phones, same as the pop-up.
 - **Spotlight bullet reworded:** "They Come to Your Office" is now "Come to Your Office".
 - **Slide 8 fix:** the squarer logo boxes made for the stacked Crown Catapult logo hadn't actually saved in the last update. They're in place now, so the Crown Catapult words fill their box as intended.

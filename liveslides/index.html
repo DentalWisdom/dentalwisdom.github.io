@@ -387,6 +387,12 @@
   #s-spot .sp-pop__qr{display:none;border-top:1px dashed var(--gold-bright);margin-top:12px;padding-top:11px;}
   #s-spot .sp-pop__qr.on{display:block;}
   #s-spot .sp-pop.has-qr{top:22px;width:300px;}
+  #s-spot .sp-pop.has-qr .sp-pop__tx{font-size:17px;white-space:nowrap;}
+  /* with the QR card up, the logo narrows and the headline keeps clear of the card */
+  #s-spot.has-qr .sp-logocard{width:400px;}
+  #s-spot.has-qr .sp-hero{gap:40px;}
+  #s-spot.has-qr .spot-content{padding-right:330px;}
+  #s-spot.has-qr .spot-content.has-bullets .spot-head{font-size:36px;}
   #s-spot.active .sp-pop.has-qr{animation:invitepop .7s cubic-bezier(.34,1.56,.64,1) 1.6s both;}
   #s-spot .sp-pop__qr img{display:block;width:122px;height:122px;margin:0 auto;}   /* same size as the Launch Point QR on slide 8 */
   #s-spot .sp-qr__lb{font-size:12px;letter-spacing:2px;text-transform:uppercase;font-weight:700;color:var(--gold-text);margin-bottom:9px;white-space:nowrap;}
@@ -676,6 +682,9 @@
     #s-dvar .speaker{font-size:28px;}
 
     #s-spot .sp-logocard{width:100%;max-width:280px;height:130px;margin:0 auto;}
+    #s-spot.has-qr .sp-logocard{width:100%;}
+    #s-spot.has-qr .spot-content{padding-right:0;}
+    #s-spot.has-qr .spot-content.has-bullets .spot-head{font-size:22px;}
     #s-spot .spot-head{font-size:26px;text-align:center;}
     #s-spot .spot-content.has-bullets .spot-head{font-size:22px;}
     #s-spot .spot-bullets{grid-template-columns:1fr;gap:12px;margin:20px 0 4px;}
@@ -1142,30 +1151,30 @@ const DECK = {
   spotlightSlides: [],
 
   spotlight: {                                         // slide 4 — the built-in vendor spotlight (right after the Dvar Torah)
-    category: "Dental Refining",
-    logo:     "logos/mb-precious-metals.png",
-    tagline1: "Turn Your Scrap",                // ink-colored part of headline
-    tagline2: "Into Top Value",                        // gold part of headline
+    category: "Dental Supplies",
+    logo:     "logos/crazy-dental.png",
+    tagline1: "Guaranteed Lowest Price",               // ink-colored part of headline
+    tagline2: "on Our Top-Selling Products",           // gold part of headline
     taglineBreak: true,                                // true = gold part starts its own line
     bullets:  [
-      "Over 50 Years of Experience",
-      "Come to Your Office",
-      "Scrap Assayed On-Site",
-      "Gold, Silver, Platinum & Palladium"
+      "Manufacturer Authorized",
+      "Premier Customer Service",
+      "110% Price Match Guarantee",
+      "Best-In-Class Logistics"
     ],
-    name:      "Adam Baumwald",
-    company:   "MB Precious Metals",
+    name:      "Chaim Glazer",
+    company:   "Crazy Dental Prices",
     // pop-up that lands on the slide with the phone number — set popup: "" to hide it
     popup:     "Send a message here",
-    popupAfter: "and Adam will reach out ASAP!",
-    callLabel: "Call",
-    phone:     "(443) 253-4143",
-    website:   "MBPreciousMetals.com",
-    // QR inside the pop-up: scanning it opens a text to Adam with the message already
+    popupAfter: "and Chaim will reach out ASAP!",
+    callLabel: "Call or Text",
+    phone:     "(404) 944-5293",
+    website:   "crazydentalprices.com/dentalwisdom",
+    // QR inside the pop-up: scanning it opens a text to Chaim with the message already
     // written. The image is pre-made in liveslides/qr/ - a new number or message needs a
     // new QR file. Set textQr: "" to hide the card.
-    textQr:      "qr/mb-text-adam.svg",
-    textQrLabel: "Or scan to text Adam"
+    textQr:      "qr/crazydental-text-chaim.svg",
+    textQrLabel: "Or scan to text Chaim"
   },
 
   lecture: {                                           // slide 6 — the class
@@ -1388,7 +1397,7 @@ function fillDeck(){
     document.getElementById('t-spot-tag2').classList.toggle('brk',!!s.taglineBreak);
     var sp=document.getElementById('t-spot-pop');
     var sq=document.getElementById('t-spot-qr');
-    if(sq){ sq.classList.toggle('on',!!s.textQr); if(sp) sp.classList.toggle('has-qr',!!s.textQr);
+    if(sq){ sq.classList.toggle('on',!!s.textQr); if(sp) sp.classList.toggle('has-qr',!!s.textQr); document.getElementById('s-spot').classList.toggle('has-qr',!!s.textQr);
       if(s.textQr){ document.getElementById('t-spot-qrimg').src=imgPath(s.textQr); txt('t-spot-qrlb',s.textQrLabel||''); } }
     if(sp){ txt('t-spot-pophd',s.popup||''); txt('t-spot-popph',s.phone||''); txt('t-spot-poptx',s.popupAfter||'');
             sp.style.display=s.popup?'':'none'; }

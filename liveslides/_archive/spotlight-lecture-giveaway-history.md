@@ -12,6 +12,41 @@ aired and enough detail to drop back into the deck as-is.
 
 ## Vendor Spotlight (slide 4)
 
+### October 15, 2026 — Adam Baumwald · MB Precious Metals
+Replaced on the day of the session by Crazy Dental (Chaim Glazer). The QR file
+`liveslides/qr/mb-text-adam.svg` is still in use on the giveaway slide; it texts Adam
+"Hi Adam, I got your number from Dental Wisdom Live. Can we please chat about selling
+dental scrap? Thank You!"
+
+```js
+  spotlight: {                                         // slide 4 — the built-in vendor spotlight (right after the Dvar Torah)
+    category: "Dental Refining",
+    logo:     "logos/mb-precious-metals.png",
+    tagline1: "Turn Your Scrap",                // ink-colored part of headline
+    tagline2: "Into Top Value",                        // gold part of headline
+    taglineBreak: true,                                // true = gold part starts its own line
+    bullets:  [
+      "Over 50 Years of Experience",
+      "Come to Your Office",
+      "Scrap Assayed On-Site",
+      "Gold, Silver, Platinum & Palladium"
+    ],
+    name:      "Adam Baumwald",
+    company:   "MB Precious Metals",
+    // pop-up that lands on the slide with the phone number — set popup: "" to hide it
+    popup:     "Send a message here",
+    popupAfter: "and Adam will reach out ASAP!",
+    callLabel: "Call",
+    phone:     "(443) 253-4143",
+    website:   "MBPreciousMetals.com",
+    // QR inside the pop-up: scanning it opens a text to Adam with the message already
+    // written. The image is pre-made in liveslides/qr/ - a new number or message needs a
+    // new QR file. Set textQr: "" to hide the card.
+    textQr:      "qr/mb-text-adam.svg",
+    textQrLabel: "Or scan to text Adam"
+  },
+```
+
 ### August 27, 2026 — Alphaeon on the title-slide billboard
 Alphaeon was also the billboard's "Tonight's Vendor Spotlight" panel. Its `waitingRoom.spotlight` value and `about` line:
 

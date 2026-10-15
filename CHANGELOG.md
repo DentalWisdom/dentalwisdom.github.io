@@ -13,6 +13,12 @@ A plain-English record of every update made to the site, most recent first. This
   - **The 2-minute intro board** now runs in this order: MB Precious Metals, LiveWell Capital, a large "Thank you to our Lecture Sponsor" panel for Crown Catapult, the same for Launch Point, then a "Thank you to our amazing Giveaway Sponsors" panel with both logos and a photo of the Shas set. After that come the usual conference, Deals and Live panels.
   - **Prize wheel:** MB Precious Metals (1 oz silver coin) and LiveWell Capital (Yeti mug) as before, plus a new prize: a Full Set of Shas (Travel Size Schottenstein Edition, English, ArtScroll) from Crown Catapult and Launch Point. When someone wins it, both logos pop up.
   - **Last slide:** the "Next session" section now also shows the presenter's name and the sponsor's logo, both taken from the website. For November that's Dr. Asher Mansdorf and Touro.
+- **More for the October 15 slides:**
+  - **New "Stay through the end to win" slide** just before the lecture. It shows the Shas raffle (Complete Schottenstein Edition Talmud, Travel Size · English · Full Set, $1,500+ value), a glowing navy box saying the winner is drawn live after the class and you must still be on the call, the "Already have a set?" line from the raffle flyer, and both sponsor logos. The deck is now 9 slides.
+  - **Lecture slide:** the names now sit on two lines, "Darren Sardoff &" and "Dr. Kelly Jastremski", and Dr. Jastremski's introduction is its own paragraph.
+  - **The Shas panel on the 2-minute board is livelier now.** Fireworks go off three times while it's up, the photo floats gently, a gold shine runs across "Full Set of Shas", and about 3 seconds in a pop-up appears: "Invite your friends to join! Go to DentalWisdom.org/live to register ASAP!"
+  - **Crown Catapult, Launch Point and the Shas panel each stay up for 20 seconds.** The board is still exactly 2:00, so the other five panels now get 10 seconds each instead of about 14.
+  - **Conference photo fix:** the photo of the speaker at the clear podium was cropped to his midsection. It's now framed to show his face and the Dental Wisdom screen behind him.
 - **Live page:** the October 15 class now lists Darren Sardoff as the presenter, instead of Saul Kaplan.
 
 ## October 7, 2026

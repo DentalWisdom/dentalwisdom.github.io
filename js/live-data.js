@@ -104,8 +104,9 @@ window.LIVE_DATA = [
     sponsor: "Crown Catapult",
     sponsorName: "Crown Catapult",
     sponsorLink: "https://crowncatapult.com/",
+    recordingEmail: "Ben@dentalwisdom.org",
     sortDate: "2026-10-15",
-    status: "upcoming"
+    status: "past"
   },
   {
     title: "The Many Faces of Orofacial Pain: The Differences Between Toothaches and Neuropathic Pain",

@@ -382,7 +382,7 @@ window.DEALS_DATA = [
     title: "LiveWell Capital",
     shortDescription: "Financial Planning",
     category: "Money & Insurance",
-    description: "At LiveWell Capital, we believe wealth is about more than growing investments — it's about creating the freedom to Live What Matters. We partner with entrepreneurs, executives, physicians, retirees, and multi-generational families to help them build, protect, and enjoy their wealth with confidence and purpose. Our integrated team brings together expertise in Investment Management, Tax Strategy, Financial Planning, Executive Compensation (RSUs, PSUs, Options), Business Owner Planning (Pre-Exit), Risk Management, and Estate Planning. Whether you're building a business, preparing for retirement, navigating a major life transition, or creating a lasting legacy, we're committed to helping you live well — today, tomorrow, and for generations to come.",
+    description: "At LiveWell Capital, we believe wealth is about more than growing investments — it's about creating the freedom to Live What Matters. We partner with entrepreneurs, executives, dentists, retirees, and multi-generational families to help them build, protect, and enjoy their wealth with confidence and purpose. Our integrated team brings together expertise in Financial Planning, Investment Management, Tax Strategy, Life & Disability Insurance Planning, Employee Benefits, and Estate Planning. Whether you're building a business, preparing for retirement, navigating a major life transition, or creating a lasting legacy, we're committed to helping you live well — today, tomorrow, and for generations to come.",
     link: "https://www.livewellcapital.com/",
     promo: "",
     imageUrl: "/images/deals/livewell-capital.webp",

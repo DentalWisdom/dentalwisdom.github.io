@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## October 19, 2026
 
+- **New Crazy Dental flyer: October "Spooky Savings".** It shows in the Crazy Dental pop-up on the Sponsors page and the "Dental Supplies" pop-up on the Deals page. Both use the same image file, so one swap updates both. The promo codes are unchanged (WISDOM10 and WISDOMSHIP), so no wording on the site changed. The September flyer is saved in `_archive/superseded-images/deals/`, and the October source image is in the flyer drop folder.
 - **Shabbos wine bonus now goes to every attendee who books at The Altair**, not just the first 25. Updated on the homepage fees section and in the FAQ hotel answer, to match the Oct 19 email. The new wording is shorter than the old, so no line got longer.
 - **The expired early bird wording is gone from the conference pages.** Prices haven't changed (Dentist $1,995, Dental Resident $1,595), but the site no longer calls them "early bird" or mentions September 30. This covers the homepage hero, the gold pricing box (its heading now reads "Conference Pricing"), the "Conference Fees — Dentists" answer, the FAQ cost answer, and the FAQ's "Ready to join us?" band. The FAQ still says prices may rise based on demand.
 - **The gold pricing box's note now reads "We expect the conference to sell out, so reserve your spot early."** It replaces the line saying prices and hotel rates "will increase."

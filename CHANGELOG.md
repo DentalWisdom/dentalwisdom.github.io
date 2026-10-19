@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## October 19, 2026
 
+- **Shabbos wine bonus now goes to every attendee who books at The Altair**, not just the first 25. Updated on the homepage fees section and in the FAQ hotel answer, to match the Oct 19 email. The new wording is shorter than the old, so no line got longer.
 - **The expired early bird wording is gone from the conference pages.** Prices haven't changed (Dentist $1,995, Dental Resident $1,595), but the site no longer calls them "early bird" or mentions September 30. This covers the homepage hero, the gold pricing box (its heading now reads "Conference Pricing"), the "Conference Fees — Dentists" answer, the FAQ cost answer, and the FAQ's "Ready to join us?" band. The FAQ still says prices may rise based on demand.
 - **The gold pricing box's note now reads "We expect the conference to sell out, so reserve your spot early."** It replaces the line saying prices and hotel rates "will increase."
 - **Vendor Dentist ($2,995) is off the homepage.** It was removed from the gold pricing box and the fees answer. It is still listed and explained in the FAQ, at Ben's request.

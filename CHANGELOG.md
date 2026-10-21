@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## October 21, 2026
 
+- **Dr. Ruth Abramowitz's card blurb now matches her full bio.** It now reads "General dentist and co-owner of Park Dental Group in Highland Park, NJ, focused on TMJ pain. A longtime acrylic and oil painting instructor." The old text, which mentioned the Robert Wood Johnson GPR program and cosmetic care, came from an earlier version of her bio. Updated on the Speakers page and her private preview page. The card is the same height as before.
 - **Dr. Ruth Abramowitz has a new headshot.** It shows on her card and bio pop-up on the Speakers page, and on her private preview page. All of these use the same image file, so one swap updates every spot. The photo is cropped square around her face to fit the round frame, like the other speakers. Her previous photo is saved in `_archive/superseded-images/speakers/`, and the new original is in the speaker drop folder.
 
 ## October 19, 2026

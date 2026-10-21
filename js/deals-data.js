@@ -274,6 +274,16 @@ window.DEALS_DATA = [
     keywords: "accounting bookkeeping payroll expenses invoicing taxes P&L profit loss balance sheet Intuit financial software"
   },
   {
+    title: "Botwinick & Company",
+    shortDescription: "Dental Accounting",
+    category: "Run Your Practice",
+    description: "Dental-specific CPA team with 30+ years serving dental practices — tax planning, retirement plans, equipment purchases, choosing an LLC vs. S-Corp, and practice acquisitions. Personalized guidance for dentists at every stage, from new practice to acquisition.",
+    link: "https://botwinick.com/industries/dental-practices/",
+    promo: "Complimentary Consultation",
+    imageUrl: "/images/deals/botwinick.webp",
+    keywords: "accounting CPA accountant taxes tax planning S-Corp LLC entity retirement 401k bookkeeping practice acquisition equipment purchase cash flow financial advisor"
+  },
+  {
     title: "Harmonious",
     shortDescription: "Payroll & HR",
     category: "Run Your Practice",

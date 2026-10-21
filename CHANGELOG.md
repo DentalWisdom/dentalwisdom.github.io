@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## October 21, 2026
+
+- **Dr. Ruth Abramowitz has a new headshot.** It shows on her card and bio pop-up on the Speakers page, and on her private preview page. All of these use the same image file, so one swap updates every spot. The photo is cropped square around her face to fit the round frame, like the other speakers. Her previous photo is saved in `_archive/superseded-images/speakers/`, and the new original is in the speaker drop folder.
+
 ## October 19, 2026
 
 - **New Crazy Dental flyer: October "Spooky Savings".** It shows in the Crazy Dental pop-up on the Sponsors page and the "Dental Supplies" pop-up on the Deals page. Both use the same image file, so one swap updates both. The promo codes are unchanged (WISDOM10 and WISDOMSHIP), so no wording on the site changed. The September flyer is saved in `_archive/superseded-images/deals/`, and the October source image is in the flyer drop folder.

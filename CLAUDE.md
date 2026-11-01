@@ -34,6 +34,12 @@ Quick reference for what's actually published on the live pages right now. Updat
 - Bio keeps **"Spear *2"** exactly as Dr. Kurer wrote it (Ben's call) — not a typo to fix.
 - Agenda: new optional `speakers: [{ name, url }, ...]` field in `js/agenda-data.js` renders "A & B" with each name linked to his own card (handled by `speakersHtml()` in `js/agenda.js`, both normal and concurrent rows). `speaker` stays as plain-text fallback.
 
+**Open-slot status, confirmed by Ben Nov 1, 2026 — only TWO things are actually pending:**
+- **Friday 3:00 PM "Complications in Perio Anterior Cases" (Adin)** — speaker still to come.
+- **Shabbos 8:15 AM Pre-Davening Shiur** — Ben needs a speaker for this.
+- Settled, do NOT flag as pending again: Shabbos 11:00 AM Kiddush & Dvar Torah stays as-is with no speaker name; Friday 6:15 PM Mincha/Kabbalas Shabbos does not need Gobbie Cohn's name (leave it hidden).
+- Once both pending slots are filled, propose a replacement for the FAQ line "A few sessions are still being confirmed and may be added closer to the event."
+
 **Agenda slots still marked TBD / "To Be Announced Soon" (in `js/agenda-data.js`):**
 - Friday 3:00–5:00 PM concurrent block: 4 tracks, 3 of them filled — Dr. Sam Glick (orthobrain), Dr. Elaine Bylis, Dr. Ruth Abramowitz. Still open: "Complications in Perio Anterior Cases" — speaker TBD (Adin-sponsored). (The old note here said Werb was in this block; she is not — her 3:00 PM entry was archived July 2026.)
 - Friday 6:15 PM Mincha/Kabbalas Shabbos — Gobbie Cohn's name hidden (unconfirmed); Apex Reimbursement Specialists + CG Insurance sponsor credit kept.

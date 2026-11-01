@@ -14,10 +14,10 @@ Static marketing site for Dental Wisdom (dentalwisdom.org): the 2027 conference 
 ## Current live state (snapshot — updated September 11, 2026)
 Quick reference for what's actually published on the live pages right now. Update this whenever speakers/sponsors/agenda change.
 
-**Speakers live on `conference-speakers/index.html` (14 active cards, chronological):**
+**Speakers live on `conference-speakers/index.html` (16 active cards, chronological):**
 - Thursday: Dr. Harold Katz (TheraBreath), Dr. Daniel Greenbaum (TruAbutment), Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Marc Faber.
 - Friday: Dr. Nathaniel Dancykier (2 sessions — Fri 9:00 AM + Shabbos 2:45 PM DVI), Dr. Sara Werb, Dr. Craig Berry, Dr. Sam Glick (orthobrain), Dr. Elaine Bylis, Dr. Ruth Abramowitz (Fri 3:00 PM painting/hand-skills workshop, added Sept 11, 2026), Rabbi Dr. Ephraim Rudolph (Fri 10:30 PM Oneg & Shiur, Crown Catapult).
-- Shabbos: Sam Waller (LiveWell Capital), Rabbi Dr. David J. Katz (Touro).
+- Shabbos: Dr. Stephen Kurer + Dr. Jacob Jackson (co-presenters, 3:45 PM, added Nov 1, 2026), Sam Waller (LiveWell Capital), Rabbi Dr. David J. Katz (Touro).
 - Hidden (unconfirmed, restore when Ben says): Gobbie Cohn. Archived in-file (commented, not deleted): Dr. Sean Ference, Yaakov Citron, Dr. Samuel Schuster.
 
 **Dr. Ruth Abramowitz (added Sept 11, 2026) — the 4th Friday-afternoon track.**
@@ -27,10 +27,17 @@ Quick reference for what's actually published on the live pages right now. Updat
 - Her private preview page is `speaker-review/dr-ruth-abramowitz` (noindex, not linked from anywhere). Rewritten Sept 10–11 from an invitation into a confirmed-speaker note; the bio and card text there and on the live speakers page are the same words and should be changed together.
 - **Still unsaid to her anywhere:** the original preview text warned she might be asked to help out briefly at the Welcome Party. That paragraph was cut Sept 11 at Ben's request — worth raising by email closer to the conference so it isn't a surprise on the day.
 
+**Dr. Stephen Kurer & Dr. Jacob Jackson (added Nov 1, 2026) — Shabbos 3:45 PM, Shul, CE 1.**
+- Session: "Living the Dream: 35 Years of Building a Dental Office in Jerusalem — The Good, the Bad and the Amazing." Founding partners of K&J Dental Office, Jerusalem.
+- **Two cards, ONE shared pop-up (Ben's call).** Each card shows his own round photo; clicking either opens the same pop-up: wide photo of both (`images/speaker-kurer-jackson.webp`), both names as the heading, then each bio under its own name (always Kurer first). Driven by `data-copresenters="speaker-stephen-kurer,speaker-jacob-jackson"` + `data-group-photo` on both cards; the modal pulls each bio from its own card. Reusable for any future pair.
+- Card photos are cropped from that one group photo (250px, a bit soft on very sharp screens) — swap in real headshots if they send them. Original saved as `_Speaker Bios & Pictures - Drop Here/Kurer and Jackson.jpg`. Jackson is on the right.
+- Bio keeps **"Spear *2"** exactly as Dr. Kurer wrote it (Ben's call) — not a typo to fix.
+- Agenda: new optional `speakers: [{ name, url }, ...]` field in `js/agenda-data.js` renders "A & B" with each name linked to his own card (handled by `speakersHtml()` in `js/agenda.js`, both normal and concurrent rows). `speaker` stays as plain-text fallback.
+
 **Agenda slots still marked TBD / "To Be Announced Soon" (in `js/agenda-data.js`):**
 - Friday 3:00–5:00 PM concurrent block: 4 tracks, 3 of them filled — Dr. Sam Glick (orthobrain), Dr. Elaine Bylis, Dr. Ruth Abramowitz. Still open: "Complications in Perio Anterior Cases" — speaker TBD (Adin-sponsored). (The old note here said Werb was in this block; she is not — her 3:00 PM entry was archived July 2026.)
 - Friday 6:15 PM Mincha/Kabbalas Shabbos — Gobbie Cohn's name hidden (unconfirmed); Apex Reimbursement Specialists + CG Insurance sponsor credit kept.
-- Shabbos 8:15 AM Pre-Davening Shiur — no speaker. Shabbos 11:00 AM Kiddush & Dvar Torah — no speaker. Shabbos 3:45 PM "Dental Related Shiur to Be Announced Soon."
+- Shabbos 8:15 AM Pre-Davening Shiur — no speaker. Shabbos 11:00 AM Kiddush & Dvar Torah — no speaker. (Shabbos 3:45 PM is now filled — Kurer & Jackson, Nov 1, 2026.)
 
 **Sponsors live on `conference-sponsors` + the agenda strip (`js/sponsors-data.js`):**
 - Platinum: orthobrain (shown as "Turnkey Orthodontics"), Touro College of Dental Medicine, Emerald Dental Lab, LiveWell Capital, Crown Catapult.

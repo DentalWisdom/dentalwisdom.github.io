@@ -289,7 +289,9 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       } else {
         html += '<h3>' + escapeHtml(title || 'Session TBD') + '</h3>';
-        if (speaker) {
+        if (speakersHtml(item)) {
+          metaParts.push(speakersHtml(item));
+        } else if (speaker) {
           metaParts.push(speakerUrl
             ? '<a href="' + escapeHtml(speakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(speaker) + '</a>'
             : escapeHtml(speaker));
@@ -329,6 +331,15 @@ document.addEventListener('DOMContentLoaded', function () {
     return keywords.some(function (k) { return t.indexOf(k) !== -1; });
   }
 
+  // Several co-presenters: item.speakers = [{ name, url }, ...] -> "A & B", each linked to his own card.
+  function speakersHtml(item) {
+    if (!Array.isArray(item.speakers) || !item.speakers.length) return '';
+    return item.speakers.map(function (s) {
+      var n = (s.name || '').trim(), u = (s.url || '').trim();
+      return u ? '<a href="' + escapeHtml(u) + '" class="agenda-item__speaker-link">' + escapeHtml(n) + '</a>' : escapeHtml(n);
+    }).join(' &amp; ');
+  }
+
   function renderAgendaItem(item) {
     var title      = (item.title      || '').trim();
     var time       = (item.time || '').trim();
@@ -341,8 +352,8 @@ document.addEventListener('DOMContentLoaded', function () {
     var isCEView    = isCE || !!item.showInCEView;
 
     // Speaker — hyperlink if speakerUrl provided
-    var speakerHtml = '';
-    if (speaker) {
+    var speakerHtml = speakersHtml(item);
+    if (!speakerHtml && speaker) {
       speakerHtml = speakerUrl
         ? '<a href="' + escapeHtml(speakerUrl) + '" class="agenda-item__speaker-link">' + escapeHtml(speaker) + '</a>'
         : escapeHtml(speaker);

@@ -303,6 +303,25 @@
     .speaker-modal__body {
       padding: var(--space-lg);
     }
+    /* Co-presenters (Kurer & Jackson): one shared pop-up with a wide photo of both + both bios */
+    .speaker-modal__group-photo {
+      width: 100%;
+      max-width: 520px;
+      aspect-ratio: 612 / 391;
+      object-fit: cover;
+      border-radius: var(--radius-md, 12px);
+      border: 4px solid var(--color-white);
+      box-shadow: 0 6px 20px rgba(30,42,56,0.15);
+    }
+    .speaker-modal__group-photo[hidden] { display: none; }
+    .speaker-modal__avatar[hidden] { display: none; }
+    .speaker-modal__bio-name {
+      font-family: var(--font-heading);
+      font-size: 1.25rem;
+      color: var(--color-ink);
+      margin: var(--space-md) 0 0.5rem;
+    }
+    .speaker-modal__bio-name:first-child { margin-top: 0; }
     .speaker-modal__name {
       font-family: var(--font-heading);
       font-size: clamp(1.4rem, 3vw, 2rem);
@@ -942,6 +961,69 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
           </article>
           --><!-- /ARCHIVED Dr. Samuel Schuster -->
 
+          <!-- Dr. Stephen Kurer & Dr. Jacob Jackson (added 2026-11-01) — co-presenters, Shabbos 3:45 PM.
+               Each has his own card; data-copresenters makes either card open ONE shared pop-up
+               (photo of both + both bios, Kurer first). Bio text must match on both cards. -->
+          <article class="speaker-card" id="speaker-stephen-kurer" data-reveal
+            data-photo="/images/speaker-stephen-kurer.webp"
+            data-name="Dr. Stephen Kurer"
+            data-specialty="Founding Partner, K&amp;J Dental Office, Jerusalem"
+            data-bio="A third-generation dentist, Dr. Kurer graduated from the University of London in 1987 and made Aliyah in 1991. He is a founder and partner of K&amp;J Dental Office and regularly takes part in continuing professional education.
+
+Served in the Israel Defence Forces Medical Corps reserve from 1995 to 2013. Participated in five continuing education programs at the Pankey Institute for Advanced Dental Education, Spear *2, and several ITI (International Team for Implantology) seminars. Guest lecturer at professional meetings in the GNYDM, Chicago, and Seoul. Chaired the Jerusalem Anglo-Saxon Dental Study Club from 1995 to 2005. He participated in the Pankey Institute and Spear Jerusalem Study Club Series.
+
+Dr. Kurer lives in Talpiot, Jerusalem, with his wife, Alisa Odenheimer. He is also a Manchester United supporter."
+            data-course="Living the Dream: 35 Years of Building a Dental Office in Jerusalem &mdash; The Good, the Bad and the Amazing"
+            data-time="Shabbos, 3:45 PM"
+            data-copresenters="speaker-stephen-kurer,speaker-jacob-jackson"
+            data-group-photo="/images/speaker-kurer-jackson.webp"
+            data-group-alt="Dr. Stephen Kurer and Dr. Jacob Jackson">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-stephen-kurer.webp" alt="Dr. Stephen Kurer" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Stephen Kurer</h2>
+                <p class="speaker-card__specialty">Founding Partner, K&amp;J Dental Office, Jerusalem</p>
+                <p class="speaker-card__bio-snippet">Third-generation dentist and founding partner of K&amp;J Dental Office in Jerusalem. Made Aliyah in 1991 and chaired the Jerusalem Anglo-Saxon Dental Study Club for a decade.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Living the Dream: 35 Years of Building a Dental Office in Jerusalem &mdash; The Good, the Bad and the Amazing</p>
+                <p class="speaker-card__time">Shabbos, 3:45 PM</p>
+                <span class="speaker-card__cta">View bio &rarr;</span>
+              </div>
+            </button>
+          </article>
+
+          <article class="speaker-card" id="speaker-jacob-jackson" data-reveal
+            data-photo="/images/speaker-jacob-jackson.webp"
+            data-name="Dr. Jacob Jackson"
+            data-specialty="Founding Partner, K&amp;J Dental Office, Jerusalem"
+            data-bio="Dr. Jacob Jackson studied dentistry at University College Hospital in London and qualified through the University of London in 1987. He moved to Israel in 1988. Dr. Jackson is one of the founding partners of K&amp;J Dental Office in Jerusalem, which was established in 1992.
+
+In 2001, he completed an advanced course in Prosthetic Dentistry at the Jerusalem Centre for Advanced Dental Studies. A year later, he completed a one-year course in Removable Prosthodontics at the same institute. He has also participated in several ITI (International Team for Implantology) seminars. He completed the three modules of Dr. Fradeani&rsquo;s Masters Program on The Aesthetic and Functional Rehabilitation, and he participated in the Pankey Institute and Spear Jerusalem Study Club Series.
+
+He lives in Beit Shemesh with his wife Naomi. He is also a Chelsea supporter."
+            data-course="Living the Dream: 35 Years of Building a Dental Office in Jerusalem &mdash; The Good, the Bad and the Amazing"
+            data-time="Shabbos, 3:45 PM"
+            data-copresenters="speaker-stephen-kurer,speaker-jacob-jackson"
+            data-group-photo="/images/speaker-kurer-jackson.webp"
+            data-group-alt="Dr. Stephen Kurer and Dr. Jacob Jackson">
+            <button class="speaker-card__trigger" aria-haspopup="dialog">
+              <div class="speaker-avatar-wrap">
+                <img class="speaker-avatar" src="/images/speaker-jacob-jackson.webp" alt="Dr. Jacob Jackson" loading="lazy">
+              </div>
+              <div class="speaker-card__body">
+                <h2 class="speaker-card__name">Dr. Jacob Jackson</h2>
+                <p class="speaker-card__specialty">Founding Partner, K&amp;J Dental Office, Jerusalem</p>
+                <p class="speaker-card__bio-snippet">Founding partner of K&amp;J Dental Office in Jerusalem, established 1992. Trained in London, with advanced training in prosthetic dentistry in Jerusalem.</p>
+                <p class="speaker-card__course-label">Session</p>
+                <p class="speaker-card__course-title">Living the Dream: 35 Years of Building a Dental Office in Jerusalem &mdash; The Good, the Bad and the Amazing</p>
+                <p class="speaker-card__time">Shabbos, 3:45 PM</p>
+                <span class="speaker-card__cta">View bio &rarr;</span>
+              </div>
+            </button>
+          </article>
+
           <!-- 4: Sam Waller -->
           <article class="speaker-card" id="speaker-sam-waller" data-reveal
             data-photo="/images/speaker-sam-waller.webp"
@@ -1012,6 +1094,7 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
       <button class="speaker-modal__close" id="speakerModalClose" aria-label="Close">&times;</button>
       <div class="speaker-modal__avatar-wrap">
         <img class="speaker-modal__avatar" id="speakerModalAvatar" src="" alt="">
+        <img class="speaker-modal__group-photo" id="speakerModalGroupPhoto" src="" alt="" hidden>
         <div class="speaker-modal__avatar speaker-modal__avatar--placeholder" id="speakerModalAvatarPlaceholder" hidden aria-hidden="true"></div>
       </div>
       <div class="speaker-modal__body">
@@ -1122,6 +1205,9 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
       function openModal(card) {
         lastFocused = document.activeElement;
         var d = card.dataset;
+        var groupPhoto = document.getElementById('speakerModalGroupPhoto');
+        groupPhoto.hidden = true;
+        groupPhoto.removeAttribute('src');
         if (d.photo) {
           avatar.src     = d.photo;
           avatar.alt     = d.name;
@@ -1141,6 +1227,23 @@ In addition to his work in dental revenue optimization, Gobbie is a dynamic voic
             .replace(/</g, '&lt;')
             .replace(/>/g, '&gt;') + '</p>';
         }).join('');
+        // Co-presenters: either card opens the same pop-up — photo of both, then each bio under its own name
+        if (d.copresenters) {
+          var pair = d.copresenters.split(',').map(function (id) { return document.getElementById(id.trim()); }).filter(Boolean);
+          if (d.groupPhoto) {
+            groupPhoto.src = d.groupPhoto;
+            groupPhoto.alt = d.groupAlt || '';
+            groupPhoto.hidden = false;
+            avatar.hidden = true;
+            avatarPlaceholder.hidden = true;
+          }
+          nameEl.textContent = pair.map(function (c) { return c.dataset.name; }).join(' & ');
+          bio.innerHTML = pair.map(function (c) {
+            var esc = function (s) { return s.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;'); };
+            return '<h3 class="speaker-modal__bio-name">' + esc(c.dataset.name) + '</h3>' +
+              (c.dataset.bio || '').split(/\n\s*\n/).filter(Boolean).map(function (p) { return '<p>' + esc(p.trim()) + '</p>'; }).join('');
+          }).join('');
+        }
         course.textContent          = d.course;
         time.textContent            = d.time;
 

@@ -3,6 +3,12 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## November 1, 2026
+
+- **Shabbos 3:45 PM session is filled: Dr. Stephen Kurer & Dr. Jacob Jackson.** Title: "Living the Dream: 35 Years of Building a Dental Office in Jerusalem — The Good, the Bad and the Amazing" (Shul, 1 CE credit). It replaces "Dental Related Shiur to Be Announced Soon" on the Agenda. Both names show on the agenda, and each links to his own card.
+- **Two new speaker cards on the Speakers page**, at the start of Shabbos. Each card has that doctor's own round photo. Clicking either card opens one shared pop-up, with the photo of both of them together and both bios, each under his own name.
+- The card photos are cropped from the photo of the two of them that Ben sent. The original is saved in the speaker drop folder. Dr. Kurer's bio keeps "Spear *2" exactly as he wrote it.
+
 ## October 21, 2026
 
 - **New deal: Botwinick & Company (Dental Accounting).** Added to Run Your Practice, right after QuickBooks so the two accounting deals sit together. It's a dental-specific CPA firm, and the offer reads "Complimentary Consultation". Botwinick isn't a conference sponsor, so the card has no tier pill. The logo was made from `botwinick.png` in the Deals logo drop folder.

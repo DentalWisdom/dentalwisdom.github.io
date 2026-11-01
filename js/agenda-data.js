@@ -104,7 +104,8 @@ window.AGENDA_DATA = [
   { day: "Shabbos", time: "11:00 AM", title: "Kiddush & Dvar Torah", speaker: "", location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "12:00 PM", title: "Shabbos Lunch", speaker: "", location: "OVO at The Altair" },
   { day: "Shabbos", time: "2:45 PM", title: "Dental Volunteers for Israel (DVI)", speaker: "Dr. Nathaniel Dancykier (Prosthodontist)", speakerUrl: "/conference-speakers#speaker-nathaniel-dancykier", location: "Shul", ce: true, ceCredits: 1 },
-  { day: "Shabbos", time: "3:45 PM", title: "Dental Related Shiur to Be Announced Soon", speaker: "", location: "Shul", ce: true, ceCredits: 1 },
+  // Two co-presenters (added 2026-11-01). `speakers` links each name to his own card; `speaker` is the plain-text fallback.
+  { day: "Shabbos", time: "3:45 PM", title: "Living the Dream: 35 Years of Building a Dental Office in Jerusalem — The Good, the Bad and the Amazing", speaker: "Dr. Stephen Kurer & Dr. Jacob Jackson", speakers: [{ name: "Dr. Stephen Kurer", url: "/conference-speakers#speaker-stephen-kurer" }, { name: "Dr. Jacob Jackson", url: "/conference-speakers#speaker-jacob-jackson" }], location: "Shul", ce: true, ceCredits: 1 },
   { day: "Shabbos", time: "4:45 PM", title: "Life Insurance: Bitachon or Hishtadlus? Navigating the Halachic Sources", speaker: "Sam Waller, CFP®", speakerUrl: "/conference-speakers#speaker-sam-waller", location: "Shul", ce: true, ceCredits: 1, sponsor: "LiveWell Capital", sponsorUrl: "/conference-sponsors" },
   { day: "Shabbos", time: "5:45 PM", title: "Mincha", speaker: "", location: "Shul" },
   { day: "Shabbos", time: "6:10 PM", title: "Shalosh Seudos & Dental Halacha Shiur", speaker: "Rabbi Dr. David J. Katz (General Dentist)", speakerUrl: "/conference-speakers#speaker-rabbi-david-katz", location: "Shul", ce: true, ceCredits: 1, sponsor: "Touro College of Dental Medicine", sponsorUrl: "/conference-sponsors" },

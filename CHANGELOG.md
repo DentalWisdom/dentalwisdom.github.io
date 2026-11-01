@@ -7,6 +7,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 - **Shabbos 3:45 PM session is filled: Dr. Stephen Kurer & Dr. Jacob Jackson.** Title: "Living the Dream: 35 Years of Building a Dental Office in Jerusalem — The Good, the Bad and the Amazing" (Shul, 1 CE credit). It replaces "Dental Related Shiur to Be Announced Soon" on the Agenda. Both names show on the agenda, and each links to his own card.
 - **Two new speaker cards on the Speakers page**, at the start of Shabbos. Each card has that doctor's own round photo. Clicking either card opens one shared pop-up, with the photo of both of them together and both bios, each under his own name.
+- The shared pop-up says **"Founding Partners, K&J Dental Office, Jerusalem"** (plural, since it shows both men). Each card keeps "Founding Partner".
 - The card photos are cropped from the photo of the two of them that Ben sent. The original is saved in the speaker drop folder. Dr. Kurer's bio keeps "Spear *2" exactly as he wrote it.
 
 ## October 21, 2026

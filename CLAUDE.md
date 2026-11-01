@@ -15,7 +15,7 @@ Static marketing site for Dental Wisdom (dentalwisdom.org): the 2027 conference 
 Quick reference for what's actually published on the live pages right now. Update this whenever speakers/sponsors/agenda change.
 
 **Speakers live on `conference-speakers/index.html` (16 active cards, chronological):**
-- Thursday: Dr. Harold Katz (TheraBreath), Dr. Daniel Greenbaum (TruAbutment), Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Marc Faber.
+- Thursday: Dr. Harold Katz (TheraBreath), Dr. Daniel Greenbaum (no sponsor — TruAbutment removed Nov 1, 2026, not finalized), Dr. Tzvi Krupka, Dr. Ariel Steinberger, Dr. Marc Faber.
 - Friday: Dr. Nathaniel Dancykier (2 sessions — Fri 9:00 AM + Shabbos 2:45 PM DVI), Dr. Sara Werb, Dr. Craig Berry, Dr. Sam Glick (orthobrain), Dr. Elaine Bylis, Dr. Ruth Abramowitz (Fri 3:00 PM painting/hand-skills workshop, added Sept 11, 2026), Rabbi Dr. Ephraim Rudolph (Fri 10:30 PM Oneg & Shiur, Crown Catapult).
 - Shabbos: Dr. Stephen Kurer + Dr. Jacob Jackson (co-presenters, 3:45 PM, added Nov 1, 2026), Sam Waller (LiveWell Capital), Rabbi Dr. David J. Katz (Touro).
 - Hidden (unconfirmed, restore when Ben says): Gobbie Cohn. Archived in-file (commented, not deleted): Dr. Sean Ference, Yaakov Citron, Dr. Samuel Schuster.
@@ -48,7 +48,8 @@ Quick reference for what's actually published on the live pages right now. Updat
 **Sponsors live on `conference-sponsors` + the agenda strip (`js/sponsors-data.js`):**
 - Platinum: orthobrain (shown as "Turnkey Orthodontics"), Touro College of Dental Medicine, Emerald Dental Lab, LiveWell Capital, Crown Catapult.
 - Gold: MB Precious Metals, Crazy Dental, Reach, Adin, Apex Reimbursement Specialists, Straumann — plus Pearl and Lasso MD (both "Past Sponsor").
-- Silver: The Altair Hotel, TheraBreath — plus Ultradent, Blue Sky Bio (both "Past Sponsor") and TruAbutment (pending).
+- Silver: The Altair Hotel, TheraBreath — plus Ultradent, Blue Sky Bio (both "Past Sponsor").
+- **TruAbutment taken down Nov 1, 2026 (Ben: sponsorship not 100% finalized; he will add it back later).** Three spots, all commented with `REMOVED/ARCHIVED 2026-11-01` and restore instructions, nothing deleted: (1) its tile in `js/sponsors-data.js` (Silver, was `pending: true`, has its video); (2) `sponsor`/`sponsorUrl` on Greenbaum's Thu 10:00 AM entry in `js/agenda-data.js`; (3) the `data-sponsor-*` attributes on Greenbaum's card in `conference-speakers/index.html`. Restore all three together. `sponsors-data.js` is now `?v=20`.
 - Bronze: Citron Films, Pizza Biza, CG Insurance Group — plus Pul Dental, Wonderful Dental, Zolli Candy (all "Past Sponsor").
 - Removed / archived (commented in-file, not deleted): Nobel Biocare, Dental Processing Solutions, NuSmile, AAFE.
 - `attending: true` sponsors get the gold "✓ Attending" pill; `pastSponsor: true` get a gray "Past Sponsor" pill and stay off the homepage logo strip.

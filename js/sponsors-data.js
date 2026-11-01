@@ -191,6 +191,7 @@ window.SPONSORS_DATA = [
     tier: "silver",
     pastSponsor: true
   },
+  /* ARCHIVED 2026-11-01 (Ben: TruAbutment sponsorship not finalized yet — restore when confirmed by removing this comment wrapper):
   {
     name: "TruAbutment",
     logoUrl: "/images/sponsors/tru-abutment.webp",
@@ -200,6 +201,7 @@ window.SPONSORS_DATA = [
     pending: true,
     videoUrl: "https://www.youtube.com/embed/B1mbtUZxyeo"
   },
+  */
   /* ARCHIVED 2026-07-24 (Nobel Biocare removed from sponsor page — kept for future if needed):
   {
     name: "Nobel Biocare",

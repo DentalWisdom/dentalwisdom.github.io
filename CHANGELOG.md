@@ -5,6 +5,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## November 1, 2026
 
+- **TruAbutment taken off the site for now** (the sponsorship isn't finalized yet). Removed from three places: the "Sponsored by TruAbutment" line under Dr. Daniel Greenbaum's Thursday 10:00 AM lecture on the Agenda, the logo at the bottom of his bio pop-up on the Speakers page, and its Silver tile on the Sponsors page. Nothing was deleted. Everything is saved in the files as a note, so it can go back up in a minute once it's confirmed.
 - **Shabbos 3:45 PM session is filled: Dr. Stephen Kurer & Dr. Jacob Jackson.** Title: "Living the Dream: 35 Years of Building a Dental Office in Jerusalem — The Good, the Bad and the Amazing" (Shul, 1 CE credit). It replaces "Dental Related Shiur to Be Announced Soon" on the Agenda. Both names show on the agenda, and each links to his own card.
 - **Two new speaker cards on the Speakers page**, at the start of Shabbos. Each card has that doctor's own round photo. Clicking either card opens one shared pop-up, with the photo of both of them together and both bios, each under his own name.
 - The shared pop-up says **"Founding Partners, K&J Dental Office, Jerusalem"** (plural, since it shows both men). Each card keeps "Founding Partner".

@@ -172,6 +172,21 @@ window.SPONSORS_DATA = [
     attending: true,
     videoUrl: "https://www.youtube.com/embed/_7-3kV_2KYk"
   },
+  /* Clerri — Gold, added 2026-11-09 (Ben). Friday Lunch sponsor. Write-up reworded
+     from Clerri's own copy with Ben's approval; keep in sync with its deal in
+     js/deals-data.js. Link is plain clerri.com on purpose (Ben's pasted link was a
+     Google-ad click URL). */
+  {
+    name: "Clerri",
+    logoUrl: "/images/sponsors/clerri.webp",
+    link: "https://clerri.com/",
+    blurb: "The largest and most trusted dental membership platform for DSOs and independent practices — turning one-time patients into loyal members who come back, accept more care, and pay your practice every month.",
+    blurbHtml: "<p>Clerri is the largest and most trusted dental membership platform for DSOs and independent practices. It helps you turn one-time patients into loyal members who come back, accept more care, and pay your practice every month.</p><p>Build and offer your own in-house membership plans, so patients pay you directly &mdash; no more waiting on insurance to decide. From major DSOs and groups to independent offices, Clerri helps practices grow steady, recurring revenue while closing the care gap for the 100M+ Americans who are uninsured or underinsured.</p><p><strong>Built Into the Way Your Team Already Works</strong><br>Clerri connects directly to your practice management software, so membership opportunities appear right in your existing schedule. Your team can show patients exactly how much they&rsquo;ll save and enroll them in a single click.</p>",
+    tier: "gold",
+    attending: true,
+    promo: "Book a Free Demo",
+    videoUrl: "https://www.youtube.com/embed/vLTwQvYk0do"
+  },
 
   /* ── SILVER ───────────────────────────────────────────── */
   {

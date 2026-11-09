@@ -178,6 +178,20 @@ window.DEALS_DATA = [
     imageUrl: "/images/deals/lasso-md.webp",
     keywords: "marketing SEO Google Ads social media website design online reviews reputation branding content digital advertising"
   },
+  /* Clerri — Gold conference sponsor (added 2026-11-09). description/descriptionHtml,
+     promo and videoUrl mirror its entry in js/sponsors-data.js; update both. */
+  {
+    title: "Clerri",
+    shortDescription: "Membership Plans",
+    category: "Grow Your Practice",
+    description: "The largest and most trusted dental membership platform for DSOs and independent practices — turning one-time patients into loyal members who come back, accept more care, and pay your practice every month.",
+    descriptionHtml: "<p>Clerri is the largest and most trusted dental membership platform for DSOs and independent practices. It helps you turn one-time patients into loyal members who come back, accept more care, and pay your practice every month.</p><p>Build and offer your own in-house membership plans, so patients pay you directly &mdash; no more waiting on insurance to decide. From major DSOs and groups to independent offices, Clerri helps practices grow steady, recurring revenue while closing the care gap for the 100M+ Americans who are uninsured or underinsured.</p><p><strong>Built Into the Way Your Team Already Works</strong><br>Clerri connects directly to your practice management software, so membership opportunities appear right in your existing schedule. Your team can show patients exactly how much they&rsquo;ll save and enroll them in a single click.</p>",
+    link: "https://clerri.com/",
+    promo: "Book a Free Demo",
+    imageUrl: "/images/deals/clerri.webp",
+    videoUrl: "https://www.youtube.com/embed/vLTwQvYk0do",
+    keywords: "membership plans in-house membership dental savings plan uninsured underinsured recurring revenue subscription monthly payments DSO patient retention insurance alternative"
+  },
   {
     title: "Citron Films",
     shortDescription: "Video Production",

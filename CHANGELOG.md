@@ -3,6 +3,13 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## November 9, 2026
+
+- **New Gold sponsor: Clerri** (a dental membership-plan platform). Clerri appears with the Gold sponsors on the Sponsors page, with the gold "✓ Attending" badge. Its pop-up has the write-up, the offer "Book a Free Demo", a "Visit website" button to clerri.com, and Clerri's video at the bottom. The logo also joins the homepage and Agenda sponsor strips automatically.
+- **Clerri sponsors Friday Lunch.** The Agenda now shows "Sponsored by Clerri" under Friday 12:30 PM Lunch, the same way Reach is shown under Thursday Lunch.
+- **New deal: Clerri (Membership Plans)**, in "Grow Your Practice", right after Lasso MD. It has the Gold pill and the same write-up, offer and video as the Sponsors page pop-up.
+- The write-up is a polished version of Clerri's own description, approved by Ben. The logo is the larger file Ben sent. It's saved in the Sponsors logo drop folder, and the first, smaller version is set aside, not deleted.
+
 ## November 1, 2026
 
 - **TruAbutment taken off the site for now** (the sponsorship isn't finalized yet). Removed from three places: the "Sponsored by TruAbutment" line under Dr. Daniel Greenbaum's Thursday 10:00 AM lecture on the Agenda, the logo at the bottom of his bio pop-up on the Speakers page, and its Silver tile on the Sponsors page. Nothing was deleted. Everything is saved in the files as a note, so it can go back up in a minute once it's confirmed.

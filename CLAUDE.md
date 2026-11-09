@@ -47,7 +47,8 @@ Quick reference for what's actually published on the live pages right now. Updat
 
 **Sponsors live on `conference-sponsors` + the agenda strip (`js/sponsors-data.js`):**
 - Platinum: orthobrain (shown as "Turnkey Orthodontics"), Touro College of Dental Medicine, Emerald Dental Lab, LiveWell Capital, Crown Catapult.
-- Gold: MB Precious Metals, Crazy Dental, Reach, Adin, Apex Reimbursement Specialists, Straumann — plus Pearl and Lasso MD (both "Past Sponsor").
+- Gold: MB Precious Metals, Crazy Dental, Reach, Adin, Apex Reimbursement Specialists, Straumann, Clerri — plus Pearl and Lasso MD (both "Past Sponsor").
+- **Clerri (added Nov 9, 2026) — Gold, attending, Friday Lunch sponsor.** Dental membership-plan platform. Lives in 3 places, keep them in sync: (1) `js/sponsors-data.js` (after Straumann; `promo: "Book a Free Demo"`, YouTube `videoUrl`); (2) `js/deals-data.js`, "Grow Your Practice", after Lasso MD (title "Clerri", tagline "Membership Plans" — same write-up/promo/video as the sponsor entry); (3) `sponsor: "Clerri"` on Friday 12:30 PM Lunch in `js/agenda-data.js`. Write-up is Claude's rewording of Clerri's own copy, approved by Ben. Link is plain `https://clerri.com/` on purpose — the link Ben pasted was a Google-ad click URL; don't swap it back. Logos made from `_Logos for Sponsors Page - Drop Here/Clerri.jpg` (the smaller first logo is in that folder's `_set aside/`). `sponsors-data.js` is now `?v=21`, `deals-data.js` `?v=18`.
 - Silver: The Altair Hotel, TheraBreath — plus Ultradent, Blue Sky Bio (both "Past Sponsor").
 - **TruAbutment taken down Nov 1, 2026 (Ben: sponsorship not 100% finalized; he will add it back later).** Three spots, all commented with `REMOVED/ARCHIVED 2026-11-01` and restore instructions, nothing deleted: (1) its tile in `js/sponsors-data.js` (Silver, was `pending: true`, has its video); (2) `sponsor`/`sponsorUrl` on Greenbaum's Thu 10:00 AM entry in `js/agenda-data.js`; (3) the `data-sponsor-*` attributes on Greenbaum's card in `conference-speakers/index.html`. Restore all three together. `sponsors-data.js` is now `?v=20`.
 - Bronze: Citron Films, Pizza Biza, CG Insurance Group — plus Pul Dental, Wonderful Dental, Zolli Candy (all "Past Sponsor").
@@ -66,7 +67,7 @@ Quick reference for what's actually published on the live pages right now. Updat
 
 **Shabbos meals:** the FAQ now says sign-up details **will be announced after Sukkos**, replacing a stale line promising the link "5–6 months before the conference" — a window that had already arrived.
 
-**Sponsors:** 18 current (24 entries, 6 marked Past Sponsor). The FAQ answer no longer says sponsors "may support" the event; that wording predated any signing.
+**Sponsors:** 19 current as of Nov 9, 2026 (Clerri added; TruAbutment taken down Nov 1). The FAQ answer no longer says sponsors "may support" the event; that wording predated any signing.
 
 
 ## Open follow-ups

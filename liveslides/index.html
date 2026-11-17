@@ -495,11 +495,11 @@
   #s-lect .doc{font-family:var(--font-head);font-weight:700;font-size:30px;color:var(--ink);margin-top:20px;white-space:pre-line;line-height:1.15;}
   #s-lect .role{font-style:italic;color:var(--muted);font-size:15px;margin-top:3px;}
   #s-lect .cepill{display:inline-block;background:var(--navy);color:var(--gold-bright);font-weight:700;letter-spacing:2.5px;font-size:12px;padding:10px 20px;margin-top:14px;text-transform:uppercase;border-radius:6px;}
-  #s-lect .lect-photo{display:none;width:146px;height:146px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 10px 26px rgba(30,42,56,.18);margin:0 0 12px;}
+  #s-lect .lect-photo{display:none;float:right;width:150px;height:150px;border-radius:50%;object-fit:cover;border:4px solid #fff;box-shadow:0 10px 26px rgba(30,42,56,.18);margin:2px 0 14px 24px;}
   #s-lect.has-lphoto .lect-photo{display:block;}
-  #s-lect.has-lphoto .logobox{height:100px;padding:10px;}
-  #s-lect.has-lphoto .logobox img{max-height:80px;}
-  #s-lect.has-lphoto .doc{margin-top:16px;}
+  #s-lect.has-lphoto .col-r{display:block;}
+  #s-lect.has-lphoto .col-r .web{margin-top:14px;}
+  #s-lect.has-lphoto .logobox{height:200px;padding:12px;}
   #s-lect .col-r{border-left:3px solid var(--gold);padding-left:24px;display:flex;flex-direction:column;}
   #s-lect .col-r .k{font-size:12px;letter-spacing:3px;color:var(--gold-text);text-transform:uppercase;margin-bottom:10px;font-weight:600;}
   #s-lect .col-r p{font-size:14.5px;line-height:1.55;color:var(--ink-soft);margin-bottom:11px;}
@@ -740,8 +740,7 @@
     #s-lect h1.big{font-size:28px;}
     #s-lect .subt{font-size:16px;}
     #s-lect .logobox{height:130px;max-width:280px;margin:0 auto;}
-    #s-lect .lect-photo{margin-left:auto;margin-right:auto;}
-    #s-lect.has-lphoto .logobox{height:110px;}
+    #s-lect .lect-photo{float:none;width:120px;height:120px;margin:0 auto 12px;}
     #s-lect .doc{font-size:22px;}
     #s-lect .col-r{border-left:none;border-top:3px solid var(--gold);padding-left:0;padding-top:18px;}
     #s-lect .col-r p{font-size:14px;}
@@ -943,13 +942,13 @@
         <div class="subt" id="t-lect-subt">Building Your Clear Aligner Practice</div>
         <div class="cols baseline">
           <div class="col-l">
-            <img class="lect-photo" id="t-lect-photo" alt="">
             <div class="logocard logobox" id="t-lect-logobox"></div>
             <div class="doc" id="t-lect-doc">Dr. Sam Glick</div>
             <div class="role" id="t-lect-role">Key Opinion Leader, orthobrain</div>
             <div class="cepill" id="t-lect-pill">1 CE Credit</div>
           </div>
           <div class="col-r">
+            <img class="lect-photo" id="t-lect-photo" alt="">
             <div class="k">About this session</div>
             <div id="t-lect-desc"></div>
             <div class="web" id="t-lect-web">orthobrain.com</div>
@@ -1149,7 +1148,7 @@ const DECK = {
                                                        // To override: { title:"…", date:"…", time:"8:00 PM EST" }
   opener:      "Dr. Lisa Sokol",                       // slide 2 (rarely changes)
   dvarSpeaker: "Rabbi Dr. David J. Katz",        // slide 3 — leave "" until known and both the "Delivered by" label and the name stay hidden
-  dvarRole:    "Vice Dean, Touro College of Dental Medicine",  // small line under the name — "" hides it
+  dvarRole:    "Author of Kesser Dovid \u00b7 Vice Dean, Touro College of Dental Medicine",  // small line under the name — "" hides it
   dvarPhoto:   "slides/dvar-rabbi-david-katz.webp",   // round photo on the right — "" hides it
   // pop-up note on the Dvar Torah slide, appears 5 seconds after the slide opens.
   // \n in the text starts a new line. Set dvarPopup: null to hide it.
@@ -1218,9 +1217,9 @@ const DECK = {
     // No sponsor thank-you slide this month (no partners), so no takeaway card.
     takeaway: null,
     description: [
-      "Orofacial pain can present in ways that closely mimic common dental conditions, making accurate diagnosis challenging. This course explores the diverse clinical presentations of orofacial pain, distinguishing odontogenic tooth pain from neuropathic and other non-odontogenic pain conditions.",
-      "Participants will review key differences in pain quality, onset, duration, triggers, and clinical findings that guide a differential diagnosis — recognizing common neuropathic patterns, avoiding diagnostic pitfalls, and knowing when to refer.",
-      "By improving diagnostic confidence, clinicians can prevent unnecessary dental treatment and ensure patients receive appropriate, timely care.",
+      "Orofacial pain can present in ways that closely mimic common dental conditions, making diagnosis challenging. This course explores its diverse clinical presentations, distinguishing odontogenic tooth pain from neuropathic and other non-odontogenic pain.",
+      "Participants will review key differences in pain quality, onset, duration, triggers, and clinical findings — recognizing neuropathic patterns, avoiding pitfalls, and knowing when to refer.",
+      "By improving diagnostic confidence, clinicians help prevent unnecessary dental treatment and ensure timely, appropriate care.",
       "<strong>Attend live to earn your CE credit.</strong>"
     ]
   },

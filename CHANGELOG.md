@@ -5,6 +5,16 @@ A plain-English record of every update made to the site, most recent first. This
 
 ## November 17, 2026
 
+- **Live event slides rebuilt for the November 19 webinar — Dr. Asher Mansdorf, "The Many Faces of Orofacial Pain."** October's content is fully swapped out:
+  - **Title slide** now shows Touro College of Dental Medicine as the sponsor (was Crown Catapult + Launch Point).
+  - **Dvar Torah slide** is delivered by Rabbi Dr. David J. Katz (Vice Dean, Touro College of Dental Medicine), with his photo; the old "Mazel Tov" pop-up was removed.
+  - **30-second spotlight** is now Adam Baumwald / MB Precious Metals, with his scan-to-text QR.
+  - **Lecture slide** is Dr. Mansdorf's orofacial-pain class, with his headshot added (new on this slide type), the Touro logo and 1 CE credit.
+  - **The separate "Thank You to the Sponsors" slide was removed** (only one sponsor this month), so the deck is now 10 slides instead of 11 and every page number recounted itself.
+  - **The "stay to win" raffle slide and the prize wheel's final prize** are both now the $500 ArtScroll Shopping Spree (Seforim, Judaica & More), compliments of Touro, using the gift-card image. The MB silver coin and Live Well Yeti mug giveaways are unchanged.
+  - **The closing slide no longer shows a "next session"** (nothing is scheduled after Nov 19 yet); it returns on its own once the next Live session is added.
+  - October's content (Crazy Dental spotlight, the exit-planning lecture, the Shas giveaway) is saved in the slide history file in case it's needed again. Checked that every slide fits on screen, the winner pop-up fits at all sizes, and the 2-minute intro board rebuilt correctly.
+
 - **New Bronze sponsor: Refuah Dental.** Shows with the Bronze sponsors on the Sponsors page with the gold "✓ Attending" badge, and the logo joins the homepage and Agenda sponsor strips automatically. The pop-up has Refuah's write-up and a "Visit website" link to their dentistry page — no offer and no video, just a listing.
 - **New deal: Refuah Dental (Dental Residency)**, in "Staffing & Recruiting", right after Reach. It carries the Bronze pill (because Refuah is a conference sponsor) and shows Refuah's full write-up.
 - The Refuah Dental sponsor pop-up on the Sponsors page shows their **entire bio** (all four paragraphs), the same full write-up as the Deals page — not a trimmed version.

@@ -51,7 +51,8 @@ Quick reference for what's actually published on the live pages right now. Updat
 - **Clerri (added Nov 9, 2026) — Gold, attending, Friday Lunch sponsor.** Dental membership-plan platform. Lives in 3 places, keep them in sync: (1) `js/sponsors-data.js` (after Straumann; `promo: "Book a Free Demo"`, YouTube `videoUrl`); (2) `js/deals-data.js`, "Grow Your Practice", after Lasso MD (title "Clerri", tagline "Membership Plans" — same write-up/promo/video as the sponsor entry); (3) `sponsor: "Clerri"` on Friday 12:30 PM Lunch in `js/agenda-data.js`. Write-up is Claude's rewording of Clerri's own copy, approved by Ben. Link is plain `https://clerri.com/` on purpose — the link Ben pasted was a Google-ad click URL; don't swap it back. Logos made from `_Logos for Sponsors Page - Drop Here/Clerri.jpg` (the smaller first logo is in that folder's `_set aside/`). `sponsors-data.js` is now `?v=21`, `deals-data.js` `?v=18`.
 - Silver: The Altair Hotel, TheraBreath — plus Ultradent, Blue Sky Bio (both "Past Sponsor").
 - **TruAbutment taken down Nov 1, 2026 (Ben: sponsorship not 100% finalized; he will add it back later).** Three spots, all commented with `REMOVED/ARCHIVED 2026-11-01` and restore instructions, nothing deleted: (1) its tile in `js/sponsors-data.js` (Silver, was `pending: true`, has its video); (2) `sponsor`/`sponsorUrl` on Greenbaum's Thu 10:00 AM entry in `js/agenda-data.js`; (3) the `data-sponsor-*` attributes on Greenbaum's card in `conference-speakers/index.html`. Restore all three together. `sponsors-data.js` is now `?v=20`.
-- Bronze: Citron Films, Pizza Biza, CG Insurance Group — plus Pul Dental, Wonderful Dental, Zolli Candy (all "Past Sponsor").
+- Bronze: Citron Films, Pizza Biza, CG Insurance Group, Refuah Dental — plus Pul Dental, Wonderful Dental, Zolli Candy (all "Past Sponsor").
+- **Refuah Dental (added Nov 17, 2026) — Bronze, attending.** RefuahHealth's dental arm (a community health center + CODA-accredited NYU Langone AEGD residency training site). Two places, keep in sync: (1) `js/sponsors-data.js` Bronze block, after CG Insurance Group (`attending: true`, no video/photo); (2) `js/deals-data.js`, "Staffing & Recruiting", after Reach (title "Refuah Dental", tagline "Dental Residency", `promo: ""` — no offer). Write-up is Refuah's own text verbatim (Ben: "use their language"). Their copy says "Refuah Dental", so the card title is "Refuah Dental" even though the logo art reads "RefuahHealth" — Ben's call, not a mismatch to "fix". Logo from `_Logos for Deals Page - Drop Here/refuahhealth.png` → `images/sponsors/refuah-dental.webp` + `images/deals/refuah-dental.webp` (the health-named first export is in `_archive/superseded-images/`). `sponsors-data.js` is now `?v=22`, `deals-data.js` `?v=19`.
 - Removed / archived (commented in-file, not deleted): Nobel Biocare, Dental Processing Solutions, NuSmile, AAFE.
 - `attending: true` sponsors get the gold "✓ Attending" pill; `pastSponsor: true` get a gray "Past Sponsor" pill and stay off the homepage logo strip.
 
@@ -67,7 +68,7 @@ Quick reference for what's actually published on the live pages right now. Updat
 
 **Shabbos meals:** the FAQ now says sign-up details **will be announced after Sukkos**, replacing a stale line promising the link "5–6 months before the conference" — a window that had already arrived.
 
-**Sponsors:** 19 current as of Nov 9, 2026 (Clerri added; TruAbutment taken down Nov 1). The FAQ answer no longer says sponsors "may support" the event; that wording predated any signing.
+**Sponsors:** 20 current as of Nov 17, 2026 (Refuah Dental added Nov 17; Clerri added Nov 9; TruAbutment taken down Nov 1). The FAQ answer no longer says sponsors "may support" the event; that wording predated any signing.
 
 
 ## Open follow-ups

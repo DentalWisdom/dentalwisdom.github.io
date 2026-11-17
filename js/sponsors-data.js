@@ -290,6 +290,14 @@ window.SPONSORS_DATA = [
     tier: "bronze",
     attending: true
   },
+  {
+    name: "Refuah Dental",
+    logoUrl: "/images/sponsors/refuah-dental.webp",
+    link: "https://refuahhealth.org/medical-services/dentistry",
+    blurb: "At Refuah Dental, we provide comprehensive dental care for children and adults, including general dentistry, orthodontics, and pediatric dentistry.",
+    tier: "bronze",
+    attending: true
+  },
   /* ARCHIVED 2026-07-28 (Ben: remove AAFE as a conference sponsor). Its Deals-page
      entry ("AAFE (American Academy of Facial Esthetics)") stays in Clinical &
      Chairside but now shows no tier pill and sorts among non-sponsors. Restore

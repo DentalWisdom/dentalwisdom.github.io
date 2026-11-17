@@ -3,6 +3,13 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## November 17, 2026
+
+- **New Bronze sponsor: Refuah Dental.** Shows with the Bronze sponsors on the Sponsors page with the gold "✓ Attending" badge, and the logo joins the homepage and Agenda sponsor strips automatically. The pop-up has Refuah's write-up and a "Visit website" link to their dentistry page — no offer and no video, just a listing.
+- **New deal: Refuah Dental (Dental Residency)**, in "Staffing & Recruiting", right after Reach. It carries the Bronze pill (because Refuah is a conference sponsor) and shows Refuah's full write-up.
+- The write-up uses Refuah's own words, exactly as sent. The card is titled "Refuah Dental" to match their text (their logo art reads "RefuahHealth").
+- The logo was made from the image dropped in the Deals logo folder. The first export (named for RefuahHealth) is set aside in the archive, not deleted.
+
 ## November 9, 2026
 
 - **New Gold sponsor: Clerri** (a dental membership-plan platform). Clerri appears with the Gold sponsors on the Sponsors page, with the gold "✓ Attending" badge. Its pop-up has the write-up, the offer "Book a Free Demo", a "Visit website" button to clerri.com, and Clerri's video at the bottom. The logo also joins the homepage and Agenda sponsor strips automatically.

@@ -381,6 +381,17 @@ window.DEALS_DATA = [
     keywords: "virtual assistant VA remote worker front desk scheduling insurance billing outsource offshore labor cost savings"
   },
   {
+    title: "Refuah Dental",
+    shortDescription: "Dental Residency",
+    category: "Staffing & Recruiting",
+    description: "At Refuah Dental, we provide comprehensive dental care for children and adults, including general dentistry, orthodontics, and pediatric dentistry.",
+    descriptionHtml: "<p>At Refuah Dental, we provide comprehensive dental care for children and adults, including general dentistry, orthodontics, and pediatric dentistry. Our services range from routine cleanings, examinations, and preventive care to fillings, root canals, crowns, extractions, and specialized restorative treatments.</p><p>Our experienced dental team provides personalized care focused on preventing dental disease, preserving natural teeth, restoring function, and maintaining long-term oral health. Using state-of-the-art technology, including intraoral scanners, dental lasers, digital imaging, and advanced microscopes, we enhance treatment precision, improve patient comfort, and deliver excellent outcomes.</p><p>Refuah Dental is also a CODA-accredited training site for NYU Langone dental students pursuing an Advanced Education in General Dentistry (AEGD) residency. Our dedicated attending dentists are committed to teaching, mentoring, and developing the next generation of dental professionals. Together with our staff, they share a common mission: providing high-quality, compassionate dental care, with a special commitment to serving patients and communities with the greatest need.</p><p>Our goal is to combine excellent patient care, advanced technology, and meaningful dental education to help every patient achieve and maintain a healthy smile for life.</p>",
+    link: "https://refuahhealth.org/medical-services/dentistry",
+    promo: "",
+    imageUrl: "/images/deals/refuah-dental.webp",
+    keywords: "refuah dental community health center dental residency AEGD NYU Langone CODA teaching clinic attending dentist pediatric orthodontics general dentistry Rockland"
+  },
+  {
     title: "Dental Recruiter (In-Office Staff)",
     shortDescription: "Staff Recruiting",
     category: "Staffing & Recruiting",

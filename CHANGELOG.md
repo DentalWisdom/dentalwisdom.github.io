@@ -7,6 +7,7 @@ A plain-English record of every update made to the site, most recent first. This
 
 - **New Bronze sponsor: Refuah Dental.** Shows with the Bronze sponsors on the Sponsors page with the gold "✓ Attending" badge, and the logo joins the homepage and Agenda sponsor strips automatically. The pop-up has Refuah's write-up and a "Visit website" link to their dentistry page — no offer and no video, just a listing.
 - **New deal: Refuah Dental (Dental Residency)**, in "Staffing & Recruiting", right after Reach. It carries the Bronze pill (because Refuah is a conference sponsor) and shows Refuah's full write-up.
+- The Refuah Dental sponsor pop-up on the Sponsors page shows their **entire bio** (all four paragraphs), the same full write-up as the Deals page — not a trimmed version.
 - The write-up uses Refuah's own words, exactly as sent. The card is titled "Refuah Dental" to match their text (their logo art reads "RefuahHealth").
 - The logo was made from the image dropped in the Deals logo folder. The first export (named for RefuahHealth) is set aside in the archive, not deleted.
 

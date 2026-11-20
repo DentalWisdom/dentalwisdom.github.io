@@ -3,6 +3,10 @@ A plain-English record of every update made to the site, most recent first. This
 
 ---
 
+## November 19, 2026
+
+- **New photo for Rabbi Dr. David J. Katz** on the Speakers page. His card and his bio pop-up both show it. The new photo is larger and sharper than the old one (591×681 instead of 272×343), and the file is still small, so the page loads no slower. The old photo is saved in `_archive/superseded-images/speakers/`, and the original you sent is in `_Speaker Bios & Pictures - Drop Here/rabbi-katz-2026-11-19.png`. The live-slides deck has its own separate copy of his photo, which was not changed.
+
 ## November 17, 2026
 
 - **Live event slides rebuilt for the November 19 webinar — Dr. Asher Mansdorf, "The Many Faces of Orofacial Pain."** October's content is fully swapped out:

@@ -1,3 +1,9 @@
+## November 20, 2026
+
+- **Removed three past sponsors from the conference Sponsors page:** Blue Sky Bio (Silver), Wonderful Dental (Bronze), and Zolli Candy (Bronze). All three were already marked "Past Sponsor" (gray pill, off the homepage logo strip). Their tiles no longer appear on the Sponsors page. Nothing was deleted — each entry is commented out in `js/sponsors-data.js` with a dated restore note. Active sponsor count is now 22.
+- **Zolli Candy's Deals-page listing was kept** (Ben's call) — it stays on the Deals page, now without a sponsor tier pill, same as other removed sponsors.
+- Bumped `sponsors-data.js` to `?v=24` across all pages that load it.
+
 # Dental Wisdom Site — Change Log
 A plain-English record of every update made to the site, most recent first. This file lives in your site folder (not hidden) so you can always open it to see what's changed and when.
 

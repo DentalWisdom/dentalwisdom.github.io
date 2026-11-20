@@ -227,6 +227,7 @@ window.SPONSORS_DATA = [
     pastSponsor: true
   },
   */
+  /* ARCHIVED 2026-11-20 (Ben: remove Blue Sky Bio from the conference sponsors page). Was Silver, Past Sponsor. Restore by uncommenting.
   {
     name: "Blue Sky Bio",
     logoUrl: "/images/sponsors/blue-sky-bio.webp",
@@ -235,6 +236,7 @@ window.SPONSORS_DATA = [
     tier: "silver",
     pastSponsor: true
   },
+  */
   /* ARCHIVED 2026-07-28 (Ben: remove Dental Processing Solutions from the
      sponsor page — the "Credit Card Processing" deal stays on the Deals page
      but, with no sponsors-data entry, now shows no tier pill and sorts among
@@ -322,6 +324,7 @@ window.SPONSORS_DATA = [
     pastSponsor: true,
     videoUrl: "https://www.youtube.com/embed/YnXpmI5DA20"
   },
+  /* ARCHIVED 2026-11-20 (Ben: remove Wonderful Dental from the conference sponsors page). Was Bronze, Past Sponsor. Restore by uncommenting.
   {
     name: "Wonderful Dental",
     logoUrl: "/images/sponsors/wonderful-dental.webp",
@@ -331,6 +334,8 @@ window.SPONSORS_DATA = [
     pastSponsor: true,
     videoUrl: "https://www.youtube.com/embed/j5pUB-3O768"
   },
+  */
+  /* ARCHIVED 2026-11-20 (Ben: remove Zolli Candy from the conference sponsors page). Was Bronze, Past Sponsor. Its Deals-page entry ("Zolli Candy") stays on deals-data.js per Ben, now with no tier pill. Restore by uncommenting.
   {
     name: "Zolli Candy",
     logoUrl: "/images/sponsors/zolli-candy.webp",
@@ -340,4 +345,5 @@ window.SPONSORS_DATA = [
     pastSponsor: true,
     promo: "Subscribe and Save 30%"
   }
+  */
 ];

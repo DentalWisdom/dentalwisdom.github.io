@@ -118,7 +118,21 @@ window.LIVE_DATA = [
     sponsor: "Touro College of Dental Medicine",
     sponsorName: "Touro College of Dental Medicine",
     sponsorLink: "https://dental.touro.edu/",
+    recordingEmail: "Ben@dentalwisdom.org",
     sortDate: "2026-11-19",
+    status: "past"
+  },
+  {
+    title: "Using Guided Implant Surgery to Bring Smiles to Dentists and Patients",
+    date: "December 17, 2026",
+    time: "8:00 PM – 9:30 PM EST",
+    presenter: "Dr. Robert Weber",
+    description: "Discover how guided implant surgery can enhance precision, predictability, and confidence in implant dentistry. In this educational course, Dr. Robert Weber explores the benefits and clinical applications of guided implant surgery, demonstrating how digital planning and surgical guidance can help streamline implant placement, improve treatment outcomes, and elevate the patient experience. Designed to help dental professionals better understand and incorporate guided implant techniques into their practices, this course highlights how innovative implant solutions can simplify complex procedures, support clinical efficiency, and deliver beautiful, predictable results. Join Adin Implant Solutions and Dr. Robert Weber to explore how guided implant surgery is helping bring more confident smiles to both dentists and their patients.",
+    registerLink: "https://events.teams.microsoft.com/event/03dcd0a1-e917-4602-b402-ca7bd2ad81d9@353aa5d5-fd41-4aae-bc79-6722f1ca6cce",
+    sponsor: "Adin",
+    sponsorName: "Adin",
+    sponsorLink: "https://www.adin-implants.com/",
+    sortDate: "2026-12-17",
     status: "upcoming"
   }
 ];

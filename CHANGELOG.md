@@ -1,3 +1,9 @@
+## November 24, 2026
+
+- **Dental Wisdom Live — new upcoming session added:** "Using Guided Implant Surgery to Bring Smiles to Dentists and Patients" with Dr. Robert Weber, Thursday December 17, 2026, 8:00 – 9:30 PM EST, sponsored by Adin (Adin logo + Sign Up button pull in automatically). It is now the only upcoming session on the Live page.
+- **Dental Wisdom Live — Touro session moved to past:** the November 19 session (Dr. Asher Mansdorf, "The Many Faces of Orofacial Pain") moved from Upcoming to Past Sessions, and now shows a "Get Recording" button (opens a pre-written email), matching the two previous past sessions.
+- Bumped `live-data.js` to `?v=6` in `live/index.html`.
+
 ## November 20, 2026
 
 - **Removed three past sponsors from the conference Sponsors page:** Blue Sky Bio (Silver), Wonderful Dental (Bronze), and Zolli Candy (Bronze). All three were already marked "Past Sponsor" (gray pill, off the homepage logo strip). Their tiles no longer appear on the Sponsors page. Nothing was deleted — each entry is commented out in `js/sponsors-data.js` with a dated restore note. Active sponsor count is now 22.

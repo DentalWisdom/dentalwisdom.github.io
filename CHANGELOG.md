@@ -1,3 +1,9 @@
+## November 26, 2026
+
+- **Conference speaker swap: Dr. Sam Glick → Dr. Seth Calish** on the Friday 3:00–5:00 PM clear-aligner track (“Straight Forward: Building Your Clear Aligner Practice”). The session title, time, CE credits and the orthobrain sponsorship are unchanged — Dr. Calish is also an orthobrain clinical educator. Updated on the Agenda and the Speakers page (new photo, full bio and short blurb) and on orthobrain’s private preview page. Dr. Glick’s old speaker card is kept in the page, commented out (nothing deleted); his photo file also stays.
+- **This change is for the 2027 conference only.** The June 18, 2026 Dental Wisdom Live webinar that Dr. Glick presented was left exactly as it is, since it already happened.
+- New photo added: `images/speaker-seth-calish.webp`, cropped to head-and-shoulders from the headshot you sent (600×600).
+
 ## November 24, 2026
 
 - **Dental Wisdom Live — new upcoming session added:** "Using Guided Implant Surgery to Bring Smiles to Dentists and Patients" with Dr. Robert Weber, Thursday December 17, 2026, 8:00 – 9:30 PM EST, sponsored by Adin (Adin logo + Sign Up button pull in automatically). It is now the only upcoming session on the Live page.
